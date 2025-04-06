@@ -2,12 +2,13 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8">
-    <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin="" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
       rel="stylesheet"
       as="style"
       onload="this.rel='stylesheet'"
-      href="https://fonts.googleapis.com/css2?display=swap&family=Epilogue%3Awght%40400%3B500%3B700%3B900&family=Noto+Sans%3Awght%40400%3B500%3B700%3B900&family=Amiri:wght@400;700&display=swap"
+      href="https://fonts.googleapis.com/css2?display=swap&family=Epilogue%3Awght%40400%3B500%3B700%3B900&family=Noto+Sans%3Awght%40400%3B500%3B700%3B900&family=Amiri:wght@400;700&family=Lugrasimo&display=swap"
     />
     <title>Laperla Olive Oil</title>
     <link rel="icon" type="image/x-icon" href="data:image/x-icon;base64," />
@@ -18,7 +19,7 @@
     <div class="relative flex size-full min-h-screen flex-col bg-white group/design-root overflow-x-hidden" style='font-family: Epilogue, "Noto Sans", sans-serif;'>
       <div class="layout-container flex h-full grow flex-col">
         <header class="flex items-center justify-between whitespace-nowrap border-b border-solid border-b-[#f2f4f0] px-10 py-3">
-          <div class="flex items-center gap-4 text-[#141811]">
+          <a href="index.html" class="flex items-center gap-4 text-[#141811] no-underline">
             <div class="size-4">
               <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <g clip-path="url(#clip0_6_535)">
@@ -35,13 +36,13 @@
               </svg>
             </div>
             <div class="flex flex-col">
-              <h2 class="text-[#141811] text-2xl font-bold leading-tight tracking-[-0.015em]" style="font-family: 'Amiri', serif;">Laperla</h2>
+              <h2 class="text-[#141811] text-2xl font-bold leading-tight tracking-[-0.015em]" style="font-family: 'Lugrasimo', serif; font-weight: 1000; -webkit-font-smoothing: antialiased;">Laperla</h2>
               <p class="text-[#758863] text-xs" data-en="Your premium olive oil partner" data-pl="Twój partner w premium oliwie">Your premium olive oil partner</p>
             </div>
-          </div>
+          </a>
           <div class="flex flex-1 justify-end gap-8">
             <div class="flex items-center gap-9">
-              <a class="text-[#141811] text-sm font-medium leading-normal" href="index.html" data-en="Our Products" data-pl="Nasze Produkty">Our Products</a>
+              <a class="text-[#141811] text-sm font-medium leading-normal" href="product.html" data-en="Our Products" data-pl="Nasze Produkty">Our Products</a>
               <a class="text-[#141811] text-sm font-medium leading-normal" href="heritage.html" data-en="Heritage" data-pl="Dziedzictwo">Heritage</a>
               <a class="text-[#141811] text-sm font-medium leading-normal" href="contact.html" data-en="Contact" data-pl="Kontakt">Contact</a>
             </div>
@@ -274,6 +275,19 @@
                   </p>
                 </div>
               </div>
+              <!-- YouTube Video Section (No Title) -->
+              <div class="flex flex-col gap-4 mt-6">
+                <div class="w-full max-w-[720px] aspect-video">
+                  <iframe
+                    class="w-full h-full rounded-xl"
+                    src="https://www.youtube.com/embed/jVE9jp-U8BY"
+                    title="Laperla Organic Process"
+                    frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowfullscreen
+                  ></iframe>
+                </div>
+              </div>
             </div>
             <div class="@container">
               <div class="flex flex-col justify-center items-center gap-6 px-4 py-10 @[480px]:gap-8 @[480px]:px-10 @[480px]:py-20">
@@ -287,14 +301,17 @@
                   </h1>
                 </div>
                 <div class="flex flex-wrap justify-center gap-4">
-                  <button
-                    class="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-xl h-10 px-4 @[480px]:h-12 @[480px]:px-5 bg-[#80e619] text-[#141811] text-sm font-bold leading-normal tracking-[0.015em] @[480px]:text-base @[480px]:font-bold @[480px]:leading-normal @[480px]:tracking-[0.015em]"
+                  <a
+                    href="https://wa.me/48530846928"
+                    target="_blank"
+                    class="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-xl h-10 px-4 @[480px]:h-12 @[480px]:px-5 bg-[#80e619] text-[#141811] text-sm font-bold leading-normal tracking-[0.015em] @[480px]:text-base @[480px]:font-bold @[480px]:leading-normal @[480px]:tracking-[0.015em] no-underline"
                   >
                     <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp" class="w-5 h-5 mr-2">
                     <span class="truncate" data-en="Contact Us via WhatsApp" data-pl="Skontaktuj Się przez WhatsApp">Contact Us via WhatsApp</span>
-                  </button>
-                  <button
-                    class="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-xl h-10 px-4 @[480px]:h-12 @[480px]:px-5 bg-[#80e619] text-[#141811] text-sm font-bold leading-normal tracking-[0.015em] @[480px]:text-base @[480px]:font-bold @[480px]:leading-normal @[480px]:tracking-[0.015em]"
+                  </a>
+                  <a
+                    href="mailto:info@kartaginafoods.pl"
+                    class="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-xl h-10 px-4 @[480px]:h-12 @[480px]:px-5 bg-[#80e619] text-[#141811] text-sm font-bold leading-normal tracking-[0.015em] @[480px]:text-base @[480px]:font-bold @[480px]:leading-normal @[480px]:tracking-[0.015em] no-underline"
                   >
                     <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" viewBox="0 0 256 256" class="mr-2">
                       <path
@@ -302,7 +319,7 @@
                       ></path>
                     </svg>
                     <span class="truncate" data-en="Contact Us via Email" data-pl="Skontaktuj Się przez Email">Contact Us via Email</span>
-                  </button>
+                  </a>
                 </div>
               </div>
             </div>
@@ -312,7 +329,7 @@
           <div class="flex max-w-[960px] flex-1 flex-col">
             <footer class="flex flex-col gap-6 px-5 py-10 text-center @container">
               <div class="flex flex-wrap items-center justify-center gap-6 @[480px]:flex-row @[480px]:justify-around">
-                <a class="text-[#758863] text-base font-normal leading-normal min-w-40" href="index.html" data-en="Our Products" data-pl="Nasze Produkty">Our Products</a>
+                <a class="text-[#758863] text-base font-normal leading-normal min-w-40" href="product.html" data-en="Our Products" data-pl="Nasze Produkty">Our Products</a>
                 <a class="text-[#758863] text-base font-normal leading-normal min-w-40" href="heritage.html" data-en="Heritage" data-pl="Dziedzictwo">Heritage</a>
                 <a class="text-[#758863] text-base font-normal leading-normal min-w-40" href="contact.html" data-en="Contact" data-pl="Kontakt">Contact</a>
               </div>
@@ -392,7 +409,7 @@
 
         // Start slideshow
         if (slideshowImages.length > 0) {
-          setInterval(cycleSlideshow, 5000); // Change image every 5 seconds
+          setInterval(cycleSlideshow, 4000); // Change image every 4 seconds
         } else {
           console.error('No slideshow images found');
         }

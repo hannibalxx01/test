@@ -35,3 +35,9 @@
   position: relative;
 }
 </style>
+
+.lugrasimo-regular {
+  font-family: "Lugrasimo", cursive;
+  font-weight: 400;
+  font-style: normal;
+}
