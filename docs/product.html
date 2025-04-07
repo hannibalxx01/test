@@ -15,107 +15,189 @@
     <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
     <link rel="stylesheet" href="assets/css/styles.css">
     <style>
-      .chemlali-container {
-        background: url('https://www.transparenttextures.com/patterns/paper-fibers.png') repeat, #fff;
-        border-radius: 1.5rem;
-        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
-        padding: 2rem;
-        margin: 2rem 0;
+      /* Catalogue Alignment */
+      .catalogue-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+        gap: 2rem;
+        align-items: start;
+      }
+      .catalogue-item {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+        height: 100%;
+      }
+      .catalogue-image {
+        width: 100%;
+        aspect-ratio: 1 / 1;
+        background-size: cover;
+        background-position: center;
+        border-radius: 1rem;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+      }
+      .catalogue-details {
+        flex-grow: 1;
+        display: flex;
+        flex-direction: column;
+        gap: 0.5rem;
+      }
+      .catalogue-button {
+        margin-top: auto;
+      }
+
+      /* Chemlali Section Styling */
+      .chemlali-section {
+        background: linear-gradient(145deg, #f8faf5 0%, #ffffff 100%);
+        border-radius: 2.5rem;
+        padding: 3rem 2.5rem;
+        margin: 3rem 0;
         position: relative;
         overflow: hidden;
+        box-shadow: 0 20px 50px rgba(0, 0, 0, 0.08);
+      }
+      .chemlali-section::before {
+        content: '';
+        position: absolute;
+        top: -30%;
+        left: -30%;
+        width: 160%;
+        height: 160%;
+        background: radial-gradient(circle, rgba(94, 140, 90, 0.1) 0%, transparent 60%);
+        z-index: 0;
       }
       .chemlali-title {
         font-family: 'Lugrasimo', serif;
         color: #2e5e2e;
-        text-transform: uppercase;
-        letter-spacing: 0.1rem;
-        position: relative;
+        font-size: 2.25rem;
+        font-weight: 700;
         text-align: center;
+        position: relative;
+        z-index: 1;
+        margin-bottom: 3rem;
+        text-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
       }
       .chemlali-title::after {
         content: '';
-        width: 100px;
-        height: 3px;
-        background: #d4a017;
+        width: 150px;
+        height: 5px;
+        background: linear-gradient(to right, #d4a017, #5a8c5a);
         position: absolute;
-        bottom: -0.5rem;
+        bottom: -1rem;
         left: 50%;
         transform: translateX(-50%);
+        border-radius: 2px;
       }
-      .trait-grid {
+      .traits-container {
         display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
         gap: 2rem;
+        position: relative;
+        z-index: 1;
       }
       .trait-card {
-        background: radial-gradient(circle, #ffffff 40%, #f0f5f0 100%);
-        border: 3px solid #5a8c5a;
-        border-radius: 1rem;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
+        background: rgba(255, 255, 255, 0.9);
+        border-radius: 1.5rem;
+        padding: 2rem;
         text-align: center;
-        padding: 1.5rem;
         position: relative;
-        overflow: hidden;
-        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+        border: 1px solid rgba(94, 140, 90, 0.2);
       }
-      .trait-card::before {
-        content: '';
-        position: absolute;
-        top: -50%;
-        left: -50%;
-        width: 200%;
-        height: 200%;
-        background: radial-gradient(circle, rgba(212, 160, 23, 0.1) 0%, transparent 70%);
-        z-index: 0;
+      .trait-card:hover {
+        transform: scale(1.05);
+        box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
       }
       .trait-icon {
-        width: 2rem;
-        height: 2rem;
+        width: 3rem;
+        height: 3rem;
         fill: #5a8c5a;
-        margin-bottom: 0.5rem;
-        z-index: 1;
+        margin-bottom: 1rem;
       }
       .trait-name {
         font-family: 'Epilogue', sans-serif;
         font-weight: 700;
+        font-size: 1.25rem;
         color: #2e5e2e;
-        z-index: 1;
-        text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.8);
+        margin-bottom: 0.75rem;
       }
       .trait-desc {
-        font-size: 0.9rem;
-        color: #333;
-        z-index: 1;
+        font-size: 0.95rem;
+        color: #444;
+        line-height: 1.5;
       }
-      .decor-line {
-        position: absolute;
-        width: 150%;
-        height: 1px;
-        background: linear-gradient(to right, transparent, #d4a017, transparent);
-        top: 50%;
-        left: -25%;
-        transform: rotate(-15deg);
-        z-index: 0;
-        opacity: 0.5;
+      .uses-container {
+        margin-top: 3.5rem;
+        padding-top: 2.5rem;
+        border-top: 2px dashed #d4a017;
+      }
+      .uses-title {
+        font-family: 'Lugrasimo', serif;
+        color: #2e5e2e;
+        font-size: 1.75rem;
+        text-align: center;
+        margin-bottom: 2.5rem;
+      }
+      .uses-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 1.5rem;
+      }
+      .use-card {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        padding: 1.5rem;
+        background: rgba(255, 255, 255, 0.8);
+        border-radius: 1rem;
+        transition: background 0.3s ease;
+      }
+      .use-card:hover {
+        background: rgba(255, 255, 255, 1);
+      }
+      .use-icon {
+        width: 2.5rem;
+        height: 2.5rem;
+        fill: #5a8c5a;
+        margin-bottom: 0.75rem;
+      }
+      .use-name {
+        font-family: 'Epilogue', sans-serif;
+        font-weight: 600;
+        font-size: 1.1rem;
+        color: #2e5e2e;
       }
       @media (max-width: 640px) {
-        .chemlali-container {
-          padding: 1rem;
+        .catalogue-grid {
+          grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+        }
+        .chemlali-section {
+          padding: 2rem 1.5rem;
         }
         .chemlali-title {
-          font-size: 1.5rem;
+          font-size: 1.75rem;
+        }
+        .traits-container {
+          grid-template-columns: 1fr;
         }
         .trait-card {
-          padding: 1rem;
+          padding: 1.5rem;
         }
         .trait-name {
-          font-size: 1rem;
+          font-size: 1.1rem;
         }
         .trait-desc {
-          font-size: 0.8rem;
+          font-size: 0.9rem;
+        }
+        .uses-title {
+          font-size: 1.5rem;
+        }
+        .uses-grid {
+          grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+        }
+        .use-name {
+          font-size: 1rem;
         }
       }
     </style>
@@ -189,117 +271,147 @@
                 </div>
               </div>
             </div>
-            <!-- Catalogue Section -->
+            <!-- Catalogue Section with Fixed Customize Image -->
             <div class="flex flex-col gap-10 px-4 py-10 @container">
               <h2 class="text-[#141811] text-[22px] font-bold leading-tight tracking-[-0.015em]" data-en="Our Catalogue" data-pl="Nasz Katalog">Our Catalogue</h2>
-              <div class="grid grid-cols-[repeat(auto-fit,minmax(200px,1fr))] gap-6">
-                <div class="flex flex-col gap-3">
-                  <div
-                    class="w-full bg-center bg-no-repeat aspect-square bg-cover rounded-xl"
-                    style='background-image: url("assets/images/bottle.jpeg");'
-                  ></div>
-                  <div>
+              <div class="catalogue-grid">
+                <div class="catalogue-item">
+                  <div class="catalogue-image" style='background-image: url("assets/images/bottle.jpeg");'></div>
+                  <div class="catalogue-details">
                     <p class="text-[#141811] text-base font-medium leading-normal" data-en="Chemlali Edition Prestige" data-pl="Chemlali Edition Prestige">Chemlali Edition Prestige</p>
-                    <p
-                      class="text-[#758863] text-sm font-normal leading-normal"
-                      data-en="Smooth and balanced with almond and apple notes. 500ml."
-                      data-pl="Gładka i zrównoważona z nutami migdałów i jabłek. 500ml."
-                    >
+                    <p class="text-[#758863] text-sm font-normal leading-normal" data-en="Smooth and balanced with almond and apple notes. 500ml." data-pl="Gładka i zrównoważona z nutami migdałów i jabłek. 500ml;">
                       Smooth and balanced with almond and apple notes. 500ml.
                     </p>
-                    <a
-                      href="https://wa.me/48530846928?text=Inquiry%20about%20Chemlali%20Edition%20Prestige"
-                      target="_blank"
-                      class="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-xl h-10 px-4 bg-[#80e619] text-[#141811] text-sm font-bold leading-normal tracking-[0.015em] mt-2 no-underline"
-                    >
+                    <a href="https://wa.me/48530846928?text=Inquiry%20about%20Chemlali%20Edition%20Prestige" target="_blank" class="catalogue-button flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-xl h-10 px-4 bg-[#80e619] text-[#141811] text-sm font-bold leading-normal tracking-[0.015em] no-underline">
                       <span class="truncate" data-en="Inquire Now" data-pl="Zapytaj Teraz">Inquire Now</span>
                     </a>
                   </div>
                 </div>
-                <div class="flex flex-col gap-3">
-                  <div
-                    class="w-full bg-center bg-no-repeat aspect-square bg-cover rounded-xl"
-                    style='background-image: url("https://cdn.usegalileo.ai/sdxl10/2926feef-038f-425c-9217-5e3af4286a69.png");'
-                  ></div>
-                  <div>
+                <div class="catalogue-item">
+                  <div class="catalogue-image" style='background-image: url("https://cdn.usegalileo.ai/sdxl10/2926feef-038f-425c-9217-5e3af4286a69.png");'></div>
+                  <div class="catalogue-details">
                     <p class="text-[#141811] text-base font-medium leading-normal" data-en="Chetoui Reserve" data-pl="Chetoui Reserve">Chetoui Reserve</p>
-                    <p
-                      class="text-[#758863] text-sm font-normal leading-normal"
-                      data-en="Vibrant and pungent with grassy undertones. 500ml."
-                      data-pl="Żywa i ostra z trawiastymi nutami. 500ml."
-                    >
+                    <p class="text-[#758863] text-sm font-normal leading-normal" data-en="Vibrant and pungent with grassy undertones. 500ml." data-pl="Żywa i ostra z trawiastymi nutami. 500ml;">
                       Vibrant and pungent with grassy undertones. 500ml.
                     </p>
-                    <a
-                      href="https://wa.me/48530846928?text=Inquiry%20about%20Chetoui%20Reserve"
-                      target="_blank"
-                      class="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-xl h-10 px-4 bg-[#80e619] text-[#141811] text-sm font-bold leading-normal tracking-[0.015em] mt-2 no-underline"
-                    >
+                    <a href="https://wa.me/48530846928?text=Inquiry%20about%20Chetoui%20Reserve" target="_blank" class="catalogue-button flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-xl h-10 px-4 bg-[#80e619] text-[#141811] text-sm font-bold leading-normal tracking-[0.015em] no-underline">
                       <span class="truncate" data-en="Inquire Now" data-pl="Zapytaj Teraz">Inquire Now</span>
                     </a>
                   </div>
                 </div>
-                <div class="flex flex-col gap-3">
-                  <div
-                    class="w-full bg-center bg-no-repeat aspect-square bg-cover rounded-xl"
-                    style='background-image: url("https://cdn.usegalileo.ai/sdxl10/69f29ff3-8252-4e1f-981e-f5dd67b3090d.png");'
-                  ></div>
-                  <div>
+                <div class="catalogue-item">
+                  <div class="catalogue-image" style='background-image: url("https://cdn.usegalileo.ai/sdxl10/69f29ff3-8252-4e1f-981e-f5dd67b3090d.png");'></div>
+                  <div class="catalogue-details">
                     <p class="text-[#141811] text-base font-medium leading-normal" data-en="Coastal Blend" data-pl="Mieszanka Nadmorska">Coastal Blend</p>
-                    <p
-                      class="text-[#758863] text-sm font-normal leading-normal"
-                      data-en="Rich in antioxidants with subtle herb aromas. 500ml."
-                      data-pl="Bogata w antyoksydanty z subtelnymi ziołowymi aromatami. 500ml."
-                    >
+                    <p class="text-[#758863] text-sm font-normal leading-normal" data-en="Rich in antioxidants with subtle herb aromas. 500ml." data-pl="Bogata w antyoksydanty z subtelnymi ziołowymi aromatami. 500ml;">
                       Rich in antioxidants with subtle herb aromas. 500ml.
                     </p>
-                    <a
-                      href="https://wa.me/48530846928?text=Inquiry%20about%20Coastal%20Blend"
-                      target="_blank"
-                      class="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-xl h-10 px-4 bg-[#80e619] text-[#141811] text-sm font-bold leading-normal tracking-[0.015em] mt-2 no-underline"
-                    >
+                    <a href="https://wa.me/48530846928?text=Inquiry%20about%20Coastal%20Blend" target="_blank" class="catalogue-button flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-xl h-10 px-4 bg-[#80e619] text-[#141811] text-sm font-bold leading-normal tracking-[0.015em] no-underline">
                       <span class="truncate" data-en="Inquire Now" data-pl="Zapytaj Teraz">Inquire Now</span>
+                    </a>
+                  </div>
+                </div>
+                <div class="catalogue-item">
+                  <div class="catalogue-image" style='background-image: url("https://via.placeholder.com/300x300.png?text=Customize+Your+Own+Bottle");'></div>
+                  <div class="catalogue-details">
+                    <p class="text-[#141811] text-base font-medium leading-normal" data-en="Customize Your Own" data-pl="Spersonalizuj Swoją Własną">Customize Your Own</p>
+                    <p class="text-[#758863] text-sm font-normal leading-normal" data-en="Design your unique olive oil bottle. 250ml - 1L." data-pl="Zaprojektuj swoją unikalną butelkę oliwy. 250ml - 1L;">
+                      Design your unique olive oil bottle. 250ml - 1L.
+                    </p>
+                    <a href="https://wa.me/48530846928?text=I%20want%20to%20customize%20my%20own%20olive%20oil%20bottle.%20Please%20provide%20details%20on%20options." target="_blank" class="catalogue-button flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-xl h-10 px-4 bg-[#80e619] text-[#141811] text-sm font-bold leading-normal tracking-[0.015em] no-underline">
+                      <span class="truncate" data-en="Customize Now" data-pl="Spersonalizuj Teraz">Customize Now</span>
                     </a>
                   </div>
                 </div>
               </div>
             </div>
-            <!-- Chemlali Characteristics Section -->
-            <div class="chemlali-container @container">
-              <h1 class="chemlali-title text-2xl font-bold leading-tight tracking-[0.015em] @[480px]:text-3xl" data-en="Chemlali Olive Oil Characteristics" data-pl="Charakterystyka Oliwy Chemlali">
+            <!-- Chemlali Characteristics Section with Improved Icons -->
+            <div class="chemlali-section @container">
+              <h1 class="chemlali-title" data-en="Chemlali Olive Oil Characteristics" data-pl="Charakterystyka Oliwy Chemlali">
                 Chemlali Olive Oil Characteristics
               </h1>
-              <div class="trait-grid">
+              <div class="traits-container">
                 <div class="trait-card">
                   <svg class="trait-icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M12 2a10 10 0 0 0-10 10 10 10 0 0 0 10 10 10 10 0 0 0 10-10A10 10 0 0 0 12 2zm0 18a8 8 0 0 1-8-8 8 8 0 0 1 8-8 8 8 0 0 1 8 8 8 8 0 0 1-8 8zm-1-13h2v6h-2zm0 8h2v2h-2z"/>
+                    <path d="M12 2c-1.66 0-3 1.34-3 3 0 .79.31 1.5.81 2.03C8.07 7.57 7 8.98 7 10.5c0 2.21 1.79 4 4 4h2c2.21 0 4-1.79 4-4 0-1.52-1.07-2.93-2.81-3.47.5-.53.81-1.24.81-2.03 0-1.66-1.34-3-3-3zm-1 12h2v2h-2v-2zm0-4h2V8h-2v2zm0-6h2v2h-2V4zM5 18h14v2H5v-2z"/>
                   </svg>
-                  <div class="trait-name text-base font-bold" data-en="Flavor Profile" data-pl="Profil Smakowy">Flavor Profile</div>
-                  <p class="trait-desc" data-en="Smooth, with almond and apple notes" data-pl="Gładki, z nutami migdałów i jabłek">Smooth, with almond and apple notes</p>
+                  <div class="trait-name" data-en="Flavor Profile" data-pl="Profil Smakowy">Flavor Profile</div>
+                  <p class="trait-desc" data-en="Mild, buttery with almond, green apple, and a hint of pepper" data-pl="Łagodny, maślany z nutami migdałów, zielonego jabłka i odrobiną pieprzu">
+                    Mild, buttery with almond, green apple, and a hint of pepper
+                  </p>
                 </div>
                 <div class="trait-card">
                   <svg class="trait-icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z"/>
+                    <path d="M12 2c-5.52 0-10 4.48-10 10s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 16.5v-9l6 4.5-6 4.5zm8-6.5h-2v-2h2v2zm0-4h-2V6h2v2z"/>
                   </svg>
-                  <div class="trait-name text-base font-bold" data-en="Polyphenol Rich" data-pl="Bogata w Polifenole">Polyphenol Rich</div>
-                  <p class="trait-desc" data-en="High antioxidant content" data-pl="Wysoka zawartość antyoksydantów">High antioxidant content</p>
+                  <div class="trait-name" data-en="Polyphenol Content" data-pl="Zawartość Polifenoli">Polyphenol Content</div>
+                  <p class="trait-desc" data-en="Moderate, 200-300 mg/kg, boosts heart health" data-pl="Umiarkowana, 200-300 mg/kg, wspiera zdrowie serca">
+                    Moderate, 200-300 mg/kg, boosts heart health
+                  </p>
                 </div>
                 <div class="trait-card">
                   <svg class="trait-icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 14.5v-9l6 4.5-6 4.5z"/>
+                    <path d="M12 2c-2.21 0-4 1.79-4 4s1.79 4 4 4 4-1.79 4-4-1.79-4-4-4zm0 6c-1.1 0-2-.9-2-2s.9-2 2-2 2 .9 2 2-.9 2-2 2zm-7 12v-2h14v2H5zm7-6c-2.76 0-5 2.24-5 5h10c0-2.76-2.24-5-5-5z"/>
                   </svg>
-                  <div class="trait-name text-base font-bold" data-en="Balanced Acidity" data-pl="Zrównoważona Kwasowość">Balanced Acidity</div>
-                  <p class="trait-desc" data-en="Low acidity for smooth taste" data-pl="Niska kwasowość dla gładkiego smaku">Low acidity for smooth taste</p>
+                  <div class="trait-name" data-en="Acidity Level" data-pl="Poziom Kwasowości">Acidity Level</div>
+                  <p class="trait-desc" data-en="Ultra-low, <0.3%, for a silky finish" data-pl="Bardzo niski, <0,3%, dla jedwabistego wykończenia">
+                    Ultra-low, <0.3%, for a silky finish
+                  </p>
                 </div>
                 <div class="trait-card">
                   <svg class="trait-icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M12 2a10 10 0 0 0-10 10 10 10 0 0 0 10 10 10 10 0 0 0 10-10A10 10 0 0 0 12 2zm-1 5h2v6h-2zm0 8h2v2h-2z"/>
+                    <path d="M12 2c-1.66 0-3 1.34-3 3v2c0 1.66 1.34 3 3 3s3-1.34 3-3V5c0-1.66-1.34-3-3-3zm-1 14h2v2h-2v-2zm-7-2h16v2H4v-2zm8-4c-2.21 0-4 1.79-4 4h8c0-2.21-1.79-4-4-4z"/>
                   </svg>
-                  <div class="trait-name text-base font-bold" data-en="Versatility" data-pl="Wszechstronność">Versatility</div>
-                  <p class="trait-desc" data-en="Ideal for cooking and dressing" data-pl="Idealna do gotowania i sałatek">Ideal for cooking and dressing</p>
+                  <div class="trait-name" data-en="Texture" data-pl="Tekstura">Texture</div>
+                  <p class="trait-desc" data-en="Light, velvety with smooth consistency" data-pl="Lekka, aksamitna o gładkiej konsystencji">
+                    Light, velvety with smooth consistency
+                  </p>
                 </div>
               </div>
-              <div class="decor-line"></div>
+              <!-- Best Uses Subsection with Improved Icons -->
+              <div class="uses-container">
+                <h2 class="uses-title" data-en="Best Uses for Chemlali Olive Oil" data-pl="Najlepsze Zastosowania Oliwy Chemlali">
+                  Best Uses for Chemlali Olive Oil
+                </h2>
+                <div class="uses-grid">
+                  <div class="use-card">
+                    <svg class="use-icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm-2 12H6v-2h12v2zm-6-4c-1.66 0-3-1.34-3-3h6c0 1.66-1.34 3-3 3z"/>
+                    </svg>
+                    <div class="use-name" data-en="Salad Dressings" data-pl="Sos do Sałatek">Salad Dressings</div>
+                  </div>
+                  <div class="use-card">
+                    <svg class="use-icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M19 2h-1V1a1 1 0 0 0-2 0v1H8V1a1 1 0 0 0-2 0v1H5a5 5 0 0 0-5 5v14a5 5 0 0 0 5 5h14a5 5 0 0 0 5-5V7a5 5 0 0 0-5-5zm3 19a3 3 0 0 1-3 3H5a3 3 0 0 1-3-3V10h20v11zm-8-9h-4v-2h4v2z"/>
+                    </svg>
+                    <div class="use-name" data-en="Baking" data-pl="Pieczenie">Baking</div>
+                  </div>
+                  <div class="use-card">
+                    <svg class="use-icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M12 2c-1.66 0-3 1.34-3 3v6c0 1.66 1.34 3 3 3s3-1.34 3-3V5c0-1.66-1.34-3-3-3zm-1 12h2v2h-2v-2zm-7-2h16v2H4v-2z"/>
+                    </svg>
+                    <div class="use-name" data-en="Drizzling Over Dishes" data-pl="Skrapianie Potraw">Drizzling Over Dishes</div>
+                  </div>
+                  <div class="use-card">
+                    <svg class="use-icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M21 5h-6l1.41-1.41a1 1 0 0 0-1.41-1.41L12 5.59 9 2.59A1 1 0 0 0 7.59 4L9 5H3a1 1 0 0 0-1 1v12a1 1 0 0 0 1 1h18a1 1 0 0 0 1-1V6a1 1 0 0 0-1-1zm-2 10H5v-2h14v2z"/>
+                    </svg>
+                    <div class="use-name" data-en="Sautéing" data-pl="Smażenie">Sautéing</div>
+                  </div>
+                  <div class="use-card">
+                    <svg class="use-icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm-6 10c-1.66 0-3-1.34-3-3h6c0 1.66-1.34 3-3 3z"/>
+                    </svg>
+                    <div class="use-name" data-en="Marinades" data-pl="Marynaty">Marinades</div>
+                  </div>
+                  <div class="use-card">
+                    <svg class="use-icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm-6 12h-4v-2h4v2zm-6-4h8v-2H8v2z"/>
+                    </svg>
+                    <div class="use-name" data-en="Dipping Bread" data-pl="Maczanie Chleba">Dipping Bread</div>
+                  </div>
+                </div>
+              </div>
             </div>
             <!-- Contact Section -->
             <div class="@container">
