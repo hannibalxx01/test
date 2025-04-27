@@ -14,6 +14,12 @@
     <link rel="icon" type="image/x-icon" href="data:image/x-icon;base64," />
     <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
     <link rel="stylesheet" href="assets/css/styles.css">
+    <style>
+      /* Center the video container */
+      .video-container {
+        margin: 0 auto;
+      }
+    </style>
   </head>
   <body>
     <div class="relative flex size-full min-h-screen flex-col bg-white group/design-root overflow-x-hidden" style='font-family: Epilogue, "Noto Sans", sans-serif;'>
@@ -266,7 +272,7 @@
                   </div>
                 </div>
                 <div class="flex flex-1 flex-col py-3">
-                  <p class="text-[#141811] text-base font-medium leading-normal" data-en="Organic Delivery" data-pl="Organiczna Dostawa">Organic Delivery</p>
+                  <p class="text-[#141811] text-base font-medium leading-normal" data-en="Delivery" data-pl="Organiczna Dostawa">Organic Delivery</p>
                   <p
                     class="text-[#758863] text-base font-normal leading-normal"
                     data-en="We deliver your organic olive oil with eco-friendly methods, certified to maintain its 100% bio integrity, ready to enhance your creations."
@@ -276,9 +282,9 @@
                   </p>
                 </div>
               </div>
-              <!-- YouTube Video Section (No Title) -->
+              <!-- YouTube Video Section (Centered) -->
               <div class="flex flex-col gap-4 mt-6">
-                <div class="w-full max-w-[720px] aspect-video">
+                <div class="w-full max-w-[720px] aspect-video video-container">
                   <iframe
                     class="w-full h-full rounded-xl"
                     src="https://www.youtube.com/embed/jVE9jp-U8BY"
