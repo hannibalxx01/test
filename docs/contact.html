@@ -10,10 +10,62 @@
       onload="this.rel='stylesheet'"
       href="https://fonts.googleapis.com/css2?display=swap&family=Epilogue%3Awght%40400%3B500%3B700%3B900&family=Noto+Sans%3Awght%40400%3B500%3B700%3B900&family=Amiri:wght@400;700&family=Lugrasimo&display=swap"
     />
+    <!-- Add Flag Icons CSS for language flags -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flag-icons/css/flag-icons.min.css" />
     <title>Laperla Olive Oil - Contact</title>
     <link rel="icon" type="image/x-icon" href="data:image/x-icon;base64," />
     <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
     <link rel="stylesheet" href="assets/css/styles.css">
+    <style>
+      /* Dropdown styles */
+      .language-dropdown {
+        position: relative;
+      }
+      .language-dropdown-button {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        padding: 0.5rem 1rem;
+        background-color: #f2f4f0;
+        border-radius: 0.5rem;
+        cursor: pointer;
+        font-size: 0.875rem;
+        font-weight: 500;
+        color: #141811;
+      }
+      .language-dropdown-menu {
+        position: absolute;
+        top: 100%;
+        right: 0;
+        margin-top: 0.5rem;
+        background-color: white;
+        border: 1px solid #e0e5dc;
+        border-radius: 0.5rem;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        display: none;
+        z-index: 10;
+      }
+      .language-dropdown-menu.show {
+        display: block;
+      }
+      .language-option {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        padding: 0.5rem 1rem;
+        cursor: pointer;
+        font-size: 0.875rem;
+        color: #141811;
+      }
+      .language-option:hover {
+        background-color: #f2f4f0;
+      }
+      /* Ensure Arabic text is right-to-left */
+      [dir="rtl"] {
+        direction: rtl;
+        font-family: 'Amiri', serif;
+      }
+    </style>
   </head>
   <body>
     <div class="relative flex size-full min-h-screen flex-col bg-white group/design-root overflow-x-hidden" style='font-family: Epilogue, "Noto Sans", sans-serif;'>
@@ -36,20 +88,51 @@
               </svg>
             </div>
             <div class="flex flex-col">
-                <h2 class="text-[#141811] text-2xl font-bold leading-tight tracking-[-0.015em]" style="font-family: 'Lugrasimo', serif; font-weight: 1000; -webkit-font-smoothing: antialiased;">Laperla</h2>              <p class="text-[#758863] text-xs" data-en="Your premium olive oil partner" data-pl="Twój partner w premium oliwie">Your premium olive oil partner</p>
+              <h2 class="text-[#141811] text-2xl font-bold leading-tight tracking-[-0.015em]" style="font-family: 'Lugrasimo', serif; font-weight: 1000; -webkit-font-smoothing: antialiased;">Laperla</h2>
+              <p class="text-[#758863] text-xs" data-en="Your premium olive oil partner" data-pl="Twój partner w premium oliwie" data-it="Il tuo partner per l'olio d'oliva premium" data-es="Tu socio en aceite de oliva premium" data-pt="Seu parceiro em azeite de oliva premium" data-ar="شريكك في زيت الزيتون الممتاز">Your premium olive oil partner</p>
             </div>
           </a>
           <div class="flex flex-1 justify-end gap-8">
             <div class="flex items-center gap-9">
-                <a class="text-[#141811] text-sm font-medium leading-normal" href="home.html" data-en="Home" data-pl="Strona Główna">Home</a>
-                <a class="text-[#141811] text-sm font-medium leading-normal" href="product.html" data-en="Our Products" data-pl="Nasze Produkty">Our Products</a>
-                <a class="text-[#141811] text-sm font-medium leading-normal" href="heritage.html" data-en="Heritage" data-pl="Dziedzictwo">Heritage</a>
-                <a class="text-[#141811] text-sm font-medium leading-normal" href="contact.html" data-en="Contact" data-pl="Kontakt">Contact</a>
+              <a class="text-[#141811] text-sm font-medium leading-normal" href="home.html" data-en="Home" data-pl="Strona Główna" data-it="Home" data-es="Inicio" data-pt="Início" data-ar="الرئيسية">Home</a>
+              <a class="text-[#141811] text-sm font-medium leading-normal" href="product.html" data-en="Our Products" data-pl="Nasze Produkty" data-it="I nostri prodotti" data-es="Nuestros productos" data-pt="Nossos produtos" data-ar="منتجاتنا">Our Products</a>
+              <a class="text-[#141811] text-sm font-medium leading-normal" href="heritage.html" data-en="Heritage" data-pl="Dziedzictwo" data-it="Eredità" data-es="Patrimonio" data-pt="Herança" data-ar="التراث">Heritage</a>
+              <a class="text-[#141811] text-sm font-medium leading-normal" href="contact.html" data-en="Contact" data-pl="Kontakt" data-it="Contatti" data-es="Contacto" data-pt="Contato" data-ar="اتصل بنا">Contact</a>
+            </div>
+            <div class="language-dropdown">
+              <button class="language-dropdown-button">
+                <span class="fi fi-us"></span>
+                <span class="selected-language">English</span>
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                </svg>
+              </button>
+              <div class="language-dropdown-menu">
+                <div class="language-option" data-lang="en">
+                  <span class="fi fi-us"></span>
+                  English
+                </div>
+                <div class="language-option" data-lang="pl">
+                  <span class="fi fi-pl"></span>
+                  Polski
+                </div>
+                <div class="language-option" data-lang="it">
+                  <span class="fi fi-it"></span>
+                  Italiano
+                </div>
+                <div class="language-option" data-lang="es">
+                  <span class="fi fi-es"></span>
+                  Español
+                </div>
+                <div class="language-option" data-lang="pt">
+                  <span class="fi fi-pt"></span>
+                  Português
+                </div>
+                <div class="language-option" data-lang="ar" dir="rtl">
+                  <span class="fi fi-ma"></span>
+                  العربية
+                </div>
               </div>
-            <div class="flex items-center gap-2">
-              <a href="#" class="language-link text-[#141811] text-sm font-medium" data-lang="en">EN</a>
-              <span class="text-[#141811]">|</span>
-              <a href="#" class="language-link text-[#141811] text-sm font-medium" data-lang="pl">PL</a>
             </div>
           </div>
         </header>
@@ -61,6 +144,10 @@
                   class="text-[#141811] tracking-light text-[32px] font-bold leading-tight @[480px]:text-4xl @[480px]:font-black @[480px]:leading-tight @[480px]:tracking-[-0.033em] max-w-[720px]"
                   data-en="Contact Us"
                   data-pl="Skontaktuj Się z Nami"
+                  data-it="Contattaci"
+                  data-es="Contáctanos"
+                  data-pt="Contate-nos"
+                  data-ar="اتصل بنا"
                 >
                   Contact Us
                 </h1>
@@ -68,6 +155,10 @@
                   class="text-[#141811] text-base font-normal leading-normal max-w-[720px]"
                   data-en="We’re here to assist you with all your olive oil needs. Reach out via WhatsApp or email, and let’s start the conversation!"
                   data-pl="Jesteśmy tu, aby pomóc Ci ze wszystkimi potrzebami dotyczącymi oliwy. Skontaktuj się przez WhatsApp lub email, i zacznijmy rozmowę!"
+                  data-it="Siamo qui per assisterti con tutte le tue esigenze di olio d'oliva. Contattaci via WhatsApp o email, e iniziamo la conversazione!"
+                  data-es="Estamos aquí para ayudarte con todas tus necesidades de aceite de oliva. ¡Contáctanos vía WhatsApp o email, y empecemos la conversación!"
+                  data-pt="Estamos aqui para ajudá-lo com todas as suas necessidades de azeite de oliva. Entre em contato via WhatsApp ou email, e vamos começar a conversa!"
+                  data-ar="نحن هنا لمساعدتك في جميع احتياجاتك من زيت الزيتون. تواصل معنا عبر واتساب أو البريد الإلكتروني، ودعنا نبدأ الحوار!"
                 >
                   We’re here to assist you with all your olive oil needs. Reach out via WhatsApp or email, and let’s start the conversation!
                 </p>
@@ -80,7 +171,7 @@
                     class="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-xl h-10 px-4 @[480px]:h-12 @[480px]:px-5 bg-[#80e619] text-[#141811] text-sm font-bold leading-normal tracking-[0.015em] @[480px]:text-base @[480px]:font-bold @[480px]:leading-normal @[480px]:tracking-[0.015em] no-underline"
                   >
                     <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp" class="w-5 h-5 mr-2">
-                    <span class="truncate" data-en="Contact via WhatsApp" data-pl="Skontaktuj się przez WhatsApp">Contact via WhatsApp</span>
+                    <span class="truncate" data-en="Contact via WhatsApp" data-pl="Skontaktuj się przez WhatsApp" data-it="Contattaci via WhatsApp" data-es="Contáctanos vía WhatsApp" data-pt="Contate-nos via WhatsApp" data-ar="اتصل بنا عبر واتساب">Contact via WhatsApp</span>
                   </a>
                   <a
                     href="mailto:info@kartaginafoods.pl"
@@ -91,7 +182,7 @@
                         d="M216,40H40A16,16,0,0,0,24,56V200a16,16,0,0,0,16,16H216a16,16,0,0,0,16-16V56A16,16,0,0,0,216,40Zm0,160H40V56H216V200ZM184,96a8,8,0,0,1-8,8H80a8,8,0,0,1,0-16h96A8,8,0,0,1,184,96Zm0,32a8,8,0,0,1-8,8H80a8,8,0,0,1,0-16h96A8,8,0,0,1,184,128Zm0,32a8,8,0,0,1-8,8H80a8,8,0,0,1,0-16h96A8,8,0,0,1,184,160Z"
                       ></path>
                     </svg>
-                    <span class="truncate" data-en="Contact via Email" data-pl="Skontaktuj się przez Email">Contact via Email</span>
+                    <span class="truncate" data-en="Contact via Email" data-pl="Skontaktuj się przez Email" data-it="Contattaci via Email" data-es="Contáctanos vía Email" data-pt="Contate-nos via Email" data-ar="اتصل بنا عبر البريد الإلكتروني">Contact via Email</span>
                   </a>
                 </div>
                 <div class="flex flex-col gap-2">
@@ -99,15 +190,12 @@
                     class="text-[#758863] text-base font-normal leading-normal"
                     data-en="Phone: +48 530 846 928"
                     data-pl="Telefon: +48 530 846 928"
+                    data-it="Telefono: +48 530 846 928"
+                    data-es="Teléfono: +48 530 846 928"
+                    data-pt="Telefone: +48 530 846 928"
+                    data-ar="الهاتف: +48 530 846 928"
                   >
                     Phone: +48 530 846 928
-                  </p>
-                  <p
-                    class="text-[#758863] text-base font-normal leading-normal"
-                    data-en="Email: info@kartaginafoods.pl"
-                    data-pl="Email: info@kartaginafoods.pl"
-                  >
-                    Email: info@kartaginafoods.pl
                   </p>
                 </div>
               </div>
@@ -117,12 +205,12 @@
         <footer class="flex justify-center">
           <div class="flex max-w-[960px] flex-1 flex-col">
             <footer class="flex flex-col gap-6 px-5 py-10 text-center @container">
-                <div class="flex flex-wrap items-center justify-center gap-6 @[480px]:flex-row @[480px]:justify-around">
-                    <a class="text-[#758863] text-base font-normal leading-normal min-w-40" href="home.html" data-en="Home" data-pl="Strona Główna">Home</a>
-                    <a class="text-[#758863] text-base font-normal leading-normal min-w-40" href="product.html" data-en="Our Products" data-pl="Nasze Produkty">Our Products</a>
-                    <a class="text-[#758863] text-base font-normal leading-normal min-w-40" href="heritage.html" data-en="Heritage" data-pl="Dziedzictwo">Heritage</a>
-                    <a class="text-[#758863] text-base font-normal leading-normal min-w-40" href="contact.html" data-en="Contact" data-pl="Kontakt">Contact</a>
-                  </div>
+              <div class="flex flex-wrap items-center justify-center gap-6 @[480px]:flex-row @[480px]:justify-around">
+                <a class="text-[#758863] text-base font-normal leading-normal min-w-40" href="home.html" data-en="Home" data-pl="Strona Główna" data-it="Home" data-es="Inicio" data-pt="Início" data-ar="الرئيسية">Home</a>
+                <a class="text-[#758863] text-base font-normal leading-normal min-w-40" href="product.html" data-en="Our Products" data-pl="Nasze Produkty" data-it="I nostri prodotti" data-es="Nuestros productos" data-pt="Nossos produtos" data-ar="منتجاتنا">Our Products</a>
+                <a class="text-[#758863] text-base font-normal leading-normal min-w-40" href="heritage.html" data-en="Heritage" data-pl="Dziedzictwo" data-it="Eredità" data-es="Patrimonio" data-pt="Herança" data-ar="التراث">Heritage</a>
+                <a class="text-[#758863] text-base font-normal leading-normal min-w-40" href="contact.html" data-en="Contact" data-pl="Kontakt" data-it="Contatti" data-es="Contacto" data-pt="Contato" data-ar="اتصل بنا">Contact</a>
+              </div>
               <div class="flex flex-wrap justify-center gap-4">
                 <a href="https://instagram.com/yourprofile" target="_blank">
                   <div class="text-[#758863]" data-icon="InstagramLogo" data-size="24px" data-weight="regular">
@@ -152,7 +240,7 @@
                   </div>
                 </a>
               </div>
-              <p class="text-[#758863] text-base font-normal leading-normal" data-en="© 2025 Laperla. All rights reserved." data-pl="© 2023 Laperla. Wszelkie prawa zastrzeżone.">
+              <p class="text-[#758863] text-base font-normal leading-normal" data-en="© 2025 Laperla. All rights reserved." data-pl="© 2025 Laperla. Wszelkie prawa zastrzeżone." data-it="© 2025 Laperla. Tutti i diritti riservati." data-es="© 2025 Laperla. Todos los derechos reservados." data-pt="© 2025 Laperla. Todos os direitos reservados." data-ar="© 2025 لابيرلا. جميع الحقوق محفوظة.">
                 © 2025 Laperla. All rights reserved.
               </p>
             </footer>
@@ -163,27 +251,48 @@
 
     <script>
       document.addEventListener('DOMContentLoaded', () => {
-        const translatableElements = document.querySelectorAll('[data-en][data-pl]');
-        const languageLinks = document.querySelectorAll('.language-link');
+        const translatableElements = document.querySelectorAll('[data-en][data-pl][data-it][data-es][data-pt][data-ar]');
+        const languageButton = document.querySelector('.language-dropdown-button');
+        const languageMenu = document.querySelector('.language-dropdown-menu');
+        const languageOptions = document.querySelectorAll('.language-option');
+        const selectedLanguageSpan = document.querySelector('.selected-language');
+        const flagSpan = languageButton.querySelector('.fi');
 
         function updateLanguage(lang) {
+          // Update text content
           translatableElements.forEach(element => {
             element.textContent = element.getAttribute(`data-${lang}`);
           });
-          languageLinks.forEach(link => {
-            if (link.getAttribute('data-lang') === lang) {
-              link.classList.add('font-bold', 'underline');
-            } else {
-              link.classList.remove('font-bold', 'underline');
-            }
-          });
+
+          // Update selected language display
+          const selectedOption = document.querySelector(`.language-option[data-lang="${lang}"]`);
+          selectedLanguageSpan.textContent = selectedOption.textContent.trim();
+          flagSpan.className = `fi fi-${lang === 'ar' ? 'ma' : lang}`;
+
+          // Update direction for Arabic
+          document.body.setAttribute('dir', lang === 'ar' ? 'rtl' : 'ltr');
+
+          // Close dropdown
+          languageMenu.classList.remove('show');
         }
 
-        languageLinks.forEach(link => {
-          link.addEventListener('click', (e) => {
-            e.preventDefault();
-            updateLanguage(link.getAttribute('data-lang'));
+        // Toggle dropdown
+        languageButton.addEventListener('click', () => {
+          languageMenu.classList.toggle('show');
+        });
+
+        // Handle language selection
+        languageOptions.forEach(option => {
+          option.addEventListener('click', () => {
+            updateLanguage(option.getAttribute('data-lang'));
           });
+        });
+
+        // Close dropdown when clicking outside
+        document.addEventListener('click', (e) => {
+          if (!languageButton.contains(e.target) && !languageMenu.contains(e.target)) {
+            languageMenu.classList.remove('show');
+          }
         });
 
         // Set initial language to English
