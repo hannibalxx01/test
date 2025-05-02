@@ -6,10 +6,12 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
       rel="stylesheet"
-      as="style"
+      as "style"
       onload="this.rel='stylesheet'"
       href="https://fonts.googleapis.com/css2?display=swap&family=Epilogue%3Awght%40400%3B500%3B700%3B900&family=Noto+Sans%3Awght%40400%3B500%3B700%3B900&family=Amiri:wght@400;700&family=Lugrasimo&display=swap"
     />
+    <!-- Add Flag Icons CSS for language flags -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flag-icons/css/flag-icons.min.css" />
     <title>Laperla Olive Oil - Home</title>
     <link rel="icon" type="image/x-icon" href="data:image/x-icon;base64," />
     <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
@@ -18,6 +20,53 @@
       /* Center the video container */
       .video-container {
         margin: 0 auto;
+      }
+      /* Dropdown styles */
+      .language-dropdown {
+        position: relative;
+      }
+      .language-dropdown-button {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        padding: 0.5rem 1rem;
+        background-color: #f2f4f0;
+        border-radius: 0.5rem;
+        cursor: pointer;
+        font-size: 0.875rem;
+        font-weight: 500;
+        color: #141811;
+      }
+      .language-dropdown-menu {
+        position: absolute;
+        top: 100%;
+        right: 0;
+        margin-top: 0.5rem;
+        background-color: white;
+        border: 1px solid #e0e5dc;
+        border-radius: 0.5rem;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        display: none;
+        z-index: 10;
+      }
+      .language-dropdown-menu.show {
+        display: block;
+      }
+      .language-option {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        padding: 0.5rem 1rem;
+        cursor: pointer;
+        font-size: 0.875rem;
+        color: #141811;
+      }
+      .language-option:hover {
+        background-color: #f2f4f0;
+      }
+      /* Ensure Arabic text is right-to-left */
+      [dir="rtl"] {
+        direction: rtl;
       }
     </style>
   </head>
@@ -43,20 +92,50 @@
             </div>
             <div class="flex flex-col">
               <h2 class="text-[#141811] text-2xl font-bold leading-tight tracking-[-0.015em]" style="font-family: 'Lugrasimo', serif; font-weight: 700;">Laperla</h2>
-              <p class="text-[#758863] text-xs" data-en="Your premium olive oil partner" data-pl="Twój partner w premium oliwie">Your premium olive oil partner</p>
+              <p class="text-[#758863] text-xs" data-en="Your premium olive oil partner" data-pl="Twój partner w premium oliwie" data-it="Il tuo partner per l'olio d'oliva premium" data-es="Tu socio en aceite de oliva premium" data-pt="Seu parceiro em azeite de oliva premium" data-ar="شريكك في زيت الزيتون الممتاز">Your premium olive oil partner</p>
             </div>
           </a>
           <div class="flex flex-1 justify-end gap-8">
             <div class="flex items-center gap-9">
-              <a class="text-[#141811] text-sm font-medium leading-normal" href="home.html" data-en="Home" data-pl="Strona Główna">Home</a>
-              <a class="text-[#141811] text-sm font-medium leading-normal" href="product.html" data-en="Our Products" data-pl="Nasze Produkty">Our Products</a>
-              <a class="text-[#141811] text-sm font-medium leading-normal" href="heritage.html" data-en="Heritage" data-pl="Dziedzictwo">Heritage</a>
-              <a class="text-[#141811] text-sm font-medium leading-normal" href="contact.html" data-en="Contact" data-pl="Kontakt">Contact</a>
+              <a class="text-[#141811] text-sm font-medium leading-normal" href="home.html" data-en="Home" data-pl="Strona Główna" data-it="Home" data-es="Inicio" data-pt="Início" data-ar="الرئيسية">Home</a>
+              <a class="text-[#141811] text-sm font-medium leading-normal" href="product.html" data-en="Our Products" data-pl="Nasze Produkty" data-it="I nostri prodotti" data-es="Nuestros productos" data-pt="Nossos produtos" data-ar="منتجاتنا">Our Products</a>
+              <a class="text-[#141811] text-sm font-medium leading-normal" href="heritage.html" data-en="Heritage" data-pl="Dziedzictwo" data-it="Eredità" data-es="Patrimonio" data-pt="Herança" data-ar="التراث">Heritage</a>
+              <a class="text-[#141811] text-sm font-medium leading-normal" href="contact.html" data-en="Contact" data-pl="Kontakt" data-it="Contatti" data-es="Contacto" data-pt="Contato" data-ar="اتصل بنا">Contact</a>
             </div>
-            <div class="flex items-center gap-2">
-              <a href="#" class="language-link text-[#141811] text-sm font-medium" data-lang="en">EN</a>
-              <span class="text-[#141811]">|</span>
-              <a href="#" class="language-link text-[#141811] text-sm font-medium" data-lang="pl">PL</a>
+            <div class="language-dropdown">
+              <button class="language-dropdown-button">
+                <span class="fi fi-us"></span>
+                <span class="selected-language">English</span>
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                </svg>
+              </button>
+              <div class="language-dropdown-menu">
+                <div class="language-option" data-lang="en">
+                  <span class="fi fi-us"></span>
+                  English
+                </div>
+                <div class="language-option" data-lang="pl">
+                  <span class="fi fi-pl"></span>
+                  Polski
+                </div>
+                <div class="language-option" data-lang="it">
+                  <span class="fi fi-it"></span>
+                  Italiano
+                </div>
+                <div class="language-option" data-lang="es">
+                  <span class="fi fi-es"></span>
+                  Español
+                </div>
+                <div class="language-option" data-lang="pt">
+                  <span class="fi fi-pt"></span>
+                  Português
+                </div>
+                <div class="language-option" data-lang="ar" dir="rtl">
+                  <span class="fi fi-ma"></span>
+                  العربية
+                </div>
+              </div>
             </div>
           </div>
         </header>
@@ -78,6 +157,10 @@
                       class="text-white text-4xl font-black leading-tight tracking-[-0.033em] @[480px]:text-5xl @[480px]:font-black @[480px]:leading-tight @[480px]:tracking-[-0.033em]"
                       data-en="Exceptional Extra Virgin Olive Oil for Your Business"
                       data-pl="Wyjątkowa Oliwa Extra Virgin dla Twojej Firmy"
+                      data-it="Olio Extra Vergine Eccezionale per la Tua Azienda"
+                      data-es="Aceite de Oliva Extra Virgen Excepcional para Tu Negocio"
+                      data-pt="Azeite de Oliva Extra Virgem Excepcional para o Seu Negócio"
+                      data-ar="زيت زيتون بكر ممتاز استثنائي لعملك"
                     >
                       Exceptional Extra Virgin Olive Oil for Your Business
                     </h1>
@@ -85,6 +168,10 @@
                       class="text-white text-sm font-normal leading-normal @[480px]:text-base @[480px]:font-normal @[480px]:leading-normal"
                       data-en="Elevate your culinary creations with our premium extra virgin olive oil, crafted with care and precision."
                       data-pl="Podnieś poziom swoich kulinarnych kreacji dzięki naszej premium oliwie extra virgin, wykonanej z dbałością i precyzją."
+                      data-it="Eleva le tue creazioni culinarie con il nostro olio extra vergine premium, realizzato con cura e precisione."
+                      data-es="Eleva tus creaciones culinarias con nuestro aceite de oliva extra virgen premium, elaborado con cuidado y precisión."
+                      data-pt="Eleve suas criações culinárias com nosso azeite de oliva extra virgem premium, produzido com cuidado e precisão."
+                      data-ar="ارفع مستوى إبداعاتك الطهوية مع زيت الزيتون البكر الممتاز، المصنوع بعناية ودقة."
                     >
                       Elevate your culinary creations with our premium extra virgin olive oil, crafted with care and precision.
                     </h2>
@@ -93,7 +180,7 @@
                     href="product.html"
                     class="relative flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-xl h-10 px-4 @[480px]:h-12 @[480px]:px-5 bg-[#80e619] text-[#141811] text-sm font-bold leading-normal tracking-[0.015em] @[480px]:text-base @[480px]:font-bold @[480px]:leading-normal @[480px]:tracking-[0.015em] z-10 no-underline"
                   >
-                    <span class="truncate" data-en="Explore Our Products" data-pl="Poznaj Nasze Produkty">Explore Our Products</span>
+                    <span class="truncate" data-en="Explore Our Products" data-pl="Poznaj Nasze Produkty" data-it="Scopri i Nostri Prodotti" data-es="Explora Nuestros Productos" data-pt="Explore Nossos Produtos" data-ar="استكشف منتجاتنا">Explore Our Products</span>
                   </a>
                 </div>
               </div>
@@ -104,6 +191,10 @@
                   class="text-[#141811] tracking-light text-[32px] font-bold leading-tight @[480px]:text-4xl @[480px]:font-black @[480px]:leading-tight @[480px]:tracking-[-0.033em] max-w-[720px]"
                   data-en="Why Choose Laperla?"
                   data-pl="Dlaczego Wybrać Laperla?"
+                  data-it="Perché Scegliere Laperla?"
+                  data-es="¿Por Qué Elegir Laperla?"
+                  data-pt="Por Que Escolher Laperla?"
+                  data-ar="لماذا تختار لابيرلا؟"
                 >
                   Why Choose Laperla?
                 </h1>
@@ -111,6 +202,10 @@
                   class="text-[#141811] text-base font-normal leading-normal max-w-[720px]"
                   data-en="We pride ourselves on delivering the highest quality extra virgin olive oil to our B2B partners. Here's why Laperla is the perfect choice:"
                   data-pl="Jesteśmy dumni z dostarczania najwyższej jakości oliwy extra virgin naszym partnerom B2B. Oto dlaczego Laperla to idealny wybór:"
+                  data-it="Siamo orgogliosi di fornire olio extra vergine di altissima qualità ai nostri partner B2B. Ecco perché Laperla è la scelta perfetta:"
+                  data-es="Nos enorgullecemos de ofrecer aceite de oliva extra virgen de la más alta calidad a nuestros socios B2B. Aquí está por qué Laperla es la elección perfecta:"
+                  data-pt="Temos orgulho em oferecer azeite de oliva extra virgem da mais alta qualidade aos nossos parceiros B2B. Aqui está por que Laperla é a escolha perfeita:"
+                  data-ar="نحن نفخر بتقديم زيت الزيتون البكر الممتاز بأعلى جودة لشركائنا في القطاع التجاري. إليكم لماذا لابيرلا هي الخيار المثالي:"
                 >
                   We pride ourselves on delivering the highest quality extra virgin olive oil to our B2B partners. Here's why Laperla is the perfect choice:
                 </p>
@@ -122,11 +217,15 @@
                     style='background-image: url("assets/images/bottle.jpeg");'
                   ></div>
                   <div>
-                    <p class="text-[#141811] text-base font-medium leading-normal" data-en="Superior Quality" data-pl="Najwyższa Jakość">Superior Quality</p>
+                    <p class="text-[#141811] text-base font-medium leading-normal" data-en="Superior Quality" data-pl="Najwyższa Jakość" data-it="Qualità Superiore" data-es="Calidad Superior" data-pt="Qualidade Superior" data-ar="جودة فائقة">Superior Quality</p>
                     <p
                       class="text-[#758863] text-sm font-normal leading-normal"
                       data-en="Our extra virgin olive oil is made from carefully selected olives, harvested at their peak and cold-pressed to preserve their delicate flavors and health benefits."
                       data-pl="Nasza oliwa extra virgin jest wytwarzana z starannie wyselekcjonowanych oliwek, zbieranych w szczytowym momencie i tłoczonych na zimno, aby zachować ich delikatny smak i korzyści zdrowotne."
+                      data-it="Il nostro olio extra vergine è prodotto con olive accuratamente selezionate, raccolte al loro apice e pressate a freddo per preservare i loro sapori delicati e benefici per la salute."
+                      data-es="Nuestro aceite de oliva extra virgen está hecho de aceitunas cuidadosamente seleccionadas, cosechadas en su punto óptimo y prensadas en frío para preservar sus sabores delicados y beneficios para la salud."
+                      data-pt="Nosso azeite de oliva extra virgem é feito de azeitonas cuidadosamente selecionadas, colhidas no auge e prensadas a frio para preservar seus sabores delicados e benefícios à saúde."
+                      data-ar="زيت الزيتون البكر الممتاز لدينا مصنوع من زيتون مختار بعناية، يتم حصاده في ذروته ويتم عصره على البارد للحفاظ على نكهاته الرقيقة وفوائده الصحية."
                     >
                       Our extra virgin olive oil is made from carefully selected olives, harvested at their peak and cold-pressed to preserve their delicate flavors and health benefits.
                     </p>
@@ -138,11 +237,15 @@
                     style='background-image: url("https://cdn.usegalileo.ai/sdxl10/2926feef-038f-425c-9217-5e3af4286a69.png");'
                   ></div>
                   <div>
-                    <p class="text-[#141811] text-base font-medium leading-normal" data-en="Sustainable Practices" data-pl="Zrównoważone Praktyki">Sustainable Practices</p>
+                    <p class="text-[#141811] text-base font-medium leading-normal" data-en="Sustainable Practices" data-pl="Zrównoważone Praktyki" data-it="Pratiche Sostenibili" data-es="Prácticas Sostenibles" data-pt="Práticas Sustentáveis" data-ar="ممارسات مستدامة">Sustainable Practices</p>
                     <p
                       class="text-[#758863] text-sm font-normal leading-normal"
                       data-en="We are committed to sustainable and ethical practices, from responsible farming to eco-friendly packaging, minimizing our environmental impact."
                       data-pl="Jesteśmy zaangażowani w zrównoważone i etyczne praktyki, od odpowiedzialnej uprawy po ekologiczne opakowania, minimalizując nasz wpływ na środowisko."
+                      data-it="Ci impegniamo in pratiche sostenibili ed etiche, dall'agricoltura responsabile agli imballaggi ecologici, riducendo al minimo il nostro impatto ambientale."
+                      data-es="Estamos comprometidos con prácticas sostenibles y éticas, desde la agricultura responsable hasta envases ecológicos, minimizando nuestro impacto ambiental."
+                      data-pt="Estamos comprometidos com práticas sustentáveis e éticas, desde a agricultura responsável até embalagens ecológicas, minimizando nosso impacto ambiental."
+                      data-ar="نحن ملتزمون بالممارسات المستدامة والأخلاقية، من الزراعة المسؤولة إلى التغليف الصديق للبيئة، مما يقلل من تأثيرنا البيئي."
                     >
                       We are committed to sustainable and ethical practices, from responsible farming to eco-friendly packaging, minimizing our environmental impact.
                     </p>
@@ -154,11 +257,15 @@
                     style='background-image: url("https://cdn.usegalileo.ai/sdxl10/69f29ff3-8252-4e1f-981e-f5dd67b3090d.png");'
                   ></div>
                   <div>
-                    <p class="text-[#141811] text-base font-medium leading-normal" data-en="Reliable Supply" data-pl="Niezawodna Dostawa">Reliable Supply</p>
+                    <p class="text-[#141811] text-base font-medium leading-normal" data-en="Reliable Supply" data-pl="Niezawodna Dostawa" data-it="Fornitura Affidabile" data-es="Suministro Confiable" data-pt="Suprimento Confiável" data-ar="إمداد موثوق">Reliable Supply</p>
                     <p
                       class="text-[#758863] text-sm font-normal leading-normal"
                       data-en="We ensure a consistent and reliable supply of our premium olive oil, with flexible ordering options to meet the needs of your business."
                       data-pl="Zapewniamy stałą i niezawodną dostawę naszej premium oliwy, z elastycznymi opcjami zamawiania, aby sprostać potrzebom Twojej firmy."
+                      data-it="Garantiamo una fornitura costante e affidabile del nostro olio premium, con opzioni di ordinazione flessibili per soddisfare le esigenze della tua azienda."
+                      data-es="Garantizamos un suministro constante y confiable de nuestro aceite premium, con opciones de pedido flexibles para satisfacer las necesidades de tu negocio."
+                      data-pt="Garantimos um suprimento consistente e confiável do nosso azeite premium, com opções de pedidos flexíveis para atender às necessidades do seu negócio."
+                      data-ar="نضمن إمدادًا ثابتًا وموثوقًا لزيت الزيتون الممتاز لدينا، مع خيارات طلب مرنة لتلبية احتياجات عملك."
                     >
                       We ensure a consistent and reliable supply of our premium olive oil, with flexible ordering options to meet the needs of your business.
                     </p>
@@ -170,11 +277,15 @@
                     style='background-image: url("assets/images/medals.jpg");'
                   ></div>
                   <div>
-                    <p class="text-[#141811] text-base font-medium leading-normal" data-en="Global Award Winning Oil" data-pl="Światowa Nagrodzona Oliwa">Global Award Winning Oil</p>
+                    <p class="text-[#141811] text-base font-medium leading-normal" data-en="Global Award Winning Oil" data-pl="Światowa Nagrodzona Oliwa" data-it="Olio Premiato a Livello Globale" data-es="Aceite Galardonado a Nivel Mundial" data-pt="Azeite Premiado Globalmente" data-ar="زيت حائز على جوائز عالمية">Global Award Winning Oil</p>
                     <p
                       class="text-[#758863] text-sm font-normal leading-normal"
                       data-en="Laperla olive oil has earned prestigious awards in competitions worldwide, a testament to its exceptional quality and taste recognized by experts globally."
                       data-pl="Oliwa Laperla zdobyła prestiżowe nagrody w konkursach na całym świecie, co świadczy o jej wyjątkowej jakości i smaku docenionym przez ekspertów na całym globie."
+                      data-it="L'olio d'oliva Laperla ha ottenuto prestigiosi riconoscimenti in competizioni mondiali, una testimonianza della sua eccezionale qualità e gusto riconosciuti dagli esperti a livello globale."
+                      data-es="El aceite de oliva Laperla ha obtenido prestigiosos premios en competiciones mundiales, un testimonio de su excepcional calidad y sabor reconocidos por expertos a nivel global."
+                      data-pt="O azeite de oliva Laperla conquistou prêmios prestigiados em competições mundiais, um testemunho de sua excepcional qualidade e sabor reconhecidos por especialistas globalmente."
+                      data-ar="زيت الزيتون لابيرلا حصل على جوائز مرموقة في مسابقات عالمية، وهو دليل على جودته وطعمه الاستثنائي المعترف به من قبل الخبراء عالميًا."
                     >
                       Laperla olive oil has earned prestigious awards in competitions worldwide, a testament to its exceptional quality and taste recognized by experts globally.
                     </p>
@@ -188,6 +299,10 @@
                   class="text-[#141811] tracking-light text-[32px] font-bold leading-tight @[480px]:text-4xl @[480px]:font-black @[480px]:leading-tight @[480px]:tracking-[-0.033em] max-w-[720px]"
                   data-en="Our Organic Process"
                   data-pl="Nasz Organiczny Proces"
+                  data-it="Il Nostro Processo Organico"
+                  data-es="Nuestro Proceso Orgánico"
+                  data-pt="Nosso Processo Orgânico"
+                  data-ar="عمليتنا العضوية"
                 >
                   Our Organic Process
                 </h1>
@@ -195,6 +310,10 @@
                   class="text-[#141811] text-base font-normal leading-normal max-w-[720px]"
                   data-en="Our process is 100% organic, certified by international standards, ensuring a bio-friendly product from grove to bottle."
                   data-pl="Nasz proces jest w 100% organiczny, certyfikowany przez międzynarodowe standardy, zapewniając produkt przyjazny dla środowiska od gaju do butelki."
+                  data-it="Il nostro processo è 100% organico, certificato da standard internazionali, garantendo un prodotto bio-compatibile dal campo alla bottiglia."
+                  data-es="Nuestro proceso es 100% orgánico, certificado por estándares internacionales, asegurando un producto bio-amigable desde el olivar hasta la botella."
+                  data-pt="Nosso processo é 100% orgânico, certificado por padrões internacionais, garantindo um produto bio-amigável do pomar à garrafa."
+                  data-ar="عمليتنا عضوية 100%، معتمدة بمعايير دولية، مما يضمن منتجًا صديقًا للبيئة من البستان إلى الزجاجة."
                 >
                   Our process is 100% organic, certified by international standards, ensuring a bio-friendly product from grove to bottle.
                 </p>
@@ -211,11 +330,15 @@
                   <div class="w-[1.5px] bg-[#e0e5dc] h-2 grow"></div>
                 </div>
                 <div class="flex flex-1 flex-col py-3">
-                  <p class="text-[#141811] text-base font-medium leading-normal" data-en="Organic Sourcing" data-pl="Organiczne Pozyskiwanie">Organic Sourcing</p>
+                  <p class="text-[#141811] text-base font-medium leading-normal" data-en="Organic Sourcing" data-pl="Organiczne Pozyskiwanie" data-it="Approvvigionamento Organico" data-es="Abastecimiento Orgánico" data-pt="Fornecimento Orgânico" data-ar="التوريد العضوي">Organic Sourcing</p>
                   <p
                     class="text-[#758863] text-base font-normal leading-normal"
                     data-en="We source 100% organic olives from certified groves in Italy’s sun-drenched hills, ensuring exceptional flavor and purity under strict international bio-standards."
                     data-pl="Pozyskujemy w 100% organiczne oliwki z certyfikowanych gajów na nasłonecznionych wzgórzach Włoch, zapewniając wyjątkowy smak i czystość zgodnie z surowymi międzynarodowymi standardami bio."
+                    data-it="Otteniamo olive 100% biologiche da uliveti certificati sulle colline assolate d'Italia, garantendo un sapore eccezionale e purezza secondo rigorosi standard bio internazionali."
+                    data-es="Obtenemos aceitunas 100% orgánicas de olivares certificados en las colinas soleadas de Italia, asegurando un sabor excepcional y pureza bajo estrictos estándares bio internacionales."
+                    data-pt="Obtemos azeitonas 100% orgânicas de pomares certificados nas colinas ensolaradas da Itália, garantindo um sabor excepcional e pureza sob rigorosos padrões bio internacionais."
+                    data-ar="نحصل على زيتون عضوي 100% من بساتين معتمدة في تلال إيطاليا المشمسة، مما يضمن نكهة استثنائية ونقاء بموجب معايير بيولوجية دولية صارمة."
                   >
                     We source 100% organic olives from certified groves in Italy’s sun-drenched hills, ensuring exceptional flavor and purity under strict international bio-standards.
                   </p>
@@ -232,11 +355,15 @@
                   <div class="w-[1.5px] bg-[#e0e5dc] h-2 grow"></div>
                 </div>
                 <div class="flex flex-1 flex-col py-3">
-                  <p class="text-[#141811] text-base font-medium leading-normal" data-en="Organic Extraction" data-pl="Organiczna Ekstrakcja">Organic Extraction</p>
+                  <p class="text-[#141811] text-base font-medium leading-normal" data-en="Organic Extraction" data-pl="Organiczna Ekstrakcja" data-it="Estrazione Organica" data-es="Extracción Orgánica" data-pt="Extração Orgânica" data-ar="الاستخلاص العضوي">Organic Extraction</p>
                   <p
                     class="text-[#758863] text-base font-normal leading-normal"
                     data-en="Our olives are cold-pressed within hours of harvest using organic methods, preserving their natural flavors and nutrients, certified 100% bio."
                     data-pl="Nasze oliwki są tłoczone na zimno w ciągu kilku godzin od zbioru metodami organicznymi, zachowując ich naturalne smaki i składniki odżywcze, certyfikowane jako 100% bio."
+                    data-it="Le nostre olive vengono pressate a freddo entro poche ore dalla raccolta con metodi biologici, preservando i loro sapori naturali e nutrienti, certificate 100% bio."
+                    data-es="Nuestras aceitunas se prensan en frío pocas horas después de la cosecha con métodos orgánicos, preservando sus sabores naturales y nutrientes, certificadas 100% bio."
+                    data-pt="Nossas azeitonas são prensadas a frio poucas horas após a colheita com métodos orgânicos, preservando seus sabores naturais e nutrientes, certificadas 100% bio."
+                    data-ar="يتم عصر زيتوننا على البارد خلال ساعات من الحصاد باستخدام طرق عضوية، مما يحافظ على نكهاته الطبيعية ومغذياته، معتمد بنسبة 100% بيو."
                   >
                     Our olives are cold-pressed within hours of harvest using organic methods, preserving their natural flavors and nutrients, certified 100% bio.
                   </p>
@@ -253,11 +380,15 @@
                   <div class="w-[1.5px] bg-[#e0e5dc] h-2 grow"></div>
                 </div>
                 <div class="flex flex-1 flex-col py-3">
-                  <p class="text-[#141811] text-base font-medium leading-normal" data-en="Certified Quality Assurance" data-pl="Certyfikowane Zapewnienie Jakości">Certified Quality Assurance</p>
+                  <p class="text-[#141811] text-base font-medium leading-normal" data-en="Certified Quality Assurance" data-pl="Certyfikowane Zapewnienie Jakości" data-it="Garanzia di Qualità Certificata" data-es="Aseguramiento de Calidad Certificado" data-pt="Garantia de Qualidade Certificada" data-ar="ضمان الجودة المعتمد">Certified Quality Assurance</p>
                   <p
                     class="text-[#758863] text-base font-normal leading-normal"
                     data-en="Every batch is rigorously tested under international organic certifications, ensuring a 100% bio product with unmatched purity and authenticity."
                     data-pl="Każda partia jest rygorystycznie testowana zgodnie z międzynarodowymi certyfikatami organicznymi, zapewniając produkt w 100% bio o niezrównanej czystości i autentyczności."
+                    data-it="Ogni lotto è rigorosamente testato secondo certificazioni biologiche internazionali, garantendo un prodotto 100% bio con purezza e autenticità ineguagliabili."
+                    data-es="Cada lote es rigurosamente probado bajo certificaciones orgánicas internacionales, asegurando un producto 100% bio con pureza y autenticidad inigualables."
+                    data-pt="Cada lote é rigorosamente testado sob certificações orgânicas internacionais, garantindo um produto 100% bio com pureza e autenticidade inigualáveis."
+                    data-ar="يتم اختبار كل دفعة بدقة بموجب الشهادات العضوية الدولية، مما يضمن منتجًا بيولوجيًا بنسبة 100% بدرجة نقاء وأصالة لا مثيل لها."
                   >
                     Every batch is rigorously tested under international organic certifications, ensuring a 100% bio product with unmatched purity and authenticity.
                   </p>
@@ -273,11 +404,15 @@
                   </div>
                 </div>
                 <div class="flex flex-1 flex-col py-3">
-                  <p class="text-[#141811] text-base font-medium leading-normal" data-en="Delivery" data-pl="Organiczna Dostawa">Organic Delivery</p>
+                  <p class="text-[#141811] text-base font-medium leading-normal" data-en="Delivery" data-pl="Organiczna Dostawa" data-it="Consegna Organica" data-es="Entrega Orgánica" data-pt="Entrega Orgânica" data-ar="التوصيل العضوي">Delivery</p>
                   <p
                     class="text-[#758863] text-base font-normal leading-normal"
                     data-en="We deliver your organic olive oil with eco-friendly methods, certified to maintain its 100% bio integrity, ready to enhance your creations."
                     data-pl="Dostarczamy Twoją organiczną oliwę metodami przyjaznymi dla środowiska, certyfikowanymi, aby zachować jej 100% bio integralność, gotową do wzbogacenia Twoich kreacji."
+                    data-it="Consegniamo il tuo olio d'oliva biologico con metodi ecologici, certificati per mantenere la sua integrità 100% bio, pronto per arricchire le tue creazioni."
+                    data-es="Entregamos tu aceite de oliva orgánico con métodos ecológicos, certificados para mantener su integridad 100% bio, listo para enriquecer tus creaciones."
+                    data-pt="Entregamos seu azeite de oliva orgânico com métodos ecológicos, certificados para manter sua integridade 100% bio, pronto para enriquecer suas criações."
+                    data-ar="نقوم بتوصيل زيت الزيتون العضوي الخاص بك بطرق صديقة للبيئة، معتمدة للحفاظ على سلامتها البيولوجية بنسبة 100%، جاهزة لتعزيز إبداعاتك."
                   >
                     We deliver your organic olive oil with eco-friendly methods, certified to maintain its 100% bio integrity, ready to enhance your creations.
                   </p>
@@ -304,6 +439,10 @@
                     class="text-[#141811] tracking-light text-[32px] font-bold leading-tight @[480px]:text-4xl @[480px]:font-black @[480px]:leading-tight @[480px]:tracking-[-0.033em] max-w-[720px]"
                     data-en="Let's Discuss Your Olive Oil Needs"
                     data-pl="Porozmawiajmy o Twoich Potrzebach Dotyczących Oliwy"
+                    data-it="Parliamo delle Tue Esigenze di Olio d'Oliva"
+                    data-es="Hablemos de Tus Necesidades de Aceite de Oliva"
+                    data-pt="Vamos Discutir Suas Necessidades de Azeite de Oliva"
+                    data-ar="لنتحدث عن احتياجاتك من زيت الزيتون"
                   >
                     Let's Discuss Your Olive Oil Needs
                   </h1>
@@ -315,7 +454,7 @@
                     class="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-xl h-10 px-4 @[480px]:h-12 @[480px]:px-5 bg-[#80e619] text-[#141811] text-sm font-bold leading-normal tracking-[0.015em] @[480px]:text-base @[480px]:font-bold @[480px]:leading-normal @[480px]:tracking-[0.015em] no-underline"
                   >
                     <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp" class="w-5 h-5 mr-2">
-                    <span class="truncate" data-en="Contact Us via WhatsApp" data-pl="Skontaktuj Się przez WhatsApp">Contact Us via WhatsApp</span>
+                    <span class="truncate" data-en="Contact Us via WhatsApp" data-pl="Skontaktuj Się przez WhatsApp" data-it="Contattaci via WhatsApp" data-es="Contáctanos vía WhatsApp" data-pt="Contate-nos via WhatsApp" data-ar="اتصل بنا عبر واتساب">Contact Us via WhatsApp</span>
                   </a>
                   <a
                     href="mailto:info@kartaginafoods.pl"
@@ -326,7 +465,7 @@
                         d="M216,40H40A16,16,0,0,0,24,56V200a16,16,0,0,0,16,16H216a16,16,0,0,0,16-16V56A16,16,0,0,0,216,40Zm0,160H40V56H216V200ZM184,96a8,8,0,0,1-8,8H80a8,8,0,0,1,0-16h96A8,8,0,0,1,184,96Zm0,32a8,8,0,0,1-8,8H80a8,8,0,0,1,0-16h96A8,8,0,0,1,184,128Zm0,32a8,8,0,0,1-8,8H80a8,8,0,0,1,0-16h96A8,8,0,0,1,184,160Z"
                       ></path>
                     </svg>
-                    <span class="truncate" data-en="Contact Us via Email" data-pl="Skontaktuj Się przez Email">Contact Us via Email</span>
+                    <span class="truncate" data-en="Contact Us via Email" data-pl="Skontaktuj Się przez Email" data-it="Contattaci via Email" data-es="Contáctanos vía Email" data-pt="Contate-nos via Email" data-ar="اتصل بنا عبر البريد الإلكتروني">Contact Us via Email</span>
                   </a>
                 </div>
               </div>
@@ -337,10 +476,10 @@
           <div class="flex max-w-[960px] flex-1 flex-col">
             <footer class="flex flex-col gap-6 px-5 py-10 text-center @container">
               <div class="flex flex-wrap items-center justify-center gap-6 @[480px]:flex-row @[480px]:justify-around">
-                <a class="text-[#758863] text-base font-normal leading-normal min-w-40" href="home.html" data-en="Home" data-pl="Strona Główna">Home</a>
-                <a class="text-[#758863] text-base font-normal leading-normal min-w-40" href="product.html" data-en="Our Products" data-pl="Nasze Produkty">Our Products</a>
-                <a class="text-[#758863] text-base font-normal leading-normal min-w-40" href="heritage.html" data-en="Heritage" data-pl="Dziedzictwo">Heritage</a>
-                <a class="text-[#758863] text-base font-normal leading-normal min-w-40" href="contact.html" data-en="Contact" data-pl="Kontakt">Contact</a>
+                <a class="text-[#758863] text-base font-normal leading-normal min-w-40" href="home.html" data-en="Home" data-pl="Strona Główna" data-it="Home" data-es="Inicio" data-pt="Início" data-ar="الرئيسية">Home</a>
+                <a class="text-[#758863] text-base font-normal leading-normal min-w-40" href="product.html" data-en="Our Products" data-pl="Nasze Produkty" data-it="I nostri prodotti" data-es="Nuestros productos" data-pt="Nossos produtos" data-ar="منتجاتنا">Our Products</a>
+                <a class="text-[#758863] text-base font-normal leading-normal min-w-40" href="heritage.html" data-en="Heritage" data-pl="Dziedzictwo" data-it="Eredità" data-es="Patrimonio" data-pt="Herança" data-ar="التراث">Heritage</a>
+                <a class="text-[#758863] text-base font-normal leading-normal min-w-40" href="contact.html" data-en="Contact" data-pl="Kontakt" data-it="Contatti" data-es="Contacto" data-pt="Contato" data-ar="اتصل بنا">Contact</a>
               </div>
               <div class="flex flex-wrap justify-center gap-4">
                 <a href="https://instagram.com/yourprofile" target="_blank">
@@ -365,13 +504,13 @@
                   <div class="text-[#758863]" data-icon="TwitterLogo" data-size="24px" data-weight="regular">
                     <svg xmlns="http://www.w3.org/2000/svg" width="24px" height="24px" fill="currentColor" viewBox="0 0 256 256">
                       <path
-                        d="M247.39,68.94A8,8,0,0,0,240,64H209.57A48.66,48.66,0,0,0,168.1,40a46.91,46.91,0,0,0-33.75,13.7A47.9,47.9,0,0,0,120,88v6.09C79.74,83.47,46.81,50.72,46.46,50.37a8,8,0,0,0-13.65,4.92c-4.31,47.79,9.57,79.77,22,98.18a110.93,110.93,0,0,0,21.88,24.2c-15.23,17.53-39.21,26.74-39.47,26.84a8,8,0,0,0-3.85,11.93c.75,1.12,3.75,5.05,11.08,8.72C53.51,229.7,65.48,232,80,232c70.67,0,129.72-54.42,135.75-124.44l29.91-29.9A8,8,0,0,0,247.39,68.94Zm-45,29.41a8,8,0,0,0-2.32,5.14C196,166.58,143.28,216,80,216c-10.56,0-18-1.4-23.22-3.08,11.51-6.25,27.56-17,37.88-32.48A8,8,0,0,0,92,169.08c-.47-.27-43.91-26.34-44-96,16,13,45.25,33.17,78.67,38.79A8,8,0,0,0,136,104V88a32,32,0,0,1,9.6-22.92A30.94,30.94,0,0,1,167.9,56c12.66.16,24.49,7.88,29.44,19.21A8,8,0,0,0,204.67,80h16Z"
+                        d="M247.39,68.94A8,8,0,0,0,240,64H209.57A48.66,48.66,0,0,0,168.1,40a46.91,46.91,0,0,0-33.75,13.7A47.9,47.9,0,0,0,120,88v6.09C79.74,83.47,46.81,50.72,46.46,50.37a8,8,0,0,0-13.65,4.92c-4.31,47.79,9.57,79.77,22,98.18a110.93,110.93,0,0,0,21.88,24.2c-15.23,17.53-39.21,26.74-39.47,26.84a8,8,0,0,0-3.85,11.93c.75,1.12,3.75,5.05,11.08,8.72C53.51,229.7,65.48,232,80,232c70.67,0,129.72-54.42,135.75-124.44l29.91-29.9A8,106,0,0,0,247.39,68.94Zm-45,29.41a8,8,0,0,0-2.32,5.14C196,166.58,143.28,216,80,216c-10.56,0-18-1.4-23.22-3.08,11.51-6.25,27.56-17,37.88-32.48A8,8,0,0,0,92,169.08c-.47-.27-43.91-26.34-44-96,16,13,45.25,33.17,78.67,38.79A8,8,0,0,0,136,104V88a32,32,0,0,1,9.6-22.92A30.94,30.94,0,0,1,167.9,56c12.66.16,24.49,7.88,29.44,19.21A8,8,0,0,0,204.67,80h16Z"
                       ></path>
                     </svg>
                   </div>
                 </a>
               </div>
-              <p class="text-[#758863] text-base font-normal leading-normal" data-en="© 2025 Laperla. All rights reserved." data-pl="© 2023 Laperla. Wszelkie prawa zastrzeżone.">
+              <p class="text-[#758863] text-base font-normal leading-normal" data-en="© 2025 Laperla. All rights reserved." data-pl="© 2023 Laperla. Wszelkie prawa zastrzeżone." data-it="© 2025 Laperla. Tutti i diritti riservati." data-es="© 2025 Laperla. Todos los derechos reservados." data-pt="© 2025 Laperla. Todos os direitos reservados." data-ar="© 2025 لابيرلا. جميع الحقوق محفوظة.">
                 © 2025 Laperla. All rights reserved.
               </p>
             </footer>
@@ -382,22 +521,31 @@
 
     <script>
       document.addEventListener('DOMContentLoaded', () => {
-        const translatableElements = document.querySelectorAll('[data-en][data-pl]');
-        const languageLinks = document.querySelectorAll('.language-link');
+        const translatableElements = document.querySelectorAll('[data-en][data-pl][data-it][data-es][data-pt][data-ar]');
+        const languageButton = document.querySelector('.language-dropdown-button');
+        const languageMenu = document.querySelector('.language-dropdown-menu');
+        const languageOptions = document.querySelectorAll('.language-option');
+        const selectedLanguageSpan = document.querySelector('.selected-language');
+        const flagSpan = languageButton.querySelector('.fi');
         const slideshowImages = document.querySelectorAll('.slideshow-image');
         let currentImageIndex = 0;
 
         function updateLanguage(lang) {
+          // Update text content
           translatableElements.forEach(element => {
             element.textContent = element.getAttribute(`data-${lang}`);
           });
-          languageLinks.forEach(link => {
-            if (link.getAttribute('data-lang') === lang) {
-              link.classList.add('font-bold', 'underline');
-            } else {
-              link.classList.remove('font-bold', 'underline');
-            }
-          });
+
+          // Update selected language display
+          const selectedOption = document.querySelector(`.language-option[data-lang="${lang}"]`);
+          selectedLanguageSpan.textContent = selectedOption.textContent.trim();
+          flagSpan.className = `fi fi-${lang === 'ar' ? 'ma' : lang}`;
+
+          // Update direction for Arabic
+          document.body.setAttribute('dir', lang === 'ar' ? 'rtl' : 'ltr');
+
+          // Close dropdown
+          languageMenu.classList.remove('show');
         }
 
         function cycleSlideshow() {
@@ -406,11 +554,23 @@
           slideshowImages[currentImageIndex].classList.add('active');
         }
 
-        languageLinks.forEach(link => {
-          link.addEventListener('click', (e) => {
-            e.preventDefault();
-            updateLanguage(link.getAttribute('data-lang'));
+        // Toggle dropdown
+        languageButton.addEventListener('click', () => {
+          languageMenu.classList.toggle('show');
+        });
+
+        // Handle language selection
+        languageOptions.forEach(option => {
+          option.addEventListener('click', () => {
+            updateLanguage(option.getAttribute('data-lang'));
           });
+        });
+
+        // Close dropdown when clicking outside
+        document.addEventListener('click', (e) => {
+          if (!languageButton.contains(e.target) && !languageMenu.contains(e.target)) {
+            languageMenu.classList.remove('show');
+          }
         });
 
         // Set initial language to English
