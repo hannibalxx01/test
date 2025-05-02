@@ -10,6 +10,8 @@
       onload="this.rel='stylesheet'"
       href="https://fonts.googleapis.com/css2?display=swap&family=Epilogue%3Awght%40400%3B500%3B700%3B900&family=Noto+Sans%3Awght%40400%3B500%3B700%3B900&family=Amiri:wght@400;700&family=Lugrasimo&display=swap"
     />
+    <!-- Add Flag Icons CSS for language flags -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flag-icons/css/flag-icons.min.css" />
     <title>Laperla Olive Oil - Our Products</title>
     <link rel="icon" type="image/x-icon" href="data:image/x-icon;base64," />
     <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
@@ -200,6 +202,54 @@
           font-size: 1rem;
         }
       }
+      /* Dropdown styles */
+      .language-dropdown {
+        position: relative;
+      }
+      .language-dropdown-button {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        padding: 0.5rem 1rem;
+        background-color: #f2f4f0;
+        border-radius: 0.5rem;
+        cursor: pointer;
+        font-size: 0.875rem;
+        font-weight: 500;
+        color: #141811;
+      }
+      .language-dropdown-menu {
+        position: absolute;
+        top: 100%;
+        right: 0;
+        margin-top: 0.5rem;
+        background-color: white;
+        border: 1px solid #e0e5dc;
+        border-radius: 0.5rem;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        display: none;
+        z-index: 10;
+      }
+      .language-dropdown-menu.show {
+        display: block;
+      }
+      .language-option {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        padding: 0.5rem 1rem;
+        cursor: pointer;
+        font-size: 0.875rem;
+        color: #141811;
+      }
+      .language-option:hover {
+        background-color: #f2f4f0;
+      }
+      /* Ensure Arabic text is right-to-left */
+      [dir="rtl"] {
+        direction: rtl;
+        font-family: 'Amiri', serif;
+      }
     </style>
   </head>
   <body>
@@ -209,7 +259,7 @@
           <div class="flex items-center gap-4 text-[#141811]">
             <div class="size-4">
               <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <g clip-path="url(#clip0_6_535)">
+                <g clip-path=" LEGAL_CODE: url(#clip0_6_535)">
                   <path
                     fill-rule="evenodd"
                     clip-rule="evenodd"
@@ -224,27 +274,57 @@
             </div>
             <div class="flex flex-col">
               <h2 class="text-[#141811] text-2xl font-bold leading-tight tracking-[-0.015em]" style="font-family: 'Lugrasimo', serif; font-weight: 1000; -webkit-font-smoothing: antialiased;">Laperla</h2>
-              <p class="text-[#758863] text-xs" data-en="Your premium olive oil partner" data-pl="Twój partner w premium oliwie">Your premium olive oil partner</p>
+              <p class="text-[#758863] text-xs" data-en="Your premium olive oil partner" data-pl="Twój partner w premium oliwie" data-it="Il tuo partner per l'olio d'oliva premium" data-es="Tu socio en aceite de oliva premium" data-pt="Seu parceiro em azeite de oliva premium" data-ar="شريكك في زيت الزيتون الممتاز">Your premium olive oil partner</p>
             </div>
           </div>
           <div class="flex flex-1 justify-end gap-8">
             <div class="flex items-center gap-9">
-              <a class="text-[#141811] text-sm font-medium leading-normal" href="home.html" data-en="Home" data-pl="Strona Główna">Home</a>
-              <a class="text-[#141811] text-sm font-medium leading-normal" href="product.html" data-en="Our Products" data-pl="Nasze Produkty">Our Products</a>
-              <a class="text-[#141811] text-sm font-medium leading-normal" href="heritage.html" data-en="Heritage" data-pl="Dziedzictwo">Heritage</a>
-              <a class="text-[#141811] text-sm font-medium leading-normal" href="contact.html" data-en="Contact" data-pl="Kontakt">Contact</a>
+              <a class="text-[#141811] text-sm font-medium leading-normal" href="home.html" data-en="Home" data-pl="Strona Główna" data-it="Home" data-es="Inicio" data-pt="Início" data-ar="الرئيسية">Home</a>
+              <a class="text-[#141811] text-sm font-medium leading-normal" href="product.html" data-en="Our Products" data-pl="Nasze Produkty" data-it="I nostri prodotti" data-es="Nuestros productos" data-pt="Nossos produtos" data-ar="منتجاتنا">Our Products</a>
+              <a class="text-[#141811] text-sm font-medium leading-normal" href="heritage.html" data-en="Heritage" data-pl="Dziedzictwo" data-it="Eredità" data-es="Patrimonio" data-pt="Herança" data-ar="التراث">Heritage</a>
+              <a class="text-[#141811] text-sm font-medium leading-normal" href="contact.html" data-en="Contact" data-pl="Kontakt" data-it="Contatti" data-es="Contacto" data-pt="Contato" data-ar="اتصل بنا">Contact</a>
             </div>
-            <div class="flex items-center gap-2">
-              <a href="#" class="language-link text-[#141811] text-sm font-medium" data-lang="en">EN</a>
-              <span class="text-[#141811]">|</span>
-              <a href="#" class="language-link text-[#141811] text-sm font-medium" data-lang="pl">PL</a>
+            <div class="language-dropdown">
+              <button class="language-dropdown-button">
+                <span class="fi fi-us"></span>
+                <span class="selected-language">English</span>
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                </svg>
+              </button>
+              <div class="language-dropdown-menu">
+                <div class="language-option" data-lang="en">
+                  <span class="fi fi-us"></span>
+                  English
+                </div>
+                <div class="language-option" data-lang="pl">
+                  <span class="fi fi-pl"></span>
+                  Polski
+                </div>
+                <div class="language-option" data-lang="it">
+                  <span class="fi fi-it"></span>
+                  Italiano
+                </div>
+                <div class="language-option" data-lang="es">
+                  <span class="fi fi-es"></span>
+                  Español
+                </div>
+                <div class="language-option" data-lang="pt">
+                  <span class="fi fi-pt"></span>
+                  Português
+                </div>
+                <div class="language-option" data-lang="ar" dir="rtl">
+                  <span class="fi fi-ma"></span>
+                  العربية
+                </div>
+              </div>
             </div>
           </div>
         </header>
         <div class="px-40 flex flex-1 justify-center py-5">
           <div class="layout-content-container flex flex-col max-w-[960px] flex-1">
             <div class="flex flex-wrap justify-between gap-3 p-4">
-              <p class="text-[#141811] tracking-light text-[32px] font-bold leading-tight min-w-72" data-en="Our Products" data-pl="Nasze Produkty">Our Products</p>
+              <p class="text-[#141811] tracking-light text-[32px] font-bold leading-tight min-w-72" data-en="Our Products" data-pl="Nasze Produkty" data-it="I nostri prodotti" data-es="Nuestros productos" data-pt="Nossos produtos" data-ar="منتجاتنا">Our Products</p>
             </div>
             <div class="@container">
               <div class="@[480px]:p-4">
@@ -257,6 +337,10 @@
                       class="text-white text-4xl font-black leading-tight tracking-[-0.033em] @[480px]:text-5xl @[480px]:font-black @[480px]:leading-tight @[480px]:tracking-[-0.033em]"
                       data-en="Premium Extra Virgin Olive Oils"
                       data-pl="Premium Oliwy Extra Virgin"
+                      data-it="Oli Extra Vergini Premium"
+                      data-es="Aceites de Oliva Extra Virgen Premium"
+                      data-pt="Azeites de Oliva Extra Virgem Premium"
+                      data-ar="زيوت زيتون بكر ممتازة"
                     >
                       Premium Extra Virgin Olive Oils
                     </h1>
@@ -264,6 +348,10 @@
                       class="text-white text-sm font-normal leading-normal @[480px]:text-base @[480px]:font-normal @[480px]:leading-normal"
                       data-en="Discover our range of award-winning EVOOs, crafted from Tunisia’s finest olives."
                       data-pl="Odkryj naszą gamę nagradzanych oliw EVOO, wykonanych z najlepszych tunezyjskich oliwek."
+                      data-it="Scopri la nostra gamma di EVOO premiati, realizzati con le migliori olive tunisine."
+                      data-es="Descubre nuestra gama de EVOO galardonados, elaborados con las mejores aceitunas tunecinas."
+                      data-pt="Descubra nossa gama de EVOOs premiados, produzidos com as melhores azeitonas tunisianas."
+                      data-ar="اكتشف مجموعتنا من زيوت EVOO الحائزة على جوائز، المصنوعة من أجود أنواع الزيتون التونسي."
                     >
                       Discover our range of award-winning EVOOs, crafted from Tunisia’s finest olives.
                     </h2>
@@ -273,28 +361,29 @@
             </div>
             <!-- Catalogue Section with Coastal Blend Removed -->
             <div class="flex flex-col gap-10 px-4 py-10 @container">
-              <h2 class="text-[#141811] text-[22px] font-bold leading-tight tracking-[-0.015em]" data-en="Our Catalogue" data-pl="Nasz Katalog">Our Catalogue</h2>
+              <h2 class="text-[#141811] text-[22px] font-bold leading-tight tracking-[-0.015em]" data-en="Our Catalogue" data-pl="Nasz Katalog" data-it="Il nostro catalogo" data-es="Nuestro catálogo" data-pt="Nosso catálogo" data-ar="كتالوجنا">Our Catalogue</h2>
               <div class="catalogue-grid">
                 <div class="catalogue-item">
                   <div class="catalogue-image" style='background-image: url("assets/images/bottle.jpeg");'></div>
                   <div class="catalogue-details">
-                    <p class="text-[#141811] text-base font-medium leading-normal" data-en="Chemlali Edition Prestige" data-pl="Chemlali Edition Prestige">Chemlali Edition Prestige</p>
-                    <p class="text-[#758863] text-sm font-normal leading-normal" data-en="Smooth and balanced with almond and apple notes." data-pl="Gładka i zrównoważona z nutami migdałów i jabłek;">
+                    <p class="text-[#141811] text-base font-medium leading-normal" data-en="Chemlali Edition Prestige" data-pl="Chemlali Edition Prestige" data-it="Chemlali Edition Prestige" data-es="Chemlali Edition Prestige" data-pt="Chemlali Edition Prestige" data-ar="تشملالي إديشن بريستيج">Chemlali Edition Prestige</p>
+                    <p class="text-[#758863] text-sm font-normal leading-normal" data-en="Smooth and balanced with almond and apple notes." data-pl="Gładka i zrównoważona z nutami migdałów i jabłek." data-it="Morbido ed equilibrato con note di mandorla e mela." data-es="Suave y equilibrado con notas de almendra y manzana." data-pt="Suave e equilibrado com notas de amêndoa e maçã." data-ar="ناعم ومتوازن مع نكهات اللوز والتفاح.">
                       Smooth and balanced with almond and apple notes.
                     </p>
                     <a href="https://wa.me/48530846928?text=Inquiry%20about%20Chemlali%20Edition%20Prestige" target="_blank" class="catalogue-button flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-xl h-10 px-4 bg-[#80e619] text-[#141811] text-sm font-bold leading-normal tracking-[0.015em] no-underline">
-                      <span class="truncate" data-en="Inquire Now" data-pl="Zapytaj Teraz">Inquire Now</span>
+                      <span class="truncate" data-en="Inquire Now" data-pl="Zapytaj Teraz" data-it="Richiedi Ora" data-es="Consultar Ahora" data-pt="Consultar Agora" data-ar="استفسر الآن">Inquire Now</span>
                     </a>
                   </div>
                 </div>
                 <div class="catalogue-item">
                   <div class="catalogue-image" style='background-image: url("assets/images/bulk.png");'></div>
                   <div class="catalogue-details">
-                    <p class="text-[#141811] text-base font-medium leading-normal" data-en="Bulk Requests" data-pl="Żądania zbiorcze">Bulk Requests</p>
-                    <p class="text-[#758863] text-sm font-normal leading-normal" data-en="" data-pl="">
+                    <p class="text-[#141811] text-base font-medium leading-normal" data-en="Bulk Requests" data-pl="Żądania zbiorcze" data-it="Richieste all'ingrosso" data-es="Solicitudes a granel" data-pt="Pedidos em massa" data-ar="طلبات بالجملة">Bulk Requests</p>
+                    <p class="text-[#758863] text-sm font-normal leading-normal" data-en="High-quality olive oil for large-scale needs." data-pl="Wysokiej jakości oliwa z oliwek dla potrzeb na dużą skalę." data-it="Olio d'oliva di alta qualità per esigenze su larga scala." data-es="Aceite de oliva de alta calidad para necesidades a gran escala." data-pt="Azeite de oliva de alta qualidade para necessidades em grande escala." data-ar="زيت زيتون عالي الجودة للاحتياجات واسعة النطاق.">
+                      High-quality olive oil for large-scale needs.
                     </p>
-                    <a href="https://wa.me/48530846928?text=I%20want%20to%20customize%20my%20own%20olive%20oil%20bottle.%20Please%20provide%20details%20on%20options." target="_blank" class="catalogue-button flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-xl h-10 px-4 bg-[#80e619] text-[#141811] text-sm font-bold leading-normal tracking-[0.015em] no-underline">
-                      <span class="truncate" data-en="Inquire Now" data-pl="zapytaj teraz">Inquire Now</span>
+                    <a href="https://wa.me/48530846928?text=Inquiry%20about%20Bulk%20Requests" target="_blank" class="catalogue-button flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-xl h-10 px-4 bg-[#80e619] text-[#141811] text-sm font-bold leading-normal tracking-[0.015em] no-underline">
+                      <span class="truncate" data-en="Inquire Now" data-pl="Zapytaj Teraz" data-it="Richiedi Ora" data-es="Consultar Ahora" data-pt="Consultar Agora" data-ar="استفسر الآن">Inquire Now</span>
                     </a>
                   </div>
                 </div>
@@ -302,7 +391,7 @@
             </div>
             <!-- Chemlali Characteristics Section with Improved Icons -->
             <div class="chemlali-section @container">
-              <h1 class="chemlali-title" data-en="Chemlali Olive Oil Characteristics" data-pl="Charakterystyka Oliwy Chemlali">
+              <h1 class="chemlali-title" data-en="Chemlali Olive Oil Characteristics" data-pl="Charakterystyka Oliwy Chemlali" data-it="Caratteristiche dell'Olio di Chemlali" data-es="Características del Aceite de Chemlali" data-pt="Características do Azeite de Chemlali" data-ar="خصائص زيت الزيتون تشملالي">
                 Chemlali Olive Oil Characteristics
               </h1>
               <div class="traits-container">
@@ -310,8 +399,8 @@
                   <svg class="trait-icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                     <path d="M12 2c-1.66 0-3 1.34-3 3 0 .79.31 1.5.81 2.03C8.07 7.57 7 8.98 7 10.5c0 2.21 1.79 4 4 4h2c2.21 0 4-1.79 4-4 0-1.52-1.07-2.93-2.81-3.47.5-.53.81-1.24.81-2.03 0-1.66-1.34-3-3-3zm-1 12h2v2h-2v-2zm0-4h2V8h-2v2zm0-6h2v2h-2V4zM5 18h14v2H5v-2z"/>
                   </svg>
-                  <div class="trait-name" data-en="Flavor Profile" data-pl="Profil Smakowy">Flavor Profile</div>
-                  <p class="trait-desc" data-en="Mild, buttery with almond, green apple, and a hint of pepper" data-pl="Łagodny, maślany z nutami migdałów, zielonego jabłka i odrobiną pieprzu">
+                  <div class="trait-name" data-en="Flavor Profile" data-pl="Profil Smakowy" data-it="Profilo di Sapore" data-es="Perfil de Sabor" data-pt="Perfil de Sabor" data-ar="ملف النكهة">Flavor Profile</div>
+                  <p class="trait-desc" data-en="Mild, buttery with almond, green apple, and a hint of pepper" data-pl="Łagodny, maślany z nutami migdałów, zielonego jabłka i odrobiną pieprzu" data-it="Delicato, burroso con note di mandorla, mela verde e un pizzico di pepe" data-es="Suave, mantecoso con notas de almendra, manzana verde y un toque de pimienta" data-pt="Suave, amanteigado com notas de amêndoa, maçã verde e um toque de pimenta" data-ar="ناعم، زبدي مع نكهات اللوز، التفاح الأخضر، ولمسة من الفلفل">
                     Mild, buttery with almond, green apple, and a hint of pepper
                   </p>
                 </div>
@@ -319,8 +408,8 @@
                   <svg class="trait-icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                     <path d="M12 2c-5.52 0-10 4.48-10 10s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 16.5v-9l6 4.5-6 4.5zm8-6.5h-2v-2h2v2zm0-4h-2V6h2v2z"/>
                   </svg>
-                  <div class="trait-name" data-en="Polyphenol Content" data-pl="Zawartość Polifenoli">Polyphenol Content</div>
-                  <p class="trait-desc" data-en="Moderate, 200-300 mg/kg, boosts heart health" data-pl="Umiarkowana, 200-300 mg/kg, wspiera zdrowie serca">
+                  <div class="trait-name" data-en="Polyphenol Content" data-pl="Zawartość Polifenoli" data-it="Contenuto di Polifenoli" data-es="Contenido de Polifenoles" data-pt="Conteúdo de Polifenóis" data-ar="محتوى البوليفينول">Polyphenol Content</div>
+                  <p class="trait-desc" data-en="Moderate, 200-300 mg/kg, boosts heart health" data-pl="Umiarkowana, 200-300 mg/kg, wspiera zdrowie serca" data-it="Moderato, 200-300 mg/kg, favorisce la salute del cuore" data-es="Moderado, 200-300 mg/kg, promueve la salud cardíaca" data-pt="Moderado, 200-300 mg/kg, promove a saúde cardíaca" data-ar="معتدل، 200-300 ملغ/كغ، يعزز صحة القلب">
                     Moderate, 200-300 mg/kg, boosts heart health
                   </p>
                 </div>
@@ -328,8 +417,8 @@
                   <svg class="trait-icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                     <path d="M12 2c-2.21 0-4 1.79-4 4s1.79 4 4 4 4-1.79 4-4-1.79-4-4-4zm0 6c-1.1 0-2-.9-2-2s.9-2 2-2 2 .9 2 2-.9 2-2 2zm-7 12v-2h14v2H5zm7-6c-2.76 0-5 2.24-5 5h10c0-2.76-2.24-5-5-5z"/>
                   </svg>
-                  <div class="trait-name" data-en="Acidity Level" data-pl="Poziom Kwasowości">Acidity Level</div>
-                  <p class="trait-desc" data-en="Ultra-low, <0.3%, for a silky finish" data-pl="Bardzo niski, <0,3%, dla jedwabistego wykończenia">
+                  <div class="trait-name" data-en="Acidity Level" data-pl="Poziom Kwasowości" data-it="Livello di Acidità" data-es="Nivel de Acidez" data-pt="Nível de Acidez" data-ar="مستوى الحموضة">Acidity Level</div>
+                  <p class="trait-desc" data-en="Ultra-low, <0.3%, for a silky finish" data-pl="Bardzo niski, <0,3%, dla jedwabistego wykończenia" data-it="Ultra-basso, <0,3%, per una finitura setosa" data-es="Ultra-bajo, <0,3%, para un acabado sedoso" data-pt="Ultra-baixo, <0,3%, para um acabamento sedoso" data-ar="منخفض للغاية، <0.3%، للحصول على لمسة نهائية ناعمة">
                     Ultra-low, <0.3%, for a silky finish
                   </p>
                 </div>
@@ -337,15 +426,15 @@
                   <svg class="trait-icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                     <path d="M12 2c-1.66 0-3 1.34-3 3v2c0 1.66 1.34 3 3 3s3-1.34 3-3V5c0-1.66-1.34-3-3-3zm-1 14h2v2h-2v-2zm-7-2h16v2H4v-2zm8-4c-2.21 0-4 1.79-4 4h8c0-2.21-1.79-4-4-4z"/>
                   </svg>
-                  <div class="trait-name" data-en="Texture" data-pl="Tekstura">Texture</div>
-                  <p class="trait-desc" data-en="Light, velvety with smooth consistency" data-pl="Lekka, aksamitna o gładkiej konsystencji">
+                  <div class="trait-name" data-en="Texture" data-pl="Tekstura" data-it="Texture" data-es="Textura" data-pt="Textura" data-ar="الملمس">Texture</div>
+                  <p class="trait-desc" data-en="Light, velvety with smooth consistency" data-pl="Lekka, aksamitna o gładkiej konsystencji" data-it="Leggera, vellutata con consistenza liscia" data-es="Ligera, aterciopelada con consistencia suave" data-pt="Leve, aveludada com consistência suave" data-ar="خفيف، مخملي مع قوام ناعم">
                     Light, velvety with smooth consistency
                   </p>
                 </div>
               </div>
               <!-- Best Uses Subsection with Improved Icons -->
               <div class="uses-container">
-                <h2 class="uses-title" data-en="Best Uses for Chemlali Olive Oil" data-pl="Najlepsze Zastosowania Oliwy Chemlali">
+                <h2 class="uses-title" data-en="Best Uses for Chemlali Olive Oil" data-pl="Najlepsze Zastosowania Oliwy Chemlali" data-it="Migliori Usi per l'Olio di Chemlali" data-es="Mejores Usos para el Aceite de Chemlali" data-pt="Melhores Usos para o Azeite de Chemlali" data-ar="أفضل استخدامات زيت الزيتون تشملالي">
                   Best Uses for Chemlali Olive Oil
                 </h2>
                 <div class="uses-grid">
@@ -353,37 +442,37 @@
                     <svg class="use-icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                       <path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm-2 12H6v-2h12v2zm-6-4c-1.66 0-3-1.34-3-3h6c0 1.66-1.34 3-3 3z"/>
                     </svg>
-                    <div class="use-name" data-en="Salad Dressings" data-pl="Sos do Sałatek">Salad Dressings</div>
+                    <div class="use-name" data-en="Salad Dressings" data-pl="Sos do Sałatek" data-it="Condimenti per Insalate" data-es="Aderezos para Ensaladas" data-pt="Molhos para Saladas" data-ar="تتبيلات السلطة">Salad Dressings</div>
                   </div>
                   <div class="use-card">
                     <svg class="use-icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                       <path d="M19 2h-1V1a1 1 0 0 0-2 0v1H8V1a1 1 0 0 0-2 0v1H5a5 5 0 0 0-5 5v14a5 5 0 0 0 5 5h14a5 5 0 0 0 5-5V7a5 5 0 0 0-5-5zm3 19a3 3 0 0 1-3 3H5a3 3 0 0 1-3-3V10h20v11zm-8-9h-4v-2h4v2z"/>
                     </svg>
-                    <div class="use-name" data-en="Baking" data-pl="Pieczenie">Baking</div>
+                    <div class="use-name" data-en="Baking" data-pl="Pieczenie" data-it="Cottura al Forno" data-es="Horneado" data-pt="Assar" data-ar="الخبز">Baking</div>
                   </div>
                   <div class="use-card">
                     <svg class="use-icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                       <path d="M12 2c-1.66 0-3 1.34-3 3v6c0 1.66 1.34 3 3 3s3-1.34 3-3V5c0-1.66-1.34-3-3-3zm-1 12h2v2h-2v-2zm-7-2h16v2H4v-2z"/>
                     </svg>
-                    <div class="use-name" data-en="Drizzling Over Dishes" data-pl="Skrapianie Potraw">Drizzling Over Dishes</div>
+                    <div class="use-name" data-en="Drizzling Over Dishes" data-pl="Skrapianie Potraw" data-it="Condire i Piatti" data-es="Rociar sobre Platos" data-pt="Regar sobre Pratos" data-ar="الرذاذ فوق الأطباق">Drizzling Over Dishes</div>
                   </div>
                   <div class="use-card">
                     <svg class="use-icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                       <path d="M21 5h-6l1.41-1.41a1 1 0 0 0-1.41-1.41L12 5.59 9 2.59A1 1 0 0 0 7.59 4L9 5H3a1 1 0 0 0-1 1v12a1 1 0 0 0 1 1h18a1 1 0 0 0 1-1V6a1 1 0 0 0-1-1zm-2 10H5v-2h14v2z"/>
                     </svg>
-                    <div class="use-name" data-en="Sautéing" data-pl="Smażenie">Sautéing</div>
+                    <div class="use-name" data-en="Sautéing" data-pl="Smażenie" data-it="Soffriggere" data-es="Saltear" data-pt="Refogar" data-ar="القلي">Sautéing</div>
                   </div>
                   <div class="use-card">
                     <svg class="use-icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                       <path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm-6 10c-1.66 0-3-1.34-3-3h6c0 1.66-1.34 3-3 3z"/>
                     </svg>
-                    <div class="use-name" data-en="Marinades" data-pl="Marynaty">Marinades</div>
+                    <div class="use-name" data-en="Marinades" data-pl="Marynaty" data-it="Marinate" data-es="Marinadas" data-pt="Marinadas" data-ar="التتبيلات">Marinades</div>
                   </div>
                   <div class="use-card">
                     <svg class="use-icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                       <path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm-6 12h-4v-2h4v2zm-6-4h8v-2H8v2z"/>
                     </svg>
-                    <div class="use-name" data-en="Dipping Bread" data-pl="Maczanie Chleba">Dipping Bread</div>
+                    <div class="use-name" data-en="Dipping Bread" data-pl="Maczanie Chleba" data-it="Intingere il Pane" data-es="Mojar Pan" data-pt="Mergulhar Pão" data-ar="غمس الخبز">Dipping Bread</div>
                   </div>
                 </div>
               </div>
@@ -396,6 +485,10 @@
                     class="text-[#141811] tracking-light text-[32px] font-bold leading-tight @[480px]:text-4xl @[480px]:font-black @[480px]:leading-tight @[480px]:tracking-[-0.033em] max-w-[720px]"
                     data-en="Let's Discuss Your Olive Oil Needs"
                     data-pl="Porozmawiajmy o Twoich Potrzebach Dotyczących Oliwy"
+                    data-it="Parliamo delle Tue Esigenze di Olio d'Oliva"
+                    data-es="Hablemos de Tus Necesidades de Aceite de Oliva"
+                    data-pt="Vamos Discutir Suas Necessidades de Azeite de Oliva"
+                    data-ar="لنتحدث عن احتياجاتك من زيت الزيتون"
                   >
                     Let's Discuss Your Olive Oil Needs
                   </h1>
@@ -407,7 +500,7 @@
                     class="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-xl h-10 px-4 @[480px]:h-12 @[480px]:px-5 bg-[#80e619] text-[#141811] text-sm font-bold leading-normal tracking-[0.015em] @[480px]:text-base @[480px]:font-bold @[480px]:leading-normal @[480px]:tracking-[0.015em] no-underline"
                   >
                     <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp" class="w-5 h-5 mr-2">
-                    <span class="truncate" data-en="Contact Us via WhatsApp" data-pl="Skontaktuj Się przez WhatsApp">Contact Us via WhatsApp</span>
+                    <span class="truncate" data-en="Contact Us via WhatsApp" data-pl="Skontaktuj Się przez WhatsApp" data-it="Contattaci via WhatsApp" data-es="Contáctanos vía WhatsApp" data-pt="Contate-nos via WhatsApp" data-ar="اتصل بنا عبر واتساب">Contact Us via WhatsApp</span>
                   </a>
                   <a
                     href="mailto:info@kartaginafoods.pl"
@@ -418,7 +511,7 @@
                         d="M216,40H40A16,16,0,0,0,24,56V200a16,16,0,0,0,16,16H216a16,16,0,0,0,16-16V56A16,16,0,0,0,216,40Zm0,160H40V56H216V200ZM184,96a8,8,0,0,1-8,8H80a8,8,0,0,1,0-16h96A8,8,0,0,1,184,96Zm0,32a8,8,0,0,1-8,8H80a8,8,0,0,1,0-16h96A8,8,0,0,1,184,128Zm0,32a8,8,0,0,1-8,8H80a8,8,0,0,1,0-16h96A8,8,0,0,1,184,160Z"
                       ></path>
                     </svg>
-                    <span class="truncate" data-en="Contact Us via Email" data-pl="Skontaktuj Się przez Email">Contact Us via Email</span>
+                    <span class="truncate" data-en="Contact Us via Email" data-pl="Skontaktuj Się przez Email" data-it="Contattaci via Email" data-es="Contáctanos vía Email" data-pt="Contate-nos via Email" data-ar="اتصل بنا عبر البريد الإلكتروني">Contact Us via Email</span>
                   </a>
                 </div>
               </div>
@@ -429,10 +522,10 @@
           <div class="flex max-w-[960px] flex-1 flex-col">
             <footer class="flex flex-col gap-6 px-5 py-10 text-center @container">
               <div class="flex flex-wrap items-center justify-center gap-6 @[480px]:flex-row @[480px]:justify-around">
-                <a class="text-[#758863] text-base font-normal leading-normal min-w-40" href="home.html" data-en="Home" data-pl="Strona Główna">Home</a>
-                <a class="text-[#758863] text-base font-normal leading-normal min-w-40" href="product.html" data-en="Our Products" data-pl="Nasze Produkty">Our Products</a>
-                <a class="text-[#758863] text-base font-normal leading-normal min-w-40" href="heritage.html" data-en="Heritage" data-pl="Dziedzictwo">Heritage</a>
-                <a class="text-[#758863] text-base font-normal leading-normal min-w-40" href="contact.html" data-en="Contact" data-pl="Kontakt">Contact</a>
+                <a class="text-[#758863] text-base font-normal leading-normal min-w-40" href="home.html" data-en="Home" data-pl="Strona Główna" data-it="Home" data-es="Inicio" data-pt="Início" data-ar="الرئيسية">Home</a>
+                <a class="text-[#758863] text-base font-normal leading-normal min-w-40" href="product.html" data-en="Our Products" data-pl="Nasze Produkty" data-it="I nostri prodotti" data-es="Nuestros productos" data-pt="Nossos produtos" data-ar="منتجاتنا">Our Products</a>
+                <a class="text-[#758863] text-base font-normal leading-normal min-w-40" href="heritage.html" data-en="Heritage" data-pl="Dziedzictwo" data-it="Eredità" data-es="Patrimonio" data-pt="Herança" data-ar="التراث">Heritage</a>
+                <a class="text-[#758863] text-base font-normal leading-normal min-w-40" href="contact.html" data-en="Contact" data-pl="Kontakt" data-it="Contatti" data-es="Contacto" data-pt="Contato" data-ar="اتصل بنا">Contact</a>
               </div>
               <div class="flex flex-wrap justify-center gap-4">
                 <a href="https://instagram.com/yourprofile" target="_blank">
@@ -463,7 +556,7 @@
                   </div>
                 </a>
               </div>
-              <p class="text-[#758863] text-base font-normal leading-normal" data-en="© 2025 Laperla. All rights reserved." data-pl="© 2025 Laperla. Wszelkie prawa zastrzeżone.">
+              <p class="text-[#758863] text-base font-normal leading-normal" data-en="© 2025 Laperla. All rights reserved." data-pl="© 2025 Laperla. Wszelkie prawa zastrzeżone." data-it="© 2025 Laperla. Tutti i diritti riservati." data-es="© 2025 Laperla. Todos los derechos reservados." data-pt="© 2025 Laperla. Todos os direitos reservados." data-ar="© 2025 لابيرلا. جميع الحقوق محفوظة.">
                 © 2025 Laperla. All rights reserved.
               </p>
             </footer>
@@ -474,27 +567,48 @@
 
     <script>
       document.addEventListener('DOMContentLoaded', () => {
-        const translatableElements = document.querySelectorAll('[data-en][data-pl]');
-        const languageLinks = document.querySelectorAll('.language-link');
+        const translatableElements = document.querySelectorAll('[data-en][data-pl][data-it][data-es][data-pt][data-ar]');
+        const languageButton = document.querySelector('.language-dropdown-button');
+        const languageMenu = document.querySelector('.language-dropdown-menu');
+        const languageOptions = document.querySelectorAll('.language-option');
+        const selectedLanguageSpan = document.querySelector('.selected-language');
+        const flagSpan = languageButton.querySelector('.fi');
 
         function updateLanguage(lang) {
+          // Update text content
           translatableElements.forEach(element => {
             element.textContent = element.getAttribute(`data-${lang}`);
           });
-          languageLinks.forEach(link => {
-            if (link.getAttribute('data-lang') === lang) {
-              link.classList.add('font-bold', 'underline');
-            } else {
-              link.classList.remove('font-bold', 'underline');
-            }
-          });
+
+          // Update selected language display
+          const selectedOption = document.querySelector(`.language-option[data-lang="${lang}"]`);
+          selectedLanguageSpan.textContent = selectedOption.textContent.trim();
+          flagSpan.className = `fi fi-${lang === 'ar' ? 'ma' : lang}`;
+
+          // Update direction for Arabic
+          document.body.setAttribute('dir', lang === 'ar' ? 'rtl' : 'ltr');
+
+          // Close dropdown
+          languageMenu.classList.remove('show');
         }
 
-        languageLinks.forEach(link => {
-          link.addEventListener('click', (e) => {
-            e.preventDefault();
-            updateLanguage(link.getAttribute('data-lang'));
+        // Toggle dropdown
+        languageButton.addEventListener('click', () => {
+          languageMenu.classList.toggle('show');
+        });
+
+        // Handle language selection
+        languageOptions.forEach(option => {
+          option.addEventListener('click', () => {
+            updateLanguage(option.getAttribute('data-lang'));
           });
+        });
+
+        // Close dropdown when clicking outside
+        document.addEventListener('click', (e) => {
+          if (!languageButton.contains(e.target) && !languageMenu.contains(e.target)) {
+            languageMenu.classList.remove('show');
+          }
         });
 
         // Set initial language to English
