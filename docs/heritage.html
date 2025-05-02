@@ -10,10 +10,62 @@
       onload="this.rel='stylesheet'"
       href="https://fonts.googleapis.com/css2?display=swap&family=Epilogue%3Awght%40400%3B500%3B700%3B900&family=Noto+Sans%3Awght%40400%3B500%3B700%3B900&family=Amiri:wght@400;700&family=Lugrasimo&display=swap"
     />
+    <!-- Add Flag Icons CSS for language flags -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flag-icons/css/flag-icons.min.css" />
     <title>Laperla Olive Oil</title>
     <link rel="icon" type="image/x-icon" href="data:image/x-icon;base64," />
     <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
     <link rel="stylesheet" href="assets/css/styles.css">
+    <style>
+      /* Dropdown styles */
+      .language-dropdown {
+        position: relative;
+      }
+      .language-dropdown-button {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        padding: 0.5rem 1rem;
+        background-color: #f2f4f0;
+        border-radius: 0.5rem;
+        cursor: pointer;
+        font-size: 0.875rem;
+        font-weight: 500;
+        color: #141811;
+      }
+      .language-dropdown-menu {
+        position: absolute;
+        top: 100%;
+        right: 0;
+        margin-top: 0.5rem;
+        background-color: white;
+        border: 1px solid #e0e5dc;
+        border-radius: 0.5rem;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        display: none;
+        z-index: 10;
+      }
+      .language-dropdown-menu.show {
+        display: block;
+      }
+      .language-option {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        padding: 0.5rem 1rem;
+        cursor: pointer;
+        font-size: 0.875rem;
+        color: #141811;
+      }
+      .language-option:hover {
+        background-color: #f2f4f0;
+      }
+      /* Ensure Arabic text is right-to-left */
+      [dir="rtl"] {
+        direction: rtl;
+        font-family: 'Amiri', serif;
+      }
+    </style>
   </head>
   <body>
     <div class="relative flex size-full min-h-screen flex-col bg-white group/design-root overflow-x-hidden" style='font-family: Epilogue, "Noto Sans", sans-serif;'>
@@ -37,27 +89,57 @@
             </div>
             <div class="flex flex-col">
               <h2 class="text-[#141811] text-2xl font-bold leading-tight tracking-[-0.015em]" style="font-family: 'Lugrasimo', serif; font-weight: 1000; -webkit-font-smoothing: antialiased;">Laperla</h2>              
-              <p class="text-[#758863] text-xs" data-en="Your premium olive oil partner" data-pl="Twój partner w premium oliwie">Your premium olive oil partner</p>
+              <p class="text-[#758863] text-xs" data-en="Your premium olive oil partner" data-pl="Twój partner w premium oliwie" data-it="Il tuo partner per l'olio d'oliva premium" data-es="Tu socio en aceite de oliva premium" data-pt="Seu parceiro em azeite de oliva premium" data-ar="شريكك في زيت الزيتون الممتاز">Your premium olive oil partner</p>
             </div>
           </div>
           <div class="flex flex-1 justify-end gap-8">
             <div class="flex items-center gap-9">
-              <a class="text-[#141811] text-sm font-medium leading-normal" href="home.html" data-en="Home" data-pl="Strona Główna">Home</a>
-              <a class="text-[#141811] text-sm font-medium leading-normal" href="product.html" data-en="Our Products" data-pl="Nasze Produkty">Our Products</a>
-              <a class="text-[#141811] text-sm font-medium leading-normal" href="heritage.html" data-en="Heritage" data-pl="Dziedzictwo">Heritage</a>
-              <a class="text-[#141811] text-sm font-medium leading-normal" href="contact.html" data-en="Contact" data-pl="Kontakt">Contact</a>
+              <a class="text-[#141811] text-sm font-medium leading-normal" href="home.html" data-en="Home" data-pl="Strona Główna" data-it="Home" data-es="Inicio" data-pt="Início" data-ar="الرئيسية">Home</a>
+              <a class="text-[#141811] text-sm font-medium leading-normal" href="product.html" data-en="Our Products" data-pl="Nasze Produkty" data-it="I nostri prodotti" data-es="Nuestros productos" data-pt="Nossos produtos" data-ar="منتجاتنا">Our Products</a>
+              <a class="text-[#141811] text-sm font-medium leading-normal" href="heritage.html" data-en="Heritage" data-pl="Dziedzictwo" data-it="Eredità" data-es="Patrimonio" data-pt="Herança" data-ar="التراث">Heritage</a>
+              <a class="text-[#141811] text-sm font-medium leading-normal" href="contact.html" data-en="Contact" data-pl="Kontakt" data-it="Contatti" data-es="Contacto" data-pt="Contato" data-ar="اتصل بنا">Contact</a>
             </div>
-            <div class="flex items-center gap-2">
-              <a href="#" class="language-link text-[#141811] text-sm font-medium" data-lang="en">EN</a>
-              <span class="text-[#141811]">|</span>
-              <a href="#" class="language-link text-[#141811] text-sm font-medium" data-lang="pl">PL</a>
+            <div class="language-dropdown">
+              <button class="language-dropdown-button">
+                <span class="fi fi-us"></span>
+                <span class="selected-language">English</span>
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                </svg>
+              </button>
+              <div class="language-dropdown-menu">
+                <div class="language-option" data-lang="en">
+                  <span class="fi fi-us"></span>
+                  English
+                </div>
+                <div class="language-option" data-lang="pl">
+                  <span class="fi fi-pl"></span>
+                  Polski
+                </div>
+                <div class="language-option" data-lang="it">
+                  <span class="fi fi-it"></span>
+                  Italiano
+                </div>
+                <div class="language-option" data-lang="es">
+                  <span class="fi fi-es"></span>
+                  Español
+                </div>
+                <div class="language-option" data-lang="pt">
+                  <span class="fi fi-pt"></span>
+                  Português
+                </div>
+                <div class="language-option" data-lang="ar" dir="rtl">
+                  <span class="fi fi-ma"></span>
+                  العربية
+                </div>
+              </div>
             </div>
           </div>
         </header>
         <div class="px-40 flex flex-1 justify-center py-5">
           <div class="layout-content-container flex flex-col max-w-[960px] flex-1">
             <div class="flex flex-wrap justify-between gap-3 p-4">
-              <p class="text-[#141811] tracking-light text-[32px] font-bold leading-tight min-w-72" data-en="Our Heritage" data-pl="Nasze Dziedzictwo">Our Heritage</p>
+              <p class="text-[#141811] tracking-light text-[32px] font-bold leading-tight min-w-72" data-en="Our Heritage" data-pl="Nasze Dziedzictwo" data-it="La nostra eredità" data-es="Nuestro patrimonio" data-pt="Nossa herança" data-ar="تراثنا">Our Heritage</p>
             </div>
             <div class="@container">
               <div class="@[480px]:p-4">
@@ -70,6 +152,10 @@
                       class="text-white text-4xl font-black leading-tight tracking-[-0.033em] @[480px]:text-5xl @[480px]:font-black @[480px]:leading-tight @[480px]:tracking-[-0.033em]"
                       data-en="A Timeless Tunisian Legacy"
                       data-pl="Ponadczasowe Tunezyjskie Dziedzictwo"
+                      data-it="Un'eredità tunisina senza tempo"
+                      data-es="Un legado tunecino atemporal"
+                      data-pt="Uma herança tunisiana atemporal"
+                      data-ar="إرث تونسي خالد"
                     >
                       A Timeless Tunisian Legacy
                     </h1>
@@ -77,6 +163,10 @@
                       class="text-white text-sm font-normal leading-normal @[480px]:text-base @[480px]:font-normal @[480px]:leading-normal"
                       data-en="Journey through centuries of tradition with Laperla, where sunlit groves in Tunisia’s heart yield extra virgin olive oil rich in history and flavor."
                       data-pl="Przeżyj wieki tradycji z Laperla, gdzie nasłonecznione gaje w sercu Tunezji dają oliwę extra virgin pełną historii i smaku."
+                      data-it="Viaggia attraverso secoli di tradizione con Laperla, dove i boschi soleggiati nel cuore della Tunisia producono olio extravergine di oliva ricco di storia e sapore."
+                      data-es="Viaja a través de siglos de tradición con Laperla, donde los olivares iluminados por el sol en el corazón de Túnez producen aceite de oliva virgen extra rico en historia y sabor."
+                      data-pt="Viaje por séculos de tradição com a Laperla, onde os olivais ensolarados no coração da Tunísia produzem azeite de oliva virgem extra rico em história e sabor."
+                      data-ar="سافر عبر قرون من التقاليد مع لابيرلا، حيث تنتج البساتين المشمسة في قلب تونس زيت زيتون بكر ممتاز غني بالتاريخ والنكهة."
                     >
                       Journey through centuries of tradition with Laperla, where sunlit groves in Tunisia’s heart yield extra virgin olive oil rich in history and flavor.
                     </h2>
@@ -84,15 +174,19 @@
                 </div>
               </div>
             </div>
-            <h2 class="text-[#141811] text-[22px] font-bold leading-tight tracking-[-0.015em] px-4 pb-3 pt-5" data-en="The Laperla Story" data-pl="Historia Laperla">The Laperla Story</h2>
+            <h2 class="text-[#141811] text-[22px] font-bold leading-tight tracking-[-0.015em] px-4 pb-3 pt-5" data-en="The Laperla Story" data-pl="Historia Laperla" data-it="La storia di Laperla" data-es="La historia de Laperla" data-pt="A história da Laperla" data-ar="قصة لابيرلا">The Laperla Story</h2>
             <p
               class="text-[#141811] text-base font-normal leading-normal pb-3 pt-1 px-4"
               data-en="In the heart of Tunisia, on the fertile lands of Sidi Bou Ali, our story unfolds amid groves that echo the ancient Roman fields of Zembra. For generations, our family has tended these sun-drenched trees, kissed by Mediterranean breezes, preserving a craft that began over 2,000 years ago. From this rich terroir, we harvest olives bursting with polyphenols—nature’s antioxidants—blending tradition with innovation to bottle a heritage that nourishes both body and soul."
               data-pl="W sercu Tunezji, na żyznych ziemiach Sidi Bou Ali, nasza historia rozwija się wśród gajów, które odbijają starożytne pola Zembra z czasów rzymskich. Od pokoleń nasza rodzina dba o te nasłonecznione drzewa, muskane śródziemnomorskimi bryzami, podtrzymując rzemiosło sprzed ponad 2000 lat. Z tego bogatego terroir zbieramy oliwki pełne polifenoli—naturalnych antyoksydantów—łącząc tradycję z innowacją, by zamknąć w butelkach dziedzictwo, które karmi ciało i duszę."
+              data-it="Nel cuore della Tunisia, sulle fertili terre di Sidi Bou Ali, la nostra storia si dipana tra i boschi che riecheggiano gli antichi campi romani di Zembra. Per generazioni, la nostra famiglia ha curato questi alberi baciati dal sole e accarezzati dalle brezze mediterranee, preservando un mestiere iniziato oltre 2.000 anni fa. Da questo ricco terroir raccogliamo olive ricche di polifenoli—antiossidanti naturali—unendo tradizione e innovazione per imbottigliare un'eredità che nutre corpo e anima."
+              data-es="En el corazón de Túnez, en las fértiles tierras de Sidi Bou Ali, nuestra historia se desarrolla entre olivares que evocan los antiguos campos romanos de Zembra. Durante generaciones, nuestra familia ha cuidado estos árboles bañados por el sol, acariciados por las brisas mediterráneas, preservando un oficio que comenzó hace más de 2.000 años. De este rico terroir cosechamos aceitunas llenas de polifenoles—antioxidantes naturales—mezclando tradición con innovación para embotellar un patrimonio que nutre cuerpo y alma."
+              data-pt="No coração da Tunísia, nas terras férteis de Sidi Bou Ali, nossa história se desenrola entre olivais que ecoam os antigos campos romanos de Zembra. Por gerações, nossa família cuidou dessas árvores ensolaradas, beijadas pelas brisas mediterrâneas, preservando um ofício que começou há mais de 2.000 anos. Deste rico terroir, colhemos azeitonas repletas de polifenóis—antioxidantes naturais—misturando tradição com inovação para engarrafar uma herança que nutre corpo e alma."
+              data-ar="في قلب تونس، على الأراضي الخصبة لسيدي بوعلي، تتكشف قصتنا وسط البساتين التي تعكس الحقول الرومانية القديمة لزمبرة. لأجيال، اعتنت عائلتنا بهذه الأشجار المشمسة، التي تلامسها نسمات البحر الأبيض المتوسط، محافظة على حرفة بدأت منذ أكثر من 2000 عام. من هذا التربة الغنية، نحصد الزيتون المليء بالبوليفينول—مضادات الأكسدة الطبيعية—ممزوجة بالتقاليد مع الابتكار لتعبئة إرث يغذي الجسم والروح."
             >
               In the heart of Tunisia, on the fertile lands of Sidi Bou Ali, our story unfolds amid groves that echo the ancient Roman fields of Zembra. For generations, our family has tended these sun-drenched trees, kissed by Mediterranean breezes, preserving a craft that began over 2,000 years ago. From this rich terroir, we harvest olives bursting with polyphenols—nature’s antioxidants—blending tradition with innovation to bottle a heritage that nourishes both body and soul.
             </p>
-            <h2 class="text-[#141811] text-[22px] font-bold leading-tight tracking-[-0.015em] px-4 pb-3 pt-5" data-en="Our Olive Groves" data-pl="Nasze Gaje Oliwne">Our Olive Groves</h2>
+            <h2 class="text-[#141811] text-[22px] font-bold leading-tight tracking-[-0.015em] px-4 pb-3 pt-5" data-en="Our Olive Groves" data-pl="Nasze Gaje Oliwne" data-it="I nostri uliveti" data-es="Nuestros olivares" data-pt="Nossos olivais" data-ar="بساتين الزيتون لدينا">Our Olive Groves</h2>
             <div class="grid grid-cols-[repeat(auto-fit,minmax(158px,1fr))] gap-3 p-4">
               <div class="flex flex-col gap-3 pb-3">
                 <div
@@ -100,11 +194,15 @@
                   style='background-image: url("assets/images/threewomen.jpg");'
                 ></div>
                 <div>
-                  <p class="text-[#141811] text-base font-medium leading-normal" data-en="Sidi Bou Ali Estate" data-pl="Posiadłość Sidi Bou Ali">Sidi Bou Ali Estate</p>
+                  <p class="text-[#141811] text-base font-medium leading-normal" data-en="Sidi Bou Ali Estate" data-pl="Posiadłość Sidi Bou Ali" data-it="Tenuta Sidi Bou Ali" data-es="Finca Sidi Bou Ali" data-pt="Propriedade Sidi Bou Ali" data-ar="عزبة سيدي بوعلي">Sidi Bou Ali Estate</p>
                   <p
                     class="text-[#758863] text-sm font-normal leading-normal"
                     data-en="Nestled in Tunisia’s heart, this estate grows Chemlali olives famed for their smooth, balanced flavor."
                     data-pl="Położona w sercu Tunezji, ta posiadłość uprawia oliwki Chemlali, słynące z gładkiego, zrównoważonego smaku."
+                    data-it="Situata nel cuore della Tunisia, questa tenuta coltiva olive Chemlali famose per il loro sapore morbido ed equilibrato."
+                    data-es="Ubicada en el corazón de Túnez, esta finca cultiva aceitunas Chemlali famosas por su sabor suave y equilibrado."
+                    data-pt="Localizada no coração da Tunísia, esta propriedade cultiva azeitonas Chemlali famosas por seu sabor suave e equilibrado."
+                    data-ar="تقع في قلب تونس، هذه العزبة تزرع زيتون تشملالي المشهور بنكهته الناعمة والمتوازنة."
                   >
                     Nestled in Tunisia’s heart, this estate grows Chemlali olives famed for their smooth, balanced flavor.
                   </p>
@@ -116,11 +214,15 @@
                   style='background-image: url("assets/images/dougga.jpg");'
                 ></div>
                 <div>
-                  <p class="text-[#141811] text-base font-medium leading-normal" data-en="Zembra Orchard" data-pl="Sad Zembra">Zembra Orchard</p>
+                  <p class="text-[#141811] text-base font-medium leading-normal" data-en="Zembra Orchard" data-pl="Sad Zembra" data-it="Frutteto Zembra" data-es="Huerto Zembra" data-pt="Pomar Zembra" data-ar="بستان زمبرة">Zembra Orchard</p>
                   <p
                     class="text-[#758863] text-sm font-normal leading-normal"
                     data-en="Echoing Roman legacy, this orchard yields Chetoui olives with vibrant, pungent notes."
                     data-pl="Odzwierciedlając rzymskie dziedzictwo, ten sad daje oliwki Chetoui o żywych, ostrych nutach."
+                    data-it="Riecheggiando l'eredità romana, questo frutteto produce olive Chetoui con note vivaci e pungenti."
+                    data-es="Evocando el legado romano, este huerto produce aceitunas Chetoui con notas vibrantes y picantes."
+                    data-pt="Ecoando o legado romano, este pomar produz azeitonas Chetoui com notas vibrantes e picantes."
+                    data-ar="يعكس الإرث الروماني، هذا البستان ينتج زيتون شتوي بنكهات نابضة بالحياة وحادة."
                   >
                     Echoing Roman legacy, this orchard yields Chetoui olives with vibrant, pungent notes.
                   </p>
@@ -132,22 +234,30 @@
                   style='background-image: url("assets/images/tunisia.jpg");'
                 ></div>
                 <div>
-                  <p class="text-[#141811] text-base font-medium leading-normal" data-en="Coastal Breeze Grove" data-pl="Gaj Nadmorskiej Bryzy">Coastal Breeze Grove</p>
+                  <p class="text-[#141811] text-base font-medium leading-normal" data-en="Coastal Breeze Grove" data-pl="Gaj Nadmorskiej Bryzy" data-it="Bosco della Brezza Costiera" data-es="Olivar de la Brisa Costera" data-pt="Olival da Brisa Costeira" data-ar="بستان نسيم الساحل">Coastal Breeze Grove</p>
                   <p
                     class="text-[#758863] text-sm font-normal leading-normal"
                     data-en="Kissed by sea air, these ancient trees produce oils rich in antioxidants and subtle herb aromas."
                     data-pl="Musnięte morskim powietrzem, te starożytne drzewa dają oliwy bogate w antyoksydanty i subtelne ziołowe aromaty."
+                    data-it="Baciati dall'aria marina, questi alberi antichi producono oli ricchi di antiossidanti e sottili aromi erbacei."
+                    data-es="Acariciados por el aire marino, estos árboles antiguos producen aceites ricos en antioxidantes y sutiles aromas herbales."
+                    data-pt="Beijados pelo ar marinho, essas árvores antigas produzem azeites ricos em antioxidantes e aromas herbais sutis."
+                    data-ar="تمتزج مع هواء البحر، هذه الأشجار القديمة تنتج زيوت غنية بمضادات الأكسدة وروائح أعشاب خفية."
                   >
                     Kissed by sea air, these ancient trees produce oils rich in antioxidants and subtle herb aromas.
                   </p>
                 </div>
               </div>
             </div>
-            <h2 class="text-[#141811] text-[22px] font-bold leading-tight tracking-[-0.015em] px-4 pb-3 pt-5" data-en="Crafting Laperla" data-pl="Tworzenie Laperla">Crafting Laperla</h2>
+            <h2 class="text-[#141811] text-[22px] font-bold leading-tight tracking-[-0.015em] px-4 pb-3 pt-5" data-en="Crafting Laperla" data-pl="Tworzenie Laperla" data-it="Creazione di Laperla" data-es="Creación de Laperla" data-pt="Criação da Laperla" data-ar="صناعة لابيرلا">Crafting Laperla</h2>
             <p
               class="text-[#141811] text-base font-normal leading-normal pb-3 pt-1 px-4"
               data-en="We handpick our olives at peak ripeness from Sidi Bou Ali’s sunlit groves, cold-pressing them in our state-of-the-art mill to preserve their natural essence. Our flagship Chemlali Edition Prestige—internationally acclaimed—bursts with almond and apple notes, a testament to Tunisia’s finest. Every bottle undergoes meticulous quality checks, ensuring Laperla delivers a taste of history and health in every drop."
               data-pl="Ręcznie zbieramy oliwki w pełni dojrzałości z nasłonecznionych gajów Sidi Bou Ali, tłocząc je na zimno w nowoczesnym młynie, by zachować ich naturalną esencję. Nasza flagowa Chemlali Edition Prestige—doceniona na świecie—zachwyca nutami migdałów i jabłek, będąc dowodem na tunezyjską doskonałość. Każda butelka przechodzi drobiazgowe kontrole jakości, zapewniając, że Laperla dostarcza smak historii i zdrowia w każdej kropli."
+              data-it="Raccogliamo a mano le nostre olive al massimo della maturazione dai boschi soleggiati di Sidi Bou Ali, pressandole a freddo nel nostro mulino all'avanguardia per preservarne l'essenza naturale. La nostra prestigiosa Chemlali Edition Prestige—acclamata a livello internazionale—sprigiona note di mandorla e mela, una testimonianza dell'eccellenza tunisina. Ogni bottiglia è sottoposta a rigorosi controlli di qualità, garantendo che Laperla offra un gusto di storia e salute in ogni goccia."
+              data-es="Recolectamos a mano nuestras aceitunas en su punto óptimo de madurez de los olivares soleados de Sidi Bou Ali, prensándolas en frío en nuestro molino de última generación para preservar su esencia natural. Nuestra emblemática Chemlali Edition Prestige—aclamada internacionalmente—desborda notas de almendra y manzana, un testimonio de la excelencia tunecina. Cada botella pasa por meticulosos controles de calidad, asegurando que Laperla entregue un sabor de historia y salud en cada gota."
+              data-pt="Colhemos manualmente nossas azeitonas no auge da maturação dos olivais ensolarados de Sidi Bou Ali, prensando-as a frio em nosso moinho de última geração para preservar sua essência natural. Nossa prestigiosa Chemlali Edition Prestige—aclamada internacionalmente—explode com notas de amêndoa e maçã, um testemunho da excelência tunisiana. Cada garrafa passa por rigorosos controles de qualidade, garantindo que a Laperla entregue um sabor de história e saúde em cada gota."
+              data-ar="نقطف زيتوننا يدويًا في ذروة النضج من بساتين سيدي بوعلي المشمسة، ونعصره على البارد في مطحنتنا الحديثة للحفاظ على جوهره الطبيعي. إصدارنا الرائد تشملالي إديشن بريستيج—المعترف به دوليًا—ينفجر بنكهات اللوز والتفاح، وهو شهادة على التميز التونسي. تخضع كل زجاجة لفحوصات جودة دقيقة، مما يضمن أن تقدم لابيرلا طعم التاريخ والصحة في كل قطرة."
             >
               We handpick our olives at peak ripeness from Sidi Bou Ali’s sunlit groves, cold-pressing them in our state-of-the-art mill to preserve their natural essence. Our flagship Chemlali Edition Prestige—internationally acclaimed—bursts with almond and apple notes, a testament to Tunisia’s finest. Every bottle undergoes meticulous quality checks, ensuring Laperla delivers a taste of history and health in every drop.
             </p>
@@ -170,27 +280,34 @@
                     class="text-[#141811] tracking-light text-[32px] font-bold leading-tight @[480px]:text-4xl @[480px]:font-black @[480px]:leading-tight @[480px]:tracking-[-0.033em] max-w-[720px]"
                     data-en="Let's Discuss Your Olive Oil Needs"
                     data-pl="Porozmawiajmy o Twoich Potrzebach Dotyczących Oliwy"
+                    data-it="Parliamo delle Tue Esigenze di Olio d'Oliva"
+                    data-es="Hablemos de Tus Necesidades de Aceite de Oliva"
+                    data-pt="Vamos Discutir Suas Necessidades de Azeite de Oliva"
+                    data-ar="لنتحدث عن احتياجاتك من زيت الزيتون"
                   >
                     Let's Discuss Your Olive Oil Needs
                   </h1>
                 </div>
                 <div class="flex flex-wrap justify-center gap-4">
-                  <button
-                    class="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-xl h-10 px-4 @[480px]:h-12 @[480px]:px-5 bg-[#80e619] text-[#141811] text-sm font-bold leading-normal tracking-[0.015em] @[480px]:text-base @[480px]:font-bold @[480px]:leading-normal @[480px]:tracking-[0.015em]"
+                  <a
+                    href="https://wa.me/48530846928"
+                    target="_blank"
+                    class="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-xl h-10 px-4 @[480px]:h-12 @[480px]:px-5 bg-[#80e619] text-[#141811] text-sm font-bold leading-normal tracking-[0.015em] @[480px]:text-base @[480px]:font-bold @[480px]:leading-normal @[480px]:tracking-[0.015em] no-underline"
                   >
                     <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp" class="w-5 h-5 mr-2">
-                    <span class="truncate" data-en="Contact Us via WhatsApp" data-pl="Skontaktuj Się przez WhatsApp">Contact Us via WhatsApp</span>
-                  </button>
-                  <button
-                    class="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-xl h-10 px-4 @[480px]:h-12 @[480px]:px-5 bg-[#80e619] text-[#141811] text-sm font-bold leading-normal tracking-[0.015em] @[480px]:text-base @[480px]:font-bold @[480px]:leading-normal @[480px]:tracking-[0.015em]"
+                    <span class="truncate" data-en="Contact Us via WhatsApp" data-pl="Skontaktuj Się przez WhatsApp" data-it="Contattaci via WhatsApp" data-es="Contáctanos vía WhatsApp" data-pt="Contate-nos via WhatsApp" data-ar="اتصل بنا عبر واتساب">Contact Us via WhatsApp</span>
+                  </a>
+                  <a
+                    href="mailto:info@kartaginafoods.pl"
+                    class="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-xl h-10 px-4 @[480px]:h-12 @[480px]:px-5 bg-[#80e619] text-[#141811] text-sm font-bold leading-normal tracking-[0.015em] @[480px]:text-base @[480px]:font-bold @[480px]:leading-normal @[480px]:tracking-[0.015em] no-underline"
                   >
                     <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" viewBox="0 0 256 256" class="mr-2">
                       <path
                         d="M216,40H40A16,16,0,0,0,24,56V200a16,16,0,0,0,16,16H216a16,16,0,0,0,16-16V56A16,16,0,0,0,216,40Zm0,160H40V56H216V200ZM184,96a8,8,0,0,1-8,8H80a8,8,0,0,1,0-16h96A8,8,0,0,1,184,96Zm0,32a8,8,0,0,1-8,8H80a8,8,0,0,1,0-16h96A8,8,0,0,1,184,128Zm0,32a8,8,0,0,1-8,8H80a8,8,0,0,1,0-16h96A8,8,0,0,1,184,160Z"
                       ></path>
                     </svg>
-                    <span class="truncate" data-en="Contact Us via Email" data-pl="Skontaktuj Się przez Email">Contact Us via Email</span>
-                  </button>
+                    <span class="truncate" data-en="Contact Us via Email" data-pl="Skontaktuj Się przez Email" data-it="Contattaci via Email" data-es="Contáctanos vía Email" data-pt="Contate-nos via Email" data-ar="اتصل بنا عبر البريد الإلكتروني">Contact Us via Email</span>
+                  </a>
                 </div>
               </div>
             </div>
@@ -200,10 +317,10 @@
           <div class="flex max-w-[960px] flex-1 flex-col">
             <footer class="flex flex-col gap-6 px-5 py-10 text-center @container">
               <div class="flex flex-wrap items-center justify-center gap-6 @[480px]:flex-row @[480px]:justify-around">
-                <a class="text-[#758863] text-base font-normal leading-normal min-w-40" href="home.html" data-en="Home" data-pl="Strona Główna">Home</a>
-                <a class="text-[#758863] text-base font-normal leading-normal min-w-40" href="product.html" data-en="Our Products" data-pl="Nasze Produkty">Our Products</a>
-                <a class="text-[#758863] text-base font-normal leading-normal min-w-40" href="heritage.html" data-en="Heritage" data-pl="Dziedzictwo">Heritage</a>
-                <a class="text-[#758863] text-base font-normal leading-normal min-w-40" href="contact.html" data-en="Contact" data-pl="Kontakt">Contact</a>
+                <a class="text-[#758863] text-base font-normal leading-normal min-w-40" href="home.html" data-en="Home" data-pl="Strona Główna" data-it="Home" data-es="Inicio" data-pt="Início" data-ar="الرئيسية">Home</a>
+                <a class="text-[#758863] text-base font-normal leading-normal min-w-40" href="product.html" data-en="Our Products" data-pl="Nasze Produkty" data-it="I nostri prodotti" data-es="Nuestros productos" data-pt="Nossos produtos" data-ar="منتجاتنا">Our Products</a>
+                <a class="text-[#758863] text-base font-normal leading-normal min-w-40" href="heritage.html" data-en="Heritage" data-pl="Dziedzictwo" data-it="Eredità" data-es="Patrimonio" data-pt="Herança" data-ar="التراث">Heritage</a>
+                <a class="text-[#758863] text-base font-normal leading-normal min-w-40" href="contact.html" data-en="Contact" data-pl="Kontakt" data-it="Contatti" data-es="Contacto" data-pt="Contato" data-ar="اتصل بنا">Contact</a>
               </div>
               <div class="flex flex-wrap justify-center gap-4">
                 <a href="https://instagram.com/yourprofile" target="_blank">
@@ -234,7 +351,7 @@
                   </div>
                 </a>
               </div>
-              <p class="text-[#758863] text-base font-normal leading-normal" data-en="© 2025 Laperla. All rights reserved." data-pl="© 2025 Laperla. Wszelkie prawa zastrzeżone.">
+              <p class="text-[#758863] text-base font-normal leading-normal" data-en="© 2025 Laperla. All rights reserved." data-pl="© 2025 Laperla. Wszelkie prawa zastrzeżone." data-it="© 2025 Laperla. Tutti i diritti riservati." data-es="© 2025 Laperla. Todos los derechos reservados." data-pt="© 2025 Laperla. Todos os direitos reservados." data-ar="© 2025 لابيرلا. جميع الحقوق محفوظة.">
                 © 2025 Laperla. All rights reserved.
               </p>
             </footer>
@@ -245,27 +362,48 @@
 
     <script>
       document.addEventListener('DOMContentLoaded', () => {
-        const translatableElements = document.querySelectorAll('[data-en][data-pl]');
-        const languageLinks = document.querySelectorAll('.language-link');
+        const translatableElements = document.querySelectorAll('[data-en][data-pl][data-it][data-es][data-pt][data-ar]');
+        const languageButton = document.querySelector('.language-dropdown-button');
+        const languageMenu = document.querySelector('.language-dropdown-menu');
+        const languageOptions = document.querySelectorAll('.language-option');
+        const selectedLanguageSpan = document.querySelector('.selected-language');
+        const flagSpan = languageButton.querySelector('.fi');
 
         function updateLanguage(lang) {
+          // Update text content
           translatableElements.forEach(element => {
             element.textContent = element.getAttribute(`data-${lang}`);
           });
-          languageLinks.forEach(link => {
-            if (link.getAttribute('data-lang') === lang) {
-              link.classList.add('font-bold', 'underline');
-            } else {
-              link.classList.remove('font-bold', 'underline');
-            }
-          });
+
+          // Update selected language display
+          const selectedOption = document.querySelector(`.language-option[data-lang="${lang}"]`);
+          selectedLanguageSpan.textContent = selectedOption.textContent.trim();
+          flagSpan.className = `fi fi-${lang === 'ar' ? 'ma' : lang}`;
+
+          // Update direction for Arabic
+          document.body.setAttribute('dir', lang === 'ar' ? 'rtl' : 'ltr');
+
+          // Close dropdown
+          languageMenu.classList.remove('show');
         }
 
-        languageLinks.forEach(link => {
-          link.addEventListener('click', (e) => {
-            e.preventDefault();
-            updateLanguage(link.getAttribute('data-lang'));
+        // Toggle dropdown
+        languageButton.addEventListener('click', () => {
+          languageMenu.classList.toggle('show');
+        });
+
+        // Handle language selection
+        languageOptions.forEach(option => {
+          option.addEventListener('click', () => {
+            updateLanguage(option.getAttribute('data-lang'));
           });
+        });
+
+        // Close dropdown when clicking outside
+        document.addEventListener('click', (e) => {
+          if (!languageButton.contains(e.target) && !languageMenu.contains(e.target)) {
+            languageMenu.classList.remove('show');
+          }
         });
 
         // Set initial language to English
