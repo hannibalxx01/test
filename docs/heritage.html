@@ -368,46 +368,51 @@
         const languageOptions = document.querySelectorAll('.language-option');
         const selectedLanguageSpan = document.querySelector('.selected-language');
         const flagSpan = languageButton.querySelector('.fi');
-
+    
         function updateLanguage(lang) {
           // Update text content
           translatableElements.forEach(element => {
             element.textContent = element.getAttribute(`data-${lang}`);
           });
-
+    
           // Update selected language display
           const selectedOption = document.querySelector(`.language-option[data-lang="${lang}"]`);
           selectedLanguageSpan.textContent = selectedOption.textContent.trim();
+          // Ensure flag updates correctly
           flagSpan.className = `fi fi-${lang === 'ar' ? 'ma' : lang}`;
-
+    
           // Update direction for Arabic
           document.body.setAttribute('dir', lang === 'ar' ? 'rtl' : 'ltr');
-
+    
+          // Save language to localStorage
+          localStorage.setItem('selectedLanguage', lang);
+    
           // Close dropdown
           languageMenu.classList.remove('show');
         }
-
+    
         // Toggle dropdown
         languageButton.addEventListener('click', () => {
           languageMenu.classList.toggle('show');
         });
-
+    
         // Handle language selection
         languageOptions.forEach(option => {
           option.addEventListener('click', () => {
             updateLanguage(option.getAttribute('data-lang'));
           });
         });
-
+    
         // Close dropdown when clicking outside
         document.addEventListener('click', (e) => {
           if (!languageButton.contains(e.target) && !languageMenu.contains(e.target)) {
             languageMenu.classList.remove('show');
           }
         });
-
-        // Set initial language to English
-        updateLanguage('en');
+    
+        // Set initial language: use saved language or default to English
+        const savedLanguage = localStorage.getItem('selectedLanguage') || 'en';
+        updateLanguage(savedLanguage);
       });
     </script>
   </body>
