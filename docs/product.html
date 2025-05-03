@@ -2,6 +2,7 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8">
+    <meta name="description" content="Explore Laperla’s premium extra virgin olive oils, crafted from Tunisia’s finest olives." data-en="Explore Laperla’s premium extra virgin olive oils, crafted from Tunisia’s finest olives." data-pl="Poznaj premium oliwy extra virgin Laperla, wykonane z najlepszych tunezyjskich oliwek." data-it="Scopri gli oli extravergini premium di Laperla, realizzati con le migliori olive tunisine." data-es="Explora los aceites de oliva virgen extra premium de Laperla, elaborados con las mejores aceitunas tunecinas." data-pt="Conheça os azeites de oliva extra virgem premium da Laperla, produzidos com as melhores azeitonas tunisianas." data-ar="استكشف زيوت الزيتون البكر الممتازة من لابيرلا، المصنوعة من أجود أنواع الزيتون التونسي." />
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
@@ -10,14 +11,19 @@
       onload="this.rel='stylesheet'"
       href="https://fonts.googleapis.com/css2?display=swap&family=Epilogue%3Awght%40400%3B500%3B700%3B900&family=Noto+Sans%3Awght%40400%3B500%3B700%3B900&family=Amiri:wght@400;700&family=Lugrasimo&display=swap"
     />
-    <!-- Add Flag Icons CSS for language flags -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flag-icons/css/flag-icons.min.css" />
+    <link rel="alternate" hreflang="en" href="https://laperlaoliveoil.com/product.html?lang=en" />
+    <link rel="alternate" hreflang="pl" href="https://laperlaoliveoil.com/product.html?lang=pl" />
+    <link rel="alternate" hreflang="it" href="https://laperlaoliveoil.com/product.html?lang=it" />
+    <link rel="alternate" hreflang="es" href="https://laperlaoliveoil.com/product.html?lang=es" />
+    <link rel="alternate" hreflang="pt" href="https://laperlaoliveoil.com/product.html?lang=pt" />
+    <link rel="alternate" hreflang="ar" href="https://laperlaoliveoil.com/product.html?lang=ar" />
+    <link rel="alternate" hreflang="x-default" href="https://laperlaoliveoil.com/product.html?lang=en" />
     <title>Laperla Olive Oil - Our Products</title>
     <link rel="icon" type="image/x-icon" href="data:image/x-icon;base64," />
     <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
     <link rel="stylesheet" href="assets/css/styles.css">
     <style>
-      /* Catalogue Alignment */
       .catalogue-grid {
         display: grid;
         grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
@@ -47,8 +53,6 @@
       .catalogue-button {
         margin-top: auto;
       }
-
-      /* Chemlali Section Styling */
       .chemlali-section {
         background: linear-gradient(145deg, #f8faf5 0%, #ffffff 100%);
         border-radius: 2.5rem;
@@ -202,7 +206,6 @@
           font-size: 1rem;
         }
       }
-      /* Dropdown styles */
       .language-dropdown {
         position: relative;
       }
@@ -245,7 +248,6 @@
       .language-option:hover {
         background-color: #f2f4f0;
       }
-      /* Ensure Arabic text is right-to-left */
       [dir="rtl"] {
         direction: rtl;
         font-family: 'Amiri', serif;
@@ -259,7 +261,7 @@
           <div class="flex items-center gap-4 text-[#141811]">
             <div class="size-4">
               <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <g clip-path=" LEGAL_CODE: url(#clip0_6_535)">
+                <g clip-path="url(#clip0_6_535)">
                   <path
                     fill-rule="evenodd"
                     clip-rule="evenodd"
@@ -359,7 +361,6 @@
                 </div>
               </div>
             </div>
-            <!-- Catalogue Section with Coastal Blend Removed -->
             <div class="flex flex-col gap-10 px-4 py-10 @container">
               <h2 class="text-[#141811] text-[22px] font-bold leading-tight tracking-[-0.015em]" data-en="Our Catalogue" data-pl="Nasz Katalog" data-it="Il nostro catalogo" data-es="Nuestro catálogo" data-pt="Nosso catálogo" data-ar="كتالوجنا">Our Catalogue</h2>
               <div class="catalogue-grid">
@@ -389,7 +390,6 @@
                 </div>
               </div>
             </div>
-            <!-- Chemlali Characteristics Section with Improved Icons -->
             <div class="chemlali-section @container">
               <h1 class="chemlali-title" data-en="Chemlali Olive Oil Characteristics" data-pl="Charakterystyka Oliwy Chemlali" data-it="Caratteristiche dell'Olio di Chemlali" data-es="Características del Aceite de Chemlali" data-pt="Características do Azeite de Chemlali" data-ar="خصائص زيت الزيتون تشملالي">
                 Chemlali Olive Oil Characteristics
@@ -432,7 +432,6 @@
                   </p>
                 </div>
               </div>
-              <!-- Best Uses Subsection with Improved Icons -->
               <div class="uses-container">
                 <h2 class="uses-title" data-en="Best Uses for Chemlali Olive Oil" data-pl="Najlepsze Zastosowania Oliwy Chemlali" data-it="Migliori Usi per l'Olio di Chemlali" data-es="Mejores Usos para el Aceite de Chemlali" data-pt="Melhores Usos para o Azeite de Chemlali" data-ar="أفضل استخدامات زيت الزيتون تشملالي">
                   Best Uses for Chemlali Olive Oil
@@ -477,7 +476,6 @@
                 </div>
               </div>
             </div>
-            <!-- Contact Section -->
             <div class="@container">
               <div class="flex flex-col justify-center items-center gap-6 px-4 py-10 @[480px]:gap-8 @[480px]:px-10 @[480px]:py-20">
                 <div class="flex flex-col gap-2 text-center">
@@ -501,17 +499,6 @@
                   >
                     <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp" class="w-5 h-5 mr-2">
                     <span class="truncate" data-en="Contact Us via WhatsApp" data-pl="Skontaktuj Się przez WhatsApp" data-it="Contattaci via WhatsApp" data-es="Contáctanos vía WhatsApp" data-pt="Contate-nos via WhatsApp" data-ar="اتصل بنا عبر واتساب">Contact Us via WhatsApp</span>
-                  </a>
-                  <a
-                    href="mailto:info@kartaginafoods.pl"
-                    class="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-xl h-10 px-4 @[480px]:h-12 @[480px]:px-5 bg-[#80e619] text-[#141811] text-sm font-bold leading-normal tracking-[0.015em] @[480px]:text-base @[480px]:font-bold @[480px]:leading-normal @[480px]:tracking-[0.015em] no-underline"
-                  >
-                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" viewBox="0 0 256 256" class="mr-2">
-                      <path
-                        d="M216,40H40A16,16,0,0,0,24,56V200a16,16,0,0,0,16,16H216a16,16,0,0,0,16-16V56A16,16,0,0,0,216,40Zm0,160H40V56H216V200ZM184,96a8,8,0,0,1-8,8H80a8,8,0,0,1,0-16h96A8,8,0,0,1,184,96Zm0,32a8,8,0,0,1-8,8H80a8,8,0,0,1,0-16h96A8,8,0,0,1,184,128Zm0,32a8,8,0,0,1-8,8H80a8,8,0,0,1,0-16h96A8,8,0,0,1,184,160Z"
-                      ></path>
-                    </svg>
-                    <span class="truncate" data-en="Contact Us via Email" data-pl="Skontaktuj Się przez Email" data-it="Contattaci via Email" data-es="Contáctanos vía Email" data-pt="Contate-nos via Email" data-ar="اتصل بنا عبر البريد الإلكتروني">Contact Us via Email</span>
                   </a>
                 </div>
               </div>
@@ -556,15 +543,14 @@
                   </div>
                 </a>
               </div>
-              <p class="text-[#758863] text-base font-normal leading-normal" data-en="© 2025 Laperla. All rights reserved." data-pl="© 2025 Laperla. Wszelkie prawa zastrzeżone." data-it="© 2025 Laperla. Tutti i diritti riservati." data-es="© 2025 Laperla. Todos los derechos reservados." data-pt="© 2025 Laperla. Todos os direitos reservados." data-ar="© 2025 لابيرلا. جميع الحقوق محفوظة.">
-                © 2025 Laperla. All rights reserved.
+              <p class="text-[#758863] text-base font-normal leading-normal" data-en="© 2023 Laperla. All rights reserved." data-pl="© 2023 Laperla. Wszelkie prawa zastrzeżone." data-it="© 2023 Laperla. Tutti i diritti riservati." data-es="© 2023 Laperla. Todos los derechos reservados." data-pt="© 2023 Laperla. Todos os direitos reservados." data-ar="© 2023 لابيرلا. جميع الحقوق محفوظة.">
+                © 2023 Laperla. All rights reserved.
               </p>
             </footer>
           </div>
         </footer>
       </div>
     </div>
-
     <script>
       document.addEventListener('DOMContentLoaded', () => {
         const translatableElements = document.querySelectorAll('[data-en][data-pl][data-it][data-es][data-pt][data-ar]');
@@ -575,47 +561,33 @@
         const flagSpan = languageButton.querySelector('.fi');
     
         function updateLanguage(lang) {
-          // Update text content
           translatableElements.forEach(element => {
             element.textContent = element.getAttribute(`data-${lang}`);
           });
-    
-          // Update selected language display
           const selectedOption = document.querySelector(`.language-option[data-lang="${lang}"]`);
           selectedLanguageSpan.textContent = selectedOption.textContent.trim();
-          // Ensure flag updates correctly
           flagSpan.className = `fi fi-${lang === 'ar' ? 'ma' : lang}`;
-    
-          // Update direction for Arabic
           document.body.setAttribute('dir', lang === 'ar' ? 'rtl' : 'ltr');
-    
-          // Save language to localStorage
           localStorage.setItem('selectedLanguage', lang);
-    
-          // Close dropdown
           languageMenu.classList.remove('show');
         }
     
-        // Toggle dropdown
         languageButton.addEventListener('click', () => {
           languageMenu.classList.toggle('show');
         });
     
-        // Handle language selection
         languageOptions.forEach(option => {
           option.addEventListener('click', () => {
             updateLanguage(option.getAttribute('data-lang'));
           });
         });
     
-        // Close dropdown when clicking outside
         document.addEventListener('click', (e) => {
           if (!languageButton.contains(e.target) && !languageMenu.contains(e.target)) {
             languageMenu.classList.remove('show');
           }
         });
     
-        // Set initial language: use saved language or default to English
         const savedLanguage = localStorage.getItem('selectedLanguage') || 'en';
         updateLanguage(savedLanguage);
       });
