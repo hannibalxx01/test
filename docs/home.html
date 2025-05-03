@@ -2,26 +2,31 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8">
+    <meta name="description" content="Discover Laperla’s premium extra virgin olive oil. Explore our organic products and heritage." data-en="Discover Laperla’s premium extra virgin olive oil. Explore our organic products and heritage." data-pl="Poznaj premium oliwę extra virgin Laperla. Odkryj nasze organiczne produkty i dziedzictwo." data-it="Scopri l’olio extravergine di oliva premium di Laperla. Esplora i nostri prodotti biologici ed eredità." data-es="Descubre el aceite de oliva virgen extra premium de Laperla. Explora nuestros productos orgánicos y patrimonio." data-pt="Conheça o azeite de oliva virgem extra premium da Laperla. Explore nossos produtos orgânicos e herança." data-ar="اكتشف زيت الزيتون البكر الممتاز من لابيرلا. استكشف منتجاتنا العضوية وتراثنا." />
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
       rel="stylesheet"
-      as "style"
+      as="style"
       onload="this.rel='stylesheet'"
       href="https://fonts.googleapis.com/css2?display=swap&family=Epilogue%3Awght%40400%3B500%3B700%3B900&family=Noto+Sans%3Awght%40400%3B500%3B700%3B900&family=Amiri:wght@400;700&family=Lugrasimo&display=swap"
     />
-    <!-- Add Flag Icons CSS for language flags -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flag-icons/css/flag-icons.min.css" />
+    <link rel="alternate" hreflang="en" href="https://laperlaoliveoil.com/home.html?lang=en" />
+    <link rel="alternate" hreflang="pl" href="https://laperlaoliveoil.com/home.html?lang=pl" />
+    <link rel="alternate" hreflang="it" href="https://laperlaoliveoil.com/home.html?lang=it" />
+    <link rel="alternate" hreflang="es" href="https://laperlaoliveoil.com/home.html?lang=es" />
+    <link rel="alternate" hreflang="pt" href="https://laperlaoliveoil.com/home.html?lang=pt" />
+    <link rel="alternate" hreflang="ar" href="https://laperlaoliveoil.com/home.html?lang=ar" />
+    <link rel="alternate" hreflang="x-default" href="https://laperlaoliveoil.com/home.html?lang=en" />
     <title>Laperla Olive Oil - Home</title>
     <link rel="icon" type="image/x-icon" href="data:image/x-icon;base64," />
     <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
     <link rel="stylesheet" href="assets/css/styles.css">
     <style>
-      /* Center the video container */
       .video-container {
         margin: 0 auto;
       }
-      /* Dropdown styles */
       .language-dropdown {
         position: relative;
       }
@@ -64,9 +69,33 @@
       .language-option:hover {
         background-color: #f2f4f0;
       }
-      /* Ensure Arabic text is right-to-left */
       [dir="rtl"] {
         direction: rtl;
+        font-family: 'Amiri', serif;
+      }
+      .fi {
+        width: 20px;
+        height: 15px;
+      }
+      .slideshow-container {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+      }
+      .slideshow-image {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        position: absolute;
+        top: 0;
+        left: 0;
+        opacity: 0;
+        transition: opacity 1s ease-in-out;
+      }
+      .slideshow-image.active {
+        opacity: 1;
       }
     </style>
   </head>
@@ -333,14 +362,14 @@
                   <p class="text-[#141811] text-base font-medium leading-normal" data-en="Organic Sourcing" data-pl="Organiczne Pozyskiwanie" data-it="Approvvigionamento Organico" data-es="Abastecimiento Orgánico" data-pt="Fornecimento Orgânico" data-ar="التوريد العضوي">Organic Sourcing</p>
                   <p
                     class="text-[#758863] text-base font-normal leading-normal"
-                    data-en="We source 100% organic olives from certified groves in Italy’s sun-drenched hills, ensuring exceptional flavor and purity under strict international bio-standards."
-                    data-pl="Pozyskujemy w 100% organiczne oliwki z certyfikowanych gajów na nasłonecznionych wzgórzach Włoch, zapewniając wyjątkowy smak i czystość zgodnie z surowymi międzynarodowymi standardami bio."
-                    data-it="Otteniamo olive 100% biologiche da uliveti certificati sulle colline assolate d'Italia, garantendo un sapore eccezionale e purezza secondo rigorosi standard bio internazionali."
-                    data-es="Obtenemos aceitunas 100% orgánicas de olivares certificados en las colinas soleadas de Italia, asegurando un sabor excepcional y pureza bajo estrictos estándares bio internacionales."
-                    data-pt="Obtemos azeitonas 100% orgânicas de pomares certificados nas colinas ensolaradas da Itália, garantindo um sabor excepcional e pureza sob rigorosos padrões bio internacionais."
-                    data-ar="نحصل على زيتون عضوي 100% من بساتين معتمدة في تلال إيطاليا المشمسة، مما يضمن نكهة استثنائية ونقاء بموجب معايير بيولوجية دولية صارمة."
+                    data-en="We source 100% organic olives from certified groves in Tunisia’s sun-drenched hills, ensuring exceptional flavor and purity under strict international bio-standards."
+                    data-pl="Pozyskujemy w 100% organiczne oliwki z certyfikowanych gajów na nasłonecznionych wzgórzach Tunezji, zapewniając wyjątkowy smak i czystość zgodnie z surowymi międzynarodowymi standardami bio."
+                    data-it="Otteniamo olive 100% biologiche da uliveti certificati sulle colline assolate della Tunisia, garantendo un sapore eccezionale e purezza secondo rigorosi standard bio internazionali."
+                    data-es="Obtenemos aceitunas 100% orgánicas de olivares certificados en las colinas soleadas de Túnez, asegurando un sabor excepcional y pureza bajo estrictos estándares bio internacionales."
+                    data-pt="Obtemos azeitonas 100% orgânicas de pomares certificados nas colinas ensolaradas da Tunísia, garantindo um sabor excepcional e pureza sob rigorosos padrões bio internacionais."
+                    data-ar="نحصل على زيتون عضوي 100% من بساتين معتمدة في تلال تونس المشمسة، مما يضمن نكهة استثنائية ونقاء بموجب معايير بيولوجية دولية صارمة."
                   >
-                    We source 100% organic olives from certified groves in Italy’s sun-drenched hills, ensuring exceptional flavor and purity under strict international bio-standards.
+                    We source 100% organic olives from certified groves in Tunisia’s sun-drenched hills, ensuring exceptional flavor and purity under strict international bio-standards.
                   </p>
                 </div>
                 <div class="flex flex-col items-center gap-1">
@@ -418,7 +447,6 @@
                   </p>
                 </div>
               </div>
-              <!-- YouTube Video Section (Centered) -->
               <div class="flex flex-col gap-4 mt-6">
                 <div class="w-full max-w-[720px] aspect-video video-container">
                   <iframe
@@ -504,7 +532,7 @@
                   <div class="text-[#758863]" data-icon="TwitterLogo" data-size="24px" data-weight="regular">
                     <svg xmlns="http://www.w3.org/2000/svg" width="24px" height="24px" fill="currentColor" viewBox="0 0 256 256">
                       <path
-                        d="M247.39,68.94A8,8,0,0,0,240,64H209.57A48.66,48.66,0,0,0,168.1,40a46.91,46.91,0,0,0-33.75,13.7A47.9,47.9,0,0,0,120,88v6.09C79.74,83.47,46.81,50.72,46.46,50.37a8,8,0,0,0-13.65,4.92c-4.31,47.79,9.57,79.77,22,98.18a110.93,110.93,0,0,0,21.88,24.2c-15.23,17.53-39.21,26.74-39.47,26.84a8,8,0,0,0-3.85,11.93c.75,1.12,3.75,5.05,11.08,8.72C53.51,229.7,65.48,232,80,232c70.67,0,129.72-54.42,135.75-124.44l29.91-29.9A8,106,0,0,0,247.39,68.94Zm-45,29.41a8,8,0,0,0-2.32,5.14C196,166.58,143.28,216,80,216c-10.56,0-18-1.4-23.22-3.08,11.51-6.25,27.56-17,37.88-32.48A8,8,0,0,0,92,169.08c-.47-.27-43.91-26.34-44-96,16,13,45.25,33.17,78.67,38.79A8,8,0,0,0,136,104V88a32,32,0,0,1,9.6-22.92A30.94,30.94,0,0,1,167.9,56c12.66.16,24.49,7.88,29.44,19.21A8,8,0,0,0,204.67,80h16Z"
+                        d="M247.39,68.94A8,8,0,0,0,240,64H209.57A48.66,48.66,0,0,0,168.1,40a46.91,46.91,0,0,0-33.75,13.7A47.9,47.9,0,0,0,120,88v6.09C79.74,83.47,46.81,50.72,46.46,50.37a8,8,0,0,0-13.65,4.92c-4.31,47.79,9.57,79.77,22,98.18a110.93,110.93,0,0,0,21.88,24.2c-15.23,17.53-39.21,26.74-39.47,26.84a8,8,0,0,0-3.85,11.93c.75,1.12,3.75,5.05,11.08,8.72C53.51,229.7,65.48,232,80,232c70.67,0,129.72-54.42,135.75-124.44l29.91-29.9A8,8,0,0,0,247.39,68.94Zm-45,29.41a8,8,0,0,0-2.32,5.14C196,166.58,143.28,216,80,216c-10.56,0-18-1.4-23.22-3.08,11.51-6.25,27.56-17,37.88-32.48A8,8,0,0,0,92,169.08c-.47-.27-43.91-26.34-44-96,16,13,45.25,33.17,78.67,38.79A8,8,0,0,0,136,104V88a32,32,0,0,1,9.6-22.92A30.94,30.94,0,0,1,167.9,56c12.66.16,24.49,7.88,29.44,19.21A8,8,0,0,0,204.67,80h16Z"
                       ></path>
                     </svg>
                   </div>
@@ -527,51 +555,77 @@
         const languageOptions = document.querySelectorAll('.language-option');
         const selectedLanguageSpan = document.querySelector('.selected-language');
         const flagSpan = languageButton.querySelector('.fi');
-    
+        const slideshowImages = document.querySelectorAll('.slideshow-image');
+        const metaDescription = document.querySelector('meta[name="description"]');
+        let currentImageIndex = 0;
+
         function updateLanguage(lang) {
           // Update text content
           translatableElements.forEach(element => {
             element.textContent = element.getAttribute(`data-${lang}`);
           });
-    
+
+          // Update meta description
+          if (metaDescription) {
+            metaDescription.setAttribute('content', metaDescription.getAttribute(`data-${lang}`));
+          }
+
           // Update selected language display
           const selectedOption = document.querySelector(`.language-option[data-lang="${lang}"]`);
           selectedLanguageSpan.textContent = selectedOption.textContent.trim();
-          // Ensure flag updates correctly
           flagSpan.className = `fi fi-${lang === 'ar' ? 'ma' : lang}`;
-    
+
+          // Update HTML lang attribute
+          document.documentElement.setAttribute('lang', lang === 'ar' ? 'ar' : lang);
+
           // Update direction for Arabic
           document.body.setAttribute('dir', lang === 'ar' ? 'rtl' : 'ltr');
-    
+
           // Save language to localStorage
           localStorage.setItem('selectedLanguage', lang);
-    
+
+          // Update URL with language parameter
+          const url = new URL(window.location);
+          url.searchParams.set('lang', lang);
+          window.history.pushState({}, '', url);
+
           // Close dropdown
           languageMenu.classList.remove('show');
         }
-    
+
         // Toggle dropdown
         languageButton.addEventListener('click', () => {
           languageMenu.classList.toggle('show');
         });
-    
+
         // Handle language selection
         languageOptions.forEach(option => {
           option.addEventListener('click', () => {
             updateLanguage(option.getAttribute('data-lang'));
           });
         });
-    
+
         // Close dropdown when clicking outside
         document.addEventListener('click', (e) => {
           if (!languageButton.contains(e.target) && !languageMenu.contains(e.target)) {
             languageMenu.classList.remove('show');
           }
         });
-    
-        // Set initial language: use saved language or default to English
-        const savedLanguage = localStorage.getItem('selectedLanguage') || 'en';
-        updateLanguage(savedLanguage);
+
+        // Slideshow functionality
+        function showNextImage() {
+          slideshowImages[currentImageIndex].classList.remove('active');
+          currentImageIndex = (currentImageIndex + 1) % slideshowImages.length;
+          slideshowImages[currentImageIndex].classList.add('active');
+        }
+        setInterval(showNextImage, 5000);
+
+        // Set initial language: use URL parameter, then localStorage, then default to English
+        const urlParams = new URLSearchParams(window.location.search);
+        const urlLang = urlParams.get('lang');
+        const savedLanguage = localStorage.getItem('selectedLanguage');
+        const initialLanguage = urlLang || savedLanguage || 'en';
+        updateLanguage(initialLanguage);
       });
     </script>
   </body>
