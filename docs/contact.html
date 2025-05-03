@@ -65,6 +65,11 @@
         direction: rtl;
         font-family: 'Amiri', serif;
       }
+      /* Ensure flag icons are properly sized */
+      .fi {
+        width: 20px;
+        height: 15px;
+      }
     </style>
   </head>
   <body>
@@ -267,10 +272,14 @@
           // Update selected language display
           const selectedOption = document.querySelector(`.language-option[data-lang="${lang}"]`);
           selectedLanguageSpan.textContent = selectedOption.textContent.trim();
+          // Ensure flag updates correctly
           flagSpan.className = `fi fi-${lang === 'ar' ? 'ma' : lang}`;
 
           // Update direction for Arabic
           document.body.setAttribute('dir', lang === 'ar' ? 'rtl' : 'ltr');
+
+          // Save language to localStorage
+          localStorage.setItem('selectedLanguage', lang);
 
           // Close dropdown
           languageMenu.classList.remove('show');
@@ -295,8 +304,9 @@
           }
         });
 
-        // Set initial language to English
-        updateLanguage('en');
+        // Set initial language: use saved language or default to English
+        const savedLanguage = localStorage.getItem('selectedLanguage') || 'en';
+        updateLanguage(savedLanguage);
       });
     </script>
   </body>
