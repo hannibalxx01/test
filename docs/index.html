@@ -2,6 +2,7 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8">
+    <meta name="description" content="Discover Laperla’s premium extra virgin olive oil. Explore our organic products and heritage." data-en="Discover Laperla’s premium extra virgin olive oil. Explore our organic products and heritage." data-pl="Poznaj premium oliwę extra virgin Laperla. Odkryj nasze organiczne produkty i dziedzictwo." data-it="Scopri l’olio extravergine di oliva premium di Laperla. Esplora i nostri prodotti biologici ed eredità." data-es="Descubre el aceite de oliva virgen extra premium de Laperla. Explora nuestros productos orgánicos y patrimonio." data-pt="Conheça o azeite de oliva virgem extra premium da Laperla. Explore nossos produtos orgânicos e herança." data-ar="اكتشف زيت الزيتون البكر الممتاز من لابيرلا. استكشف منتجاتنا العضوية وتراثنا." />
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
@@ -10,14 +11,19 @@
       onload="this.rel='stylesheet'"
       href="https://fonts.googleapis.com/css2?display=swap&family=Epilogue%3Awght%40400%3B500%3B700%3B900&family=Noto+Sans%3Awght%40400%3B500%3B700%3B900&family=Amiri:wght@400;700&family=Lugrasimo&display=swap"
     />
-    <!-- Add Flag Icons CSS for language flags -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flag-icons/css/flag-icons.min.css" />
+    <link rel="alternate" hreflang="en" href="https://laperlaoliveoil.com/index.html?lang=en" />
+    <link rel="alternate" hreflang="pl" href="https://laperlaoliveoil.com/index.html?lang=pl" />
+    <link rel="alternate" hreflang="it" href="https://laperlaoliveoil.com/index.html?lang=it" />
+    <link rel="alternate" hreflang="es" href="https://laperlaoliveoil.com/index.html?lang=es" />
+    <link rel="alternate" hreflang="pt" href="https://laperlaoliveoil.com/index.html?lang=pt" />
+    <link rel="alternate" hreflang="ar" href="https://laperlaoliveoil.com/index.html?lang=ar" />
+    <link rel="alternate" hreflang="x-default" href="https://laperlaoliveoil.com/index.html?lang=en" />
     <title>Laperla Olive Oil</title>
     <link rel="icon" type="image/x-icon" href="data:image/x-icon;base64," />
     <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
     <link rel="stylesheet" href="assets/css/styles.css">
     <style>
-      /* Dropdown styles */
       .language-dropdown {
         position: relative;
       }
@@ -60,12 +66,14 @@
       .language-option:hover {
         background-color: #f2f4f0;
       }
-      /* Ensure Arabic text is right-to-left */
       [dir="rtl"] {
         direction: rtl;
         font-family: 'Amiri', serif;
       }
-      /* Slideshow styles */
+      .fi {
+        width: 20px;
+        height: 15px;
+      }
       .slideshow-container {
         position: absolute;
         top: 0;
@@ -436,7 +444,6 @@
                   </p>
                 </div>
               </div>
-              <!-- YouTube Video Section (No Title) -->
               <div class="flex flex-col gap-4 mt-6">
                 <div class="w-full max-w-[720px] aspect-video">
                   <iframe
@@ -546,61 +553,76 @@
         const selectedLanguageSpan = document.querySelector('.selected-language');
         const flagSpan = languageButton.querySelector('.fi');
         const slideshowImages = document.querySelectorAll('.slideshow-image');
+        const metaDescription = document.querySelector('meta[name="description"]');
         let currentImageIndex = 0;
-    
+
         function updateLanguage(lang) {
           // Update text content
           translatableElements.forEach(element => {
             element.textContent = element.getAttribute(`data-${lang}`);
           });
-    
+
+          // Update meta description
+          if (metaDescription) {
+            metaDescription.setAttribute('content', metaDescription.getAttribute(`data-${lang}`));
+          }
+
           // Update selected language display
           const selectedOption = document.querySelector(`.language-option[data-lang="${lang}"]`);
           selectedLanguageSpan.textContent = selectedOption.textContent.trim();
-          // Ensure flag updates correctly
           flagSpan.className = `fi fi-${lang === 'ar' ? 'ma' : lang}`;
-    
+
+          // Update HTML lang attribute
+          document.documentElement.setAttribute('lang', lang === 'ar' ? 'ar' : lang);
+
           // Update direction for Arabic
           document.body.setAttribute('dir', lang === 'ar' ? 'rtl' : 'ltr');
-    
+
           // Save language to localStorage
           localStorage.setItem('selectedLanguage', lang);
-    
+
+          // Update URL with language parameter
+          const url = new URL(window.location);
+          url.searchParams.set('lang', lang);
+          window.history.pushState({}, '', url);
+
           // Close dropdown
           languageMenu.classList.remove('show');
         }
-    
+
         // Toggle dropdown
         languageButton.addEventListener('click', () => {
           languageMenu.classList.toggle('show');
         });
-    
+
         // Handle language selection
         languageOptions.forEach(option => {
           option.addEventListener('click', () => {
             updateLanguage(option.getAttribute('data-lang'));
           });
         });
-    
+
         // Close dropdown when clicking outside
         document.addEventListener('click', (e) => {
           if (!languageButton.contains(e.target) && !languageMenu.contains(e.target)) {
             languageMenu.classList.remove('show');
           }
         });
-    
+
         // Slideshow functionality
         function showNextImage() {
-          slideshowImages[currentImageIndex].classList.add('hidden');
+          slideshowImages[currentImageIndex].classList.remove('active');
           currentImageIndex = (currentImageIndex + 1) % slideshowImages.length;
-          slideshowImages[currentImageIndex].classList.remove('hidden');
+          slideshowImages[currentImageIndex].classList.add('active');
         }
-    
         setInterval(showNextImage, 5000);
-    
-        // Set initial language: use saved language or default to English
-        const savedLanguage = localStorage.getItem('selectedLanguage') || 'en';
-        updateLanguage(savedLanguage);
+
+        // Set initial language: use URL parameter, then localStorage, then default to English
+        const urlParams = new URLSearchParams(window.location.search);
+        const urlLang = urlParams.get('lang');
+        const savedLanguage = localStorage.getItem('selectedLanguage');
+        const initialLanguage = urlLang || savedLanguage || 'en';
+        updateLanguage(initialLanguage);
       });
     </script>
   </body>
