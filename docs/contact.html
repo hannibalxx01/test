@@ -1,13 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-3QNYCWKF1J"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-  gtag('config', 'G-3QNYCWKF1J');
-</script>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-3QNYCWKF1J"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-3QNYCWKF1J');
+    </script>
     <meta charset="UTF-8">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -96,6 +96,48 @@
         font-weight: 500;
         color: #141811;
         margin-bottom: 0.25rem;
+      }
+      /* Modal styles */
+      #form-success-modal {
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.5);
+        z-index: 50;
+        align-items: center;
+        justify-content: center;
+      }
+      #form-success-modal.show {
+        display: flex;
+      }
+      .modal-content {
+        background-color: white;
+        padding: 1.5rem;
+        border-radius: 0.5rem;
+        max-width: 400px;
+        width: 90%;
+        text-align: center;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      }
+      .modal-content p {
+        color: #141811;
+        font-size: 1rem;
+        margin-bottom: 1rem;
+      }
+      .modal-content button {
+        background-color: #80e619;
+        color: #141811;
+        padding: 0.5rem 1rem;
+        border-radius: 0.5rem;
+        font-weight: bold;
+        cursor: pointer;
+        border: none;
+      }
+      .modal-content button:hover {
+        background-color: #70cc15;
       }
     </style>
   </head>
@@ -218,6 +260,17 @@
                   >
                     Phone: +48 530 846 928
                   </p>
+                  <p
+                    class="text-[#758863] text-base font-normal leading-normal"
+                    data-en="Email: info@laperlaoliveoil.com"
+                    data-pl="Email: info@laperlaoliveoil.com"
+                    data-it="Email: info@laperlaoliveoil.com"
+                    data-es="Correo: info@laperlaoliveoil.com"
+                    data-pt="Email: info@laperlaoliveoil.com"
+                    data-ar="البريد الإلكتروني: info@laperlaoliveoil.com"
+                  >
+                    Email: info@laperlaoliveoil.com
+                  </p>
                 </div>
                 <!-- Contact Form -->
                 <div class="flex flex-col gap-6">
@@ -232,7 +285,7 @@
                   >
                     Tell Us Your Needs
                   </h2>
-                  <!-- FormSubmit Integration: Replace 'your.email@example.com' with your email address. After first submission, check your inbox and click the verification link from FormSubmit to activate. See https://formsubmit.co for details. -->
+                  <!-- FormSubmit Integration: Sends submissions to info@laperlaoliveoil.com. After first submission, check your inbox and click the verification link from FormSubmit to activate. See https://formsubmit.co for details. -->
                   <!-- Alternative Free Services: Web3Forms (250 submissions/month, https://web3forms.com), FormEasy (Google Sheets storage, https://github.com/devapt/FormEasy), Basin (1 form, unlimited submissions, https://usebasin.com). -->
                   <form
                     id="contact-form"
@@ -436,19 +489,24 @@
                       Submit
                     </button>
                   </form>
-                  <p
-                    id="form-message"
-                    class="text-[#141811] text-sm hidden"
-                    data-en=""
-                    data-pl=""
-                    data-it=""
-                    data-es=""
-                    data-pt=""
-                    data-ar=""
-                  ></p>
                 </div>
               </div>
             </div>
+          </div>
+        </div>
+        <!-- Form Success Modal -->
+        <div id="form-success-modal">
+          <div class="modal-content">
+            <p
+              id="form-success-message"
+              data-en="Thank you! Your submission has been received. We will contact you soon."
+              data-pl="Dziękujemy! Twoje zgłoszenie zostało otrzymane. Skontaktujemy się wkrótce."
+              data-it="Grazie! La tua richiesta è stata ricevuta. Ti contatteremo presto."
+              data-es="¡Gracias! Tu envío ha sido recibido. Nos pondremos en contacto pronto."
+              data-pt="Obrigado! Sua submissão foi recebida. Entraremos em contato em breve."
+              data-ar="شكرًا! تم استلام طلبك. سنتواصل معك قريبًا."
+            ></p>
+            <button id="close-modal" data-en="Close" data-pl="Zamknij" data-it="Chiudi" data-es="Cerrar" data-pt="Fechar" data-ar="إغلاق">Close</button>
           </div>
         </div>
         <footer class="flex justify-center">
@@ -507,7 +565,9 @@
         const selectedLanguageSpan = document.querySelector('.selected-language');
         const flagSpan = languageButton.querySelector('.fi');
         const form = document.querySelector('#contact-form');
-        const formMessage = document.querySelector('#form-message');
+        const modal = document.querySelector('#form-success-modal');
+        const modalMessage = document.querySelector('#form-success-message');
+        const closeModalButton = document.querySelector('#close-modal');
         const businessTypeSelect = document.querySelector('select[name="business_type"]');
         const otherBusinessTypeDiv = document.querySelector('#other-business-type');
         const otherBusinessTypeInput = document.querySelector('input[name="other_business_type"]');
@@ -531,13 +591,9 @@
           // Update direction for Arabic
           document.body.setAttribute('dir', lang === 'ar' ? 'rtl' : 'ltr');
 
-          // Update form message translations
-          formMessage.setAttribute('data-en', lang === 'en' ? 'Thank you! Your submission has been received. We will contact you soon.' : formMessage.getAttribute('data-en'));
-          formMessage.setAttribute('data-pl', lang === 'pl' ? 'Dziękujemy! Twoje zgłoszenie zostało otrzymane. Skontaktujemy się wkrótce.' : formMessage.getAttribute('data-pl'));
-          formMessage.setAttribute('data-it', lang === 'it' ? 'Grazie! La tua richiesta è stata ricevuta. Ti contatteremo presto.' : formMessage.getAttribute('data-it'));
-          formMessage.setAttribute('data-es', lang === 'es' ? '¡Gracias! Tu envío ha sido recibido. Nos pondremos en contacto pronto.' : formMessage.getAttribute('data-es'));
-          formMessage.setAttribute('data-pt', lang === 'pt' ? 'Obrigado! Sua submissão foi recebida. Entraremos em contato em breve.' : formMessage.getAttribute('data-pt'));
-          formMessage.setAttribute('data-ar', lang === 'ar' ? 'شكرًا! تم استلام طلبك. سنتواصل معك قريبًا.' : formMessage.getAttribute('data-ar'));
+          // Update modal message and close button translations
+          modalMessage.textContent = modalMessage.getAttribute(`data-${lang}`);
+          closeModalButton.textContent = closeModalButton.getAttribute(`data-${lang}`);
 
           // Save language to localStorage
           localStorage.setItem('selectedLanguage', lang);
@@ -577,6 +633,18 @@
           }
         });
 
+        // Handle modal close
+        closeModalButton.addEventListener('click', () => {
+          modal.classList.remove('show');
+        });
+
+        // Close modal when clicking outside
+        modal.addEventListener('click', (e) => {
+          if (e.target === modal) {
+            modal.classList.remove('show');
+          }
+        });
+
         // Client-side form validation and submission handling
         form.addEventListener('submit', (e) => {
           // Prevent default only for validation; actual submission goes to FormSubmit
@@ -591,33 +659,55 @@
 
           // Validate required fields
           if (!name || !email || !businessType || !location || !description) {
-            formMessage.textContent = 'Please fill in all required fields.';
-            formMessage.classList.remove('hidden');
-            formMessage.classList.add('text-red-600');
+            modalMessage.textContent = {
+              en: 'Please fill in all required fields.',
+              pl: 'Proszę wypełnić wszystkie wymagane pola.',
+              it: 'Per favore, compila tutti i campi obbligatori.',
+              es: 'Por favor, completa todos los campos requeridos.',
+              pt: 'Por favor, preencha todos os campos obrigatórios.',
+              ar: 'يرجى ملء جميع الحقول المطلوبة.'
+            }[localStorage.getItem('selectedLanguage') || 'en'];
+            modal.classList.add('show');
+            modalMessage.classList.add('text-red-600');
             return;
           }
 
           // Validate email format
           const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
           if (!emailRegex.test(email)) {
-            formMessage.textContent = 'Please enter a valid email address.';
-            formMessage.classList.remove('hidden');
-            formMessage.classList.add('text-red-600');
+            modalMessage.textContent = {
+              en: 'Please enter a valid email address.',
+              pl: 'Proszę podać prawidłowy adres email.',
+              it: 'Per favore, inserisci un indirizzo email valido.',
+              es: 'Por favor, ingresa una dirección de correo electrónico válida.',
+              pt: 'Por favor, insira um endereço de email válido.',
+              ar: 'يرجى إدخال عنوان بريد إلكتروني صالح.'
+            }[localStorage.getItem('selectedLanguage') || 'en'];
+            modal.classList.add('show');
+            modalMessage.classList.add('text-red-600');
             return;
           }
 
           // Validate "Other" business type
           if (businessType === 'Other' && !otherBusinessType) {
-            formMessage.textContent = 'Please specify your business type.';
-            formMessage.classList.remove('hidden');
-            formMessage.classList.add('text-red-600');
+            modalMessage.textContent = {
+              en: 'Please specify your business type.',
+              pl: 'Proszę określić rodzaj działalności.',
+              it: 'Per favore, specifica il tipo di attività.',
+              es: 'Por favor, especifica el tipo de negocio.',
+              pt: 'Por favor, especifique o tipo de negócio.',
+              ar: 'يرجى تحديد نوع العمل.'
+            }[localStorage.getItem('selectedLanguage') || 'en'];
+            modal.classList.add('show');
+            modalMessage.classList.add('text-red-600');
             return;
           }
 
-          // Display success message and submit form
-          formMessage.textContent = formMessage.getAttribute(`data-${localStorage.getItem('selectedLanguage') || 'en'}`);
-          formMessage.classList.remove('hidden', 'text-red-600');
-          formMessage.classList.add('text-green-600');
+          // Display success message in modal and submit form
+          modalMessage.textContent = modalMessage.getAttribute(`data-${localStorage.getItem('selectedLanguage') || 'en'}`);
+          modal.classList.add('show');
+          modalMessage.classList.remove('text-red-600');
+          modalMessage.classList.add('text-green-600');
 
           // Submit form to FormSubmit (bypasses onSubmit restrictions)
           form.submit();
