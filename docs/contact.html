@@ -70,6 +70,26 @@
         width: 20px;
         height: 15px;
       }
+      /* Form input styles */
+      .form-input {
+        border: 1px solid #e0e5dc;
+        border-radius: 0.5rem;
+        padding: 0.75rem;
+        width: 100%;
+        font-size: 0.875rem;
+        color: #141811;
+      }
+      .form-input:focus {
+        outline: none;
+        border-color: #80e619;
+        box-shadow: 0 0 0 3px rgba(128, 230, 25, 0.2);
+      }
+      .form-label {
+        font-size: 0.875rem;
+        font-weight: 500;
+        color: #141811;
+        margin-bottom: 0.25rem;
+      }
     </style>
   </head>
   <body>
@@ -158,14 +178,14 @@
                 </h1>
                 <p
                   class="text-[#141811] text-base font-normal leading-normal max-w-[720px]"
-                  data-en="We’re here to assist you with all your olive oil needs. Reach out via WhatsApp, and let’s start the conversation!"
-                  data-pl="Jesteśmy tu, aby pomóc Ci ze wszystkimi potrzebami dotyczącymi oliwy. Skontaktuj się przez WhatsApp, i zacznijmy rozmowę!"
-                  data-it="Siamo qui per assisterti con tutte le tue esigenze di olio d'oliva. Contattaci via WhatsApp, e iniziamo la conversazione!"
-                  data-es="Estamos aquí para ayudarte con todas tus necesidades de aceite de oliva. ¡Contáctanos vía WhatsApp, y empecemos la conversación!"
-                  data-pt="Estamos aqui para ajudá-lo com todas as suas necessidades de azeite de oliva. Entre em contato via WhatsApp, e vamos começar a conversa!"
-                  data-ar="نحن هنا لمساعدتك في جميع احتياجاتك من زيت الزيتون. تواصل معنا عبر واتساب، ودعنا نبدأ الحوار!"
+                  data-en="We’re here to assist you with all your olive oil needs. Reach out via WhatsApp or our form below, and let’s start the conversation!"
+                  data-pl="Jesteśmy tu, aby pomóc Ci ze wszystkimi potrzebami dotyczącymi oliwy. Skontaktuj się przez WhatsApp lub formularz poniżej, i zacznijmy rozmowę!"
+                  data-it="Siamo qui per assisterti con tutte le tue esigenze di olio d'oliva. Contattaci via WhatsApp o tramite il nostro modulo qui sotto, e iniziamo la conversazione!"
+                  data-es="Estamos aquí para ayudarte con todas tus necesidades de aceite de oliva. ¡Contáctanos vía WhatsApp o nuestro formulario a continuación, y empecemos la conversación!"
+                  data-pt="Estamos aqui para ajudá-lo com todas as suas necessidades de azeite de oliva. Entre em contato via WhatsApp ou pelo formulário abaixo, e vamos começar a conversa!"
+                  data-ar="نحن هنا لمساعدتك في جميع احتياجاتك من زيت الزيتون. تواصل معنا عبر واتساب أو نموذجنا أدناه، ودعنا نبدأ الحوار!"
                 >
-                  We’re here to assist you with all your olive oil needs. Reach out via WhatsApp, and let’s start the conversation!
+                  We’re here to assist you with all your olive oil needs. Reach out via WhatsApp or our form below, and let’s start the conversation!
                 </p>
               </div>
               <div class="flex flex-col gap-6">
@@ -191,6 +211,234 @@
                   >
                     Phone: +48 530 846 928
                   </p>
+                </div>
+                <!-- Contact Form -->
+                <div class="flex flex-col gap-6">
+                  <h2
+                    class="text-[#141811] text-lg font-bold"
+                    data-en="Tell Us Your Needs"
+                    data-pl="Opowiedz Nam o Swoich Potrzebach"
+                    data-it="Dicci le Tue Esigenze"
+                    data-es="Cuéntanos Tus Necesidades"
+                    data-pt="Conte-nos Suas Necessidades"
+                    data-ar="أخبرنا عن احتياجاتك"
+                  >
+                    Tell Us Your Needs
+                  </h2>
+                  <!-- FormSubmit Integration: Replace 'your.email@example.com' with your email address. After first submission, check your inbox and click the verification link from FormSubmit to activate. See https://formsubmit.co for details. -->
+                  <!-- Alternative Free Services: Web3Forms (250 submissions/month, https://web3forms.com), FormEasy (Google Sheets storage, https://github.com/devapt/FormEasy), Basin (1 form, unlimited submissions, https://usebasin.com). -->
+                  <form
+                    id="contact-form"
+                    action="https://formsubmit.co/kartaginainternal@gmail.com"
+                    method="POST"
+                    class="flex flex-col gap-4"
+                  >
+                    <!-- FormSubmit hidden fields -->
+                    <input type="hidden" name="_subject" value="New Contact Form Submission - Laperla Olive Oil">
+                    <input type="hidden" name="_replyto" value="your.email@example.com">
+                    <input type="hidden" name="_captcha" value="true">
+                    <input type="hidden" name="_next" value="https://your-site.com/contact.html">
+                    <div class="flex flex-col">
+                      <label
+                        class="form-label"
+                        data-en="Name *"
+                        data-pl="Imię *"
+                        data-it="Nome *"
+                        data-es="Nombre *"
+                        data-pt="Nome *"
+                        data-ar="الاسم *"
+                      >
+                        Name *
+                      </label>
+                      <input
+                        type="text"
+                        name="name"
+                        class="form-input"
+                        required
+                        data-placeholder-en="Enter your name"
+                        data-placeholder-pl="Wpisz swoje imię"
+                        data-placeholder-it="Inserisci il tuo nome"
+                        data-placeholder-es="Ingresa tu nombre"
+                        data-placeholder-pt="Digite seu nome"
+                        data-placeholder-ar="أدخل اسمك"
+                      />
+                    </div>
+                    <div class="flex flex-col">
+                      <label
+                        class="form-label"
+                        data-en="Email *"
+                        data-pl="Email *"
+                        data-it="Email *"
+                        data-es="Correo electrónico *"
+                        data-pt="Email *"
+                        data-ar="البريد الإلكتروني *"
+                      >
+                        Email *
+                      </label>
+                      <input
+                        type="email"
+                        name="email"
+                        class="form-input"
+                        required
+                        data-placeholder-en="Enter your email"
+                        data-placeholder-pl="Wpisz swój email"
+                        data-placeholder-it="Inserisci la tua email"
+                        data-placeholder-es="Ingresa tu correo electrónico"
+                        data-placeholder-pt="Digite seu email"
+                        data-placeholder-ar="أدخل بريدك الإلكتروني"
+                      />
+                    </div>
+                    <div class="flex flex-col">
+                      <label
+                        class="form-label"
+                        data-en="Phone (Optional)"
+                        data-pl="Telefon (Opcjonalny)"
+                        data-it="Telefono (Opzionale)"
+                        data-es="Teléfono (Opcional)"
+                        data-pt="Telefone (Opcional)"
+                        data-ar="الهاتف (اختياري)"
+                      >
+                        Phone (Optional)
+                      </label>
+                      <input
+                        type="tel"
+                        name="phone"
+                        class="form-input"
+                        data-placeholder-en="Enter your phone number"
+                        data-placeholder-pl="Wpisz swój numer telefonu"
+                        data-placeholder-it="Inserisci il tuo numero di telefono"
+                        data-placeholder-es="Ingresa tu número de teléfono"
+                        data-placeholder-pt="Digite seu número de telefone"
+                        data-placeholder-ar="أدخل رقم هاتفك"
+                      />
+                    </div>
+                    <div class="flex flex-col">
+                      <label
+                        class="form-label"
+                        data-en="Type of Business *"
+                        data-pl="Rodzaj działalności *"
+                        data-it="Tipo di attività *"
+                        data-es="Tipo de negocio *"
+                        data-pt="Tipo de negócio *"
+                        data-ar="نوع العمل *"
+                      >
+                        Type of Business *
+                      </label>
+                      <select
+                        name="business_type"
+                        class="form-input"
+                        required
+                        data-placeholder-en="Select business type"
+                        data-placeholder-pl="Wybierz rodzaj działalności"
+                        data-placeholder-it="Seleziona il tipo di attività"
+                        data-placeholder-es="Selecciona el tipo de negocio"
+                        data-placeholder-pt="Selecione o tipo de negócio"
+                        data-placeholder-ar="اختر نوع العمل"
+                      >
+                        <option value="" disabled selected data-en="Select business type" data-pl="Wybierz rodzaj działalności" data-it="Seleziona il tipo di attività" data-es="Selecciona el tipo de negocio" data-pt="Selecione o tipo de negócio" data-ar="اختر نوع العمل">Select business type</option>
+                        <option value="Retail" data-en="Retail" data-pl="Handel detaliczny" data-it="Vendita al dettaglio" data-es="Comercio minorista" data-pt="Varejo" data-ar="التجزئة">Retail</option>
+                        <option value="Wholesale" data-en="Wholesale" data-pl="Hurt" data-it="Vendita all'ingrosso" data-es="Comercio mayorista" data-pt="Atacado" data-ar="الجملة">Wholesale</option>
+                        <option value="Restaurant" data-en="Restaurant" data-pl="Restauracja" data-it="Ristorante" data-es="Restaurante" data-pt="Restaurante" data-ar="مطعم">Restaurant</option>
+                        <option value="Other" data-en="Other" data-pl="Inne" data-it="Altro" data-es="Otro" data-pt="Outro" data-ar="أخرى">Other</option>
+                      </select>
+                    </div>
+                    <div id="other-business-type" class="flex flex-col hidden">
+                      <label
+                        class="form-label"
+                        data-en="Specify Other Business Type *"
+                        data-pl="Określ inny rodzaj działalności *"
+                        data-it="Specifica altro tipo di attività *"
+                        data-es="Especifica otro tipo de negocio *"
+                        data-pt="Especifique outro tipo de negócio *"
+                        data-ar="حدد نوع عمل آخر *"
+                      >
+                        Specify Other Business Type *
+                      </label>
+                      <input
+                        type="text"
+                        name="other_business_type"
+                        class="form-input"
+                        data-placeholder-en="Describe your business type"
+                        data-placeholder-pl="Opisz swój rodzaj działalności"
+                        data-placeholder-it="Descrivi il tuo tipo di attività"
+                        data-placeholder-es="Describe tu tipo de negocio"
+                        data-placeholder-pt="Descreva seu tipo de negócio"
+                        data-placeholder-ar="صف نوع عملك"
+                      />
+                    </div>
+                    <div class="flex flex-col">
+                      <label
+                        class="form-label"
+                        data-en="Location *"
+                        data-pl="Lokalizacja *"
+                        data-it="Posizione *"
+                        data-es="Ubicación *"
+                        data-pt="Localização *"
+                        data-ar="الموقع *"
+                      >
+                        Location *
+                      </label>
+                      <input
+                        type="text"
+                        name="location"
+                        class="form-input"
+                        required
+                        data-placeholder-en="Enter your city/country"
+                        data-placeholder-pl="Wpisz swoje miasto/kraj"
+                        data-placeholder-it="Inserisci la tua città/paese"
+                        data-placeholder-es="Ingresa tu ciudad/país"
+                        data-placeholder-pt="Digite sua cidade/país"
+                        data-placeholder-ar="أدخل مدينتك/بلدك"
+                      />
+                    </div>
+                    <div class="flex flex-col">
+                      <label
+                        class="form-label"
+                        data-en="Description of Needs *"
+                        data-pl="Opis potrzeb *"
+                        data-it="Descrizione delle esigenze *"
+                        data-es="Descripción de necesidades *"
+                        data-pt="Descrição das necessidades *"
+                        data-ar="وصف الاحتياجات *"
+                      >
+                        Description of Needs *
+                      </label>
+                      <textarea
+                        name="description"
+                        class="form-input"
+                        rows="5"
+                        required
+                        data-placeholder-en="Tell us about your olive oil needs"
+                        data-placeholder-pl="Opowiedz nam o swoich potrzebach dotyczących oliwy"
+                        data-placeholder-it="Dicci delle tue esigenze di olio d'oliva"
+                        data-placeholder-es="Cuéntanos sobre tus necesidades de aceite de oliva"
+                        data-placeholder-pt="Conte-nos sobre suas necessidades de azeite de oliva"
+                        data-placeholder-ar="أخبرنا عن احتياجاتك من زيت الزيتون"
+                      ></textarea>
+                    </div>
+                    <button
+                      type="submit"
+                      class="flex items-center justify-center rounded-xl h-12 px-5 bg-[#80e619] text-[#141811] text-base font-bold leading-normal tracking-[0.015em] cursor-pointer"
+                      data-en="Submit"
+                      data-pl="Wyślij"
+                      data-it="Invia"
+                      data-es="Enviar"
+                      data-pt="Enviar"
+                      data-ar="إرسال"
+                    >
+                      Submit
+                    </button>
+                  </form>
+                  <p
+                    id="form-message"
+                    class="text-[#141811] text-sm hidden"
+                    data-en=""
+                    data-pl=""
+                    data-it=""
+                    data-es=""
+                    data-pt=""
+                    data-ar=""
+                  ></p>
                 </div>
               </div>
             </div>
@@ -251,6 +499,11 @@
         const languageOptions = document.querySelectorAll('.language-option');
         const selectedLanguageSpan = document.querySelector('.selected-language');
         const flagSpan = languageButton.querySelector('.fi');
+        const form = document.querySelector('#contact-form');
+        const formMessage = document.querySelector('#form-message');
+        const businessTypeSelect = document.querySelector('select[name="business_type"]');
+        const otherBusinessTypeDiv = document.querySelector('#other-business-type');
+        const otherBusinessTypeInput = document.querySelector('input[name="other_business_type"]');
 
         function updateLanguage(lang) {
           // Update text content
@@ -258,14 +511,26 @@
             element.textContent = element.getAttribute(`data-${lang}`);
           });
 
+          // Update placeholders
+          document.querySelectorAll('input[data-placeholder-en], textarea[data-placeholder-en], select[data-placeholder-en]').forEach(element => {
+            element.placeholder = element.getAttribute(`data-placeholder-${lang}`);
+          });
+
           // Update selected language display
           const selectedOption = document.querySelector(`.language-option[data-lang="${lang}"]`);
           selectedLanguageSpan.textContent = selectedOption.textContent.trim();
-          // Ensure flag updates correctly
           flagSpan.className = `fi fi-${lang === 'ar' ? 'ma' : lang}`;
 
           // Update direction for Arabic
           document.body.setAttribute('dir', lang === 'ar' ? 'rtl' : 'ltr');
+
+          // Update form message translations
+          formMessage.setAttribute('data-en', lang === 'en' ? 'Thank you! Your submission has been received. We will contact you soon.' : formMessage.getAttribute('data-en'));
+          formMessage.setAttribute('data-pl', lang === 'pl' ? 'Dziękujemy! Twoje zgłoszenie zostało otrzymane. Skontaktujemy się wkrótce.' : formMessage.getAttribute('data-pl'));
+          formMessage.setAttribute('data-it', lang === 'it' ? 'Grazie! La tua richiesta è stata ricevuta. Ti contatteremo presto.' : formMessage.getAttribute('data-it'));
+          formMessage.setAttribute('data-es', lang === 'es' ? '¡Gracias! Tu envío ha sido recibido. Nos pondremos en contacto pronto.' : formMessage.getAttribute('data-es'));
+          formMessage.setAttribute('data-pt', lang === 'pt' ? 'Obrigado! Sua submissão foi recebida. Entraremos em contato em breve.' : formMessage.getAttribute('data-pt'));
+          formMessage.setAttribute('data-ar', lang === 'ar' ? 'شكرًا! تم استلام طلبك. سنتواصل معك قريبًا.' : formMessage.getAttribute('data-ar'));
 
           // Save language to localStorage
           localStorage.setItem('selectedLanguage', lang);
@@ -293,7 +558,65 @@
           }
         });
 
-        // Set initial language: use saved language or default to English
+        // Handle business type selection
+        businessTypeSelect.addEventListener('change', () => {
+          if (businessTypeSelect.value === 'Other') {
+            otherBusinessTypeDiv.classList.remove('hidden');
+            otherBusinessTypeInput.required = true;
+          } else {
+            otherBusinessTypeDiv.classList.add('hidden');
+            otherBusinessTypeInput.required = false;
+            otherBusinessTypeInput.value = '';
+          }
+        });
+
+        // Client-side form validation and submission handling
+        form.addEventListener('submit', (e) => {
+          // Prevent default only for validation; actual submission goes to FormSubmit
+          e.preventDefault();
+
+          const name = form.querySelector('input[name="name"]').value.trim();
+          const email = form.querySelector('input[name="email"]').value.trim();
+          const businessType = businessTypeSelect.value;
+          const otherBusinessType = otherBusinessTypeInput.value.trim();
+          const location = form.querySelector('input[name="location"]').value.trim();
+          const description = form.querySelector('textarea[name="description"]').value.trim();
+
+          // Validate required fields
+          if (!name || !email || !businessType || !location || !description) {
+            formMessage.textContent = 'Please fill in all required fields.';
+            formMessage.classList.remove('hidden');
+            formMessage.classList.add('text-red-600');
+            return;
+          }
+
+          // Validate email format
+          const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+          if (!emailRegex.test(email)) {
+            formMessage.textContent = 'Please enter a valid email address.';
+            formMessage.classList.remove('hidden');
+            formMessage.classList.add('text-red-600');
+            return;
+          }
+
+          // Validate "Other" business type
+          if (businessType === 'Other' && !otherBusinessType) {
+            formMessage.textContent = 'Please specify your business type.';
+            formMessage.classList.remove('hidden');
+            formMessage.classList.add('text-red-600');
+            return;
+          }
+
+          // Display success message and submit form
+          formMessage.textContent = formMessage.getAttribute(`data-${localStorage.getItem('selectedLanguage') || 'en'}`);
+          formMessage.classList.remove('hidden', 'text-red-600');
+          formMessage.classList.add('text-green-600');
+
+          // Submit form to FormSubmit (bypasses onSubmit restrictions)
+          form.submit();
+        });
+
+        // Set initial language
         const savedLanguage = localStorage.getItem('selectedLanguage') || 'en';
         updateLanguage(savedLanguage);
       });
