@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-3QNYCWKF1J"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
@@ -78,7 +79,7 @@
         background: radial-gradient(circle, rgba(94, 140, 90, 0.1) 0%, transparent 60%);
         z-index: 0;
       }
-      .chemlali-title {
+      .chemlali-title, .benefits-title {
         font-family: 'Lugrasimo', serif;
         color: #2e5e2e;
         font-size: 2.25rem;
@@ -89,7 +90,7 @@
         margin-bottom: 3rem;
         text-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
       }
-      .chemlali-title::after {
+      .chemlali-title::after, .benefits-title::after {
         content: '';
         width: 150px;
         height: 5px;
@@ -100,14 +101,14 @@
         transform: translateX(-50%);
         border-radius: 2px;
       }
-      .traits-container {
+      .traits-container, .benefits-container {
         display: grid;
         grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
         gap: 2rem;
         position: relative;
         z-index: 1;
       }
-      .trait-card {
+      .trait-card, .benefit-card {
         background: rgba(255, 255, 255, 0.9);
         border-radius: 1.5rem;
         padding: 2rem;
@@ -116,24 +117,24 @@
         transition: transform 0.3s ease, box-shadow 0.3s ease;
         border: 1px solid rgba(94, 140, 90, 0.2);
       }
-      .trait-card:hover {
+      .trait-card:hover, .benefit-card:hover {
         transform: scale(1.05);
         box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
       }
-      .trait-icon {
+      .trait-icon, .benefit-icon {
         width: 3rem;
         height: 3rem;
         fill: #5a8c5a;
         margin-bottom: 1rem;
       }
-      .trait-name {
+      .trait-name, .benefit-name {
         font-family: 'Epilogue', sans-serif;
         font-weight: 700;
         font-size: 1.25rem;
         color: #2e5e2e;
         margin-bottom: 0.75rem;
       }
-      .trait-desc {
+      .trait-desc, .benefit-desc {
         font-size: 0.95rem;
         color: #444;
         line-height: 1.5;
@@ -180,26 +181,45 @@
         font-size: 1.1rem;
         color: #2e5e2e;
       }
+      .benefits-section {
+        background: linear-gradient(145deg, #fffef5 0%, #f8faf5 100%);
+        border-radius: 2.5rem;
+        padding: 3rem 2.5rem;
+        margin: 3rem 0;
+        position: relative;
+        overflow: hidden;
+        box-shadow: 0 20px 50px rgba(0, 0, 0, 0.08);
+      }
+      .benefits-section::before {
+        content: '';
+        position: absolute;
+        top: -30%;
+        right: -30%;
+        width: 160%;
+        height: 160%;
+        background: radial-gradient(circle, rgba(212, 160, 23, 0.1) 0%, transparent 60%);
+        z-index: 0;
+      }
       @media (max-width: 640px) {
         .catalogue-grid {
           grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
         }
-        .chemlali-section {
+        .chemlali-section, .benefits-section {
           padding: 2rem 1.5rem;
         }
-        .chemlali-title {
+        .chemlali-title, .benefits-title {
           font-size: 1.75rem;
         }
-        .traits-container {
+        .traits-container, .benefits-container {
           grid-template-columns: 1fr;
         }
-        .trait-card {
+        .trait-card, .benefit-card {
           padding: 1.5rem;
         }
-        .trait-name {
+        .trait-name, .benefit-name {
           font-size: 1.1rem;
         }
-        .trait-desc {
+        .trait-desc, .benefit-desc {
           font-size: 0.9rem;
         }
         .uses-title {
@@ -479,6 +499,67 @@
                     </svg>
                     <div class="use-name" data-en="Dipping Bread" data-pl="Maczanie Chleba" data-it="Intingere il Pane" data-es="Mojar Pan" data-pt="Mergulhar Pão" data-ar="غمس الخبز">Dipping Bread</div>
                   </div>
+                </div>
+              </div>
+            </div>
+            <div class="benefits-section @container">
+              <h1 class="benefits-title" data-en="Health Benefits of Extra Virgin Olive Oil" data-pl="Korzyści zdrowotne oliwy z oliwek extra virgin" data-it="Benefici per la salute dell'olio extravergine di oliva" data-es="Beneficios para la salud del aceite de oliva virgen extra" data-pt="Benefícios para a saúde do azeite de oliva extra virgem" data-ar="فوائد زيت الزيتون البكر الممتاز للصحة">
+                Health Benefits of Extra Virgin Olive Oil
+              </h1>
+              <div class="benefits-container">
+                <div class="benefit-card">
+                  <svg class="benefit-icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
+                  </svg>
+                  <div class="benefit-name" data-en="Heart Health" data-pl="Zdrowie serca" data-it="Salute del cuore" data-es="Salud cardíaca" data-pt="Saúde do coração" data-ar="صحة القلب">Heart Health</div>
+                  <p class="benefit-desc" data-en="Rich in monounsaturated fats, EVOO lowers bad cholesterol and reduces heart disease risk." data-pl="Bogata w tłuszcze jednonienasycone, oliwa EVOO obniża zły cholesterol i zmniejsza ryzyko chorób serca." data-it="Ricco di grassi monoinsaturi, l'EVOO riduce il colesterolo cattivo e il rischio di malattie cardiache." data-es="Rico en grasas monoinsaturadas, el EVOO reduce el colesterol malo y el riesgo de enfermedades cardíacas." data-pt="Rico em gorduras monoinsaturadas, o EVOO reduz o colesterol ruim e o risco de doenças cardíacas." data-ar="غني بالدهون الأحادية غير المشبعة، يقلل زيت EVOO من الكوليسترول الضار ومخاطر أمراض القلب.">
+                    Rich in monounsaturated fats, EVOO lowers bad cholesterol and reduces heart disease risk.
+                  </p>
+                </div>
+                <div class="benefit-card">
+                  <svg class="benefit-icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.94-.49-7-3.85-7-7.93s3.06-7.44 7-7.93v15.86zm2 0V4.07c3.94.49 7 3.85 7 7.93s-3.06 7.44-7 7.93z"/>
+                  </svg>
+                  <div class="benefit-name" data-en="Anti-Inflammatory" data-pl="Przeciwzapalne" data-it="Antinfiammatorio" data-es="Antiinflamatorio" data-pt="Anti-inflamatório" data-ar="مضاد للالتهابات">Anti-Inflammatory</div>
+                  <p class="benefit-desc" data-en="Polyphenols in EVOO reduce inflammation, easing chronic conditions like arthritis." data-pl="Polifenole w oliwie EVOO zmniejszają stany zapalne, łagodząc choroby przewlekłe, takie jak artretyzm." data-it="I polifenoli nell'EVOO riducono l'infiammazione, alleviando condizioni croniche come l'artrite." data-es="Los polifenoles en el EVOO reducen la inflamación, aliviando condiciones crónicas como la artritis." data-pt="Os polifenóis no EVOO reduzem a inflamação, aliviando condições crônicas como artrite." data-ar="تقلل البوليفينول في زيت EVOO من الالتهابات، مما يخفف الحالات المزمنة مثل التهاب المفاصل.">
+                    Polyphenols in EVOO reduce inflammation, easing chronic conditions like arthritis.
+                  </p>
+                </div>
+                <div class="benefit-card">
+                  <svg class="benefit-icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm5 13h-2v-2h2v2zm0-4h-2V9h2v2zm-4 4h-2v-2h2v2zm0-4h-2V9h2v2zm-4 4H7v-2h2v2zm0-4H7V9h2v2z"/>
+                  </svg>
+                  <div class="benefit-name" data-en="Antioxidant Power" data-pl="Moc antyoksydacyjna" data-it="Potere antiossidante" data-es="Poder antioxidante" data-pt="Poder antioxidante" data-ar="قوة مضادات الأكسدة">Antioxidant Power</div>
+                  <p class="benefit-desc" data-en="Antioxidants like vitamin E protect cells from damage, supporting overall health." data-pl="Antyoksydanty, takie jak witamina E, chronią komórki przed uszkodzeniem, wspierając ogólne zdrowie." data-it="Antiossidanti come la vitamina E proteggono le cellule dai danni, supportando la salute generale." data-es="Antioxidantes como la vitamina E protegen las células del daño, apoyando la salud general." data-pt="Antioxidantes como a vitamina E protegem as células de danos, apoiando a saúde geral." data-ar="مضادات الأكسدة مثل فيتامين E تحمي الخلايا من التلف، مما يدعم الصحة العامة.">
+                    Antioxidants like vitamin E protect cells from damage, supporting overall health.
+                  </p>
+                </div>
+                <div class="benefit-card">
+                  <svg class="benefit-icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M12 4c-4.41 0-8 3.59-8 8s3.59 8 8 8 8-3.59 8-8-3.59-8-8-8zm0 14c-3.31 0-6-2.69-6-6s2.69-6 6-6 6 2.69 6 6-2.69 6-6 6zm-2-6H7v-2h3V7h2v3h3v2h-3v3h-2v-3z"/>
+                  </svg>
+                  <div class="benefit-name" data-en="Digestive Health" data-pl="Zdrowie układu pokarmowego" data-it="Salute digestiva" data-es="Salud digestiva" data-pt="Saúde digestiva" data-ar="صحة الجهاز الهضمي">Digestive Health</div>
+                  <p class="benefit-desc" data-en="EVOO promotes healthy digestion and may reduce the risk of digestive disorders." data-pl="Oliwa EVOO wspiera zdrowe trawienie i może zmniejszać ryzyko zaburzeń trawiennych." data-it="L'EVOO promuove una digestione sana e può ridurre il rischio di disturbi digestivi." data-es="El EVOO promueve una digestión saludable y puede reducir el riesgo de trastornos digestivos." data-pt="O EVOO promove uma digestão saudável e pode reduzir o risco de distúrbios digestivos." data-ar="يعزز زيت EVOO الهضم الصحي وقد يقلل من مخاطر اضطرابات الجهاز الهضمي.">
+                    EVOO promotes healthy digestion and may reduce the risk of digestive disorders.
+                  </p>
+                </div>
+                <div class="benefit-card">
+                  <svg class="benefit-icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 17h-2v-2h2v2zm2.07-7.75l-.9.92c-.72.73-1.17 1.59-1.17 2.83h-2v-.25c0-1.01.45-1.92 1.17-2.58l1.24-1.24c.37-.37.59-.89.59-1.43 0-1.1-.9-2-2-2s-2 .9-2 2H8c0-2.21 1.79-4 4-4s4 1.79 4 4c0 .66-.24 1.27-.66 1.75z"/>
+                  </svg>
+                  <div class="benefit-name" data-en="Cognitive Benefits" data-pl="Korzyści poznawcze" data-it="Benefici cognitivi" data-es="Beneficios cognitivos" data-pt="Benefícios cognitivos" data-ar="فوائد معرفية">Cognitive Benefits</div>
+                  <p class="benefit-desc" data-en="Healthy fats in EVOO support brain health, potentially lowering cognitive decline risk." data-pl="Zdrowe tłuszcze w oliwie EVOO wspierają zdrowie mózgu, potencjalnie zmniejszając ryzyko pogorszenia funkcji poznawczych." data-it="I grassi sani nell'EVOO supportano la salute del cervello, potenzialmente riducendo il rischio di declino cognitivo." data-es="Las grasas saludables en el EVOO apoyan la salud cerebral, potencialmente reduciendo el riesgo de deterioro cognitivo." data-pt="As gorduras saudáveis no EVOO apoiam a saúde cerebral, potencialmente reduzindo o risco de declínio cognitivo." data-ar="الدهون الصحية في زيت EVOO تدعم صحة الدماغ، وقد تقلل من مخاطر التدهور المعرفي.">
+                    Healthy fats in EVOO support brain health, potentially lowering cognitive decline risk.
+                  </p>
+                </div>
+                <div class="benefit-card">
+                  <svg class="benefit-icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zM8 17.5c-.55 0-1-.45-1-1s.45-1 1-1 1 .45 1 1-.45 1-1 1zm8 0c-.55 0-1-.45-1-1s.45-1 1-1 1 .45 1 1-.45 1-1 1zm-4-3c-2.21 0-4-1.79-4-4s1.79-4 4-4 4 1.79 4 4-1.79 4-4 4z"/>
+                  </svg>
+                  <div class="benefit-name" data-en="Skin Health" data-pl="Zdrowie skóry" data-it="Salute della pelle" data-es="Salud de la piel" data-pt="Saúde da pele" data-ar="صحة البشرة">Skin Health</div>
+                  <p class="benefit-desc" data-en="EVOO’s antioxidants and fats nourish skin, reducing aging signs when used topically or consumed." data-pl="Antyoksydanty i tłuszcze w oliwie EVOO odżywiają skórę, zmniejszając oznaki starzenia przy stosowaniu miejscowym lub spożyciu." data-it="Gli antiossidanti e i grassi dell'EVOO nutrono la pelle, riducendo i segni dell'invecchiamento se usati topicamente o consumati." data-es="Los antioxidantes y grasas del EVOO nutren la piel, reduciendo los signos de envejecimiento cuando se usa tópicamente o se consume." data-pt="Os antioxidantes e gorduras do EVOO nutrem a pele, reduzindo os sinais de envelhecimento quando usados topicamente ou consumidos." data-ar="مضادات الأكسدة والدهون في زيت EVOO تغذي البشرة، مما يقلل من علامات الشيخوخة عند استخدامه موضعيًا أو تناوله.">
+                    EVOO’s antioxidants and fats nourish skin, reducing aging signs when used topically or consumed.
+                  </p>
                 </div>
               </div>
             </div>
