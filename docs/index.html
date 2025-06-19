@@ -1,6 +1,48 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
+    <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    
+    <!-- Add Geographic Auto-Detection Script HERE -->
+    <script>
+    // Auto-detect Polish users and redirect to Polish version
+    function detectAndRedirect() {
+        // Check if already has language parameter
+        const urlParams = new URLSearchParams(window.location.search);
+        if (urlParams.get('lang')) {
+            return; // User already chose language
+        }
+        
+        // Check if user previously selected language
+        const savedLanguage = localStorage.getItem('selectedLanguage');
+        if (savedLanguage) {
+            window.location.href = window.location.pathname + '?lang=' + savedLanguage;
+            return;
+        }
+        
+        // Detect Polish users by timezone/locale
+        const userLocale = navigator.language || navigator.userLanguage;
+        const timezone = Intl.DateTimeFormat().resolvedOptions().timeZone;
+        
+        if (userLocale.startsWith('pl') || timezone.includes('Warsaw') || timezone.includes('Europe/Warsaw')) {
+            window.location.href = "home.html?lang=pl";  // Redirect to Polish homepage
+        } else {
+            window.location.href = "home.html?lang=en";  // Redirect to English homepage
+        }
+    }
+
+    // Run detection immediately when script loads
+    detectAndRedirect();
+    </script>
+    <!-- End Auto-Detection Script -->
+    
+    <!-- Rest of your existing head content -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <!-- ... rest of your existing head tags ... -->
+</head>
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-3QNYCWKF1J"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
