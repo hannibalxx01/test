@@ -1,117 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <!DOCTYPE html>
-<html lang="en">
 <head>
-    <meta charset="UTF-8">
-    
-    <!-- Add Geographic Auto-Detection Script HERE -->
-    <script>
-    // Auto-detect Polish users and redirect to Polish version
-    function detectAndRedirect() {
-        // Check if already has language parameter
-        const urlParams = new URLSearchParams(window.location.search);
-        if (urlParams.get('lang')) {
-            return; // User already chose language
-        }
-        
-        // Check if user previously selected language
-        const savedLanguage = localStorage.getItem('selectedLanguage');
-        if (savedLanguage) {
-            window.location.href = window.location.pathname + '?lang=' + savedLanguage;
-            return;
-        }
-        
-        // Detect Polish users by timezone/locale
-        const userLocale = navigator.language || navigator.userLanguage;
-        const timezone = Intl.DateTimeFormat().resolvedOptions().timeZone;
-        
-        if (userLocale.startsWith('pl') || timezone.includes('Warsaw') || timezone.includes('Europe/Warsaw')) {
-            window.location.href = "home.html?lang=pl";  // Redirect to Polish homepage
-        } else {
-            window.location.href = "home.html?lang=en";  // Redirect to English homepage
-        }
-    }
-
-    // Run detection immediately when script loads
-    detectAndRedirect();
-    </script>
-    <!-- End Auto-Detection Script -->
-    
-    <!-- Rest of your existing head content -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <!-- ... rest of your existing head tags ... -->
-    <!-- POLISH SEO META TAGS -->
-<meta name="description" content="Laperla - najlepsza oliwa tunezyjska Extra Virgin z Chemlali. Nagradzana międzynarodowo. Sklep online, dostawa w Polsce. Zamów premium oliwę z pierwszego tłoczenia." data-pl="Laperla - najlepsza oliwa tunezyjska Extra Virgin z Chemlali. Nagradzana międzynarodowo. Sklep online, dostawa w Polsce. Zamów premium oliwę z pierwszego tłoczenia." data-en="Discover Laperla's premium Tunisian extra virgin olive oil. Award-winning Chemlali variety. Online shop with delivery in Poland." />
-
-<meta name="keywords" content="oliwa z oliwek extra virgin, oliwa tunezyjska, chemlali oliwa, najlepsza oliwa, sklep oliwy online, oliwa z pierwszego tłoczenia, premium oliwa tunezja">
-
-<!-- POLISH HREFLANG -->
-<link rel="alternate" hreflang="pl" href="https://laperlaoliveoil.com/home.html?lang=pl" />
-<link rel="alternate" hreflang="en" href="https://laperlaoliveoil.com/home.html?lang=en" />
-<link rel="alternate" hreflang="x-default" href="https://laperlaoliveoil.com/home.html?lang=en" />
-<link rel="canonical" href="https://laperlaoliveoil.com/" />
-
-<!-- POLISH STRUCTURED DATA -->
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "Organization",
-  "name": "Laperla Olive Oil",
-  "alternateName": "Laperla Oliwa z Oliwek",
-  "url": "https://laperlaoliveoil.com",
-  "description": "Najlepsza oliwa tunezyjska Extra Virgin z Chemlali. Nagradzana międzynarodowo, dostawa w Polsce.",
-  "address": {
-    "@type": "PostalAddress",
-    "addressLocality": "Sidi Bou Ali",
-    "addressCountry": "Tunisia"
-  },
-  "contactPoint": [
-    {
-      "@type": "ContactPoint",
-      "telephone": "+48-530-846-928",
-      "contactType": "sales",
-      "availableLanguage": ["Polish", "English", "Italian", "Spanish", "Portuguese", "Arabic"],
-      "areaServed": "PL"
-    }
-  ],
-  "sameAs": [
-    "https://instagram.com/yourprofile",
-    "https://facebook.com/yourprofile"
-  ],
-  "product": {
-    "@type": "Product",
-    "name": "Oliwa Chemlali Edition Prestige",
-    "description": "Premium oliwa tunezyjska Extra Virgin z pierwszego tłoczenia",
-    "brand": {
-      "@type": "Brand",
-      "name": "Laperla"
-    },
-    "category": "Oliwa z oliwek Extra Virgin",
-    "countryOfOrigin": "Tunisia"
-  }
-}
-</script>
-    
-</head>
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-3QNYCWKF1J"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-  gtag('config', 'G-3QNYCWKF1J');
-</script>
     <meta charset="UTF-8">
     <meta name="description" content="Discover Laperla’s premium extra virgin olive oil. Explore our organic products and heritage." data-en="Discover Laperla’s premium extra virgin olive oil. Explore our organic products and heritage." data-pl="Poznaj premium oliwę extra virgin Laperla. Odkryj nasze organiczne produkty i dziedzictwo." data-it="Scopri l’olio extravergine di oliva premium di Laperla. Esplora i nostri prodotti biologici ed eredità." data-es="Descubre el aceite de oliva virgen extra premium de Laperla. Explora nuestros productos orgánicos y patrimonio." data-pt="Conheça o azeite de oliva virgem extra premium da Laperla. Explore nossos produtos orgânicos e herança." data-ar="اكتشف زيت الزيتون البكر الممتاز من لابيرلا. استكشف منتجاتنا العضوية وتراثنا." />
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-      rel="stylesheet"
-      as="style"
-      onload="this.rel='stylesheet'"
-      href="https://fonts.googleapis.com/css2?display=swap&family=Epilogue%3Awght%40400%3B500%3B700%3B900&family=Noto+Sans%3Awght%40400%3B500%3B700%3B900&family=Amiri:wght@400;700&family=Lugrasimo&display=swap"
-    />
+    <link rel="stylesheet" as="style" onload="this.rel='stylesheet'" href="https://fonts.googleapis.com/css2?display=swap&family=Epilogue%3Awght%40400%3B500%3B700%3B900&family=Noto+Sans%3Awght%40400%3B500%3B700%3B900&family=Amiri:wght@400;700&family=Lugrasimo&display=swap" />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flag-icons/css/flag-icons.min.css" />
     <link rel="alternate" hreflang="en" href="https://laperlaoliveoil.com/index.html?lang=en" />
     <link rel="alternate" hreflang="pl" href="https://laperlaoliveoil.com/index.html?lang=pl" />
@@ -120,10 +14,113 @@
     <link rel="alternate" hreflang="pt" href="https://laperlaoliveoil.com/index.html?lang=pt" />
     <link rel="alternate" hreflang="ar" href="https://laperlaoliveoil.com/index.html?lang=ar" />
     <link rel="alternate" hreflang="x-default" href="https://laperlaoliveoil.com/index.html?lang=en" />
-    <title>La Perla | Premium Tunisian Extra Virgin Olive Oil | 100% Natural & Organic </title>
+    <title>La Perla | Premium Tunisian Extra Virgin Olive Oil | 100% Natural & Organic</title>
     <link rel="icon" type="image/x-icon" href="data:image/x-icon;base64," />
     <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
     <link rel="stylesheet" href="assets/css/styles.css">
+    <!-- Load js-cookie -->
+    <script src="https://cdn.jsdelivr.net/npm/js-cookie@3.0.5/dist/js.cookie.min.js"></script>
+    <!-- Polish SEO Meta Tags -->
+    <meta name="keywords" content="oliwa z oliwek extra virgin, oliwa tunezyjska, chemlali oliwa, najlepsza oliwa, sklep oliwy online, oliwa z pierwszego tłoczenia, premium oliwa tunezja">
+    <!-- Polish Structured Data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "name": "Laperla Olive Oil",
+      "alternateName": "Laperla Oliwa z Oliwek",
+      "url": "https://laperlaoliveoil.com",
+      "description": "Najlepsza oliwa tunezyjska Extra Virgin z Chemlali. Nagradzana międzynarodowo, dostawa w Polsce.",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Sidi Bou Ali",
+        "addressCountry": "Tunisia"
+      },
+      "contactPoint": [
+        {
+          "@type": "ContactPoint",
+          "telephone": "+48-530-846-928",
+          "contactType": "sales",
+          "availableLanguage": ["Polish", "English", "Italian", "Spanish", "Portuguese", "Arabic"],
+          "areaServed": "PL"
+        }
+      ],
+      "sameAs": [
+        "https://instagram.com/yourprofile",
+        "https://facebook.com/yourprofile"
+      ],
+      "product": {
+        "@type": "Product",
+        "name": "Oliwa Chemlali Edition Prestige",
+        "description": "Premium oliwa tunezyjska Extra Virgin z pierwszego tłoczenia",
+        "brand": {
+          "@type": "Brand",
+          "name": "Laperla"
+        },
+        "category": "Oliwa z oliwek Extra Virgin",
+        "countryOfOrigin": "Tunisia"
+      }
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Organization",
+        "name": "Laperla Olive Oil",
+        "url": "https://laperlaoliveoil.com",
+        "description": "Premium Tunisian olive oil supplier for wholesale and bulk orders",
+        "address": {
+            "@type": "PostalAddress",
+            "addressLocality": "Sidi Bou Ali",
+            "addressCountry": "Tunisia"
+        },
+        "contactPoint": {
+            "@type": "ContactPoint",
+            "telephone": "+48-530-846-928",
+            "contactType": "sales",
+            "availableLanguage": ["English", "Polish", "Italian", "Spanish", "Portuguese", "Arabic"]
+        }
+    }
+    </script>
+    <!-- FreeIPAPI Geolocation Script -->
+    <script>
+      function detectAndRedirect() {
+        // Check if language parameter exists
+        const urlParams = new URLSearchParams(window.location.search);
+        if (urlParams.get('lang')) {
+          return; // Respect URL parameter
+        }
+
+        // Check if user previously selected language
+        const savedLanguage = Cookies.get('selectedLanguage');
+        if (savedLanguage) {
+          window.location.href = `index.html?lang=${savedLanguage}`;
+          return;
+        }
+
+        // Fetch location from FreeIPAPI
+        fetch('https://api.freeipapi.com/')
+          .then(response => response.json())
+          .then(data => {
+            if (data.countryCode === 'PL') {
+              Cookies.set('selectedLanguage', 'pl', { expires: 7 });
+              window.location.href = 'index.html?lang=pl';
+            } else {
+              Cookies.set('selectedLanguage', 'en', { expires: 7 });
+              window.location.href = 'index.html?lang=en';
+            }
+          })
+          .catch(error => {
+            console.error('Geolocation error:', error);
+            // Fallback to English if API fails
+            Cookies.set('selectedLanguage', 'en', { expires: 7 });
+            window.location.href = 'index.html?lang=en';
+          });
+      }
+
+      // Run detection immediately
+      detectAndRedirect();
+    </script>
     <style>
       .language-dropdown {
         position: relative;
@@ -196,36 +193,19 @@
         opacity: 1;
       }
     </style>
-
-    <script type="application/ld+json">
-  {
-      "@context": "https://schema.org",
-      "@type": "Organization",
-      "name": "Laperla Olive Oil",
-      "url": "https://laperlaoliveoil.com",
-      "description": "Premium Tunisian olive oil supplier for wholesale and bulk orders",
-      "address": {
-          "@type": "PostalAddress",
-          "addressLocality": "Sidi Bou Ali",
-          "addressCountry": "Tunisia"
-      },
-      "contactPoint": {
-          "@type": "ContactPoint",
-          "telephone": "+48-530-846-928",
-          "contactType": "sales",
-          "availableLanguage": ["English", "Polish", "Italian", "Spanish", "Portuguese", "Arabic"]
-      }
-  }
-  </script>
-
-
-  
-  </head>
-  <body>
+</head>
+<body>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-3QNYCWKF1J"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-3QNYCWKF1J');
+    </script>
     <div class="relative flex size-full min-h-screen flex-col bg-white group/design-root overflow-x-hidden" style='font-family: Epilogue, "Noto Sans", sans-serif;'>
       <div class="layout-container flex h-full grow flex-col">
         <header class="flex items-center justify-between whitespace-nowrap border-b border-solid border-b-[#f2f4f0] px-10 py-3">
-          <a href="index.html" class="flex items-center gap-4 text-[#141811] no-underline">
+          <a href="index.html?lang=en" class="flex items-center gap-4 text-[#141811] no-underline">
             <div class="size-4">
               <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <g clip-path="url(#clip0_6_535)">
@@ -248,10 +228,10 @@
           </a>
           <div class="flex flex-1 justify-end gap-8">
             <div class="flex items-center gap-9">
-              <a class="text-[#141811] text-sm font-medium leading-normal" href="home.html" data-en="Home" data-pl="Strona Główna" data-it="Home" data-es="Inicio" data-pt="Início" data-ar="الرئيسية">Home</a>
-              <a class="text-[#141811] text-sm font-medium leading-normal" href="product.html" data-en="Our Products" data-pl="Nasze Produkty" data-it="I nostri prodotti" data-es="Nuestros productos" data-pt="Nossos produtos" data-ar="منتجاتنا">Our Products</a>
-              <a class="text-[#141811] text-sm font-medium leading-normal" href="heritage.html" data-en="Heritage" data-pl="Dziedzictwo" data-it="Eredità" data-es="Patrimonio" data-pt="Herança" data-ar="التراث">Heritage</a>
-              <a class="text-[#141811] text-sm font-medium leading-normal" href="contact.html" data-en="Contact" data-pl="Kontakt" data-it="Contatti" data-es="Contacto" data-pt="Contato" data-ar="اتصل بنا">Contact</a>
+              <a class="text-[#141811] text-sm font-medium leading-normal" href="home.html?lang=en" data-en="Home" data-pl="Strona Główna" data-it="Home" data-es="Inicio" data-pt="Início" data-ar="الرئيسية">Home</a>
+              <a class="text-[#141811] text-sm font-medium leading-normal" href="product.html?lang=en" data-en="Our Products" data-pl="Nasze Produkty" data-it="I nostri prodotti" data-es="Nuestros productos" data-pt="Nossos produtos" data-ar="منتجاتنا">Our Products</a>
+              <a class="text-[#141811] text-sm font-medium leading-normal" href="heritage.html?lang=en" data-en="Heritage" data-pl="Dziedzictwo" data-it="Eredità" data-es="Patrimonio" data-pt="Herança" data-ar="التراث">Heritage</a>
+              <a class="text-[#141811] text-sm font-medium leading-normal" href="contact.html?lang=en" data-en="Contact" data-pl="Kontakt" data-it="Contatti" data-es="Contacto" data-pt="Contato" data-ar="اتصل بنا">Contact</a>
             </div>
             <div class="language-dropdown">
               <button class="language-dropdown-button">
@@ -328,7 +308,7 @@
                     </h2>
                   </div>
                   <a
-                    href="product.html"
+                    href="product.html?lang=en"
                     class="relative flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-xl h-10 px-4 @[480px]:h-12 @[480px]:px-5 bg-[#80e619] text-[#141811] text-sm font-bold leading-normal tracking-[0.015em] @[480px]:text-base @[480px]:font-bold @[480px]:leading-normal @[480px]:tracking-[0.015em] z-10 no-underline"
                   >
                     <span class="truncate" data-en="Explore Our Products" data-pl="Poznaj Nasze Produkty" data-it="Esplora i Nostri Prodotti" data-es="Explora Nuestros Productos" data-pt="Explore Nossos Produtos" data-ar="استكشف منتجاتنا">Explore Our Products</span>
@@ -432,7 +412,7 @@
                     <p
                       class="text-[#758863] text-sm font-normal leading-normal"
                       data-en="Laperla olive oil has earned prestigious awards in competitions worldwide, a testament to its exceptional quality and taste recognized by experts globally."
-                      data-pl="Oliwa Laperla zdobyła prestiżowe nagrody w konkursach na całym świecie, co świadczy o jej wyjątkowej jakości i smaku docenionym przez ekspertów na całym globie."
+                      data-pl="Oliwa Laperla zdobyła prestiżowe nagrody w konkursach na całym świecie, co świadczy o jej wyjątkowej jakości i smaku docenianym przez ekspertów na całym globie."
                       data-it="L'olio d'oliva Laperla ha ottenuto prestigiosi riconoscimenti in competizioni internazionali, una testimonianza della sua qualità eccezionale e del gusto riconosciuto dagli esperti a livello globale."
                       data-es="El aceite de oliva Laperla ha ganado prestigiosos premios en competiciones internacionales, un testimonio de su calidad excepcional y sabor reconocido por expertos a nivel mundial."
                       data-pt="O azeite de oliva Laperla conquistou prêmios prestigiosos em competições internacionais, um testemunho de sua qualidade excepcional e sabor reconhecido por especialistas globalmente."
@@ -474,7 +454,7 @@
                   <div class="text-[#141811]" data-icon="Leaf" data-size="24px" data-weight="regular">
                     <svg xmlns="http://www.w3.org/2000/svg" width="24px" height="24px" fill="currentColor" viewBox="0 0 256 256">
                       <path
-                        d="M223.45,40.07a8,8,0,0,0-7.52-7.52C139.8,28.08,78.82,51,52.82,94a87.09,87.09,0,0,0-12.76,49c.57,15.92,5.21,32,13.79,47.85l-19.51,19.5a8,8,0,0,0,11.32,11.32l19.5-19.51C81,210.73,97.09,215.37,113,215.94q1.67.06,3.33.06A86.93,86.93,0,0,0,162,203.18C205,177.18,227.93,116.21,223.45,40.07ZM153.75,189.5c-22.75,13.78-49.68,14-76.71.77l88.63-88.62a8,8,0,0,0-11.32-11.32L65.73,179c-13.19-27-13-54,.77-76.71,22.09-36.47,74.6-56.44,141.31-54.06C210.2,114.89,190.22,167.41,153.75,189.5Z"
+                        d="M223.45,40.07a8,8,0,0,0-7.52-7.52C139.8,28.08,78.82,51,52.82,94a87.09,87.09,0,0,0-12.76,49c.57,15.92,5.21,32,13.79,47.85l-19.51,19.5a8,8,0,0,0,11.32,11.32l19.50-19.51C81,210.73,97.09,215.37,113,215.94q1.67.06,3.33.06A86.93,86.93,0,0,0,162,203.18C205,177.18,227.93,116.21,223.45,40.07ZM153.75,189.5c-22.75,13.78-49.68,14-76.71.77l88.63-88.62a8,8,0,0,0-11.32-11.32L65.73,179c-13.19-27-13-54,.77-76.71,22.09-36.47,74.6-56.44,141.31-54.06C210.2,114.89,190.22,167.41,153.75,189.5Z"
                       ></path>
                     </svg>
                   </div>
@@ -626,10 +606,10 @@
           <div class="flex max-w-[960px] flex-1 flex-col">
             <footer class="flex flex-col gap-6 px-5 py-10 text-center @container">
               <div class="flex flex-wrap items-center justify-center gap-6 @[480px]:flex-row @[480px]:justify-around">
-                <a class="text-[#758863] text-base font-normal leading-normal min-w-40" href="home.html" data-en="Home" data-pl="Strona Główna" data-it="Home" data-es="Inicio" data-pt="Início" data-ar="الرئيسية">Home</a>
-                <a class="text-[#758863] text-base font-normal leading-normal min-w-40" href="product.html" data-en="Our Products" data-pl="Nasze Produkty" data-it="I nostri prodotti" data-es="Nuestros productos" data-pt="Nossos produtos" data-ar="منتجاتنا">Our Products</a>
-                <a class="text-[#758863] text-base font-normal leading-normal min-w-40" href="heritage.html" data-en="Heritage" data-pl="Dziedzictwo" data-it="Eredità" data-es="Patrimonio" data-pt="Herança" data-ar="التراث">Heritage</a>
-                <a class="text-[#758863] text-base font-normal leading-normal min-w-40" href="contact.html" data-en="Contact" data-pl="Kontakt" data-it="Contatti" data-es="Contacto" data-pt="Contato" data-ar="اتصل بنا">Contact</a>
+                <a class="text-[#758863] text-base font-normal leading-normal min-w-40" href="home.html?lang=en" data-en="Home" data-pl="Strona Główna" data-it="Home" data-es="Inicio" data-pt="Início" data-ar="الرئيسية">Home</a>
+                <a class="text-[#758863] text-base font-normal leading-normal min-w-40" href="product.html?lang=en" data-en="Our Products" data-pl="Nasze Produkty" data-it="I nostri prodotti" data-es="Nuestros productos" data-pt="Nossos produtos" data-ar="منتجاتنا">Our Products</a>
+                <a class="text-[#758863] text-base font-normal leading-normal min-w-40" href="heritage.html?lang=en" data-en="Heritage" data-pl="Dziedzictwo" data-it="Eredità" data-es="Patrimonio" data-pt="Herança" data-ar="التراث">Heritage</a>
+                <a class="text-[#758863] text-base font-normal leading-normal min-w-40" href="contact.html?lang=en" data-en="Contact" data-pl="Kontakt" data-it="Contatti" data-es="Contacto" data-pt="Contato" data-ar="اتصل بنا">Contact</a>
               </div>
               <div class="flex flex-wrap justify-center gap-4">
                 <a href="https://instagram.com/yourprofile" target="_blank">
@@ -703,13 +683,16 @@
           // Update direction for Arabic
           document.body.setAttribute('dir', lang === 'ar' ? 'rtl' : 'ltr');
 
-          // Save language to localStorage
-          localStorage.setItem('selectedLanguage', lang);
+          // Save language to cookie
+          Cookies.set('selectedLanguage', lang, { expires: 7 });
 
-          // Update URL with language parameter
-          const url = new URL(window.location);
-          url.searchParams.set('lang', lang);
-          window.history.pushState({}, '', url);
+          // Update navigation links with lang parameter
+          const navLinks = document.querySelectorAll('header a[href], footer a[href]');
+          navLinks.forEach(link => {
+            const url = new URL(link.href, window.location.origin);
+            url.searchParams.set('lang', lang);
+            link.href = url.toString();
+          });
 
           // Close dropdown
           languageMenu.classList.remove('show');
@@ -723,7 +706,12 @@
         // Handle language selection
         languageOptions.forEach(option => {
           option.addEventListener('click', () => {
-            updateLanguage(option.getAttribute('data-lang'));
+            const lang = option.getAttribute('data-lang');
+            updateLanguage(lang);
+            // Update URL with language parameter
+            const url = new URL(window.location);
+            url.searchParams.set('lang', lang);
+            window.history.pushState({}, '', url);
           });
         });
 
@@ -742,13 +730,17 @@
         }
         setInterval(showNextImage, 5000);
 
-        // Set initial language: use URL parameter, then localStorage, then default to English
+        // Set initial language: use URL parameter, then cookie, then rely on geolocation
         const urlParams = new URLSearchParams(window.location.search);
         const urlLang = urlParams.get('lang');
-        const savedLanguage = localStorage.getItem('selectedLanguage');
-        const initialLanguage = urlLang || savedLanguage || 'en';
-        updateLanguage(initialLanguage);
+        const savedLanguage = Cookies.get('selectedLanguage');
+        if (urlLang) {
+          updateLanguage(urlLang);
+        } else if (savedLanguage) {
+          updateLanguage(savedLanguage);
+        }
+        // Geolocation is handled by detectAndRedirect() in the head
       });
     </script>
-  </body>
+</body>
 </html>
