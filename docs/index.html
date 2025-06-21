@@ -83,44 +83,58 @@
     }
     </script>
     <!-- FreeIPAPI Geolocation Script -->
+  
     <script>
       function detectAndRedirect() {
-        // Check if language parameter exists
         const urlParams = new URLSearchParams(window.location.search);
-        if (urlParams.get('lang')) {
-          return; // Respect URL parameter
-        }
-
-        // Check if user previously selected language
-        const savedLanguage = Cookies.get('selectedLanguage');
-        if (savedLanguage) {
-          window.location.href = `index.html?lang=${savedLanguage}`;
+        const urlLang = urlParams.get('lang');
+    
+        // Skip if valid lang parameter is present
+        if (urlLang && ['en', 'pl', 'it', 'es', 'pt', 'ar'].includes(urlLang)) {
+          Cookies.set('selectedLanguage', urlLang, { expires: 7 });
           return;
         }
-
-        // Fetch location from FreeIPAPI
-        fetch('https://api.freeipapi.com/')
-          .then(response => response.json())
+    
+        // Skip if already on index.html with lang parameter to prevent loops
+        const currentPath = window.location.pathname + window.location.search;
+        if (currentPath.includes('index.html?lang=')) {
+          return;
+        }
+    
+        // Check saved language cookie
+        const savedLanguage = Cookies.get('selectedLanguage');
+        if (savedLanguage && ['en', 'pl', 'it', 'es', 'pt', 'ar'].includes(savedLanguage)) {
+          window.location.href = `/index.html?lang=${savedLanguage}`;
+          return;
+        }
+    
+        // Fetch geolocation from ip-api.com
+        fetch('https://api.ip-api.com/json/?fields=countryCode')
+          .then(response => {
+            if (!response.ok) throw new Error(`HTTP ${response.status}`);
+            return response.json();
+          })
           .then(data => {
-            if (data.countryCode === 'PL') {
-              Cookies.set('selectedLanguage', 'pl', { expires: 7 });
-              window.location.href = 'index.html?lang=pl';
-            } else {
-              Cookies.set('selectedLanguage', 'en', { expires: 7 });
-              window.location.href = 'index.html?lang=en';
-            }
+            console.log('Geolocation API Response:', data); // Debug
+            const lang = data.countryCode === 'PL' ? 'pl' : 'en';
+            Cookies.set('selectedLanguage', lang, { expires: 7 });
+            window.location.href = `/index.html?lang=${lang}`;
           })
           .catch(error => {
             console.error('Geolocation error:', error);
-            // Fallback to English if API fails
-            Cookies.set('selectedLanguage', 'en', { expires: 7 });
-            window.location.href = 'index.html?lang=en';
+            const fallbackLang = navigator.language.startsWith('pl') ? 'pl' : 'en';
+            Cookies.set('selectedLanguage', fallbackLang, { expires: 7 });
+            window.location.href = `/index.html?lang=${fallbackLang}`;
           });
       }
-
-      // Run detection immediately
-      detectAndRedirect();
+    
+      // Run only if on index.html without lang parameter
+      if (window.location.pathname === '/index.html' && !window.location.search.includes('lang=')) {
+        detectAndRedirect();
+      }
     </script>
+
+
     <style>
       .language-dropdown {
         position: relative;
