@@ -23,6 +23,8 @@
     <link rel="icon" type="image/x-icon" href="data:image/x-icon;base64," />
     <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
     <link rel="stylesheet" href="assets/css/styles.css">
+    <!-- Load js-cookie -->
+    <script src="https://cdn.jsdelivr.net/npm/js-cookie@3.0.5/dist/js.cookie.min.js"></script>
     <style>
       /* Dropdown styles */
       .language-dropdown {
@@ -66,11 +68,6 @@
       }
       .language-option:hover {
         background-color: #f2f4f0;
-      }
-      /* Ensure Arabic text is right-to-left */
-      [dir="rtl"] {
-        direction: rtl;
-        font-family: 'Amiri', serif;
       }
       /* Ensure flag icons are properly sized */
       .fi {
@@ -163,15 +160,15 @@
             </div>
             <div class="flex flex-col">
               <h2 class="text-[#141811] text-2xl font-bold leading-tight tracking-[-0.015em]" style="font-family: 'Lugrasimo', serif; font-weight: 1000; -webkit-font-smoothing: antialiased;">Laperla</h2>
-              <p class="text-[#758863] text-xs" data-en="Your premium olive oil partner" data-pl="Twój partner w premium oliwie" data-it="Il tuo partner per l'olio d'oliva premium" data-es="Tu socio en aceite de oliva premium" data-pt="Seu parceiro em azeite de oliva premium" data-ar="شريكك في زيت الزيتون الممتاز">Your premium olive oil partner</p>
+              <p class="text-[#758863] text-xs" data-en="Premium Extra Virgin Olive Oil" data-pl="Premium Oliwa Extra Virgin" data-it="Olio Extra Vergine Premium" data-fr="Huile d'Olive Extra Vierge Premium">Premium Extra Virgin Olive Oil</p>
             </div>
           </a>
           <div class="flex flex-1 justify-end gap-8">
             <div class="flex items-center gap-9">
-              <a class="text-[#141811] text-sm font-medium leading-normal" href="home.html" data-en="Home" data-pl="Strona Główna" data-it="Home" data-es="Inicio" data-pt="Início" data-ar="الرئيسية">Home</a>
-              <a class="text-[#141811] text-sm font-medium leading-normal" href="product.html" data-en="Our Products" data-pl="Nasze Produkty" data-it="I nostri prodotti" data-es="Nuestros productos" data-pt="Nossos produtos" data-ar="منتجاتنا">Our Products</a>
-              <a class="text-[#141811] text-sm font-medium leading-normal" href="heritage.html" data-en="Heritage" data-pl="Dziedzictwo" data-it="Eredità" data-es="Patrimonio" data-pt="Herança" data-ar="التراث">Heritage</a>
-              <a class="text-[#141811] text-sm font-medium leading-normal" href="contact.html" data-en="Contact" data-pl="Kontakt" data-it="Contatti" data-es="Contacto" data-pt="Contato" data-ar="اتصل بنا">Contact</a>
+              <a class="text-[#141811] text-sm font-medium leading-normal" href="home.html" data-en="Home" data-pl="Strona Główna" data-it="Home" data-fr="Accueil">Home</a>
+              <a class="text-[#141811] text-sm font-medium leading-normal" href="product.html" data-en="Our Products" data-pl="Nasze Produkty" data-it="I nostri prodotti" data-fr="Nos produits">Our Products</a>
+              <a class="text-[#141811] text-sm font-medium leading-normal" href="heritage.html" data-en="Heritage" data-pl="Dziedzictwo" data-it="Eredità" data-fr="Patrimoine">Heritage</a>
+              <a class="text-[#141811] text-sm font-medium leading-normal" href="contact.html" data-en="Contact" data-pl="Kontakt" data-it="Contatti" data-fr="Contact">Contact</a>
             </div>
             <div class="language-dropdown">
               <button class="language-dropdown-button">
@@ -194,17 +191,9 @@
                   <span class="fi fi-it"></span>
                   Italiano
                 </div>
-                <div class="language-option" data-lang="es">
-                  <span class="fi fi-es"></span>
-                  Español
-                </div>
-                <div class="language-option" data-lang="pt">
-                  <span class="fi fi-pt"></span>
-                  Português
-                </div>
-                <div class="language-option" data-lang="ar" dir="rtl">
-                  <span class="fi fi-ma"></span>
-                  العربية
+                <div class="language-option" data-lang="fr">
+                  <span class="fi fi-fr"></span>
+                  Français
                 </div>
               </div>
             </div>
@@ -219,35 +208,21 @@
                   data-en="Contact Us"
                   data-pl="Skontaktuj Się z Nami"
                   data-it="Contattaci"
-                  data-es="Contáctanos"
-                  data-pt="Contate-nos"
-                  data-ar="اتصل بنا"
+                  data-fr="Contactez-nous"
                 >
                   Contact Us
                 </h1>
                 <p
                   class="text-[#141811] text-base font-normal leading-normal max-w-[720px]"
-                  data-en="We’re here to assist you with all your olive oil needs. Reach out via WhatsApp or our form below, and let’s start the conversation!"
-                  data-pl="Jesteśmy tu, aby pomóc Ci ze wszystkimi potrzebami dotyczącymi oliwy. Skontaktuj się przez WhatsApp lub formularz poniżej, i zacznijmy rozmowę!"
-                  data-it="Siamo qui per assisterti con tutte le tue esigenze di olio d'oliva. Contattaci via WhatsApp o tramite il nostro modulo qui sotto, e iniziamo la conversazione!"
-                  data-es="Estamos aquí para ayudarte con todas tus necesidades de aceite de oliva. ¡Contáctanos vía WhatsApp o nuestro formulario a continuación, y empecemos la conversación!"
-                  data-pt="Estamos aqui para ajudá-lo com todas as suas necessidades de azeite de oliva. Entre em contato via WhatsApp ou pelo formulário abaixo, e vamos começar a conversa!"
-                  data-ar="نحن هنا لمساعدتك في جميع احتياجاتك من زيت الزيتون. تواصل معنا عبر واتساب أو نموذجنا أدناه، ودعنا نبدأ الحوار!"
+                  data-en="We're here to assist you with all your olive oil needs. Fill out our form below, and let's start the conversation!"
+                  data-pl="Jesteśmy tu, aby pomóc Ci ze wszystkimi potrzebami dotyczącymi oliwy. Wypełnij formularz poniżej, i zacznijmy rozmowę!"
+                  data-it="Siamo qui per assisterti con tutte le tue esigenze di olio d'oliva. Compila il nostro modulo qui sotto, e iniziamo la conversazione!"
+                  data-fr="Nous sommes là pour vous aider avec tous vos besoins en huile d'olive. Remplissez notre formulaire ci-dessous, et commençons la conversation!"
                 >
-                  We’re here to assist you with all your olive oil needs. Reach out via WhatsApp or our form below, and let’s start the conversation!
+                  We're here to assist you with all your olive oil needs. Fill out our form below, and let's start the conversation!
                 </p>
               </div>
               <div class="flex flex-col gap-6">
-                <div class="flex flex-wrap gap-4">
-                  <a
-                    href="https://wa.me/48530846928"
-                    target="_blank"
-                    class="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-xl h-10 px-4 @[480px]:h-12 @[480px]:px-5 bg-[#80e619] text-[#141811] text-sm font-bold leading-normal tracking-[0.015em] @[480px]:text-base @[480px]:font-bold @[480px]:leading-normal @[480px]:tracking-[0.015em] no-underline"
-                  >
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp" class="w-5 h-5 mr-2">
-                    <span class="truncate" data-en="Contact via WhatsApp" data-pl="Skontaktuj się przez WhatsApp" data-it="Contattaci via WhatsApp" data-es="Contáctanos vía WhatsApp" data-pt="Contate-nos via WhatsApp" data-ar="اتصل بنا عبر واتساب">Contact via WhatsApp</span>
-                  </a>
-                </div>
                 <div class="flex flex-col gap-2">
                   <p
                     class="text-[#758863] text-base font-normal leading-normal"
@@ -258,9 +233,7 @@
                     data-en="Email: info@laperlaoliveoil.com"
                     data-pl="Email: info@laperlaoliveoil.com"
                     data-it="Email: info@laperlaoliveoil.com"
-                    data-es="Correo: info@laperlaoliveoil.com"
-                    data-pt="Email: info@laperlaoliveoil.com"
-                    data-ar="البريد الإلكتروني: info@laperlaoliveoil.com"
+                    data-fr="Email: info@laperlaoliveoil.com"
                   >
                     Email: info@laperlaoliveoil.com
                   </p>
@@ -272,9 +245,7 @@
                     data-en="Tell Us Your Needs"
                     data-pl="Opowiedz Nam o Swoich Potrzebach"
                     data-it="Dicci le Tue Esigenze"
-                    data-es="Cuéntanos Tus Necesidades"
-                    data-pt="Conte-nos Suas Necessidades"
-                    data-ar="أخبرنا عن احتياجاتك"
+                    data-fr="Dites-nous Vos Besoins"
                   >
                     Tell Us Your Needs
                   </h2>
@@ -297,9 +268,7 @@
                         data-en="Name *"
                         data-pl="Imię *"
                         data-it="Nome *"
-                        data-es="Nombre *"
-                        data-pt="Nome *"
-                        data-ar="الاسم *"
+                        data-fr="Nom *"
                       >
                         Name *
                       </label>
@@ -311,9 +280,7 @@
                         data-placeholder-en="Enter your name"
                         data-placeholder-pl="Wpisz swoje imię"
                         data-placeholder-it="Inserisci il tuo nome"
-                        data-placeholder-es="Ingresa tu nombre"
-                        data-placeholder-pt="Digite seu nome"
-                        data-placeholder-ar="أدخل اسمك"
+                        data-placeholder-fr="Entrez votre nom"
                       />
                     </div>
                     <div class="flex flex-col">
@@ -322,9 +289,7 @@
                         data-en="Email *"
                         data-pl="Email *"
                         data-it="Email *"
-                        data-es="Correo electrónico *"
-                        data-pt="Email *"
-                        data-ar="البريد الإلكتروني *"
+                        data-fr="Email *"
                       >
                         Email *
                       </label>
@@ -336,9 +301,7 @@
                         data-placeholder-en="Enter your email"
                         data-placeholder-pl="Wpisz swój email"
                         data-placeholder-it="Inserisci la tua email"
-                        data-placeholder-es="Ingresa tu correo electrónico"
-                        data-placeholder-pt="Digite seu email"
-                        data-placeholder-ar="أدخل بريدك الإلكتروني"
+                        data-placeholder-fr="Entrez votre email"
                       />
                     </div>
                     <div class="flex flex-col">
@@ -347,9 +310,7 @@
                         data-en="Phone (Optional)"
                         data-pl="Telefon (Opcjonalny)"
                         data-it="Telefono (Opzionale)"
-                        data-es="Teléfono (Opcional)"
-                        data-pt="Telefone (Opcional)"
-                        data-ar="الهاتف (اختياري)"
+                        data-fr="Téléphone (Optionnel)"
                       >
                         Phone (Optional)
                       </label>
@@ -360,9 +321,7 @@
                         data-placeholder-en="Enter your phone number"
                         data-placeholder-pl="Wpisz swój numer telefonu"
                         data-placeholder-it="Inserisci il tuo numero di telefono"
-                        data-placeholder-es="Ingresa tu número de teléfono"
-                        data-placeholder-pt="Digite seu número de telefone"
-                        data-placeholder-ar="أدخل رقم هاتفك"
+                        data-placeholder-fr="Entrez votre numéro de téléphone"
                       />
                     </div>
                     <div class="flex flex-col">
@@ -371,9 +330,7 @@
                         data-en="Type of Business *"
                         data-pl="Rodzaj działalności *"
                         data-it="Tipo di attività *"
-                        data-es="Tipo de negocio *"
-                        data-pt="Tipo de negócio *"
-                        data-ar="نوع العمل *"
+                        data-fr="Type d'entreprise *"
                       >
                         Type of Business *
                       </label>
@@ -384,15 +341,13 @@
                         data-placeholder-en="Select business type"
                         data-placeholder-pl="Wybierz rodzaj działalności"
                         data-placeholder-it="Seleziona il tipo di attività"
-                        data-placeholder-es="Selecciona el tipo de negocio"
-                        data-placeholder-pt="Selecione o tipo de negócio"
-                        data-placeholder-ar="اختر نوع العمل"
+                        data-placeholder-fr="Sélectionnez le type d'entreprise"
                       >
-                        <option value="" disabled selected data-en="Select business type" data-pl="Wybierz rodzaj działalności" data-it="Seleziona il tipo di attività" data-es="Selecciona el tipo de negocio" data-pt="Selecione o tipo de negócio" data-ar="اختر نوع العمل">Select business type</option>
-                        <option value="Retail" data-en="Retail" data-pl="Handel detaliczny" data-it="Vendita al dettaglio" data-es="Comercio minorista" data-pt="Varejo" data-ar="التجزئة">Retail</option>
-                        <option value="Wholesale" data-en="Wholesale" data-pl="Hurt" data-it="Vendita all'ingrosso" data-es="Comercio mayorista" data-pt="Atacado" data-ar="الجملة">Wholesale</option>
-                        <option value="Restaurant" data-en="Restaurant" data-pl="Restauracja" data-it="Ristorante" data-es="Restaurante" data-pt="Restaurante" data-ar="مطعم">Restaurant</option>
-                        <option value="Other" data-en="Other" data-pl="Inne" data-it="Altro" data-es="Otro" data-pt="Outro" data-ar="أخرى">Other</option>
+                        <option value="" disabled selected data-en="Select business type" data-pl="Wybierz rodzaj działalności" data-it="Seleziona il tipo di attività" data-fr="Sélectionnez le type d'entreprise">Select business type</option>
+                        <option value="Retail" data-en="Retail" data-pl="Handel detaliczny" data-it="Vendita al dettaglio" data-fr="Commerce de détail">Retail</option>
+                        <option value="Wholesale" data-en="Wholesale" data-pl="Hurt" data-it="Vendita all'ingrosso" data-fr="Commerce de gros">Wholesale</option>
+                        <option value="Restaurant" data-en="Restaurant" data-pl="Restauracja" data-it="Ristorante" data-fr="Restaurant">Restaurant</option>
+                        <option value="Other" data-en="Other" data-pl="Inne" data-it="Altro" data-fr="Autre">Other</option>
                       </select>
                     </div>
                     <div id="other-business-type" class="flex flex-col hidden">
@@ -401,9 +356,7 @@
                         data-en="Specify Other Business Type *"
                         data-pl="Określ inny rodzaj działalności *"
                         data-it="Specifica altro tipo di attività *"
-                        data-es="Especifica otro tipo de negocio *"
-                        data-pt="Especifique outro tipo de negócio *"
-                        data-ar="حدد نوع عمل آخر *"
+                        data-fr="Spécifiez autre type d'entreprise *"
                       >
                         Specify Other Business Type *
                       </label>
@@ -414,9 +367,7 @@
                         data-placeholder-en="Describe your business type"
                         data-placeholder-pl="Opisz swój rodzaj działalności"
                         data-placeholder-it="Descrivi il tuo tipo di attività"
-                        data-placeholder-es="Describe tu tipo de negocio"
-                        data-placeholder-pt="Descreva seu tipo de negócio"
-                        data-placeholder-ar="صف نوع عملك"
+                        data-placeholder-fr="Décrivez votre type d'entreprise"
                       />
                     </div>
                     <div class="flex flex-col">
@@ -425,9 +376,7 @@
                         data-en="Location *"
                         data-pl="Lokalizacja *"
                         data-it="Posizione *"
-                        data-es="Ubicación *"
-                        data-pt="Localização *"
-                        data-ar="الموقع *"
+                        data-fr="Lieu *"
                       >
                         Location *
                       </label>
@@ -439,9 +388,7 @@
                         data-placeholder-en="Enter your city/country"
                         data-placeholder-pl="Wpisz swoje miasto/kraj"
                         data-placeholder-it="Inserisci la tua città/paese"
-                        data-placeholder-es="Ingresa tu ciudad/país"
-                        data-placeholder-pt="Digite sua cidade/país"
-                        data-placeholder-ar="أدخل مدينتك/بلدك"
+                        data-placeholder-fr="Entrez votre ville/pays"
                       />
                     </div>
                     <div class="flex flex-col">
@@ -450,9 +397,7 @@
                         data-en="Description of Needs *"
                         data-pl="Opis potrzeb *"
                         data-it="Descrizione delle esigenze *"
-                        data-es="Descripción de necesidades *"
-                        data-pt="Descrição das necessidades *"
-                        data-ar="وصف الاحتياجات *"
+                        data-fr="Description des besoins *"
                       >
                         Description of Needs *
                       </label>
@@ -464,9 +409,7 @@
                         data-placeholder-en="Tell us about your olive oil needs"
                         data-placeholder-pl="Opowiedz nam o swoich potrzebach dotyczących oliwy"
                         data-placeholder-it="Dicci delle tue esigenze di olio d'oliva"
-                        data-placeholder-es="Cuéntanos sobre tus necesidades de aceite de oliva"
-                        data-placeholder-pt="Conte-nos sobre suas necessidades de azeite de oliva"
-                        data-placeholder-ar="أخبرنا عن احتياجاتك من زيت الزيتون"
+                        data-placeholder-fr="Parlez-nous de vos besoins en huile d'olive"
                       ></textarea>
                     </div>
                     <button
@@ -475,13 +418,51 @@
                       data-en="Submit"
                       data-pl="Wyślij"
                       data-it="Invia"
-                      data-es="Enviar"
-                      data-pt="Enviar"
-                      data-ar="إرسال"
+                      data-fr="Soumettre"
                     >
                       Submit
                     </button>
                   </form>
+                </div>
+              </div>
+            </div>
+            <div class="@container">
+              <div class="flex flex-col justify-center items-center gap-6 px-4 py-10 @[480px]:gap-8 @[480px]:px-10 @[480px]:py-20">
+                <div class="flex flex-col gap-2 text-center">
+                  <h1
+                    class="text-[#141811] tracking-light text-[32px] font-bold leading-tight @[480px]:text-4xl @[480px]:font-black @[480px]:leading-tight @[480px]:tracking-[-0.033em] max-w-[720px]"
+                    data-en="Ready to Experience Liquid Gold?"
+                    data-pl="Gotowy na Doświadczenie Płynnego Złota?"
+                    data-it="Pronto a Sperimentare l'Oro Liquido?"
+                    data-fr="Prêt à Découvrir l'Or Liquide?"
+                  >
+                    Ready to Experience Liquid Gold?
+                  </h1>
+                  <p
+                    class="text-[#758863] text-base font-normal leading-normal max-w-[720px]"
+                    data-en="Join thousands of satisfied customers who've discovered the perfect olive oil. Try now and taste the difference that award-winning quality makes."
+                    data-pl="Dołącz do tysięcy zadowolonych klientów, którzy odkryli idealną oliwę. Spróbuj teraz i poczuj różnicę, jaką daje nagrodzona jakość."
+                    data-it="Unisciti a migliaia di clienti soddisfatti che hanno scoperto l'olio d'oliva perfetto. Prova ora e assapora la differenza che fa la qualità premiata."
+                    data-fr="Rejoignez des milliers de clients satisfaits qui ont découvert l'huile d'olive parfaite. Essayez maintenant et goûtez la différence que fait une qualité primée."
+                  >
+                    Join thousands of satisfied customers who've discovered the perfect olive oil. Try now and taste the difference that award-winning quality makes.
+                  </p>
+                </div>
+                <div class="flex flex-wrap justify-center gap-4">
+                  <a
+                    href="https://wa.me/48530846928?text=I%20want%20to%20try%20Laperla%20Prestige%20Edition"
+                    target="_blank"
+                    class="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-xl h-12 px-6 @[480px]:h-14 @[480px]:px-8 bg-[#80e619] text-[#141811] text-base font-bold leading-normal tracking-[0.015em] @[480px]:text-lg @[480px]:font-bold @[480px]:leading-normal @[480px]:tracking-[0.015em] no-underline shadow-lg hover:shadow-xl transition-all duration-300"
+                  >
+                    <span class="truncate" data-en="🛒 Try Prestige Edition Now" data-pl="🛒 Spróbuj Edycji Prestige Teraz" data-it="🛒 Prova Edizione Prestige Ora" data-fr="🛒 Essayez l'Édition Prestige Maintenant">🛒 Try Prestige Edition Now</span>
+                  </a>
+                  <a
+                    href="contact.html"
+                    class="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-xl h-12 px-6 @[480px]:h-14 @[480px]:px-8 bg-white border-2 border-[#80e619] text-[#80e619] text-base font-bold leading-normal tracking-[0.015em] @[480px]:text-lg @[480px]:font-bold @[480px]:leading-normal @[480px]:tracking-[0.015em] no-underline shadow-lg hover:shadow-xl transition-all duration-300"
+                  >
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp" class="w-6 h-6 mr-3">
+                    <span class="truncate" data-en="📧 Get Custom Quote" data-pl="📧 Otrzymaj Wycenę" data-it="📧 Ottieni Preventivo" data-fr="📧 Obtenir un Devis">📧 Get Custom Quote</span>
+                  </a>
                 </div>
               </div>
             </div>
@@ -495,21 +476,19 @@
               data-en="Thank you! Your submission has been received. We will contact you soon."
               data-pl="Dziękujemy! Twoje zgłoszenie zostało otrzymane. Skontaktujemy się wkrótce."
               data-it="Grazie! La tua richiesta è stata ricevuta. Ti contatteremo presto."
-              data-es="¡Gracias! Tu envío ha sido recibido. Nos pondremos en contacto pronto."
-              data-pt="Obrigado! Sua submissão foi recebida. Entraremos em contato em breve."
-              data-ar="شكرًا! تم استلام طلبك. سنتواصل معك قريبًا."
+              data-fr="Merci! Votre soumission a été reçue. Nous vous contacterons bientôt."
             ></p>
-            <button id="close-modal" data-en="Close" data-pl="Zamknij" data-it="Chiudi" data-es="Cerrar" data-pt="Fechar" data-ar="إغلاق">Close</button>
+            <button id="close-modal" data-en="Close" data-pl="Zamknij" data-it="Chiudi" data-fr="Fermer">Close</button>
           </div>
         </div>
         <footer class="flex justify-center">
           <div class="flex max-w-[960px] flex-1 flex-col">
             <footer class="flex flex-col gap-6 px-5 py-10 text-center @container">
               <div class="flex flex-wrap items-center justify-center gap-6 @[480px]:flex-row @[480px]:justify-around">
-                <a class="text-[#758863] text-base font-normal leading-normal min-w-40" href="home.html" data-en="Home" data-pl="Strona Główna" data-it="Home" data-es="Inicio" data-pt="Início" data-ar="الرئيسية">Home</a>
-                <a class="text-[#758863] text-base font-normal leading-normal min-w-40" href="product.html" data-en="Our Products" data-pl="Nasze Produkty" data-it="I nostri prodotti" data-es="Nuestros productos" data-pt="Nossos produtos" data-ar="منتجاتنا">Our Products</a>
-                <a class="text-[#758863] text-base font-normal leading-normal min-w-40" href="heritage.html" data-en="Heritage" data-pl="Dziedzictwo" data-it="Eredità" data-es="Patrimonio" data-pt="Herança" data-ar="التراث">Heritage</a>
-                <a class="text-[#758863] text-base font-normal leading-normal min-w-40" href="contact.html" data-en="Contact" data-pl="Kontakt" data-it="Contatti" data-es="Contacto" data-pt="Contato" data-ar="اتصل بنا">Contact</a>
+                <a class="text-[#758863] text-base font-normal leading-normal min-w-40" href="home.html" data-en="Home" data-pl="Strona Główna" data-it="Home" data-fr="Accueil">Home</a>
+                <a class="text-[#758863] text-base font-normal leading-normal min-w-40" href="product.html" data-en="Our Products" data-pl="Nasze Produkty" data-it="I nostri prodotti" data-fr="Nos produits">Our Products</a>
+                <a class="text-[#758863] text-base font-normal leading-normal min-w-40" href="heritage.html" data-en="Heritage" data-pl="Dziedzictwo" data-it="Eredità" data-fr="Patrimoine">Heritage</a>
+                <a class="text-[#758863] text-base font-normal leading-normal min-w-40" href="contact.html" data-en="Contact" data-pl="Kontakt" data-it="Contatti" data-fr="Contact">Contact</a>
               </div>
               <div class="flex flex-wrap justify-center gap-4">
                 <a href="https://instagram.com/yourprofile" target="_blank">
@@ -540,7 +519,7 @@
                   </div>
                 </a>
               </div>
-              <p class="text-[#758863] text-base font-normal leading-normal" data-en="© 2025 Laperla. All rights reserved." data-pl="© 2025 Laperla. Wszelkie prawa zastrzeżone." data-it="© 2025 Laperla. Tutti i diritti riservati." data-es="© 2025 Laperla. Todos los derechos reservados." data-pt="© 2025 Laperla. Todos os direitos reservados." data-ar="© 2025 لابيرلا. جميع الحقوق محفوظة.">
+              <p class="text-[#758863] text-base font-normal leading-normal" data-en="© 2025 Laperla. All rights reserved." data-pl="© 2025 Laperla. Wszelkie prawa zastrzeżone." data-it="© 2025 Laperla. Tutti i diritti riservati." data-fr="© 2025 Laperla. Tous droits réservés.">
                 © 2025 Laperla. All rights reserved.
               </p>
             </footer>
@@ -550,8 +529,34 @@
     </div>
 
     <script>
+      // Run immediately to prevent navigation without language
+      (function() {
+        // Get current language from URL, cookie, or default
+        const urlParams = new URLSearchParams(window.location.search);
+        const urlLang = urlParams.get('lang');
+        const savedLanguage = Cookies.get('selectedLanguage');
+        const currentLang = urlLang || savedLanguage || 'en';
+        
+        // Update all navigation links immediately
+        function updateAllLinks(lang) {
+          const links = document.querySelectorAll('a[href^="home.html"], a[href^="product.html"], a[href^="heritage.html"], a[href^="contact.html"], a[href^="index.html"]');
+          links.forEach(link => {
+            const url = new URL(link.href, window.location.origin);
+            url.searchParams.set('lang', lang);
+            link.href = url.toString();
+          });
+        }
+        
+        // Update links as soon as DOM is ready
+        if (document.readyState === 'loading') {
+          document.addEventListener('DOMContentLoaded', () => updateAllLinks(currentLang));
+        } else {
+          updateAllLinks(currentLang);
+        }
+      })();
+
       document.addEventListener('DOMContentLoaded', () => {
-        const translatableElements = document.querySelectorAll('[data-en][data-pl][data-it][data-es][data-pt][data-ar]');
+        const translatableElements = document.querySelectorAll('[data-en][data-pl][data-it][data-fr]');
         const languageButton = document.querySelector('.language-dropdown-button');
         const languageMenu = document.querySelector('.language-dropdown-menu');
         const languageOptions = document.querySelectorAll('.language-option');
@@ -579,17 +584,33 @@
           // Update selected language display
           const selectedOption = document.querySelector(`.language-option[data-lang="${lang}"]`);
           selectedLanguageSpan.textContent = selectedOption.textContent.trim();
-          flagSpan.className = `fi fi-${lang === 'ar' ? 'ma' : lang}`;
+          flagSpan.className = `fi fi-${lang === 'fr' ? 'fr' : lang}`;
 
-          // Update direction for Arabic
-          document.body.setAttribute('dir', lang === 'ar' ? 'rtl' : 'ltr');
+          // Update HTML lang attribute
+          document.documentElement.setAttribute('lang', lang);
 
           // Update modal message and close button translations
           modalMessage.textContent = modalMessage.getAttribute(`data-${lang}`);
           closeModalButton.textContent = closeModalButton.getAttribute(`data-${lang}`);
 
-          // Save language to localStorage
-          localStorage.setItem('selectedLanguage', lang);
+          // Save language to cookie
+          Cookies.set('selectedLanguage', lang, { expires: 7 });
+          
+          // Update ALL links with lang parameter (including navigation, footer, and any other links)
+          const allLinks = document.querySelectorAll('a[href]');
+          allLinks.forEach(link => {
+            try {
+              const url = new URL(link.href, window.location.origin);
+              // Only update links to your site pages
+              if (url.hostname === window.location.hostname && 
+                  (url.pathname.endsWith('.html') || url.pathname === '/')) {
+                url.searchParams.set('lang', lang);
+                link.href = url.toString();
+              }
+            } catch (e) {
+              // Skip invalid URLs
+            }
+          });
 
           // Close dropdown
           languageMenu.classList.remove('show');
@@ -603,7 +624,12 @@
         // Handle language selection
         languageOptions.forEach(option => {
           option.addEventListener('click', () => {
-            updateLanguage(option.getAttribute('data-lang'));
+            const lang = option.getAttribute('data-lang');
+            updateLanguage(lang);
+            // Update URL with language parameter
+            const url = new URL(window.location);
+            url.searchParams.set('lang', lang);
+            window.history.pushState({}, '', url);
           });
         });
 
@@ -656,10 +682,8 @@
               en: 'Please fill in all required fields.',
               pl: 'Proszę wypełnić wszystkie wymagane pola.',
               it: 'Per favore, compila tutti i campi obbligatori.',
-              es: 'Por favor, completa todos los campos requeridos.',
-              pt: 'Por favor, preencha todos os campos obrigatórios.',
-              ar: 'يرجى ملء جميع الحقول المطلوبة.'
-            }[localStorage.getItem('selectedLanguage') || 'en'];
+              fr: 'Veuillez remplir tous les champs obligatoires.'
+            }[Cookies.get('selectedLanguage') || 'en'];
             modal.classList.add('show');
             modalMessage.classList.add('text-red-600');
             return;
@@ -672,10 +696,8 @@
               en: 'Please enter a valid email address.',
               pl: 'Proszę podać prawidłowy adres email.',
               it: 'Per favore, inserisci un indirizzo email valido.',
-              es: 'Por favor, ingresa una dirección de correo electrónico válida.',
-              pt: 'Por favor, insira um endereço de email válido.',
-              ar: 'يرجى إدخال عنوان بريد إلكتروني صالح.'
-            }[localStorage.getItem('selectedLanguage') || 'en'];
+              fr: 'Veuillez entrer une adresse email valide.'
+            }[Cookies.get('selectedLanguage') || 'en'];
             modal.classList.add('show');
             modalMessage.classList.add('text-red-600');
             return;
@@ -687,17 +709,15 @@
               en: 'Please specify your business type.',
               pl: 'Proszę określić rodzaj działalności.',
               it: 'Per favore, specifica il tipo di attività.',
-              es: 'Por favor, especifica el tipo de negocio.',
-              pt: 'Por favor, especifique o tipo de negócio.',
-              ar: 'يرجى تحديد نوع العمل.'
-            }[localStorage.getItem('selectedLanguage') || 'en'];
+              fr: 'Veuillez spécifier votre type d\'entreprise.'
+            }[Cookies.get('selectedLanguage') || 'en'];
             modal.classList.add('show');
             modalMessage.classList.add('text-red-600');
             return;
           }
 
           // Display success message in modal and submit form
-          modalMessage.textContent = modalMessage.getAttribute(`data-${localStorage.getItem('selectedLanguage') || 'en'}`);
+          modalMessage.textContent = modalMessage.getAttribute(`data-${Cookies.get('selectedLanguage') || 'en'}`);
           modal.classList.add('show');
           modalMessage.classList.remove('text-red-600');
           modalMessage.classList.add('text-green-600');
@@ -706,9 +726,23 @@
           form.submit();
         });
 
-        // Set initial language
-        const savedLanguage = localStorage.getItem('selectedLanguage') || 'en';
-        updateLanguage(savedLanguage);
+        // Set initial language: use URL parameter, then cookie
+        const urlParams = new URLSearchParams(window.location.search);
+        const urlLang = urlParams.get('lang');
+        const savedLanguage = Cookies.get('selectedLanguage');
+        
+        if (urlLang && ['en', 'pl', 'it', 'fr'].includes(urlLang)) {
+          updateLanguage(urlLang);
+        } else if (savedLanguage && ['en', 'pl', 'it', 'fr'].includes(savedLanguage)) {
+          updateLanguage(savedLanguage);
+          // Update URL with language
+          const url = new URL(window.location);
+          url.searchParams.set('lang', savedLanguage);
+          window.history.replaceState({}, '', url);
+        } else {
+          // Default to English
+          updateLanguage('en');
+        }
       });
     </script>
   </body>
