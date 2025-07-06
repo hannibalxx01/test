@@ -9,7 +9,7 @@
   gtag('config', 'G-3QNYCWKF1J');
 </script>
     <meta charset="UTF-8">
-    <meta name="description" content="Explore Laperla’s premium extra virgin olive oils, crafted from Tunisia’s finest olives." data-en="Explore Laperla’s premium extra virgin olive oils, crafted from Tunisia’s finest olives." data-pl="Poznaj premium oliwy extra virgin Laperla, wykonane z najlepszych tunezyjskich oliwek." data-it="Scopri gli oli extravergini premium di Laperla, realizzati con le migliori olive tunisine." data-es="Explora los aceites de oliva virgen extra premium de Laperla, elaborados con las mejores aceitunas tunecinas." data-pt="Conheça os azeites de oliva extra virgem premium da Laperla, produzidos com as melhores azeitonas tunisianas." data-ar="استكشف زيوت الزيتون البكر الممتازة من لابيرلا، المصنوعة من أجود أنواع الزيتون التونسي." />
+    <meta name="description" content="Discover Laperla's premium Chemlali Extra Virgin Olive Oil from 500-year-old trees. Multiple generations of Tunisian craftsmanship in every bottle." data-en="Discover Laperla's premium Chemlali Extra Virgin Olive Oil from 500-year-old trees. Multiple generations of Tunisian craftsmanship in every bottle." data-pl="Poznaj premium oliwę Chemlali Extra Virgin Laperla z 500-letnich drzew. Wiele pokoleń tunezyjskiego rzemiosła w każdej butelce." data-it="Scopri l'olio extravergine Chemlali premium di Laperla da alberi di 500 anni. Multiple generazioni di maestria tunisina in ogni bottiglia." data-fr="Découvrez l'huile d'olive Chemlali extra vierge premium de Laperla issue d'arbres de 500 ans. Plusieurs générations de savoir-faire tunisien dans chaque bouteille." />
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
@@ -22,45 +22,81 @@
     <link rel="alternate" hreflang="en" href="https://laperlaoliveoil.com/product.html?lang=en" />
     <link rel="alternate" hreflang="pl" href="https://laperlaoliveoil.com/product.html?lang=pl" />
     <link rel="alternate" hreflang="it" href="https://laperlaoliveoil.com/product.html?lang=it" />
-    <link rel="alternate" hreflang="es" href="https://laperlaoliveoil.com/product.html?lang=es" />
-    <link rel="alternate" hreflang="pt" href="https://laperlaoliveoil.com/product.html?lang=pt" />
-    <link rel="alternate" hreflang="ar" href="https://laperlaoliveoil.com/product.html?lang=ar" />
+    <link rel="alternate" hreflang="fr" href="https://laperlaoliveoil.com/product.html?lang=fr" />
     <link rel="alternate" hreflang="x-default" href="https://laperlaoliveoil.com/product.html?lang=en" />
-    <title>Laperla Olive Oil - Our Products</title>
+    <title>Premium Chemlali Olive Oil | 2,000 Years of Tunisian Heritage | Laperla</title>
     <link rel="icon" type="image/x-icon" href="data:image/x-icon;base64," />
     <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
     <link rel="stylesheet" href="assets/css/styles.css">
+    <!-- Load js-cookie -->
+    <script src="https://cdn.jsdelivr.net/npm/js-cookie@3.0.5/dist/js.cookie.min.js"></script>
     <style>
+      .heritage-badge {
+        background: linear-gradient(145deg, #d4a017, #b8941a);
+        color: white;
+        padding: 0.5rem 1rem;
+        border-radius: 2rem;
+        font-weight: bold;
+        font-size: 0.75rem;
+        text-align: center;
+        margin-bottom: 1rem;
+        display: inline-block;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+        box-shadow: 0 4px 15px rgba(212, 160, 23, 0.3);
+      }
+      .quality-metric {
+        background: linear-gradient(145deg, #2e5e2e, #4a7c4a);
+        color: white;
+        padding: 0.75rem 1.5rem;
+        border-radius: 2rem;
+        font-weight: bold;
+        text-align: center;
+        box-shadow: 0 6px 20px rgba(46, 94, 46, 0.3);
+        margin-bottom: 1rem;
+        display: inline-block;
+      }
+      .story-highlight {
+        background: linear-gradient(145deg, #f8faf5, #ffffff);
+        border-left: 4px solid #d4a017;
+        padding: 2rem;
+        margin: 2rem 0;
+        border-radius: 1rem;
+        font-style: italic;
+        color: #2d5016;
+        box-shadow: 0 8px 25px rgba(0, 0, 0, 0.05);
+      }
       .catalogue-grid {
         display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-        gap: 2rem;
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 2.5rem;
         align-items: start;
       }
       .catalogue-item {
         display: flex;
         flex-direction: column;
-        gap: 1rem;
+        gap: 1.5rem;
         height: 100%;
+        background: white;
+        border-radius: 2rem;
+        padding: 2rem;
+        box-shadow: 0 12px 30px rgba(0, 0, 0, 0.1);
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+        border: 1px solid rgba(212, 160, 23, 0.1);
+      }
+      .catalogue-item:hover {
+        transform: translateY(-8px);
+        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
       }
       .catalogue-image {
         width: 100%;
         aspect-ratio: 1 / 1;
         background-size: cover;
         background-position: center;
-        border-radius: 1rem;
-        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        border-radius: 1.5rem;
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
       }
-      .catalogue-details {
-        flex-grow: 1;
-        display: flex;
-        flex-direction: column;
-        gap: 0.5rem;
-      }
-      .catalogue-button {
-        margin-top: auto;
-      }
-      .chemlali-section {
+      .premium-features {
         background: linear-gradient(145deg, #f8faf5 0%, #ffffff 100%);
         border-radius: 2.5rem;
         padding: 3rem 2.5rem;
@@ -69,17 +105,41 @@
         overflow: hidden;
         box-shadow: 0 20px 50px rgba(0, 0, 0, 0.08);
       }
-      .chemlali-section::before {
-        content: '';
-        position: absolute;
-        top: -30%;
-        left: -30%;
-        width: 160%;
-        height: 160%;
-        background: radial-gradient(circle, rgba(94, 140, 90, 0.1) 0%, transparent 60%);
-        z-index: 0;
+      .feature-card {
+        background: rgba(255, 255, 255, 0.95);
+        border-radius: 1.5rem;
+        padding: 2rem;
+        text-align: center;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+        border: 1px solid rgba(94, 140, 90, 0.2);
+        height: 100%;
       }
-      .chemlali-title, .benefits-title {
+      .feature-card:hover {
+        transform: scale(1.05);
+        box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+      }
+      .health-benefits {
+        background: linear-gradient(145deg, #fffef5 0%, #f8faf5 100%);
+        border-radius: 2.5rem;
+        padding: 3rem 2.5rem;
+        margin: 3rem 0;
+        position: relative;
+        overflow: hidden;
+        box-shadow: 0 20px 50px rgba(0, 0, 0, 0.08);
+      }
+      .benefit-card {
+        background: rgba(255, 255, 255, 0.95);
+        border-radius: 1.5rem;
+        padding: 2rem;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+        border: 1px solid rgba(212, 160, 23, 0.2);
+        height: 100%;
+      }
+      .benefit-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+      }
+      .section-title {
         font-family: 'Lugrasimo', serif;
         color: #2e5e2e;
         font-size: 2.25rem;
@@ -90,7 +150,7 @@
         margin-bottom: 3rem;
         text-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
       }
-      .chemlali-title::after, .benefits-title::after {
+      .section-title::after {
         content: '';
         width: 150px;
         height: 5px;
@@ -100,137 +160,6 @@
         left: 50%;
         transform: translateX(-50%);
         border-radius: 2px;
-      }
-      .traits-container, .benefits-container {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-        gap: 2rem;
-        position: relative;
-        z-index: 1;
-      }
-      .trait-card, .benefit-card {
-        background: rgba(255, 255, 255, 0.9);
-        border-radius: 1.5rem;
-        padding: 2rem;
-        text-align: center;
-        position: relative;
-        transition: transform 0.3s ease, box-shadow 0.3s ease;
-        border: 1px solid rgba(94, 140, 90, 0.2);
-      }
-      .trait-card:hover, .benefit-card:hover {
-        transform: scale(1.05);
-        box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
-      }
-      .trait-icon, .benefit-icon {
-        width: 3rem;
-        height: 3rem;
-        fill: #5a8c5a;
-        margin-bottom: 1rem;
-      }
-      .trait-name, .benefit-name {
-        font-family: 'Epilogue', sans-serif;
-        font-weight: 700;
-        font-size: 1.25rem;
-        color: #2e5e2e;
-        margin-bottom: 0.75rem;
-      }
-      .trait-desc, .benefit-desc {
-        font-size: 0.95rem;
-        color: #444;
-        line-height: 1.5;
-      }
-      .uses-container {
-        margin-top: 3.5rem;
-        padding-top: 2.5rem;
-        border-top: 2px dashed #d4a017;
-      }
-      .uses-title {
-        font-family: 'Lugrasimo', serif;
-        color: #2e5e2e;
-        font-size: 1.75rem;
-        text-align: center;
-        margin-bottom: 2.5rem;
-      }
-      .uses-grid {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-        gap: 1.5rem;
-      }
-      .use-card {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        text-align: center;
-        padding: 1.5rem;
-        background: rgba(255, 255, 255, 0.8);
-        border-radius: 1rem;
-        transition: background 0.3s ease;
-      }
-      .use-card:hover {
-        background: rgba(255, 255, 255, 1);
-      }
-      .use-icon {
-        width: 2.5rem;
-        height: 2.5rem;
-        fill: #5a8c5a;
-        margin-bottom: 0.75rem;
-      }
-      .use-name {
-        font-family: 'Epilogue', sans-serif;
-        font-weight: 600;
-        font-size: 1.1rem;
-        color: #2e5e2e;
-      }
-      .benefits-section {
-        background: linear-gradient(145deg, #fffef5 0%, #f8faf5 100%);
-        border-radius: 2.5rem;
-        padding: 3rem 2.5rem;
-        margin: 3rem 0;
-        position: relative;
-        overflow: hidden;
-        box-shadow: 0 20px 50px rgba(0, 0, 0, 0.08);
-      }
-      .benefits-section::before {
-        content: '';
-        position: absolute;
-        top: -30%;
-        right: -30%;
-        width: 160%;
-        height: 160%;
-        background: radial-gradient(circle, rgba(212, 160, 23, 0.1) 0%, transparent 60%);
-        z-index: 0;
-      }
-      @media (max-width: 640px) {
-        .catalogue-grid {
-          grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-        }
-        .chemlali-section, .benefits-section {
-          padding: 2rem 1.5rem;
-        }
-        .chemlali-title, .benefits-title {
-          font-size: 1.75rem;
-        }
-        .traits-container, .benefits-container {
-          grid-template-columns: 1fr;
-        }
-        .trait-card, .benefit-card {
-          padding: 1.5rem;
-        }
-        .trait-name, .benefit-name {
-          font-size: 1.1rem;
-        }
-        .trait-desc, .benefit-desc {
-          font-size: 0.9rem;
-        }
-        .uses-title {
-          font-size: 1.5rem;
-        }
-        .uses-grid {
-          grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-        }
-        .use-name {
-          font-size: 1rem;
-        }
       }
       .language-dropdown {
         position: relative;
@@ -274,46 +203,35 @@
       .language-option:hover {
         background-color: #f2f4f0;
       }
-      [dir="rtl"] {
-        direction: rtl;
-        font-family: 'Amiri', serif;
+      .testimonial-quote {
+        font-style: italic;
+        font-size: 1.1rem;
+        color: #2e5e2e;
+        text-align: center;
+        padding: 1.5rem;
+        background: rgba(255, 255, 255, 0.8);
+        border-radius: 1rem;
+        border-left: 4px solid #d4a017;
+        margin: 2rem 0;
+      }
+      @media (max-width: 640px) {
+        .catalogue-grid {
+          grid-template-columns: 1fr;
+        }
+        .section-title {
+          font-size: 1.75rem;
+        }
+        .premium-features, .health-benefits {
+          padding: 2rem 1.5rem;
+        }
       }
     </style>
-
-
-<script type="application/ld+json">
-{
-    "@context": "https://schema.org",
-    "@type": "Product",
-    "name": "Chemlali Edition Prestige Extra Virgin Olive Oil",
-    "description": "Premium Tunisian Chemlali olive oil with smooth, balanced flavor",
-    "brand": {
-        "@type": "Brand",
-        "name": "Laperla"
-    },
-    "offers": {
-        "@type": "Offer",
-        "availability": "https://schema.org/InStock",
-        "priceSpecification": {
-            "@type": "PriceSpecification",
-            "price": "Contact for pricing",
-            "priceCurrency": "USD",
-            "eligibleQuantity": {
-                "@type": "QuantitativeValue",
-                "minValue": 1000,
-                "unitText": "liters"
-            }
-        }
-    }
-}
-</script>
-    
   </head>
   <body>
     <div class="relative flex size-full min-h-screen flex-col bg-white group/design-root overflow-x-hidden" style='font-family: Epilogue, "Noto Sans", sans-serif;'>
       <div class="layout-container flex h-full grow flex-col">
         <header class="flex items-center justify-between whitespace-nowrap border-b border-solid border-b-[#f2f4f0] px-10 py-3">
-          <div class="flex items-center gap-4 text-[#141811]">
+          <a href="index.html" class="flex items-center gap-4 text-[#141811] no-underline">
             <div class="size-4">
               <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <g clip-path="url(#clip0_6_535)">
@@ -331,15 +249,15 @@
             </div>
             <div class="flex flex-col">
               <h2 class="text-[#141811] text-2xl font-bold leading-tight tracking-[-0.015em]" style="font-family: 'Lugrasimo', serif; font-weight: 1000; -webkit-font-smoothing: antialiased;">Laperla</h2>
-              <p class="text-[#758863] text-xs" data-en="Your premium olive oil partner" data-pl="Twój partner w premium oliwie" data-it="Il tuo partner per l'olio d'oliva premium" data-es="Tu socio en aceite de oliva premium" data-pt="Seu parceiro em azeite de oliva premium" data-ar="شريكك في زيت الزيتون الممتاز">Your premium olive oil partner</p>
+              <p class="text-[#758863] text-xs" data-en="Premium Extra Virgin Olive Oil" data-pl="Premium Oliwa Extra Virgin" data-it="Olio Extra Vergine Premium" data-fr="Huile d'Olive Extra Vierge Premium">Premium Extra Virgin Olive Oil</p>
             </div>
-          </div>
+          </a>
           <div class="flex flex-1 justify-end gap-8">
             <div class="flex items-center gap-9">
-              <a class="text-[#141811] text-sm font-medium leading-normal" href="home.html" data-en="Home" data-pl="Strona Główna" data-it="Home" data-es="Inicio" data-pt="Início" data-ar="الرئيسية">Home</a>
-              <a class="text-[#141811] text-sm font-medium leading-normal" href="product.html" data-en="Our Products" data-pl="Nasze Produkty" data-it="I nostri prodotti" data-es="Nuestros productos" data-pt="Nossos produtos" data-ar="منتجاتنا">Our Products</a>
-              <a class="text-[#141811] text-sm font-medium leading-normal" href="heritage.html" data-en="Heritage" data-pl="Dziedzictwo" data-it="Eredità" data-es="Patrimonio" data-pt="Herança" data-ar="التراث">Heritage</a>
-              <a class="text-[#141811] text-sm font-medium leading-normal" href="contact.html" data-en="Contact" data-pl="Kontakt" data-it="Contatti" data-es="Contacto" data-pt="Contato" data-ar="اتصل بنا">Contact</a>
+              <a class="text-[#141811] text-sm font-medium leading-normal" href="home.html" data-en="Home" data-pl="Strona Główna" data-it="Home" data-fr="Accueil">Home</a>
+              <a class="text-[#141811] text-sm font-medium leading-normal" href="product.html" data-en="Our Products" data-pl="Nasze Produkty" data-it="I nostri prodotti" data-fr="Nos produits">Our Products</a>
+              <a class="text-[#141811] text-sm font-medium leading-normal" href="heritage.html" data-en="Heritage" data-pl="Dziedzictwo" data-it="Eredità" data-fr="Patrimoine">Heritage</a>
+              <a class="text-[#141811] text-sm font-medium leading-normal" href="contact.html" data-en="Contact" data-pl="Kontakt" data-it="Contatti" data-fr="Contact">Contact</a>
             </div>
             <div class="language-dropdown">
               <button class="language-dropdown-button">
@@ -362,17 +280,9 @@
                   <span class="fi fi-it"></span>
                   Italiano
                 </div>
-                <div class="language-option" data-lang="es">
-                  <span class="fi fi-es"></span>
-                  Español
-                </div>
-                <div class="language-option" data-lang="pt">
-                  <span class="fi fi-pt"></span>
-                  Português
-                </div>
-                <div class="language-option" data-lang="ar" dir="rtl">
-                  <span class="fi fi-ma"></span>
-                  العربية
+                <div class="language-option" data-lang="fr">
+                  <span class="fi fi-fr"></span>
+                  Français
                 </div>
               </div>
             </div>
@@ -381,7 +291,7 @@
         <div class="px-40 flex flex-1 justify-center py-5">
           <div class="layout-content-container flex flex-col max-w-[960px] flex-1">
             <div class="flex flex-wrap justify-between gap-3 p-4">
-              <p class="text-[#141811] tracking-light text-[32px] font-bold leading-tight min-w-72" data-en="Our Products" data-pl="Nasze Produkty" data-it="I nostri prodotti" data-es="Nuestros productos" data-pt="Nossos produtos" data-ar="منتجاتنا">Our Products</p>
+              <p class="text-[#141811] tracking-light text-[32px] font-bold leading-tight min-w-72" data-en="Our Liquid Legacy" data-pl="Nasze Płynne Dziedzictwo" data-it="Il nostro patrimonio liquido" data-fr="Notre héritage liquide">Our Liquid Legacy</p>
             </div>
             <div class="@container">
               <div class="@[480px]:p-4">
@@ -392,229 +302,205 @@
                   <div class="flex flex-col gap-2 text-left z-10">
                     <h1
                       class="text-white text-4xl font-black leading-tight tracking-[-0.033em] @[480px]:text-5xl @[480px]:font-black @[480px]:leading-tight @[480px]:tracking-[-0.033em]"
-                      data-en="Premium Extra Virgin Olive Oils"
-                      data-pl="Premium Oliwy Extra Virgin"
-                      data-it="Oli Extra Vergini Premium"
-                      data-es="Aceites de Oliva Extra Virgen Premium"
-                      data-pt="Azeites de Oliva Extra Virgem Premium"
-                      data-ar="زيوت زيتون بكر ممتازة"
+                      data-en="Liquid Gold from Ancient Groves"
+                      data-pl="Płynne Złoto ze Starożytnych Gajów"
+                      data-it="Oro Liquido da Boschi Antichi"
+                      data-fr="Or Liquide d'Oliveraies Anciennes"
                     >
-                      Premium Extra Virgin Olive Oils
+                      Liquid Gold from Ancient Groves
                     </h1>
                     <h2
                       class="text-white text-sm font-normal leading-normal @[480px]:text-base @[480px]:font-normal @[480px]:leading-normal"
-                      data-en="Discover our range of award-winning EVOOs, crafted from Tunisia’s finest olives."
-                      data-pl="Odkryj naszą gamę nagradzanych oliw EVOO, wykonanych z najlepszych tunezyjskich oliwek."
-                      data-it="Scopri la nostra gamma di EVOO premiati, realizzati con le migliori olive tunisine."
-                      data-es="Descubre nuestra gama de EVOO galardonados, elaborados con las mejores aceitunas tunecinas."
-                      data-pt="Descubra nossa gama de EVOOs premiados, produzidos com as melhores azeitonas tunisianas."
-                      data-ar="اكتشف مجموعتنا من زيوت EVOO الحائزة على جوائز، المصنوعة من أجود أنواع الزيتون التونسي."
+                      data-en="From 500-year-old Chemlali trees, handcrafted by multiple generations. Every bottle carries 2,000 years of Tunisian heritage and the soul of Mediterranean tradition."
+                      data-pl="Z 500-letnich drzew Chemlali, ręcznie wykonane przez wiele pokoleń. Każda butelka nosi 2000 lat tunezyjskiego dziedzictwa i duszę śródziemnomorskiej tradycji."
+                      data-it="Da alberi Chemlali di 500 anni, lavorati a mano da multiple generazioni. Ogni bottiglia porta 2.000 anni di eredità tunisina e l'anima della tradizione mediterranea."
+                      data-fr="D'arbres Chemlali de 500 ans, fabriqués à la main par plusieurs générations. Chaque bouteille porte 2 000 ans d'héritage tunisien et l'âme de la tradition méditerranéenne."
                     >
-                      Discover our range of award-winning EVOOs, crafted from Tunisia’s finest olives.
+                      From 500-year-old Chemlali trees, handcrafted by multiple generations. Every bottle carries 2,000 years of Tunisian heritage and the soul of Mediterranean tradition.
                     </h2>
                   </div>
                 </div>
               </div>
             </div>
+
+            <!-- Story Highlight Section -->
+            <div class="story-highlight @container">
+              <p class="text-lg font-medium leading-relaxed" data-en="At Laperla, we don't just make olive oil—we bottle the soul of Tunisia's ancient land and the wisdom of generations. Each drop tells the story of Chemlali trees that have witnessed empires rise and fall, tended by the same families for 500 years. This isn't just premium EVOO; it's liquid history that transforms every meal into a Mediterranean feast." data-pl="W Laperla nie tylko produkujemy oliwę—zamykamy w butelkach duszę starożytnej ziemi Tunezji i mądrość pokoleń. Każda kropla opowiada historię drzew Chemlali, które były świadkami powstania i upadku imperiów, pielęgnowanych przez te same rodziny od 500 lat. To nie jest tylko premium EVOO; to płynna historia, która przemienia każdy posiłek w śródziemnomorską ucztę." data-it="In Laperla, non facciamo solo olio d'oliva—imbottigliamo l'anima dell'antica terra tunisina e la saggezza delle generazioni. Ogni goccia racconta la storia degli alberi Chemlali che hanno assistito al sorgere e cadere degli imperi, curati dalle stesse famiglie per 500 anni. Questo non è solo EVOO premium; è storia liquida che trasforma ogni pasto in una festa mediterranea." data-fr="Chez Laperla, nous ne faisons pas que de l'huile d'olive—nous embouteillons l'âme de l'ancienne terre tunisienne et la sagesse des générations. Chaque goutte raconte l'histoire des arbres Chemlali qui ont vu naître et tomber des empires, soignés par les mêmes familles pendant 500 ans. Ce n'est pas seulement de l'EVOO premium ; c'est de l'histoire liquide qui transforme chaque repas en festin méditerranéen.">
+                At Laperla, we don't just make olive oil—we bottle the soul of Tunisia's ancient land and the wisdom of generations. Each drop tells the story of Chemlali trees that have witnessed empires rise and fall, tended by the same families for 500 years. This isn't just premium EVOO; it's liquid history that transforms every meal into a Mediterranean feast.
+              </p>
+            </div>
+
+            <!-- Products Section -->
             <div class="flex flex-col gap-10 px-4 py-10 @container">
-              <h2 class="text-[#141811] text-[22px] font-bold leading-tight tracking-[-0.015em]" data-en="Our Catalogue" data-pl="Nasz Katalog" data-it="Il nostro catalogo" data-es="Nuestro catálogo" data-pt="Nosso catálogo" data-ar="كتالوجنا">Our Catalogue</h2>
+              <h2 class="section-title" data-en="Our Premium Collection" data-pl="Nasza Premium Kolekcja" data-it="La nostra collezione premium" data-fr="Notre collection premium">Our Premium Collection</h2>
               <div class="catalogue-grid">
                 <div class="catalogue-item">
                   <div class="catalogue-image" style='background-image: url("assets/images/bottle.jpeg");'></div>
-                  <div class="catalogue-details">
-                    <p class="text-[#141811] text-base font-medium leading-normal" data-en="Chemlali Edition Prestige" data-pl="Chemlali Edition Prestige" data-it="Chemlali Edition Prestige" data-es="Chemlali Edition Prestige" data-pt="Chemlali Edition Prestige" data-ar="تشملالي إديشن بريستيج">Chemlali Edition Prestige</p>
-                    <p class="text-[#758863] text-sm font-normal leading-normal" data-en="Smooth and balanced with almond and apple notes." data-pl="Gładka i zrównoważona z nutami migdałów i jabłek." data-it="Morbido ed equilibrato con note di mandorla e mela." data-es="Suave y equilibrado con notas de almendra y manzana." data-pt="Suave e equilibrado com notas de amêndoa e maçã." data-ar="ناعم ومتوازن مع نكهات اللوز والتفاح.">
-                      Smooth and balanced with almond and apple notes.
-                    </p>
-                    <a href="https://wa.me/48530846928?text=Inquiry%20about%20Chemlali%20Edition%20Prestige" target="_blank" class="catalogue-button flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-xl h-10 px-4 bg-[#80e619] text-[#141811] text-sm font-bold leading-normal tracking-[0.015em] no-underline">
-                      <span class="truncate" data-en="Inquire Now" data-pl="Zapytaj Teraz" data-it="Richiedi Ora" data-es="Consultar Ahora" data-pt="Consultar Agora" data-ar="استفسر الآن">Inquire Now</span>
-                    </a>
+                  <div class="heritage-badge" data-en="🏆 SIGNATURE EDITION" data-pl="🏆 EDYCJA SYGNOWANA" data-it="🏆 EDIZIONE FIRMA" data-fr="🏆 ÉDITION SIGNATURE">🏆 SIGNATURE EDITION</div>
+                  <h3 class="text-[#2e5e2e] text-xl font-bold leading-tight" data-en="Chemlali Edition Prestige" data-pl="Chemlali Edition Prestige" data-it="Chemlali Edition Prestige" data-fr="Chemlali Edition Prestige">Chemlali Edition Prestige</h3>
+                  <div class="quality-metric" data-en="< 0.3% ACIDITY" data-pl="< 0,3% KWASOWOŚĆ" data-it="< 0,3% ACIDITÀ" data-fr="< 0,3% ACIDITÉ">< 0.3% ACIDITY</div>
+                  <p class="text-[#444] text-sm leading-relaxed" data-en="The crown jewel of our collection. Silky smooth with notes of green apple, sweet almond, and Mediterranean herbs. Cold-pressed within 4 hours, with 250-300mg/kg polyphenols for maximum health benefits. Zero bitterness—pure liquid luxury from trees that have stood for 500 years." data-pl="Klejnot koronny naszej kolekcji. Jedwabiście gładka z nutami zielonego jabłka, słodkich migdałów i śródziemnomorskich ziół. Tłoczona na zimno w ciągu 4 godzin, z 250-300mg/kg polifenoli dla maksymalnych korzyści zdrowotnych. Zero goryczy—czysty płynny luksus z drzew, które stoją od 500 lat." data-it="Il gioiello della corona della nostra collezione. Setosamente liscio con note di mela verde, mandorla dolce ed erbe mediterranee. Pressato a freddo entro 4 ore, con 250-300mg/kg di polifenoli per massimi benefici per la salute. Zero amarezza—puro lusso liquido da alberi che esistono da 500 anni." data-fr="Le joyau de notre collection. Soyeusement lisse avec des notes de pomme verte, d'amande douce et d'herbes méditerranéennes. Pressé à froid dans les 4 heures, avec 250-300mg/kg de polyphénols pour des bienfaits maximaux pour la santé. Zéro amertume—pur luxe liquide d'arbres qui existent depuis 500 ans.">
+                    The crown jewel of our collection. Silky smooth with notes of green apple, sweet almond, and Mediterranean herbs. Cold-pressed within 4 hours, with 250-300mg/kg polyphenols for maximum health benefits. Zero bitterness—pure liquid luxury from trees that have stood for 500 years.
+                  </p>
+                  <div class="testimonial-quote" data-en="&quot;This oil doesn't just nourish your body—it preserves life itself. What ancient healers called 'liquid gold,' modern science now confirms.&quot;" data-pl="&quot;Ta oliwa nie tylko odżywia ciało—zachowuje samo życie. To, co starożytni uzdrowiciele nazywali 'płynnym złotem', współczesna nauka teraz potwierdza.&quot;" data-it="&quot;Quest'olio non solo nutre il corpo—preserva la vita stessa. Quello che gli antichi guaritori chiamavano 'oro liquido,' la scienza moderna ora conferma.&quot;" data-fr="&quot;Cette huile ne nourrit pas seulement votre corps—elle préserve la vie elle-même. Ce que les anciens guérisseurs appelaient 'or liquide,' la science moderne le confirme maintenant.&quot;">
+                    "This oil doesn't just nourish your body—it preserves life itself. What ancient healers called 'liquid gold,' modern science now confirms."
                   </div>
+                  <a href="https://wa.me/48530846928?text=I%20want%20to%20try%20Chemlali%20Edition%20Prestige" target="_blank" class="flex items-center justify-center rounded-xl h-12 px-6 bg-[#80e619] text-[#141811] text-base font-bold leading-normal tracking-[0.015em] no-underline shadow-lg hover:shadow-xl transition-all duration-300">
+                    <span class="truncate" data-en="🛒 Try Prestige Edition" data-pl="🛒 Spróbuj Edycji Prestige" data-it="🛒 Prova Edizione Prestige" data-fr="🛒 Essayez l'Édition Prestige">🛒 Try Prestige Edition</span>
+                  </a>
                 </div>
+                
                 <div class="catalogue-item">
                   <div class="catalogue-image" style='background-image: url("assets/images/bulk.png");'></div>
-                  <div class="catalogue-details">
-                    <p class="text-[#141811] text-base font-medium leading-normal" data-en="Bulk Requests" data-pl="Żądania zbiorcze" data-it="Richieste all'ingrosso" data-es="Solicitudes a granel" data-pt="Pedidos em massa" data-ar="طلبات بالجملة">Bulk Requests</p>
-                    <p class="text-[#758863] text-sm font-normal leading-normal" data-en="High-quality olive oil for large-scale needs." data-pl="Wysokiej jakości oliwa z oliwek dla potrzeb na dużą skalę." data-it="Olio d'oliva di alta qualità per esigenze su larga scala." data-es="Aceite de oliva de alta calidad para necesidades a gran escala." data-pt="Azeite de oliva de alta qualidade para necessidades em grande escala." data-ar="زيت زيتون عالي الجودة للاحتياجات واسعة النطاق.">
-                      High-quality olive oil for large-scale needs.
-                    </p>
-                    <a href="https://wa.me/48530846928?text=Inquiry%20about%20Bulk%20Requests" target="_blank" class="catalogue-button flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-xl h-10 px-4 bg-[#80e619] text-[#141811] text-sm font-bold leading-normal tracking-[0.015em] no-underline">
-                      <span class="truncate" data-en="Inquire Now" data-pl="Zapytaj Teraz" data-it="Richiedi Ora" data-es="Consultar Ahora" data-pt="Consultar Agora" data-ar="استفسر الآن">Inquire Now</span>
-                    </a>
+                  <div class="heritage-badge" data-en="📦 BUSINESS SOLUTIONS" data-pl="📦 ROZWIĄZANIA BIZNESOWE" data-it="📦 SOLUZIONI BUSINESS" data-fr="📦 SOLUTIONS BUSINESS">📦 BUSINESS SOLUTIONS</div>
+                  <h3 class="text-[#2e5e2e] text-xl font-bold leading-tight" data-en="Premium Bulk Collection" data-pl="Kolekcja Premium Hurtowa" data-it="Collezione Premium all'Ingrosso" data-fr="Collection Premium en Gros">Premium Bulk Collection</h3>
+                  <div class="quality-metric" data-en="SAME PREMIUM QUALITY" data-pl="TA SAMA JAKOŚĆ PREMIUM" data-it="STESSA QUALITÀ PREMIUM" data-fr="MÊME QUALITÉ PREMIUM">SAME PREMIUM QUALITY</div>
+                  <p class="text-[#444] text-sm leading-relaxed" data-en="Bring 2,000 years of Tunisian heritage to your restaurant, hotel, or food business. Same exceptional quality from our ancient Chemlali groves, available in larger quantities. Perfect for chefs who understand that great cuisine starts with authentic ingredients that tell a story." data-pl="Wprowadź 2000 lat tunezyjskiego dziedzictwa do swojej restauracji, hotelu lub biznesu spożywczego. Ta sama wyjątkowa jakość z naszych starożytnych gajów Chemlali, dostępna w większych ilościach. Idealna dla szefów kuchni, którzy rozumieją, że wspaniała kuchnia zaczyna się od autentycznych składników, które opowiadają historię." data-it="Porta 2.000 anni di eredità tunisina nel tuo ristorante, hotel o business alimentare. Stessa qualità eccezionale dai nostri antichi boschi Chemlali, disponibile in quantità maggiori. Perfetto per chef che capiscono che la grande cucina inizia con ingredienti autentici che raccontano una storia." data-fr="Apportez 2 000 ans d'héritage tunisien à votre restaurant, hôtel ou entreprise alimentaire. Même qualité exceptionnelle de nos anciens bosquets Chemlali, disponible en plus grandes quantités. Parfait pour les chefs qui comprennent que la grande cuisine commence par des ingrédients authentiques qui racontent une histoire.">
+                    Bring 2,000 years of Tunisian heritage to your restaurant, hotel, or food business. Same exceptional quality from our ancient Chemlali groves, available in larger quantities. Perfect for chefs who understand that great cuisine starts with authentic ingredients that tell a story.
+                  </p>
+                  <div class="grid grid-cols-2 gap-4 text-sm text-[#2e5e2e]">
+                    <div data-en="✓ Restaurants & Hotels" data-pl="✓ Restauracje i Hotele" data-it="✓ Ristoranti e Hotel" data-fr="✓ Restaurants et Hôtels">✓ Restaurants & Hotels</div>
+                    <div data-en="✓ Gourmet Food Stores" data-pl="✓ Sklepy z Żywnością dla Smakoszy" data-it="✓ Negozi Gourmet" data-fr="✓ Épiceries Fines">✓ Gourmet Food Stores</div>
+                    <div data-en="✓ Food Distributors" data-pl="✓ Dystrybutorzy Żywności" data-it="✓ Distributori Alimentari" data-fr="✓ Distributeurs Alimentaires">✓ Food Distributors</div>
+                    <div data-en="✓ Private Labeling" data-pl="✓ Etykiety Prywatne" data-it="✓ Etichette Private" data-fr="✓ Marques Privées">✓ Private Labeling</div>
                   </div>
+                  <a href="https://wa.me/48530846928?text=Inquiry%20about%20Premium%20Bulk%20Collection" target="_blank" class="flex items-center justify-center rounded-xl h-12 px-6 bg-white border-2 border-[#80e619] text-[#80e619] text-base font-bold leading-normal tracking-[0.015em] no-underline shadow-lg hover:shadow-xl transition-all duration-300">
+                    <span class="truncate" data-en="📧 Get Business Quote" data-pl="📧 Otrzymaj Wycenę Biznesową" data-it="📧 Ottieni Preventivo Business" data-fr="📧 Obtenir Devis Business">📧 Get Business Quote</span>
+                  </a>
                 </div>
               </div>
             </div>
-            <div class="chemlali-section @container">
-              <h1 class="chemlali-title" data-en="Chemlali Olive Oil Characteristics" data-pl="Charakterystyka Oliwy Chemlali" data-it="Caratteristiche dell'Olio di Chemlali" data-es="Características del Aceite de Chemlali" data-pt="Características do Azeite de Chemlali" data-ar="خصائص زيت الزيتون تشملالي">
-                Chemlali Olive Oil Characteristics
+
+            <!-- Premium Features Section -->
+            <div class="premium-features @container">
+              <h1 class="section-title" data-en="What Makes Our Oil Extraordinary" data-pl="Co Czyni Naszą Oliwę Niezwykłą" data-it="Cosa Rende Straordinario il Nostro Olio" data-fr="Ce Qui Rend Notre Huile Extraordinaire">
+                What Makes Our Oil Extraordinary
               </h1>
-              <div class="traits-container">
-                <div class="trait-card">
-                  <svg class="trait-icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M12 2c-1.66 0-3 1.34-3 3 0 .79.31 1.5.81 2.03C8.07 7.57 7 8.98 7 10.5c0 2.21 1.79 4 4 4h2c2.21 0 4-1.79 4-4 0-1.52-1.07-2.93-2.81-3.47.5-.53.81-1.24.81-2.03 0-1.66-1.34-3-3-3zm-1 12h2v2h-2v-2zm0-4h2V8h-2v2zm0-6h2v2h-2V4zM5 18h14v2H5v-2z"/>
-                  </svg>
-                  <div class="trait-name" data-en="Flavor Profile" data-pl="Profil Smakowy" data-it="Profilo di Sapore" data-es="Perfil de Sabor" data-pt="Perfil de Sabor" data-ar="ملف النكهة">Flavor Profile</div>
-                  <p class="trait-desc" data-en="Mild, buttery with almond, green apple, and a hint of pepper" data-pl="Łagodny, maślany z nutami migdałów, zielonego jabłka i odrobiną pieprzu" data-it="Delicato, burroso con note di mandorla, mela verde e un pizzico di pepe" data-es="Suave, mantecoso con notas de almendra, manzana verde y un toque de pimienta" data-pt="Suave, amanteigado com notas de amêndoa, maçã verde e um toque de pimenta" data-ar="ناعم، زبدي مع نكهات اللوز، التفاح الأخضر، ولمسة من الفلفل">
-                    Mild, buttery with almond, green apple, and a hint of pepper
+              
+              <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-8">
+                <div class="feature-card">
+                  <div class="text-4xl mb-4">🌳</div>
+                  <div class="heritage-badge" data-en="500 YEARS OLD" data-pl="500 LAT" data-it="500 ANNI" data-fr="500 ANS">500 YEARS OLD</div>
+                  <h3 class="text-[#2e5e2e] text-lg font-bold mb-3" data-en="Ancient Tree Heritage" data-pl="Dziedzictwo Starożytnych Drzew" data-it="Eredità degli Alberi Antichi" data-fr="Héritage d'Arbres Anciens">Ancient Tree Heritage</h3>
+                  <p class="text-[#444] text-sm leading-relaxed" data-en="Our Chemlali trees are living monuments, rooted 20 feet deep in mineral-rich soil. These ancient sentinels have survived droughts, wars, and winds that destroyed empires—creating terroir so unique that scientists found 200+ distinct aromatic compounds." data-pl="Nasze drzewa Chemlali to żywe pomniki, zakorzenione 20 stóp głęboko w glebie bogatej w minerały. Te starożytne strażnicy przetrwały susze, wojny i wiatry, które zniszczyły imperia—tworząc terroir tak wyjątkowe, że naukowcy znaleźli ponad 200 różnych związków aromatycznych." data-it="I nostri alberi Chemlali sono monumenti viventi, radicati 20 piedi di profondità in terreno ricco di minerali. Queste antiche sentinelle sono sopravvissute a siccità, guerre e venti che hanno distrutto imperi—creando un terroir così unico che gli scienziati hanno trovato oltre 200 composti aromatici distinti." data-fr="Nos arbres Chemlali sont des monuments vivants, enracinés à 20 pieds de profondeur dans un sol riche en minéraux. Ces anciennes sentinelles ont survécu aux sécheresses, aux guerres et aux vents qui ont détruit des empires—créant un terroir si unique que les scientifiques ont trouvé plus de 200 composés aromatiques distincts.">
+                    Our Chemlali trees are living monuments, rooted 20 feet deep in mineral-rich soil. These ancient sentinels have survived droughts, wars, and winds that destroyed empires—creating terroir so unique that scientists found 200+ distinct aromatic compounds.
                   </p>
                 </div>
-                <div class="trait-card">
-                  <svg class="trait-icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M12 2c-5.52 0-10 4.48-10 10s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 16.5v-9l6 4.5-6 4.5zm8-6.5h-2v-2h2v2zm0-4h-2V6h2v2z"/>
-                  </svg>
-                  <div class="trait-name" data-en="Polyphenol Content" data-pl="Zawartość Polifenoli" data-it="Contenuto di Polifenoli" data-es="Contenido de Polifenoles" data-pt="Conteúdo de Polifenóis" data-ar="محتوى البوليفينول">Polyphenol Content</div>
-                  <p class="trait-desc" data-en="Moderate, 200-300 mg/kg, boosts heart health" data-pl="Umiarkowana, 200-300 mg/kg, wspiera zdrowie serca" data-it="Moderato, 200-300 mg/kg, favorisce la salute del cuore" data-es="Moderado, 200-300 mg/kg, promueve la salud cardíaca" data-pt="Moderado, 200-300 mg/kg, promove a saúde cardíaca" data-ar="معتدل، 200-300 ملغ/كغ، يعزز صحة القلب">
-                    Moderate, 200-300 mg/kg, boosts heart health
+                
+                <div class="feature-card">
+                  <div class="text-4xl mb-4">👨‍👩‍👧‍👦</div>
+                  <div class="heritage-badge" data-en="MULTIPLE GENERATIONS" data-pl="WIELE POKOLEŃ" data-it="MULTIPLE GENERAZIONI" data-fr="PLUSIEURS GÉNÉRATIONS">MULTIPLE GENERATIONS</div>
+                  <h3 class="text-[#2e5e2e] text-lg font-bold mb-3" data-en="Family Mastery" data-pl="Mistrzostwo Rodzinne" data-it="Maestria Familiare" data-fr="Maîtrise Familiale">Family Mastery</h3>
+                  <p class="text-[#444] text-sm leading-relaxed" data-en="The same families have tended these trees for multiple generations, knowing each by name and character. Their hands carry knowledge that can't be taught in schools—only passed through bloodlines and whispered prayers to trees that have become family." data-pl="Te same rodziny opiekują się tymi drzewami od wielu pokoleń, znając każde po imieniu i charakterze. Ich ręce niosą wiedzę, której nie można nauczyć w szkołach—tylko przekazać przez linie krwi i szeptane modlitwy do drzew, które stały się rodziną." data-it="Le stesse famiglie si prendono cura di questi alberi da multiple generazioni, conoscendo ognuno per nome e carattere. Le loro mani portano conoscenze che non si possono insegnare nelle scuole—solo trasmesse attraverso le linee di sangue e preghiere sussurrate agli alberi diventati famiglia." data-fr="Les mêmes familles s'occupent de ces arbres depuis plusieurs générations, connaissant chacun par son nom et son caractère. Leurs mains portent des connaissances qui ne peuvent être enseignées dans les écoles—seulement transmises par les lignées et les prières murmurées aux arbres devenus famille.">
+                    The same families have tended these trees for multiple generations, knowing each by name and character. Their hands carry knowledge that can't be taught in schools—only passed through bloodlines and whispered prayers to trees that have become family.
                   </p>
                 </div>
-                <div class="trait-card">
-                  <svg class="trait-icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M12 2c-2.21 0-4 1.79-4 4s1.79 4 4 4 4-1.79 4-4-1.79-4-4-4zm0 6c-1.1 0-2-.9-2-2s.9-2 2-2 2 .9 2 2-.9 2-2 2zm-7 12v-2h14v2H5zm7-6c-2.76 0-5 2.24-5 5h10c0-2.76-2.24-5-5-5z"/>
-                  </svg>
-                  <div class="trait-name" data-en="Acidity Level" data-pl="Poziom Kwasowości" data-it="Livello di Acidità" data-es="Nivel de Acidez" data-pt="Nível de Acidez" data-ar="مستوى الحموضة">Acidity Level</div>
-                  <p class="trait-desc" data-en="Ultra-low, <0.3%, for a silky finish" data-pl="Bardzo niski, <0,3%, dla jedwabistego wykończenia" data-it="Ultra-basso, <0,3%, per una finitura setosa" data-es="Ultra-bajo, <0,3%, para un acabado sedoso" data-pt="Ultra-baixo, <0,3%, para um acabamento sedoso" data-ar="منخفض للغاية، <0.3%، للحصول على لمسة نهائية ناعمة">
-                    Ultra-low, <0.3%, for a silky finish
+                
+                <div class="feature-card">
+                  <div class="text-4xl mb-4">🧪</div>
+                  <div class="heritage-badge" data-en="ULTRA PURE" data-pl="ULTRA CZYSTA" data-it="ULTRA PURA" data-fr="ULTRA PURE">ULTRA PURE</div>
+                  <h3 class="text-[#2e5e2e] text-lg font-bold mb-3" data-en="Scientific Excellence" data-pl="Doskonałość Naukowa" data-it="Eccellenza Scientifica" data-fr="Excellence Scientifique">Scientific Excellence</h3>
+                  <p class="text-[#444] text-sm leading-relaxed" data-en="Acidity below 0.3%—far surpassing the 0.8% limit for Extra Virgin. Loaded with 250-300mg/kg polyphenols, nature's most potent antioxidants. Cold-pressed within 4 hours of harvest to capture every molecule of goodness." data-pl="Kwasowość poniżej 0,3%—znacznie przekraczając limit 0,8% dla Extra Virgin. Wypełniona 250-300mg/kg polifenoli, najbardziej potężnych antyoksydantów natury. Tłoczona na zimno w ciągu 4 godzin od zbioru, aby uchwycić każdą molekułę dobra." data-it="Acidità sotto lo 0,3%—superando di gran lunga il limite dello 0,8% per Extra Vergine. Carico di 250-300mg/kg di polifenoli, gli antiossidanti più potenti della natura. Pressato a freddo entro 4 ore dalla raccolta per catturare ogni molecola di bontà." data-fr="Acidité inférieure à 0,3%—dépassant largement la limite de 0,8% pour Extra Vierge. Chargé de 250-300mg/kg de polyphénols, les antioxydants les plus puissants de la nature. Pressé à froid dans les 4 heures suivant la récolte pour capturer chaque molécule de bonté.">
+                    Acidity below 0.3%—far surpassing the 0.8% limit for Extra Virgin. Loaded with 250-300mg/kg polyphenols, nature's most potent antioxidants. Cold-pressed within 4 hours of harvest to capture every molecule of goodness.
                   </p>
-                </div>
-                <div class="trait-card">
-                  <svg class="trait-icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M12 2c-1.66 0-3 1.34-3 3v2c0 1.66 1.34 3 3 3s3-1.34 3-3V5c0-1.66-1.34-3-3-3zm-1 14h2v2h-2v-2zm-7-2h16v2H4v-2zm8-4c-2.21 0-4 1.79-4 4h8c0-2.21-1.79-4-4-4z"/>
-                  </svg>
-                  <div class="trait-name" data-en="Texture" data-pl="Tekstura" data-it="Texture" data-es="Textura" data-pt="Textura" data-ar="الملمس">Texture</div>
-                  <p class="trait-desc" data-en="Light, velvety with smooth consistency" data-pl="Lekka, aksamitna o gładkiej konsystencji" data-it="Leggera, vellutata con consistenza liscia" data-es="Ligera, aterciopelada con consistencia suave" data-pt="Leve, aveludada com consistência suave" data-ar="خفيف، مخملي مع قوام ناعم">
-                    Light, velvety with smooth consistency
-                  </p>
-                </div>
-              </div>
-              <div class="uses-container">
-                <h2 class="uses-title" data-en="Best Uses for Chemlali Olive Oil" data-pl="Najlepsze Zastosowania Oliwy Chemlali" data-it="Migliori Usi per l'Olio di Chemlali" data-es="Mejores Usos para el Aceite de Chemlali" data-pt="Melhores Usos para o Azeite de Chemlali" data-ar="أفضل استخدامات زيت الزيتون تشملالي">
-                  Best Uses for Chemlali Olive Oil
-                </h2>
-                <div class="uses-grid">
-                  <div class="use-card">
-                    <svg class="use-icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                      <path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm-2 12H6v-2h12v2zm-6-4c-1.66 0-3-1.34-3-3h6c0 1.66-1.34 3-3 3z"/>
-                    </svg>
-                    <div class="use-name" data-en="Salad Dressings" data-pl="Sos do Sałatek" data-it="Condimenti per Insalate" data-es="Aderezos para Ensaladas" data-pt="Molhos para Saladas" data-ar="تتبيلات السلطة">Salad Dressings</div>
-                  </div>
-                  <div class="use-card">
-                    <svg class="use-icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                      <path d="M19 2h-1V1a1 1 0 0 0-2 0v1H8V1a1 1 0 0 0-2 0v1H5a5 5 0 0 0-5 5v14a5 5 0 0 0 5 5h14a5 5 0 0 0 5-5V7a5 5 0 0 0-5-5zm3 19a3 3 0 0 1-3 3H5a3 3 0 0 1-3-3V10h20v11zm-8-9h-4v-2h4v2z"/>
-                    </svg>
-                    <div class="use-name" data-en="Baking" data-pl="Pieczenie" data-it="Cottura al Forno" data-es="Horneado" data-pt="Assar" data-ar="الخبز">Baking</div>
-                  </div>
-                  <div class="use-card">
-                    <svg class="use-icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                      <path d="M12 2c-1.66 0-3 1.34-3 3v6c0 1.66 1.34 3 3 3s3-1.34 3-3V5c0-1.66-1.34-3-3-3zm-1 12h2v2h-2v-2zm-7-2h16v2H4v-2z"/>
-                    </svg>
-                    <div class="use-name" data-en="Drizzling Over Dishes" data-pl="Skrapianie Potraw" data-it="Condire i Piatti" data-es="Rociar sobre Platos" data-pt="Regar sobre Pratos" data-ar="الرذاذ فوق الأطباق">Drizzling Over Dishes</div>
-                  </div>
-                  <div class="use-card">
-                    <svg class="use-icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                      <path d="M21 5h-6l1.41-1.41a1 1 0 0 0-1.41-1.41L12 5.59 9 2.59A1 1 0 0 0 7.59 4L9 5H3a1 1 0 0 0-1 1v12a1 1 0 0 0 1 1h18a1 1 0 0 0 1-1V6a1 1 0 0 0-1-1zm-2 10H5v-2h14v2z"/>
-                    </svg>
-                    <div class="use-name" data-en="Sautéing" data-pl="Smażenie" data-it="Soffriggere" data-es="Saltear" data-pt="Refogar" data-ar="القلي">Sautéing</div>
-                  </div>
-                  <div class="use-card">
-                    <svg class="use-icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                      <path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm-6 10c-1.66 0-3-1.34-3-3h6c0 1.66-1.34 3-3 3z"/>
-                    </svg>
-                    <div class="use-name" data-en="Marinades" data-pl="Marynaty" data-it="Marinate" data-es="Marinadas" data-pt="Marinadas" data-ar="التتبيلات">Marinades</div>
-                  </div>
-                  <div class="use-card">
-                    <svg class="use-icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                      <path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm-6 12h-4v-2h4v2zm-6-4h8v-2H8v2z"/>
-                    </svg>
-                    <div class="use-name" data-en="Dipping Bread" data-pl="Maczanie Chleba" data-it="Intingere il Pane" data-es="Mojar Pan" data-pt="Mergulhar Pão" data-ar="غمس الخبز">Dipping Bread</div>
-                  </div>
                 </div>
               </div>
             </div>
-            <div class="benefits-section @container">
-              <h1 class="benefits-title" data-en="Health Benefits of Extra Virgin Olive Oil" data-pl="Korzyści zdrowotne oliwy z oliwek extra virgin" data-it="Benefici per la salute dell'olio extravergine di oliva" data-es="Beneficios para la salud del aceite de oliva virgen extra" data-pt="Benefícios para a saúde do azeite de oliva extra virgem" data-ar="فوائد زيت الزيتون البكر الممتاز للصحة">
-                Health Benefits of Extra Virgin Olive Oil
+
+            <!-- Health Benefits Section -->
+            <div class="health-benefits @container">
+              <h1 class="section-title" data-en="Your Daily Dose of Mediterranean Wellness" data-pl="Twoja Codzienna Dawka Śródziemnomorskiego Dobrostanu" data-it="La Tua Dose Quotidiana di Benessere Mediterraneo" data-fr="Votre Dose Quotidienne de Bien-être Méditerranéen">
+                Your Daily Dose of Mediterranean Wellness
               </h1>
-              <div class="benefits-container">
+              
+              <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                 <div class="benefit-card">
-                  <svg class="benefit-icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
-                  </svg>
-                  <div class="benefit-name" data-en="Heart Health" data-pl="Zdrowie serca" data-it="Salute del cuore" data-es="Salud cardíaca" data-pt="Saúde do coração" data-ar="صحة القلب">Heart Health</div>
-                  <p class="benefit-desc" data-en="Rich in monounsaturated fats, EVOO lowers bad cholesterol and reduces heart disease risk." data-pl="Bogata w tłuszcze jednonienasycone, oliwa EVOO obniża zły cholesterol i zmniejsza ryzyko chorób serca." data-it="Ricco di grassi monoinsaturi, l'EVOO riduce il colesterolo cattivo e il rischio di malattie cardiache." data-es="Rico en grasas monoinsaturadas, el EVOO reduce el colesterol malo y el riesgo de enfermedades cardíacas." data-pt="Rico em gorduras monoinsaturadas, o EVOO reduz o colesterol ruim e o risco de doenças cardíacas." data-ar="غني بالدهون الأحادية غير المشبعة، يقلل زيت EVOO من الكوليسترول الضار ومخاطر أمراض القلب.">
-                    Rich in monounsaturated fats, EVOO lowers bad cholesterol and reduces heart disease risk.
+                  <div class="text-4xl mb-4">💗</div>
+                  <h3 class="text-[#2e5e2e] text-lg font-bold mb-3" data-en="Heart Guardian" data-pl="Strażnik Serca" data-it="Guardiano del Cuore" data-fr="Gardien du Cœur">Heart Guardian</h3>
+                  <p class="text-[#444] text-sm leading-relaxed" data-en="Just 2 tablespoons daily can reduce heart disease risk by 13%. Our premium EVOO is your daily defense against cardiovascular disease, backed by Mediterranean diet research spanning decades." data-pl="Zaledwie 2 łyżki dziennie mogą zmniejszyć ryzyko chorób serca o 13%. Nasza premium EVOO to Twoja codzienna obrona przed chorobami sercowo-naczyniowymi, poparta badaniami diety śródziemnomorskiej trwającymi dziesięciolecia." data-it="Solo 2 cucchiai al giorno possono ridurre il rischio di malattie cardiache del 13%. Il nostro EVOO premium è la tua difesa quotidiana contro le malattie cardiovascolari, supportata da ricerche sulla dieta mediterranea che durano decenni." data-fr="Seulement 2 cuillères à soupe par jour peuvent réduire le risque de maladie cardiaque de 13%. Notre EVOO premium est votre défense quotidienne contre les maladies cardiovasculaires, soutenue par des recherches sur le régime méditerranéen s'étendant sur des décennies.">
+                    Just 2 tablespoons daily can reduce heart disease risk by 13%. Our premium EVOO is your daily defense against cardiovascular disease, backed by Mediterranean diet research spanning decades.
                   </p>
                 </div>
+                
                 <div class="benefit-card">
-                  <svg class="benefit-icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.94-.49-7-3.85-7-7.93s3.06-7.44 7-7.93v15.86zm2 0V4.07c3.94.49 7 3.85 7 7.93s-3.06 7.44-7 7.93z"/>
-                  </svg>
-                  <div class="benefit-name" data-en="Anti-Inflammatory" data-pl="Przeciwzapalne" data-it="Antinfiammatorio" data-es="Antiinflamatorio" data-pt="Anti-inflamatório" data-ar="مضاد للالتهابات">Anti-Inflammatory</div>
-                  <p class="benefit-desc" data-en="Polyphenols in EVOO reduce inflammation, easing chronic conditions like arthritis." data-pl="Polifenole w oliwie EVOO zmniejszają stany zapalne, łagodząc choroby przewlekłe, takie jak artretyzm." data-it="I polifenoli nell'EVOO riducono l'infiammazione, alleviando condizioni croniche come l'artrite." data-es="Los polifenoles en el EVOO reducen la inflamación, aliviando condiciones crónicas como la artritis." data-pt="Os polifenóis no EVOO reduzem a inflamação, aliviando condições crônicas como artrite." data-ar="تقلل البوليفينول في زيت EVOO من الالتهابات، مما يخفف الحالات المزمنة مثل التهاب المفاصل.">
-                    Polyphenols in EVOO reduce inflammation, easing chronic conditions like arthritis.
+                  <div class="text-4xl mb-4">🔥</div>
+                  <h3 class="text-[#2e5e2e] text-lg font-bold mb-3" data-en="Natural Anti-Inflammatory" data-pl="Naturalne Przeciwzapalne" data-it="Antinfiammatorio Naturale" data-fr="Anti-inflammatoire Naturel">Natural Anti-Inflammatory</h3>
+                  <p class="text-[#444] text-sm leading-relaxed" data-en="Contains oleocanthal—a natural compound that acts like ibuprofen but without side effects. Combat chronic inflammation that leads to aging and disease, naturally and deliciously." data-pl="Zawiera oleokantal—naturalny związek, który działa jak ibuprofen, ale bez skutków ubocznych. Zwalczaj przewlekłe stany zapalne prowadzące do starzenia i chorób, naturalnie i smakowicie." data-it="Contiene oleocanthal—un composto naturale che agisce come l'ibuprofene ma senza effetti collaterali. Combatti l'infiammazione cronica che porta all'invecchiamento e alle malattie, naturalmente e deliziosamente." data-fr="Contient de l'oléocanthal—un composé naturel qui agit comme l'ibuprofène mais sans effets secondaires. Combattez l'inflammation chronique qui mène au vieillissement et aux maladies, naturellement et délicieusement.">
+                    Contains oleocanthal—a natural compound that acts like ibuprofen but without side effects. Combat chronic inflammation that leads to aging and disease, naturally and deliciously.
                   </p>
                 </div>
+                
                 <div class="benefit-card">
-                  <svg class="benefit-icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm5 13h-2v-2h2v2zm0-4h-2V9h2v2zm-4 4h-2v-2h2v2zm0-4h-2V9h2v2zm-4 4H7v-2h2v2zm0-4H7V9h2v2z"/>
-                  </svg>
-                  <div class="benefit-name" data-en="Antioxidant Power" data-pl="Moc antyoksydacyjna" data-it="Potere antiossidante" data-es="Poder antioxidante" data-pt="Poder antioxidante" data-ar="قوة مضادات الأكسدة">Antioxidant Power</div>
-                  <p class="benefit-desc" data-en="Antioxidants like vitamin E protect cells from damage, supporting overall health." data-pl="Antyoksydanty, takie jak witamina E, chronią komórki przed uszkodzeniem, wspierając ogólne zdrowie." data-it="Antiossidanti come la vitamina E proteggono le cellule dai danni, supportando la salute generale." data-es="Antioxidantes como la vitamina E protegen las células del daño, apoyando la salud general." data-pt="Antioxidantes como a vitamina E protegem as células de danos, apoiando a saúde geral." data-ar="مضادات الأكسدة مثل فيتامين E تحمي الخلايا من التلف، مما يدعم الصحة العامة.">
-                    Antioxidants like vitamin E protect cells from damage, supporting overall health.
+                  <div class="text-4xl mb-4">🧠</div>
+                  <h3 class="text-[#2e5e2e] text-lg font-bold mb-3" data-en="Brain Protection" data-pl="Ochrona Mózgu" data-it="Protezione del Cervello" data-fr="Protection du Cerveau">Brain Protection</h3>
+                  <p class="text-[#444] text-sm leading-relaxed" data-en="Research links regular EVOO consumption to reduced risk of cognitive decline and Alzheimer's. Nourish your mind with liquid wisdom that's been protecting Mediterranean brains for millennia." data-pl="Badania łączą regularne spożycie EVOO ze zmniejszonym ryzykiem spadku funkcji poznawczych i Alzheimera. Odżywiaj swój umysł płynną mądrością, która chroni śródziemnomorskie mózgi od tysiącleci." data-it="La ricerca collega il consumo regolare di EVOO al ridotto rischio di declino cognitivo e Alzheimer. Nutri la tua mente con saggezza liquida che protegge i cervelli mediterranei da millenni." data-fr="La recherche lie la consommation régulière d'EVOO à un risque réduit de déclin cognitif et d'Alzheimer. Nourrissez votre esprit avec une sagesse liquide qui protège les cerveaux méditerranéens depuis des millénaires.">
+                    Research links regular EVOO consumption to reduced risk of cognitive decline and Alzheimer's. Nourish your mind with liquid wisdom that's been protecting Mediterranean brains for millennia.
                   </p>
                 </div>
+                
                 <div class="benefit-card">
-                  <svg class="benefit-icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M12 4c-4.41 0-8 3.59-8 8s3.59 8 8 8 8-3.59 8-8-3.59-8-8-8zm0 14c-3.31 0-6-2.69-6-6s2.69-6 6-6 6 2.69 6 6-2.69 6-6 6zm-2-6H7v-2h3V7h2v3h3v2h-3v3h-2v-3z"/>
-                  </svg>
-                  <div class="benefit-name" data-en="Digestive Health" data-pl="Zdrowie układu pokarmowego" data-it="Salute digestiva" data-es="Salud digestiva" data-pt="Saúde digestiva" data-ar="صحة الجهاز الهضمي">Digestive Health</div>
-                  <p class="benefit-desc" data-en="EVOO promotes healthy digestion and may reduce the risk of digestive disorders." data-pl="Oliwa EVOO wspiera zdrowe trawienie i może zmniejszać ryzyko zaburzeń trawiennych." data-it="L'EVOO promuove una digestione sana e può ridurre il rischio di disturbi digestivi." data-es="El EVOO promueve una digestión saludable y puede reducir el riesgo de trastornos digestivos." data-pt="O EVOO promove uma digestão saudável e pode reduzir o risco de distúrbios digestivos." data-ar="يعزز زيت EVOO الهضم الصحي وقد يقلل من مخاطر اضطرابات الجهاز الهضمي.">
-                    EVOO promotes healthy digestion and may reduce the risk of digestive disorders.
+                  <div class="text-4xl mb-4">🌟</div>
+                  <h3 class="text-[#2e5e2e] text-lg font-bold mb-3" data-en="Radiant Beauty" data-pl="Promienna Uroda" data-it="Bellezza Radiosa" data-fr="Beauté Radieuse">Radiant Beauty</h3>
+                  <p class="text-[#444] text-sm leading-relaxed" data-en="Vitamin E and antioxidants nourish skin from within, reducing wrinkles and promoting that famous Mediterranean glow. Your secret to timeless beauty, one delicious drop at a time." data-pl="Witamina E i antyoksydanty odżywiają skórę od wewnątrz, zmniejszając zmarszczki i promując słynną śródziemnomorską poświatę. Twój sekret na ponadczasowe piękno, jedna smakowita kropla na raz." data-it="La vitamina E e gli antiossidanti nutrono la pelle dall'interno, riducendo le rughe e promuovendo quel famoso bagliore mediterraneo. Il tuo segreto per la bellezza senza tempo, una goccia deliziosa alla volta." data-fr="La vitamine E et les antioxydants nourrissent la peau de l'intérieur, réduisant les rides et favorisant cet éclat méditerranéen célèbre. Votre secret pour une beauté intemporelle, une goutte délicieuse à la fois.">
+                    Vitamin E and antioxidants nourish skin from within, reducing wrinkles and promoting that famous Mediterranean glow. Your secret to timeless beauty, one delicious drop at a time.
                   </p>
                 </div>
+                
                 <div class="benefit-card">
-                  <svg class="benefit-icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 17h-2v-2h2v2zm2.07-7.75l-.9.92c-.72.73-1.17 1.59-1.17 2.83h-2v-.25c0-1.01.45-1.92 1.17-2.58l1.24-1.24c.37-.37.59-.89.59-1.43 0-1.1-.9-2-2-2s-2 .9-2 2H8c0-2.21 1.79-4 4-4s4 1.79 4 4c0 .66-.24 1.27-.66 1.75z"/>
-                  </svg>
-                  <div class="benefit-name" data-en="Cognitive Benefits" data-pl="Korzyści poznawcze" data-it="Benefici cognitivi" data-es="Beneficios cognitivos" data-pt="Benefícios cognitivos" data-ar="فوائد معرفية">Cognitive Benefits</div>
-                  <p class="benefit-desc" data-en="Healthy fats in EVOO support brain health, potentially lowering cognitive decline risk." data-pl="Zdrowe tłuszcze w oliwie EVOO wspierają zdrowie mózgu, potencjalnie zmniejszając ryzyko pogorszenia funkcji poznawczych." data-it="I grassi sani nell'EVOO supportano la salute del cervello, potenzialmente riducendo il rischio di declino cognitivo." data-es="Las grasas saludables en el EVOO apoyan la salud cerebral, potencialmente reduciendo el riesgo de deterioro cognitivo." data-pt="As gorduras saudáveis no EVOO apoiam a saúde cerebral, potencialmente reduzindo o risco de declínio cognitivo." data-ar="الدهون الصحية في زيت EVOO تدعم صحة الدماغ، وقد تقلل من مخاطر التدهور المعرفي.">
-                    Healthy fats in EVOO support brain health, potentially lowering cognitive decline risk.
+                  <div class="text-4xl mb-4">🛡️</div>
+                  <h3 class="text-[#2e5e2e] text-lg font-bold mb-3" data-en="Immunity Boost" data-pl="Wzmocnienie Odporności" data-it="Potenziamento Immunitario" data-fr="Renforcement Immunitaire">Immunity Boost</h3>
+                  <p class="text-[#444] text-sm leading-relaxed" data-en="Polyphenols strengthen your immune system naturally. Studies show EVOO consumers have 40% fewer infections. Make our liquid gold your daily shield against illness." data-pl="Polifenole naturalnie wzmacniają system odpornościowy. Badania pokazują, że konsumenci EVOO mają o 40% mniej infekcji. Uczyń nasze płynne złoto swoją codzienną tarczą przed chorobami." data-it="I polifenoli rafforzano naturalmente il sistema immunitario. Gli studi mostrano che i consumatori di EVOO hanno il 40% di infezioni in meno. Rendi il nostro oro liquido il tuo scudo quotidiano contro le malattie." data-fr="Les polyphénols renforcent naturellement votre système immunitaire. Les études montrent que les consommateurs d'EVOO ont 40% d'infections en moins. Faites de notre or liquide votre bouclier quotidien contre la maladie.">
+                    Polyphenols strengthen your immune system naturally. Studies show EVOO consumers have 40% fewer infections. Make our liquid gold your daily shield against illness.
                   </p>
                 </div>
+                
                 <div class="benefit-card">
-                  <svg class="benefit-icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zM8 17.5c-.55 0-1-.45-1-1s.45-1 1-1 1 .45 1 1-.45 1-1 1zm8 0c-.55 0-1-.45-1-1s.45-1 1-1 1 .45 1 1-.45 1-1 1zm-4-3c-2.21 0-4-1.79-4-4s1.79-4 4-4 4 1.79 4 4-1.79 4-4 4z"/>
-                  </svg>
-                  <div class="benefit-name" data-en="Skin Health" data-pl="Zdrowie skóry" data-it="Salute della pelle" data-es="Salud de la piel" data-pt="Saúde da pele" data-ar="صحة البشرة">Skin Health</div>
-                  <p class="benefit-desc" data-en="EVOO’s antioxidants and fats nourish skin, reducing aging signs when used topically or consumed." data-pl="Antyoksydanty i tłuszcze w oliwie EVOO odżywiają skórę, zmniejszając oznaki starzenia przy stosowaniu miejscowym lub spożyciu." data-it="Gli antiossidanti e i grassi dell'EVOO nutrono la pelle, riducendo i segni dell'invecchiamento se usati topicamente o consumati." data-es="Los antioxidantes y grasas del EVOO nutren la piel, reduciendo los signos de envejecimiento cuando se usa tópicamente o se consume." data-pt="Os antioxidantes e gorduras do EVOO nutrem a pele, reduzindo os sinais de envelhecimento quando usados topicamente ou consumidos." data-ar="مضادات الأكسدة والدهون في زيت EVOO تغذي البشرة، مما يقلل من علامات الشيخوخة عند استخدامه موضعيًا أو تناوله.">
-                    EVOO’s antioxidants and fats nourish skin, reducing aging signs when used topically or consumed.
+                  <div class="text-4xl mb-4">⚡</div>
+                  <h3 class="text-[#2e5e2e] text-lg font-bold mb-3" data-en="Sustained Energy" data-pl="Trwała Energia" data-it="Energia Sostenuta" data-fr="Énergie Soutenue">Sustained Energy</h3>
+                  <p class="text-[#444] text-sm leading-relaxed" data-en="High-quality monounsaturated fats fuel your cells efficiently, providing sustained energy and improved mental clarity. Feel the vitality that comes from nourishing your body with liquid perfection." data-pl="Wysokiej jakości tłuszcze jednonienasycone efektywnie zasilają komórki, zapewniając trwałą energię i poprawioną jasność umysłu. Poczuj witalność, która płynie z odżywiania ciała płynną doskonałością." data-it="I grassi monoinsaturi di alta qualità alimentano le cellule in modo efficiente, fornendo energia sostenuta e maggiore chiarezza mentale. Senti la vitalità che deriva dal nutrire il corpo con la perfezione liquida." data-fr="Les graisses monoinsaturées de haute qualité alimentent vos cellules efficacement, fournissant une énergie soutenue et une clarté mentale améliorée. Ressentez la vitalité qui vient de nourrir votre corps avec la perfection liquide.">
+                    High-quality monounsaturated fats fuel your cells efficiently, providing sustained energy and improved mental clarity. Feel the vitality that comes from nourishing your body with liquid perfection.
                   </p>
                 </div>
               </div>
             </div>
+
+            <!-- Final CTA Section -->
             <div class="@container">
               <div class="flex flex-col justify-center items-center gap-6 px-4 py-10 @[480px]:gap-8 @[480px]:px-10 @[480px]:py-20">
                 <div class="flex flex-col gap-2 text-center">
                   <h1
                     class="text-[#141811] tracking-light text-[32px] font-bold leading-tight @[480px]:text-4xl @[480px]:font-black @[480px]:leading-tight @[480px]:tracking-[-0.033em] max-w-[720px]"
-                    data-en="Let's Discuss Your Olive Oil Needs"
-                    data-pl="Porozmawiajmy o Twoich Potrzebach Dotyczących Oliwy"
-                    data-it="Parliamo delle Tue Esigenze di Olio d'Oliva"
-                    data-es="Hablemos de Tus Necesidades de Aceite de Oliva"
-                    data-pt="Vamos Discutir Suas Necessidades de Azeite de Oliva"
-                    data-ar="لنتحدث عن احتياجاتك من زيت الزيتون"
+                    data-en="Ready to Taste 2,000 Years of Perfection?"
+                    data-pl="Gotowy Skosztować 2000 Lat Doskonałości?"
+                    data-it="Pronto ad Assaggiare 2.000 Anni di Perfezione?"
+                    data-fr="Prêt à Goûter 2 000 Ans de Perfection?"
                   >
-                    Let's Discuss Your Olive Oil Needs
+                    Ready to Taste 2,000 Years of Perfection?
                   </h1>
+                  <p
+                    class="text-[#758863] text-base font-normal leading-normal max-w-[720px]"
+                    data-en="Join the legacy that connects you to ancient wisdom and modern wellness. Every bottle of Laperla carries the soul of Tunisia's most resilient trees and the craftsmanship of multiple generations. Don't just choose olive oil—choose liquid history that transforms every meal into a Mediterranean celebration."
+                    data-pl="Dołącz do dziedzictwa, które łączy Cię ze starożytną mądrością i nowoczesnym dobrostanem. Każda butelka Laperla nosi duszę najbardziej odpornych drzew Tunezji i rzemiosło wielu pokoleń. Nie wybieraj po prostu oliwy—wybierz płynną historię, która przekształca każdy posiłek w śródziemnomorskie święto."
+                    data-it="Unisciti all'eredità che ti collega alla saggezza antica e al benessere moderno. Ogni bottiglia di Laperla porta l'anima degli alberi più resistenti della Tunisia e la maestria di multiple generazioni. Non scegliere solo olio d'oliva—scegli storia liquida che trasforma ogni pasto in una celebrazione mediterranea."
+                    data-fr="Rejoignez l'héritage qui vous connecte à la sagesse ancienne et au bien-être moderne. Chaque bouteille de Laperla porte l'âme des arbres les plus résistants de Tunisie et le savoir-faire de plusieurs générations. Ne choisissez pas seulement de l'huile d'olive—choisissez l'histoire liquide qui transforme chaque repas en célébration méditerranéenne."
+                  >
+                    Join the legacy that connects you to ancient wisdom and modern wellness. Every bottle of Laperla carries the soul of Tunisia's most resilient trees and the craftsmanship of multiple generations. Don't just choose olive oil—choose liquid history that transforms every meal into a Mediterranean celebration.
+                  </p>
                 </div>
                 <div class="flex flex-wrap justify-center gap-4">
                   <a
-                    href="https://wa.me/48530846928"
+                    href="https://wa.me/48530846928?text=I%20want%20to%20try%20Laperla%20Prestige%20Edition%20-%20Liquid%20Gold%20from%20500-year-old%20trees"
                     target="_blank"
-                    class="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-xl h-10 px-4 @[480px]:h-12 @[480px]:px-5 bg-[#80e619] text-[#141811] text-sm font-bold leading-normal tracking-[0.015em] @[480px]:text-base @[480px]:font-bold @[480px]:leading-normal @[480px]:tracking-[0.015em] no-underline"
+                    class="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-xl h-12 px-6 @[480px]:h-14 @[480px]:px-8 bg-[#80e619] text-[#141811] text-base font-bold leading-normal tracking-[0.015em] @[480px]:text-lg @[480px]:font-bold @[480px]:leading-normal @[480px]:tracking-[0.015em] no-underline shadow-lg hover:shadow-xl transition-all duration-300"
                   >
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp" class="w-5 h-5 mr-2">
-                    <span class="truncate" data-en="Contact Us via WhatsApp" data-pl="Skontaktuj Się przez WhatsApp" data-it="Contattaci via WhatsApp" data-es="Contáctanos vía WhatsApp" data-pt="Contate-nos via WhatsApp" data-ar="اتصل بنا عبر واتساب">Contact Us via WhatsApp</span>
+                    <span class="truncate" data-en="🌳 Try Prestige Edition" data-pl="🌳 Spróbuj Edycji Prestige" data-it="🌳 Prova Edizione Prestige" data-fr="🌳 Essayez l'Édition Prestige">🌳 Try Prestige Edition</span>
+                  </a>
+                  <a
+                    href="contact.html"
+                    class="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-xl h-12 px-6 @[480px]:h-14 @[480px]:px-8 bg-white border-2 border-[#80e619] text-[#80e619] text-base font-bold leading-normal tracking-[0.015em] @[480px]:text-lg @[480px]:font-bold @[480px]:leading-normal @[480px]:tracking-[0.015em] no-underline shadow-lg hover:shadow-xl transition-all duration-300"
+                  >
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp" class="w-6 h-6 mr-3">
+                    <span class="truncate" data-en="💬 Get Custom Quote" data-pl="💬 Otrzymaj Wycenę" data-it="💬 Ottieni Preventivo" data-fr="💬 Obtenir un Devis">💬 Get Custom Quote</span>
                   </a>
                 </div>
               </div>
@@ -625,10 +511,10 @@
           <div class="flex max-w-[960px] flex-1 flex-col">
             <footer class="flex flex-col gap-6 px-5 py-10 text-center @container">
               <div class="flex flex-wrap items-center justify-center gap-6 @[480px]:flex-row @[480px]:justify-around">
-                <a class="text-[#758863] text-base font-normal leading-normal min-w-40" href="home.html" data-en="Home" data-pl="Strona Główna" data-it="Home" data-es="Inicio" data-pt="Início" data-ar="الرئيسية">Home</a>
-                <a class="text-[#758863] text-base font-normal leading-normal min-w-40" href="product.html" data-en="Our Products" data-pl="Nasze Produkty" data-it="I nostri prodotti" data-es="Nuestros productos" data-pt="Nossos produtos" data-ar="منتجاتنا">Our Products</a>
-                <a class="text-[#758863] text-base font-normal leading-normal min-w-40" href="heritage.html" data-en="Heritage" data-pl="Dziedzictwo" data-it="Eredità" data-es="Patrimonio" data-pt="Herança" data-ar="التراث">Heritage</a>
-                <a class="text-[#758863] text-base font-normal leading-normal min-w-40" href="contact.html" data-en="Contact" data-pl="Kontakt" data-it="Contatti" data-es="Contacto" data-pt="Contato" data-ar="اتصل بنا">Contact</a>
+                <a class="text-[#758863] text-base font-normal leading-normal min-w-40" href="home.html" data-en="Home" data-pl="Strona Główna" data-it="Home" data-fr="Accueil">Home</a>
+                <a class="text-[#758863] text-base font-normal leading-normal min-w-40" href="product.html" data-en="Our Products" data-pl="Nasze Produkty" data-it="I nostri prodotti" data-fr="Nos produits">Our Products</a>
+                <a class="text-[#758863] text-base font-normal leading-normal min-w-40" href="heritage.html" data-en="Heritage" data-pl="Dziedzictwo" data-it="Eredità" data-fr="Patrimoine">Heritage</a>
+                <a class="text-[#758863] text-base font-normal leading-normal min-w-40" href="contact.html" data-en="Contact" data-pl="Kontakt" data-it="Contatti" data-fr="Contact">Contact</a>
               </div>
               <div class="flex flex-wrap justify-center gap-4">
                 <a href="https://instagram.com/yourprofile" target="_blank">
@@ -659,53 +545,134 @@
                   </div>
                 </a>
               </div>
-              <p class="text-[#758863] text-base font-normal leading-normal" data-en="© 2023 Laperla. All rights reserved." data-pl="© 2023 Laperla. Wszelkie prawa zastrzeżone." data-it="© 2023 Laperla. Tutti i diritti riservati." data-es="© 2023 Laperla. Todos los derechos reservados." data-pt="© 2023 Laperla. Todos os direitos reservados." data-ar="© 2023 لابيرلا. جميع الحقوق محفوظة.">
-                © 2023 Laperla. All rights reserved.
+              <p class="text-[#758863] text-base font-normal leading-normal" data-en="© 2025 Laperla. Bottling 2,000 years of Tunisian heritage. All rights reserved." data-pl="© 2025 Laperla. Zamykamy w butelkach 2000 lat tunezyjskiego dziedzictwa. Wszelkie prawa zastrzeżone." data-it="© 2025 Laperla. Imbottigliamo 2.000 anni di eredità tunisina. Tutti i diritti riservati." data-fr="© 2025 Laperla. Embouteillant 2 000 ans d'héritage tunisien. Tous droits réservés.">
+                © 2025 Laperla. Bottling 2,000 years of Tunisian heritage. All rights reserved.
               </p>
             </footer>
           </div>
         </footer>
       </div>
     </div>
+
     <script>
+      // Run immediately to prevent navigation without language
+      (function() {
+        // Get current language from URL, cookie, or default
+        const urlParams = new URLSearchParams(window.location.search);
+        const urlLang = urlParams.get('lang');
+        const savedLanguage = Cookies.get('selectedLanguage');
+        const currentLang = urlLang || savedLanguage || 'en';
+        
+        // Update all navigation links immediately
+        function updateAllLinks(lang) {
+          const links = document.querySelectorAll('a[href^="home.html"], a[href^="product.html"], a[href^="heritage.html"], a[href^="contact.html"], a[href^="index.html"]');
+          links.forEach(link => {
+            const url = new URL(link.href, window.location.origin);
+            url.searchParams.set('lang', lang);
+            link.href = url.toString();
+          });
+        }
+        
+        // Update links as soon as DOM is ready
+        if (document.readyState === 'loading') {
+          document.addEventListener('DOMContentLoaded', () => updateAllLinks(currentLang));
+        } else {
+          updateAllLinks(currentLang);
+        }
+      })();
+
       document.addEventListener('DOMContentLoaded', () => {
-        const translatableElements = document.querySelectorAll('[data-en][data-pl][data-it][data-es][data-pt][data-ar]');
+        const translatableElements = document.querySelectorAll('[data-en][data-pl][data-it][data-fr]');
         const languageButton = document.querySelector('.language-dropdown-button');
         const languageMenu = document.querySelector('.language-dropdown-menu');
         const languageOptions = document.querySelectorAll('.language-option');
         const selectedLanguageSpan = document.querySelector('.selected-language');
         const flagSpan = languageButton.querySelector('.fi');
-    
+        const metaDescription = document.querySelector('meta[name="description"]');
+
         function updateLanguage(lang) {
+          // Update text content
           translatableElements.forEach(element => {
             element.textContent = element.getAttribute(`data-${lang}`);
           });
+
+          // Update meta description
+          if (metaDescription) {
+            metaDescription.setAttribute('content', metaDescription.getAttribute(`data-${lang}`));
+          }
+
+          // Update selected language display
           const selectedOption = document.querySelector(`.language-option[data-lang="${lang}"]`);
           selectedLanguageSpan.textContent = selectedOption.textContent.trim();
-          flagSpan.className = `fi fi-${lang === 'ar' ? 'ma' : lang}`;
-          document.body.setAttribute('dir', lang === 'ar' ? 'rtl' : 'ltr');
-          localStorage.setItem('selectedLanguage', lang);
+          flagSpan.className = `fi fi-${lang === 'fr' ? 'fr' : lang}`;
+
+          // Update HTML lang attribute
+          document.documentElement.setAttribute('lang', lang);
+
+          // Save language to cookie
+          Cookies.set('selectedLanguage', lang, { expires: 7 });
+
+          // Update ALL links with lang parameter (including navigation, footer, and any other links)
+          const allLinks = document.querySelectorAll('a[href]');
+          allLinks.forEach(link => {
+            try {
+              const url = new URL(link.href, window.location.origin);
+              // Only update links to your site pages
+              if (url.hostname === window.location.hostname && 
+                  (url.pathname.endsWith('.html') || url.pathname === '/')) {
+                url.searchParams.set('lang', lang);
+                link.href = url.toString();
+              }
+            } catch (e) {
+              // Skip invalid URLs
+            }
+          });
+
+          // Close dropdown
           languageMenu.classList.remove('show');
         }
-    
+
+        // Toggle dropdown
         languageButton.addEventListener('click', () => {
           languageMenu.classList.toggle('show');
         });
-    
+
+        // Handle language selection
         languageOptions.forEach(option => {
           option.addEventListener('click', () => {
-            updateLanguage(option.getAttribute('data-lang'));
+            const lang = option.getAttribute('data-lang');
+            updateLanguage(lang);
+            // Update URL with language parameter
+            const url = new URL(window.location);
+            url.searchParams.set('lang', lang);
+            window.history.pushState({}, '', url);
           });
         });
-    
+
+        // Close dropdown when clicking outside
         document.addEventListener('click', (e) => {
           if (!languageButton.contains(e.target) && !languageMenu.contains(e.target)) {
             languageMenu.classList.remove('show');
           }
         });
-    
-        const savedLanguage = localStorage.getItem('selectedLanguage') || 'en';
-        updateLanguage(savedLanguage);
+
+        // Set initial language: use URL parameter, then cookie
+        const urlParams = new URLSearchParams(window.location.search);
+        const urlLang = urlParams.get('lang');
+        const savedLanguage = Cookies.get('selectedLanguage');
+        
+        if (urlLang && ['en', 'pl', 'it', 'fr'].includes(urlLang)) {
+          updateLanguage(urlLang);
+        } else if (savedLanguage && ['en', 'pl', 'it', 'fr'].includes(savedLanguage)) {
+          updateLanguage(savedLanguage);
+          // Update URL with language
+          const url = new URL(window.location);
+          url.searchParams.set('lang', savedLanguage);
+          window.history.replaceState({}, '', url);
+        } else {
+          // Default to English
+          updateLanguage('en');
+        }
       });
     </script>
   </body>
