@@ -1,32 +1,45 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-3QNYCWKF1J"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-      gtag('config', 'G-3QNYCWKF1J');
-    </script>
+<head>
     <meta charset="UTF-8">
+    <meta name="description" content="Contact Laperla for premium Chemlali olive oil. Get custom quotes for restaurants, hotels, and businesses. Experience 500 years of Tunisian heritage." data-en="Contact Laperla for premium Chemlali olive oil. Get custom quotes for restaurants, hotels, and businesses. Experience 500 years of Tunisian heritage." data-pl="Skontaktuj się z Laperla w sprawie premium oliwy Chemlali. Otrzymaj indywidualne wyceny dla restauracji, hoteli i firm. Doświadcz 500 lat tunezyjskiego dziedzictwa." />
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-      rel="stylesheet"
-      as="style"
-      onload="this.rel='stylesheet'"
-      href="https://fonts.googleapis.com/css2?display=swap&family=Epilogue%3Awght%40400%3B500%3B700%3B900&family=Noto+Sans%3Awght%40400%3B500%3B700%3B900&family=Amiri:wght@400;700&family=Lugrasimo&display=swap"
-    />
-    <!-- Add Flag Icons CSS for language flags -->
+    <link rel="stylesheet" as="style" onload="this.rel='stylesheet'" href="https://fonts.googleapis.com/css2?display=swap&family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:wght@400;500;600;700;800&family=Lugrasimo&display=swap" />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flag-icons/css/flag-icons.min.css" />
-    <title>Laperla Olive Oil - Contact</title>
+    <link rel="alternate" hreflang="en" href="https://laperlaoliveoil.com/contact.html?lang=en" />
+    <link rel="alternate" hreflang="pl" href="https://laperlaoliveoil.com/contact.html?lang=pl" />
+    <link rel="alternate" hreflang="x-default" href="https://laperlaoliveoil.com/contact.html?lang=en" />
+    <title>Contact Us | Premium Olive Oil Inquiries | Laperla</title>
     <link rel="icon" type="image/x-icon" href="data:image/x-icon;base64," />
     <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
     <link rel="stylesheet" href="assets/css/styles.css">
     <!-- Load js-cookie -->
     <script src="https://cdn.jsdelivr.net/npm/js-cookie@3.0.5/dist/js.cookie.min.js"></script>
+    <!-- SEO Meta Tags -->
+    <meta name="keywords" content="contact Laperla, olive oil inquiry, business quote, restaurant olive oil, premium EVOO supplier">
+
     <style>
-      /* Dropdown styles */
+      :root {
+        --olive-gold: #d4a017;
+        --olive-green: #2e5e2e;
+        --soft-green: #f8faf5;
+        --warm-white: #fefefe;
+        --text-dark: #2c2c2c;
+        --text-medium: #525252;
+        --text-light: #737373;
+      }
+
+      body {
+        font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+        line-height: 1.6;
+        color: var(--text-dark);
+      }
+
+      .playfair {
+        font-family: 'Playfair Display', serif;
+      }
+
       .language-dropdown {
         position: relative;
       }
@@ -34,25 +47,34 @@
         display: flex;
         align-items: center;
         gap: 0.5rem;
-        padding: 0.5rem 1rem;
-        background-color: #f2f4f0;
-        border-radius: 0.5rem;
+        padding: 0.75rem 1.25rem;
+        background: rgba(255, 255, 255, 0.95);
+        border: 1px solid rgba(212, 160, 23, 0.2);
+        border-radius: 12px;
         cursor: pointer;
         font-size: 0.875rem;
         font-weight: 500;
-        color: #141811;
+        color: var(--text-dark);
+        transition: all 0.3s ease;
+        backdrop-filter: blur(10px);
+      }
+      .language-dropdown-button:hover {
+        background: white;
+        border-color: var(--olive-gold);
+        box-shadow: 0 4px 12px rgba(212, 160, 23, 0.15);
       }
       .language-dropdown-menu {
         position: absolute;
         top: 100%;
         right: 0;
         margin-top: 0.5rem;
-        background-color: white;
-        border: 1px solid #e0e5dc;
-        border-radius: 0.5rem;
-        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        background: white;
+        border: 1px solid rgba(212, 160, 23, 0.2);
+        border-radius: 12px;
+        box-shadow: 0 10px 40px rgba(0, 0, 0, 0.15);
         display: none;
-        z-index: 10;
+        z-index: 50;
+        overflow: hidden;
       }
       .language-dropdown-menu.show {
         display: block;
@@ -61,39 +83,133 @@
         display: flex;
         align-items: center;
         gap: 0.5rem;
-        padding: 0.5rem 1rem;
+        padding: 0.75rem 1.25rem;
         cursor: pointer;
         font-size: 0.875rem;
-        color: #141811;
+        font-weight: 500;
+        color: var(--text-dark);
+        transition: all 0.2s ease;
       }
       .language-option:hover {
-        background-color: #f2f4f0;
+        background: var(--soft-green);
+        color: var(--olive-green);
       }
-      /* Ensure flag icons are properly sized */
       .fi {
         width: 20px;
         height: 15px;
+        border-radius: 2px;
       }
-      /* Form input styles */
-      .form-input {
-        border: 1px solid #e0e5dc;
-        border-radius: 0.5rem;
-        padding: 0.75rem;
+
+      .section-title {
+        font-family: 'Playfair Display', serif;
+        color: var(--olive-green);
+        font-size: 2.5rem;
+        font-weight: 700;
+        text-align: center;
+        position: relative;
+        margin-bottom: 3rem;
+        line-height: 1.2;
+      }
+
+      .section-title::after {
+        content: '';
+        width: 80px;
+        height: 4px;
+        background: linear-gradient(90deg, var(--olive-gold) 0%, var(--olive-green) 100%);
+        position: absolute;
+        bottom: -1rem;
+        left: 50%;
+        transform: translateX(-50%);
+        border-radius: 2px;
+      }
+
+      .form-input, .form-select {
+        border: 1px solid rgba(212, 160, 23, 0.2);
+        border-radius: 12px;
+        padding: 1rem 1.25rem;
         width: 100%;
         font-size: 0.875rem;
-        color: #141811;
+        color: var(--text-dark);
+        background: white;
+        transition: all 0.3s ease;
       }
-      .form-input:focus {
+
+      .form-input:focus, .form-select:focus {
         outline: none;
-        border-color: #80e619;
-        box-shadow: 0 0 0 3px rgba(128, 230, 25, 0.2);
+        border-color: var(--olive-gold);
+        box-shadow: 0 0 0 3px rgba(212, 160, 23, 0.15);
       }
+
       .form-label {
         font-size: 0.875rem;
-        font-weight: 500;
-        color: #141811;
-        margin-bottom: 0.25rem;
+        font-weight: 600;
+        color: var(--text-dark);
+        margin-bottom: 0.5rem;
+        display: block;
       }
+
+      .contact-card {
+        background: white;
+        border: 1px solid rgba(212, 160, 23, 0.1);
+        border-radius: 20px;
+        padding: 2.5rem;
+        box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
+        transition: all 0.4s ease;
+        height: 100%;
+      }
+
+      .contact-card:hover {
+        transform: translateY(-8px);
+        box-shadow: 0 20px 50px rgba(0, 0, 0, 0.15);
+        border-color: var(--olive-gold);
+      }
+
+      .cta-button {
+        background: linear-gradient(135deg, #80e619 0%, #6bc916 100%);
+        color: var(--olive-green);
+        padding: 1rem 2rem;
+        border-radius: 50px;
+        font-weight: 700;
+        text-decoration: none;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        transition: all 0.3s ease;
+        box-shadow: 0 8px 25px rgba(128, 230, 25, 0.3);
+        border: none;
+        cursor: pointer;
+        min-width: 200px;
+        width: 100%;
+      }
+
+      .cta-button:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 12px 35px rgba(128, 230, 25, 0.4);
+      }
+
+      .cta-button-outline {
+        background: white;
+        color: var(--olive-green);
+        border: 2px solid #80e619;
+        padding: 1rem 2rem;
+        border-radius: 50px;
+        font-weight: 700;
+        text-decoration: none;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        transition: all 0.3s ease;
+        box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+        min-width: 200px;
+      }
+
+      .cta-button-outline:hover {
+        background: #80e619;
+        color: var(--olive-green);
+        transform: translateY(-2px);
+        box-shadow: 0 12px 35px rgba(128, 230, 25, 0.3);
+      }
+
       /* Modal styles */
       #form-success-modal {
         display: none;
@@ -112,39 +228,61 @@
       }
       .modal-content {
         background-color: white;
-        padding: 1.5rem;
-        border-radius: 0.5rem;
+        padding: 2rem;
+        border-radius: 20px;
         max-width: 400px;
         width: 90%;
         text-align: center;
-        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        box-shadow: 0 20px 50px rgba(0, 0, 0, 0.2);
       }
       .modal-content p {
-        color: #141811;
+        color: var(--text-dark);
         font-size: 1rem;
-        margin-bottom: 1rem;
+        margin-bottom: 1.5rem;
+        line-height: 1.6;
       }
       .modal-content button {
-        background-color: #80e619;
-        color: #141811;
-        padding: 0.5rem 1rem;
-        border-radius: 0.5rem;
-        font-weight: bold;
+        background: var(--olive-gold);
+        color: white;
+        padding: 0.75rem 1.5rem;
+        border-radius: 12px;
+        font-weight: 600;
         cursor: pointer;
         border: none;
+        transition: all 0.3s ease;
       }
       .modal-content button:hover {
-        background-color: #70cc15;
+        background: #b8941a;
+        transform: translateY(-2px);
+      }
+
+      @media (max-width: 768px) {
+        .section-title {
+          font-size: 2rem;
+        }
+        
+        .contact-card {
+          padding: 2rem;
+        }
       }
     </style>
-  </head>
-  <body>
-    <div class="relative flex size-full min-h-screen flex-col bg-white group/design-root overflow-x-hidden" style='font-family: Epilogue, "Noto Sans", sans-serif;'>
+</head>
+<body class="bg-gray-50">
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-3QNYCWKF1J"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-3QNYCWKF1J');
+    </script>
+    
+    <div class="relative flex size-full min-h-screen flex-col bg-gradient-to-br from-gray-50 to-white group/design-root overflow-x-hidden">
       <div class="layout-container flex h-full grow flex-col">
-        <header class="flex items-center justify-between whitespace-nowrap border-b border-solid border-b-[#f2f4f0] px-10 py-3">
-          <a href="index.html" class="flex items-center gap-4 text-[#141811] no-underline">
-            <div class="size-4">
-              <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <!-- Enhanced Header -->
+        <header class="flex items-center justify-between whitespace-nowrap bg-white/95 backdrop-blur-md border-b border-gray-200/50 px-6 md:px-10 py-4 sticky top-0 z-40">
+          <a href="index.html" class="flex items-center gap-4 text-gray-900 no-underline">
+            <div class="size-8 p-1 bg-gradient-to-br from-yellow-400 to-yellow-600 rounded-lg">
+              <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg" class="w-full h-full text-white">
                 <g clip-path="url(#clip0_6_535)">
                   <path
                     fill-rule="evenodd"
@@ -159,21 +297,21 @@
               </svg>
             </div>
             <div class="flex flex-col">
-              <h2 class="text-[#141811] text-2xl font-bold leading-tight tracking-[-0.015em]" style="font-family: 'Lugrasimo', serif; font-weight: 1000; -webkit-font-smoothing: antialiased;">Laperla</h2>
-              <p class="text-[#758863] text-xs" data-en="Premium Extra Virgin Olive Oil" data-pl="Premium Oliwa Extra Virgin" data-it="Olio Extra Vergine Premium" data-fr="Huile d'Olive Extra Vierge Premium">Premium Extra Virgin Olive Oil</p>
+              <h2 class="text-gray-900 text-2xl font-bold leading-tight tracking-tight playfair">Laperla</h2>
+              <p class="text-gray-600 text-xs font-medium" data-en="History and health in every drop" data-pl="Historia i zdrowie w każdej kropli">History and health in every drop</p>
             </div>
           </a>
           <div class="flex flex-1 justify-end gap-8">
-            <div class="flex items-center gap-9">
-              <a class="text-[#141811] text-sm font-medium leading-normal" href="home.html" data-en="Home" data-pl="Strona Główna" data-it="Home" data-fr="Accueil">Home</a>
-              <a class="text-[#141811] text-sm font-medium leading-normal" href="product.html" data-en="Our Products" data-pl="Nasze Produkty" data-it="I nostri prodotti" data-fr="Nos produits">Our Products</a>
-              <a class="text-[#141811] text-sm font-medium leading-normal" href="heritage.html" data-en="Heritage" data-pl="Dziedzictwo" data-it="Eredità" data-fr="Patrimoine">Heritage</a>
-              <a class="text-[#141811] text-sm font-medium leading-normal" href="contact.html" data-en="Contact" data-pl="Kontakt" data-it="Contatti" data-fr="Contact">Contact</a>
+            <div class="hidden md:flex items-center gap-8">
+              <a class="text-gray-700 text-sm font-semibold leading-normal hover:text-yellow-600 transition-colors" href="home.html" data-en="Home" data-pl="Strona Główna">Home</a>
+              <a class="text-gray-700 text-sm font-semibold leading-normal hover:text-yellow-600 transition-colors" href="product.html" data-en="Our Products" data-pl="Nasze Produkty">Our Products</a>
+              <a class="text-gray-700 text-sm font-semibold leading-normal hover:text-yellow-600 transition-colors" href="heritage.html" data-en="Our Story" data-pl="Nasza Historia">Our Story</a>
+              <a class="text-gray-700 text-sm font-semibold leading-normal hover:text-yellow-600 transition-colors" href="contact.html" data-en="Contact" data-pl="Kontakt">Contact</a>
             </div>
             <div class="language-dropdown">
               <button class="language-dropdown-button">
                 <span class="fi fi-us"></span>
-                <span class="selected-language">English</span>
+                <span class="selected-language font-semibold">English</span>
                 <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
                 </svg>
@@ -187,357 +325,214 @@
                   <span class="fi fi-pl"></span>
                   Polski
                 </div>
-                <div class="language-option" data-lang="it">
-                  <span class="fi fi-it"></span>
-                  Italiano
-                </div>
-                <div class="language-option" data-lang="fr">
-                  <span class="fi fi-fr"></span>
-                  Français
-                </div>
               </div>
             </div>
           </div>
         </header>
-        <div class="px-40 flex flex-1 justify-center py-5">
-          <div class="layout-content-container flex flex-col max-w-[960px] flex-1">
-            <div class="flex flex-col gap-10 px-4 py-10 @container">
-              <div class="flex flex-col gap-4">
-                <h1
-                  class="text-[#141811] tracking-light text-[32px] font-bold leading-tight @[480px]:text-4xl @[480px]:font-black @[480px]:leading-tight @[480px]:tracking-[-0.033em] max-w-[720px]"
-                  data-en="Contact Us"
-                  data-pl="Skontaktuj Się z Nami"
-                  data-it="Contattaci"
-                  data-fr="Contactez-nous"
-                >
-                  Contact Us
-                </h1>
-                <p
-                  class="text-[#141811] text-base font-normal leading-normal max-w-[720px]"
-                  data-en="We're here to assist you with all your olive oil needs. Fill out our form below, and let's start the conversation!"
-                  data-pl="Jesteśmy tu, aby pomóc Ci ze wszystkimi potrzebami dotyczącymi oliwy. Wypełnij formularz poniżej, i zacznijmy rozmowę!"
-                  data-it="Siamo qui per assisterti con tutte le tue esigenze di olio d'oliva. Compila il nostro modulo qui sotto, e iniziamo la conversazione!"
-                  data-fr="Nous sommes là pour vous aider avec tous vos besoins en huile d'olive. Remplissez notre formulaire ci-dessous, et commençons la conversation!"
-                >
-                  We're here to assist you with all your olive oil needs. Fill out our form below, and let's start the conversation!
-                </p>
+
+        <!-- Main Content -->
+        <div class="flex-1 max-w-7xl mx-auto px-6 md:px-10 py-8">
+          <!-- Hero Section -->
+          <div class="mb-16 text-center">
+            <h1 class="section-title" data-en="Contact Us" data-pl="Skontaktuj Się z Nami">Contact Us</h1>
+            <p class="text-gray-600 text-lg leading-relaxed max-w-3xl mx-auto" data-en="We're here to assist you with all your olive oil needs. Fill out our form below, and let's start the conversation!" data-pl="Jesteśmy tu, aby pomóc Ci ze wszystkimi potrzebami dotyczącymi oliwy. Wypełnij formularz poniżej, i zacznijmy rozmowę!">
+              We're here to assist you with all your olive oil needs. Fill out our form below, and let's start the conversation!
+            </p>
+          </div>
+
+          <!-- Contact Information -->
+          <div class="mb-16 text-center">
+            <div class="contact-card max-w-md mx-auto">
+              <div class="w-16 h-16 mx-auto mb-6 bg-gradient-to-br from-yellow-400 to-yellow-600 rounded-2xl flex items-center justify-center">
+                <span class="text-2xl">📧</span>
               </div>
-              <div class="flex flex-col gap-6">
-                <div class="flex flex-col gap-2">
-                  <p
-                    class="text-[#758863] text-base font-normal leading-normal"
-                  >
-                  </p>
-                  <p
-                    class="text-[#758863] text-base font-normal leading-normal"
-                    data-en="Email: info@laperlaoliveoil.com"
-                    data-pl="Email: info@laperlaoliveoil.com"
-                    data-it="Email: info@laperlaoliveoil.com"
-                    data-fr="Email: info@laperlaoliveoil.com"
-                  >
-                    Email: info@laperlaoliveoil.com
-                  </p>
-                </div>
-                <!-- Contact Form -->
-                <div class="flex flex-col gap-6">
-                  <h2
-                    class="text-[#141811] text-lg font-bold"
-                    data-en="Tell Us Your Needs"
-                    data-pl="Opowiedz Nam o Swoich Potrzebach"
-                    data-it="Dicci le Tue Esigenze"
-                    data-fr="Dites-nous Vos Besoins"
-                  >
-                    Tell Us Your Needs
-                  </h2>
-                  <!-- FormSubmit Integration: Sends submissions to info@laperlaoliveoil.com. After first submission, check your inbox and click the verification link from FormSubmit to activate. See https://formsubmit.co for details. -->
-                  <!-- Alternative Free Services: Web3Forms (250 submissions/month, https://web3forms.com), FormEasy (Google Sheets storage, https://github.com/devapt/FormEasy), Basin (1 form, unlimited submissions, https://usebasin.com). -->
-                  <form
-                    id="contact-form"
-                    action="https://formsubmit.co/info@laperlaoliveoil.com"
-                    method="POST"
-                    class="flex flex-col gap-4"
-                  >
-                    <!-- FormSubmit hidden fields -->
-                    <input type="hidden" name="_subject" value="New Contact Form Submission - Laperla Olive Oil">
-                    <input type="hidden" name="_replyto" value="info@laperlaoliveoil.com">
-                    <input type="hidden" name="_captcha" value="true">
-                    <input type="hidden" name="_next" value="https://your-site.com/contact.html">
-                    <div class="flex flex-col">
-                      <label
-                        class="form-label"
-                        data-en="Name *"
-                        data-pl="Imię *"
-                        data-it="Nome *"
-                        data-fr="Nom *"
-                      >
-                        Name *
-                      </label>
-                      <input
-                        type="text"
-                        name="name"
-                        class="form-input"
-                        required
-                        data-placeholder-en="Enter your name"
-                        data-placeholder-pl="Wpisz swoje imię"
-                        data-placeholder-it="Inserisci il tuo nome"
-                        data-placeholder-fr="Entrez votre nom"
-                      />
-                    </div>
-                    <div class="flex flex-col">
-                      <label
-                        class="form-label"
-                        data-en="Email *"
-                        data-pl="Email *"
-                        data-it="Email *"
-                        data-fr="Email *"
-                      >
-                        Email *
-                      </label>
-                      <input
-                        type="email"
-                        name="email"
-                        class="form-input"
-                        required
-                        data-placeholder-en="Enter your email"
-                        data-placeholder-pl="Wpisz swój email"
-                        data-placeholder-it="Inserisci la tua email"
-                        data-placeholder-fr="Entrez votre email"
-                      />
-                    </div>
-                    <div class="flex flex-col">
-                      <label
-                        class="form-label"
-                        data-en="Phone (Optional)"
-                        data-pl="Telefon (Opcjonalny)"
-                        data-it="Telefono (Opzionale)"
-                        data-fr="Téléphone (Optionnel)"
-                      >
-                        Phone (Optional)
-                      </label>
-                      <input
-                        type="tel"
-                        name="phone"
-                        class="form-input"
-                        data-placeholder-en="Enter your phone number"
-                        data-placeholder-pl="Wpisz swój numer telefonu"
-                        data-placeholder-it="Inserisci il tuo numero di telefono"
-                        data-placeholder-fr="Entrez votre numéro de téléphone"
-                      />
-                    </div>
-                    <div class="flex flex-col">
-                      <label
-                        class="form-label"
-                        data-en="Type of Business *"
-                        data-pl="Rodzaj działalności *"
-                        data-it="Tipo di attività *"
-                        data-fr="Type d'entreprise *"
-                      >
-                        Type of Business *
-                      </label>
-                      <select
-                        name="business_type"
-                        class="form-input"
-                        required
-                        data-placeholder-en="Select business type"
-                        data-placeholder-pl="Wybierz rodzaj działalności"
-                        data-placeholder-it="Seleziona il tipo di attività"
-                        data-placeholder-fr="Sélectionnez le type d'entreprise"
-                      >
-                        <option value="" disabled selected data-en="Select business type" data-pl="Wybierz rodzaj działalności" data-it="Seleziona il tipo di attività" data-fr="Sélectionnez le type d'entreprise">Select business type</option>
-                        <option value="Retail" data-en="Retail" data-pl="Handel detaliczny" data-it="Vendita al dettaglio" data-fr="Commerce de détail">Retail</option>
-                        <option value="Wholesale" data-en="Wholesale" data-pl="Hurt" data-it="Vendita all'ingrosso" data-fr="Commerce de gros">Wholesale</option>
-                        <option value="Restaurant" data-en="Restaurant" data-pl="Restauracja" data-it="Ristorante" data-fr="Restaurant">Restaurant</option>
-                        <option value="Other" data-en="Other" data-pl="Inne" data-it="Altro" data-fr="Autre">Other</option>
-                      </select>
-                    </div>
-                    <div id="other-business-type" class="flex flex-col hidden">
-                      <label
-                        class="form-label"
-                        data-en="Specify Other Business Type *"
-                        data-pl="Określ inny rodzaj działalności *"
-                        data-it="Specifica altro tipo di attività *"
-                        data-fr="Spécifiez autre type d'entreprise *"
-                      >
-                        Specify Other Business Type *
-                      </label>
-                      <input
-                        type="text"
-                        name="other_business_type"
-                        class="form-input"
-                        data-placeholder-en="Describe your business type"
-                        data-placeholder-pl="Opisz swój rodzaj działalności"
-                        data-placeholder-it="Descrivi il tuo tipo di attività"
-                        data-placeholder-fr="Décrivez votre type d'entreprise"
-                      />
-                    </div>
-                    <div class="flex flex-col">
-                      <label
-                        class="form-label"
-                        data-en="Location *"
-                        data-pl="Lokalizacja *"
-                        data-it="Posizione *"
-                        data-fr="Lieu *"
-                      >
-                        Location *
-                      </label>
-                      <input
-                        type="text"
-                        name="location"
-                        class="form-input"
-                        required
-                        data-placeholder-en="Enter your city/country"
-                        data-placeholder-pl="Wpisz swoje miasto/kraj"
-                        data-placeholder-it="Inserisci la tua città/paese"
-                        data-placeholder-fr="Entrez votre ville/pays"
-                      />
-                    </div>
-                    <div class="flex flex-col">
-                      <label
-                        class="form-label"
-                        data-en="Description of Needs *"
-                        data-pl="Opis potrzeb *"
-                        data-it="Descrizione delle esigenze *"
-                        data-fr="Description des besoins *"
-                      >
-                        Description of Needs *
-                      </label>
-                      <textarea
-                        name="description"
-                        class="form-input"
-                        rows="5"
-                        required
-                        data-placeholder-en="Tell us about your olive oil needs"
-                        data-placeholder-pl="Opowiedz nam o swoich potrzebach dotyczących oliwy"
-                        data-placeholder-it="Dicci delle tue esigenze di olio d'oliva"
-                        data-placeholder-fr="Parlez-nous de vos besoins en huile d'olive"
-                      ></textarea>
-                    </div>
-                    <button
-                      type="submit"
-                      class="flex items-center justify-center rounded-xl h-12 px-5 bg-[#80e619] text-[#141811] text-base font-bold leading-normal tracking-[0.015em] cursor-pointer"
-                      data-en="Submit"
-                      data-pl="Wyślij"
-                      data-it="Invia"
-                      data-fr="Soumettre"
-                    >
-                      Submit
-                    </button>
-                  </form>
-                </div>
-              </div>
-            </div>
-            <div class="@container">
-              <div class="flex flex-col justify-center items-center gap-6 px-4 py-10 @[480px]:gap-8 @[480px]:px-10 @[480px]:py-20">
-                <div class="flex flex-col gap-2 text-center">
-                  <h1
-                    class="text-[#141811] tracking-light text-[32px] font-bold leading-tight @[480px]:text-4xl @[480px]:font-black @[480px]:leading-tight @[480px]:tracking-[-0.033em] max-w-[720px]"
-                    data-en="Ready to Experience Liquid Gold?"
-                    data-pl="Gotowy na Doświadczenie Płynnego Złota?"
-                    data-it="Pronto a Sperimentare l'Oro Liquido?"
-                    data-fr="Prêt à Découvrir l'Or Liquide?"
-                  >
-                    Ready to Experience Liquid Gold?
-                  </h1>
-                  <p
-                    class="text-[#758863] text-base font-normal leading-normal max-w-[720px]"
-                    data-en="Join thousands of satisfied customers who've discovered the perfect olive oil. Try now and taste the difference that award-winning quality makes."
-                    data-pl="Dołącz do tysięcy zadowolonych klientów, którzy odkryli idealną oliwę. Spróbuj teraz i poczuj różnicę, jaką daje nagrodzona jakość."
-                    data-it="Unisciti a migliaia di clienti soddisfatti che hanno scoperto l'olio d'oliva perfetto. Prova ora e assapora la differenza che fa la qualità premiata."
-                    data-fr="Rejoignez des milliers de clients satisfaits qui ont découvert l'huile d'olive parfaite. Essayez maintenant et goûtez la différence que fait une qualité primée."
-                  >
-                    Join thousands of satisfied customers who've discovered the perfect olive oil. Try now and taste the difference that award-winning quality makes.
-                  </p>
-                </div>
-                <div class="flex flex-wrap justify-center gap-4">
-                  <a
-                    href="https://wa.me/48530846928?text=I%20want%20to%20try%20Laperla%20Prestige%20Edition"
-                    target="_blank"
-                    class="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-xl h-12 px-6 @[480px]:h-14 @[480px]:px-8 bg-[#80e619] text-[#141811] text-base font-bold leading-normal tracking-[0.015em] @[480px]:text-lg @[480px]:font-bold @[480px]:leading-normal @[480px]:tracking-[0.015em] no-underline shadow-lg hover:shadow-xl transition-all duration-300"
-                  >
-                    <span class="truncate" data-en="🛒 Try Prestige Edition Now" data-pl="🛒 Spróbuj Edycji Prestige Teraz" data-it="🛒 Prova Edizione Prestige Ora" data-fr="🛒 Essayez l'Édition Prestige Maintenant">🛒 Try Prestige Edition Now</span>
-                  </a>
-                  <a
-                    href="contact.html"
-                    class="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-xl h-12 px-6 @[480px]:h-14 @[480px]:px-8 bg-white border-2 border-[#80e619] text-[#80e619] text-base font-bold leading-normal tracking-[0.015em] @[480px]:text-lg @[480px]:font-bold @[480px]:leading-normal @[480px]:tracking-[0.015em] no-underline shadow-lg hover:shadow-xl transition-all duration-300"
-                  >
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp" class="w-6 h-6 mr-3">
-                    <span class="truncate" data-en="📧 Get Custom Quote" data-pl="📧 Otrzymaj Wycenę" data-it="📧 Ottieni Preventivo" data-fr="📧 Obtenir un Devis">📧 Get Custom Quote</span>
-                  </a>
-                </div>
-              </div>
+              <h3 class="text-gray-900 text-xl font-bold mb-4 playfair" data-en="Get in Touch" data-pl="Skontaktuj Się">Get in Touch</h3>
+              <p class="text-gray-600 leading-relaxed" data-en="Email: info@laperlaoliveoil.com" data-pl="Email: info@laperlaoliveoil.com">
+                Email: info@laperlaoliveoil.com
+              </p>
             </div>
           </div>
+
+          <!-- Contact Form -->
+          <div class="mb-16">
+            <div class="contact-card max-w-2xl mx-auto">
+              <h2 class="text-gray-900 text-2xl font-bold mb-6 playfair text-center" data-en="Tell Us Your Needs" data-pl="Opowiedz Nam o Swoich Potrzebach">Tell Us Your Needs</h2>
+              
+              <!-- FormSubmit Integration -->
+              <form
+                id="contact-form"
+                action="https://formsubmit.co/info@laperlaoliveoil.com"
+                method="POST"
+                class="space-y-6"
+              >
+                <!-- FormSubmit hidden fields -->
+                <input type="hidden" name="_subject" value="New Contact Form Submission - Laperla Olive Oil">
+                <input type="hidden" name="_replyto" value="info@laperlaoliveoil.com">
+                <input type="hidden" name="_captcha" value="true">
+                <input type="hidden" name="_next" value="https://your-site.com/contact.html">
+                
+                <div>
+                  <label class="form-label" data-en="Name *" data-pl="Imię *">Name *</label>
+                  <input
+                    type="text"
+                    name="name"
+                    class="form-input"
+                    required
+                    data-placeholder-en="Enter your name"
+                    data-placeholder-pl="Wpisz swoje imię"
+                    placeholder="Enter your name"
+                  />
+                </div>
+                
+                <div>
+                  <label class="form-label" data-en="Email *" data-pl="Email *">Email *</label>
+                  <input
+                    type="email"
+                    name="email"
+                    class="form-input"
+                    required
+                    data-placeholder-en="Enter your email"
+                    data-placeholder-pl="Wpisz swój email"
+                    placeholder="Enter your email"
+                  />
+                </div>
+                
+                <div>
+                  <label class="form-label" data-en="Phone (Optional)" data-pl="Telefon (Opcjonalny)">Phone (Optional)</label>
+                  <input
+                    type="tel"
+                    name="phone"
+                    class="form-input"
+                    data-placeholder-en="Enter your phone number"
+                    data-placeholder-pl="Wpisz swój numer telefonu"
+                    placeholder="Enter your phone number"
+                  />
+                </div>
+                
+                <div>
+                  <label class="form-label" data-en="Type of Business *" data-pl="Rodzaj działalności *">Type of Business *</label>
+                  <select name="business_type" class="form-select" required>
+                    <option value="" disabled selected data-en="Select business type" data-pl="Wybierz rodzaj działalności">Select business type</option>
+                    <option value="Retail" data-en="Retail" data-pl="Handel detaliczny">Retail</option>
+                    <option value="Wholesale" data-en="Wholesale" data-pl="Hurt">Wholesale</option>
+                    <option value="Restaurant" data-en="Restaurant" data-pl="Restauracja">Restaurant</option>
+                    <option value="Other" data-en="Other" data-pl="Inne">Other</option>
+                  </select>
+                </div>
+                
+                <div id="other-business-type" class="hidden">
+                  <label class="form-label" data-en="Specify Other Business Type *" data-pl="Określ inny rodzaj działalności *">Specify Other Business Type *</label>
+                  <input
+                    type="text"
+                    name="other_business_type"
+                    class="form-input"
+                    data-placeholder-en="Describe your business type"
+                    data-placeholder-pl="Opisz swój rodzaj działalności"
+                    placeholder="Describe your business type"
+                  />
+                </div>
+                
+                <div>
+                  <label class="form-label" data-en="Location *" data-pl="Lokalizacja *">Location *</label>
+                  <input
+                    type="text"
+                    name="location"
+                    class="form-input"
+                    required
+                    data-placeholder-en="Enter your city/country"
+                    data-placeholder-pl="Wpisz swoje miasto/kraj"
+                    placeholder="Enter your city/country"
+                  />
+                </div>
+                
+                <div>
+                  <label class="form-label" data-en="Description of Needs *" data-pl="Opis potrzeb *">Description of Needs *</label>
+                  <textarea
+                    name="description"
+                    class="form-input"
+                    rows="5"
+                    required
+                    data-placeholder-en="Tell us about your olive oil needs"
+                    data-placeholder-pl="Opowiedz nam o swoich potrzebach dotyczących oliwy"
+                    placeholder="Tell us about your olive oil needs"
+                  ></textarea>
+                </div>
+                
+                <button type="submit" class="cta-button text-lg">
+                  <span data-en="Submit" data-pl="Wyślij">Submit</span>
+                </button>
+              </form>
+            </div>
+          </div>
+
+          <!-- CTA Section -->
+          <section class="text-center bg-gradient-to-br from-yellow-50 to-green-50 rounded-3xl p-8 md:p-12">
+            <h2 class="text-gray-900 text-3xl md:text-4xl font-bold mb-6 playfair" data-en="Ready to Experience Liquid Gold?" data-pl="Gotowy na Doświadczenie Płynnego Złota?">
+              Ready to Experience Liquid Gold?
+            </h2>
+            <p class="text-gray-600 text-lg leading-relaxed max-w-3xl mx-auto mb-10" data-en="Join thousands of satisfied customers who've discovered the perfect olive oil. Try now and taste the difference that 500 years of craftsmanship makes." data-pl="Dołącz do tysięcy zadowolonych klientów, którzy odkryli idealną oliwę. Spróbuj teraz i poczuj różnicę, jaką daje 500 lat rzemiosła.">
+              Join thousands of satisfied customers who've discovered the perfect olive oil. Try now and taste the difference that 500 years of craftsmanship makes.
+            </p>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center items-center">
+              <a href="https://wa.me/48530846928?text=I%20want%20to%20try%20Laperla%20Prestige%20Edition" target="_blank" class="cta-button text-lg">
+                <span data-en="🛒 Try Prestige Edition Now" data-pl="🛒 Spróbuj Edycji Prestige Teraz">🛒 Try Prestige Edition Now</span>
+              </a>
+              <a href="https://wa.me/48530846928?text=I%20need%20a%20custom%20quote%20for%20Laperla%20olive%20oil" target="_blank" class="cta-button-outline text-lg">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp" class="w-5 h-5 mr-2">
+                <span data-en="📧 Get Custom Quote" data-pl="📧 Otrzymaj Wycenę">📧 Get Custom Quote</span>
+              </a>
+            </div>
+          </section>
         </div>
+
         <!-- Form Success Modal -->
         <div id="form-success-modal">
           <div class="modal-content">
-            <p
-              id="form-success-message"
-              data-en="Thank you! Your submission has been received. We will contact you soon."
-              data-pl="Dziękujemy! Twoje zgłoszenie zostało otrzymane. Skontaktujemy się wkrótce."
-              data-it="Grazie! La tua richiesta è stata ricevuta. Ti contatteremo presto."
-              data-fr="Merci! Votre soumission a été reçue. Nous vous contacterons bientôt."
-            ></p>
-            <button id="close-modal" data-en="Close" data-pl="Zamknij" data-it="Chiudi" data-fr="Fermer">Close</button>
+            <p id="form-success-message" data-en="Thank you! Your submission has been received. We will contact you soon." data-pl="Dziękujemy! Twoje zgłoszenie zostało otrzymane. Skontaktujemy się wkrótce.">
+              Thank you! Your submission has been received. We will contact you soon.
+            </p>
+            <button id="close-modal" data-en="Close" data-pl="Zamknij">Close</button>
           </div>
         </div>
-        <footer class="flex justify-center">
-          <div class="flex max-w-[960px] flex-1 flex-col">
-            <footer class="flex flex-col gap-6 px-5 py-10 text-center @container">
-              <div class="flex flex-wrap items-center justify-center gap-6 @[480px]:flex-row @[480px]:justify-around">
-                <a class="text-[#758863] text-base font-normal leading-normal min-w-40" href="home.html" data-en="Home" data-pl="Strona Główna" data-it="Home" data-fr="Accueil">Home</a>
-                <a class="text-[#758863] text-base font-normal leading-normal min-w-40" href="product.html" data-en="Our Products" data-pl="Nasze Produkty" data-it="I nostri prodotti" data-fr="Nos produits">Our Products</a>
-                <a class="text-[#758863] text-base font-normal leading-normal min-w-40" href="heritage.html" data-en="Heritage" data-pl="Dziedzictwo" data-it="Eredità" data-fr="Patrimoine">Heritage</a>
-                <a class="text-[#758863] text-base font-normal leading-normal min-w-40" href="contact.html" data-en="Contact" data-pl="Kontakt" data-it="Contatti" data-fr="Contact">Contact</a>
-              </div>
-              <div class="flex flex-wrap justify-center gap-4">
-                <a href="https://instagram.com/yourprofile" target="_blank">
-                  <div class="text-[#758863]" data-icon="InstagramLogo" data-size="24px" data-weight="regular">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="24px" height="24px" fill="currentColor" viewBox="0 0 256 256">
-                      <path
-                        d="M128,80a48,48,0,1,0,48,48A48.05,48.05,0,0,0,128,80Zm0,80a32,32,0,1,1,32-32A32,32,0,0,1,128,160ZM176,24H80A56.06,56.06,0,0,0,24,80v96a56.06,56.06,0,0,0,56,56h96a56.06,56.06,0,0,0,56-56V80A56.06,56.06,0,0,0,176,24Zm40,152a40,40,0,0,1-40,40H80a40,40,0,0,1-40-40V80A40,40,0,0,1,80,40h96a40,40,0,0,1,40,40ZM192,76a12,12,0,1,1-12-12A12,12,0,0,1,192,76Z"
-                      ></path>
-                    </svg>
-                  </div>
-                </a>
-                <a href="https://facebook.com/yourprofile" target="_blank">
-                  <div class="text-[#758863]" data-icon="FacebookLogo" data-size="24px" data-weight="regular">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="24px" height="24px" fill="currentColor" viewBox="0 0 256 256">
-                      <path
-                        d="M128,24A104,104,0,1,0,232,128,104.11,104.11,0,0,0,128,24Zm8,191.63V152h24a8,8,0,0,0,0-16H136V112a16,16,0,0,1,16-16h16a8,8,0,0,0,0-16H152a32,32,0,0,0-32,32v24H96a8,8,0,0,0,0,16h24v63.63a88,88,0,1,1,16,0Z"
-                      ></path>
-                    </svg>
-                  </div>
-                </a>
-                <a href="https://twitter.com/yourprofile" target="_blank">
-                  <div class="text-[#758863]" data-icon="TwitterLogo" data-size="24px" data-weight="regular">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="24px" height="24px" fill="currentColor" viewBox="0 0 256 256">
-                      <path
-                        d="M247.39,68.94A8,8,0,0,0,240,64H209.57A48.66,48.66,0,0,0,168.1,40a46.91,46.91,0,0,0-33.75,13.7A47.9,47.9,0,0,0,120,88v6.09C79.74,83.47,46.81,50.72,46.46,50.37a8,8,0,0,0-13.65,4.92c-4.31,47.79,9.57,79.77,22,98.18a110.93,110.93,0,0,0,21.88,24.2c-15.23,17.53-39.21,26.74-39.47,26.84a8,8,0,0,0-3.85,11.93c.75,1.12,3.75,5.05,11.08,8.72C53.51,229.7,65.48,232,80,232c70.67,0,129.72-54.42,135.75-124.44l29.91-29.9A8,8,0,0,0,247.39,68.94Zm-45,29.41a8,8,0,0,0-2.32,5.14C196,166.58,143.28,216,80,216c-10.56,0-18-1.4-23.22-3.08,11.51-6.25,27.56-17,37.88-32.48A8,8,0,0,0,92,169.08c-.47-.27-43.91-26.34-44-96,16,13,45.25,33.17,78.67,38.79A8,8,0,0,0,136,104V88a32,32,0,0,1,9.6-22.92A30.94,30.94,0,0,1,167.9,56c12.66.16,24.49,7.88,29.44,19.21A8,8,0,0,0,204.67,80h16Z"
-                      ></path>
-                    </svg>
-                  </div>
-                </a>
-              </div>
-              <p class="text-[#758863] text-base font-normal leading-normal" data-en="© 2025 Laperla. All rights reserved." data-pl="© 2025 Laperla. Wszelkie prawa zastrzeżone." data-it="© 2025 Laperla. Tutti i diritti riservati." data-fr="© 2025 Laperla. Tous droits réservés.">
-                © 2025 Laperla. All rights reserved.
-              </p>
-            </footer>
+
+        <!-- Enhanced Footer -->
+        <footer class="bg-white border-t border-gray-200">
+          <div class="max-w-7xl mx-auto px-6 md:px-10 py-12">
+            <div class="flex flex-wrap items-center justify-center gap-8 mb-8">
+              <a class="text-gray-600 hover:text-yellow-600 font-medium transition-colors" href="home.html" data-en="Home" data-pl="Strona Główna">Home</a>
+              <a class="text-gray-600 hover:text-yellow-600 font-medium transition-colors" href="product.html" data-en="Our Products" data-pl="Nasze Produkty">Our Products</a>
+              <a class="text-gray-600 hover:text-yellow-600 font-medium transition-colors" href="heritage.html" data-en="Our Story" data-pl="Nasza Historia">Our Story</a>
+              <a class="text-gray-600 hover:text-yellow-600 font-medium transition-colors" href="contact.html" data-en="Contact" data-pl="Kontakt">Contact</a>
+            </div>
+            <div class="flex justify-center gap-6 mb-8">
+              <a href="https://instagram.com/yourprofile" target="_blank" class="text-gray-400 hover:text-yellow-600 transition-colors">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 256 256">
+                  <path d="M128,80a48,48,0,1,0,48,48A48.05,48.05,0,0,0,128,80Zm0,80a32,32,0,1,1,32-32A32,32,0,0,1,128,160ZM176,24H80A56.06,56.06,0,0,0,24,80v96a56.06,56.06,0,0,0,56,56h96a56.06,56.06,0,0,0,56-56V80A56.06,56.06,0,0,0,176,24Zm40,152a40,40,0,0,1-40,40H80a40,40,0,0,1-40-40V80A40,40,0,0,1,80,40h96a40,40,0,0,1,40,40ZM192,76a12,12,0,1,1-12-12A12,12,0,0,1,192,76Z"></path>
+                </svg>
+              </a>
+              <a href="https://facebook.com/yourprofile" target="_blank" class="text-gray-400 hover:text-yellow-600 transition-colors">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 256 256">
+                  <path d="M128,24A104,104,0,1,0,232,128,104.11,104.11,0,0,0,128,24Zm8,191.63V152h24a8,8,0,0,0,0-16H136V112a16,16,0,1,1,16-16h16a8,8,0,0,0,0-16H152a32,32,0,0,0-32,32v24H96a8,8,0,0,0,0,16h24v63.63a88,88,0,1,1,16,0Z"></path>
+                </svg>
+              </a>
+            </div>
+            <p class="text-center text-gray-500 font-medium" data-en="© 2025 Laperla. History and health in every drop. All rights reserved." data-pl="© 2025 Laperla. Historia i zdrowie w każdej kropli. Wszelkie prawa zastrzeżone.">
+              © 2025 Laperla. History and health in every drop. All rights reserved.
+            </p>
           </div>
         </footer>
       </div>
     </div>
 
+    <!-- Enhanced JavaScript -->
     <script>
-      // Run immediately to prevent navigation without language
+      // Language management
       (function() {
-        // Get current language from URL, cookie, or default
         const urlParams = new URLSearchParams(window.location.search);
         const urlLang = urlParams.get('lang');
         const savedLanguage = Cookies.get('selectedLanguage');
         const currentLang = urlLang || savedLanguage || 'en';
         
-        // Update all navigation links immediately
         function updateAllLinks(lang) {
           const links = document.querySelectorAll('a[href^="home.html"], a[href^="product.html"], a[href^="heritage.html"], a[href^="contact.html"], a[href^="index.html"]');
           links.forEach(link => {
@@ -547,7 +542,6 @@
           });
         }
         
-        // Update links as soon as DOM is ready
         if (document.readyState === 'loading') {
           document.addEventListener('DOMContentLoaded', () => updateAllLinks(currentLang));
         } else {
@@ -556,12 +550,13 @@
       })();
 
       document.addEventListener('DOMContentLoaded', () => {
-        const translatableElements = document.querySelectorAll('[data-en][data-pl][data-it][data-fr]');
+        const translatableElements = document.querySelectorAll('[data-en][data-pl]');
         const languageButton = document.querySelector('.language-dropdown-button');
         const languageMenu = document.querySelector('.language-dropdown-menu');
         const languageOptions = document.querySelectorAll('.language-option');
         const selectedLanguageSpan = document.querySelector('.selected-language');
         const flagSpan = languageButton.querySelector('.fi');
+        const metaDescription = document.querySelector('meta[name="description"]');
         const form = document.querySelector('#contact-form');
         const modal = document.querySelector('#form-success-modal');
         const modalMessage = document.querySelector('#form-success-message');
@@ -571,37 +566,33 @@
         const otherBusinessTypeInput = document.querySelector('input[name="other_business_type"]');
 
         function updateLanguage(lang) {
-          // Update text content
           translatableElements.forEach(element => {
             element.textContent = element.getAttribute(`data-${lang}`);
           });
 
           // Update placeholders
           document.querySelectorAll('input[data-placeholder-en], textarea[data-placeholder-en], select[data-placeholder-en]').forEach(element => {
-            element.placeholder = element.getAttribute(`data-placeholder-${lang}`);
+            const placeholder = element.getAttribute(`data-placeholder-${lang}`);
+            if (placeholder) {
+              element.placeholder = placeholder;
+            }
           });
 
-          // Update selected language display
+          if (metaDescription) {
+            metaDescription.setAttribute('content', metaDescription.getAttribute(`data-${lang}`));
+          }
+
           const selectedOption = document.querySelector(`.language-option[data-lang="${lang}"]`);
           selectedLanguageSpan.textContent = selectedOption.textContent.trim();
-          flagSpan.className = `fi fi-${lang === 'fr' ? 'fr' : lang}`;
+          flagSpan.className = `fi fi-${lang === 'pl' ? 'pl' : 'us'}`;
 
-          // Update HTML lang attribute
           document.documentElement.setAttribute('lang', lang);
-
-          // Update modal message and close button translations
-          modalMessage.textContent = modalMessage.getAttribute(`data-${lang}`);
-          closeModalButton.textContent = closeModalButton.getAttribute(`data-${lang}`);
-
-          // Save language to cookie
           Cookies.set('selectedLanguage', lang, { expires: 7 });
-          
-          // Update ALL links with lang parameter (including navigation, footer, and any other links)
+
           const allLinks = document.querySelectorAll('a[href]');
           allLinks.forEach(link => {
             try {
               const url = new URL(link.href, window.location.origin);
-              // Only update links to your site pages
               if (url.hostname === window.location.hostname && 
                   (url.pathname.endsWith('.html') || url.pathname === '/')) {
                 url.searchParams.set('lang', lang);
@@ -612,28 +603,23 @@
             }
           });
 
-          // Close dropdown
           languageMenu.classList.remove('show');
         }
 
-        // Toggle dropdown
         languageButton.addEventListener('click', () => {
           languageMenu.classList.toggle('show');
         });
 
-        // Handle language selection
         languageOptions.forEach(option => {
           option.addEventListener('click', () => {
             const lang = option.getAttribute('data-lang');
             updateLanguage(lang);
-            // Update URL with language parameter
             const url = new URL(window.location);
             url.searchParams.set('lang', lang);
             window.history.pushState({}, '', url);
           });
         });
 
-        // Close dropdown when clicking outside
         document.addEventListener('click', (e) => {
           if (!languageButton.contains(e.target) && !languageMenu.contains(e.target)) {
             languageMenu.classList.remove('show');
@@ -666,7 +652,6 @@
 
         // Client-side form validation and submission handling
         form.addEventListener('submit', (e) => {
-          // Prevent default only for validation; actual submission goes to FormSubmit
           e.preventDefault();
 
           const name = form.querySelector('input[name="name"]').value.trim();
@@ -680,9 +665,7 @@
           if (!name || !email || !businessType || !location || !description) {
             modalMessage.textContent = {
               en: 'Please fill in all required fields.',
-              pl: 'Proszę wypełnić wszystkie wymagane pola.',
-              it: 'Per favore, compila tutti i campi obbligatori.',
-              fr: 'Veuillez remplir tous les champs obligatoires.'
+              pl: 'Proszę wypełnić wszystkie wymagane pola.'
             }[Cookies.get('selectedLanguage') || 'en'];
             modal.classList.add('show');
             modalMessage.classList.add('text-red-600');
@@ -694,9 +677,7 @@
           if (!emailRegex.test(email)) {
             modalMessage.textContent = {
               en: 'Please enter a valid email address.',
-              pl: 'Proszę podać prawidłowy adres email.',
-              it: 'Per favore, inserisci un indirizzo email valido.',
-              fr: 'Veuillez entrer une adresse email valide.'
+              pl: 'Proszę podać prawidłowy adres email.'
             }[Cookies.get('selectedLanguage') || 'en'];
             modal.classList.add('show');
             modalMessage.classList.add('text-red-600');
@@ -707,9 +688,7 @@
           if (businessType === 'Other' && !otherBusinessType) {
             modalMessage.textContent = {
               en: 'Please specify your business type.',
-              pl: 'Proszę określić rodzaj działalności.',
-              it: 'Per favore, specifica il tipo di attività.',
-              fr: 'Veuillez spécifier votre type d\'entreprise.'
+              pl: 'Proszę określić rodzaj działalności.'
             }[Cookies.get('selectedLanguage') || 'en'];
             modal.classList.add('show');
             modalMessage.classList.add('text-red-600');
@@ -726,24 +705,20 @@
           form.submit();
         });
 
-        // Set initial language: use URL parameter, then cookie
+        // Initialize language
         const urlParams = new URLSearchParams(window.location.search);
         const urlLang = urlParams.get('lang');
         const savedLanguage = Cookies.get('selectedLanguage');
         
-        if (urlLang && ['en', 'pl', 'it', 'fr'].includes(urlLang)) {
+        if (urlLang && ['en', 'pl'].includes(urlLang)) {
           updateLanguage(urlLang);
-        } else if (savedLanguage && ['en', 'pl', 'it', 'fr'].includes(savedLanguage)) {
+        } else if (savedLanguage && ['en', 'pl'].includes(savedLanguage)) {
           updateLanguage(savedLanguage);
-          // Update URL with language
           const url = new URL(window.location);
           url.searchParams.set('lang', savedLanguage);
           window.history.replaceState({}, '', url);
-        } else {
-          // Default to English
-          updateLanguage('en');
         }
       });
     </script>
-  </body>
+</body>
 </html>
