@@ -1,32 +1,45 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-3QNYCWKF1J"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-  gtag('config', 'G-3QNYCWKF1J');
-</script>
+<head>
     <meta charset="UTF-8">
+    <meta name="description" content="Discover the heritage of Laperla olive oil - 500 years of tradition from ancient Chemlali trees in Sidi Bou Ali, Tunisia. Multiple generations of craftsmanship." data-en="Discover the heritage of Laperla olive oil - 500 years of tradition from ancient Chemlali trees in Sidi Bou Ali, Tunisia. Multiple generations of craftsmanship." data-pl="Poznaj dziedzictwo oliwy Laperla - 500 lat tradycji ze starożytnych drzew Chemlali w Sidi Bou Ali, Tunezja. Wiele pokoleń rzemiosła." />
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-      rel="stylesheet"
-      as="style"
-      onload="this.rel='stylesheet'"
-      href="https://fonts.googleapis.com/css2?display=swap&family=Epilogue%3Awght%40400%3B500%3B700%3B900&family=Noto+Sans%3Awght%40400%3B500%3B700%3B900&family=Amiri:wght@400;700&family=Lugrasimo&display=swap"
-    />
-    <!-- Add Flag Icons CSS for language flags -->
+    <link rel="stylesheet" as="style" onload="this.rel='stylesheet'" href="https://fonts.googleapis.com/css2?display=swap&family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:wght@400;500;600;700;800&family=Lugrasimo&display=swap" />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flag-icons/css/flag-icons.min.css" />
-    <title>Laperla Olive Oil</title>
+    <link rel="alternate" hreflang="en" href="https://laperlaoliveoil.com/heritage.html?lang=en" />
+    <link rel="alternate" hreflang="pl" href="https://laperlaoliveoil.com/heritage.html?lang=pl" />
+    <link rel="alternate" hreflang="x-default" href="https://laperlaoliveoil.com/heritage.html?lang=en" />
+    <title>Our Heritage | 500 Years of Liquid Gold | Laperla</title>
     <link rel="icon" type="image/x-icon" href="data:image/x-icon;base64," />
     <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
     <link rel="stylesheet" href="assets/css/styles.css">
     <!-- Load js-cookie -->
     <script src="https://cdn.jsdelivr.net/npm/js-cookie@3.0.5/dist/js.cookie.min.js"></script>
+    <!-- SEO Meta Tags -->
+    <meta name="keywords" content="Laperla heritage, ancient olive trees, Sidi Bou Ali, Chemlali olives, Tunisia tradition, generational craftsmanship">
+
     <style>
-      /* Dropdown styles */
+      :root {
+        --olive-gold: #d4a017;
+        --olive-green: #2e5e2e;
+        --soft-green: #f8faf5;
+        --warm-white: #fefefe;
+        --text-dark: #2c2c2c;
+        --text-medium: #525252;
+        --text-light: #737373;
+      }
+
+      body {
+        font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+        line-height: 1.6;
+        color: var(--text-dark);
+      }
+
+      .playfair {
+        font-family: 'Playfair Display', serif;
+      }
+
       .language-dropdown {
         position: relative;
       }
@@ -34,25 +47,34 @@
         display: flex;
         align-items: center;
         gap: 0.5rem;
-        padding: 0.5rem 1rem;
-        background-color: #f2f4f0;
-        border-radius: 0.5rem;
+        padding: 0.75rem 1.25rem;
+        background: rgba(255, 255, 255, 0.95);
+        border: 1px solid rgba(212, 160, 23, 0.2);
+        border-radius: 12px;
         cursor: pointer;
         font-size: 0.875rem;
         font-weight: 500;
-        color: #141811;
+        color: var(--text-dark);
+        transition: all 0.3s ease;
+        backdrop-filter: blur(10px);
+      }
+      .language-dropdown-button:hover {
+        background: white;
+        border-color: var(--olive-gold);
+        box-shadow: 0 4px 12px rgba(212, 160, 23, 0.15);
       }
       .language-dropdown-menu {
         position: absolute;
         top: 100%;
         right: 0;
         margin-top: 0.5rem;
-        background-color: white;
-        border: 1px solid #e0e5dc;
-        border-radius: 0.5rem;
-        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        background: white;
+        border: 1px solid rgba(212, 160, 23, 0.2);
+        border-radius: 12px;
+        box-shadow: 0 10px 40px rgba(0, 0, 0, 0.15);
         display: none;
-        z-index: 10;
+        z-index: 50;
+        overflow: hidden;
       }
       .language-dropdown-menu.show {
         display: block;
@@ -61,33 +83,224 @@
         display: flex;
         align-items: center;
         gap: 0.5rem;
-        padding: 0.5rem 1rem;
+        padding: 0.75rem 1.25rem;
         cursor: pointer;
         font-size: 0.875rem;
-        color: #141811;
+        font-weight: 500;
+        color: var(--text-dark);
+        transition: all 0.2s ease;
       }
       .language-option:hover {
-        background-color: #f2f4f0;
+        background: var(--soft-green);
+        color: var(--olive-green);
       }
-      /* Ensure Arabic text is right-to-left */
-      [dir="rtl"] {
-        direction: rtl;
-        font-family: 'Amiri', serif;
-      }
-      /* Ensure flag icons are properly sized */
       .fi {
         width: 20px;
         height: 15px;
+        border-radius: 2px;
+      }
+
+      .heritage-badge {
+        background: linear-gradient(135deg, var(--olive-gold) 0%, #e6b800 100%);
+        color: white;
+        padding: 0.5rem 1.25rem;
+        border-radius: 50px;
+        font-weight: 700;
+        font-size: 0.75rem;
+        text-align: center;
+        display: inline-block;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        box-shadow: 0 4px 15px rgba(212, 160, 23, 0.3);
+        margin-bottom: 1rem;
+      }
+
+      .story-section {
+        background: linear-gradient(135deg, var(--soft-green) 0%, var(--warm-white) 100%);
+        border: 1px solid rgba(212, 160, 23, 0.2);
+        border-left: 4px solid var(--olive-gold);
+        padding: 2.5rem;
+        margin: 3rem 0;
+        border-radius: 20px;
+        color: var(--olive-green);
+        box-shadow: 0 10px 40px rgba(0, 0, 0, 0.05);
+        position: relative;
+        overflow: hidden;
+      }
+
+      .story-section::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grain" width="100" height="100" patternUnits="userSpaceOnUse"><circle cx="25" cy="25" r="1" fill="rgba(212,160,23,0.05)"/><circle cx="75" cy="75" r="1" fill="rgba(212,160,23,0.05)"/></pattern></defs><rect width="100" height="100" fill="url(%23grain)"/></svg>');
+        opacity: 0.3;
+        pointer-events: none;
+      }
+
+      .section-title {
+        font-family: 'Playfair Display', serif;
+        color: var(--olive-green);
+        font-size: 2.5rem;
+        font-weight: 700;
+        text-align: center;
+        position: relative;
+        margin-bottom: 3rem;
+        line-height: 1.2;
+      }
+
+      .section-title::after {
+        content: '';
+        width: 80px;
+        height: 4px;
+        background: linear-gradient(90deg, var(--olive-gold) 0%, var(--olive-green) 100%);
+        position: absolute;
+        bottom: -1rem;
+        left: 50%;
+        transform: translateX(-50%);
+        border-radius: 2px;
+      }
+
+      .grove-card {
+        background: white;
+        border: 1px solid rgba(212, 160, 23, 0.1);
+        border-radius: 20px;
+        overflow: hidden;
+        box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
+        transition: all 0.4s ease;
+        height: 100%;
+      }
+
+      .grove-card:hover {
+        transform: translateY(-8px);
+        box-shadow: 0 20px 50px rgba(0, 0, 0, 0.15);
+        border-color: var(--olive-gold);
+      }
+
+      .grove-image {
+        width: 100%;
+        height: 250px;
+        background-size: cover;
+        background-position: center;
+      }
+
+      .grove-content {
+        padding: 2rem;
+      }
+
+      .cta-button {
+        background: linear-gradient(135deg, #80e619 0%, #6bc916 100%);
+        color: var(--olive-green);
+        padding: 1rem 2rem;
+        border-radius: 50px;
+        font-weight: 700;
+        text-decoration: none;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        transition: all 0.3s ease;
+        box-shadow: 0 8px 25px rgba(128, 230, 25, 0.3);
+        border: none;
+        cursor: pointer;
+        min-width: 200px;
+      }
+
+      .cta-button:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 12px 35px rgba(128, 230, 25, 0.4);
+      }
+
+      .cta-button-outline {
+        background: white;
+        color: var(--olive-green);
+        border: 2px solid #80e619;
+        padding: 1rem 2rem;
+        border-radius: 50px;
+        font-weight: 700;
+        text-decoration: none;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        transition: all 0.3s ease;
+        box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+        min-width: 200px;
+      }
+
+      .cta-button-outline:hover {
+        background: #80e619;
+        color: var(--olive-green);
+        transform: translateY(-2px);
+        box-shadow: 0 12px 35px rgba(128, 230, 25, 0.3);
+      }
+
+      .image-gallery {
+        display: grid;
+        grid-template-columns: 2fr 1fr 1fr;
+        gap: 1rem;
+        border-radius: 20px;
+        overflow: hidden;
+        box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
+      }
+
+      .gallery-image {
+        background-size: cover;
+        background-position: center;
+        min-height: 200px;
+      }
+
+      .gallery-main {
+        grid-row: span 2;
+        min-height: 400px;
+      }
+
+      @media (max-width: 768px) {
+        .section-title {
+          font-size: 2rem;
+        }
+        
+        .story-section {
+          padding: 1.5rem;
+          margin: 2rem 0;
+        }
+        
+        .grove-content {
+          padding: 1.5rem;
+        }
+
+        .image-gallery {
+          grid-template-columns: 1fr;
+          gap: 0.5rem;
+        }
+
+        .gallery-main {
+          grid-row: span 1;
+          min-height: 250px;
+        }
+
+        .gallery-image {
+          min-height: 150px;
+        }
       }
     </style>
-  </head>
-  <body>
-    <div class="relative flex size-full min-h-screen flex-col bg-white group/design-root overflow-x-hidden" style='font-family: Epilogue, "Noto Sans", sans-serif;'>
+</head>
+<body class="bg-gray-50">
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-3QNYCWKF1J"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-3QNYCWKF1J');
+    </script>
+    
+    <div class="relative flex size-full min-h-screen flex-col bg-gradient-to-br from-gray-50 to-white group/design-root overflow-x-hidden">
       <div class="layout-container flex h-full grow flex-col">
-        <header class="flex items-center justify-between whitespace-nowrap border-b border-solid border-b-[#f2f4f0] px-10 py-3">
-          <a href="index.html" class="flex items-center gap-4 text-[#141811] no-underline">
-            <div class="size-4">
-              <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <!-- Enhanced Header -->
+        <header class="flex items-center justify-between whitespace-nowrap bg-white/95 backdrop-blur-md border-b border-gray-200/50 px-6 md:px-10 py-4 sticky top-0 z-40">
+          <a href="index.html" class="flex items-center gap-4 text-gray-900 no-underline">
+            <div class="size-8 p-1 bg-gradient-to-br from-yellow-400 to-yellow-600 rounded-lg">
+              <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg" class="w-full h-full text-white">
                 <g clip-path="url(#clip0_6_535)">
                   <path
                     fill-rule="evenodd"
@@ -102,21 +315,21 @@
               </svg>
             </div>
             <div class="flex flex-col">
-              <h2 class="text-[#141811] text-2xl font-bold leading-tight tracking-[-0.015em]" style="font-family: 'Lugrasimo', serif; font-weight: 1000; -webkit-font-smoothing: antialiased;">Laperla</h2>              
-              <p class="text-[#758863] text-xs" data-en="Premium Extra Virgin Olive Oil" data-pl="Premium Oliwa Extra Virgin" data-it="Olio Extra Vergine Premium" data-fr="Huile d'Olive Extra Vierge Premium" data-ar="زيت زيتون بكر ممتاز">Premium Extra Virgin Olive Oil</p>
+              <h2 class="text-gray-900 text-2xl font-bold leading-tight tracking-tight playfair">Laperla</h2>
+              <p class="text-gray-600 text-xs font-medium" data-en="History and health in every drop" data-pl="Historia i zdrowie w każdej kropli">History and health in every drop</p>
             </div>
           </a>
           <div class="flex flex-1 justify-end gap-8">
-            <div class="flex items-center gap-9">
-              <a class="text-[#141811] text-sm font-medium leading-normal" href="home.html" data-en="Home" data-pl="Strona Główna" data-it="Home" data-fr="Accueil" data-ar="الرئيسية">Home</a>
-              <a class="text-[#141811] text-sm font-medium leading-normal" href="product.html" data-en="Our Products" data-pl="Nasze Produkty" data-it="I nostri prodotti" data-fr="Nos produits" data-ar="منتجاتنا">Our Products</a>
-              <a class="text-[#141811] text-sm font-medium leading-normal" href="heritage.html" data-en="Heritage" data-pl="Dziedzictwo" data-it="Eredità" data-fr="Patrimoine" data-ar="التراث">Heritage</a>
-              <a class="text-[#141811] text-sm font-medium leading-normal" href="contact.html" data-en="Contact" data-pl="Kontakt" data-it="Contatti" data-fr="Contact" data-ar="اتصل بنا">Contact</a>
+            <div class="hidden md:flex items-center gap-8">
+              <a class="text-gray-700 text-sm font-semibold leading-normal hover:text-yellow-600 transition-colors" href="home.html" data-en="Home" data-pl="Strona Główna">Home</a>
+              <a class="text-gray-700 text-sm font-semibold leading-normal hover:text-yellow-600 transition-colors" href="product.html" data-en="Our Products" data-pl="Nasze Produkty">Our Products</a>
+              <a class="text-gray-700 text-sm font-semibold leading-normal hover:text-yellow-600 transition-colors" href="heritage.html" data-en="Our Story" data-pl="Nasza Historia">Our Story</a>
+              <a class="text-gray-700 text-sm font-semibold leading-normal hover:text-yellow-600 transition-colors" href="contact.html" data-en="Contact" data-pl="Kontakt">Contact</a>
             </div>
             <div class="language-dropdown">
               <button class="language-dropdown-button">
                 <span class="fi fi-us"></span>
-                <span class="selected-language">English</span>
+                <span class="selected-language font-semibold">English</span>
                 <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
                 </svg>
@@ -130,244 +343,193 @@
                   <span class="fi fi-pl"></span>
                   Polski
                 </div>
-                <div class="language-option" data-lang="it">
-                  <span class="fi fi-it"></span>
-                  Italiano
-                </div>
-                <div class="language-option" data-lang="fr">
-                  <span class="fi fi-fr"></span>
-                  Français
-                </div>
-                <div class="language-option" data-lang="ar" dir="rtl">
-                  <span class="fi fi-ma"></span>
-                  العربية
-                </div>
               </div>
             </div>
           </div>
         </header>
-        <div class="px-40 flex flex-1 justify-center py-5">
-          <div class="layout-content-container flex flex-col max-w-[960px] flex-1">
-            <div class="flex flex-wrap justify-between gap-3 p-4">
-              <p class="text-[#141811] tracking-light text-[32px] font-bold leading-tight min-w-72" data-en="Our Heritage" data-pl="Nasze Dziedzictwo" data-it="La nostra eredità" data-fr="Notre patrimoine" data-ar="تراثنا">Our Heritage</p>
-            </div>
-            <div class="@container">
-              <div class="@[480px]:p-4">
-                <div
-                  class="flex min-h-[480px] flex-col gap-6 bg-cover bg-center bg-no-repeat @[480px]:gap-8 squircle items-start justify-end px-4 pb-10 @[480px]:px-10"
-                  style='background-image: url("assets/images/main.jpg");'
-                >
-                  <div class="flex flex-col gap-2 text-left z-10">
-                    <h1
-                      class="text-white text-4xl font-black leading-tight tracking-[-0.033em] @[480px]:text-5xl @[480px]:font-black @[480px]:leading-tight @[480px]:tracking-[-0.033em]"
-                      data-en="A Timeless Tunisian Legacy"
-                      data-pl="Ponadczasowe Tunezyjskie Dziedzictwo"
-                      data-it="Un'eredità tunisina senza tempo"
-                      data-fr="Un héritage tunisien intemporel"
-                      data-ar="إرث تونسي خالد"
-                    >
-                      A Timeless Tunisian Legacy
-                    </h1>
-                    <h2
-                      class="text-white text-sm font-normal leading-normal @[480px]:text-base @[480px]:font-normal @[480px]:leading-normal"
-                      data-en="Journey through centuries of tradition with Laperla, where sunlit groves in Tunisia's heart yield extra virgin olive oil rich in history and flavor."
-                      data-pl="Przeżyj wieki tradycji z Laperla, gdzie nasłonecznione gaje w sercu Tunezji dają oliwę extra virgin pełną historii i smaku."
-                      data-it="Viaggia attraverso secoli di tradizione con Laperla, dove i boschi soleggiati nel cuore della Tunisia producono olio extravergine di oliva ricco di storia e sapore."
-                      data-fr="Voyagez à travers des siècles de tradition avec Laperla, où les oliveraies ensoleillées au cœur de la Tunisie produisent une huile d'olive extra vierge riche en histoire et en saveur."
-                      data-ar="سافر عبر قرون من التقاليد مع لابيرلا، حيث تنتج البساتين المشمسة في قلب تونس زيت زيتون بكر ممتاز غني بالتاريخ والنكهة."
-                    >
-                      Journey through centuries of tradition with Laperla, where sunlit groves in Tunisia's heart yield extra virgin olive oil rich in history and flavor.
-                    </h2>
-                  </div>
+
+        <!-- Main Content -->
+        <div class="flex-1 max-w-7xl mx-auto px-6 md:px-10 py-8">
+          <!-- Hero Section -->
+          <div class="mb-16">
+            <div class="relative min-h-[600px] rounded-3xl overflow-hidden" style='background-image: linear-gradient(135deg, rgba(0,0,0,0.4) 0%, rgba(0,0,0,0.6) 100%), url("assets/images/main.jpg"); background-size: cover; background-position: center;'>
+              <div class="relative z-10 flex flex-col justify-end h-full p-8 md:p-12">
+                <div class="max-w-3xl">
+                  <h1 class="text-white text-4xl md:text-6xl font-bold leading-tight tracking-tight playfair mb-6" data-en="A Timeless Tunisian Legacy" data-pl="Ponadczasowe Tunezyjskie Dziedzictwo">
+                    A Timeless Tunisian Legacy
+                  </h1>
+                  <p class="text-white/90 text-lg md:text-xl font-medium leading-relaxed mb-8 max-w-2xl" data-en="Journey through centuries of tradition with Laperla, where sunlit groves in Tunisia's heart yield extra virgin olive oil rich in history and flavor." data-pl="Przeżyj wieki tradycji z Laperla, gdzie nasłonecznione gaje w sercu Tunezji dają oliwę extra virgin pełną historii i smaku.">
+                    Journey through centuries of tradition with Laperla, where sunlit groves in Tunisia's heart yield extra virgin olive oil rich in history and flavor.
+                  </p>
                 </div>
               </div>
             </div>
-            <h2 class="text-[#141811] text-[22px] font-bold leading-tight tracking-[-0.015em] px-4 pb-3 pt-5" data-en="The Laperla Story" data-pl="Historia Laperla" data-it="La storia di Laperla" data-fr="L'histoire de Laperla" data-ar="قصة لابيرلا">The Laperla Story</h2>
-            <p
-              class="text-[#141811] text-base font-normal leading-normal pb-3 pt-1 px-4"
-              data-en="In the heart of Tunisia, on the fertile lands of Sidi Bou Ali, our story unfolds amid groves that echo the ancient Roman fields of Zembra. For generations, our family has tended these sun-drenched trees, kissed by Mediterranean breezes, preserving a craft that began over 2,000 years ago. From this rich terroir, we harvest olives bursting with polyphenols—nature's antioxidants—blending tradition with innovation to bottle a heritage that nourishes both body and soul."
-              data-pl="W sercu Tunezji, na żyznych ziemiach Sidi Bou Ali, nasza historia rozwija się wśród gajów, które odbijają starożytne pola Zembra z czasów rzymskich. Od pokoleń nasza rodzina dba o te nasłonecznione drzewa, muskane śródziemnomorskimi bryzami, podtrzymując rzemiosło sprzed ponad 2000 lat. Z tego bogatego terroir zbieramy oliwki pełne polifenoli—naturalnych antyoksydantów—łącząc tradycję z innowacją, by zamknąć w butelkach dziedzictwo, które karmi ciało i duszę."
-              data-it="Nel cuore della Tunisia, sulle fertili terre di Sidi Bou Ali, la nostra storia si dipana tra i boschi che riecheggiano gli antichi campi romani di Zembra. Per generazioni, la nostra famiglia ha curato questi alberi baciati dal sole e accarezzati dalle brezze mediterranee, preservando un mestiere iniziato oltre 2.000 anni fa. Da questo ricco terroir raccogliamo olive ricche di polifenoli—antiossidanti naturali—unendo tradizione e innovazione per imbottigliare un'eredità che nutre corpo e anima."
-              data-fr="Au cœur de la Tunisie, sur les terres fertiles de Sidi Bou Ali, notre histoire se déroule au milieu de bosquets qui font écho aux anciens champs romains de Zembra. Depuis des générations, notre famille entretient ces arbres baignés de soleil, caressés par les brises méditerranéennes, préservant un savoir-faire qui a commencé il y a plus de 2 000 ans. De ce riche terroir, nous récoltons des olives riches en polyphénols—les antioxydants naturels—mêlant tradition et innovation pour embouteiller un héritage qui nourrit à la fois le corps et l'âme."
-              data-ar="في قلب تونس، على الأراضي الخصبة لسيدي بوعلي، تتكشف قصتنا وسط البساتين التي تعكس الحقول الرومانية القديمة لزمبرة. لأجيال، اعتنت عائلتنا بهذه الأشجار المشمسة، التي تلامسها نسمات البحر الأبيض المتوسط، محافظة على حرفة بدأت منذ أكثر من 2000 عام. من هذا التربة الغنية، نحصد الزيتون المليء بالبوليفينول—مضادات الأكسدة الطبيعية—نمزج التقاليد مع الابتكار لنعبئ تراثًا يغذي الجسد والروح."
-            >
-              In the heart of Tunisia, on the fertile lands of Sidi Bou Ali, our story unfolds amid groves that echo the ancient Roman fields of Zembra. For generations, our family has tended these sun-drenched trees, kissed by Mediterranean breezes, preserving a craft that began over 2,000 years ago. From this rich terroir, we harvest olives bursting with polyphenols—nature's antioxidants—blending tradition with innovation to bottle a heritage that nourishes both body and soul.
-            </p>
-            <h2 class="text-[#141811] text-[22px] font-bold leading-tight tracking-[-0.015em] px-4 pb-3 pt-5" data-en="Our Olive Groves" data-pl="Nasze Gaje Oliwne" data-it="I nostri uliveti" data-fr="Nos oliveraies" data-ar="بساتين الزيتون لدينا">Our Olive Groves</h2>
-            <div class="grid grid-cols-[repeat(auto-fit,minmax(158px,1fr))] gap-3 p-4">
-              <div class="flex flex-col gap-3 pb-3">
-                <div
-                  class="w-full bg-center bg-no-repeat aspect-square bg-cover rounded-xl"
-                  style='background-image: url("assets/images/threewomen.jpg");'
-                ></div>
-                <div>
-                  <p class="text-[#141811] text-base font-medium leading-normal" data-en="Sidi Bou Ali Estate" data-pl="Posiadłość Sidi Bou Ali" data-it="Tenuta Sidi Bou Ali" data-fr="Domaine Sidi Bou Ali" data-ar="عزبة سيدي بوعلي">Sidi Bou Ali Estate</p>
-                  <p
-                    class="text-[#758863] text-sm font-normal leading-normal"
-                    data-en="Nestled in Tunisia's heart, this estate grows Chemlali olives famed for their smooth, balanced flavor."
-                    data-pl="Położona w sercu Tunezji, ta posiadłość uprawia oliwki Chemlali, słynące z gładkiego, zrównoważonego smaku."
-                    data-it="Situata nel cuore della Tunisia, questa tenuta coltiva olive Chemlali famose per il loro sapore morbido ed equilibrato."
-                    data-fr="Nichée au cœur de la Tunisie, ce domaine cultive des olives Chemlali réputées pour leur saveur douce et équilibrée."
-                    data-ar="تقع في قلب تونس، هذه العزبة تزرع زيتون تشملالي المشهور بنكهته الناعمة والمتوازنة."
-                  >
+          </div>
+
+          <!-- The Laperla Story -->
+          <section class="mb-20">
+            <h2 class="section-title" data-en="The Laperla Story" data-pl="Historia Laperla">The Laperla Story</h2>
+            <div class="story-section">
+              <div class="relative z-10">
+                <p class="text-lg md:text-xl leading-relaxed playfair" data-en="In the heart of Tunisia, on the fertile lands of Sidi Bou Ali, our story unfolds amid groves that echo the ancient Roman fields of Zembra. For generations, our family has tended these sun-drenched trees, kissed by Mediterranean breezes, preserving a craft that began over 500 years ago. From this rich terroir, we harvest olives bursting with polyphenols—nature's antioxidants—blending tradition with innovation to bottle a heritage that nourishes both body and soul." data-pl="W sercu Tunezji, na żyznych ziemiach Sidi Bou Ali, nasza historia rozwija się wśród gajów, które odbijają starożytne pola Zembra z czasów rzymskich. Od pokoleń nasza rodzina dba o te nasłonecznione drzewa, muskane śródziemnomorskimi bryzami, podtrzymując rzemiosło sprzed ponad 500 lat. Z tego bogatego terroir zbieramy oliwki pełne polifenoli—naturalnych antyoksydantów—łącząc tradycję z innowacją, by zamknąć w butelkach dziedzictwo, które karmi ciało i duszę.">
+                  In the heart of Tunisia, on the fertile lands of Sidi Bou Ali, our story unfolds amid groves that echo the ancient Roman fields of Zembra. For generations, our family has tended these sun-drenched trees, kissed by Mediterranean breezes, preserving a craft that began over 500 years ago. From this rich terroir, we harvest olives bursting with polyphenols—nature's antioxidants—blending tradition with innovation to bottle a heritage that nourishes both body and soul.
+                </p>
+              </div>
+            </div>
+          </section>
+
+          <!-- Our Olive Groves -->
+          <section class="mb-20">
+            <h2 class="section-title" data-en="Our Olive Groves" data-pl="Nasze Gaje Oliwne">Our Olive Groves</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+              <div class="grove-card">
+                <div class="grove-image" style='background-image: url("assets/images/threewomen.jpg");'></div>
+                <div class="grove-content">
+                  <div class="heritage-badge" data-en="SIDI BOU ALI" data-pl="SIDI BOU ALI">🌳 SIDI BOU ALI</div>
+                  <h3 class="text-gray-900 text-xl font-bold mb-3 playfair" data-en="Sidi Bou Ali Estate" data-pl="Posiadłość Sidi Bou Ali">Sidi Bou Ali Estate</h3>
+                  <p class="text-gray-600 leading-relaxed" data-en="Nestled in Tunisia's heart, this estate grows Chemlali olives famed for their smooth, balanced flavor." data-pl="Położona w sercu Tunezji, ta posiadłość uprawia oliwki Chemlali, słynące z gładkiego, zrównoważonego smaku.">
                     Nestled in Tunisia's heart, this estate grows Chemlali olives famed for their smooth, balanced flavor.
                   </p>
                 </div>
               </div>
-              <div class="flex flex-col gap-3 pb-3">
-                <div
-                  class="w-full bg-center bg-no-repeat aspect-square bg-cover rounded-xl"
-                  style='background-image: url("assets/images/dougga.jpg");'
-                ></div>
-                <div>
-                  <p class="text-[#141811] text-base font-medium leading-normal" data-en="Zembra Orchard" data-pl="Sad Zembra" data-it="Frutteto Zembra" data-fr="Verger Zembra" data-ar="بستان زمبرة">Zembra Orchard</p>
-                  <p
-                    class="text-[#758863] text-sm font-normal leading-normal"
-                    data-en="Echoing Roman legacy, this orchard yields Chetoui olives with vibrant, pungent notes."
-                    data-pl="Odzwierciedlając rzymskie dziedzictwo, ten sad daje oliwki Chetoui o żywych, ostrych nutach."
-                    data-it="Riecheggiando l'eredità romana, questo frutteto produce olive Chetoui con note vivaci e pungenti."
-                    data-fr="Faisant écho à l'héritage romain, ce verger produit des olives Chetoui aux notes vibrantes et piquantes."
-                    data-ar="يعكس الإرث الروماني، هذا البستان ينتج زيتون شتوي بنكهات نابضة بالحياة وحادة."
-                  >
+
+              <div class="grove-card">
+                <div class="grove-image" style='background-image: url("assets/images/dougga.jpg");'></div>
+                <div class="grove-content">
+                  <div class="heritage-badge" data-en="ZEMBRA HERITAGE" data-pl="DZIEDZICTWO ZEMBRA">🏛️ ZEMBRA HERITAGE</div>
+                  <h3 class="text-gray-900 text-xl font-bold mb-3 playfair" data-en="Zembra Orchard" data-pl="Sad Zembra">Zembra Orchard</h3>
+                  <p class="text-gray-600 leading-relaxed" data-en="Echoing Roman legacy, this orchard yields Chetoui olives with vibrant, pungent notes." data-pl="Odzwierciedlając rzymskie dziedzictwo, ten sad daje oliwki Chetoui o żywych, ostrych nutach.">
                     Echoing Roman legacy, this orchard yields Chetoui olives with vibrant, pungent notes.
                   </p>
                 </div>
               </div>
-              <div class="flex flex-col gap-3 pb-3">
-                <div
-                  class="w-full bg-center bg-no-repeat aspect-square bg-cover rounded-xl"
-                  style='background-image: url("assets/images/tunisia.jpg");'
-                ></div>
-                <div>
-                  <p class="text-[#141811] text-base font-medium leading-normal" data-en="Coastal Breeze Grove" data-pl="Gaj Nadmorskiej Bryzy" data-it="Bosco della Brezza Costiera" data-fr="Bosquet de la Brise Côtière" data-ar="بستان نسيم الساحل">Coastal Breeze Grove</p>
-                  <p
-                    class="text-[#758863] text-sm font-normal leading-normal"
-                    data-en="Kissed by sea air, these ancient trees produce oils rich in antioxidants and subtle herb aromas."
-                    data-pl="Musnięte morskim powietrzem, te starożytne drzewa dają oliwy bogate w antyoksydanty i subtelne ziołowe aromaty."
-                    data-it="Baciati dall'aria marina, questi alberi antichi producono oli ricchi di antiossidanti e sottili aromi erbacei."
-                    data-fr="Embrassés par l'air marin, ces arbres anciens produisent des huiles riches en antioxydants et aux arômes subtils d'herbes."
-                    data-ar="تمتزج مع هواء البحر، هذه الأشجار القديمة تنتج زيوت غنية بمضادات الأكسدة وروائح أعشاب خفية."
-                  >
+
+              <div class="grove-card">
+                <div class="grove-image" style='background-image: url("assets/images/tunisia.jpg");'></div>
+                <div class="grove-content">
+                  <div class="heritage-badge" data-en="COASTAL BREEZE" data-pl="NADMORSKA BRYZA">🌊 COASTAL BREEZE</div>
+                  <h3 class="text-gray-900 text-xl font-bold mb-3 playfair" data-en="Coastal Breeze Grove" data-pl="Gaj Nadmorskiej Bryzy">Coastal Breeze Grove</h3>
+                  <p class="text-gray-600 leading-relaxed" data-en="Kissed by sea air, these ancient trees produce oils rich in antioxidants and subtle herb aromas." data-pl="Musnięte morskim powietrzem, te starożytne drzewa dają oliwy bogate w antyoksydanty i subtelne ziołowe aromaty.">
                     Kissed by sea air, these ancient trees produce oils rich in antioxidants and subtle herb aromas.
                   </p>
                 </div>
               </div>
             </div>
-            <h2 class="text-[#141811] text-[22px] font-bold leading-tight tracking-[-0.015em] px-4 pb-3 pt-5" data-en="Crafting Laperla" data-pl="Tworzenie Laperla" data-it="Creazione di Laperla" data-fr="L'élaboration de Laperla" data-ar="صناعة لابيرلا">Crafting Laperla</h2>
-            <p
-              class="text-[#141811] text-base font-normal leading-normal pb-3 pt-1 px-4"
-              data-en="We handpick our olives at peak ripeness from Sidi Bou Ali's sunlit groves, cold-pressing them in our state-of-the-art mill to preserve their natural essence. Our flagship Chemlali Edition Prestige—internationally acclaimed—bursts with almond and apple notes, a testament to Tunisia's finest. Every bottle undergoes meticulous quality checks, ensuring Laperla delivers a taste of history and health in every drop."
-              data-pl="Ręcznie zbieramy oliwki w pełni dojrzałości z nasłonecznionych gajów Sidi Bou Ali, tłocząc je na zimno w nowoczesnym młynie, by zachować ich naturalną esencję. Nasza flagowa Chemlali Edition Prestige—doceniona na świecie—zachwyca nutami migdałów i jabłek, będąc dowodem na tunezyjską doskonałość. Każda butelka przechodzi drobiazgowe kontrole jakości, zapewniając, że Laperla dostarcza smak historii i zdrowia w każdej kropli."
-              data-it="Raccogliamo a mano le nostre olive al massimo della maturazione dai boschi soleggiati di Sidi Bou Ali, pressandole a freddo nel nostro mulino all'avanguardia per preservarne l'essenza naturale. La nostra prestigiosa Chemlali Edition Prestige—acclamata a livello internazionale—sprigiona note di mandorla e mela, una testimonianza dell'eccellenza tunisina. Ogni bottiglia è sottoposta a rigorosi controlli di qualità, garantendo che Laperla offra un gusto di storia e salute in ogni goccia."
-              data-fr="Nous cueillons à la main nos olives à maturité optimale dans les bosquets ensoleillés de Sidi Bou Ali, les pressant à froid dans notre moulin ultramoderne pour préserver leur essence naturelle. Notre prestigieuse Chemlali Edition Prestige—acclamée internationalement—éclate de notes d'amande et de pomme, témoignage du meilleur de la Tunisie. Chaque bouteille fait l'objet de contrôles qualité méticuleux, garantissant que Laperla offre un goût d'histoire et de santé dans chaque goutte."
-              data-ar="نقطف زيتوننا يدويًا في ذروة النضج من بساتين سيدي بوعلي المشمسة، ونعصره على البارد في مطحنتنا الحديثة للحفاظ على جوهره الطبيعي. إصدارنا الرائد تشملالي إديشن بريستيج—المعترف به دوليًا—ينفجر بنكهات اللوز والتفاح، وهو شهادة على التميز التونسي. تخضع كل زجاجة لفحوصات جودة دقيقة، مما يضمن أن تقدم لابيرلا طعم التاريخ والصحة في كل قطرة."
-            >
-              We handpick our olives at peak ripeness from Sidi Bou Ali's sunlit groves, cold-pressing them in our state-of-the-art mill to preserve their natural essence. Our flagship Chemlali Edition Prestige—internationally acclaimed—bursts with almond and apple notes, a testament to Tunisia's finest. Every bottle undergoes meticulous quality checks, ensuring Laperla delivers a taste of history and health in every drop.
-            </p>
-            <div class="flex w-full grow bg-white @container p-4">
-              <div class="w-full gap-1 overflow-hidden bg-white @[480px]:gap-2 aspect-[3/2] rounded-xl grid grid-cols-[2fr_1fr_1fr]">
-                <div
-                  class="w-full bg-center bg-no-repeat bg-cover aspect-auto rounded-none row-span-2"
-                  style='background-image: url("assets/images/porte.jpg");'
-                ></div>
-                <div
-                  class="w-full bg-center bg-no-repeat bg-cover aspect-auto rounded-none col-span-2 row-span-2"
-                  style='background-image: url("assets/images/cut.jpg");'
-                ></div>
+          </section>
+
+          <!-- Crafting Laperla -->
+          <section class="mb-20">
+            <h2 class="section-title" data-en="Crafting Laperla" data-pl="Tworzenie Laperla">Crafting Laperla</h2>
+            <div class="story-section">
+              <div class="relative z-10">
+                <p class="text-lg md:text-xl leading-relaxed playfair" data-en="We handpick our olives at peak ripeness from Sidi Bou Ali's sunlit groves, cold-pressing them in our state-of-the-art mill to preserve their natural essence. Our flagship Chemlali Edition Prestige—internationally acclaimed—bursts with almond and apple notes, a testament to Tunisia's finest. Every bottle undergoes meticulous quality checks, ensuring Laperla delivers a taste of history and health in every drop." data-pl="Ręcznie zbieramy oliwki w pełni dojrzałości z nasłonecznionych gajów Sidi Bou Ali, tłocząc je na zimno w nowoczesnym młynie, by zachować ich naturalną esencję. Nasza flagowa Chemlali Edition Prestige—doceniona na świecie—zachwyca nutami migdałów i jabłek, będąc dowodem na tunezyjską doskonałość. Każda butelka przechodzi drobiazgowe kontrole jakości, zapewniając, że Laperla dostarcza smak historii i zdrowia w każdej kropli.">
+                  We handpick our olives at peak ripeness from Sidi Bou Ali's sunlit groves, cold-pressing them in our state-of-the-art mill to preserve their natural essence. Our flagship Chemlali Edition Prestige—internationally acclaimed—bursts with almond and apple notes, a testament to Tunisia's finest. Every bottle undergoes meticulous quality checks, ensuring Laperla delivers a taste of history and health in every drop.
+                </p>
               </div>
             </div>
-            <h2 class="text-[#141811] text-[22px] font-bold leading-tight tracking-[-0.015em] px-4 pb-3 pt-5" data-en="The Immortal Trees of Tunisia" data-pl="Nieśmiertelne Drzewa Tunezji" data-it="Gli Alberi Immortali della Tunisia" data-fr="Les Arbres Immortels de Tunisie" data-ar="الأشجار الخالدة في تونس">The Immortal Trees of Tunisia</h2>
-            <p
-              class="text-[#141811] text-base font-normal leading-normal pb-3 pt-1 px-4"
-              data-en="In our groves stand sentinels that have witnessed empires rise and fall—500-year-old Chemlali olive trees, their gnarled trunks telling stories of resilience that no book could capture. These ancient beings survived droughts that lasted decades, wars that scorched the earth, and winds that could uproot mountains. Yet here they stand, bearing fruit as they did for Carthaginian merchants, Roman nobles, and Arab scholars. Each tree is a living library, its roots diving 20 feet deep into soil enriched by millennia of fallen leaves, creating a terroir so unique that scientists have found over 200 distinct aromatic compounds in our oil—more than in the finest wines."
-              data-pl="W naszych gajach stoją strażnicy, którzy byli świadkami powstania i upadku imperiów—500-letnie drzewa oliwne Chemlali, których sękate pnie opowiadają historie o wytrwałości, których żadna książka nie mogłaby uchwycić. Te starożytne istoty przetrwały susze trwające dziesięciolecia, wojny, które spaliły ziemię, i wiatry, które mogły wyrwać góry. A jednak stoją tutaj, rodząc owoce tak jak dla kartagińskich kupców, rzymskich szlachciców i arabskich uczonych. Każde drzewo to żywa biblioteka, jego korzenie sięgają 20 stóp w głąb gleby wzbogaconej przez tysiąclecia opadłych liści, tworząc terroir tak wyjątkowe, że naukowcy znaleźli w naszej oliwie ponad 200 różnych związków aromatycznych—więcej niż w najlepszych winach."
-              data-it="Nei nostri boschetti si ergono sentinelle che hanno assistito al sorgere e cadere degli imperi—ulivi Chemlali di 500 anni, i cui tronchi nodosi raccontano storie di resilienza che nessun libro potrebbe catturare. Questi esseri antichi sono sopravvissuti a siccità durate decenni, guerre che hanno bruciato la terra e venti che potevano sradicare montagne. Eppure eccoli qui, che portano frutti come facevano per i mercanti cartaginesi, i nobili romani e gli studiosi arabi. Ogni albero è una biblioteca vivente, le sue radici si immergono per 20 piedi in un terreno arricchito da millenni di foglie cadute, creando un terroir così unico che gli scienziati hanno trovato oltre 200 composti aromatici distinti nel nostro olio—più che nei vini più pregiati."
-              data-fr="Dans nos bosquets se dressent des sentinelles qui ont vu naître et tomber des empires—des oliviers Chemlali vieux de 500 ans, dont les troncs noueux racontent des histoires de résilience qu'aucun livre ne pourrait capturer. Ces êtres anciens ont survécu à des sécheresses qui ont duré des décennies, des guerres qui ont brûlé la terre et des vents qui pouvaient déraciner des montagnes. Pourtant, ils sont là, portant des fruits comme ils le faisaient pour les marchands carthaginois, les nobles romains et les érudits arabes. Chaque arbre est une bibliothèque vivante, ses racines plongeant à 20 pieds de profondeur dans un sol enrichi par des millénaires de feuilles tombées, créant un terroir si unique que les scientifiques ont trouvé plus de 200 composés aromatiques distincts dans notre huile—plus que dans les meilleurs vins."
-              data-ar="في بساتيننا تقف الحراس الذين شهدوا صعود وسقوط الإمبراطوريات - أشجار زيتون تشملالي عمرها 500 عام، جذوعها المعقدة تحكي قصص صمود لا يمكن لأي كتاب أن يحتويها. هذه الكائنات القديمة نجت من جفاف استمر لعقود، وحروب أحرقت الأرض، ورياح يمكنها اقتلاع الجبال. ومع ذلك ها هي تقف، تحمل ثماراً كما فعلت للتجار القرطاجيين والنبلاء الرومان والعلماء العرب. كل شجرة مكتبة حية، جذورها تغوص 20 قدماً في تربة غنية بآلاف السنين من الأوراق المتساقطة، مما يخلق تيروار فريد جداً لدرجة أن العلماء وجدوا أكثر من 200 مركب عطري مميز في زيتنا - أكثر من أفضل أنواع النبيذ."
-            >
-              In our groves stand sentinels that have witnessed empires rise and fall—500-year-old Chemlali olive trees, their gnarled trunks telling stories of resilience that no book could capture. These ancient beings survived droughts that lasted decades, wars that scorched the earth, and winds that could uproot mountains. Yet here they stand, bearing fruit as they did for Carthaginian merchants, Roman nobles, and Arab scholars. Each tree is a living library, its roots diving 20 feet deep into soil enriched by millennia of fallen leaves, creating a terroir so unique that scientists have found over 200 distinct aromatic compounds in our oil—more than in the finest wines.
+
+            <!-- Image Gallery -->
+            <div class="image-gallery">
+              <div class="gallery-image gallery-main" style='background-image: url("assets/images/porte.jpg");'></div>
+              <div class="gallery-image" style='background-image: url("assets/images/cut.jpg");'></div>
+              <div class="gallery-image" style='background-image: url("assets/images/collect.jpg");'></div>
+            </div>
+          </section>
+
+          <!-- The Immortal Trees -->
+          <section class="mb-20">
+            <h2 class="section-title" data-en="The Immortal Trees of Tunisia" data-pl="Nieśmiertelne Drzewa Tunezji">The Immortal Trees of Tunisia</h2>
+            <div class="story-section">
+              <div class="relative z-10">
+                <p class="text-lg md:text-xl leading-relaxed playfair" data-en="In our groves stand sentinels that have witnessed empires rise and fall—500-year-old Chemlali olive trees, their gnarled trunks telling stories of resilience that no book could capture. These ancient beings survived droughts that lasted decades, wars that scorched the earth, and winds that could uproot mountains. Yet here they stand, bearing fruit as they did for Carthaginian merchants, Roman nobles, and Arab scholars. Each tree is a living library, its roots diving 20 feet deep into soil enriched by millennia of fallen leaves, creating a terroir so unique that scientists have found over 200 distinct aromatic compounds in our oil—more than in the finest wines." data-pl="W naszych gajach stoją strażnicy, którzy byli świadkami powstania i upadku imperiów—500-letnie drzewa oliwne Chemlali, których sękate pnie opowiadają historie o wytrwałości, których żadna książka nie mogłaby uchwycić. Te starożytne istoty przetrwały susze trwające dziesięciolecia, wojny, które spaliły ziemię, i wiatry, które mogły wyrwać góry. A jednak stoją tutaj, rodząc owoce tak jak dla kartagińskich kupców, rzymskich szlachciców i arabskich uczonych. Każde drzewo to żywa biblioteka, jego korzenie sięgają 20 stóp w głąb gleby wzbogaconej przez tysiąclecia opadłych liści, tworząc terroir tak wyjątkowe, że naukowcy znaleźli w naszej oliwie ponad 200 różnych związków aromatycznych—więcej niż w najlepszych winach.">
+                  In our groves stand sentinels that have witnessed empires rise and fall—500-year-old Chemlali olive trees, their gnarled trunks telling stories of resilience that no book could capture. These ancient beings survived droughts that lasted decades, wars that scorched the earth, and winds that could uproot mountains. Yet here they stand, bearing fruit as they did for Carthaginian merchants, Roman nobles, and Arab scholars. Each tree is a living library, its roots diving 20 feet deep into soil enriched by millennia of fallen leaves, creating a terroir so unique that scientists have found over 200 distinct aromatic compounds in our oil—more than in the finest wines.
+                </p>
+              </div>
+            </div>
+          </section>
+
+          <!-- The Sacred Ritual of Harvest -->
+          <section class="mb-20">
+            <h2 class="section-title" data-en="The Sacred Ritual of Harvest" data-pl="Święty Rytuał Zbiorów">The Sacred Ritual of Harvest</h2>
+            <div class="story-section">
+              <div class="relative z-10">
+                <p class="text-lg md:text-xl leading-relaxed playfair" data-en="When autumn paints our groves in gold and purple, the same families who have tended these trees for multiple generations gather for the harvest. They know each tree by name, by the way its branches reach toward the dawn, by the particular sweetness of its fruit. The eldest can tell you which tree's oil helped cure the sultan's fever in 1623, which one provided the oil for a queen's wedding feast. No machines touch our trees—only hands that have learned from their grandfathers how to coax the olives down without bruising them, how to read the perfect moment when the fruit balances between green vigor and purple wisdom. This knowledge cannot be taught in schools; it lives in the calluses of hands, in the songs sung during harvest, in the prayers whispered to trees that have become family." data-pl="Gdy jesień maluje nasze gaje w złoto i purpurę, te same rodziny, które opiekowały się tymi drzewami przez wiele pokoleń, zbierają się na zbiory. Znają każde drzewo po imieniu, po sposobie, w jaki jego gałęzie sięgają ku świcie, po szczególnej słodyczy jego owoców. Najstarsi mogą opowiedzieć, które drzewo pomogło wyleczyć gorączkę sułtana w 1623 roku, które dostarczyło oliwę na ucztę weselną królowej. Żadne maszyny nie dotykają naszych drzew—tylko ręce, które nauczyły się od dziadków, jak delikatnie zdjąć oliwki bez ich uszkodzenia, jak odczytać idealny moment, gdy owoc balansuje między zieloną wigorem a purpurową mądrością. Tej wiedzy nie można nauczyć w szkołach; żyje ona w odciskach na dłoniach, w pieśniach śpiewanych podczas zbiorów, w modlitwach szeptanych do drzew, które stały się rodziną.">
+                  When autumn paints our groves in gold and purple, the same families who have tended these trees for multiple generations gather for the harvest. They know each tree by name, by the way its branches reach toward the dawn, by the particular sweetness of its fruit. The eldest can tell you which tree's oil helped cure the sultan's fever in 1623, which one provided the oil for a queen's wedding feast. No machines touch our trees—only hands that have learned from their grandfathers how to coax the olives down without bruising them, how to read the perfect moment when the fruit balances between green vigor and purple wisdom. This knowledge cannot be taught in schools; it lives in the calluses of hands, in the songs sung during harvest, in the prayers whispered to trees that have become family.
+                </p>
+              </div>
+            </div>
+          </section>
+
+          <!-- Why Chemlali Survived -->
+          <section class="mb-20">
+            <h2 class="section-title" data-en="Why Chemlali Survived When Others Fell" data-pl="Dlaczego Chemlali Przetrwało, Gdy Inne Upadły">Why Chemlali Survived When Others Fell</h2>
+            <div class="story-section">
+              <div class="relative z-10">
+                <p class="text-lg md:text-xl leading-relaxed playfair" data-en="Through the centuries, many olive varieties vanished—victims of disease, changing climates, or simply forgotten. But Chemlali endured because it carries within its DNA the memory of survival. Its roots penetrate deeper than any other variety, finding water in underground rivers that flow from the Atlas Mountains. Its leaves, smaller and tougher than others, can withstand the scorching Saharan winds that would wither lesser trees. But most remarkably, Chemlali olives produce an oil so perfectly balanced that it needs no blending, no enhancement—nature's masterpiece, complete in itself. This is why ancient healers called it 'liquid gold,' why traders crossed deserts to obtain it, why modern science confirms what our ancestors always knew: this oil doesn't just nourish the body, it preserves life itself." data-pl="Przez wieki wiele odmian oliwek zniknęło—ofiary chorób, zmian klimatu lub po prostu zapomnienia. Ale Chemlali przetrwało, ponieważ nosi w swoim DNA pamięć o przetrwaniu. Jego korzenie penetrują głębiej niż jakiejkolwiek innej odmiany, znajdując wodę w podziemnych rzekach płynących z Gór Atlas. Jego liście, mniejsze i twardsze niż inne, mogą wytrzymać palące wiatry Sahary, które zwiędłyby słabsze drzewa. Ale co najbardziej niezwykłe, oliwki Chemlali produkują oliwę tak doskonale zrównoważoną, że nie potrzebuje mieszania, żadnego ulepszania—arcydzieło natury, kompletne samo w sobie. Dlatego starożytni uzdrowiciele nazywali ją 'płynnym złotem', dlatego handlarze przemierzali pustynie, aby ją zdobyć, dlatego współczesna nauka potwierdza to, co nasi przodkowie zawsze wiedzieli: ta oliwa nie tylko odżywia ciało, ona zachowuje samo życie.">
+                  Through the centuries, many olive varieties vanished—victims of disease, changing climates, or simply forgotten. But Chemlali endured because it carries within its DNA the memory of survival. Its roots penetrate deeper than any other variety, finding water in underground rivers that flow from the Atlas Mountains. Its leaves, smaller and tougher than others, can withstand the scorching Saharan winds that would wither lesser trees. But most remarkably, Chemlali olives produce an oil so perfectly balanced that it needs no blending, no enhancement—nature's masterpiece, complete in itself. This is why ancient healers called it 'liquid gold,' why traders crossed deserts to obtain it, why modern science confirms what our ancestors always knew: this oil doesn't just nourish the body, it preserves life itself.
+                </p>
+              </div>
+            </div>
+          </section>
+
+          <!-- Final CTA Section -->
+          <section class="text-center bg-gradient-to-br from-yellow-50 to-green-50 rounded-3xl p-8 md:p-12">
+            <h2 class="text-gray-900 text-3xl md:text-4xl font-bold mb-6 playfair" data-en="Experience the Legacy" data-pl="Doświadcz Dziedzictwa">
+              Experience the Legacy
+            </h2>
+            <p class="text-gray-600 text-lg leading-relaxed max-w-3xl mx-auto mb-10" data-en="Every bottle of Laperla carries 500 years of wisdom, resilience, and craftsmanship. From our ancient Chemlali trees to your table, taste the liquid gold that has sustained generations and will nourish many more to come." data-pl="Każda butelka Laperla nosi 500 lat mądrości, odporności i rzemiosła. Z naszych starożytnych drzew Chemlali na Twój stół, skosztuj płynnego złota, które podtrzymywało pokolenia i będzie odżywiać wiele kolejnych.">
+              Every bottle of Laperla carries 500 years of wisdom, resilience, and craftsmanship. From our ancient Chemlali trees to your table, taste the liquid gold that has sustained generations and will nourish many more to come.
             </p>
-            <h2 class="text-[#141811] text-[22px] font-bold leading-tight tracking-[-0.015em] px-4 pb-3 pt-5" data-en="The Sacred Ritual of Harvest" data-pl="Święty Rytuał Zbiorów" data-it="Il Sacro Rituale del Raccolto" data-fr="Le Rituel Sacré de la Récolte" data-ar="طقوس الحصاد المقدسة">The Sacred Ritual of Harvest</h2>
-            <p
-              class="text-[#141811] text-base font-normal leading-normal pb-3 pt-1 px-4"
-              data-en="When autumn paints our groves in gold and purple, the same families who have tended these trees for 15 generations gather for the harvest. They know each tree by name, by the way its branches reach toward the dawn, by the particular sweetness of its fruit. The eldest can tell you which tree's oil helped cure the sultan's fever in 1623, which one provided the oil for a queen's wedding feast. No machines touch our trees—only hands that have learned from their grandfathers how to coax the olives down without bruising them, how to read the perfect moment when the fruit balances between green vigor and purple wisdom. This knowledge cannot be taught in schools; it lives in the calluses of hands, in the songs sung during harvest, in the prayers whispered to trees that have become family."
-              data-pl="Gdy jesień maluje nasze gaje w złoto i purpurę, te same rodziny, które opiekowały się tymi drzewami przez 15 pokoleń, zbierają się na zbiory. Znają każde drzewo po imieniu, po sposobie, w jaki jego gałęzie sięgają ku świcie, po szczególnej słodyczy jego owoców. Najstarsi mogą opowiedzieć, które drzewo pomogło wyleczyć gorączkę sułtana w 1623 roku, które dostarczyło oliwę na ucztę weselną królowej. Żadne maszyny nie dotykają naszych drzew—tylko ręce, które nauczyły się od dziadków, jak delikatnie zdjąć oliwki bez ich uszkodzenia, jak odczytać idealny moment, gdy owoc balansuje między zieloną wigorem a purpurową mądrością. Tej wiedzy nie można nauczyć w szkołach; żyje ona w odciskach na dłoniach, w pieśniach śpiewanych podczas zbiorów, w modlitwach szeptanych do drzew, które stały się rodziną."
-              data-it="Quando l'autunno dipinge i nostri boschetti d'oro e porpora, le stesse famiglie che hanno curato questi alberi per 15 generazioni si riuniscono per il raccolto. Conoscono ogni albero per nome, dal modo in cui i suoi rami si protendono verso l'alba, dalla particolare dolcezza del suo frutto. I più anziani possono raccontarti quale olio d'albero ha aiutato a curare la febbre del sultano nel 1623, quale ha fornito l'olio per il banchetto nuziale di una regina. Nessuna macchina tocca i nostri alberi—solo mani che hanno imparato dai loro nonni come convincere le olive a scendere senza ammaccarle, come leggere il momento perfetto in cui il frutto bilancia tra vigore verde e saggezza purpurea. Questa conoscenza non può essere insegnata nelle scuole; vive nei calli delle mani, nelle canzoni cantate durante il raccolto, nelle preghiere sussurrate agli alberi che sono diventati famiglia."
-              data-fr="Quand l'automne peint nos bosquets d'or et de pourpre, les mêmes familles qui ont soigné ces arbres pendant 15 générations se rassemblent pour la récolte. Ils connaissent chaque arbre par son nom, par la façon dont ses branches s'étendent vers l'aube, par la douceur particulière de son fruit. Les plus âgés peuvent vous dire quel arbre a aidé à guérir la fièvre du sultan en 1623, lequel a fourni l'huile pour le festin de mariage d'une reine. Aucune machine ne touche nos arbres—seulement des mains qui ont appris de leurs grands-pères comment faire descendre les olives sans les meurtrir, comment lire le moment parfait où le fruit équilibre entre vigueur verte et sagesse pourpre. Cette connaissance ne peut être enseignée dans les écoles; elle vit dans les callosités des mains, dans les chants chantés pendant la récolte, dans les prières murmurées aux arbres devenus famille."
-              data-ar="عندما يرسم الخريف بساتيننا بالذهب والأرجوان، تجتمع نفس العائلات التي رعت هذه الأشجار لـ 15 جيلاً للحصاد. يعرفون كل شجرة باسمها، بالطريقة التي تمتد بها أغصانها نحو الفجر، بالحلاوة الخاصة لثمارها. يمكن للأكبر سناً أن يخبرك أي شجرة ساعد زيتها في علاج حمى السلطان في 1623، وأيها قدمت الزيت لوليمة زفاف ملكة. لا تلمس الآلات أشجارنا - فقط الأيدي التي تعلمت من أجدادها كيف تقنع الزيتون بالنزول دون إيذائه، كيف تقرأ اللحظة المثالية عندما تتوازن الثمرة بين النشاط الأخضر والحكمة الأرجوانية. لا يمكن تعليم هذه المعرفة في المدارس؛ إنها تعيش في مسامير الأيدي، في الأغاني التي تُغنى أثناء الحصاد، في الصلوات المهموسة للأشجار التي أصبحت عائلة."
-            >
-              When autumn paints our groves in gold and purple, the same families who have tended these trees for 15 generations gather for the harvest. They know each tree by name, by the way its branches reach toward the dawn, by the particular sweetness of its fruit. The eldest can tell you which tree's oil helped cure the sultan's fever in 1623, which one provided the oil for a queen's wedding feast. No machines touch our trees—only hands that have learned from their grandfathers how to coax the olives down without bruising them, how to read the perfect moment when the fruit balances between green vigor and purple wisdom. This knowledge cannot be taught in schools; it lives in the calluses of hands, in the songs sung during harvest, in the prayers whispered to trees that have become family.
-            </p>
-            <h2 class="text-[#141811] text-[22px] font-bold leading-tight tracking-[-0.015em] px-4 pb-3 pt-5" data-en="Why Chemlali Survived When Others Fell" data-pl="Dlaczego Chemlali Przetrwało, Gdy Inne Upadły" data-it="Perché Chemlali è Sopravvissuto Quando Altri Sono Caduti" data-fr="Pourquoi Chemlali a Survécu Quand D'autres Sont Tombés" data-ar="لماذا نجت تشملالي عندما سقطت الأخرى">Why Chemlali Survived When Others Fell</h2>
-            <p
-              class="text-[#141811] text-base font-normal leading-normal pb-3 pt-1 px-4"
-              data-en="Through the centuries, many olive varieties vanished—victims of disease, changing climates, or simply forgotten. But Chemlali endured because it carries within its DNA the memory of survival. Its roots penetrate deeper than any other variety, finding water in underground rivers that flow from the Atlas Mountains. Its leaves, smaller and tougher than others, can withstand the scorching Saharan winds that would wither lesser trees. But most remarkably, Chemlali olives produce an oil so perfectly balanced that it needs no blending, no enhancement—nature's masterpiece, complete in itself. This is why ancient healers called it 'liquid gold,' why traders crossed deserts to obtain it, why modern science confirms what our ancestors always knew: this oil doesn't just nourish the body, it preserves life itself."
-              data-pl="Przez wieki wiele odmian oliwek zniknęło—ofiary chorób, zmian klimatu lub po prostu zapomnienia. Ale Chemlali przetrwało, ponieważ nosi w swoim DNA pamięć o przetrwaniu. Jego korzenie penetrują głębiej niż jakiejkolwiek innej odmiany, znajdując wodę w podziemnych rzekach płynących z Gór Atlas. Jego liście, mniejsze i twardsze niż inne, mogą wytrzymać palące wiatry Sahary, które zwiędłyby słabsze drzewa. Ale co najbardziej niezwykłe, oliwki Chemlali produkują oliwę tak doskonale zrównoważoną, że nie potrzebuje mieszania, żadnego ulepszania—arcydzieło natury, kompletne samo w sobie. Dlatego starożytni uzdrowiciele nazywali ją 'płynnym złotem', dlatego handlarze przemierzali pustynie, aby ją zdobyć, dlatego współczesna nauka potwierdza to, co nasi przodkowie zawsze wiedzieli: ta oliwa nie tylko odżywia ciało, ona zachowuje samo życie."
-              data-it="Attraverso i secoli, molte varietà di olive sono scomparse—vittime di malattie, cambiamenti climatici o semplicemente dimenticate. Ma Chemlali è sopravvissuta perché porta nel suo DNA la memoria della sopravvivenza. Le sue radici penetrano più in profondità di qualsiasi altra varietà, trovando acqua nei fiumi sotterranei che scorrono dalle Montagne dell'Atlante. Le sue foglie, più piccole e più dure delle altre, possono resistere ai venti roventi del Sahara che farebbero appassire alberi minori. Ma soprattutto, le olive Chemlali producono un olio così perfettamente bilanciato che non ha bisogno di miscelazione, nessun miglioramento—il capolavoro della natura, completo in sé. Ecco perché gli antichi guaritori lo chiamavano 'oro liquido', perché i commercianti attraversavano i deserti per ottenerlo, perché la scienza moderna conferma ciò che i nostri antenati hanno sempre saputo: questo olio non solo nutre il corpo, preserva la vita stessa."
-              data-fr="À travers les siècles, de nombreuses variétés d'olives ont disparu—victimes de maladies, de changements climatiques ou simplement oubliées. Mais Chemlali a survécu parce qu'elle porte dans son ADN la mémoire de la survie. Ses racines pénètrent plus profondément que toute autre variété, trouvant de l'eau dans des rivières souterraines qui coulent des montagnes de l'Atlas. Ses feuilles, plus petites et plus dures que les autres, peuvent résister aux vents brûlants du Sahara qui flétriraient des arbres moindres. Mais le plus remarquable, les olives Chemlali produisent une huile si parfaitement équilibrée qu'elle n'a besoin d'aucun mélange, aucune amélioration—le chef-d'œuvre de la nature, complet en lui-même. C'est pourquoi les anciens guérisseurs l'appelaient 'or liquide', pourquoi les commerçants traversaient les déserts pour l'obtenir, pourquoi la science moderne confirme ce que nos ancêtres ont toujours su: cette huile ne nourrit pas seulement le corps, elle préserve la vie elle-même."
-              data-ar="عبر القرون، اختفت العديد من أصناف الزيتون - ضحايا الأمراض أو تغير المناخ أو ببساطة النسيان. لكن تشملالي صمدت لأنها تحمل في حمضها النووي ذاكرة البقاء. جذورها تخترق أعمق من أي صنف آخر، وتجد الماء في الأنهار الجوفية التي تتدفق من جبال الأطلس. أوراقها، الأصغر والأقسى من غيرها، يمكنها تحمل رياح الصحراء الحارقة التي من شأنها أن تذبل الأشجار الأضعف. ولكن الأكثر روعة، أن زيتون تشملالي ينتج زيتاً متوازناً بشكل مثالي لدرجة أنه لا يحتاج إلى خلط، ولا تحسين - تحفة الطبيعة، كاملة في حد ذاتها. لهذا السبب أطلق عليها المعالجون القدماء 'الذهب السائل'، ولماذا عبر التجار الصحاري للحصول عليها، ولماذا يؤكد العلم الحديث ما عرفه أجدادنا دائماً: هذا الزيت لا يغذي الجسد فحسب، بل يحفظ الحياة نفسها."
-            >
-              Through the centuries, many olive varieties vanished—victims of disease, changing climates, or simply forgotten. But Chemlali endured because it carries within its DNA the memory of survival. Its roots penetrate deeper than any other variety, finding water in underground rivers that flow from the Atlas Mountains. Its leaves, smaller and tougher than others, can withstand the scorching Saharan winds that would wither lesser trees. But most remarkably, Chemlali olives produce an oil so perfectly balanced that it needs no blending, no enhancement—nature's masterpiece, complete in itself. This is why ancient healers called it 'liquid gold,' why traders crossed deserts to obtain it, why modern science confirms what our ancestors always knew: this oil doesn't just nourish the body, it preserves life itself.
-            </p>
-          </div>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center items-center">
+              <a href="https://wa.me/48530846928?text=I%20want%20to%20experience%20Laperla%20heritage" target="_blank" class="cta-button text-lg">
+                <span data-en="🌳 Taste Our Heritage" data-pl="🌳 Skosztuj Naszego Dziedzictwa">🌳 Taste Our Heritage</span>
+              </a>
+              <a href="contact.html" class="cta-button-outline text-lg">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp" class="w-5 h-5 mr-2">
+                <span data-en="💬 Learn More" data-pl="💬 Dowiedz Się Więcej">💬 Learn More</span>
+              </a>
+            </div>
+          </section>
         </div>
-        <footer class="flex justify-center">
-          <div class="flex max-w-[960px] flex-1 flex-col">
-            <footer class="flex flex-col gap-6 px-5 py-10 text-center @container">
-              <div class="flex flex-wrap items-center justify-center gap-6 @[480px]:flex-row @[480px]:justify-around">
-                <a class="text-[#758863] text-base font-normal leading-normal min-w-40" href="home.html" data-en="Home" data-pl="Strona Główna" data-it="Home" data-fr="Accueil" data-ar="الرئيسية">Home</a>
-                <a class="text-[#758863] text-base font-normal leading-normal min-w-40" href="product.html" data-en="Our Products" data-pl="Nasze Produkty" data-it="I nostri prodotti" data-fr="Nos produits" data-ar="منتجاتنا">Our Products</a>
-                <a class="text-[#758863] text-base font-normal leading-normal min-w-40" href="heritage.html" data-en="Heritage" data-pl="Dziedzictwo" data-it="Eredità" data-fr="Patrimoine" data-ar="التراث">Heritage</a>
-                <a class="text-[#758863] text-base font-normal leading-normal min-w-40" href="contact.html" data-en="Contact" data-pl="Kontakt" data-it="Contatti" data-fr="Contact" data-ar="اتصل بنا">Contact</a>
-              </div>
-              <div class="flex flex-wrap justify-center gap-4">
-                <a href="https://instagram.com/yourprofile" target="_blank">
-                  <div class="text-[#758863]" data-icon="InstagramLogo" data-size="24px" data-weight="regular">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="24px" height="24px" fill="currentColor" viewBox="0 0 256 256">
-                      <path
-                        d="M128,80a48,48,0,1,0,48,48A48.05,48.05,0,0,0,128,80Zm0,80a32,32,0,1,1,32-32A32,32,0,0,1,128,160ZM176,24H80A56.06,56.06,0,0,0,24,80v96a56.06,56.06,0,0,0,56,56h96a56.06,56.06,0,0,0,56-56V80A56.06,56.06,0,0,0,176,24Zm40,152a40,40,0,0,1-40,40H80a40,40,0,0,1-40-40V80A40,40,0,0,1,80,40h96a40,40,0,0,1,40,40ZM192,76a12,12,0,1,1-12-12A12,12,0,0,1,192,76Z"
-                      ></path>
-                    </svg>
-                  </div>
-                </a>
-                <a href="https://facebook.com/yourprofile" target="_blank">
-                  <div class="text-[#758863]" data-icon="FacebookLogo" data-size="24px" data-weight="regular">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="24px" height="24px" fill="currentColor" viewBox="0 0 256 256">
-                      <path
-                        d="M128,24A104,104,0,1,0,232,128,104.11,104.11,0,0,0,128,24Zm8,191.63V152h24a8,8,0,0,0,0-16H136V112a16,16,0,0,1,16-16h16a8,8,0,0,0,0-16H152a32,32,0,0,0-32,32v24H96a8,8,0,0,0,0,16h24v63.63a88,88,0,1,1,16,0Z"
-                      ></path>
-                    </svg>
-                  </div>
-                </a>
-                <a href="https://twitter.com/yourprofile" target="_blank">
-                  <div class="text-[#758863]" data-icon="TwitterLogo" data-size="24px" data-weight="regular">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="24px" height="24px" fill="currentColor" viewBox="0 0 256 256">
-                      <path
-                        d="M247.39,68.94A8,8,0,0,0,240,64H209.57A48.66,48.66,0,0,0,168.1,40a46.91,46.91,0,0,0-33.75,13.7A47.9,47.9,0,0,0,120,88v6.09C79.74,83.47,46.81,50.72,46.46,50.37a8,8,0,0,0-13.65,4.92c-4.31,47.79,9.57,79.77,22,98.18a110.93,110.93,0,0,0,21.88,24.2c-15.23,17.53-39.21,26.74-39.47,26.84a8,8,0,0,0-3.85,11.93c.75,1.12,3.75,5.05,11.08,8.72C53.51,229.7,65.48,232,80,232c70.67,0,129.72-54.42,135.75-124.44l29.91-29.9A8,8,0,0,0,247.39,68.94Zm-45,29.41a8,8,0,0,0-2.32,5.14C196,166.58,143.28,216,80,216c-10.56,0-18-1.4-23.22-3.08,11.51-6.25,27.56-17,37.88-32.48A8,8,0,0,0,92,169.08c-.47-.27-43.91-26.34-44-96,16,13,45.25,33.17,78.67,38.79A8,8,0,0,0,136,104V88a32,32,0,0,1,9.6-22.92A30.94,30.94,0,0,1,167.9,56c12.66.16,24.49,7.88,29.44,19.21A8,8,0,0,0,204.67,80h16Z"
-                      ></path>
-                    </svg>
-                  </div>
-                </a>
-              </div>
-              <p class="text-[#758863] text-base font-normal leading-normal" data-en="© 2025 Laperla. All rights reserved." data-pl="© 2025 Laperla. Wszelkie prawa zastrzeżone." data-it="© 2025 Laperla. Tutti i diritti riservati." data-fr="© 2025 Laperla. Tous droits réservés." data-ar="© 2025 لابيرلا. جميع الحقوق محفوظة.">
-                © 2025 Laperla. All rights reserved.
-              </p>
-            </footer>
+
+        <!-- Enhanced Footer -->
+        <footer class="bg-white border-t border-gray-200">
+          <div class="max-w-7xl mx-auto px-6 md:px-10 py-12">
+            <div class="flex flex-wrap items-center justify-center gap-8 mb-8">
+              <a class="text-gray-600 hover:text-yellow-600 font-medium transition-colors" href="home.html" data-en="Home" data-pl="Strona Główna">Home</a>
+              <a class="text-gray-600 hover:text-yellow-600 font-medium transition-colors" href="product.html" data-en="Our Products" data-pl="Nasze Produkty">Our Products</a>
+              <a class="text-gray-600 hover:text-yellow-600 font-medium transition-colors" href="heritage.html" data-en="Our Story" data-pl="Nasza Historia">Our Story</a>
+              <a class="text-gray-600 hover:text-yellow-600 font-medium transition-colors" href="contact.html" data-en="Contact" data-pl="Kontakt">Contact</a>
+            </div>
+            <div class="flex justify-center gap-6 mb-8">
+              <a href="https://instagram.com/yourprofile" target="_blank" class="text-gray-400 hover:text-yellow-600 transition-colors">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 256 256">
+                  <path d="M128,80a48,48,0,1,0,48,48A48.05,48.05,0,0,0,128,80Zm0,80a32,32,0,1,1,32-32A32,32,0,0,1,128,160ZM176,24H80A56.06,56.06,0,0,0,24,80v96a56.06,56.06,0,0,0,56,56h96a56.06,56.06,0,0,0,56-56V80A56.06,56.06,0,0,0,176,24Zm40,152a40,40,0,0,1-40,40H80a40,40,0,0,1-40-40V80A40,40,0,0,1,80,40h96a40,40,0,0,1,40,40ZM192,76a12,12,0,1,1-12-12A12,12,0,0,1,192,76Z"></path>
+                </svg>
+              </a>
+              <a href="https://facebook.com/yourprofile" target="_blank" class="text-gray-400 hover:text-yellow-600 transition-colors">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 256 256">
+                  <path d="M128,24A104,104,0,1,0,232,128,104.11,104.11,0,0,0,128,24Zm8,191.63V152h24a8,8,0,0,0,0-16H136V112a16,16,0,0,1,16-16h16a8,8,0,0,0,0-16H152a32,32,0,0,0-32,32v24H96a8,8,0,0,0,0-16h24v63.63a88,88,0,1,1,16,0Z"></path>
+                </svg>
+              </a>
+            </div>
+            <p class="text-center text-gray-500 font-medium" data-en="© 2025 Laperla. History and health in every drop. All rights reserved." data-pl="© 2025 Laperla. Historia i zdrowie w każdej kropli. Wszelkie prawa zastrzeżone.">
+              © 2025 Laperla. History and health in every drop. All rights reserved.
+            </p>
           </div>
         </footer>
       </div>
     </div>
 
+    <!-- Enhanced JavaScript -->
     <script>
-      // Run immediately to prevent navigation without language
+      // Language management
       (function() {
-        // Get current language from URL, cookie, or default
         const urlParams = new URLSearchParams(window.location.search);
         const urlLang = urlParams.get('lang');
         const savedLanguage = Cookies.get('selectedLanguage');
         const currentLang = urlLang || savedLanguage || 'en';
         
-        // Update all navigation links immediately
         function updateAllLinks(lang) {
           const links = document.querySelectorAll('a[href^="home.html"], a[href^="product.html"], a[href^="heritage.html"], a[href^="contact.html"], a[href^="index.html"]');
           links.forEach(link => {
@@ -377,7 +539,6 @@
           });
         }
         
-        // Update links as soon as DOM is ready
         if (document.readyState === 'loading') {
           document.addEventListener('DOMContentLoaded', () => updateAllLinks(currentLang));
         } else {
@@ -386,40 +547,34 @@
       })();
 
       document.addEventListener('DOMContentLoaded', () => {
-        const translatableElements = document.querySelectorAll('[data-en][data-pl][data-it][data-fr][data-ar]');
+        const translatableElements = document.querySelectorAll('[data-en][data-pl]');
         const languageButton = document.querySelector('.language-dropdown-button');
         const languageMenu = document.querySelector('.language-dropdown-menu');
         const languageOptions = document.querySelectorAll('.language-option');
         const selectedLanguageSpan = document.querySelector('.selected-language');
         const flagSpan = languageButton.querySelector('.fi');
-    
+        const metaDescription = document.querySelector('meta[name="description"]');
+
         function updateLanguage(lang) {
-          // Update text content
           translatableElements.forEach(element => {
             element.textContent = element.getAttribute(`data-${lang}`);
           });
-    
-          // Update selected language display
+
+          if (metaDescription) {
+            metaDescription.setAttribute('content', metaDescription.getAttribute(`data-${lang}`));
+          }
+
           const selectedOption = document.querySelector(`.language-option[data-lang="${lang}"]`);
           selectedLanguageSpan.textContent = selectedOption.textContent.trim();
-          // Ensure flag updates correctly
-          flagSpan.className = `fi fi-${lang === 'ar' ? 'ma' : (lang === 'fr' ? 'fr' : lang)}`;
-    
-          // Update HTML lang attribute
-          document.documentElement.setAttribute('lang', lang === 'ar' ? 'ar' : lang);
-    
-          // Update direction for Arabic
-          document.body.setAttribute('dir', lang === 'ar' ? 'rtl' : 'ltr');
-    
-          // Save language to cookie (not localStorage!)
+          flagSpan.className = `fi fi-${lang === 'pl' ? 'pl' : 'us'}`;
+
+          document.documentElement.setAttribute('lang', lang);
           Cookies.set('selectedLanguage', lang, { expires: 7 });
-          
-          // Update ALL links with lang parameter (including navigation, footer, and any other links)
+
           const allLinks = document.querySelectorAll('a[href]');
           allLinks.forEach(link => {
             try {
               const url = new URL(link.href, window.location.origin);
-              // Only update links to your site pages
               if (url.hostname === window.location.hostname && 
                   (url.pathname.endsWith('.html') || url.pathname === '/')) {
                 url.searchParams.set('lang', lang);
@@ -429,53 +584,44 @@
               // Skip invalid URLs
             }
           });
-    
-          // Close dropdown
+
           languageMenu.classList.remove('show');
         }
-    
-        // Toggle dropdown
+
         languageButton.addEventListener('click', () => {
           languageMenu.classList.toggle('show');
         });
-    
-        // Handle language selection
+
         languageOptions.forEach(option => {
           option.addEventListener('click', () => {
             const lang = option.getAttribute('data-lang');
             updateLanguage(lang);
-            // Update URL with language parameter
             const url = new URL(window.location);
             url.searchParams.set('lang', lang);
             window.history.pushState({}, '', url);
           });
         });
-    
-        // Close dropdown when clicking outside
+
         document.addEventListener('click', (e) => {
           if (!languageButton.contains(e.target) && !languageMenu.contains(e.target)) {
             languageMenu.classList.remove('show');
           }
         });
-    
-        // Set initial language: use URL parameter, then cookie
+
+        // Initialize language
         const urlParams = new URLSearchParams(window.location.search);
         const urlLang = urlParams.get('lang');
         const savedLanguage = Cookies.get('selectedLanguage');
         
-        if (urlLang && ['en', 'pl', 'it', 'fr', 'ar'].includes(urlLang)) {
+        if (urlLang && ['en', 'pl'].includes(urlLang)) {
           updateLanguage(urlLang);
-        } else if (savedLanguage && ['en', 'pl', 'it', 'fr', 'ar'].includes(savedLanguage)) {
+        } else if (savedLanguage && ['en', 'pl'].includes(savedLanguage)) {
           updateLanguage(savedLanguage);
-          // Update URL with language
           const url = new URL(window.location);
           url.searchParams.set('lang', savedLanguage);
           window.history.replaceState({}, '', url);
-        } else {
-          // Default to English
-          updateLanguage('en');
         }
       });
     </script>
-  </body>
+</body>
 </html>
