@@ -2,24 +2,22 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="description" content="Discover Laperla's premium extra virgin olive oil from 500-year-old trees. Experience liquid gold crafted by multiple generations in Tunisia's heart." data-en="Discover Laperla's premium extra virgin olive oil from 500-year-old trees. Experience liquid gold crafted by multiple generations in Tunisia's heart." data-pl="Poznaj premium oliwę extra virgin Laperla z 500-letnich drzew. Doświadcz płynnego złota tworzonego przez wiele pokoleń w sercu Tunezji." data-it="Scopri l'olio extravergine di oliva premium di Laperla da alberi di 500 anni. Vivi l'oro liquido creato da multiple generazioni nel cuore della Tunisia." data-fr="Découvrez l'huile d'olive extra vierge premium de Laperla issue d'arbres de 500 ans. Vivez l'or liquide créé par plusieurs générations au cœur de la Tunisie." />
+    <meta name="description" content="Laperla - History and health in every drop. Premium extra virgin olive oil from 500-year-old Chemlali trees in Tunisia. ECO-CERT certified with <0.3% acidity." data-en="Laperla - History and health in every drop. Premium extra virgin olive oil from 500-year-old Chemlali trees in Tunisia. ECO-CERT certified with <0.3% acidity." data-pl="Laperla - Historia i zdrowie w każdej kropli. Premium oliwa extra virgin z 500-letnich drzew Chemlali w Tunezji. Certyfikowana ECO-CERT z kwasowością <0,3%." />
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link rel="stylesheet" as="style" onload="this.rel='stylesheet'" href="https://fonts.googleapis.com/css2?display=swap&family=Epilogue%3Awght%40400%3B500%3B700%3B900&family=Noto+Sans%3Awght%40400%3B500%3B700%3B900&family=Amiri:wght@400;700&family=Lugrasimo&display=swap" />
+    <link rel="stylesheet" as="style" onload="this.rel='stylesheet'" href="https://fonts.googleapis.com/css2?display=swap&family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:wght@400;500;600;700;800&family=Lugrasimo&display=swap" />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flag-icons/css/flag-icons.min.css" />
     <link rel="alternate" hreflang="en" href="https://laperlaoliveoil.com/index.html?lang=en" />
     <link rel="alternate" hreflang="pl" href="https://laperlaoliveoil.com/index.html?lang=pl" />
-    <link rel="alternate" hreflang="it" href="https://laperlaoliveoil.com/index.html?lang=it" />
-    <link rel="alternate" hreflang="fr" href="https://laperlaoliveoil.com/index.html?lang=fr" />
     <link rel="alternate" hreflang="x-default" href="https://laperlaoliveoil.com/index.html?lang=en" />
-    <title>Laperla | 500-Year-Old Trees, Multiple Generations | Premium Tunisian Olive Oil</title>
+    <title>Laperla | 500-Year-Old Trees | Premium Tunisian Extra Virgin Olive Oil</title>
     <link rel="icon" type="image/x-icon" href="data:image/x-icon;base64," />
     <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
     <link rel="stylesheet" href="assets/css/styles.css">
     <!-- Load js-cookie -->
     <script src="https://cdn.jsdelivr.net/npm/js-cookie@3.0.5/dist/js.cookie.min.js"></script>
     <!-- SEO Meta Tags -->
-    <meta name="keywords" content="oliwa z oliwek extra virgin, oliwa tunezyjska, chemlali oliwa, najlepsza oliwa, sklep oliwy online, oliwa z pierwszego tłoczenia, premium oliwa tunezja, 500-year-old olive trees">
+    <meta name="keywords" content="premium extra virgin olive oil, ECO-CERT, Chemlali olives, Tunisia olive oil, 500-year-old trees, ultra pure olive oil, polyphenols">
     <!-- Structured Data -->
     <script type="application/ld+json">
     {
@@ -27,7 +25,7 @@
       "@type": "Organization",
       "name": "Laperla Olive Oil",
       "url": "https://laperlaoliveoil.com",
-      "description": "Premium Tunisian olive oil from 500-year-old trees, crafted by multiple generations",
+      "description": "Premium extra virgin olive oil from 500-year-old Chemlali trees in Tunisia",
       "address": {
         "@type": "PostalAddress",
         "addressLocality": "Sidi Bou Ali",
@@ -37,18 +35,18 @@
         "@type": "ContactPoint",
         "telephone": "+48-530-846-928",
         "contactType": "sales",
-        "availableLanguage": ["English", "Polish", "Italian", "French"]
+        "availableLanguage": ["English", "Polish"]
       }
     }
     </script>
-    <!-- FreeIPAPI Geolocation Script -->
+    <!-- Geolocation Script for Polish visitors -->
     <script>
       function detectAndRedirect() {
         const urlParams = new URLSearchParams(window.location.search);
         const urlLang = urlParams.get('lang');
     
         // Skip if valid lang parameter is present
-        if (urlLang && ['en', 'pl', 'it', 'fr'].includes(urlLang)) {
+        if (urlLang && ['en', 'pl'].includes(urlLang)) {
           Cookies.set('selectedLanguage', urlLang, { expires: 7 });
           return;
         }
@@ -61,7 +59,7 @@
     
         // Check saved language cookie
         const savedLanguage = Cookies.get('selectedLanguage');
-        if (savedLanguage && ['en', 'pl', 'it', 'fr'].includes(savedLanguage)) {
+        if (savedLanguage && ['en', 'pl'].includes(savedLanguage)) {
           window.location.href = `/index.html?lang=${savedLanguage}`;
           return;
         }
@@ -73,7 +71,7 @@
             return response.json();
           })
           .then(data => {
-            console.log('Geolocation API Response:', data); // Debug
+            console.log('Geolocation API Response:', data);
             const lang = data.countryCode === 'PL' ? 'pl' : 'en';
             Cookies.set('selectedLanguage', lang, { expires: 7 });
             window.location.href = `/index.html?lang=${lang}`;
@@ -93,6 +91,26 @@
     </script>
 
     <style>
+      :root {
+        --olive-gold: #d4a017;
+        --olive-green: #2e5e2e;
+        --soft-green: #f8faf5;
+        --warm-white: #fefefe;
+        --text-dark: #2c2c2c;
+        --text-medium: #525252;
+        --text-light: #737373;
+      }
+
+      body {
+        font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+        line-height: 1.6;
+        color: var(--text-dark);
+      }
+
+      .playfair {
+        font-family: 'Playfair Display', serif;
+      }
+
       .language-dropdown {
         position: relative;
       }
@@ -100,25 +118,34 @@
         display: flex;
         align-items: center;
         gap: 0.5rem;
-        padding: 0.5rem 1rem;
-        background-color: #f2f4f0;
-        border-radius: 0.5rem;
+        padding: 0.75rem 1.25rem;
+        background: rgba(255, 255, 255, 0.95);
+        border: 1px solid rgba(212, 160, 23, 0.2);
+        border-radius: 12px;
         cursor: pointer;
         font-size: 0.875rem;
         font-weight: 500;
-        color: #141811;
+        color: var(--text-dark);
+        transition: all 0.3s ease;
+        backdrop-filter: blur(10px);
+      }
+      .language-dropdown-button:hover {
+        background: white;
+        border-color: var(--olive-gold);
+        box-shadow: 0 4px 12px rgba(212, 160, 23, 0.15);
       }
       .language-dropdown-menu {
         position: absolute;
         top: 100%;
         right: 0;
         margin-top: 0.5rem;
-        background-color: white;
-        border: 1px solid #e0e5dc;
-        border-radius: 0.5rem;
-        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        background: white;
+        border: 1px solid rgba(212, 160, 23, 0.2);
+        border-radius: 12px;
+        box-shadow: 0 10px 40px rgba(0, 0, 0, 0.15);
         display: none;
-        z-index: 10;
+        z-index: 50;
+        overflow: hidden;
       }
       .language-dropdown-menu.show {
         display: block;
@@ -127,24 +154,31 @@
         display: flex;
         align-items: center;
         gap: 0.5rem;
-        padding: 0.5rem 1rem;
+        padding: 0.75rem 1.25rem;
         cursor: pointer;
         font-size: 0.875rem;
-        color: #141811;
+        font-weight: 500;
+        color: var(--text-dark);
+        transition: all 0.2s ease;
       }
       .language-option:hover {
-        background-color: #f2f4f0;
+        background: var(--soft-green);
+        color: var(--olive-green);
       }
       .fi {
         width: 20px;
         height: 15px;
+        border-radius: 2px;
       }
-      .slideshow-container {
+
+      .hero-slideshow {
         position: absolute;
         top: 0;
         left: 0;
         width: 100%;
         height: 100%;
+        border-radius: 24px;
+        overflow: hidden;
       }
       .slideshow-image {
         width: 100%;
@@ -154,37 +188,227 @@
         top: 0;
         left: 0;
         opacity: 0;
-        transition: opacity 1s ease-in-out;
+        transition: opacity 1.5s ease-in-out;
       }
       .slideshow-image.active {
         opacity: 1;
       }
+
+      .hero-overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(135deg, rgba(0,0,0,0.4) 0%, rgba(0,0,0,0.6) 100%);
+        border-radius: 24px;
+      }
+
       .heritage-badge {
-        color: #d4a017;
-        padding: 0.25rem 0.5rem;
-        border-radius: 0.5rem;
-        font-weight: bold;
+        background: linear-gradient(135deg, var(--olive-gold) 0%, #e6b800 100%);
+        color: white;
+        padding: 0.5rem 1.25rem;
+        border-radius: 50px;
+        font-weight: 700;
         font-size: 0.75rem;
         text-align: center;
-        margin-bottom: 0.5rem;
         display: inline-block;
         text-transform: uppercase;
-        letter-spacing: 0.5px;
-        border: 1px solid rgba(212, 160, 23, 0.3);
-        background: rgba(212, 160, 23, 0.1);
+        letter-spacing: 1px;
+        box-shadow: 0 4px 15px rgba(212, 160, 23, 0.3);
+        margin-bottom: 1rem;
       }
+
       .story-highlight {
-        background: linear-gradient(145deg, #f8faf5, #ffffff);
-        border-left: 4px solid #d4a017;
-        padding: 1.5rem;
-        margin: 2rem 0;
-        border-radius: 0.5rem;
+        background: linear-gradient(135deg, var(--soft-green) 0%, var(--warm-white) 100%);
+        border: 1px solid rgba(212, 160, 23, 0.2);
+        border-left: 4px solid var(--olive-gold);
+        padding: 2.5rem;
+        margin: 3rem 0;
+        border-radius: 20px;
         font-style: italic;
-        color: #2d5016;
+        color: var(--olive-green);
+        box-shadow: 0 10px 40px rgba(0, 0, 0, 0.05);
+        position: relative;
+        overflow: hidden;
+      }
+
+      .story-highlight::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grain" width="100" height="100" patternUnits="userSpaceOnUse"><circle cx="25" cy="25" r="1" fill="rgba(212,160,23,0.05)"/><circle cx="75" cy="75" r="1" fill="rgba(212,160,23,0.05)"/></pattern></defs><rect width="100" height="100" fill="url(%23grain)"/></svg>');
+        opacity: 0.3;
+        pointer-events: none;
+      }
+
+      .certification-badge {
+        background: linear-gradient(135deg, var(--olive-green) 0%, #4a7c4a 100%);
+        color: white;
+        padding: 1rem 1.5rem;
+        border-radius: 16px;
+        font-weight: 700;
+        font-size: 0.875rem;
+        text-align: center;
+        box-shadow: 0 8px 25px rgba(46, 94, 46, 0.25);
+        margin: 0.5rem;
+        display: inline-block;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+      }
+
+      .certification-badge:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 12px 35px rgba(46, 94, 46, 0.35);
+      }
+
+      .quality-metric {
+        background: linear-gradient(135deg, var(--olive-gold) 0%, #e6b800 100%);
+        color: white;
+        padding: 1.5rem 3rem;
+        border-radius: 50px;
+        font-weight: 800;
+        font-size: 1.25rem;
+        text-align: center;
+        box-shadow: 0 10px 30px rgba(212, 160, 23, 0.3);
+        margin: 2rem auto;
+        display: inline-block;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        border: 3px solid rgba(255, 255, 255, 0.3);
+      }
+
+      .section-title {
+        font-family: 'Playfair Display', serif;
+        color: var(--olive-green);
+        font-size: 2.5rem;
+        font-weight: 700;
+        text-align: center;
+        position: relative;
+        margin-bottom: 3rem;
+        line-height: 1.2;
+      }
+
+      .section-title::after {
+        content: '';
+        width: 80px;
+        height: 4px;
+        background: linear-gradient(90deg, var(--olive-gold) 0%, var(--olive-green) 100%);
+        position: absolute;
+        bottom: -1rem;
+        left: 50%;
+        transform: translateX(-50%);
+        border-radius: 2px;
+      }
+
+      .feature-card {
+        background: white;
+        border: 1px solid rgba(212, 160, 23, 0.1);
+        border-radius: 20px;
+        padding: 2.5rem;
+        text-align: center;
+        transition: all 0.4s ease;
+        box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+        height: 100%;
+        position: relative;
+        overflow: hidden;
+      }
+
+      .feature-card::before {
+        content: '';
+        position: absolute;
+        top: -50%;
+        left: -50%;
+        width: 200%;
+        height: 200%;
+        background: linear-gradient(45deg, transparent, rgba(212, 160, 23, 0.05), transparent);
+        transform: rotate(45deg);
+        transition: all 0.6s ease;
+        opacity: 0;
+      }
+
+      .feature-card:hover {
+        transform: translateY(-8px);
+        box-shadow: 0 20px 50px rgba(0, 0, 0, 0.15);
+        border-color: var(--olive-gold);
+      }
+
+      .feature-card:hover::before {
+        opacity: 1;
+        transform: rotate(45deg) translate(50%, 50%);
+      }
+
+      .cta-button {
+        background: linear-gradient(135deg, #80e619 0%, #6bc916 100%);
+        color: var(--olive-green);
+        padding: 1rem 2rem;
+        border-radius: 50px;
+        font-weight: 700;
+        text-decoration: none;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        transition: all 0.3s ease;
+        box-shadow: 0 8px 25px rgba(128, 230, 25, 0.3);
+        border: none;
+        cursor: pointer;
+        min-width: 200px;
+      }
+
+      .cta-button:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 12px 35px rgba(128, 230, 25, 0.4);
+      }
+
+      .cta-button-outline {
+        background: white;
+        color: var(--olive-green);
+        border: 2px solid #80e619;
+        padding: 1rem 2rem;
+        border-radius: 50px;
+        font-weight: 700;
+        text-decoration: none;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        transition: all 0.3s ease;
+        box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+        min-width: 200px;
+      }
+
+      .cta-button-outline:hover {
+        background: #80e619;
+        color: var(--olive-green);
+        transform: translateY(-2px);
+        box-shadow: 0 12px 35px rgba(128, 230, 25, 0.3);
+      }
+
+      @media (max-width: 768px) {
+        .section-title {
+          font-size: 2rem;
+        }
+        
+        .story-highlight {
+          padding: 1.5rem;
+          margin: 2rem 0;
+        }
+        
+        .quality-metric {
+          font-size: 1rem;
+          padding: 1rem 2rem;
+        }
+        
+        .feature-card {
+          padding: 2rem;
+        }
       }
     </style>
 </head>
-<body>
+<body class="bg-gray-50">
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-3QNYCWKF1J"></script>
     <script>
       window.dataLayer = window.dataLayer || [];
@@ -192,12 +416,14 @@
       gtag('js', new Date());
       gtag('config', 'G-3QNYCWKF1J');
     </script>
-    <div class="relative flex size-full min-h-screen flex-col bg-white group/design-root overflow-x-hidden" style='font-family: Epilogue, "Noto Sans", sans-serif;'>
+    
+    <div class="relative flex size-full min-h-screen flex-col bg-gradient-to-br from-gray-50 to-white group/design-root overflow-x-hidden">
       <div class="layout-container flex h-full grow flex-col">
-        <header class="flex items-center justify-between whitespace-nowrap border-b border-solid border-b-[#f2f4f0] px-10 py-3">
-          <a href="index.html" class="flex items-center gap-4 text-[#141811] no-underline">
-            <div class="size-4">
-              <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <!-- Enhanced Header -->
+        <header class="flex items-center justify-between whitespace-nowrap bg-white/95 backdrop-blur-md border-b border-gray-200/50 px-6 md:px-10 py-4 sticky top-0 z-40">
+          <a href="index.html" class="flex items-center gap-4 text-gray-900 no-underline">
+            <div class="size-8 p-1 bg-gradient-to-br from-yellow-400 to-yellow-600 rounded-lg">
+              <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg" class="w-full h-full text-white">
                 <g clip-path="url(#clip0_6_535)">
                   <path
                     fill-rule="evenodd"
@@ -212,21 +438,21 @@
               </svg>
             </div>
             <div class="flex flex-col">
-              <h2 class="text-[#141811] text-2xl font-bold leading-tight tracking-[-0.015em]" style="font-family: 'Lugrasimo', serif; font-weight: 1000; -webkit-font-smoothing: antialiased;">Laperla</h2>
-              <p class="text-[#758863] text-xs" data-en="Premium Extra Virgin Olive Oil" data-pl="Premium Oliwa Extra Virgin" data-it="Olio Extra Vergine Premium" data-fr="Huile d'Olive Extra Vierge Premium">Premium Extra Virgin Olive Oil</p>
+              <h2 class="text-gray-900 text-2xl font-bold leading-tight tracking-tight playfair">Laperla</h2>
+              <p class="text-gray-600 text-xs font-medium" data-en="History and health in every drop" data-pl="Historia i zdrowie w każdej kropli">History and health in every drop</p>
             </div>
           </a>
           <div class="flex flex-1 justify-end gap-8">
-            <div class="flex items-center gap-9">
-              <a class="text-[#141811] text-sm font-medium leading-normal" href="home.html" data-en="Home" data-pl="Strona Główna" data-it="Home" data-fr="Accueil">Home</a>
-              <a class="text-[#141811] text-sm font-medium leading-normal" href="product.html" data-en="Our Products" data-pl="Nasze Produkty" data-it="I nostri prodotti" data-fr="Nos produits">Our Products</a>
-              <a class="text-[#141811] text-sm font-medium leading-normal" href="heritage.html" data-en="Our Story" data-pl="Nasza Historia" data-it="La Nostra Storia" data-fr="Notre Histoire">Our Story</a>
-              <a class="text-[#141811] text-sm font-medium leading-normal" href="contact.html" data-en="Contact" data-pl="Kontakt" data-it="Contatti" data-fr="Contact">Contact</a>
+            <div class="hidden md:flex items-center gap-8">
+              <a class="text-gray-700 text-sm font-semibold leading-normal hover:text-yellow-600 transition-colors" href="home.html" data-en="Home" data-pl="Strona Główna">Home</a>
+              <a class="text-gray-700 text-sm font-semibold leading-normal hover:text-yellow-600 transition-colors" href="product.html" data-en="Our Products" data-pl="Nasze Produkty">Our Products</a>
+              <a class="text-gray-700 text-sm font-semibold leading-normal hover:text-yellow-600 transition-colors" href="heritage.html" data-en="Our Story" data-pl="Nasza Historia">Our Story</a>
+              <a class="text-gray-700 text-sm font-semibold leading-normal hover:text-yellow-600 transition-colors" href="contact.html" data-en="Contact" data-pl="Kontakt">Contact</a>
             </div>
             <div class="language-dropdown">
               <button class="language-dropdown-button">
                 <span class="fi fi-us"></span>
-                <span class="selected-language">English</span>
+                <span class="selected-language font-semibold">English</span>
                 <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
                 </svg>
@@ -240,393 +466,201 @@
                   <span class="fi fi-pl"></span>
                   Polski
                 </div>
-                <div class="language-option" data-lang="it">
-                  <span class="fi fi-it"></span>
-                  Italiano
-                </div>
-                <div class="language-option" data-lang="fr">
-                  <span class="fi fi-fr"></span>
-                  Français
-                </div>
               </div>
             </div>
           </div>
         </header>
-        <div class="px-40 flex flex-1 justify-center py-5">
-          <div class="layout-content-container flex flex-col max-w-[960px] flex-1">
-            <div class="@container">
-              <div class="@[480px]:p-4">
-                <div
-                  class="flex min-h-[480px] flex-col gap-6 bg-cover bg-center bg-no-repeat @[480px]:gap-8 squircle items-start justify-end px-4 pb-10 @[480px]:px-10 relative"
-                >
-                  <div class="slideshow-container">
-                    <img src="https://cdn.usegalileo.ai/sdxl10/afce4c1c-36c9-4fe4-a4c6-2f3dec580dd4.png" class="slideshow-image active" alt="Ancient olive trees">
-                    <img src="assets/images/tree.jpg" class="slideshow-image" alt="500-year-old Chemlali trees">
-                    <img src="assets/images/vue.jpg" class="slideshow-image" alt="Tunisian olive groves">
-                    <img src="assets/images/collect.jpg" class="slideshow-image" alt="Hand harvesting tradition">
-                  </div>
-                  <div class="relative flex flex-col gap-2 text-left z-10">
-                    <h1
-                      class="text-white text-4xl font-black leading-tight tracking-[-0.033em] @[480px]:text-5xl @[480px]:font-black @[480px]:leading-tight @[480px]:tracking-[-0.033em]"
-                      data-en="A Drop of History, A Taste of Perfection"
-                      data-pl="Kropla Historii, Smak Doskonałości"
-                      data-it="Una Goccia di Storia, Un Sapore di Perfezione"
-                      data-fr="Une Goutte d'Histoire, Un Goût de Perfection"
-                    >
-                      A Drop of History, A Taste of Perfection
-                    </h1>
-                    <h2
-                      class="text-white text-sm font-normal leading-normal @[480px]:text-base @[480px]:font-normal @[480px]:leading-normal"
-                      data-en="From 500-year-old Chemlali trees in Tunisia's heart, handcrafted by multiple generations. More complex than finest wines with 200+ aromatic compounds and zero bitterness."
-                      data-pl="Z 500-letnich drzew Chemlali w sercu Tunezji, rękodzieło wielu pokoleń. Bardziej złożona niż najlepsze wina z ponad 200 związkami aromatycznymi i bez goryczy."
-                      data-it="Da alberi Chemlali di 500 anni nel cuore della Tunisia, lavorato a mano da multiple generazioni. Più complesso dei migliori vini con oltre 200 composti aromatici e zero amarezza."
-                      data-fr="D'arbres Chemlali de 500 ans au cœur de la Tunisie, fabriqué à la main par plusieurs générations. Plus complexe que les meilleurs vins avec plus de 200 composés aromatiques et zéro amertume."
-                    >
-                      From 500-year-old Chemlali trees in Tunisia's heart, handcrafted by multiple generations. More complex than finest wines with 200+ aromatic compounds and zero bitterness.
-                    </h2>
-                  </div>
-                  <a
-                    href="product.html"
-                    class="relative flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-xl h-10 px-4 @[480px]:h-12 @[480px]:px-5 bg-[#80e619] text-[#141811] text-sm font-bold leading-normal tracking-[0.015em] @[480px]:text-base @[480px]:font-bold @[480px]:leading-normal @[480px]:tracking-[0.015em] z-10 no-underline"
-                  >
-                    <span class="truncate" data-en="Explore Our Products" data-pl="Poznaj Nasze Produkty" data-it="Esplora i Nostri Prodotti" data-fr="Explorez Nos Produits">Explore Our Products</span>
-                  </a>
-                </div>
-              </div>
-            </div>
 
-            <!-- Story Highlight Section -->
-            <div class="story-highlight @container">
-              <p class="text-base font-medium leading-relaxed" data-en="For over 2,000 years, the sunlit groves of Sidi Bou Ali have cradled a treasure—our Chemlali trees, some standing proud for 500 years. These ancient beings survived droughts, wars, and winds that uprooted empires, yet here they stand, bearing liquid gold that's more than oil—it's a legacy bottled." data-pl="Przez ponad 2000 lat nasłonecznione gaje Sidi Bou Ali chroniły skarb—nasze drzewa Chemlali, niektóre dumnie stoją od 500 lat. Te starożytne istoty przetrwały susze, wojny i wiatry, które zniszczyły imperia, a jednak stoją tutaj, rodzą płynne złoto, które jest więcej niż olejem—to dziedzictwo w butelce." data-it="Per oltre 2.000 anni, i boschetti soleggiati di Sidi Bou Ali hanno custodito un tesoro—i nostri alberi Chemlali, alcuni in piedi orgogliosamente da 500 anni. Questi esseri antichi sono sopravvissuti a siccità, guerre e venti che hanno sradicato imperi, eppure eccoli qui, che producono oro liquido che è più dell'olio—è un'eredità imbottigliata." data-fr="Pendant plus de 2 000 ans, les bosquets ensoleillés de Sidi Bou Ali ont bercé un trésor—nos arbres Chemlali, certains debout fièrement depuis 500 ans. Ces êtres anciens ont survécu aux sécheresses, aux guerres et aux vents qui ont déraciné des empires, pourtant les voici, portant de l'or liquide qui est plus que de l'huile—c'est un héritage embouteillé.">
-                For over 2,000 years, the sunlit groves of Sidi Bou Ali have cradled a treasure—our Chemlali trees, some standing proud for 500 years. These ancient beings survived droughts, wars, and winds that uprooted empires, yet here they stand, bearing liquid gold that's more than oil—it's a legacy bottled.
-              </p>
-            </div>
-
-            <div class="flex flex-col gap-10 px-4 py-10 @container">
-              <div class="flex flex-col gap-4">
-                <h1
-                  class="text-[#141811] tracking-light text-[32px] font-bold leading-tight @[480px]:text-4xl @[480px]:font-black @[480px]:leading-tight @[480px]:tracking-[-0.033em] max-w-[720px]"
-                  data-en="The Laperla Difference: Where Ancient Wisdom Meets Modern Excellence"
-                  data-pl="Różnica Laperla: Gdzie Starożytna Mądrość Spotyka Nowoczesną Doskonałość"
-                  data-it="La Differenza Laperla: Dove la Saggezza Antica Incontra l'Eccellenza Moderna"
-                  data-fr="La Différence Laperla: Où la Sagesse Ancienne Rencontre l'Excellence Moderne"
-                >
-                  The Laperla Difference: Where Ancient Wisdom Meets Modern Excellence
-                </h1>
-                <p
-                  class="text-[#141811] text-base font-normal leading-normal max-w-[720px]"
-                  data-en="What makes our oil extraordinary isn't just what we do—it's what nature and time have perfected over centuries. Every bottle contains the soul of Tunisia's most resilient trees and the wisdom of generations who knew their secrets."
-                  data-pl="To, co czyni nasze oliwy niezwykłymi, to nie tylko to, co robimy—to to, co natura i czas doskonaliły przez wieki. Każda butelka zawiera duszę najbardziej odpornych drzew Tunezji i mądrość pokoleń, które znały ich sekrety."
-                  data-it="Ciò che rende straordinario il nostro olio non è solo quello che facciamo—è quello che la natura e il tempo hanno perfezionato nei secoli. Ogni bottiglia contiene l'anima degli alberi più resistenti della Tunisia e la saggezza delle generazioni che conoscevano i loro segreti."
-                  data-fr="Ce qui rend notre huile extraordinaire n'est pas seulement ce que nous faisons—c'est ce que la nature et le temps ont perfectionné au fil des siècles. Chaque bouteille contient l'âme des arbres les plus résistants de Tunisie et la sagesse des générations qui connaissaient leurs secrets."
-                >
-                  What makes our oil extraordinary isn't just what we do—it's what nature and time have perfected over centuries. Every bottle contains the soul of Tunisia's most resilient trees and the wisdom of generations who knew their secrets.
-                </p>
+        <!-- Main Content -->
+        <div class="flex-1 max-w-7xl mx-auto px-6 md:px-10 py-8">
+          <!-- Hero Section -->
+          <div class="mb-16">
+            <div class="relative min-h-[600px] rounded-3xl overflow-hidden">
+              <div class="hero-slideshow">
+                <img src="https://cdn.usegalileo.ai/sdxl10/afce4c1c-36c9-4fe4-a4c6-2f3dec580dd4.png" class="slideshow-image active" alt="Ancient olive trees">
+                <img src="assets/images/tree.jpg" class="slideshow-image" alt="500-year-old Chemlali trees">
+                <img src="assets/images/vue.jpg" class="slideshow-image" alt="Tunisian olive groves">
+                <img src="assets/images/collect.jpg" class="slideshow-image" alt="Hand harvesting tradition">
               </div>
-              <div class="grid grid-cols-[repeat(auto-fit,minmax(158px,1fr))] gap-3">
-                <div class="flex flex-col gap-3 pb-3">
-                  <div
-                    class="w-full bg-center bg-no-repeat aspect-video bg-cover rounded-xl"
-                    style='background-image: url("assets/images/bottle.jpeg");'
-                  ></div>
-                  <div>
-                    <div class="heritage-badge" data-en="🏆 AWARD WINNING" data-pl="🏆 NAGRODZONY" data-it="🏆 PREMIATO" data-fr="🏆 PRIMÉ">🏆 AWARD WINNING</div>
-                    <p class="text-[#141811] text-base font-medium leading-normal" data-en="Liquid Gold from Ancient Trees" data-pl="Płynne Złoto ze Starożytnych Drzew" data-it="Oro Liquido da Alberi Antichi" data-fr="Or Liquide d'Arbres Anciens">Liquid Gold from Ancient Trees</p>
-                    <p
-                      class="text-[#758863] text-sm font-normal leading-normal"
-                      data-en="Silky smooth with notes of green apple and sweet almond. Zero bitterness from trees that witnessed empires rise and fall. More complex than finest wines with 200+ aromatic compounds."
-                      data-pl="Jedwabiście gładka z nutami zielonego jabłka i słodkich migdałów. Bez goryczy z drzew, które widziały jak imperia powstają i upadają. Bardziej złożona niż najlepsze wina z ponad 200 związkami aromatycznymi."
-                      data-it="Setosamente liscio con note di mela verde e mandorla dolce. Zero amarezza da alberi che hanno assistito al sorgere e cadere degli imperi. Più complesso dei migliori vini con oltre 200 composti aromatici."
-                      data-fr="Soyeusement lisse avec des notes de pomme verte et d'amande douce. Zéro amertume d'arbres qui ont vu naître et tomber des empires. Plus complexe que les meilleurs vins avec plus de 200 composés aromatiques."
-                    >
-                      Silky smooth with notes of green apple and sweet almond. Zero bitterness from trees that witnessed empires rise and fall. More complex than finest wines with 200+ aromatic compounds.
-                    </p>
-                  </div>
-                </div>
-                <div class="flex flex-col gap-3 pb-3">
-                  <div
-                    class="w-full bg-center bg-no-repeat aspect-video bg-cover rounded-xl"
-                    style='background-image: url("https://cdn.usegalileo.ai/sdxl10/2926feef-038f-425c-9217-5e3af4286a69.png");'
-                  ></div>
-                  <div>
-                    <div class="heritage-badge" data-en="🌿 MULTIPLE GENERATIONS" data-pl="🌿 WIELE POKOLEŃ" data-it="🌿 MULTIPLE GENERAZIONI" data-fr="🌿 PLUSIEURS GÉNÉRATIONS">🌿 MULTIPLE GENERATIONS</div>
-                    <p class="text-[#141811] text-base font-medium leading-normal" data-en="Generational Craftsmanship" data-pl="Rzemiosło Pokoleniowe" data-it="Maestria Generazionale" data-fr="Artisanat Générationnel">Generational Craftsmanship</p>
-                    <p
-                      class="text-[#758863] text-sm font-normal leading-normal"
-                      data-en="The same families have tended these trees for multiple generations, knowing each by name. Their hands carry knowledge that cannot be taught in schools—only passed through bloodlines and whispered prayers to ancient trees."
-                      data-pl="Te same rodziny opiekują się tymi drzewami od wielu pokoleń, znając każde po imieniu. Ich ręce niosą wiedzę, której nie można nauczyć w szkołach—tylko przekazać przez linie krwi i szeptane modlitwy do starożytnych drzew."
-                      data-it="Le stesse famiglie si prendono cura di questi alberi da multiple generazioni, conoscendo ognuno per nome. Le loro mani portano conoscenze che non si possono insegnare nelle scuole—solo trasmesse attraverso le linee di sangue e preghiere sussurrate agli alberi antichi."
-                      data-fr="Les mêmes familles s'occupent de ces arbres depuis plusieurs générations, connaissant chacun par son nom. Leurs mains portent des connaissances qui ne peuvent être enseignées dans les écoles—seulement transmises par les lignées et les prières murmurées aux arbres anciens."
-                    >
-                      The same families have tended these trees for multiple generations, knowing each by name. Their hands carry knowledge that cannot be taught in schools—only passed through bloodlines and whispered prayers to ancient trees.
-                    </p>
-                  </div>
-                </div>
-                <div class="flex flex-col gap-3 pb-3">
-                  <div
-                    class="w-full bg-center bg-no-repeat aspect-video bg-cover rounded-xl"
-                    style='background-image: url("https://cdn.usegalileo.ai/sdxl10/69f29ff3-8252-4e1f-981e-f5dd67b3090d.png");'
-                  ></div>
-                  <div>
-                    <div class="heritage-badge" data-en="⚡ ULTRA PURE" data-pl="⚡ ULTRA CZYSTA" data-it="⚡ ULTRA PURA" data-fr="⚡ ULTRA PURE">⚡ ULTRA PURE</div>
-                    <p class="text-[#141811] text-base font-medium leading-normal" data-en="Beyond Premium Standards" data-pl="Ponad Standardy Premium" data-it="Oltre gli Standard Premium" data-fr="Au-delà des Standards Premium">Beyond Premium Standards</p>
-                    <p
-                      class="text-[#758863] text-sm font-normal leading-normal"
-                      data-en="Acidity below 0.3%—far exceeding the 0.8% limit for Extra Virgin. Cold-pressed within 4 hours of harvest. Every drop is liquid medicine, packed with 250-300mg/kg of polyphenols that protect your heart and boost immunity."
-                      data-pl="Kwasowość poniżej 0,3%—znacznie przekraczając limit 0,8% dla Extra Virgin. Tłoczona na zimno w ciągu 4 godzin od zbioru. Każda kropla to płynne lekarstwo, pełne 250-300mg/kg polifenoli chroniących serce i wzmacniających odporność."
-                      data-it="Acidità sotto lo 0,3%—ben oltre il limite dello 0,8% per Extra Vergine. Pressato a freddo entro 4 ore dalla raccolta. Ogni goccia è medicina liquida, ricca di 250-300mg/kg di polifenoli che proteggono il cuore e rafforzano l'immunità."
-                      data-fr="Acidité inférieure à 0,3%—dépassant largement la limite de 0,8% pour Extra Vierge. Pressé à froid dans les 4 heures suivant la récolte. Chaque goutte est un médicament liquide, riche de 250-300mg/kg de polyphénols qui protègent le cœur et renforcent l'immunité."
-                    >
-                      Acidity below 0.3%—far exceeding the 0.8% limit for Extra Virgin. Cold-pressed within 4 hours of harvest. Every drop is liquid medicine, packed with 250-300mg/kg of polyphenols that protect your heart and boost immunity.
-                    </p>
-                  </div>
-                </div>
-                <div class="flex flex-col gap-3 pb-3">
-                  <div
-                    class="w-full bg-center bg-no-repeat aspect-video bg-cover rounded-xl"
-                    style='background-image: url("assets/images/medals.jpg");'
-                  ></div>
-                  <div>
-                    <div class="heritage-badge" data-en="🌍 GLOBAL RECOGNITION" data-pl="🌍 GLOBALNE UZNANIE" data-it="🌍 RICONOSCIMENTO GLOBALE" data-fr="🌍 RECONNAISSANCE MONDIALE">🌍 GLOBAL RECOGNITION</div>
-                    <p class="text-[#141811] text-base font-medium leading-normal" data-en="What Empires Have Always Known" data-pl="To, Co Imperia Zawsze Wiedziały" data-it="Quello Che Gli Imperi Hanno Sempre Saputo" data-fr="Ce Que Les Empires Ont Toujours Su">What Empires Have Always Known</p>
-                    <p
-                      class="text-[#758863] text-sm font-normal leading-normal"
-                      data-en="International awards confirm what Carthaginian merchants, Roman nobles, and Arab scholars always knew—this oil doesn't just nourish the body, it preserves life itself. Today's science validates ancient wisdom."
-                      data-pl="Międzynarodowe nagrody potwierdzają to, co kartagińscy kupcy, rzymscy szlachcice i arabscy uczeni zawsze wiedzieli—ta oliwa nie tylko odżywia ciało, ale zachowuje samo życie. Dzisiejsza nauka potwierdza starożytną mądrość."
-                      data-it="I premi internazionali confermano quello che mercanti cartaginesi, nobili romani e studiosi arabi hanno sempre saputo—quest'olio non solo nutre il corpo, preserva la vita stessa. La scienza di oggi convalida la saggezza antica."
-                      data-fr="Les prix internationaux confirment ce que les marchands carthaginois, les nobles romains et les érudits arabes ont toujours su—cette huile ne nourrit pas seulement le corps, elle préserve la vie elle-même. La science d'aujourd'hui valide la sagesse ancienne."
-                    >
-                      International awards confirm what Carthaginian merchants, Roman nobles, and Arab scholars always knew—this oil doesn't just nourish the body, it preserves life itself. Today's science validates ancient wisdom.
-                    </p>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="flex flex-col gap-10 px-4 py-10 @container">
-              <div class="flex flex-col gap-4">
-                <h1
-                  class="text-[#141811] tracking-light text-[32px] font-bold leading-tight @[480px]:text-4xl @[480px]:font-black @[480px]:leading-tight @[480px]:tracking-[-0.033em] max-w-[720px]"
-                  data-en="Traditional Mastery, Scientific Precision: Our EVOO Extraction Process"
-                  data-pl="Tradycyjne Mistrzostwo, Naukowa Precyzja: Nasz Proces Ekstrakcji EVOO"
-                  data-it="Maestria Tradizionale, Precisione Scientifica: Il Nostro Processo di Estrazione EVOO"
-                  data-fr="Maîtrise Traditionnelle, Précision Scientifique: Notre Processus d'Extraction EVOO"
-                >
-                  Traditional Mastery, Scientific Precision: Our EVOO Extraction Process
-                </h1>
-                <p
-                  class="text-[#141811] text-base font-normal leading-normal max-w-[720px]"
-                  data-en="Our extraction methodology combines centuries-old wisdom with cutting-edge technology to preserve the maximum nutritional and sensory properties. Each step is meticulously calibrated to ensure optimal oil quality while respecting the integrity of our ancient Chemlali cultivar."
-                  data-pl="Nasza metodologia ekstrakcji łączy wieki mądrości z najnowocześniejszą technologią, aby zachować maksymalne właściwości odżywcze i sensoryczne. Każdy krok jest skrupulatnie skalibrowany, aby zapewnić optymalną jakość oleju, szanując integralność naszej starożytnej odmiany Chemlali."
-                  data-it="La nostra metodologia di estrazione combina saggezza secolare con tecnologia all'avanguardia per preservare al massimo le proprietà nutrizionali e sensoriali. Ogni passo è meticolosamente calibrato per garantire la qualità ottimale dell'olio rispettando l'integrità del nostro antico cultivar Chemlali."
-                  data-fr="Notre méthodologie d'extraction combine la sagesse séculaire avec une technologie de pointe pour préserver au maximum les propriétés nutritionnelles et sensorielles. Chaque étape est méticuleusement calibrée pour assurer une qualité d'huile optimale tout en respectant l'intégrité de notre ancien cultivar Chemlali."
-                >
-                  Our extraction methodology combines centuries-old wisdom with cutting-edge technology to preserve the maximum nutritional and sensory properties. Each step is meticulously calibrated to ensure optimal oil quality while respecting the integrity of our ancient Chemlali cultivar.
-                </p>
-              </div>
-              <div class="grid grid-cols-[40px_1fr] gap-x-2">
-                <div class="flex flex-col items-center gap-1 pt-3">
-                  <div class="text-[#141811]" data-icon="Leaf" data-size="24px" data-weight="regular">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="24px" height="24px" fill="currentColor" viewBox="0 0 256 256">
-                      <path
-                        d="M223.45,40.07a8,8,0,0,0-7.52-7.52C139.8,28.08,78.82,51,52.82,94a87.09,87.09,0,0,0-12.76,49c.57,15.92,5.21,32,13.79,47.85l-19.51,19.5a8,8,0,0,0,11.32,11.32l19.50-19.51C81,210.73,97.09,215.37,113,215.94q1.67.06,3.33.06A86.93,86.93,0,0,0,162,203.18C205,177.18,227.93,116.21,223.45,40.07ZM153.75,189.5c-22.75,13.78-49.68,14-76.71.77l88.63-88.62a8,8,0,0,0-11.32-11.32L65.73,179c-13.19-27-13-54,.77-76.71,22.09-36.47,74.6-56.44,141.31-54.06C210.2,114.89,190.22,167.41,153.75,189.5Z"
-                      ></path>
-                    </svg>
-                  </div>
-                  <div class="w-[1.5px] bg-[#e0e5dc] h-2 grow"></div>
-                </div>
-                <div class="flex flex-1 flex-col py-3">
-                  <p class="text-[#141811] text-base font-medium leading-normal" data-en="Optimal Harvesting Window" data-pl="Optymalne Okno Zbiorów" data-it="Finestra di Raccolta Ottimale" data-fr="Fenêtre de Récolte Optimale">Optimal Harvesting Window</p>
-                  <p
-                    class="text-[#758863] text-base font-normal leading-normal"
-                    data-en="Strategic timing based on fruit maturity index (FMI) monitoring. Olives are harvested at 60-70% veraison stage when polyphenol concentration peaks and oil content reaches 18-22%. This precise window ensures maximum antioxidant retention and optimal flavor profile development."
-                    data-pl="Strategiczne timing oparty na monitorowaniu indeksu dojrzałości owoców (FMI). Oliwki zbierane w fazie 60-70% veraison, gdy stężenie polifenoli osiąga szczyt, a zawartość oleju 18-22%. To precyzyjne okno zapewnia maksymalną retencję antyoksydantów i optymalny rozwój profilu smakowego."
-                    data-it="Tempistica strategica basata sul monitoraggio dell'indice di maturità del frutto (FMI). Le olive vengono raccolte nella fase di veraison del 60-70% quando la concentrazione di polifenoli raggiunge il picco e il contenuto di olio raggiunge il 18-22%. Questa finestra precisa garantisce la massima ritenzione di antiossidanti e lo sviluppo ottimale del profilo aromatico."
-                    data-fr="Chronométrage stratégique basé sur la surveillance de l'indice de maturité des fruits (FMI). Les olives sont récoltées au stade de véraison de 60-70% lorsque la concentration en polyphénols atteint son maximum et la teneur en huile atteint 18-22%. Cette fenêtre précise assure une rétention maximale d'antioxydants et un développement optimal du profil aromatique."
-                  >
-                    Strategic timing based on fruit maturity index (FMI) monitoring. Olives are harvested at 60-70% veraison stage when polyphenol concentration peaks and oil content reaches 18-22%. This precise window ensures maximum antioxidant retention and optimal flavor profile development.
-                  </p>
-                </div>
-                <div class="flex flex-col items-center gap-1">
-                  <div class="w-[1.5px] bg-[#e0e5dc] h-2"></div>
-                  <div class="text-[#141811]" data-icon="GasCan" data-size="24px" data-weight="regular">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="24px" height="24px" fill="currentColor" viewBox="0 0 256 256">
-                      <path
-                        d="M200,24H123.31A15.86,15.86,0,0,0,112,28.69L101.66,39,91.31,28.69a16,16,0,0,0-22.62,0l-24,24a16,16,0,0,0,0,22.62L55,85.66,44.69,96A15.86,15.86,0,0,0,40,107.31V216a16,16,0,0,0,16,16H200a16,16,0,0,0,16-16V40A16,16,0,0,0,200,24ZM56,64,80,40,90.34,50.34l-24,24ZM200,216H56V107.31l16-16h0L123.31,40H200ZM128,64a8,8,0,0,1,8-8h40a8,8,0,0,1,0,16H136A8,8,0,0,1,128,64Zm52.8,62.4L141.33,156l39.47,29.6a8,8,0,1,1-9.6,12.8L128,166,84.8,198.4a8,8,0,0,1-9.6-12.8L114.67,156,75.2,126.4a8,8,0,0,1,9.6-12.8L128,146l43.2-32.4a8,8,0,0,1,9.6,12.8Z"
-                      ></path>
-                    </svg>
-                  </div>
-                  <div class="w-[1.5px] bg-[#e0e5dc] h-2 grow"></div>
-                </div>
-                <div class="flex flex-1 flex-col py-3">
-                  <p class="text-[#141811] text-base font-medium leading-normal" data-en="Mechanical Harvesting Protocol" data-pl="Protokół Zbiorów Mechanicznych" data-it="Protocollo di Raccolta Meccanica" data-fr="Protocole de Récolte Mécanique">Mechanical Harvesting Protocol</p>
-                  <p
-                    class="text-[#758863] text-base font-normal leading-normal"
-                    data-en="Gentle pneumatic combing at controlled frequencies (200-400Hz) to minimize fruit damage. Olives are collected in ventilated harvest bins (maximum 25kg capacity) to prevent crushing and maintain fruit integrity. Transport to mill occurs within 2 hours under temperature-controlled conditions (≤25°C)."
-                    data-pl="Delikatne czesanie pneumatyczne przy kontrolowanych częstotliwościach (200-400Hz) w celu minimalizacji uszkodzeń owoców. Oliwki zbierane w wentylowanych pojemnikach zbiorczych (maksymalna pojemność 25kg) zapobiegając miażdżeniu i zachowując integralność owoców. Transport do młyna w ciągu 2 godzin w kontrolowanych temperaturowo warunkach (≤25°C)."
-                    data-it="Pettinatura pneumatica delicata a frequenze controllate (200-400Hz) per minimizzare i danni al frutto. Le olive vengono raccolte in contenitori di raccolta ventilati (capacità massima 25kg) per prevenire la frantumazione e mantenere l'integrità del frutto. Il trasporto al frantoio avviene entro 2 ore in condizioni a temperatura controllata (≤25°C)."
-                    data-fr="Peignage pneumatique doux à fréquences contrôlées (200-400Hz) pour minimiser les dommages aux fruits. Les olives sont collectées dans des bacs de récolte ventilés (capacité maximale 25kg) pour éviter l'écrasement et maintenir l'intégrité des fruits. Le transport au moulin se fait dans les 2 heures dans des conditions de température contrôlée (≤25°C)."
-                  >
-                    Gentle pneumatic combing at controlled frequencies (200-400Hz) to minimize fruit damage. Olives are collected in ventilated harvest bins (maximum 25kg capacity) to prevent crushing and maintain fruit integrity. Transport to mill occurs within 2 hours under temperature-controlled conditions (≤25°C).
-                  </p>
-                </div>
-                <div class="flex flex-col items-center gap-1">
-                  <div class="w-[1.5px] bg-[#e0e5dc] h-2"></div>
-                  <div class="text-[#141811]" data-icon="MagnifyingGlass" data-size="24px" data-weight="regular">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="24px" height="24px" fill="currentColor" viewBox="0 0 256 256">
-                      <path
-                        d="M229.66,218.34l-50.07-50.06a88.11,88.11,0,1,0-11.31,11.31l50.06,50.07a8,8,0,0,0,11.32-11.32ZM40,112a72,72,0,1,1,72,72A72.08,72.08,0,0,1,40,112Z"
-                      ></path>
-                    </svg>
-                  </div>
-                  <div class="w-[1.5px] bg-[#e0e5dc] h-2 grow"></div>
-                </div>
-                <div class="flex flex-1 flex-col py-3">
-                  <p class="text-[#141811] text-base font-medium leading-normal" data-en="Two-Phase Extraction System" data-pl="System Ekstrakcji Dwufazowej" data-it="Sistema di Estrazione Bifase" data-fr="Système d'Extraction Biphasé">Two-Phase Extraction System</p>
-                  <p
-                    class="text-[#758863] text-base font-normal leading-normal"
-                    data-en="State-of-the-art two-phase centrifugal extraction eliminates water addition, preserving polyphenol concentration. Malaxation at 25°C for 20-25 minutes under nitrogen atmosphere prevents oxidation. Centrifugation at 3,500 RPM separates oil from pomace with minimal thermal stress."
-                    data-pl="Najnowocześniejsza dwufazowa ekstrakcja odśrodkowa eliminuje dodawanie wody, zachowując stężenie polifenoli. Malaksacja w 25°C przez 20-25 minut w atmosferze azotu zapobiega utlenianiu. Wirowanie przy 3500 obr/min oddziela olej od wytłoków przy minimalnym stresie termicznym."
-                    data-it="L'estrazione centrifuga bifase all'avanguardia elimina l'aggiunta di acqua, preservando la concentrazione di polifenoli. Gramolatura a 25°C per 20-25 minuti in atmosfera di azoto previene l'ossidazione. La centrifugazione a 3.500 RPM separa l'olio dalla sansa con stress termico minimo."
-                    data-fr="L'extraction centrifuge biphasée de pointe élimine l'ajout d'eau, préservant la concentration en polyphénols. Malaxage à 25°C pendant 20-25 minutes sous atmosphère d'azote empêche l'oxydation. La centrifugation à 3 500 tr/min sépare l'huile du grignon avec un stress thermique minimal."
-                  >
-                    State-of-the-art two-phase centrifugal extraction eliminates water addition, preserving polyphenol concentration. Malaxation at 25°C for 20-25 minutes under nitrogen atmosphere prevents oxidation. Centrifugation at 3,500 RPM separates oil from pomace with minimal thermal stress.
-                  </p>
-                </div>
-                <div class="flex flex-col items-center gap-1 pb-3">
-                  <div class="w-[1.5px] bg-[#e0e5dc] h-2"></div>
-                  <div class="text-[#141811]" data-icon="Truck" data-size="24px" data-weight="regular">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="24px" height="24px" fill="currentColor" viewBox="0 0 256 256">
-                      <path
-                        d="M247.42,117l-14-35A15.93,15.93,0,0,0,218.58,72H184V64a8,8,0,0,0-8-8H24A16,16,0,0,0,8,72V184a16,16,0,0,0,16,16H41a32,32,0,0,0,62,0h50a32,32,0,0,0,62,0h17a16,16,0,0,0,16-16V120A7.94,7.94,0,0,0,247.42,117ZM184,88h34.58l9.6,24H184ZM24,72H168v64H24ZM72,208a16,16,0,1,1,16-16A16,16,0,0,1,72,208Zm81-24H103a32,32,0,0,0-62,0H24V152H168v12.31A32.11,32.11,0,0,0,153,184Zm31,24a16,16,0,1,1,16-16A16,16,0,0,1,184,208Zm48-24H215a32.06,32.06,0,0,0-31-24V128h48Z"
-                      ></path>
-                    </svg>
-                  </div>
-                </div>
-                <div class="flex flex-1 flex-col py-3">
-                  <p class="text-[#141811] text-base font-medium leading-normal" data-en="Quality Control & Storage" data-pl="Kontrola Jakości i Przechowywanie" data-it="Controllo Qualità e Stoccaggio" data-fr="Contrôle Qualité et Stockage">Quality Control & Storage</p>
-                  <p
-                    class="text-[#758863] text-base font-normal leading-normal"
-                    data-en="Immediate filtration through cellulose filters removes residual water and particles. Oil is stored in stainless steel tanks under nitrogen blanket at 15-18°C. Real-time monitoring of free fatty acid content, peroxide value, and polyphenol levels ensures consistent premium quality before dark glass bottling."
-                    data-pl="Natychmiastowa filtracja przez filtry celulozowe usuwa resztkową wodę i cząstki. Olej przechowywany w zbiornikach ze stali nierdzewnej pod kołdrą azotową w 15-18°C. Monitoring w czasie rzeczywistym zawartości wolnych kwasów tłuszczowych, liczby nadtlenkowej i poziomów polifenoli zapewnia stałą jakość premium przed rozlewem do ciemnych butelek."
-                    data-it="La filtrazione immediata attraverso filtri di cellulosa rimuove acqua residua e particelle. L'olio è conservato in serbatoi di acciaio inossidabile sotto copertura di azoto a 15-18°C. Il monitoraggio in tempo reale del contenuto di acidi grassi liberi, valore di perossido e livelli di polifenoli assicura qualità premium costante prima dell'imbottigliamento in vetro scuro."
-                    data-fr="La filtration immédiate à travers des filtres de cellulose élimine l'eau résiduelle et les particules. L'huile est stockée dans des réservoirs en acier inoxydable sous couverture d'azote à 15-18°C. La surveillance en temps réel de la teneur en acides gras libres, de la valeur de peroxyde et des niveaux de polyphénols assure une qualité premium constante avant la mise en bouteille en verre foncé."
-                  >
-                    Immediate filtration through cellulose filters removes residual water and particles. Oil is stored in stainless steel tanks under nitrogen blanket at 15-18°C. Real-time monitoring of free fatty acid content, peroxide value, and polyphenol levels ensures consistent premium quality before dark glass bottling.
-                  </p>
-                </div>
-              </div>
-              <div class="flex flex-col gap-4 mt-6 items-center">
-                <div class="w-full max-w-[720px] aspect-video">
-                  <iframe
-                    class="w-full h-full rounded-xl"
-                    src="https://www.youtube.com/embed/jVE9jp-U8BY"
-                    title="Laperla: 500 Years of Liquid Gold"
-                    frameborder="0"
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                    allowfullscreen
-                  ></iframe>
-                </div>
-              </div>
-            </div>
-            <div class="@container">
-              <div class="flex flex-col justify-center items-center gap-6 px-4 py-10 @[480px]:gap-8 @[480px]:px-10 @[480px]:py-20">
-                <div class="flex flex-col gap-2 text-center">
-                  <h1
-                    class="text-[#141811] tracking-light text-[32px] font-bold leading-tight @[480px]:text-4xl @[480px]:font-black @[480px]:leading-tight @[480px]:tracking-[-0.033em] max-w-[720px]"
-                    data-en="Ready to Taste What Empires Treasured?"
-                    data-pl="Gotowy Skosztować To, Co Ceniły Imperia?"
-                    data-it="Pronto ad Assaggiare Quello Che Tesaurizzavano gli Imperi?"
-                    data-fr="Prêt à Goûter Ce Que Les Empires Chérissaient?"
-                  >
-                    Ready to Taste What Empires Treasured?
+              <div class="hero-overlay"></div>
+              <div class="relative z-10 flex flex-col justify-end h-full p-8 md:p-12">
+                <div class="max-w-3xl">
+                  <h1 class="text-white text-4xl md:text-6xl font-bold leading-tight tracking-tight playfair mb-6" data-en="Laperla: History and Health in Every Drop" data-pl="Laperla: Historia i Zdrowie w Każdej Kropli">
+                    Laperla: History and Health in Every Drop
                   </h1>
-                  <p
-                    class="text-[#758863] text-base font-normal leading-normal max-w-[720px]"
-                    data-en="Join the legacy that spans 2,000 years. From trees that witnessed history to your table—experience liquid gold that Carthaginian merchants, Roman nobles, and Arab scholars cherished. Taste the perfection that multiple generations refined."
-                    data-pl="Dołącz do dziedzictwa liczącego 2000 lat. Z drzew, które były świadkami historii, na Twój stół—doświadcz płynnego złota, które cenili kartagińscy kupcy, rzymscy szlachcice i arabscy uczeni. Skosztuj doskonałości, którą dopracowało wiele pokoleń."
-                    data-it="Unisciti all'eredità che abbraccia 2.000 anni. Da alberi che hanno assistito alla storia alla tua tavola—sperimenta l'oro liquido che mercanti cartaginesi, nobili romani e studiosi arabi apprezzavano. Assapora la perfezione che multiple generazioni hanno raffinato."
-                    data-fr="Rejoignez l'héritage qui s'étend sur 2 000 ans. D'arbres qui ont été témoins de l'histoire à votre table—vivez l'or liquide que chérissaient les marchands carthaginois, les nobles romains et les érudits arabes. Goûtez la perfection que plusieurs générations ont raffinée."
-                  >
-                    Join the legacy that spans 2,000 years. From trees that witnessed history to your table—experience liquid gold that Carthaginian merchants, Roman nobles, and Arab scholars cherished. Taste the perfection that multiple generations refined.
+                  <p class="text-white/90 text-lg md:text-xl font-medium leading-relaxed mb-8 max-w-2xl" data-en="Premium extra virgin olive oil from 500-year-old Chemlali trees in Tunisia's heart. Generations of tradition meet ultra-pure quality with <0.3% acidity and global ECO-certifications." data-pl="Premium oliwa extra virgin z 500-letnich drzew Chemlali w sercu Tunezji. Pokolenia tradycji spotykają ultra-czystą jakość z kwasowością <0,3% i globalnymi certyfikatami ECO.">
+                    Premium extra virgin olive oil from 500-year-old Chemlali trees in Tunisia's heart. Generations of tradition meet ultra-pure quality with <0.3% acidity and global ECO-certifications.
                   </p>
-                </div>
-                <div class="flex flex-wrap justify-center gap-4">
-                  <a
-                    href="https://wa.me/48530846928?text=I%20want%20to%20try%20Laperla%20Prestige%20Edition"
-                    target="_blank"
-                    class="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-xl h-12 px-6 @[480px]:h-14 @[480px]:px-8 bg-[#80e619] text-[#141811] text-base font-bold leading-normal tracking-[0.015em] @[480px]:text-lg @[480px]:font-bold @[480px]:leading-normal @[480px]:tracking-[0.015em] no-underline shadow-lg hover:shadow-xl transition-all duration-300"
-                  >
-                    <span class="truncate" data-en="Try Prestige Edition" data-pl="Spróbuj Edycji Prestige" data-it="Prova Edizione Prestige" data-fr="Essayez l'Édition Prestige">Try Prestige Edition</span>
-                  </a>
-                  <a
-                    href="contact.html"
-                    class="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-xl h-12 px-6 @[480px]:h-14 @[480px]:px-8 bg-white border-2 border-[#80e619] text-[#80e619] text-base font-bold leading-normal tracking-[0.015em] @[480px]:text-lg @[480px]:font-bold @[480px]:leading-normal @[480px]:tracking-[0.015em] no-underline shadow-lg hover:shadow-xl transition-all duration-300"
-                  >
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp" class="w-6 h-6 mr-3">
-                    <span class="truncate" data-en="Get Custom Quote" data-pl="Otrzymaj Wycenę" data-it="Ottieni Preventivo" data-fr="Obtenir un Devis">Get Custom Quote</span>
+                  <a href="product.html" class="cta-button text-lg">
+                    <span data-en="Discover Liquid Gold" data-pl="Odkryj Płynne Złoto">Discover Liquid Gold</span>
                   </a>
                 </div>
               </div>
             </div>
           </div>
-        </div>
-        <footer class="flex justify-center">
-          <div class="flex max-w-[960px] flex-1 flex-col">
-            <footer class="flex flex-col gap-6 px-5 py-10 text-center @container">
-              <div class="flex flex-wrap items-center justify-center gap-6 @[480px]:flex-row @[480px]:justify-around">
-                <a class="text-[#758863] text-base font-normal leading-normal min-w-40" href="home.html" data-en="Home" data-pl="Strona Główna" data-it="Home" data-fr="Accueil">Home</a>
-                <a class="text-[#758863] text-base font-normal leading-normal min-w-40" href="product.html" data-en="Our Products" data-pl="Nasze Produkty" data-it="I nostri prodotti" data-fr="Nos produits">Our Products</a>
-                <a class="text-[#758863] text-base font-normal leading-normal min-w-40" href="heritage.html" data-en="Our Story" data-pl="Nasza Historia" data-it="La Nostra Storia" data-fr="Notre Histoire">Our Story</a>
-                <a class="text-[#758863] text-base font-normal leading-normal min-w-40" href="contact.html" data-en="Contact" data-pl="Kontakt" data-it="Contatti" data-fr="Contact">Contact</a>
-              </div>
-              <div class="flex flex-wrap justify-center gap-4">
-                <a href="https://instagram.com/yourprofile" target="_blank">
-                  <div class="text-[#758863]" data-icon="InstagramLogo" data-size="24px" data-weight="regular">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="24px" height="24px" fill="currentColor" viewBox="0 0 256 256">
-                      <path
-                        d="M128,80a48,48,0,1,0,48,48A48.05,48.05,0,0,0,128,80Zm0,80a32,32,0,1,1,32-32A32,32,0,0,1,128,160ZM176,24H80A56.06,56.06,0,0,0,24,80v96a56.06,56.06,0,0,0,56,56h96a56.06,56.06,0,0,0,56-56V80A56.06,56.06,0,0,0,176,24Zm40,152a40,40,0,0,1-40,40H80a40,40,0,0,1-40-40V80A40,40,0,0,1,80,40h96a40,40,0,0,1,40,40ZM192,76a12,12,0,1,1-12-12A12,12,0,0,1,192,76Z"
-                      ></path>
-                    </svg>
-                  </div>
-                </a>
-                <a href="https://facebook.com/yourprofile" target="_blank">
-                  <div class="text-[#758863]" data-icon="FacebookLogo" data-size="24px" data-weight="regular">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="24px" height="24px" fill="currentColor" viewBox="0 0 256 256">
-                      <path
-                        d="M128,24A104,104,0,1,0,232,128,104.11,104.11,0,0,0,128,24Zm8,191.63V152h24a8,8,0,0,0,0-16H136V112a16,16,0,0,1,16-16h16a8,8,0,0,0,0-16H152a32,32,0,0,0-32,32v24H96a8,8,0,0,0,0,16h24v63.63a88,88,0,1,1,16,0Z"
-                      ></path>
-                    </svg>
-                  </div>
-                </a>
-                <a href="https://twitter.com/yourprofile" target="_blank">
-                  <div class="text-[#758863]" data-icon="TwitterLogo" data-size="24px" data-weight="regular">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="24px" height="24px" fill="currentColor" viewBox="0 0 256 256">
-                      <path
-                        d="M247.39,68.94A8,8,0,0,0,240,64H209.57A48.66,48.66,0,0,0,168.1,40a46.91,46.91,0,0,0-33.75,13.7A47.9,47.9,0,0,0,120,88v6.09C79.74,83.47,46.81,50.72,46.46,50.37a8,8,0,0,0-13.65,4.92c-4.31,47.79,9.57,79.77,22,98.18a110.93,110.93,0,0,0,21.88,24.2c-15.23,17.53-39.21,26.74-39.47,26.84a8,8,0,0,0-3.85,11.93c.75,1.12,3.75,5.05,11.08,8.72C53.51,229.7,65.48,232,80,232c70.67,0,129.72-54.42,135.75-124.44l29.91-29.9A8,8,0,0,0,247.39,68.94Zm-45,29.41a8,8,0,0,0-2.32,5.14C196,166.58,143.28,216,80,216c-10.56,0-18-1.4-23.22-3.08,11.51-6.25,27.56-17,37.88-32.48A8,8,0,0,0,92,169.08c-.47-.27-43.91-26.34-44-96,16,13,45.25,33.17,78.67,38.79A8,8,0,0,0,136,104V88a32,32,0,0,1,9.6-22.92A30.94,30.94,0,0,1,167.9,56c12.66.16,24.49,7.88,29.44,19.21A8,8,0,0,0,204.67,80h16Z"
-                      ></path>
-                    </svg>
-                  </div>
-                </a>
-              </div>
-              <p class="text-[#758863] text-base font-normal leading-normal" data-en="© 2025 Laperla. Bottling 2,000 years of Tunisian legacy. All rights reserved." data-pl="© 2025 Laperla. Zamykamy w butelkach 2000 lat tunezyjskiego dziedzictwa. Wszelkie prawa zastrzeżone." data-it="© 2025 Laperla. Imbottigliamo 2.000 anni di eredità tunisina. Tutti i diritti riservati." data-fr="© 2025 Laperla. Embouteillant 2 000 ans d'héritage tunisien. Tous droits réservés.">
-                © 2025 Laperla. Bottling 2,000 years of Tunisian legacy. All rights reserved.
+
+          <!-- Story Highlight -->
+          <div class="story-highlight">
+            <div class="relative z-10">
+              <p class="text-xl md:text-2xl font-medium leading-relaxed playfair text-center" data-en="For over 500 years, the ancient Chemlali trees in Sidi Bou Ali groves have survived droughts, wars, and the fall of empires. Today, these immortal guardians give us the highest quality olive oil achievable—liquid gold that carries the heritage of generations and the wisdom of Tunisia's sacred land." data-pl="Przez ponad 500 lat starożytne drzewa Chemlali w gajach Sidi Bou Ali przetrwały susze, wojny i upadki imperiów. Dziś te nieśmiertelne strażnicy dają nam najwyższą jakość oliwy z oliwek, jaką można osiągnąć—płynne złoto, które niesie dziedzictwo pokoleń i mądrość świętej ziemi Tunezji.">
+                For over 500 years, the ancient Chemlali trees in Sidi Bou Ali groves have survived droughts, wars, and the fall of empires. Today, these immortal guardians give us the highest quality olive oil achievable—liquid gold that carries the heritage of generations and the wisdom of Tunisia's sacred land.
               </p>
-            </footer>
+            </div>
+          </div>
+
+          <!-- Global Certifications Section -->
+          <section class="mb-20">
+            <div class="text-center mb-12">
+              <h2 class="section-title" data-en="Global ECO-Certifications: From America to Europe" data-pl="Globalne Certyfikaty ECO: Od Ameryki do Europy">
+                Global ECO-Certifications: From America to Europe
+              </h2>
+              <p class="text-gray-600 text-lg leading-relaxed max-w-3xl mx-auto" data-en="Our olive oil is certified across continents, meeting the world's highest organic standards. We proudly hold ECO-CERT, Organic Bio, and USDA Organic certifications—your guarantee of pure, authentic quality." data-pl="Nasza oliwa jest certyfikowana na wszystkich kontynentach, spełniając najwyższe światowe standardy organiczne. Z dumą posiadamy certyfikaty ECO-CERT, Organic Bio i USDA Organic—Twoją gwarancję czystej, autentycznej jakości.">
+                Our olive oil is certified across continents, meeting the world's highest organic standards. We proudly hold ECO-CERT, Organic Bio, and USDA Organic certifications—your guarantee of pure, authentic quality.
+              </p>
+            </div>
+            <div class="flex flex-wrap justify-center items-center gap-6">
+              <div class="certification-badge">ECO-CERT</div>
+              <div class="certification-badge">ORGANIC BIO</div>
+              <div class="certification-badge">USDA ORGANIC</div>
+            </div>
+          </section>
+
+          <!-- Ultra Purity Section -->
+          <section class="mb-20 bg-white rounded-3xl p-8 md:p-12 shadow-lg">
+            <div class="text-center">
+              <h2 class="section-title" data-en="Ultra Purity: Beyond Premium Standards" data-pl="Ultra Czystość: Ponad Standardy Premium">
+                Ultra Purity: Beyond Premium Standards
+              </h2>
+              <div class="quality-metric" data-en="< 0.3% ACIDITY" data-pl="< 0,3% KWASOWOŚĆ">< 0.3% ACIDITY</div>
+              <p class="text-gray-600 text-lg leading-relaxed max-w-4xl mx-auto" data-en="Acidity below 0.3%—significantly exceeding the 0.8% limit for Extra Virgin. Cold-pressed within 4 hours of harvest. Every drop is liquid medicine, packed with 250-300mg/kg polyphenols that protect your heart and boost immunity." data-pl="Kwasowość poniżej 0,3%—znacznie przekraczając limit 0,8% dla Extra Virgin. Tłoczona na zimno w ciągu 4 godzin od zbioru. Każda kropla to płynne lekarstwo, pełne 250-300mg/kg polifenoli chroniących serce i wzmacniających odporność.">
+                Acidity below 0.3%—significantly exceeding the 0.8% limit for Extra Virgin. Cold-pressed within 4 hours of harvest. Every drop is liquid medicine, packed with 250-300mg/kg polyphenols that protect your heart and boost immunity.
+              </p>
+            </div>
+          </section>
+
+          <!-- Features Grid -->
+          <section class="mb-20">
+            <h2 class="section-title" data-en="Exceptional Taste: Liquid Gold from Ancient Trees" data-pl="Wyjątkowy Smak: Płynne Złoto ze Starożytnych Drzew">
+              Exceptional Taste: Liquid Gold from Ancient Trees
+            </h2>
+            <p class="text-gray-600 text-lg leading-relaxed max-w-4xl mx-auto text-center mb-12" data-en="Silky smooth olive oil with notes of green apple and sweet almonds. No bitterness from trees that have witnessed empires rise and fall. This isn't just oil—it's tradition, taste, and health in every drop." data-pl="Jedwabiście gładka oliwa o nutach zielonego jabłka i słodkich migdałów. Bez goryczy z drzew, które widziały jak imperia powstają i upadają. To nie tylko oliwa—to tradycja, smak i zdrowie w każdej kropli.">
+              Silky smooth olive oil with notes of green apple and sweet almonds. No bitterness from trees that have witnessed empires rise and fall. This isn't just oil—it's tradition, taste, and health in every drop.
+            </p>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+              <div class="feature-card">
+                <div class="w-16 h-16 mx-auto mb-6 bg-gradient-to-br from-yellow-400 to-yellow-600 rounded-2xl flex items-center justify-center">
+                  <span class="text-2xl">🏆</span>
+                </div>
+                <div class="heritage-badge" data-en="GLOBAL RECOGNITION" data-pl="GLOBALNE UZNANIE">GLOBAL RECOGNITION</div>
+                <h3 class="text-gray-900 text-xl font-bold mb-4 playfair" data-en="What Empires Always Believed" data-pl="To Co Imperia Zawsze Wierzyły">What Empires Always Believed</h3>
+                <p class="text-gray-600 leading-relaxed" data-en="Our numerous gold medals and awards confirm what Carthaginian merchants, Roman nobles, and Arab princes always knew—this oil doesn't just nourish the body, it preserves life itself. Today's science validates ancient wisdom." data-pl="Nasze liczne złote medale i nagrody potwierdzają to, co kartagińscy kupcy, rzymscy szlachcice i arabscy księcia zawsze wiedzieli—ta oliwa nie tylko odżywia ciało, ale zachowuje samo życie. Dzisiejsza nauka potwierdza starożytną mądrość.">
+                  Our numerous gold medals and awards confirm what Carthaginian merchants, Roman nobles, and Arab princes always knew—this oil doesn't just nourish the body, it preserves life itself. Today's science validates ancient wisdom.
+                </p>
+              </div>
+
+              <div class="feature-card">
+                <div class="w-16 h-16 mx-auto mb-6 bg-gradient-to-br from-green-500 to-green-700 rounded-2xl flex items-center justify-center">
+                  <span class="text-2xl">🌳</span>
+                </div>
+                <div class="heritage-badge" data-en="500 YEARS OLD" data-pl="500 LAT">500 YEARS OLD</div>
+                <h3 class="text-gray-900 text-xl font-bold mb-4 playfair" data-en="Ancient Chemlali Heritage" data-pl="Starożytne Dziedzictwo Chemlali">Ancient Chemlali Heritage</h3>
+                <p class="text-gray-600 leading-relaxed" data-en="Located in the groves of Sidi Bou Ali, these exceptional trees have survived droughts, wars, and the fall of empires. Today they give us liquid gold—heritage sealed in a bottle, representing the highest quality olive oil achievable." data-pl="Ulokowane w gajach Sidi Bou Ali, te wyjątkowe drzewa przetrwały susze, wojny i upadki imperiów. Dziś dają nam płynne złoto—dziedzictwo zamknięte w butelce, reprezentujące najwyższą jakość oliwy z oliwek, jaką można osiągnąć.">
+                  Located in the groves of Sidi Bou Ali, these exceptional trees have survived droughts, wars, and the fall of empires. Today they give us liquid gold—heritage sealed in a bottle, representing the highest quality olive oil achievable.
+                </p>
+              </div>
+
+              <div class="feature-card">
+                <div class="w-16 h-16 mx-auto mb-6 bg-gradient-to-br from-blue-500 to-blue-700 rounded-2xl flex items-center justify-center">
+                  <span class="text-2xl">👨‍👩‍👧‍👦</span>
+                </div>
+                <div class="heritage-badge" data-en="GENERATIONS" data-pl="POKOLENIA">GENERATIONS</div>
+                <h3 class="text-gray-900 text-xl font-bold mb-4 playfair" data-en="Result of Generations" data-pl="Rezultat Pracy Pokoleń">Result of Generations</h3>
+                <p class="text-gray-600 leading-relaxed" data-en="Laperla olive oil comes from work and tradition passed down through generations. These ancient beings give us the highest quality achievable from olives—a perfect blend of heritage, craft, and nature's wisdom." data-pl="Oliwa Laperla pochodzi z pracy i tradycji przekazywanych przez pokolenia. Te starożytne istoty dają nam najwyższą jakość, jaką można osiągnąć z oliwek—idealne połączenie dziedzictwa, rzemiosła i mądrości natury.">
+                  Laperla olive oil comes from work and tradition passed down through generations. These ancient beings give us the highest quality achievable from olives—a perfect blend of heritage, craft, and nature's wisdom.
+                </p>
+              </div>
+            </div>
+          </section>
+
+          <!-- Video Section -->
+          <section class="mb-20 text-center">
+            <h2 class="section-title" data-en="Experience Our Heritage" data-pl="Doświadcz Naszego Dziedzictwa">Experience Our Heritage</h2>
+            <p class="text-gray-600 text-lg leading-relaxed max-w-3xl mx-auto mb-8" data-en="Watch the journey from 500-year-old trees to liquid gold. Discover the craftsmanship and tradition behind every bottle of Laperla." data-pl="Zobacz podróż z 500-letnich drzew do płynnego złota. Odkryj rzemiosło i tradycję kryjącą się za każdą butelką Laperla.">
+              Watch the journey from 500-year-old trees to liquid gold. Discover the craftsmanship and tradition behind every bottle of Laperla.
+            </p>
+            <div class="w-full max-w-4xl mx-auto">
+              <div class="aspect-video rounded-2xl overflow-hidden shadow-2xl">
+                <iframe
+                  class="w-full h-full"
+                  src="https://www.youtube.com/embed/jVE9jp-U8BY"
+                  title="Laperla: 500 Years of Liquid Gold"
+                  frameborder="0"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                  allowfullscreen
+                ></iframe>
+              </div>
+            </div>
+          </section>
+
+          <!-- Final CTA Section -->
+          <section class="text-center bg-gradient-to-br from-yellow-50 to-green-50 rounded-3xl p-8 md:p-12">
+            <h2 class="text-gray-900 text-3xl md:text-4xl font-bold mb-6 playfair" data-en="Ready to Experience 500 Years of Liquid Heritage?" data-pl="Gotowy na Doświadczenie 500 Lat Płynnego Dziedzictwa?">
+              Ready to Experience 500 Years of Liquid Heritage?
+            </h2>
+            <p class="text-gray-600 text-lg leading-relaxed max-w-3xl mx-auto mb-10" data-en="Join the legacy of Laperla—where history and health unite in every drop. From 500-year-old trees to your table, taste the liquid gold that empires treasured and modern science validates." data-pl="Dołącz do dziedzictwa Laperla—gdzie historia i zdrowie łączą się w każdej kropli. Z 500-letnich drzew na Twój stół, skosztuj płynnego złota, które ceniły imperia, a współczesna nauka potwierdza.">
+              Join the legacy of Laperla—where history and health unite in every drop. From 500-year-old trees to your table, taste the liquid gold that empires treasured and modern science validates.
+            </p>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center items-center">
+              <a href="https://wa.me/48530846928?text=I%20want%20to%20try%20Laperla%20Premium%20Olive%20Oil" target="_blank" class="cta-button text-lg">
+                <span data-en="🛒 Try Laperla Now" data-pl="🛒 Spróbuj Laperla Teraz">🛒 Try Laperla Now</span>
+              </a>
+              <a href="contact.html" class="cta-button-outline text-lg">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp" class="w-5 h-5 mr-2">
+                <span data-en="📧 Get Custom Quote" data-pl="📧 Otrzymaj Wycenę">📧 Get Custom Quote</span>
+              </a>
+            </div>
+          </section>
+        </div>
+
+        <!-- Enhanced Footer -->
+        <footer class="bg-white border-t border-gray-200">
+          <div class="max-w-7xl mx-auto px-6 md:px-10 py-12">
+            <div class="flex flex-wrap items-center justify-center gap-8 mb-8">
+              <a class="text-gray-600 hover:text-yellow-600 font-medium transition-colors" href="home.html" data-en="Home" data-pl="Strona Główna">Home</a>
+              <a class="text-gray-600 hover:text-yellow-600 font-medium transition-colors" href="product.html" data-en="Our Products" data-pl="Nasze Produkty">Our Products</a>
+              <a class="text-gray-600 hover:text-yellow-600 font-medium transition-colors" href="heritage.html" data-en="Our Story" data-pl="Nasza Historia">Our Story</a>
+              <a class="text-gray-600 hover:text-yellow-600 font-medium transition-colors" href="contact.html" data-en="Contact" data-pl="Kontakt">Contact</a>
+            </div>
+            <div class="flex justify-center gap-6 mb-8">
+              <a href="https://instagram.com/yourprofile" target="_blank" class="text-gray-400 hover:text-yellow-600 transition-colors">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 256 256">
+                  <path d="M128,80a48,48,0,1,0,48,48A48.05,48.05,0,0,0,128,80Zm0,80a32,32,0,1,1,32-32A32,32,0,0,1,128,160ZM176,24H80A56.06,56.06,0,0,0,24,80v96a56.06,56.06,0,0,0,56,56h96a56.06,56.06,0,0,0,56-56V80A56.06,56.06,0,0,0,176,24Zm40,152a40,40,0,0,1-40,40H80a40,40,0,0,1-40-40V80A40,40,0,0,1,80,40h96a40,40,0,0,1,40,40ZM192,76a12,12,0,1,1-12-12A12,12,0,0,1,192,76Z"></path>
+                </svg>
+              </a>
+              <a href="https://facebook.com/yourprofile" target="_blank" class="text-gray-400 hover:text-yellow-600 transition-colors">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 256 256">
+                  <path d="M128,24A104,104,0,1,0,232,128,104.11,104.11,0,0,0,128,24Zm8,191.63V152h24a8,8,0,0,0,0-16H136V112a16,16,0,0,1,16-16h16a8,8,0,0,0,0-16H152a32,32,0,0,0-32,32v24H96a8,8,0,0,0,0,16h24v63.63a88,88,0,1,1,16,0Z"></path>
+                </svg>
+              </a>
+            </div>
+            <p class="text-center text-gray-500 font-medium" data-en="© 2025 Laperla. History and health in every drop. All rights reserved." data-pl="© 2025 Laperla. Historia i zdrowie w każdej kropli. Wszelkie prawa zastrzeżone.">
+              © 2025 Laperla. History and health in every drop. All rights reserved.
+            </p>
           </div>
         </footer>
       </div>
     </div>
 
+    <!-- Enhanced JavaScript -->
     <script>
-      // Run immediately to prevent navigation without language
+      // Language management
       (function() {
-        // Get current language from URL, cookie, or default
         const urlParams = new URLSearchParams(window.location.search);
         const urlLang = urlParams.get('lang');
         const savedLanguage = Cookies.get('selectedLanguage');
         const currentLang = urlLang || savedLanguage || 'en';
         
-        // Update all navigation links immediately
         function updateAllLinks(lang) {
           const links = document.querySelectorAll('a[href^="home.html"], a[href^="product.html"], a[href^="heritage.html"], a[href^="contact.html"], a[href^="index.html"]');
           links.forEach(link => {
@@ -636,7 +670,6 @@
           });
         }
         
-        // Update links as soon as DOM is ready
         if (document.readyState === 'loading') {
           document.addEventListener('DOMContentLoaded', () => updateAllLinks(currentLang));
         } else {
@@ -645,7 +678,7 @@
       })();
 
       document.addEventListener('DOMContentLoaded', () => {
-        const translatableElements = document.querySelectorAll('[data-en][data-pl][data-it][data-fr]');
+        const translatableElements = document.querySelectorAll('[data-en][data-pl]');
         const languageButton = document.querySelector('.language-dropdown-button');
         const languageMenu = document.querySelector('.language-dropdown-menu');
         const languageOptions = document.querySelectorAll('.language-option');
@@ -656,33 +689,25 @@
         let currentImageIndex = 0;
 
         function updateLanguage(lang) {
-          // Update text content
           translatableElements.forEach(element => {
             element.textContent = element.getAttribute(`data-${lang}`);
           });
 
-          // Update meta description
           if (metaDescription) {
             metaDescription.setAttribute('content', metaDescription.getAttribute(`data-${lang}`));
           }
 
-          // Update selected language display
           const selectedOption = document.querySelector(`.language-option[data-lang="${lang}"]`);
           selectedLanguageSpan.textContent = selectedOption.textContent.trim();
-          flagSpan.className = `fi fi-${lang === 'fr' ? 'fr' : lang}`;
+          flagSpan.className = `fi fi-${lang === 'pl' ? 'pl' : 'us'}`;
 
-          // Update HTML lang attribute
           document.documentElement.setAttribute('lang', lang);
-
-          // Save language to cookie
           Cookies.set('selectedLanguage', lang, { expires: 7 });
 
-          // Update ALL links with lang parameter
           const allLinks = document.querySelectorAll('a[href]');
           allLinks.forEach(link => {
             try {
               const url = new URL(link.href, window.location.origin);
-              // Only update links to your site pages
               if (url.hostname === window.location.hostname && 
                   (url.pathname.endsWith('.html') || url.pathname === '/')) {
                 url.searchParams.set('lang', lang);
@@ -693,56 +718,50 @@
             }
           });
 
-          // Close dropdown
           languageMenu.classList.remove('show');
         }
 
-        // Toggle dropdown
         languageButton.addEventListener('click', () => {
           languageMenu.classList.toggle('show');
         });
 
-        // Handle language selection
         languageOptions.forEach(option => {
           option.addEventListener('click', () => {
             const lang = option.getAttribute('data-lang');
             updateLanguage(lang);
-            // Update URL with language parameter
             const url = new URL(window.location);
             url.searchParams.set('lang', lang);
             window.history.pushState({}, '', url);
           });
         });
 
-        // Close dropdown when clicking outside
         document.addEventListener('click', (e) => {
           if (!languageButton.contains(e.target) && !languageMenu.contains(e.target)) {
             languageMenu.classList.remove('show');
           }
         });
 
-        // Slideshow functionality
+        // Enhanced slideshow
         function showNextImage() {
           slideshowImages[currentImageIndex].classList.remove('active');
           currentImageIndex = (currentImageIndex + 1) % slideshowImages.length;
           slideshowImages[currentImageIndex].classList.add('active');
         }
-        setInterval(showNextImage, 5000);
+        setInterval(showNextImage, 4000);
 
-        // Set initial language: use URL parameter, then cookie, then rely on geolocation
+        // Initialize language
         const urlParams = new URLSearchParams(window.location.search);
         const urlLang = urlParams.get('lang');
         const savedLanguage = Cookies.get('selectedLanguage');
-        if (urlLang && ['en', 'pl', 'it', 'fr'].includes(urlLang)) {
+        
+        if (urlLang && ['en', 'pl'].includes(urlLang)) {
           updateLanguage(urlLang);
-        } else if (savedLanguage && ['en', 'pl', 'it', 'fr'].includes(savedLanguage)) {
+        } else if (savedLanguage && ['en', 'pl'].includes(savedLanguage)) {
           updateLanguage(savedLanguage);
-          // Update URL with language
           const url = new URL(window.location);
           url.searchParams.set('lang', savedLanguage);
           window.history.replaceState({}, '', url);
         }
-        // Geolocation is handled by detectAndRedirect() in the head
       });
     </script>
 </body>
