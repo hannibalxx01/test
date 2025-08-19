@@ -14,11 +14,8 @@
     <link rel="icon" type="image/x-icon" href="data:image/x-icon;base64," />
     <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
     <link rel="stylesheet" href="assets/css/styles.css">
-    <!-- Load js-cookie -->
     <script src="https://cdn.jsdelivr.net/npm/js-cookie@3.0.5/dist/js.cookie.min.js"></script>
-    <!-- SEO Meta Tags -->
     <meta name="keywords" content="premium extra virgin olive oil, ECO-CERT, Chemlali olives, Tunisia olive oil, 500-year-old trees, ultra pure olive oil, polyphenols">
-    <!-- Structured Data -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
@@ -39,7 +36,6 @@
       }
     }
     </script>
-    <!-- Geolocation Script for Polish visitors -->
     <script>
       function detectAndRedirect() {
         const urlParams = new URLSearchParams(window.location.search);
@@ -180,7 +176,7 @@
         border-radius: 24px;
         overflow: hidden;
       }
-      .slideshow-image {
+      .slideshow-image { /* This class is reused for the video */
         width: 100%;
         height: 100%;
         object-fit: cover;
@@ -203,22 +199,7 @@
         background: linear-gradient(135deg, rgba(0,0,0,0.4) 0%, rgba(0,0,0,0.6) 100%);
         border-radius: 24px;
       }
-
-      .heritage-badge {
-        background: linear-gradient(135deg, var(--olive-gold) 0%, #e6b800 100%);
-        color: white;
-        padding: 0.5rem 1.25rem;
-        border-radius: 50px;
-        font-weight: 700;
-        font-size: 0.75rem;
-        text-align: center;
-        display: inline-block;
-        text-transform: uppercase;
-        letter-spacing: 1px;
-        box-shadow: 0 4px 15px rgba(212, 160, 23, 0.3);
-        margin-bottom: 1rem;
-      }
-
+      
       .story-highlight {
         background: linear-gradient(135deg, var(--soft-green) 0%, var(--warm-white) 100%);
         border: 1px solid rgba(212, 160, 23, 0.2);
@@ -342,49 +323,23 @@
         transform: rotate(45deg) translate(50%, 50%);
       }
 
-      .cta-button {
-        background: linear-gradient(135deg, #80e619 0%, #6bc916 100%);
-        color: var(--olive-green);
-        padding: 1rem 2rem;
-        border-radius: 50px;
+      .nav-link {
+        position: relative;
+        transition: color 0.3s ease;
+      }
+      .nav-link-active {
+        color: var(--olive-gold) !important;
         font-weight: 700;
-        text-decoration: none;
-        display: inline-flex;
-        align-items: center;
-        justify-content: center;
-        transition: all 0.3s ease;
-        box-shadow: 0 8px 25px rgba(128, 230, 25, 0.3);
-        border: none;
-        cursor: pointer;
-        min-width: 200px;
       }
-
-      .cta-button:hover {
-        transform: translateY(-2px);
-        box-shadow: 0 12px 35px rgba(128, 230, 25, 0.4);
-      }
-
-      .cta-button-outline {
-        background: white;
-        color: var(--olive-green);
-        border: 2px solid #80e619;
-        padding: 1rem 2rem;
-        border-radius: 50px;
-        font-weight: 700;
-        text-decoration: none;
-        display: inline-flex;
-        align-items: center;
-        justify-content: center;
-        transition: all 0.3s ease;
-        box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
-        min-width: 200px;
-      }
-
-      .cta-button-outline:hover {
-        background: #80e619;
-        color: var(--olive-green);
-        transform: translateY(-2px);
-        box-shadow: 0 12px 35px rgba(128, 230, 25, 0.3);
+      .nav-link-active::after {
+        content: '';
+        position: absolute;
+        bottom: -6px;
+        left: 0;
+        right: 0;
+        height: 2px;
+        background-color: var(--olive-gold);
+        border-radius: 1px;
       }
 
       @media (max-width: 768px) {
@@ -419,7 +374,6 @@
     
     <div class="relative flex size-full min-h-screen flex-col bg-gradient-to-br from-gray-50 to-white group/design-root overflow-x-hidden">
       <div class="layout-container flex h-full grow flex-col">
-        <!-- Enhanced Header -->
         <header class="flex items-center justify-between whitespace-nowrap bg-white/95 backdrop-blur-md border-b border-gray-200/50 px-6 md:px-10 py-4 sticky top-0 z-40">
           <a href="index.html" class="flex items-center gap-4 text-gray-900 no-underline">
             <div class="size-8 p-1 bg-gradient-to-br from-yellow-400 to-yellow-600 rounded-lg">
@@ -444,10 +398,10 @@
           </a>
           <div class="flex flex-1 justify-end gap-8">
             <div class="hidden md:flex items-center gap-8">
-              <a class="text-gray-700 text-sm font-semibold leading-normal hover:text-yellow-600 transition-colors" href="home.html" data-en="Home" data-pl="Strona Główna">Home</a>
-              <a class="text-gray-700 text-sm font-semibold leading-normal hover:text-yellow-600 transition-colors" href="product.html" data-en="Our Products" data-pl="Nasze Produkty">Our Products</a>
-              <a class="text-gray-700 text-sm font-semibold leading-normal hover:text-yellow-600 transition-colors" href="heritage.html" data-en="Our Story" data-pl="Nasza Historia">Our Story</a>
-              <a class="text-gray-700 text-sm font-semibold leading-normal hover:text-yellow-600 transition-colors" href="contact.html" data-en="Contact" data-pl="Kontakt">Contact</a>
+              <a class="nav-link text-gray-700 text-sm font-semibold leading-normal hover:text-yellow-600" id="nav-home" href="index.html" data-en="Home" data-pl="Strona Główna">Home</a>
+              <a class="nav-link text-gray-700 text-sm font-semibold leading-normal hover:text-yellow-600" id="nav-products" href="product.html" data-en="Our Products" data-pl="Nasze Produkty">Our Products</a>
+              <a class="nav-link text-gray-700 text-sm font-semibold leading-normal hover:text-yellow-600" id="nav-story" href="heritage.html" data-en="Our Story" data-pl="Nasza Historia">Our Story</a>
+              <a class="nav-link text-gray-700 text-sm font-semibold leading-normal hover:text-yellow-600" id="nav-contact" href="contact.html" data-en="Contact" data-pl="Kontakt">Contact</a>
             </div>
             <div class="language-dropdown">
               <button class="language-dropdown-button">
@@ -471,17 +425,16 @@
           </div>
         </header>
 
-        <!-- Main Content -->
         <div class="flex-1 max-w-7xl mx-auto px-6 md:px-10 py-8">
-          <!-- Hero Section -->
           <div class="mb-16">
             <div class="relative min-h-[600px] rounded-3xl overflow-hidden">
               <div class="hero-slideshow">
-                <img src="https://cdn.usegalileo.ai/sdxl10/afce4c1c-36c9-4fe4-a4c6-2f3dec580dd4.png" class="slideshow-image active" alt="Ancient olive trees">
-                <img src="assets/images/tree.jpg" class="slideshow-image" alt="500-year-old Chemlali trees">
-                <img src="assets/images/vue.jpg" class="slideshow-image" alt="Tunisian olive groves">
-                <img src="assets/images/collect.jpg" class="slideshow-image" alt="Hand harvesting tradition">
-              </div>
+                <video autoplay loop muted playsinline class="slideshow-image active">
+                  <source src="assets/videos/perla.mp4" type="video/webm">
+                  <source src="assets/videos/perla.mp4" type="video/mp4">
+                  Your browser does not support the video tag.
+                </video>
+                </div>
               <div class="hero-overlay"></div>
               <div class="relative z-10 flex flex-col justify-end h-full p-8 md:p-12">
                 <div class="max-w-3xl">
@@ -499,7 +452,6 @@
             </div>
           </div>
 
-          <!-- Story Highlight -->
           <div class="story-highlight">
             <div class="relative z-10">
               <p class="text-xl md:text-2xl font-medium leading-relaxed playfair text-center" data-en="For over 500 years, the ancient Chemlali trees in Sidi Bou Ali groves have survived droughts, wars, and the fall of empires. Today, these immortal guardians give us the highest quality olive oil achievable—liquid gold that carries the heritage of generations and the wisdom of Tunisia's sacred land." data-pl="Przez ponad 500 lat starożytne drzewa Chemlali w gajach Sidi Bou Ali przetrwały susze, wojny i upadki imperiów. Dziś te nieśmiertelne strażnicy dają nam najwyższą jakość oliwy z oliwek, jaką można osiągnąć—płynne złoto, które niesie dziedzictwo pokoleń i mądrość świętej ziemi Tunezji.">
@@ -508,7 +460,6 @@
             </div>
           </div>
 
-          <!-- Global Certifications Section -->
           <section class="mb-20">
             <div class="text-center mb-12">
               <h2 class="section-title" data-en="Global ECO-Certifications: From America to Europe" data-pl="Globalne Certyfikaty ECO: Od Ameryki do Europy">
@@ -525,7 +476,6 @@
             </div>
           </section>
 
-          <!-- Ultra Purity Section -->
           <section class="mb-20 bg-white rounded-3xl p-8 md:p-12 shadow-lg">
             <div class="text-center">
               <h2 class="section-title" data-en="Ultra Purity: Beyond Premium Standards" data-pl="Ultra Czystość: Ponad Standardy Premium">
@@ -538,7 +488,6 @@
             </div>
           </section>
 
-          <!-- Features Grid -->
           <section class="mb-20">
             <h2 class="section-title" data-en="Exceptional Taste: Liquid Gold from Ancient Trees" data-pl="Wyjątkowy Smak: Płynne Złoto ze Starożytnych Drzew">
               Exceptional Taste: Liquid Gold from Ancient Trees
@@ -583,7 +532,6 @@
             </div>
           </section>
 
-          <!-- Video Section -->
           <section class="mb-20 text-center">
             <h2 class="section-title" data-en="Experience Our Heritage" data-pl="Doświadcz Naszego Dziedzictwa">Experience Our Heritage</h2>
             <p class="text-gray-600 text-lg leading-relaxed max-w-3xl mx-auto mb-8" data-en="Watch the journey from 500-year-old trees to liquid gold. Discover the craftsmanship and tradition behind every bottle of Laperla." data-pl="Zobacz podróż z 500-letnich drzew do płynnego złota. Odkryj rzemiosło i tradycję kryjącą się za każdą butelką Laperla.">
@@ -603,7 +551,6 @@
             </div>
           </section>
 
-          <!-- Final CTA Section -->
           <section class="text-center bg-gradient-to-br from-yellow-50 to-green-50 rounded-3xl p-8 md:p-12">
             <h2 class="text-gray-900 text-3xl md:text-4xl font-bold mb-6 playfair" data-en="Ready to Experience 500 Years of Liquid Heritage?" data-pl="Gotowy na Doświadczenie 500 Lat Płynnego Dziedzictwa?">
               Ready to Experience 500 Years of Liquid Heritage?
@@ -623,11 +570,10 @@
           </section>
         </div>
 
-        <!-- Enhanced Footer -->
         <footer class="bg-white border-t border-gray-200">
           <div class="max-w-7xl mx-auto px-6 md:px-10 py-12">
             <div class="flex flex-wrap items-center justify-center gap-8 mb-8">
-              <a class="text-gray-600 hover:text-yellow-600 font-medium transition-colors" href="home.html" data-en="Home" data-pl="Strona Główna">Home</a>
+              <a class="text-gray-600 hover:text-yellow-600 font-medium transition-colors" href="index.html" data-en="Home" data-pl="Strona Główna">Home</a>
               <a class="text-gray-600 hover:text-yellow-600 font-medium transition-colors" href="product.html" data-en="Our Products" data-pl="Nasze Produkty">Our Products</a>
               <a class="text-gray-600 hover:text-yellow-600 font-medium transition-colors" href="heritage.html" data-en="Our Story" data-pl="Nasza Historia">Our Story</a>
               <a class="text-gray-600 hover:text-yellow-600 font-medium transition-colors" href="contact.html" data-en="Contact" data-pl="Kontakt">Contact</a>
@@ -652,7 +598,6 @@
       </div>
     </div>
 
-    <!-- Enhanced JavaScript -->
     <script>
       // Language management
       (function() {
@@ -666,7 +611,7 @@
           links.forEach(link => {
             const url = new URL(link.href, window.location.origin);
             url.searchParams.set('lang', lang);
-            link.href = url.toString();
+            link.href = url.pathname + url.search;
           });
         }
         
@@ -684,9 +629,22 @@
         const languageOptions = document.querySelectorAll('.language-option');
         const selectedLanguageSpan = document.querySelector('.selected-language');
         const flagSpan = languageButton.querySelector('.fi');
-        const slideshowImages = document.querySelectorAll('.slideshow-image');
         const metaDescription = document.querySelector('meta[name="description"]');
-        let currentImageIndex = 0;
+        
+        // --- IMPROVEMENT: Active Navigation Link ---
+        function setActiveNav() {
+            const currentPage = window.location.pathname.split('/').pop();
+            if (currentPage === 'index.html' || currentPage === '') {
+                document.getElementById('nav-home')?.classList.add('nav-link-active');
+            } else if (currentPage === 'product.html') {
+                document.getElementById('nav-products')?.classList.add('nav-link-active');
+            } else if (currentPage === 'heritage.html') {
+                document.getElementById('nav-story')?.classList.add('nav-link-active');
+            } else if (currentPage === 'contact.html') {
+                document.getElementById('nav-contact')?.classList.add('nav-link-active');
+            }
+        }
+        setActiveNav();
 
         function updateLanguage(lang) {
           translatableElements.forEach(element => {
@@ -711,7 +669,7 @@
               if (url.hostname === window.location.hostname && 
                   (url.pathname.endsWith('.html') || url.pathname === '/')) {
                 url.searchParams.set('lang', lang);
-                link.href = url.toString();
+                link.href = url.pathname + url.search;
               }
             } catch (e) {
               // Skip invalid URLs
@@ -741,13 +699,8 @@
           }
         });
 
-        // Enhanced slideshow
-        function showNextImage() {
-          slideshowImages[currentImageIndex].classList.remove('active');
-          currentImageIndex = (currentImageIndex + 1) % slideshowImages.length;
-          slideshowImages[currentImageIndex].classList.add('active');
-        }
-        setInterval(showNextImage, 4000);
+        // --- SCRIPT CHANGE: The slideshow interval has been removed. ---
+        // The video will loop automatically via its HTML attributes.
 
         // Initialize language
         const urlParams = new URLSearchParams(window.location.search);
