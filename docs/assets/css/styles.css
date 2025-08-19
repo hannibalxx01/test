@@ -53,13 +53,8 @@ body {
 }
 
 /* Premium Typography */
-.lugrasimo-regular {
-  font-family: "Lugrasimo", cursive;
-  font-weight: 400;
-  font-style: normal;
-  color: var(--warm-black);
-  text-shadow: 0 1px 3px rgba(212, 175, 55, 0.1);
-  letter-spacing: 0.02em;
+.playfair {
+  font-family: 'Playfair Display', serif;
 }
 
 /* Enhanced Squircle with Luxury Frame */
@@ -154,6 +149,24 @@ header::after {
     var(--liquid-gold), 
     transparent);
 }
+
+/* Active Navigation Link Style */
+.nav-link-active {
+  color: var(--burnished-gold) !important;
+  position: relative;
+}
+
+.nav-link-active::after {
+  content: '';
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background-color: var(--burnished-gold);
+  border-radius: 1px;
+}
+
 
 /* Premium Content Containers */
 .layout-content-container {
@@ -290,7 +303,7 @@ header::after {
 /* Premium Section Titles */
 .section-title {
   color: var(--warm-black) !important;
-  font-family: 'Lugrasimo', cursive !important;
+  font-family: 'Playfair Display', serif !important;
   font-weight: 700 !important;
   text-shadow: 
     0 2px 4px rgba(212, 175, 55, 0.1),
@@ -325,36 +338,62 @@ header::after {
   width: 120px !important;
 }
 
-/* Premium Buttons */
-.bg-\[#80e619\],
-button[class*="80e619"] {
-  background: 
-    linear-gradient(145deg, 
-      #85ea1e 0%, 
-      #80e619 30%, 
-      #75d015 70%, 
-      #80e619 100%) !important;
-  color: var(--warm-black) !important;
+/* --- IMPROVEMENT: Premium Buttons (Gold Theme) --- */
+.cta-button {
+  background: linear-gradient(145deg, var(--liquid-gold) 0%, var(--burnished-gold) 100%) !important;
+  color: var(--ivory-cream) !important;
   font-weight: 700 !important;
-  text-shadow: 0 1px 2px rgba(255, 255, 255, 0.3);
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
   box-shadow: 
-    0 12px 35px rgba(128, 230, 25, 0.25),
-    0 6px 15px rgba(117, 208, 21, 0.2),
-    inset 0 1px 0 rgba(255, 255, 255, 0.4),
-    inset 0 -1px 0 rgba(0, 0, 0, 0.1);
-  border: 1px solid rgba(117, 208, 21, 0.3) !important;
+    0 12px 35px rgba(212, 175, 55, 0.3),
+    0 6px 15px rgba(184, 134, 11, 0.25),
+    inset 0 1px 0 rgba(255, 255, 255, 0.2);
+  border: 1px solid rgba(184, 134, 11, 0.5) !important;
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   position: relative;
   overflow: hidden;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  border-radius: 50px;
+  padding: 1rem 2rem;
+  cursor: pointer;
+  min-width: 200px;
 }
 
-.bg-\[#80e619\]:hover {
+.cta-button:hover {
   transform: translateY(-2px);
+  background: linear-gradient(145deg, var(--old-gold) 0%, var(--liquid-gold) 100%) !important;
   box-shadow: 
-    0 20px 45px rgba(128, 230, 25, 0.35),
-    0 10px 20px rgba(117, 208, 21, 0.3),
-    inset 0 1px 0 rgba(255, 255, 255, 0.5);
+    0 20px 45px rgba(212, 175, 55, 0.4),
+    0 10px 20px rgba(184, 134, 11, 0.35),
+    inset 0 1px 0 rgba(255, 255, 255, 0.3);
 }
+
+.cta-button-outline {
+  background: transparent !important;
+  color: var(--burnished-gold) !important;
+  border: 2px solid var(--liquid-gold) !important;
+  font-weight: 700 !important;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.05);
+  min-width: 200px;
+  border-radius: 50px;
+  padding: 1rem 2rem;
+}
+
+.cta-button-outline:hover {
+  background: var(--liquid-gold) !important;
+  color: white !important;
+  transform: translateY(-2px);
+  box-shadow: 0 12px 35px rgba(212, 175, 55, 0.3);
+}
+
 
 /* Premium Images */
 .catalogue-image,
