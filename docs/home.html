@@ -5,16 +5,23 @@
     <title>Redirecting to Laperla Homepage</title>
     <script src="https://cdn.jsdelivr.net/npm/js-cookie@3.0.5/dist/js.cookie.min.js"></script>
     <script>
-        // Get language from URL params, cookie, or default
+        // BEST PRACTICE NOTE: This file should ideally be removed.
+        // Your web server should be configured to serve `index.html` by default when a user visits your root domain (e.g., laperlaoliveoil.com).
+        // The language detection and parameter logic can then be handled directly within index.html.
+
+        // Get language from URL params, cookie, or browser default
         const urlParams = new URLSearchParams(window.location.search);
         const urlLang = urlParams.get('lang');
         const savedLanguage = Cookies.get('selectedLanguage');
-        const lang = urlLang || savedLanguage || 'en';
+        const browserLang = navigator.language.startsWith('pl') ? 'pl' : 'en';
         
-        // Construct the redirect URL with language parameter
+        // Prioritize URL lang > saved lang > browser lang
+        const lang = urlLang || savedLanguage || browserLang;
+        
+        // Construct the redirect URL with the language parameter
         let redirectUrl = 'index.html?lang=' + lang;
         
-        // Redirect to index.html with language parameter
+        // Redirect to index.html
         window.location.replace(redirectUrl);
     </script>
 </head>
