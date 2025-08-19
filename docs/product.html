@@ -14,9 +14,7 @@
     <link rel="icon" type="image/x-icon" href="data:image/x-icon;base64," />
     <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
     <link rel="stylesheet" href="assets/css/styles.css">
-    <!-- Load js-cookie -->
     <script src="https://cdn.jsdelivr.net/npm/js-cookie@3.0.5/dist/js.cookie.min.js"></script>
-    <!-- SEO Meta Tags -->
     <meta name="keywords" content="premium extra virgin olive oil, Chemlali olives, ECO-CERT, Tunisia olive oil, 500-year-old trees, polyphenols, cold pressed extraction">
 
     <style>
@@ -100,21 +98,6 @@
         border-radius: 2px;
       }
 
-      .heritage-badge {
-        background: linear-gradient(135deg, var(--olive-gold) 0%, #e6b800 100%);
-        color: white;
-        padding: 0.5rem 1.25rem;
-        border-radius: 50px;
-        font-weight: 700;
-        font-size: 0.75rem;
-        text-align: center;
-        display: inline-block;
-        text-transform: uppercase;
-        letter-spacing: 1px;
-        box-shadow: 0 4px 15px rgba(212, 160, 23, 0.3);
-        margin-bottom: 1rem;
-      }
-
       .certification-badge {
         background: linear-gradient(135deg, var(--olive-green) 0%, #4a7c4a 100%);
         color: white;
@@ -134,22 +117,6 @@
       .certification-badge:hover {
         transform: translateY(-2px);
         box-shadow: 0 8px 25px rgba(46, 94, 46, 0.35);
-      }
-
-      .quality-metric {
-        background: linear-gradient(135deg, var(--olive-gold) 0%, #e6b800 100%);
-        color: white;
-        padding: 1rem 2rem;
-        border-radius: 50px;
-        font-weight: 800;
-        font-size: 1.125rem;
-        text-align: center;
-        box-shadow: 0 8px 25px rgba(212, 160, 23, 0.3);
-        margin: 1rem 0;
-        display: inline-block;
-        text-transform: uppercase;
-        letter-spacing: 1px;
-        border: 2px solid rgba(255, 255, 255, 0.3);
       }
 
       .section-title {
@@ -234,74 +201,6 @@
         border-radius: 2px;
       }
 
-      .cta-button {
-        background: linear-gradient(135deg, #80e619 0%, #6bc916 100%);
-        color: var(--olive-green);
-        padding: 1rem 2rem;
-        border-radius: 50px;
-        font-weight: 700;
-        text-decoration: none;
-        display: inline-flex;
-        align-items: center;
-        justify-content: center;
-        transition: all 0.3s ease;
-        box-shadow: 0 8px 25px rgba(128, 230, 25, 0.3);
-        border: none;
-        cursor: pointer;
-        min-width: 200px;
-        margin-top: auto;
-      }
-
-      .cta-button:hover {
-        transform: translateY(-2px);
-        box-shadow: 0 12px 35px rgba(128, 230, 25, 0.4);
-      }
-
-      .cta-button-outline {
-        background: white;
-        color: var(--olive-green);
-        border: 2px solid #80e619;
-        padding: 1rem 2rem;
-        border-radius: 50px;
-        font-weight: 700;
-        text-decoration: none;
-        display: inline-flex;
-        align-items: center;
-        justify-content: center;
-        transition: all 0.3s ease;
-        box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
-        min-width: 200px;
-      }
-
-      .cta-button-outline:hover {
-        background: #80e619;
-        color: var(--olive-green);
-        transform: translateY(-2px);
-        box-shadow: 0 12px 35px rgba(128, 230, 25, 0.3);
-      }
-
-      .specs-grid {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-        gap: 1.5rem;
-        margin: 2rem 0;
-      }
-
-      .spec-item {
-        background: linear-gradient(135deg, #f9fafb 0%, #ffffff 100%);
-        border: 1px solid rgba(212, 160, 23, 0.1);
-        border-radius: 12px;
-        padding: 1.5rem;
-        text-align: center;
-        transition: all 0.3s ease;
-      }
-
-      .spec-item:hover {
-        transform: translateY(-4px);
-        box-shadow: 0 12px 30px rgba(0, 0, 0, 0.1);
-        border-color: var(--olive-gold);
-      }
-
       .process-timeline {
         position: relative;
         padding: 2rem 0;
@@ -367,6 +266,25 @@
         box-shadow: 0 15px 40px rgba(0, 0, 0, 0.12);
       }
 
+      .nav-link {
+        position: relative;
+        transition: color 0.3s ease;
+      }
+      .nav-link-active {
+        color: var(--olive-gold) !important;
+        font-weight: 700;
+      }
+      .nav-link-active::after {
+        content: '';
+        position: absolute;
+        bottom: -6px;
+        left: 0;
+        right: 0;
+        height: 2px;
+        background-color: var(--olive-gold);
+        border-radius: 1px;
+      }
+      
       @media (max-width: 768px) {
         .section-title {
           font-size: 2rem;
@@ -374,10 +292,6 @@
         
         .product-card {
           padding: 2rem;
-        }
-        
-        .specs-grid {
-          grid-template-columns: 1fr;
         }
 
         .process-timeline::before {
@@ -412,7 +326,6 @@
     
     <div class="relative flex size-full min-h-screen flex-col bg-gradient-to-br from-gray-50 to-white group/design-root overflow-x-hidden">
       <div class="layout-container flex h-full grow flex-col">
-        <!-- Enhanced Header -->
         <header class="flex items-center justify-between whitespace-nowrap bg-white/95 backdrop-blur-md border-b border-gray-200/50 px-6 md:px-10 py-4 sticky top-0 z-40">
           <a href="index.html" class="flex items-center gap-4 text-gray-900 no-underline">
             <div class="size-8 p-1 bg-gradient-to-br from-yellow-400 to-yellow-600 rounded-lg">
@@ -437,10 +350,10 @@
           </a>
           <div class="flex flex-1 justify-end gap-8">
             <div class="hidden md:flex items-center gap-8">
-              <a class="text-gray-700 text-sm font-semibold leading-normal hover:text-yellow-600 transition-colors" href="home.html" data-en="Home" data-pl="Strona Główna">Home</a>
-              <a class="text-gray-700 text-sm font-semibold leading-normal hover:text-yellow-600 transition-colors" href="product.html" data-en="Our Products" data-pl="Nasze Produkty">Our Products</a>
-              <a class="text-gray-700 text-sm font-semibold leading-normal hover:text-yellow-600 transition-colors" href="heritage.html" data-en="Our Story" data-pl="Nasza Historia">Our Story</a>
-              <a class="text-gray-700 text-sm font-semibold leading-normal hover:text-yellow-600 transition-colors" href="contact.html" data-en="Contact" data-pl="Kontakt">Contact</a>
+                <a class="nav-link text-gray-700 text-sm font-semibold leading-normal hover:text-yellow-600" id="nav-home" href="index.html" data-en="Home" data-pl="Strona Główna">Home</a>
+                <a class="nav-link text-gray-700 text-sm font-semibold leading-normal hover:text-yellow-600" id="nav-products" href="product.html" data-en="Our Products" data-pl="Nasze Produkty">Our Products</a>
+                <a class="nav-link text-gray-700 text-sm font-semibold leading-normal hover:text-yellow-600" id="nav-story" href="heritage.html" data-en="Our Story" data-pl="Nasza Historia">Our Story</a>
+                <a class="nav-link text-gray-700 text-sm font-semibold leading-normal hover:text-yellow-600" id="nav-contact" href="contact.html" data-en="Contact" data-pl="Kontakt">Contact</a>
             </div>
             <div class="language-dropdown">
               <button class="language-dropdown-button">
@@ -464,9 +377,7 @@
           </div>
         </header>
 
-        <!-- Main Content -->
         <div class="flex-1 max-w-7xl mx-auto px-6 md:px-10 py-8">
-          <!-- Hero Section -->
           <div class="mb-16">
             <div class="relative min-h-[500px] rounded-3xl overflow-hidden" style='background-image: linear-gradient(135deg, rgba(0,0,0,0.4) 0%, rgba(0,0,0,0.6) 100%), url("assets/images/bottle.jpeg"); background-size: cover; background-position: center;'>
               <div class="relative z-10 flex flex-col justify-end h-full p-8 md:p-12">
@@ -482,12 +393,10 @@
             </div>
           </div>
 
-          <!-- Products Section -->
           <section class="mb-20">
-            <h2 class="section-title" data-en="Our Premium Collection" data-pl="Nasza Premium Kolekcja">Our Premium Collection</h2>
+            <h2 class="section-title playfair" data-en="Our Premium Collection" data-pl="Nasza Premium Kolekcja">Our Premium Collection</h2>
             
             <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
-              <!-- Signature Edition -->
               <div class="product-card">
                 <div class="product-image" style='background-image: url("assets/images/bottle.jpeg");'></div>
                 <div class="heritage-badge" data-en="SIGNATURE EDITION" data-pl="EDYCJA SYGNOWANA">🏆 SIGNATURE EDITION</div>
@@ -497,12 +406,11 @@
                   Silky smooth with notes of green apple, sweet almond, and Mediterranean herbs. Zero bitterness from trees that have stood for 500 years. Cold-pressed within 4 hours, with 250-300mg/kg polyphenols for maximum health benefits.
                 </p>
 
-                <a href="https://wa.me/48530846928?text=I%20want%20to%20try%20Chemlali%20Edition%20Prestige" target="_blank" class="cta-button text-lg">
+                <a href="https://wa.me/48530846928?text=I%20want%20to%20try%20Chemlali%20Edition%20Prestige" target="_blank" class="cta-button text-lg mt-auto">
                   <span data-en="🛒 Try Prestige Edition" data-pl="🛒 Spróbuj Edycji Prestige">🛒 Try Prestige Edition</span>
                 </a>
               </div>
 
-              <!-- Bulk Collection -->
               <div class="product-card">
                 <div class="product-image" style='background-image: url("assets/images/bulk.png");'></div>
                 <div class="heritage-badge" data-en="BUSINESS SOLUTIONS" data-pl="ROZWIĄZANIA BIZNESOWE">📦 BUSINESS SOLUTIONS</div>
@@ -512,37 +420,35 @@
                   Same exceptional quality from our 500-year-old Chemlali groves, available in larger quantities. Perfect for chefs and businesses who understand that great cuisine starts with authentic ingredients.
                 </p>
 
-                <!-- Business Applications -->
                 <div class="grid grid-cols-2 gap-4 text-sm text-gray-700 mb-6">
                   <div class="flex items-center gap-2">
-                    <span class="text-green-600">✓</span>
+                    <span class="text-yellow-600">✓</span>
                     <span data-en="Restaurants & Hotels" data-pl="Restauracje i Hotele">Restaurants & Hotels</span>
                   </div>
                   <div class="flex items-center gap-2">
-                    <span class="text-green-600">✓</span>
+                    <span class="text-yellow-600">✓</span>
                     <span data-en="Gourmet Food Stores" data-pl="Sklepy z Żywnością dla Smakoszy">Gourmet Food Stores</span>
                   </div>
                   <div class="flex items-center gap-2">
-                    <span class="text-green-600">✓</span>
+                    <span class="text-yellow-600">✓</span>
                     <span data-en="Food Distributors" data-pl="Dystrybutorzy Żywności">Food Distributors</span>
                   </div>
                   <div class="flex items-center gap-2">
-                    <span class="text-green-600">✓</span>
+                    <span class="text-yellow-600">✓</span>
                     <span data-en="Private Labeling" data-pl="Etykiety Prywatne">Private Labeling</span>
                   </div>
                 </div>
 
-                <a href="https://wa.me/48530846928?text=Inquiry%20about%20Premium%20Bulk%20Collection" target="_blank" class="cta-button-outline text-lg">
+                <a href="contact.html" class="cta-button-outline text-lg mt-auto">
                   <span data-en="📧 Get Business Quote" data-pl="📧 Otrzymaj Wycenę Biznesową">📧 Get Business Quote</span>
                 </a>
               </div>
             </div>
           </section>
 
-          <!-- Global Certifications -->
           <section class="mb-20 bg-white rounded-3xl p-8 md:p-12 shadow-lg">
             <div class="text-center mb-12">
-              <h2 class="section-title" data-en="Global ECO-Certifications" data-pl="Globalne Certyfikaty ECO">
+              <h2 class="section-title playfair" data-en="Global ECO-Certifications" data-pl="Globalne Certyfikaty ECO">
                 Global ECO-Certifications
               </h2>
               <p class="text-gray-600 text-lg leading-relaxed max-w-3xl mx-auto" data-en="Our olive oil is certified across continents, meeting the world's highest organic standards. We proudly hold ECO-CERT, Organic Bio, and USDA Organic certifications." data-pl="Nasza oliwa jest certyfikowana na wszystkich kontynentach, spełniając najwyższe światowe standardy organiczne. Z dumą posiadamy certyfikaty ECO-CERT, Organic Bio i USDA Organic.">
@@ -556,16 +462,14 @@
             </div>
           </section>
 
-          <!-- Extraction Process Section -->
           <section class="mb-20">
-            <h2 class="section-title" data-en="Scientific Extraction Process: Traditional Knowledge Meets Modern Technology" data-pl="Naukowy Proces Ekstrakcji: Tradycyjna Wiedza Spotyka Nowoczesną Technologię">
-              Scientific Extraction Process: Traditional Knowledge Meets Modern Technology
+            <h2 class="section-title playfair" data-en="Scientific Extraction Process: Traditional Knowledge Meets Modern Technology" data-pl="Naukowy Proces Ekstrakcji: Tradycyjna Wiedza Spotyka Nowoczesną Technologię">
+              Scientific Extraction Process
             </h2>
             <p class="text-gray-600 text-lg leading-relaxed max-w-4xl mx-auto text-center mb-12" data-en="Our extraction methodology combines centuries-old wisdom with cutting-edge technology to preserve maximum nutritional and sensory properties. Each step is meticulously calibrated to ensure optimal oil quality while respecting the integrity of our ancient Chemlali cultivar." data-pl="Nasza metodologia ekstrakcji łączy wieki mądrości z najnowocześniejszą technologią, aby zachować maksymalne właściwości odżywcze i sensoryczne. Każdy krok jest skrupulatnie skalibrowany, aby zapewnić optymalną jakość oleju, szanując integralność naszej starożytnej odmiany Chemlali.">
               Our extraction methodology combines centuries-old wisdom with cutting-edge technology to preserve maximum nutritional and sensory properties. Each step is meticulously calibrated to ensure optimal oil quality while respecting the integrity of our ancient Chemlali cultivar.
             </p>
 
-            <!-- Process Timeline -->
             <div class="process-timeline">
               <div class="timeline-item">
                 <div class="timeline-content">
@@ -609,9 +513,8 @@
             </div>
           </section>
 
-          <!-- Chemical Composition Section -->
           <section class="mb-20 bg-white rounded-3xl p-8 md:p-12 shadow-lg">
-            <h2 class="section-title" data-en="What Makes Our Oil Extraordinary" data-pl="Co Czyni Naszą Oliwę Niezwykłą">What Makes Our Oil Extraordinary</h2>
+            <h2 class="section-title playfair" data-en="What Makes Our Oil Extraordinary" data-pl="Co Czyni Naszą Oliwę Niezwykłą">What Makes Our Oil Extraordinary</h2>
             
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
               <div class="process-step">
@@ -646,7 +549,6 @@
             </div>
           </section>
 
-          <!-- Final CTA Section -->
           <section class="text-center bg-gradient-to-br from-yellow-50 to-green-50 rounded-3xl p-8 md:p-12">
             <h2 class="text-gray-900 text-3xl md:text-4xl font-bold mb-6 playfair" data-en="Experience Scientific Excellence" data-pl="Doświadcz Doskonałości Naukowej">
               Experience Scientific Excellence
@@ -666,11 +568,10 @@
           </section>
         </div>
 
-        <!-- Enhanced Footer -->
         <footer class="bg-white border-t border-gray-200">
           <div class="max-w-7xl mx-auto px-6 md:px-10 py-12">
             <div class="flex flex-wrap items-center justify-center gap-8 mb-8">
-              <a class="text-gray-600 hover:text-yellow-600 font-medium transition-colors" href="home.html" data-en="Home" data-pl="Strona Główna">Home</a>
+              <a class="text-gray-600 hover:text-yellow-600 font-medium transition-colors" href="index.html" data-en="Home" data-pl="Strona Główna">Home</a>
               <a class="text-gray-600 hover:text-yellow-600 font-medium transition-colors" href="product.html" data-en="Our Products" data-pl="Nasze Produkty">Our Products</a>
               <a class="text-gray-600 hover:text-yellow-600 font-medium transition-colors" href="heritage.html" data-en="Our Story" data-pl="Nasza Historia">Our Story</a>
               <a class="text-gray-600 hover:text-yellow-600 font-medium transition-colors" href="contact.html" data-en="Contact" data-pl="Kontakt">Contact</a>
@@ -682,8 +583,8 @@
                 </svg>
               </a>
               <a href="https://facebook.com/yourprofile" target="_blank" class="text-gray-400 hover:text-yellow-600 transition-colors">
-                <svg xmlns="http://www.w3./2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 256 256">
-                  <path d="M128,24A104,104,0,1,0,232,128,104.11,104.11,0,0,0,128,24Zm8,191.63V152h24a8,8,0,0,0,0-16H136V112a16,16,0,0,1,16-16h16a8,8,0,0,0,0-16H152a32,32,0,0,0-32,32v24H96a8,8,0,0,0,0-16h24v63.63a88,88,0,1,1,16,0Z"></path>
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 256 256">
+                  <path d="M128,24A104,104,0,1,0,232,128,104.11,104.11,0,0,0,128,24Zm8,191.63V152h24a8,8,0,0,0,0-16H136V112a16,16,0,0,1,16-16h16a8,8,0,0,0,0-16H152a32,32,0,0,0-32,32v24H96a8,8,0,0,0,0,16h24v63.63a88,88,0,1,1,16,0Z"></path>
                 </svg>
               </a>
             </div>
@@ -695,7 +596,6 @@
       </div>
     </div>
 
-    <!-- Enhanced JavaScript -->
     <script>
       // Language management
       (function() {
@@ -709,7 +609,7 @@
           links.forEach(link => {
             const url = new URL(link.href, window.location.origin);
             url.searchParams.set('lang', lang);
-            link.href = url.toString();
+            link.href = url.pathname + url.search;
           });
         }
         
@@ -728,6 +628,21 @@
         const selectedLanguageSpan = document.querySelector('.selected-language');
         const flagSpan = languageButton.querySelector('.fi');
         const metaDescription = document.querySelector('meta[name="description"]');
+
+        // --- IMPROVEMENT: Active Navigation Link ---
+        function setActiveNav() {
+            const currentPage = window.location.pathname.split('/').pop();
+            if (currentPage === 'index.html' || currentPage === '') {
+                document.getElementById('nav-home')?.classList.add('nav-link-active');
+            } else if (currentPage === 'product.html') {
+                document.getElementById('nav-products')?.classList.add('nav-link-active');
+            } else if (currentPage === 'heritage.html') {
+                document.getElementById('nav-story')?.classList.add('nav-link-active');
+            } else if (currentPage === 'contact.html') {
+                document.getElementById('nav-contact')?.classList.add('nav-link-active');
+            }
+        }
+        setActiveNav();
 
         function updateLanguage(lang) {
           translatableElements.forEach(element => {
@@ -752,7 +667,7 @@
               if (url.hostname === window.location.hostname && 
                   (url.pathname.endsWith('.html') || url.pathname === '/')) {
                 url.searchParams.set('lang', lang);
-                link.href = url.toString();
+                link.href = url.pathname + url.search;
               }
             } catch (e) {
               // Skip invalid URLs
