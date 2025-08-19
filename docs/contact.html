@@ -14,9 +14,7 @@
     <link rel="icon" type="image/x-icon" href="data:image/x-icon;base64," />
     <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
     <link rel="stylesheet" href="assets/css/styles.css">
-    <!-- Load js-cookie -->
     <script src="https://cdn.jsdelivr.net/npm/js-cookie@3.0.5/dist/js.cookie.min.js"></script>
-    <!-- SEO Meta Tags -->
     <meta name="keywords" content="contact Laperla, olive oil inquiry, business quote, restaurant olive oil, premium EVOO supplier">
 
     <style>
@@ -163,55 +161,28 @@
         box-shadow: 0 20px 50px rgba(0, 0, 0, 0.15);
         border-color: var(--olive-gold);
       }
-
-      .cta-button {
-        background: linear-gradient(135deg, #80e619 0%, #6bc916 100%);
-        color: var(--olive-green);
-        padding: 1rem 2rem;
-        border-radius: 50px;
+      
+      .nav-link {
+        position: relative;
+        transition: color 0.3s ease;
+      }
+      .nav-link-active {
+        color: var(--olive-gold) !important;
         font-weight: 700;
-        text-decoration: none;
-        display: inline-flex;
-        align-items: center;
-        justify-content: center;
-        transition: all 0.3s ease;
-        box-shadow: 0 8px 25px rgba(128, 230, 25, 0.3);
-        border: none;
-        cursor: pointer;
-        min-width: 200px;
-        width: 100%;
       }
-
-      .cta-button:hover {
-        transform: translateY(-2px);
-        box-shadow: 0 12px 35px rgba(128, 230, 25, 0.4);
-      }
-
-      .cta-button-outline {
-        background: white;
-        color: var(--olive-green);
-        border: 2px solid #80e619;
-        padding: 1rem 2rem;
-        border-radius: 50px;
-        font-weight: 700;
-        text-decoration: none;
-        display: inline-flex;
-        align-items: center;
-        justify-content: center;
-        transition: all 0.3s ease;
-        box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
-        min-width: 200px;
-      }
-
-      .cta-button-outline:hover {
-        background: #80e619;
-        color: var(--olive-green);
-        transform: translateY(-2px);
-        box-shadow: 0 12px 35px rgba(128, 230, 25, 0.3);
+      .nav-link-active::after {
+        content: '';
+        position: absolute;
+        bottom: -6px;
+        left: 0;
+        right: 0;
+        height: 2px;
+        background-color: var(--olive-gold);
+        border-radius: 1px;
       }
 
       /* Modal styles */
-      #form-success-modal {
+      #form-status-modal {
         display: none;
         position: fixed;
         top: 0;
@@ -223,7 +194,7 @@
         align-items: center;
         justify-content: center;
       }
-      #form-success-modal.show {
+      #form-status-modal.show {
         display: flex;
       }
       .modal-content {
@@ -278,7 +249,6 @@
     
     <div class="relative flex size-full min-h-screen flex-col bg-gradient-to-br from-gray-50 to-white group/design-root overflow-x-hidden">
       <div class="layout-container flex h-full grow flex-col">
-        <!-- Enhanced Header -->
         <header class="flex items-center justify-between whitespace-nowrap bg-white/95 backdrop-blur-md border-b border-gray-200/50 px-6 md:px-10 py-4 sticky top-0 z-40">
           <a href="index.html" class="flex items-center gap-4 text-gray-900 no-underline">
             <div class="size-8 p-1 bg-gradient-to-br from-yellow-400 to-yellow-600 rounded-lg">
@@ -303,10 +273,10 @@
           </a>
           <div class="flex flex-1 justify-end gap-8">
             <div class="hidden md:flex items-center gap-8">
-              <a class="text-gray-700 text-sm font-semibold leading-normal hover:text-yellow-600 transition-colors" href="home.html" data-en="Home" data-pl="Strona Główna">Home</a>
-              <a class="text-gray-700 text-sm font-semibold leading-normal hover:text-yellow-600 transition-colors" href="product.html" data-en="Our Products" data-pl="Nasze Produkty">Our Products</a>
-              <a class="text-gray-700 text-sm font-semibold leading-normal hover:text-yellow-600 transition-colors" href="heritage.html" data-en="Our Story" data-pl="Nasza Historia">Our Story</a>
-              <a class="text-gray-700 text-sm font-semibold leading-normal hover:text-yellow-600 transition-colors" href="contact.html" data-en="Contact" data-pl="Kontakt">Contact</a>
+                <a class="nav-link text-gray-700 text-sm font-semibold leading-normal hover:text-yellow-600" id="nav-home" href="index.html" data-en="Home" data-pl="Strona Główna">Home</a>
+                <a class="nav-link text-gray-700 text-sm font-semibold leading-normal hover:text-yellow-600" id="nav-products" href="product.html" data-en="Our Products" data-pl="Nasze Produkty">Our Products</a>
+                <a class="nav-link text-gray-700 text-sm font-semibold leading-normal hover:text-yellow-600" id="nav-story" href="heritage.html" data-en="Our Story" data-pl="Nasza Historia">Our Story</a>
+                <a class="nav-link text-gray-700 text-sm font-semibold leading-normal hover:text-yellow-600" id="nav-contact" href="contact.html" data-en="Contact" data-pl="Kontakt">Contact</a>
             </div>
             <div class="language-dropdown">
               <button class="language-dropdown-button">
@@ -330,17 +300,14 @@
           </div>
         </header>
 
-        <!-- Main Content -->
         <div class="flex-1 max-w-7xl mx-auto px-6 md:px-10 py-8">
-          <!-- Hero Section -->
           <div class="mb-16 text-center">
-            <h1 class="section-title" data-en="Contact Us" data-pl="Skontaktuj Się z Nami">Contact Us</h1>
+            <h1 class="section-title playfair" data-en="Contact Us" data-pl="Skontaktuj Się z Nami">Contact Us</h1>
             <p class="text-gray-600 text-lg leading-relaxed max-w-3xl mx-auto" data-en="We're here to assist you with all your olive oil needs. Fill out our form below, and let's start the conversation!" data-pl="Jesteśmy tu, aby pomóc Ci ze wszystkimi potrzebami dotyczącymi oliwy. Wypełnij formularz poniżej, i zacznijmy rozmowę!">
               We're here to assist you with all your olive oil needs. Fill out our form below, and let's start the conversation!
             </p>
           </div>
 
-          <!-- Contact Information -->
           <div class="mb-16 text-center">
             <div class="contact-card max-w-md mx-auto">
               <div class="w-16 h-16 mx-auto mb-6 bg-gradient-to-br from-yellow-400 to-yellow-600 rounded-2xl flex items-center justify-center">
@@ -353,23 +320,18 @@
             </div>
           </div>
 
-          <!-- Contact Form -->
           <div class="mb-16">
             <div class="contact-card max-w-2xl mx-auto">
               <h2 class="text-gray-900 text-2xl font-bold mb-6 playfair text-center" data-en="Tell Us Your Needs" data-pl="Opowiedz Nam o Swoich Potrzebach">Tell Us Your Needs</h2>
               
-              <!-- FormSubmit Integration -->
               <form
                 id="contact-form"
                 action="https://formsubmit.co/info@laperlaoliveoil.com"
                 method="POST"
                 class="space-y-6"
               >
-                <!-- FormSubmit hidden fields -->
                 <input type="hidden" name="_subject" value="New Contact Form Submission - Laperla Olive Oil">
-                <input type="hidden" name="_replyto" value="info@laperlaoliveoil.com">
                 <input type="hidden" name="_captcha" value="true">
-                <input type="hidden" name="_next" value="https://your-site.com/contact.html">
                 
                 <div>
                   <label class="form-label" data-en="Name *" data-pl="Imię *">Name *</label>
@@ -411,7 +373,7 @@
                 
                 <div>
                   <label class="form-label" data-en="Type of Business *" data-pl="Rodzaj działalności *">Type of Business *</label>
-                  <select name="business_type" class="form-select" required>
+                  <select name="business_type" class="form-select form-input" required>
                     <option value="" disabled selected data-en="Select business type" data-pl="Wybierz rodzaj działalności">Select business type</option>
                     <option value="Retail" data-en="Retail" data-pl="Handel detaliczny">Retail</option>
                     <option value="Wholesale" data-en="Wholesale" data-pl="Hurt">Wholesale</option>
@@ -458,48 +420,26 @@
                   ></textarea>
                 </div>
                 
-                <button type="submit" class="cta-button text-lg">
-                  <span data-en="Submit" data-pl="Wyślij">Submit</span>
+                <button type="submit" class="cta-button text-lg w-full">
+                  <span data-en="Submit Inquiry" data-pl="Wyślij Zapytanie">Submit Inquiry</span>
                 </button>
               </form>
             </div>
           </div>
 
-          <!-- CTA Section -->
-          <section class="text-center bg-gradient-to-br from-yellow-50 to-green-50 rounded-3xl p-8 md:p-12">
-            <h2 class="text-gray-900 text-3xl md:text-4xl font-bold mb-6 playfair" data-en="Ready to Experience Liquid Gold?" data-pl="Gotowy na Doświadczenie Płynnego Złota?">
-              Ready to Experience Liquid Gold?
-            </h2>
-            <p class="text-gray-600 text-lg leading-relaxed max-w-3xl mx-auto mb-10" data-en="Join thousands of satisfied customers who've discovered the perfect olive oil. Try now and taste the difference that 500 years of craftsmanship makes." data-pl="Dołącz do tysięcy zadowolonych klientów, którzy odkryli idealną oliwę. Spróbuj teraz i poczuj różnicę, jaką daje 500 lat rzemiosła.">
-              Join thousands of satisfied customers who've discovered the perfect olive oil. Try now and taste the difference that 500 years of craftsmanship makes.
-            </p>
-            <div class="flex flex-col sm:flex-row gap-4 justify-center items-center">
-              <a href="https://wa.me/48530846928?text=I%20want%20to%20try%20Laperla%20Prestige%20Edition" target="_blank" class="cta-button text-lg">
-                <span data-en="🛒 Try Prestige Edition Now" data-pl="🛒 Spróbuj Edycji Prestige Teraz">🛒 Try Prestige Edition Now</span>
-              </a>
-              <a href="https://wa.me/48530846928?text=I%20need%20a%20custom%20quote%20for%20Laperla%20olive%20oil" target="_blank" class="cta-button-outline text-lg">
-                <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp" class="w-5 h-5 mr-2">
-                <span data-en="📧 Get Custom Quote" data-pl="📧 Otrzymaj Wycenę">📧 Get Custom Quote</span>
-              </a>
-            </div>
-          </section>
         </div>
 
-        <!-- Form Success Modal -->
-        <div id="form-success-modal">
+        <div id="form-status-modal">
           <div class="modal-content">
-            <p id="form-success-message" data-en="Thank you! Your submission has been received. We will contact you soon." data-pl="Dziękujemy! Twoje zgłoszenie zostało otrzymane. Skontaktujemy się wkrótce.">
-              Thank you! Your submission has been received. We will contact you soon.
-            </p>
+            <p id="form-status-message"></p>
             <button id="close-modal" data-en="Close" data-pl="Zamknij">Close</button>
           </div>
         </div>
 
-        <!-- Enhanced Footer -->
         <footer class="bg-white border-t border-gray-200">
           <div class="max-w-7xl mx-auto px-6 md:px-10 py-12">
             <div class="flex flex-wrap items-center justify-center gap-8 mb-8">
-              <a class="text-gray-600 hover:text-yellow-600 font-medium transition-colors" href="home.html" data-en="Home" data-pl="Strona Główna">Home</a>
+              <a class="text-gray-600 hover:text-yellow-600 font-medium transition-colors" href="index.html" data-en="Home" data-pl="Strona Główna">Home</a>
               <a class="text-gray-600 hover:text-yellow-600 font-medium transition-colors" href="product.html" data-en="Our Products" data-pl="Nasze Produkty">Our Products</a>
               <a class="text-gray-600 hover:text-yellow-600 font-medium transition-colors" href="heritage.html" data-en="Our Story" data-pl="Nasza Historia">Our Story</a>
               <a class="text-gray-600 hover:text-yellow-600 font-medium transition-colors" href="contact.html" data-en="Contact" data-pl="Kontakt">Contact</a>
@@ -512,7 +452,7 @@
               </a>
               <a href="https://facebook.com/yourprofile" target="_blank" class="text-gray-400 hover:text-yellow-600 transition-colors">
                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 256 256">
-                  <path d="M128,24A104,104,0,1,0,232,128,104.11,104.11,0,0,0,128,24Zm8,191.63V152h24a8,8,0,0,0,0-16H136V112a16,16,0,1,1,16-16h16a8,8,0,0,0,0-16H152a32,32,0,0,0-32,32v24H96a8,8,0,0,0,0,16h24v63.63a88,88,0,1,1,16,0Z"></path>
+                  <path d="M128,24A104,104,0,1,0,232,128,104.11,104.11,0,0,0,128,24Zm8,191.63V152h24a8,8,0,0,0,0-16H136V112a16,16,0,0,1,16-16h16a8,8,0,0,0,0-16H152a32,32,0,0,0-32,32v24H96a8,8,0,0,0,0,16h24v63.63a88,88,0,1,1,16,0Z"></path>
                 </svg>
               </a>
             </div>
@@ -524,7 +464,6 @@
       </div>
     </div>
 
-    <!-- Enhanced JavaScript -->
     <script>
       // Language management
       (function() {
@@ -538,7 +477,7 @@
           links.forEach(link => {
             const url = new URL(link.href, window.location.origin);
             url.searchParams.set('lang', lang);
-            link.href = url.toString();
+            link.href = url.pathname + url.search;
           });
         }
         
@@ -558,23 +497,39 @@
         const flagSpan = languageButton.querySelector('.fi');
         const metaDescription = document.querySelector('meta[name="description"]');
         const form = document.querySelector('#contact-form');
-        const modal = document.querySelector('#form-success-modal');
-        const modalMessage = document.querySelector('#form-success-message');
+        const modal = document.querySelector('#form-status-modal');
+        const modalMessage = document.querySelector('#form-status-message');
         const closeModalButton = document.querySelector('#close-modal');
         const businessTypeSelect = document.querySelector('select[name="business_type"]');
         const otherBusinessTypeDiv = document.querySelector('#other-business-type');
         const otherBusinessTypeInput = document.querySelector('input[name="other_business_type"]');
+
+        // --- IMPROVEMENT: Active Navigation Link ---
+        function setActiveNav() {
+            const currentPage = window.location.pathname.split('/').pop();
+            if (currentPage === 'index.html' || currentPage === '') {
+                document.getElementById('nav-home')?.classList.add('nav-link-active');
+            } else if (currentPage === 'product.html') {
+                document.getElementById('nav-products')?.classList.add('nav-link-active');
+            } else if (currentPage === 'heritage.html') {
+                document.getElementById('nav-story')?.classList.add('nav-link-active');
+            } else if (currentPage === 'contact.html') {
+                document.getElementById('nav-contact')?.classList.add('nav-link-active');
+            }
+        }
+        setActiveNav();
 
         function updateLanguage(lang) {
           translatableElements.forEach(element => {
             element.textContent = element.getAttribute(`data-${lang}`);
           });
 
-          // Update placeholders
-          document.querySelectorAll('input[data-placeholder-en], textarea[data-placeholder-en], select[data-placeholder-en]').forEach(element => {
-            const placeholder = element.getAttribute(`data-placeholder-${lang}`);
-            if (placeholder) {
-              element.placeholder = placeholder;
+          document.querySelectorAll('input[data-placeholder-en], textarea[data-placeholder-en], select option[disabled]').forEach(element => {
+            if(element.hasAttribute(`data-placeholder-${lang}`)){
+              element.placeholder = element.getAttribute(`data-placeholder-${lang}`);
+            } else {
+               const text = element.getAttribute(`data-${lang}`);
+               if(text) element.textContent = text;
             }
           });
 
@@ -596,11 +551,9 @@
               if (url.hostname === window.location.hostname && 
                   (url.pathname.endsWith('.html') || url.pathname === '/')) {
                 url.searchParams.set('lang', lang);
-                link.href = url.toString();
+                link.href = url.pathname + url.search;
               }
-            } catch (e) {
-              // Skip invalid URLs
-            }
+            } catch (e) {}
           });
 
           languageMenu.classList.remove('show');
@@ -626,7 +579,6 @@
           }
         });
 
-        // Handle business type selection
         businessTypeSelect.addEventListener('change', () => {
           if (businessTypeSelect.value === 'Other') {
             otherBusinessTypeDiv.classList.remove('hidden');
@@ -638,85 +590,67 @@
           }
         });
 
-        // Handle modal close
-        closeModalButton.addEventListener('click', () => {
-          modal.classList.remove('show');
-        });
-
-        // Close modal when clicking outside
+        closeModalButton.addEventListener('click', () => modal.classList.remove('show'));
         modal.addEventListener('click', (e) => {
-          if (e.target === modal) {
-            modal.classList.remove('show');
-          }
+          if (e.target === modal) modal.classList.remove('show');
         });
 
-        // Client-side form validation and submission handling
+        // --- IMPROVEMENT: AJAX Form Submission ---
         form.addEventListener('submit', (e) => {
           e.preventDefault();
+          const formData = new FormData(form);
+          const submitButton = form.querySelector('button[type="submit"]');
+          const originalButtonText = submitButton.innerHTML;
+          
+          submitButton.disabled = true;
+          submitButton.innerHTML = `<span data-en="Submitting..." data-pl="Wysyłanie...">Submitting...</span>`;
+          updateLanguage(Cookies.get('selectedLanguage') || 'en');
 
-          const name = form.querySelector('input[name="name"]').value.trim();
-          const email = form.querySelector('input[name="email"]').value.trim();
-          const businessType = businessTypeSelect.value;
-          const otherBusinessType = otherBusinessTypeInput.value.trim();
-          const location = form.querySelector('input[name="location"]').value.trim();
-          const description = form.querySelector('textarea[name="description"]').value.trim();
-
-          // Validate required fields
-          if (!name || !email || !businessType || !location || !description) {
+          fetch(form.action, {
+            method: 'POST',
+            body: formData,
+            headers: {
+              'Accept': 'application/json'
+            }
+          }).then(response => {
+            if (response.ok) {
+              return response.json();
+            }
+            throw new Error('Network response was not ok.');
+          }).then(data => {
             modalMessage.textContent = {
-              en: 'Please fill in all required fields.',
-              pl: 'Proszę wypełnić wszystkie wymagane pola.'
+              en: 'Thank you! Your submission has been received. We will contact you soon.',
+              pl: 'Dziękujemy! Twoje zgłoszenie zostało otrzymane. Skontaktujemy się wkrótce.'
             }[Cookies.get('selectedLanguage') || 'en'];
             modal.classList.add('show');
-            modalMessage.classList.add('text-red-600');
-            return;
-          }
-
-          // Validate email format
-          const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-          if (!emailRegex.test(email)) {
+            form.reset();
+            otherBusinessTypeDiv.classList.add('hidden');
+            otherBusinessTypeInput.required = false;
+          }).catch(error => {
+            console.error('Form submission error:', error);
             modalMessage.textContent = {
-              en: 'Please enter a valid email address.',
-              pl: 'Proszę podać prawidłowy adres email.'
+              en: 'Sorry, there was an error sending your message. Please try again later.',
+              pl: 'Przepraszamy, wystąpił błąd podczas wysyłania wiadomości. Proszę spróbować ponownie później.'
             }[Cookies.get('selectedLanguage') || 'en'];
             modal.classList.add('show');
-            modalMessage.classList.add('text-red-600');
-            return;
-          }
-
-          // Validate "Other" business type
-          if (businessType === 'Other' && !otherBusinessType) {
-            modalMessage.textContent = {
-              en: 'Please specify your business type.',
-              pl: 'Proszę określić rodzaj działalności.'
-            }[Cookies.get('selectedLanguage') || 'en'];
-            modal.classList.add('show');
-            modalMessage.classList.add('text-red-600');
-            return;
-          }
-
-          // Display success message in modal and submit form
-          modalMessage.textContent = modalMessage.getAttribute(`data-${Cookies.get('selectedLanguage') || 'en'}`);
-          modal.classList.add('show');
-          modalMessage.classList.remove('text-red-600');
-          modalMessage.classList.add('text-green-600');
-
-          // Submit form to FormSubmit (bypasses onSubmit restrictions)
-          form.submit();
+          }).finally(() => {
+            submitButton.disabled = false;
+            submitButton.innerHTML = originalButtonText;
+            updateLanguage(Cookies.get('selectedLanguage') || 'en');
+          });
         });
 
         // Initialize language
         const urlParams = new URLSearchParams(window.location.search);
         const urlLang = urlParams.get('lang');
         const savedLanguage = Cookies.get('selectedLanguage');
+        const initialLang = urlLang || savedLanguage || 'en';
+        updateLanguage(initialLang);
         
-        if (urlLang && ['en', 'pl'].includes(urlLang)) {
-          updateLanguage(urlLang);
-        } else if (savedLanguage && ['en', 'pl'].includes(savedLanguage)) {
-          updateLanguage(savedLanguage);
-          const url = new URL(window.location);
-          url.searchParams.set('lang', savedLanguage);
-          window.history.replaceState({}, '', url);
+        if (!urlLang && savedLanguage) {
+            const url = new URL(window.location);
+            url.searchParams.set('lang', savedLanguage);
+            window.history.replaceState({}, '', url);
         }
       });
     </script>
