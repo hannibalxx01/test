@@ -525,16 +525,30 @@ footer p {
     inset 0 1px 0 rgba(255, 255, 255, 0.95);
 }
 
-/* Responsive Optimizations */
+/* Enhanced Mobile Responsive Optimizations */
+@media (max-width: 1024px) {
+  .layout-content-container {
+    padding: 2rem 1.5rem;
+    margin: 2rem 0;
+  }
+  
+  .section-title {
+    font-size: 2.5rem !important;
+    margin-bottom: 2.5rem !important;
+  }
+}
+
 @media (max-width: 768px) {
   body {
     background-attachment: local;
     background-size: 100px 100px, 60px 60px, cover;
+    font-size: 16px;
   }
   
   .layout-content-container {
     margin: 1.5rem 0;
     border-radius: 20px;
+    padding: 1.5rem 1rem;
   }
   
   .squircle {
@@ -547,12 +561,89 @@ footer p {
   
   .section-title {
     font-size: 2rem !important;
+    margin-bottom: 2rem !important;
+  }
+  
+  .heritage-badge,
+  .quality-metric {
+    font-size: 0.75rem !important;
+    padding: 0.6rem 1.2rem !important;
+    margin: 0.5rem !important;
+    display: block !important;
+    text-align: center !important;
+  }
+  
+  /* Mobile navigation improvements */
+  header {
+    padding: 0.5rem 1rem;
+  }
+  
+  /* Mobile button improvements */
+  .cta-button,
+  .cta-button-outline {
+    width: 100% !important;
+    min-width: auto !important;
+    margin: 0.5rem 0 !important;
+    padding: 1rem 1.5rem !important;
+    font-size: 1rem !important;
+  }
+  
+  /* Mobile form improvements */
+  .form-input {
+    width: 100% !important;
+    padding: 1rem !important;
+    font-size: 1rem !important;
+  }
+  
+  /* Mobile image improvements */
+  .catalogue-image,
+  img[src*="assets/images"] {
+    width: 100% !important;
+    height: auto !important;
+    max-width: 100% !important;
+  }
+}
+
+@media (max-width: 480px) {
+  body {
+    font-size: 14px;
+  }
+  
+  .layout-content-container {
+    margin: 1rem 0;
+    border-radius: 16px;
+    padding: 1rem 0.75rem;
+  }
+  
+  .section-title {
+    font-size: 1.75rem !important;
+    margin-bottom: 1.5rem !important;
+    line-height: 1.3 !important;
   }
   
   .heritage-badge,
   .quality-metric {
     font-size: 0.7rem !important;
     padding: 0.5rem 1rem !important;
+    margin: 0.25rem 0 !important;
+  }
+  
+  /* Extra small mobile specific adjustments */
+  .cta-button,
+  .cta-button-outline {
+    padding: 0.875rem 1.25rem !important;
+    font-size: 0.9rem !important;
+  }
+  
+  /* Compact language dropdown for mobile */
+  .language-dropdown-button {
+    padding: 0.5rem 0.75rem !important;
+    font-size: 0.8rem !important;
+  }
+  
+  .language-dropdown-menu {
+    min-width: 100px !important;
+    font-size: 0.8rem !important;
   }
 }
 
@@ -564,6 +655,93 @@ footer p {
     animation-duration: 0.01ms !important;
     animation-iteration-count: 1 !important;
     transition-duration: 0.01ms !important;
+  }
+}
+
+/* Certification Logo Background Removal */
+img[src*="ecocert.png"],
+img[src*="usda.png"],
+img[src*="organic.jpg"],
+img[alt*="ECO-CERT"],
+img[alt*="USDA"],
+img[alt*="Organic"] {
+  background: transparent !important;
+  background-color: transparent !important;
+  backdrop-filter: none !important;
+  mix-blend-mode: multiply !important;
+}
+
+/* Remove backgrounds from certification badges */
+.modern-cert-badge {
+  background: transparent !important;
+  background-color: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
+}
+
+/* Mobile Touch Target Improvements */
+@media (max-width: 768px) {
+  /* Ensure all clickable elements meet minimum touch target size */
+  a, button, .clickable {
+    min-height: 44px;
+    min-width: 44px;
+    padding: 0.75rem 1rem;
+  }
+  
+  /* Mobile navigation touch targets */
+  .modern-nav-link,
+  .nav-link {
+    padding: 1rem 0.5rem;
+    margin: 0.25rem 0;
+  }
+  
+  /* Mobile language dropdown improvements */
+  .modern-language-button,
+  .language-dropdown-button {
+    min-height: 44px;
+    padding: 0.75rem 1rem;
+  }
+  
+  .modern-language-option,
+  .language-option {
+    padding: 1rem 1.25rem;
+    min-height: 44px;
+    display: flex;
+    align-items: center;
+  }
+  
+  /* Mobile form touch targets */
+  input, textarea, select {
+    min-height: 44px;
+    padding: 1rem;
+    font-size: 16px; /* Prevents zoom on iOS */
+  }
+  
+  /* Mobile video controls */
+  video {
+    width: 100%;
+    height: auto;
+  }
+}
+
+/* Mobile-specific scroll improvements */
+@media (max-width: 768px) {
+  /* Smooth scrolling for mobile */
+  html {
+    scroll-behavior: smooth;
+  }
+  
+  /* Prevent horizontal scroll */
+  body {
+    overflow-x: hidden;
+  }
+  
+  /* Mobile safe area padding for newer devices */
+  @supports (padding: env(safe-area-inset-top)) {
+    body {
+      padding-top: env(safe-area-inset-top);
+      padding-bottom: env(safe-area-inset-bottom);
+    }
   }
 }
 

@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Laperla - History and health in every drop. Premium extra virgin olive oil from 500-year-old Chemlali trees in Tunisia. ECO-CERT certified with <0.3% acidity." data-en="Laperla - History and health in every drop. Premium extra virgin olive oil from 500-year-old Chemlali trees in Tunisia. ECO-CERT certified with <0.3% acidity." data-pl="Laperla - Historia i zdrowie w każdej kropli. Premium oliwa extra virgin z 500-letnich drzew Chemlali w Tunezji. Certyfikowana ECO-CERT z kwasowością <0,3%." />
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -438,21 +439,42 @@
         box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
       }
 
-      @media (max-width: 768px) {
+      /* Enhanced Mobile Responsive Design */
+      @media (max-width: 1024px) {
         .hero-inspired {
-          margin: -2rem -6rem 0 -6rem;
-          padding: 0 6rem;
-          min-height: 70vh;
+          margin: -2rem -4rem 0 -4rem;
+          padding: 0 4rem;
+          min-height: 75vh;
         }
         
         .hero-title {
-          font-size: 3rem;
+          font-size: 4rem;
           line-height: 1.1;
         }
         
         .hero-subtitle {
-          font-size: 1.25rem;
+          font-size: 1.5rem;
+          margin-bottom: 2.5rem;
+        }
+      }
+
+      @media (max-width: 768px) {
+        .hero-inspired {
+          margin: -2rem -2rem 0 -2rem;
+          padding: 0 2rem;
+          min-height: 70vh;
+        }
+        
+        .hero-title {
+          font-size: 2.5rem;
+          line-height: 1.1;
+          margin-bottom: 1.5rem;
+        }
+        
+        .hero-subtitle {
+          font-size: 1.125rem;
           margin-bottom: 2rem;
+          line-height: 1.5;
         }
         
         .section-title {
@@ -469,8 +491,109 @@
           padding: 1rem 2rem;
         }
         
-        .feature-card {
-          padding: 2rem;
+        .feature-card,
+        .modern-feature-card {
+          padding: 1.5rem;
+          margin-bottom: 1.5rem;
+        }
+        
+        /* Mobile navigation enhancements */
+        .max-w-7xl {
+          padding-left: 1rem;
+          padding-right: 1rem;
+        }
+        
+        /* Mobile hero content adjustments */
+        .hero-content {
+          padding: 2rem 1rem;
+        }
+        
+        /* Mobile CTA button improvements */
+        .hero-cta a {
+          display: block;
+          width: 100%;
+          max-width: 300px;
+          margin: 0 auto;
+          text-align: center;
+          padding: 1rem 2rem;
+          font-size: 1rem;
+        }
+        
+        /* Mobile grid improvements */
+        .grid {
+          gap: 1.5rem;
+        }
+        
+        /* Mobile video responsiveness */
+        .aspect-video {
+          border-radius: 1rem;
+        }
+      }
+
+      @media (max-width: 480px) {
+        .hero-inspired {
+          margin: -2rem -1rem 0 -1rem;
+          padding: 0 1rem;
+          min-height: 60vh;
+        }
+        
+        .hero-title {
+          font-size: 2rem;
+          line-height: 1.2;
+          margin-bottom: 1rem;
+        }
+        
+        .hero-subtitle {
+          font-size: 1rem;
+          margin-bottom: 1.5rem;
+          line-height: 1.4;
+        }
+        
+        .section-title {
+          font-size: 1.75rem;
+          line-height: 1.3;
+        }
+        
+        .story-highlight {
+          padding: 1rem;
+          margin: 1.5rem 0;
+          font-size: 0.9rem;
+        }
+        
+        .quality-metric {
+          font-size: 0.875rem;
+          padding: 0.75rem 1.5rem;
+        }
+        
+        .feature-card,
+        .modern-feature-card {
+          padding: 1rem;
+        }
+        
+        /* Extra small mobile adjustments */
+        .hero-content {
+          padding: 1.5rem 0.75rem;
+        }
+        
+        .hero-cta a {
+          padding: 0.875rem 1.5rem;
+          font-size: 0.9rem;
+        }
+        
+        /* Compact text for mobile */
+        .text-xl,
+        .text-2xl {
+          font-size: 1rem !important;
+        }
+        
+        .text-3xl,
+        .text-4xl {
+          font-size: 1.25rem !important;
+        }
+        
+        .text-5xl,
+        .text-6xl {
+          font-size: 1.5rem !important;
         }
       }
     </style>
@@ -483,6 +606,9 @@
       gtag('js', new Date());
       gtag('config', 'G-3QNYCWKF1J');
     </script>
+    
+    <!-- Enhanced Button Click Tracking -->
+    <script src="assets/js/analytics-tracking.js"></script>
     
     <div class="relative flex size-full min-h-screen flex-col bg-gradient-to-br from-gray-50 to-white group/design-root overflow-x-hidden">
       <div class="layout-container flex h-full grow flex-col">
@@ -619,15 +745,15 @@
               </p>
             </div>
             <div class="flex flex-wrap justify-center items-center gap-6">
-              <div class="flex items-center gap-3 modern-cert-badge bg-emerald-100 text-emerald-800 border border-emerald-200">
+              <div class="flex items-center gap-3 modern-cert-badge">
                 <img src="assets/images/ecocert.png" alt="ECO-CERT Organic" class="w-10 h-10 object-contain">
                 ECO-CERT
               </div>
-              <div class="flex items-center gap-3 modern-cert-badge bg-amber-100 text-amber-800 border border-amber-200">
+              <div class="flex items-center gap-3 modern-cert-badge">
                 <img src="assets/images/organic.jpg" alt="Organic Bio" class="w-10 h-10 object-contain">
                 ORGANIC BIO
               </div>
-              <div class="flex items-center gap-3 modern-cert-badge bg-green-100 text-green-800 border border-green-200">
+              <div class="flex items-center gap-3 modern-cert-badge">
                 <img src="assets/images/usda.png" alt="USDA Organic" class="w-10 h-10 object-contain">
                 USDA ORGANIC
               </div>
