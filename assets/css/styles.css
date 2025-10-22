@@ -658,7 +658,7 @@ footer p {
   }
 }
 
-/* Certification Logo Background Removal */
+/* Enhanced Certification Logo Styling */
 img[src*="ecocert.png"],
 img[src*="usda.png"],
 img[src*="organic.jpg"],
@@ -668,15 +668,33 @@ img[alt*="Organic"] {
   background: transparent !important;
   background-color: transparent !important;
   backdrop-filter: none !important;
-  mix-blend-mode: multiply !important;
+  mix-blend-mode: normal !important;
+  filter: brightness(1.1) contrast(1.2) !important;
+  width: 3rem !important;
+  height: 3rem !important;
+  object-fit: contain !important;
 }
 
-/* Remove backgrounds from certification badges */
+/* Clean certification badges without background */
 .modern-cert-badge {
   background: transparent !important;
   background-color: transparent !important;
   border: none !important;
   box-shadow: none !important;
+  padding: 1rem 1.5rem !important;
+  border-radius: 0 !important;
+  color: var(--charcoal-text) !important;
+  font-weight: 600 !important;
+  font-size: 1rem !important;
+  display: flex !important;
+  align-items: center !important;
+  gap: 1rem !important;
+  transition: transform 0.3s ease !important;
+}
+
+.modern-cert-badge:hover {
+  transform: translateY(-2px) !important;
+  background: transparent !important;
 }
 
 /* Mobile Touch Target Improvements */
