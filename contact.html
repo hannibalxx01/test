@@ -33,6 +33,7 @@
     </script>
     <link rel="stylesheet" href="assets/css/styles.css">
     <script src="https://cdn.jsdelivr.net/npm/js-cookie@3.0.5/dist/js.cookie.min.js"></script>
+    <script src="assets/js/language-manager.js"></script>
     <meta name="keywords" content="contact Laperla, olive oil inquiry, business quote, restaurant olive oil, premium EVOO supplier">
 
     <style>
@@ -413,6 +414,21 @@
               <a class="block text-gray-700 text-lg font-light hover:text-emerald-700 transition-colors" href="heritage.html" data-en="Our Story" data-pl="Nasza Historia">Our Story</a>
               <a class="block text-gray-700 text-lg font-light hover:text-emerald-700 transition-colors" href="blog.html" data-en="Blog" data-pl="Blog">Blog</a>
               <a class="block text-gray-700 text-lg font-light hover:text-emerald-700 transition-colors font-semibold" href="contact.html" data-en="Contact" data-pl="Kontakt">Contact</a>
+              
+              <!-- Mobile Language Selector -->
+              <div class="border-t border-gray-200 pt-4 mt-4">
+                <p class="text-gray-500 text-sm font-medium mb-3" data-en="Language" data-pl="Język">Language</p>
+                <div class="space-y-2">
+                  <button class="mobile-language-option flex items-center gap-3 w-full px-2 py-2 text-gray-700 hover:bg-gray-50 rounded-lg transition-colors" data-lang="en">
+                    <span class="fi fi-us"></span>
+                    <span>English</span>
+                  </button>
+                  <button class="mobile-language-option flex items-center gap-3 w-full px-2 py-2 text-gray-700 hover:bg-gray-50 rounded-lg transition-colors" data-lang="pl">
+                    <span class="fi fi-pl"></span>
+                    <span>Polski</span>
+                  </button>
+                </div>
+              </div>
             </div>
           </div>
         </header>
@@ -821,178 +837,6 @@
             const url = new URL(window.location);
             url.searchParams.set('lang', savedLanguage);
             window.history.replaceState({}, '', url);
-        }
-      });
-    </script>
-    <script>
-      // Language management and geolocation - same as index.html
-      function detectAndRedirect() {
-        const urlParams = new URLSearchParams(window.location.search);
-        const urlLang = urlParams.get('lang');
-    
-        // Skip if valid lang parameter is present
-        if (urlLang && ['en', 'pl'].includes(urlLang)) {
-          Cookies.set('selectedLanguage', urlLang, { expires: 7 });
-          return;
-        }
-    
-        // Skip if already redirected with valid lang parameter to prevent loops
-        if (urlLang) {
-          return;
-        }
-    
-        // Check saved language cookie
-        const savedLanguage = Cookies.get('selectedLanguage');
-        if (savedLanguage && ['en', 'pl'].includes(savedLanguage)) {
-          const currentPage = window.location.pathname.split('/').pop() || 'index.html';
-          window.location.href = `${currentPage}?lang=${savedLanguage}`;
-          return;
-        }
-    
-        // Fetch geolocation from ip-api.com
-        fetch('https://api.ip-api.com/json/?fields=countryCode,country')
-          .then(response => {
-            if (!response.ok) throw new Error(`HTTP ${response.status}`);
-            return response.json();
-          })
-          .then(data => {
-            console.log('🌍 Geolocation detected:', data.country, `(${data.countryCode})`);
-            const lang = data.countryCode === 'PL' ? 'pl' : 'en';
-            console.log(`🔄 Redirecting to ${lang.toUpperCase()} version`);
-            Cookies.set('selectedLanguage', lang, { expires: 7 });
-            const currentPage = window.location.pathname.split('/').pop() || 'index.html';
-            window.location.href = `${currentPage}?lang=${lang}`;
-          })
-          .catch(error => {
-            console.error('⚠️ Geolocation error, using browser language fallback:', error);
-            const fallbackLang = navigator.language.startsWith('pl') ? 'pl' : 'en';
-            console.log(`🔄 Fallback to ${fallbackLang.toUpperCase()} based on browser language`);
-            Cookies.set('selectedLanguage', fallbackLang, { expires: 7 });
-            const currentPage = window.location.pathname.split('/').pop() || 'index.html';
-            window.location.href = `${currentPage}?lang=${fallbackLang}`;
-          });
-      }
-    
-      // Run on any page without lang parameter
-      const hasLangParam = window.location.search.includes('lang=');
-      
-      if (!hasLangParam) {
-        detectAndRedirect();
-      }
-
-      // Language management
-      (function() {
-        const urlParams = new URLSearchParams(window.location.search);
-        const urlLang = urlParams.get('lang');
-        const savedLanguage = Cookies.get('selectedLanguage');
-        const currentLang = urlLang || savedLanguage || 'en';
-        
-        function updateAllLinks(lang) {
-          const links = document.querySelectorAll('a[href^="home.html"], a[href^="product.html"], a[href^="heritage.html"], a[href^="contact.html"], a[href^="index.html"], a[href^="blog.html"]');
-          links.forEach(link => {
-            const url = new URL(link.href, window.location.origin);
-            url.searchParams.set('lang', lang);
-            link.href = url.pathname + url.search;
-          });
-        }
-        
-        if (document.readyState === 'loading') {
-          document.addEventListener('DOMContentLoaded', () => updateAllLinks(currentLang));
-        } else {
-          updateAllLinks(currentLang);
-        }
-      })();
-
-      document.addEventListener('DOMContentLoaded', () => {
-        const translatableElements = document.querySelectorAll('[data-en][data-pl]');
-        const languageButton = document.querySelector('.modern-language-button');
-        const languageMenu = document.querySelector('.modern-language-menu');
-        const languageOptions = document.querySelectorAll('.modern-language-option');
-        const selectedLanguageSpan = document.querySelector('.selected-language');
-        const flagSpan = languageButton?.querySelector('.fi');
-        const metaDescription = document.querySelector('meta[name="description"]');
-        const metaKeywords = document.querySelector('meta[name="keywords"]');
-        const titleElement = document.querySelector('title');
-
-        function updateLanguage(lang) {
-          translatableElements.forEach(element => {
-            element.textContent = element.getAttribute(`data-${lang}`);
-          });
-
-          if (metaDescription) {
-            metaDescription.setAttribute('content', metaDescription.getAttribute(`data-${lang}`));
-          }
-
-          if (metaKeywords) {
-            metaKeywords.setAttribute('content', metaKeywords.getAttribute(`data-${lang}`));
-          }
-
-          if (titleElement) {
-            titleElement.textContent = titleElement.getAttribute(`data-${lang}`);
-          }
-
-          if (selectedLanguageSpan && flagSpan) {
-            const selectedOption = document.querySelector(`.modern-language-option[data-lang="${lang}"]`);
-            if (selectedOption) {
-              selectedLanguageSpan.textContent = selectedOption.textContent.trim();
-              flagSpan.className = `fi fi-${lang === 'pl' ? 'pl' : 'us'}`;
-            }
-          }
-
-          document.documentElement.setAttribute('lang', lang);
-          Cookies.set('selectedLanguage', lang, { expires: 7 });
-
-          const allLinks = document.querySelectorAll('a[href]');
-          allLinks.forEach(link => {
-            try {
-              const url = new URL(link.href, window.location.origin);
-              if (url.hostname === window.location.hostname && 
-                  (url.pathname.endsWith('.html') || url.pathname === '/')) {
-                url.searchParams.set('lang', lang);
-                link.href = url.pathname + url.search;
-              }
-            } catch (e) {
-              // Skip invalid URLs
-            }
-          });
-        }
-
-        // Language dropdown functionality
-        if (languageButton && languageMenu) {
-          languageButton.addEventListener('click', (e) => {
-            e.stopPropagation();
-            languageMenu.style.opacity = languageMenu.style.opacity === '1' ? '0' : '1';
-            languageMenu.style.visibility = languageMenu.style.visibility === 'visible' ? 'hidden' : 'visible';
-          });
-          
-          document.addEventListener('click', () => {
-            languageMenu.style.opacity = '0';
-            languageMenu.style.visibility = 'hidden';
-          });
-        }
-
-        languageOptions.forEach(option => {
-          option.addEventListener('click', () => {
-            const lang = option.getAttribute('data-lang');
-            updateLanguage(lang);
-            const url = new URL(window.location);
-            url.searchParams.set('lang', lang);
-            window.history.pushState({}, '', url);
-          });
-        });
-
-        // Initialize language
-        const urlParams = new URLSearchParams(window.location.search);
-        const urlLang = urlParams.get('lang');
-        const savedLanguage = Cookies.get('selectedLanguage');
-        
-        if (urlLang && ['en', 'pl'].includes(urlLang)) {
-          updateLanguage(urlLang);
-        } else if (savedLanguage && ['en', 'pl'].includes(savedLanguage)) {
-          updateLanguage(savedLanguage);
-          const url = new URL(window.location);
-          url.searchParams.set('lang', savedLanguage);
-          window.history.replaceState({}, '', url);
         }
       });
     </script>
