@@ -573,8 +573,8 @@ footer p {
     text-align: center !important;
   }
   
-  /* Mobile navigation improvements */
-  header {
+  /* Mobile navigation improvements - specific to prevent TailwindCSS override */
+  header.legacy-header {
     padding: 0.5rem 1rem;
   }
   
