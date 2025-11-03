@@ -389,73 +389,11 @@
         transform: translateY(-4px);
       }
       
-      /* Modern Navigation Styles */
-      .modern-nav {
-        transition: all 0.3s ease;
-      }
+      /* Navigation styles moved to central CSS */
       
-      .modern-nav-link {
-        position: relative;
-        padding: 0.5rem 0;
-        transition: all 0.3s ease;
-      }
+      /* Language dropdown styles moved to central CSS */
       
-      .modern-nav-link:hover {
-        color: #047857;
-      }
-      
-      .modern-nav-link.nav-link-active {
-        color: #047857;
-        font-weight: 400;
-      }
-      
-      .modern-nav-link.nav-link-active::after {
-        content: '';
-        position: absolute;
-        bottom: -2px;
-        left: 0;
-        right: 0;
-        height: 2px;
-        background-color: #047857;
-        border-radius: 1px;
-      }
-      
-      /* Modern Language Dropdown */
-      .modern-language-dropdown:hover .modern-language-menu {
-        opacity: 1;
-        visibility: visible;
-        transform: translateY(0);
-      }
-      
-      .modern-language-dropdown:hover .modern-language-button svg {
-        transform: rotate(180deg);
-      }
-      
-      .modern-language-menu {
-        transform: translateY(-8px);
-      }
-      
-      .modern-language-option:hover {
-        background-color: #f9fafb;
-      }
-      
-      /* Modern Certification Badges */
-      .modern-cert-badge {
-        padding: 0.75rem 2rem;
-        border-radius: 2rem;
-        font-weight: 600;
-        font-size: 0.875rem;
-        letter-spacing: 0.05em;
-        text-transform: uppercase;
-        display: inline-block;
-        transition: all 0.3s ease;
-        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
-      }
-      
-      .modern-cert-badge:hover {
-        transform: translateY(-2px);
-        box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
-      }
+      /* Badge styles moved to central CSS */
 
       /* Enhanced Mobile Responsive Design */
       @media (max-width: 1024px) {
@@ -683,7 +621,7 @@
         </header>
 
         <main id="main-content" class="flex-1 flex flex-col">
-          <div class="hero-inspired relative min-h-[80vh] overflow-hidden bg-gradient-to-br from-emerald-900 via-emerald-800 to-amber-700">
+          <div class="home-hero hero-inspired relative min-h-[80vh] overflow-hidden bg-gradient-to-br from-emerald-900 via-emerald-800 to-amber-700">
               
               <!-- Video Background -->
               <div class="absolute inset-0 w-full h-full">
