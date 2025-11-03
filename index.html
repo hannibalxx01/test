@@ -56,34 +56,53 @@
         // Check saved language cookie
         const savedLanguage = Cookies.get('selectedLanguage');
         if (savedLanguage && ['en', 'pl'].includes(savedLanguage)) {
-          window.location.href = `/index.html?lang=${savedLanguage}`;
+          window.location.href = `index.html?lang=${savedLanguage}`;
           return;
         }
     
         // Fetch geolocation from ip-api.com
-        fetch('https://api.ip-api.com/json/?fields=countryCode')
+        fetch('https://api.ip-api.com/json/?fields=countryCode,country')
           .then(response => {
             if (!response.ok) throw new Error(`HTTP ${response.status}`);
             return response.json();
           })
           .then(data => {
-            console.log('Geolocation API Response:', data);
+            console.log('🌍 Geolocation detected:', data.country, `(${data.countryCode})`);
             const lang = data.countryCode === 'PL' ? 'pl' : 'en';
+            console.log(`🔄 Redirecting to ${lang.toUpperCase()} version`);
             Cookies.set('selectedLanguage', lang, { expires: 7 });
-            window.location.href = `/index.html?lang=${lang}`;
+            window.location.href = `index.html?lang=${lang}`;
           })
           .catch(error => {
-            console.error('Geolocation error:', error);
+            console.error('⚠️ Geolocation error, using browser language fallback:', error);
             const fallbackLang = navigator.language.startsWith('pl') ? 'pl' : 'en';
+            console.log(`🔄 Fallback to ${fallbackLang.toUpperCase()} based on browser language`);
             Cookies.set('selectedLanguage', fallbackLang, { expires: 7 });
-            window.location.href = `/index.html?lang=${fallbackLang}`;
+            window.location.href = `index.html?lang=${fallbackLang}`;
           });
       }
     
-      // Run only if on index.html without lang parameter
-      if (window.location.pathname === '/index.html' && !window.location.search.includes('lang=')) {
+      // Run on index page without lang parameter
+      const path = window.location.pathname;
+      const isIndexPage = path === '/' || path === '/index.html' || path.endsWith('/index.html');
+      const hasLangParam = window.location.search.includes('lang=');
+      
+      if (isIndexPage && !hasLangParam) {
         detectAndRedirect();
       }
+      
+      // Debug function for testing (remove in production)
+      window.testGeolocation = function() {
+        console.log('🧪 Testing geolocation detection...');
+        console.log('Current path:', window.location.pathname);
+        console.log('Current search:', window.location.search);
+        console.log('Saved language cookie:', Cookies.get('selectedLanguage'));
+        
+        // Clear cookie and test
+        Cookies.remove('selectedLanguage');
+        console.log('Cookie cleared, running detection...');
+        detectAndRedirect();
+      };
     </script>
 
     <style>
