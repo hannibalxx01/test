@@ -510,7 +510,7 @@
         const mobileMenu = document.querySelector('.mobile-menu');
         
         if (mobileMenuButton && mobileMenu) {
-          mobileMenuButton.addEventListener('click', function() {
+          mobileMenuButton.addEventListener('click', () => {
             mobileMenu.classList.toggle('hidden');
           });
         }
