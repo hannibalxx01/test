@@ -12,7 +12,7 @@
     <link rel="alternate" hreflang="en" href="https://laperlaoliveoil.com/index.html?lang=en" />
     <link rel="alternate" hreflang="pl" href="https://laperlaoliveoil.com/index.html?lang=pl" />
     <link rel="alternate" hreflang="x-default" href="https://laperlaoliveoil.com/index.html?lang=en" />
-    <title>Laperla | 500-Year-Old Trees | Premium Tunisian Extra Virgin Olive Oil</title>
+    <title data-en="Laperla | 500-Year-Old Trees | Premium Tunisian Extra Virgin Olive Oil" data-pl="Laperla | 500-letnie Drzewa | Premium Tunezyjska Oliwa Extra Virgin">Laperla | 500-Year-Old Trees | Premium Tunisian Extra Virgin Olive Oil</title>
     <link rel="icon" type="image/x-icon" href="data:image/x-icon;base64," />
     <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries,typography"></script>
     <script>
@@ -34,7 +34,7 @@
     </script>
     <link rel="stylesheet" href="assets/css/styles.css">
     <script src="https://cdn.jsdelivr.net/npm/js-cookie@3.0.5/dist/js.cookie.min.js"></script>
-    <meta name="keywords" content="premium extra virgin olive oil, ECO-CERT, Chemlali olives, Tunisia olive oil, 500-year-old trees, ultra pure olive oil, polyphenols">
+    <meta name="keywords" content="premium extra virgin olive oil, ECO-CERT, Chemlali olives, Tunisia olive oil, 500-year-old trees, ultra pure olive oil, polyphenols" data-en="premium extra virgin olive oil, ECO-CERT, Chemlali olives, Tunisia olive oil, 500-year-old trees, ultra pure olive oil, polyphenols" data-pl="premium oliwa extra virgin, ECO-CERT, oliwki Chemlali, oliwa tunezyjska, 500-letnie drzewa, ultra czysta oliwa, polifenole, oliwa z oliwek, organiczna oliwa, zdrowa oliwa">
 
     <script>
       function detectAndRedirect() {
@@ -47,9 +47,8 @@
           return;
         }
     
-        // Skip if already on index.html with lang parameter to prevent loops
-        const currentPath = window.location.pathname + window.location.search;
-        if (currentPath.includes('index.html?lang=')) {
+        // Skip if already redirected with valid lang parameter to prevent loops
+        if (urlLang) {
           return;
         }
     
@@ -926,6 +925,8 @@
         const selectedLanguageSpan = document.querySelector('.selected-language');
         const flagSpan = languageButton.querySelector('.fi');
         const metaDescription = document.querySelector('meta[name="description"]');
+        const metaKeywords = document.querySelector('meta[name="keywords"]');
+        const titleElement = document.querySelector('title');
         
         // Mobile menu functionality
         const mobileMenuButton = document.getElementById('mobile-menu-button');
@@ -965,6 +966,14 @@
 
           if (metaDescription) {
             metaDescription.setAttribute('content', metaDescription.getAttribute(`data-${lang}`));
+          }
+
+          if (metaKeywords) {
+            metaKeywords.setAttribute('content', metaKeywords.getAttribute(`data-${lang}`));
+          }
+
+          if (titleElement) {
+            titleElement.textContent = titleElement.getAttribute(`data-${lang}`);
           }
 
           const selectedOption = document.querySelector(`.language-option[data-lang="${lang}"]`);

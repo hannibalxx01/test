@@ -1,0 +1,9 @@
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://www.laperlaoliveoil.com/sitemap.xml
+
+# Language-specific pages
+Allow: /*lang=en
+Allow: /*lang=pl
