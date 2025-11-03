@@ -560,15 +560,7 @@
         const flagSpan = languageButton.querySelector('.fi');
         const metaDescription = document.querySelector('meta[name="description"]');
         
-        // Mobile menu functionality
-        const mobileMenuButton = document.getElementById('mobile-menu-button');
-        const mobileMenu = document.querySelector('.mobile-menu');
-        
-        if (mobileMenuButton && mobileMenu) {
-          mobileMenuButton.addEventListener('click', () => {
-            mobileMenu.classList.toggle('hidden');
-          });
-        }
+        // Mobile menu handled by language-manager.js
         
         // --- Active Navigation Link ---
         function setActiveNav() {

@@ -390,15 +390,7 @@
           });
         }
 
-        // Mobile menu functionality
-        const mobileMenuButton = document.getElementById('mobile-menu-button');
-        const mobileMenu = document.querySelector('.mobile-menu');
-        
-        if (mobileMenuButton && mobileMenu) {
-          mobileMenuButton.addEventListener('click', () => {
-            mobileMenu.classList.toggle('hidden');
-          });
-        }
+        // Mobile menu handled by language-manager.js
 
         // Blog filtering and search
         const searchInput = document.querySelector('input[type="text"]');

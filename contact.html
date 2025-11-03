@@ -656,13 +656,7 @@
       });
 
       document.addEventListener('DOMContentLoaded', () => {
-        const translatableElements = document.querySelectorAll('[data-en][data-pl]');
-        const languageButton = document.querySelector('.modern-language-button');
-        const languageMenu = document.querySelector('.modern-language-menu');
-        const languageOptions = document.querySelectorAll('.modern-language-option');
-        const selectedLanguageSpan = document.querySelector('.selected-language');
-        const flagSpan = languageButton.querySelector('.fi');
-        const metaDescription = document.querySelector('meta[name="description"]');
+        // Language management handled by language-manager.js
         const form = document.querySelector('#contact-form');
         const modal = document.querySelector('#form-status-modal');
         const modalMessage = document.querySelector('#form-status-message');
@@ -671,99 +665,8 @@
         const otherBusinessTypeDiv = document.querySelector('#other-business-type');
         const otherBusinessTypeInput = document.querySelector('input[name="other_business_type"]');
 
-        // Mobile menu functionality
-        const mobileMenuButton = document.getElementById('mobile-menu-button');
-        const mobileMenu = document.querySelector('.mobile-menu');
-        
-        if (mobileMenuButton && mobileMenu) {
-          mobileMenuButton.addEventListener('click', () => {
-            mobileMenu.classList.toggle('hidden');
-          });
-        }
-        
-        // --- Active Navigation Link ---
-        function setActiveNav() {
-            const currentPage = window.location.pathname.split('/').pop();
-            // Remove active class from all nav links
-            document.querySelectorAll('.modern-nav-link').forEach(link => {
-                link.classList.remove('nav-link-active');
-            });
-            
-            // Add active class to current page
-            if (currentPage === 'index.html' || currentPage === '') {
-                document.getElementById('nav-home')?.classList.add('nav-link-active');
-            } else if (currentPage === 'product.html') {
-                document.getElementById('nav-products')?.classList.add('nav-link-active');
-            } else if (currentPage === 'heritage.html') {
-                document.getElementById('nav-story')?.classList.add('nav-link-active');
-            } else if (currentPage === 'contact.html') {
-                document.getElementById('nav-contact')?.classList.add('nav-link-active');
-            }
-        }
-        setActiveNav();
-
-        function updateLanguage(lang) {
-          translatableElements.forEach(element => {
-            element.textContent = element.getAttribute(`data-${lang}`);
-          });
-
-          document.querySelectorAll('input[data-placeholder-en], textarea[data-placeholder-en], select option[disabled]').forEach(element => {
-            if(element.hasAttribute(`data-placeholder-${lang}`)){
-              element.placeholder = element.getAttribute(`data-placeholder-${lang}`);
-            } else {
-               const text = element.getAttribute(`data-${lang}`);
-               if(text) element.textContent = text;
-            }
-          });
-
-          if (metaDescription) {
-            metaDescription.setAttribute('content', metaDescription.getAttribute(`data-${lang}`));
-          }
-
-          const selectedOption = document.querySelector(`.modern-language-option[data-lang="${lang}"]`);
-          selectedLanguageSpan.textContent = selectedOption.textContent.trim();
-          flagSpan.className = `fi fi-${lang === 'pl' ? 'pl' : 'us'}`;
-
-          document.documentElement.setAttribute('lang', lang);
-          Cookies.set('selectedLanguage', lang, { expires: 7 });
-
-          const allLinks = document.querySelectorAll('a[href]');
-          allLinks.forEach(link => {
-            try {
-              const url = new URL(link.href, window.location.origin);
-              if (url.hostname === window.location.hostname && 
-                  (url.pathname.endsWith('.html') || url.pathname === '/')) {
-                url.searchParams.set('lang', lang);
-                link.href = url.pathname + url.search;
-              }
-            } catch (e) {}
-          });
-        }
-
-        // Language dropdown functionality
-        if (languageButton && languageMenu) {
-          languageButton.addEventListener('click', (e) => {
-            e.stopPropagation();
-            languageMenu.style.opacity = languageMenu.style.opacity === '1' ? '0' : '1';
-            languageMenu.style.visibility = languageMenu.style.visibility === 'visible' ? 'hidden' : 'visible';
-          });
-          
-          // Close dropdown when clicking outside
-          document.addEventListener('click', () => {
-            languageMenu.style.opacity = '0';
-            languageMenu.style.visibility = 'hidden';
-          });
-        }
-
-        languageOptions.forEach(option => {
-          option.addEventListener('click', () => {
-            const lang = option.getAttribute('data-lang');
-            updateLanguage(lang);
-            const url = new URL(window.location);
-            url.searchParams.set('lang', lang);
-            window.history.pushState({}, '', url);
-          });
-        });
+        // Contact form specific functionality only
+        // Language manager handles mobile menu, navigation, and language switching
 
         businessTypeSelect.addEventListener('change', () => {
           if (businessTypeSelect.value === 'Other') {
@@ -789,8 +692,8 @@
           const originalButtonText = submitButton.innerHTML;
           
           submitButton.disabled = true;
-          submitButton.innerHTML = `<span data-en="Submitting..." data-pl="Wysyłanie...">Submitting...</span>`;
-          updateLanguage(Cookies.get('selectedLanguage') || 'en');
+          const currentLang = Cookies.get('selectedLanguage') || 'en';
+          submitButton.innerHTML = currentLang === 'pl' ? 'Wysyłanie...' : 'Submitting...';
 
           fetch(form.action, {
             method: 'POST',
@@ -822,22 +725,10 @@
           }).finally(() => {
             submitButton.disabled = false;
             submitButton.innerHTML = originalButtonText;
-            updateLanguage(Cookies.get('selectedLanguage') || 'en');
           });
         });
 
-        // Initialize language
-        const urlParams = new URLSearchParams(window.location.search);
-        const urlLang = urlParams.get('lang');
-        const savedLanguage = Cookies.get('selectedLanguage');
-        const initialLang = urlLang || savedLanguage || 'en';
-        updateLanguage(initialLang);
-        
-        if (!urlLang && savedLanguage) {
-            const url = new URL(window.location);
-            url.searchParams.set('lang', savedLanguage);
-            window.history.replaceState({}, '', url);
-        }
+        // Language manager handles initialization
       });
     </script>
 </body>

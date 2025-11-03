@@ -93,6 +93,16 @@ function updateLanguage(lang) {
     }
   });
 
+  // Update form placeholders
+  document.querySelectorAll('input[data-placeholder-en], textarea[data-placeholder-en], select option[disabled]').forEach(element => {
+    if(element.hasAttribute(`data-placeholder-${lang}`)){
+      element.placeholder = element.getAttribute(`data-placeholder-${lang}`);
+    } else {
+       const text = element.getAttribute(`data-${lang}`);
+       if(text) element.textContent = text;
+    }
+  });
+
   // Update meta tags
   const metaDescription = document.querySelector('meta[name="description"]');
   if (metaDescription) {
