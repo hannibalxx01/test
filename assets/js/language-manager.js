@@ -11,31 +11,40 @@ const LANGUAGE_CONFIG = {
   cookieExpiry: 7
 };
 
-// Geolocation and language detection
+// Smart language detection with multiple fallbacks
 function detectAndRedirect() {
   const urlParams = new URLSearchParams(window.location.search);
   const urlLang = urlParams.get('lang');
 
-  // Skip if valid lang parameter is present
+  // If valid lang parameter exists, respect it and save it
   if (urlLang && LANGUAGE_CONFIG.supported.includes(urlLang)) {
     Cookies.set(LANGUAGE_CONFIG.cookieName, urlLang, { expires: LANGUAGE_CONFIG.cookieExpiry });
     return;
   }
 
-  // Skip if already redirected with valid lang parameter to prevent loops
-  if (urlLang) {
-    return;
+  // Only skip detection if user explicitly chose a language (not for invalid params)
+  if (urlLang && !LANGUAGE_CONFIG.supported.includes(urlLang)) {
+    console.log('⚠️ Invalid language parameter:', urlLang);
   }
 
-  // Check saved language cookie
+  // Check for explicit user language preference (only respect recent cookies)
   const savedLanguage = Cookies.get(LANGUAGE_CONFIG.cookieName);
-  if (savedLanguage && LANGUAGE_CONFIG.supported.includes(savedLanguage)) {
+  const cookieAge = Cookies.get(LANGUAGE_CONFIG.cookieName + '_timestamp');
+  const isRecentChoice = cookieAge && (Date.now() - parseInt(cookieAge)) < 24 * 60 * 60 * 1000; // 24 hours
+
+  if (savedLanguage && LANGUAGE_CONFIG.supported.includes(savedLanguage) && isRecentChoice) {
     const currentPage = window.location.pathname.split('/').pop() || 'index.html';
     window.location.href = `${currentPage}?lang=${savedLanguage}`;
     return;
   }
 
-  // Fetch geolocation from ip-api.com
+  // Primary: Browser language detection
+  const browserLang = navigator.language.toLowerCase();
+  const browserLangCode = browserLang.startsWith('pl') ? 'pl' : 'en';
+  
+  console.log('🌐 Browser language detected:', browserLang, '→', browserLangCode);
+
+  // Secondary: Geolocation API as backup
   fetch('https://api.ip-api.com/json/?fields=countryCode,country')
     .then(response => {
       if (!response.ok) throw new Error(`HTTP ${response.status}`);
@@ -43,27 +52,40 @@ function detectAndRedirect() {
     })
     .then(data => {
       console.log('🌍 Geolocation detected:', data.country, `(${data.countryCode})`);
-      const lang = data.countryCode === 'PL' ? 'pl' : 'en';
-      console.log(`🔄 Redirecting to ${lang.toUpperCase()} version`);
-      Cookies.set(LANGUAGE_CONFIG.cookieName, lang, { expires: LANGUAGE_CONFIG.cookieExpiry });
+      const geoLang = data.countryCode === 'PL' ? 'pl' : 'en';
+      
+      // Use geolocation if it matches browser language, or if browser detection failed
+      const finalLang = (geoLang === 'pl' || browserLangCode === 'pl') ? 'pl' : 'en';
+      
+      console.log(`🔄 Final language choice: ${finalLang.toUpperCase()} (browser: ${browserLangCode}, geo: ${geoLang})`);
+      
+      // Save choice with timestamp
+      Cookies.set(LANGUAGE_CONFIG.cookieName, finalLang, { expires: LANGUAGE_CONFIG.cookieExpiry });
+      Cookies.set(LANGUAGE_CONFIG.cookieName + '_timestamp', Date.now().toString(), { expires: LANGUAGE_CONFIG.cookieExpiry });
+      
       const currentPage = window.location.pathname.split('/').pop() || 'index.html';
-      window.location.href = `${currentPage}?lang=${lang}`;
+      window.location.href = `${currentPage}?lang=${finalLang}`;
     })
     .catch(error => {
-      console.error('⚠️ Geolocation error, using browser language fallback:', error);
-      const fallbackLang = navigator.language.startsWith('pl') ? 'pl' : 'en';
-      console.log(`🔄 Fallback to ${fallbackLang.toUpperCase()} based on browser language`);
-      Cookies.set(LANGUAGE_CONFIG.cookieName, fallbackLang, { expires: LANGUAGE_CONFIG.cookieExpiry });
+      console.error('⚠️ Geolocation failed, using browser language:', error);
+      console.log(`🔄 Fallback to ${browserLangCode.toUpperCase()} based on browser language`);
+      
+      // Save choice with timestamp
+      Cookies.set(LANGUAGE_CONFIG.cookieName, browserLangCode, { expires: LANGUAGE_CONFIG.cookieExpiry });
+      Cookies.set(LANGUAGE_CONFIG.cookieName + '_timestamp', Date.now().toString(), { expires: LANGUAGE_CONFIG.cookieExpiry });
+      
       const currentPage = window.location.pathname.split('/').pop() || 'index.html';
-      window.location.href = `${currentPage}?lang=${fallbackLang}`;
+      window.location.href = `${currentPage}?lang=${browserLangCode}`;
     });
 }
 
-// Initialize geolocation redirect if no language parameter
+// Initialize smart language detection
 function initializeGeolocation() {
-  const hasLangParam = window.location.search.includes('lang=');
+  const urlParams = new URLSearchParams(window.location.search);
+  const hasValidLang = urlParams.get('lang') && LANGUAGE_CONFIG.supported.includes(urlParams.get('lang'));
   
-  if (!hasLangParam) {
+  // Always run detection unless there's a valid language parameter
+  if (!hasValidLang) {
     detectAndRedirect();
   }
 }
@@ -143,8 +165,9 @@ function updateLanguage(lang) {
   // Update document language
   document.documentElement.setAttribute('lang', lang);
   
-  // Save language preference
+  // Save language preference with timestamp for manual selections
   Cookies.set(LANGUAGE_CONFIG.cookieName, lang, { expires: LANGUAGE_CONFIG.cookieExpiry });
+  Cookies.set(LANGUAGE_CONFIG.cookieName + '_timestamp', Date.now().toString(), { expires: LANGUAGE_CONFIG.cookieExpiry });
 
   // Update all internal links
   updateAllLinks(lang);
