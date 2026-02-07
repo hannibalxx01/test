@@ -1,0 +1,30 @@
+@import 'tailwindcss/base';
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities';
+
+/* Custom animations and styles */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes slideUp {
+  from { opacity: 0; transform: translateY(40px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-10px); }
+}
+
+/* Root variables */
+:root {
+  --olive-gold: #d4a017;
+  --olive-green: #2e5e2e;
+  --soft-green: #f8faf5;
+  --warm-white: #fefefe;
+  --text-dark: #2c2c2c;
+  --text-medium: #525252;
+  --text-light: #737373;
+}

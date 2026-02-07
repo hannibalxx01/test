@@ -1,0 +1,24 @@
+{
+  "name": "perla_website",
+  "version": "1.0.0",
+  "description": "A premium static website for Laperla Olive Oil, showcasing authentic Tunisian extra virgin olive oil from 500-year-old Chemlali trees. Features bilingual support (English/Polish), modern design, and comprehensive content about heritage, products, and olive oil insights.",
+  "main": "index.js",
+  "directories": {
+    "doc": "docs"
+  },
+  "scripts": {
+    "build-css": "tailwindcss -i ./src/input.css -o ./assets/css/tailwind.css --watch",
+    "build-css-prod": "tailwindcss -i ./src/input.css -o ./assets/css/tailwind.css --minify",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "devDependencies": {
+    "@tailwindcss/container-queries": "^0.1.1",
+    "@tailwindcss/forms": "^0.5.11",
+    "@tailwindcss/typography": "^0.5.19",
+    "tailwindcss": "^4.1.18"
+  }
+}

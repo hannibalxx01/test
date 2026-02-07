@@ -1,0 +1,676 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="Discover Laperla's premium Chemlali Extra Virgin Olive Oil from 500-year-old trees. ECO-CERT certified with <0.3% acidity and 250-300mg/kg polyphenols." data-en="Discover Laperla's premium Chemlali Extra Virgin Olive Oil from 500-year-old trees. ECO-CERT certified with <0.3% acidity and 250-300mg/kg polyphenols." data-pl="Poznaj premium oliwę Chemlali Extra Virgin Laperla z 500-letnich drzew. Certyfikowana ECO-CERT z kwasowością <0,3% i 250-300mg/kg polifenoli." />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preload" as="style" onload="this.onload=null;this.rel='stylesheet'" href="https://fonts.googleapis.com/css2?display=swap&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap" />
+    <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?display=swap&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap" /></noscript>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flag-icons/css/flag-icons.min.css" />
+    <link rel="alternate" hreflang="en" href="https://laperlaoliveoil.com/product.html?lang=en" />
+    <link rel="alternate" hreflang="pl" href="https://laperlaoliveoil.com/product.html?lang=pl" />
+    <link rel="alternate" hreflang="x-default" href="https://laperlaoliveoil.com/product.html?lang=en" />
+    <title>Premium Chemlali Olive Oil | Scientific Excellence | Laperla</title>
+    <link rel="icon" type="image/x-icon" href="data:image/x-icon;base64," />
+    <link rel="stylesheet" >
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            fontFamily: {
+              'display': ['Playfair Display', 'serif'],
+              'sans': ['Inter', 'system-ui', 'sans-serif']
+            },
+            animation: {
+              'fade-in': 'fadeIn 0.6s ease-out forwards',
+              'slide-up': 'slideUp 0.8s ease-out forwards',
+              'float': 'float 6s ease-in-out infinite'
+            }
+          }
+        }
+      }
+    </script>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries,typography"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            fontFamily: {
+              'display': ['Playfair Display', 'serif'],
+              'sans': ['Inter', 'system-ui', 'sans-serif']
+            },
+            animation: {
+              'fade-in': 'fadeIn 0.6s ease-out forwards',
+              'slide-up': 'slideUp 0.8s ease-out forwards',
+              'float': 'float 6s ease-in-out infinite'
+            }
+          }
+        }
+      }
+    </script>
+    <link rel="stylesheet" href="assets/css/styles.css">
+    
+    <script src="https://cdn.jsdelivr.net/npm/js-cookie@3.0.5/dist/js.cookie.min.js"></script>
+    <script src="assets/js/language-manager.js"></script>
+    <meta name="keywords" content="premium extra virgin olive oil, Chemlali olives, ECO-CERT, Tunisia olive oil, 500-year-old trees, polyphenols, cold pressed extraction">
+
+    <style>
+      /* Custom animations */
+      @keyframes fadeIn {
+        from { opacity: 0; transform: translateY(30px); }
+        to { opacity: 1; transform: translateY(0); }
+      }
+      
+      @keyframes slideUp {
+        from { opacity: 0; transform: translateY(50px); }
+        to { opacity: 1; transform: translateY(0); }
+      }
+      
+      @keyframes float {
+        0%, 100% { transform: translateY(0px); }
+        50% { transform: translateY(-10px); }
+      }
+      
+      /* Enhanced accessibility */
+      .skip-link {
+        position: absolute;
+        top: -40px;
+        left: 6px;
+        background: var(--gold-600);
+        color: white;
+        padding: 8px;
+        text-decoration: none;
+        border-radius: 4px;
+        z-index: 1000;
+        transition: top 0.3s;
+      }
+      
+      .skip-link:focus {
+        top: 6px;
+      }
+
+      .language-dropdown {
+        position: relative;
+      }
+      
+      .fi {
+        width: 20px;
+        height: 15px;
+        border-radius: 2px;
+      }
+
+      /* Hero section uses CSS classes from styles.css */
+      .hero-slideshow {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        border-radius: var(--radius-3xl);
+        overflow: hidden;
+      }
+      
+      .slideshow-image {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        position: absolute;
+        top: 0;
+        left: 0;
+        opacity: 0;
+        transition: opacity 1.5s cubic-bezier(0.4, 0, 0.2, 1);
+      }
+      
+      .slideshow-image.active {
+        opacity: 1;
+      }
+
+      /* Inspired Hero Section Styles */
+      .hero-inspired {
+        border-radius: 0;
+        margin: -2rem -10rem 0 -10rem;
+        padding: 0 10rem;
+      }
+      
+      .hero-title {
+        text-shadow: 0 2px 20px rgba(0, 0, 0, 0.5);
+        letter-spacing: -0.02em;
+      }
+      
+      .hero-subtitle {
+        text-shadow: 0 1px 10px rgba(0, 0, 0, 0.3);
+        font-weight: 300;
+      }
+      
+      .hero-content {
+        animation: fadeInUp 1.2s ease-out;
+      }
+      
+      @keyframes fadeInUp {
+        from {
+          opacity: 0;
+          transform: translateY(30px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+      
+      /* Modern Typography Styles */
+      .modern-section-title {
+        letter-spacing: -0.02em;
+        line-height: 1.1;
+      }
+      
+      .modern-feature-card {
+        padding: 2rem;
+        transition: all 0.3s ease;
+      }
+      
+      .modern-feature-card:hover {
+        transform: translateY(-4px);
+      }
+      
+      /* Navigation styles moved to central CSS */
+      
+      /* Language dropdown styles moved to central CSS */
+      
+      /* Modern Certification Badges */
+      .modern-cert-badge {
+        padding: 0.75rem 2rem;
+        border-radius: 2rem;
+        font-weight: 600;
+        font-size: 0.875rem;
+        letter-spacing: 0.05em;
+        text-transform: uppercase;
+        display: inline-block;
+        transition: all 0.3s ease;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+      }
+      
+      .modern-cert-badge:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+      }
+
+      /* Product Specific Styles */
+      .product-image {
+        border-radius: 1.5rem;
+        box-shadow: 0 20px 60px rgba(0, 0, 0, 0.1);
+        transition: all 0.3s ease;
+      }
+      
+      .product-image:hover {
+        transform: translateY(-8px);
+        box-shadow: 0 30px 80px rgba(0, 0, 0, 0.15);
+      }
+      
+      .product-spec {
+        background: linear-gradient(135deg, rgba(16, 185, 129, 0.05) 0%, rgba(245, 158, 11, 0.05) 100%);
+        border: 1px solid rgba(16, 185, 129, 0.1);
+        border-radius: 1rem;
+        padding: 1.5rem;
+        transition: all 0.3s ease;
+      }
+      
+      .product-spec:hover {
+        border-color: rgba(16, 185, 129, 0.2);
+        box-shadow: 0 4px 20px rgba(16, 185, 129, 0.1);
+      }
+
+      @media (max-width: 768px) {
+        .hero-inspired {
+          margin: -2rem -6rem 0 -6rem;
+          padding: 0 6rem;
+          min-height: 70vh;
+        }
+        
+        .hero-title {
+          font-size: 3rem;
+          line-height: 1.1;
+        }
+        
+        .hero-subtitle {
+          font-size: 1.25rem;
+          margin-bottom: 2rem;
+        }
+        
+        .modern-section-title {
+          font-size: 2rem;
+        }
+        
+        .modern-feature-card {
+          padding: 1.5rem;
+        }
+      }
+    </style>
+</head>
+<body class="bg-gray-50">
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-3QNYCWKF1J"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-3QNYCWKF1J');
+    </script>
+    
+    <!-- Enhanced Button Click Tracking -->
+
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+    <div class="relative flex size-full min-h-screen flex-col bg-gradient-to-br from-gray-50 to-white group/design-root overflow-x-hidden">
+      <div class="layout-container flex h-full grow flex-col">
+        <header class="modern-nav sticky top-0 z-50 bg-white/90 backdrop-blur-lg border-b border-gray-200/60">
+          <div class="max-w-7xl mx-auto px-6 md:px-10">
+            <div class="flex items-center justify-between h-20">
+              
+              <!-- Logo Section -->
+              <a href="index.html" class="flex items-center text-gray-900 no-underline group">
+                <div class="flex flex-col">
+                  <h2 class="text-gray-900 text-2xl font-bold tracking-wide font-display">LAPERLA</h2>
+                  <p class="text-gray-500 text-xs font-light tracking-wide" data-en="Premium Olive Oil" data-pl="Premium Oliwa z Oliwek">Premium Olive Oil</p>
+                </div>
+              </a>
+              
+              <!-- Navigation Links -->
+              <nav class="hidden lg:flex items-center space-x-12">
+                <a class="modern-nav-link text-gray-700 text-base font-light hover:text-emerald-700 transition-colors duration-300" id="nav-home" href="index.html" data-en="Home" data-pl="Strona Główna">Home</a>
+                <a class="modern-nav-link text-gray-700 text-base font-light hover:text-emerald-700 transition-colors duration-300" id="nav-products" href="product.html" data-en="Products" data-pl="Produkty">Products</a>
+                <a class="modern-nav-link text-gray-700 text-base font-light hover:text-emerald-700 transition-colors duration-300" id="nav-story" href="heritage.html" data-en="Our Story" data-pl="Nasza Historia">Our Story</a>
+                <a class="modern-nav-link text-gray-700 text-base font-light hover:text-emerald-700 transition-colors duration-300" id="nav-blog" href="blog.html" data-en="Blog" data-pl="Blog">Blog</a>
+                <a class="modern-nav-link text-gray-700 text-base font-light hover:text-emerald-700 transition-colors duration-300" id="nav-contact" href="contact.html" data-en="Contact" data-pl="Kontakt">Contact</a>
+              </nav>
+              
+              <!-- Right Side Actions -->
+              <div class="flex items-center gap-6">
+                <!-- Language Selector -->
+                <div class="modern-language-dropdown relative">
+                  <button class="modern-language-button flex items-center gap-2 px-4 py-2 text-gray-600 hover:text-gray-900 transition-colors duration-300">
+                    <span class="fi fi-us"></span>
+                    <span class="selected-language text-sm font-light">English</span>
+                    <svg class="w-4 h-4 transition-transform duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                    </svg>
+                  </button>
+                  <div class="modern-language-menu absolute top-full right-0 mt-2 bg-white rounded-xl shadow-lg border border-gray-200 py-2 min-w-[120px] opacity-0 invisible transition-all duration-200">
+                    <div class="modern-language-option flex items-center gap-3 px-4 py-2 text-sm hover:bg-gray-50 cursor-pointer" data-lang="en">
+                      <span class="fi fi-us"></span>
+                      English
+                    </div>
+                    <div class="modern-language-option flex items-center gap-3 px-4 py-2 text-sm hover:bg-gray-50 cursor-pointer" data-lang="pl">
+                      <span class="fi fi-pl"></span>
+                      Polski
+                    </div>
+                  </div>
+                </div>
+                
+                <!-- Mobile Menu Button -->
+                <button class="lg:hidden p-2 text-gray-600 hover:text-gray-900" id="mobile-menu-button">
+                  <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                  </svg>
+                </button>
+              </div>
+              
+            </div>
+          </div>
+          
+          <!-- Mobile Menu -->
+          <div class="lg:hidden mobile-menu hidden bg-white border-t border-gray-200">
+            <div class="px-6 py-4 space-y-4">
+              <a class="block text-gray-700 text-lg font-light hover:text-emerald-700 transition-colors" href="index.html" data-en="Home" data-pl="Strona Główna">Home</a>
+              <a class="block text-gray-700 text-lg font-light hover:text-emerald-700 transition-colors" href="product.html" data-en="Products" data-pl="Produkty">Products</a>
+              <a class="block text-gray-700 text-lg font-light hover:text-emerald-700 transition-colors" href="heritage.html" data-en="Our Story" data-pl="Nasza Historia">Our Story</a>
+              <a class="block text-gray-700 text-lg font-light hover:text-emerald-700 transition-colors" href="blog.html" data-en="Blog" data-pl="Blog">Blog</a>
+              <a class="block text-gray-700 text-lg font-light hover:text-emerald-700 transition-colors" href="contact.html" data-en="Contact" data-pl="Kontakt">Contact</a>
+              
+              <!-- Mobile Language Selector -->
+              <div class="border-t border-gray-200 pt-4 mt-4">
+                <p class="text-gray-500 text-sm font-medium mb-3" data-en="Language" data-pl="Język">Language</p>
+                <div class="space-y-2">
+                  <button class="mobile-language-option flex items-center gap-3 w-full px-2 py-2 text-gray-700 hover:bg-gray-50 rounded-lg transition-colors" data-lang="en">
+                    <span class="fi fi-us"></span>
+                    <span>English</span>
+                  </button>
+                  <button class="mobile-language-option flex items-center gap-3 w-full px-2 py-2 text-gray-700 hover:bg-gray-50 rounded-lg transition-colors" data-lang="pl">
+                    <span class="fi fi-pl"></span>
+                    <span>Polski</span>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </header>
+
+        <main id="main-content" class="flex-1">
+          <!-- Page Header -->
+          <section class="bg-gradient-to-br from-emerald-50 to-amber-50 py-16 md:py-20">
+            <div class="max-w-7xl mx-auto px-6 md:px-10 text-center">
+              <h1 class="text-4xl md:text-5xl lg:text-6xl font-light text-gray-800 mb-6 tracking-tight leading-tight font-display" data-en="Our Products" data-pl="Nasze Produkty">
+                Our Products
+              </h1>
+              <p class="text-xl md:text-2xl font-light text-gray-600 max-w-3xl mx-auto leading-relaxed" data-en="Discover our flagship Extra Virgin Olive Oil. From 500-year-old trees, cold-pressed perfection with scientific precision." data-pl="Odkryj naszą flagową oliwę Extra Virgin. Z 500-letnich drzew, doskonałość tłoczona na zimno z naukową precyzją.">
+                Discover our flagship Extra Virgin Olive Oil. From 500-year-old trees, cold-pressed perfection with scientific precision.
+              </p>
+            </div>
+          </section>
+
+          <div class="max-w-7xl mx-auto px-6 md:px-10 py-8">
+            <!-- Product Showcase Section -->
+          <section class="mb-32 text-center">
+            <div class="max-w-6xl mx-auto">
+              <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+                
+                <!-- Product Image -->
+                <div class="order-2 lg:order-1">
+                  <img src="assets/images/bottle.jpeg" alt="Laperla Premium Chemlali Olive Oil" class="product-image w-full max-w-md mx-auto">
+                </div>
+                
+                <!-- Product Details -->
+                <div class="order-1 lg:order-2 text-left">
+                  <h2 class="modern-section-title text-4xl md:text-5xl font-light text-gray-800 mb-8 tracking-tight leading-tight" data-en="Chemlali Edition Prestige" data-pl="Chemlali Edition Prestige">
+                    <a href="blog.html" class="text-emerald-700 hover:text-emerald-800 underline decoration-emerald-700/30 hover:decoration-emerald-800 transition-colors">Chemlali</a> Edition<br>Prestige
+                  </h2>
+                  
+                  <p class="text-xl md:text-2xl font-light leading-relaxed text-gray-600 mb-12" data-en="Our flagship extra virgin olive oil from ancient Chemlali trees. Cold-pressed within 4 hours of harvest to preserve maximum nutritional value and authentic flavor." data-pl="Nasza flagowa oliwa extra virgin ze starożytnych drzew Chemlali. Tłoczona na zimno w ciągu 4 godzin od zbioru, aby zachować maksymalną wartość odżywczą i autentyczny smak.">
+                    Our flagship extra virgin olive oil from ancient <a href="blog.html" class="text-emerald-700 hover:text-emerald-800 underline decoration-emerald-700/30 hover:decoration-emerald-800 transition-colors">Chemlali trees</a>. Cold-pressed within 4 hours of harvest to preserve maximum nutritional value and authentic flavor.
+                  </p>
+                  
+                  <!-- Key Features -->
+                  <div class="space-y-6">
+                    <div class="flex items-center gap-4">
+                      <div class="w-3 h-3 bg-emerald-500 rounded-full"></div>
+                      <span class="text-lg font-light text-gray-700" data-en="< 0.3% Acidity (Ultra Premium)" data-pl="< 0,3% Kwasowość (Ultra Premium)">< 0.3% Acidity (Ultra Premium)</span>
+                    </div>
+                    <div class="flex items-center gap-4">
+                      <div class="w-3 h-3 bg-amber-500 rounded-full"></div>
+                      <span class="text-lg font-light text-gray-700" data-en="250-300mg/kg Polyphenols" data-pl="250-300mg/kg Polifenoli">250-300mg/kg Polyphenols</span>
+                    </div>
+                    <div class="flex items-center gap-4">
+                      <div class="flex items-center gap-2">
+                        <img src="assets/images/ecocert.png" alt="ECO-CERT" class="w-6 h-6 object-contain">
+                        <img src="assets/images/usda.png" alt="USDA" class="w-6 h-6 object-contain">
+                      </div>
+                      <span class="text-lg font-light text-gray-700" data-en="ECO-CERT & USDA Organic" data-pl="ECO-CERT i USDA Organic">ECO-CERT & USDA Organic</span>
+                    </div>
+                  </div>
+                  
+                  <!-- CTA Buttons -->
+                  <div class="flex flex-col sm:flex-row gap-4 mt-12">
+                    <a href="https://wa.me/48530846928?text=I%20want%20to%20order%20Laperla%20Chemlali%20Edition%20Prestige" target="_blank" class="inline-block bg-gradient-to-r from-emerald-600 to-emerald-700 hover:from-emerald-700 hover:to-emerald-800 text-white px-8 py-3 rounded-full text-lg font-medium transition-all duration-300 hover:scale-105 hover:shadow-lg shadow-emerald-200">
+                      <span data-en="Order Now" data-pl="Zamów Teraz">Order Now</span>
+                    </a>
+                    <a href="contact.html" class="inline-block border-2 border-amber-600 text-amber-700 hover:bg-amber-600 hover:text-white px-8 py-3 rounded-full text-lg font-medium transition-all duration-300 hover:scale-105">
+                      <span data-en="Get Quote" data-pl="Otrzymaj Wycenę">Get Quote</span>
+                    </a>
+                  </div>
+                </div>
+                
+              </div>
+            </div>
+          </section>
+
+          <!-- Product Specifications -->
+          <section class="mb-32">
+            <h2 class="modern-section-title text-4xl md:text-5xl lg:text-6xl font-light text-gray-800 mb-20 tracking-tight leading-tight text-center" data-en="Scientific Excellence" data-pl="Naukowa Doskonałość">
+              Scientific Excellence
+            </h2>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+              
+              <div class="product-spec text-center">
+                <div class="text-4xl font-light text-emerald-700 mb-4">< 0.3%</div>
+                <h3 class="text-xl font-medium text-gray-800 mb-3" data-en="Acidity Level" data-pl="Poziom Kwasowości">Acidity Level</h3>
+                <p class="text-gray-600 font-light" data-en="Ultra-low acidity significantly below the 0.8% Extra Virgin limit, indicating exceptional quality and freshness." data-pl="Ultra-niska kwasowość znacznie poniżej limitu 0,8% dla Extra Virgin, wskazująca na wyjątkową jakość i świeżość.">
+                  Ultra-low acidity significantly below the 0.8% Extra Virgin limit, indicating exceptional quality and freshness.
+                </p>
+              </div>
+              
+              <div class="product-spec text-center">
+                <div class="text-4xl font-light text-amber-600 mb-4">250-300</div>
+                <h3 class="text-xl font-medium text-gray-800 mb-3" data-en="Polyphenols mg/kg" data-pl="Polifenole mg/kg">Polyphenols mg/kg</h3>
+                <p class="text-gray-600 font-light" data-en="High concentration of natural antioxidants that provide anti-inflammatory benefits and protect against oxidative stress." data-pl="Wysokie stężenie naturalnych antyoksydantów, które zapewniają działanie przeciwzapalne i chronią przed stresem oksydacyjnym.">
+                  High concentration of natural antioxidants that provide anti-inflammatory benefits and protect against oxidative stress.
+                </p>
+              </div>
+              
+              <div class="product-spec text-center">
+                <div class="text-4xl font-light text-green-600 mb-4">< 4h</div>
+                <h3 class="text-xl font-medium text-gray-800 mb-3" data-en="Extraction Time" data-pl="Czas Ekstrakcji">Extraction Time</h3>
+                <p class="text-gray-600 font-light" data-en="Cold-pressed within 4 hours of harvest to preserve maximum nutritional value and prevent oxidation." data-pl="Tłoczona na zimno w ciągu 4 godzin od zbioru, aby zachować maksymalną wartość odżywczą i zapobiec utlenianiu.">
+                  Cold-pressed within 4 hours of harvest to preserve maximum nutritional value and prevent oxidation.
+                </p>
+              </div>
+              
+            </div>
+          </section>
+
+          <!-- Certifications Section -->
+          <section class="mb-32">
+            <div class="text-center mb-20">
+              <h2 class="modern-section-title text-4xl md:text-5xl lg:text-6xl font-light text-gray-800 mb-8 tracking-tight leading-tight" data-en="Global Certifications" data-pl="Globalne Certyfikaty">
+                Global Certifications
+              </h2>
+              <p class="text-xl md:text-2xl font-light leading-relaxed text-gray-600 max-w-4xl mx-auto" data-en="Our olive oil meets the world's highest organic and quality standards, certified by leading international organizations." data-pl="Nasza oliwa spełnia najwyższe światowe standardy organiczne i jakościowe, certyfikowana przez wiodące organizacje międzynarodowe.">
+                Our olive oil meets the world's highest organic and quality standards, certified by leading international organizations.
+              </p>
+            </div>
+            
+            <div class="flex flex-wrap justify-center items-center gap-8">
+              <div class="flex items-center gap-4 modern-cert-badge">
+                <img src="assets/images/ecocert.png" alt="ECO-CERT Organic" class="w-12 h-12 object-contain">
+                <span class="text-lg font-semibold text-gray-800">ECO-CERT</span>
+              </div>
+              <div class="flex items-center gap-4 modern-cert-badge">
+                <img src="assets/images/organic.jpg" alt="Organic Bio" class="w-12 h-12 object-contain">
+                <span class="text-lg font-semibold text-gray-800">ORGANIC BIO</span>
+              </div>
+              <div class="flex items-center gap-4 modern-cert-badge">
+                <img src="assets/images/usda.png" alt="USDA Organic" class="w-12 h-12 object-contain">
+                <span class="text-lg font-semibold text-gray-800">USDA ORGANIC</span>
+              </div>
+            </div>
+          </section>
+
+          <!-- Final CTA Section -->
+          <section class="text-center bg-gradient-to-br from-emerald-50/70 via-amber-50/50 to-green-50/70 rounded-3xl p-12 md:p-20 border border-emerald-200/50 shadow-sm">
+            <h2 class="text-gray-800 text-4xl md:text-5xl font-light mb-8 tracking-tight leading-tight" data-en="Experience Premium Quality" data-pl="Doświadcz Premium Jakości">
+              Experience Premium Quality
+            </h2>
+            <p class="text-xl md:text-2xl font-light leading-relaxed text-gray-600 max-w-4xl mx-auto mb-12" data-en="Order your bottle of Chemlali Edition Prestige and taste the difference that 500 years of tradition and scientific precision can make." data-pl="Zamów swoją butelkę Chemlali Edition Prestige i poczuj różnicę, jaką może sprawić 500 lat tradycji i naukowej precyzji.">
+              Order your bottle of Chemlali Edition Prestige and taste the difference that 500 years of tradition and scientific precision can make.
+            </p>
+            <div class="flex flex-col sm:flex-row gap-6 justify-center items-center">
+              <a href="https://wa.me/48530846928?text=I%20want%20to%20order%20Laperla%20Premium%20Olive%20Oil" target="_blank" class="inline-block bg-gradient-to-r from-emerald-600 to-emerald-700 hover:from-emerald-700 hover:to-emerald-800 text-white px-12 py-4 rounded-full text-lg font-medium transition-all duration-300 hover:scale-105 hover:shadow-lg shadow-emerald-200">
+                <span data-en="Order Prestige Edition" data-pl="Zamów Edycję Prestige">Order Prestige Edition</span>
+              </a>
+              <a href="contact.html" class="inline-block border-2 border-amber-600 text-amber-700 hover:bg-amber-600 hover:text-white px-12 py-4 rounded-full text-lg font-medium transition-all duration-300 hover:scale-105 shadow-sm">
+                <span data-en="Custom Orders" data-pl="Zamówienia Specjalne">Custom Orders</span>
+              </a>
+            </div>
+          </section>
+          </div>
+        </main>
+
+        <footer class="bg-white border-t border-gray-200">
+          <div class="max-w-7xl mx-auto px-6 md:px-10 py-12">
+            <div class="flex flex-wrap items-center justify-center gap-8 mb-8">
+              <a class="text-gray-600 hover:text-yellow-600 font-medium transition-colors" href="index.html" data-en="Home" data-pl="Strona Główna">Home</a>
+              <a class="text-gray-600 hover:text-yellow-600 font-medium transition-colors" href="product.html" data-en="Our Products" data-pl="Nasze Produkty">Our Products</a>
+              <a class="text-gray-600 hover:text-yellow-600 font-medium transition-colors" href="heritage.html" data-en="Our Story" data-pl="Nasza Historia">Our Story</a>
+              <a class="text-gray-600 hover:text-yellow-600 font-medium transition-colors" href="blog.html" data-en="Blog" data-pl="Blog">Blog</a>
+              <a class="text-gray-600 hover:text-yellow-600 font-medium transition-colors" href="contact.html" data-en="Contact" data-pl="Kontakt">Contact</a>
+            </div>
+            <div class="flex justify-center gap-6 mb-8">
+              <a href="https://instagram.com/yourprofile" target="_blank" class="text-gray-400 hover:text-yellow-600 transition-colors">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 256 256">
+                  <path d="M128,80a48,48,0,1,0,48,48A48.05,48.05,0,0,0,128,80Zm0,80a32,32,0,1,1,32-32A32,32,0,0,1,128,160ZM176,24H80A56.06,56.06,0,0,0,24,80v96a56.06,56.06,0,0,0,56,56h96a56.06,56.06,0,0,0,56-56V80A56.06,56.06,0,0,0,176,24Zm40,152a40,40,0,0,1-40,40H80a40,40,0,0,1-40-40V80A40,40,0,0,1,80,40h96a40,40,0,0,1,40,40ZM192,76a12,12,0,1,1-12-12A12,12,0,0,1,192,76Z"></path>
+                </svg>
+              </a>
+              <a href="https://facebook.com/yourprofile" target="_blank" class="text-gray-400 hover:text-yellow-600 transition-colors">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 256 256">
+                  <path d="M128,24A104,104,0,1,0,232,128,104.11,104.11,0,0,0,128,24Zm8,191.63V152h24a8,8,0,0,0,0-16H136V112a16,16,0,0,1,16-16h16a8,8,0,0,0,0-16H152a32,32,0,0,0-32,32v24H96a8,8,0,0,0,0-16h24v63.63a88,88,0,1,1,16,0Z"></path>
+                </svg>
+              </a>
+            </div>
+            <p class="text-center text-gray-500 font-medium" data-en="© 2025 Laperla. History and health in every drop. All rights reserved." data-pl="© 2025 Laperla. Historia i zdrowie w każdej kropli. Wszelkie prawa zastrzeżone.">
+              © 2025 Laperla. History and health in every drop. All rights reserved.
+            </p>
+          </div>
+        </footer>
+      </div>
+    </div>
+
+    <script>
+      // Modern performance optimizations
+      document.addEventListener('DOMContentLoaded', () => {
+        // Initialize Intersection Observer for animations
+        const observerOptions = {
+          threshold: 0.1,
+          rootMargin: '0px 0px -50px 0px'
+        };
+        
+        const observer = new IntersectionObserver((entries) => {
+          entries.forEach(entry => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add('visible');
+            }
+          });
+        }, observerOptions);
+        
+        // Observe fade-in elements
+        document.querySelectorAll('.fade-in, .slide-in-left, .slide-in-right').forEach(el => {
+          observer.observe(el);
+        });
+      });
+
+      // Language management
+      (function() {
+        const urlParams = new URLSearchParams(window.location.search);
+        const urlLang = urlParams.get('lang');
+        const savedLanguage = Cookies.get('selectedLanguage');
+        const currentLang = urlLang || savedLanguage || 'en';
+        
+        function updateAllLinks(lang) {
+          const links = document.querySelectorAll('a[href^="home.html"], a[href^="product.html"], a[href^="heritage.html"], a[href^="contact.html"], a[href^="index.html"]');
+          links.forEach(link => {
+            const url = new URL(link.href, window.location.origin);
+            url.searchParams.set('lang', lang);
+            link.href = url.pathname + url.search;
+          });
+        }
+        
+        if (document.readyState === 'loading') {
+          document.addEventListener('DOMContentLoaded', () => updateAllLinks(currentLang));
+        } else {
+          updateAllLinks(currentLang);
+        }
+      })();
+
+      document.addEventListener('DOMContentLoaded', () => {
+        const translatableElements = document.querySelectorAll('[data-en][data-pl]');
+        const languageButton = document.querySelector('.modern-language-button');
+        const languageMenu = document.querySelector('.modern-language-menu');
+        const languageOptions = document.querySelectorAll('.modern-language-option');
+        const selectedLanguageSpan = document.querySelector('.selected-language');
+        const flagSpan = languageButton.querySelector('.fi');
+        const metaDescription = document.querySelector('meta[name="description"]');
+        
+        // Mobile menu handled by language-manager.js
+        
+        // --- Active Navigation Link ---
+        function setActiveNav() {
+            const currentPage = window.location.pathname.split('/').pop();
+            // Remove active class from all nav links
+            document.querySelectorAll('.modern-nav-link').forEach(link => {
+                link.classList.remove('nav-link-active');
+            });
+            
+            // Add active class to current page
+            if (currentPage === 'index.html' || currentPage === '') {
+                document.getElementById('nav-home')?.classList.add('nav-link-active');
+            } else if (currentPage === 'product.html') {
+                document.getElementById('nav-products')?.classList.add('nav-link-active');
+            } else if (currentPage === 'heritage.html') {
+                document.getElementById('nav-story')?.classList.add('nav-link-active');
+            } else if (currentPage === 'contact.html') {
+                document.getElementById('nav-contact')?.classList.add('nav-link-active');
+            }
+        }
+        setActiveNav();
+
+        function updateLanguage(lang) {
+          translatableElements.forEach(element => {
+            element.textContent = element.getAttribute(`data-${lang}`);
+          });
+
+          if (metaDescription) {
+            metaDescription.setAttribute('content', metaDescription.getAttribute(`data-${lang}`));
+          }
+
+          const selectedOption = document.querySelector(`.modern-language-option[data-lang="${lang}"]`);
+          selectedLanguageSpan.textContent = selectedOption.textContent.trim();
+          flagSpan.className = `fi fi-${lang === 'pl' ? 'pl' : 'us'}`;
+
+          document.documentElement.setAttribute('lang', lang);
+          Cookies.set('selectedLanguage', lang, { expires: 7 });
+
+          const allLinks = document.querySelectorAll('a[href]');
+          allLinks.forEach(link => {
+            try {
+              const url = new URL(link.href, window.location.origin);
+              if (url.hostname === window.location.hostname && 
+                  (url.pathname.endsWith('.html') || url.pathname === '/')) {
+                url.searchParams.set('lang', lang);
+                link.href = url.pathname + url.search;
+              }
+            } catch (e) {
+              // Skip invalid URLs
+            }
+          });
+        }
+
+        // Language dropdown functionality
+        if (languageButton && languageMenu) {
+          languageButton.addEventListener('click', (e) => {
+            e.stopPropagation();
+            languageMenu.style.opacity = languageMenu.style.opacity === '1' ? '0' : '1';
+            languageMenu.style.visibility = languageMenu.style.visibility === 'visible' ? 'hidden' : 'visible';
+          });
+          
+          // Close dropdown when clicking outside
+          document.addEventListener('click', () => {
+            languageMenu.style.opacity = '0';
+            languageMenu.style.visibility = 'hidden';
+          });
+        }
+
+        languageOptions.forEach(option => {
+          option.addEventListener('click', () => {
+            const lang = option.getAttribute('data-lang');
+            updateLanguage(lang);
+            const url = new URL(window.location);
+            url.searchParams.set('lang', lang);
+            window.history.pushState({}, '', url);
+          });
+        });
+
+        // Initialize language
+        const urlParams = new URLSearchParams(window.location.search);
+        const urlLang = urlParams.get('lang');
+        const savedLanguage = Cookies.get('selectedLanguage');
+        
+        if (urlLang && ['en', 'pl'].includes(urlLang)) {
+          updateLanguage(urlLang);
+        } else if (savedLanguage && ['en', 'pl'].includes(savedLanguage)) {
+          updateLanguage(savedLanguage);
+          const url = new URL(window.location);
+          url.searchParams.set('lang', savedLanguage);
+          window.history.replaceState({}, '', url);
+        }
+      });
+    </script>
+</body>
+</html>

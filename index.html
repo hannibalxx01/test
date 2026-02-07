@@ -1,0 +1,844 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Laperla - History and health in every drop. Premium extra virgin olive oil from 500-year-old Chemlali trees in Tunisia. ECO-CERT certified with <0.3% acidity." data-en="Laperla - History and health in every drop. Premium extra virgin olive oil from 500-year-old Chemlali trees in Tunisia. ECO-CERT certified with <0.3% acidity." data-pl="Laperla - Historia i zdrowie w każdej kropli. Premium oliwa extra virgin z 500-letnich drzew Chemlali w Tunezji. Certyfikowana ECO-CERT z kwasowością <0,3%." />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preload" as="style" onload="this.onload=null;this.rel='stylesheet'" href="https://fonts.googleapis.com/css2?display=swap&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap" />
+    <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?display=swap&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap" /></noscript>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flag-icons/css/flag-icons.min.css" />
+    <link rel="alternate" hreflang="en" href="https://laperlaoliveoil.com/index.html?lang=en" />
+    <link rel="alternate" hreflang="pl" href="https://laperlaoliveoil.com/index.html?lang=pl" />
+    <link rel="alternate" hreflang="x-default" href="https://laperlaoliveoil.com/index.html?lang=en" />
+    <title data-en="Laperla | 500-Year-Old Trees | Premium Tunisian Extra Virgin Olive Oil" data-pl="Laperla | 500-letnie Drzewa | Premium Tunezyjska Oliwa Extra Virgin">Laperla | 500-Year-Old Trees | Premium Tunisian Extra Virgin Olive Oil</title>
+    <link rel="icon" type="image/x-icon" href="data:image/x-icon;base64," />
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries,typography"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            fontFamily: {
+              'display': ['Playfair Display', 'serif'],
+              'sans': ['Inter', 'system-ui', 'sans-serif']
+            },
+            animation: {
+              'fade-in': 'fadeIn 0.6s ease-out forwards',
+              'slide-up': 'slideUp 0.8s ease-out forwards',
+              'float': 'float 6s ease-in-out infinite'
+            }
+          }
+        }
+      }
+    </script>
+    <link rel="stylesheet" href="assets/css/styles.css">
+    
+    <script src="https://cdn.jsdelivr.net/npm/js-cookie@3.0.5/dist/js.cookie.min.js"></script>
+    <script src="assets/js/language-manager.js"></script>
+    <meta name="keywords" content="premium extra virgin olive oil, ECO-CERT, Chemlali olives, Tunisia olive oil, 500-year-old trees, ultra pure olive oil, polyphenols" data-en="premium extra virgin olive oil, ECO-CERT, Chemlali olives, Tunisia olive oil, 500-year-old trees, ultra pure olive oil, polyphenols" data-pl="premium oliwa extra virgin, ECO-CERT, oliwki Chemlali, oliwa tunezyjska, 500-letnie drzewa, ultra czysta oliwa, polifenole, oliwa z oliwek, organiczna oliwa, zdrowa oliwa">
+
+    <style>
+      :root {
+        --olive-gold: #d4a017;
+        --olive-green: #2e5e2e;
+        --soft-green: #f8faf5;
+        --warm-white: #fefefe;
+        --text-dark: #2c2c2c;
+        --text-medium: #525252;
+        --text-light: #737373;
+      }
+
+      body {
+        font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+        line-height: 1.6;
+        color: var(--text-dark);
+      }
+
+      .font-display {
+        font-family: 'Playfair Display', serif;
+      }
+
+      .language-dropdown {
+        position: relative;
+      }
+      .language-dropdown-button {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        padding: 0.75rem 1.25rem;
+        background: rgba(255, 255, 255, 0.95);
+        border: 1px solid rgba(212, 160, 23, 0.2);
+        border-radius: 12px;
+        cursor: pointer;
+        font-size: 0.875rem;
+        font-weight: 500;
+        color: var(--text-dark);
+        transition: all 0.3s ease;
+        backdrop-filter: blur(10px);
+      }
+      .language-dropdown-button:hover {
+        background: white;
+        border-color: var(--olive-gold);
+        box-shadow: 0 4px 12px rgba(212, 160, 23, 0.15);
+      }
+      .language-dropdown-menu {
+        position: absolute;
+        top: 100%;
+        right: 0;
+        margin-top: 0.5rem;
+        background: white;
+        border: 1px solid rgba(212, 160, 23, 0.2);
+        border-radius: 12px;
+        box-shadow: 0 10px 40px rgba(0, 0, 0, 0.15);
+        display: none;
+        z-index: 50;
+        overflow: hidden;
+      }
+      .language-dropdown-menu.show {
+        display: block;
+      }
+      .language-option {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        padding: 0.75rem 1.25rem;
+        cursor: pointer;
+        font-size: 0.875rem;
+        font-weight: 500;
+        color: var(--text-dark);
+        transition: all 0.2s ease;
+      }
+      .language-option:hover {
+        background: var(--soft-green);
+        color: var(--olive-green);
+      }
+      .fi {
+        width: 20px;
+        height: 15px;
+        border-radius: 2px;
+      }
+
+      .hero-slideshow {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        border-radius: 24px;
+        overflow: hidden;
+      }
+      .slideshow-image { /* This class is reused for the video */
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        position: absolute;
+        top: 0;
+        left: 0;
+        opacity: 0;
+        transition: opacity 1.5s ease-in-out;
+      }
+      .slideshow-image.active {
+        opacity: 1;
+      }
+
+      .hero-overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(135deg, rgba(0,0,0,0.4) 0%, rgba(0,0,0,0.6) 100%);
+        border-radius: 24px;
+      }
+
+      .story-highlight {
+        background: linear-gradient(135deg, var(--soft-green) 0%, var(--warm-white) 100%);
+        border: 1px solid rgba(212, 160, 23, 0.2);
+        border-left: 4px solid var(--olive-gold);
+        padding: 2.5rem;
+        margin: 3rem 0;
+        border-radius: 20px;
+        font-style: italic;
+        color: var(--olive-green);
+        box-shadow: 0 10px 40px rgba(0, 0, 0, 0.05);
+        position: relative;
+        overflow: hidden;
+      }
+
+      .story-highlight::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grain" width="100" height="100" patternUnits="userSpaceOnUse"><circle cx="25" cy="25" r="1" fill="rgba(212,160,23,0.05)"/><circle cx="75" cy="75" r="1" fill="rgba(212,160,23,0.05)"/></pattern></defs><rect width="100" height="100" fill="url(%23grain)"/></svg>');
+        opacity: 0.3;
+        pointer-events: none;
+      }
+
+      .certification-badge {
+        background: linear-gradient(135deg, var(--olive-green) 0%, #4a7c4a 100%);
+        color: white;
+        padding: 1rem 1.5rem;
+        border-radius: 16px;
+        font-weight: 700;
+        font-size: 0.875rem;
+        text-align: center;
+        box-shadow: 0 8px 25px rgba(46, 94, 46, 0.25);
+        margin: 0.5rem;
+        display: inline-block;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+      }
+
+      .certification-badge:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 12px 35px rgba(46, 94, 46, 0.35);
+      }
+
+      .quality-metric {
+        background: linear-gradient(135deg, var(--olive-gold) 0%, #e6b800 100%);
+        color: white;
+        padding: 1.5rem 3rem;
+        border-radius: 50px;
+        font-weight: 800;
+        font-size: 1.25rem;
+        text-align: center;
+        box-shadow: 0 10px 30px rgba(212, 160, 23, 0.3);
+        margin: 2rem auto;
+        display: inline-block;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        border: 3px solid rgba(255, 255, 255, 0.3);
+      }
+
+      .section-title {
+        font-family: 'Playfair Display', serif;
+        color: var(--olive-green);
+        font-size: 2.5rem;
+        font-weight: 700;
+        text-align: center;
+        position: relative;
+        margin-bottom: 3rem;
+        line-height: 1.2;
+      }
+
+      .section-title::after {
+        content: '';
+        width: 80px;
+        height: 4px;
+        background: linear-gradient(90deg, var(--olive-gold) 0%, var(--olive-green) 100%);
+        position: absolute;
+        bottom: -1rem;
+        left: 50%;
+        transform: translateX(-50%);
+        border-radius: 2px;
+      }
+
+      .feature-card {
+        background: white;
+        border: 1px solid rgba(212, 160, 23, 0.1);
+        border-radius: 20px;
+        padding: 2.5rem;
+        text-align: center;
+        transition: all 0.4s ease;
+        box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+        height: 100%;
+        position: relative;
+        overflow: hidden;
+      }
+
+      .feature-card::before {
+        content: '';
+        position: absolute;
+        top: -50%;
+        left: -50%;
+        width: 200%;
+        height: 200%;
+        background: linear-gradient(45deg, transparent, rgba(212, 160, 23, 0.05), transparent);
+        transform: rotate(45deg);
+        transition: all 0.6s ease;
+        opacity: 0;
+      }
+
+      .feature-card:hover {
+        transform: translateY(-8px);
+        box-shadow: 0 20px 50px rgba(0, 0, 0, 0.15);
+        border-color: var(--olive-gold);
+      }
+
+      .feature-card:hover::before {
+        opacity: 1;
+        transform: rotate(45deg) translate(50%, 50%);
+      }
+
+      .nav-link {
+        position: relative;
+        transition: color 0.3s ease;
+      }
+      .nav-link-active {
+        color: var(--olive-gold) !important;
+        font-weight: 700;
+      }
+      .nav-link-active::after {
+        content: '';
+        position: absolute;
+        bottom: -6px;
+        left: 0;
+        right: 0;
+        height: 2px;
+        background-color: var(--olive-gold);
+        border-radius: 1px;
+      }
+
+      /* Inspired Hero Section Styles */
+      .hero-inspired {
+        border-radius: 0;
+        margin: -2rem -10rem 0 -10rem;
+        padding: 0 10rem;
+      }
+      
+      .hero-title {
+        text-shadow: 0 2px 20px rgba(0, 0, 0, 0.5);
+        letter-spacing: -0.02em;
+      }
+      
+      .hero-subtitle {
+        text-shadow: 0 1px 10px rgba(0, 0, 0, 0.3);
+        font-weight: 300;
+      }
+      
+      .hero-content {
+        animation: fadeInUp 1.2s ease-out;
+      }
+      
+      @keyframes fadeInUp {
+        from {
+          opacity: 0;
+          transform: translateY(30px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+      
+      /* Modern Typography Styles */
+      .modern-section-title {
+        letter-spacing: -0.02em;
+        line-height: 1.1;
+      }
+      
+      .modern-feature-card {
+        padding: 2rem;
+        transition: all 0.3s ease;
+      }
+      
+      .modern-feature-card:hover {
+        transform: translateY(-4px);
+      }
+      
+      /* Navigation styles moved to central CSS */
+      
+      /* Language dropdown styles moved to central CSS */
+      
+      /* Badge styles moved to central CSS */
+
+      /* Enhanced Mobile Responsive Design */
+      @media (max-width: 1024px) {
+        .hero-inspired {
+          margin: -2rem -4rem 0 -4rem;
+          padding: 0 4rem;
+          min-height: 75vh;
+        }
+        
+        .hero-title {
+          font-size: 4rem;
+          line-height: 1.1;
+        }
+        
+        .hero-subtitle {
+          font-size: 1.5rem;
+          margin-bottom: 2.5rem;
+        }
+      }
+
+      @media (max-width: 768px) {
+        .hero-inspired {
+          margin: -2rem -2rem 0 -2rem;
+          padding: 0 2rem;
+          min-height: 70vh;
+        }
+        
+        .hero-title {
+          font-size: 2.5rem;
+          line-height: 1.1;
+          margin-bottom: 1.5rem;
+        }
+        
+        .hero-subtitle {
+          font-size: 1.125rem;
+          margin-bottom: 2rem;
+          line-height: 1.5;
+        }
+        
+        .section-title {
+          font-size: 2rem;
+        }
+        
+        .story-highlight {
+          padding: 1.5rem;
+          margin: 2rem 0;
+        }
+        
+        .quality-metric {
+          font-size: 1rem;
+          padding: 1rem 2rem;
+        }
+        
+        .feature-card,
+        .modern-feature-card {
+          padding: 1.5rem;
+          margin-bottom: 1.5rem;
+        }
+        
+        /* Mobile navigation enhancements */
+        .max-w-7xl {
+          padding-left: 1rem;
+          padding-right: 1rem;
+        }
+        
+        /* Mobile hero content adjustments */
+        .hero-content {
+          padding: 2rem 1rem;
+        }
+
+        /* Mobile grid improvements */
+        .grid {
+          gap: 1.5rem;
+        }
+        
+        /* Mobile video responsiveness */
+        .aspect-video {
+          border-radius: 1rem;
+        }
+      }
+
+      @media (max-width: 480px) {
+        .hero-inspired {
+          margin: -2rem -1rem 0 -1rem;
+          padding: 0 1rem;
+          min-height: 60vh;
+        }
+        
+        .hero-title {
+          font-size: 2rem;
+          line-height: 1.2;
+          margin-bottom: 1rem;
+        }
+        
+        .hero-subtitle {
+          font-size: 1rem;
+          margin-bottom: 1.5rem;
+          line-height: 1.4;
+        }
+        
+        .section-title {
+          font-size: 1.75rem;
+          line-height: 1.3;
+        }
+        
+        .story-highlight {
+          padding: 1rem;
+          margin: 1.5rem 0;
+          font-size: 0.9rem;
+        }
+        
+        .quality-metric {
+          font-size: 0.875rem;
+          padding: 0.75rem 1.5rem;
+        }
+        
+        .feature-card,
+        .modern-feature-card {
+          padding: 1rem;
+        }
+        
+        /* Extra small mobile adjustments */
+        .hero-content {
+          padding: 1.5rem 0.75rem;
+        }
+        
+        /* Compact text for mobile */
+        .text-xl,
+        .text-2xl {
+          font-size: 1rem !important;
+        }
+        
+        .text-3xl,
+        .text-4xl {
+          font-size: 1.25rem !important;
+        }
+        
+        .text-5xl,
+        .text-6xl {
+          font-size: 1.5rem !important;
+        }
+      }
+    </style>
+</head>
+<body class="bg-gray-50">
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-3QNYCWKF1J"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-3QNYCWKF1J');
+    </script>
+    
+    <!-- Enhanced Button Click Tracking -->
+
+    <div class="relative flex size-full min-h-screen flex-col bg-gradient-to-br from-gray-50 to-white group/design-root overflow-x-hidden">
+      <div class="layout-container flex h-full grow flex-col">
+        <header class="modern-nav sticky top-0 z-50 bg-white/90 backdrop-blur-lg border-b border-gray-200/60">
+          <div class="max-w-7xl mx-auto px-6 md:px-10">
+            <div class="flex items-center justify-between h-20">
+              
+              <!-- Logo Section -->
+              <a href="index.html" class="flex items-center text-gray-900 no-underline group">
+                <div class="flex flex-col">
+                  <h2 class="text-gray-900 text-2xl font-bold tracking-wide font-display">LAPERLA</h2>
+                  <p class="text-gray-500 text-xs font-light tracking-wide" data-en="Premium Olive Oil" data-pl="Premium Oliwa z Oliwek">Premium Olive Oil</p>
+                </div>
+              </a>
+              
+              <!-- Navigation Links -->
+              <nav class="hidden lg:flex items-center space-x-12">
+                <a class="modern-nav-link text-gray-700 text-base font-light hover:text-emerald-700 transition-colors duration-300" id="nav-home" href="index.html" data-en="Home" data-pl="Strona Główna">Home</a>
+                <a class="modern-nav-link text-gray-700 text-base font-light hover:text-emerald-700 transition-colors duration-300" id="nav-products" href="product.html" data-en="Products" data-pl="Produkty">Products</a>
+                <a class="modern-nav-link text-gray-700 text-base font-light hover:text-emerald-700 transition-colors duration-300" id="nav-story" href="heritage.html" data-en="Our Story" data-pl="Nasza Historia">Our Story</a>
+                <a class="modern-nav-link text-gray-700 text-base font-light hover:text-emerald-700 transition-colors duration-300" id="nav-blog" href="blog.html" data-en="Blog" data-pl="Blog">Blog</a>
+                <a class="modern-nav-link text-gray-700 text-base font-light hover:text-emerald-700 transition-colors duration-300" id="nav-contact" href="contact.html" data-en="Contact" data-pl="Kontakt">Contact</a>
+              </nav>
+              
+              <!-- Right Side Actions -->
+              <div class="flex items-center gap-6">
+                <!-- Language Selector -->
+                <div class="modern-language-dropdown relative">
+                  <button class="modern-language-button flex items-center gap-2 px-4 py-2 text-gray-600 hover:text-gray-900 transition-colors duration-300">
+                    <span class="fi fi-us"></span>
+                    <span class="selected-language text-sm font-light">English</span>
+                    <svg class="w-4 h-4 transition-transform duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                    </svg>
+                  </button>
+                  <div class="modern-language-menu absolute top-full right-0 mt-2 bg-white rounded-xl shadow-lg border border-gray-200 py-2 min-w-[120px] opacity-0 invisible transition-all duration-200">
+                    <div class="modern-language-option flex items-center gap-3 px-4 py-2 text-sm hover:bg-gray-50 cursor-pointer" data-lang="en">
+                      <span class="fi fi-us"></span>
+                      English
+                    </div>
+                    <div class="modern-language-option flex items-center gap-3 px-4 py-2 text-sm hover:bg-gray-50 cursor-pointer" data-lang="pl">
+                      <span class="fi fi-pl"></span>
+                      Polski
+                    </div>
+                  </div>
+                </div>
+                
+                <!-- Mobile Menu Button -->
+                <button class="lg:hidden p-2 text-gray-600 hover:text-gray-900" id="mobile-menu-button">
+                  <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                  </svg>
+                </button>
+              </div>
+              
+            </div>
+          </div>
+          
+          <!-- Mobile Menu -->
+          <div class="lg:hidden mobile-menu hidden bg-white border-t border-gray-200">
+            <div class="px-6 py-4 space-y-4">
+              <a class="block text-gray-700 text-lg font-light hover:text-emerald-700 transition-colors" href="index.html" data-en="Home" data-pl="Strona Główna">Home</a>
+              <a class="block text-gray-700 text-lg font-light hover:text-emerald-700 transition-colors" href="product.html" data-en="Products" data-pl="Produkty">Products</a>
+              <a class="block text-gray-700 text-lg font-light hover:text-emerald-700 transition-colors" href="heritage.html" data-en="Our Story" data-pl="Nasza Historia">Our Story</a>
+              <a class="block text-gray-700 text-lg font-light hover:text-emerald-700 transition-colors" href="blog.html" data-en="Blog" data-pl="Blog">Blog</a>
+              <a class="block text-gray-700 text-lg font-light hover:text-emerald-700 transition-colors" href="contact.html" data-en="Contact" data-pl="Kontakt">Contact</a>
+              
+              <!-- Mobile Language Selector -->
+              <div class="border-t border-gray-200 pt-4 mt-4">
+                <p class="text-gray-500 text-sm font-medium mb-3" data-en="Language" data-pl="Język">Language</p>
+                <div class="space-y-2">
+                  <button class="mobile-language-option flex items-center gap-3 w-full px-2 py-2 text-gray-700 hover:bg-gray-50 rounded-lg transition-colors" data-lang="en">
+                    <span class="fi fi-us"></span>
+                    <span>English</span>
+                  </button>
+                  <button class="mobile-language-option flex items-center gap-3 w-full px-2 py-2 text-gray-700 hover:bg-gray-50 rounded-lg transition-colors" data-lang="pl">
+                    <span class="fi fi-pl"></span>
+                    <span>Polski</span>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </header>
+
+        <main id="main-content" class="flex-1 flex flex-col">
+          <div class="home-hero hero-inspired relative min-h-[80vh] overflow-hidden bg-gradient-to-br from-emerald-900 via-emerald-800 to-amber-700">
+              
+              <!-- Video Background -->
+              <div class="absolute inset-0 w-full h-full">
+                <video autoplay loop muted playsinline class="w-full h-full object-cover">
+                  <source src="assets/videos/perla.mp4" type="video/webm">
+                  <source src="assets/videos/perla.mp4" type="video/mp4">
+                  Your browser does not support the video tag.
+                </video>
+              </div>
+              
+              <!-- Video Overlay -->
+              <div class="absolute inset-0 bg-gradient-to-br from-emerald-900/60 via-emerald-800/50 to-amber-700/60"></div>
+              
+              <!-- Content Container -->
+              <div class="hero-content relative z-10 flex flex-col justify-center items-center h-full text-center px-6 md:px-12 py-20">
+                
+                <!-- Main Headline -->
+                <h1 class="hero-title text-white text-5xl md:text-7xl lg:text-8xl font-light leading-tight tracking-wide mb-8 max-w-5xl mx-auto" data-en="Ancient Heritage, Pure Excellence" data-pl="Starożytne Dziedzictwo, Czysta Doskonałość">
+                  Ancient Heritage,<br>
+                  <span class="font-normal">Pure Excellence</span>
+                </h1>
+                
+                <!-- Subtitle -->
+                <p class="hero-subtitle text-white/90 text-xl md:text-2xl font-light leading-relaxed mb-12 max-w-3xl mx-auto" data-en="Premium extra virgin olive oil from 500-year-old Chemlali trees in Tunisia's sacred groves. Where tradition meets purity." data-pl="Premium oliwa extra virgin z 500-letnich drzew Chemlali w świętych gajach Tunezji. Gdzie tradycja spotyka czystość.">
+                  Premium extra virgin olive oil from 500-year-old Chemlali trees<br>
+                  in Tunisia's sacred groves. <em>Where tradition meets purity.</em>
+                </p>
+                
+              </div>
+              
+              <!-- Subtle overlay for better text contrast -->
+              <div class="absolute inset-0 bg-black/20"></div>
+              
+            </div>
+          </div>
+
+          <div class="max-w-7xl mx-auto px-6 md:px-10 py-8">
+            <!-- Heritage Story Section -->
+          <section class="mb-32 text-center">
+            <div class="max-w-4xl mx-auto">
+              <p class="text-2xl md:text-3xl font-normal leading-relaxed text-gray-800 mb-8 font-display" data-en="For over 500 years, the ancient Chemlali trees in Sidi Bou Ali groves have survived droughts, wars, and the fall of empires." data-pl="Przez ponad 500 lat starożytne drzewa Chemlali w gajach Sidi Bou Ali przetrwały susze, wojny i upadki imperiów.">
+                For over 500 years, the ancient <a href="blog.html" class="text-emerald-700 hover:text-emerald-800 underline decoration-emerald-700/30 hover:decoration-emerald-800 transition-colors">Chemlali trees</a> in Sidi Bou Ali groves have survived droughts, wars, and the fall of empires.
+              </p>
+              <p class="text-xl md:text-2xl font-normal leading-relaxed text-gray-700 italic font-display" data-en="Today, these immortal guardians give us the highest quality olive oil achievable—liquid gold that carries the heritage of generations and the wisdom of Tunisia's sacred land." data-pl="Dziś te nieśmiertelne strażnicy dają nam najwyższą jakość oliwy z oliwek, jaką można osiągnąć—płynne złoto, które niesie dziedzictwo pokoleń i mądrość świętej ziemi Tunezji.">
+                Today, these immortal guardians give us the highest quality olive oil achievable—liquid gold that carries the heritage of generations and the wisdom of Tunisia's sacred land.
+              </p>
+            </div>
+          </section>
+
+          <!-- International Awards Section -->
+          <section class="mb-32">
+            <div class="text-center mb-16">
+              <h2 class="modern-section-title text-4xl md:text-5xl lg:text-6xl font-light text-gray-800 mb-8 tracking-tight leading-tight" data-en="World-Class Recognition" data-pl="Światowe Uznanie">
+                World-Class Recognition
+              </h2>
+              <p class="text-xl md:text-2xl font-light leading-relaxed text-gray-600 max-w-4xl mx-auto" data-en="Laperla has earned the highest honors across three continents, consistently recognized as the world's finest extra virgin olive oil by international competitions." data-pl="Laperla zdobyła najwyższe honory na trzech kontynentach, konsekwentnie uznawana za najlepszą oliwę extra virgin na świecie przez międzynarodowe konkursy.">
+                Laperla has earned the highest honors across three continents, consistently recognized as the world's finest extra virgin olive oil by international competitions.
+              </p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+              <!-- Miami Gold Award 2024 -->
+              <div class="award-card group">
+                <div class="award-image-container">
+                  <img src="assets/images/award-miami-gold-2024.jpg" alt="US International Olive Oil Competition Gold Award 2024" class="award-image">
+                </div>
+                <div class="award-content">
+                  <h3 class="award-title" data-en="US International Competition" data-pl="Międzynarodowy Konkurs USA">US International Competition</h3>
+                  <p class="award-location" data-en="Miami, USA • 2024" data-pl="Miami, USA • 2024">Miami, USA • 2024</p>
+                  <p class="award-description" data-en="Gold Medal for Quality Excellence" data-pl="Złoty Medal za Doskonałość Jakości">Gold Medal for Quality Excellence</p>
+                </div>
+              </div>
+
+              <!-- Geneva Best in World 2024 -->
+              <div class="award-card group">
+                <div class="award-image-container">
+                  <img src="assets/images/award-geneva-best-world-2024.jpg" alt="European International Olive Oil Competition Best in World 2024" class="award-image">
+                </div>
+                <div class="award-content">
+                  <h3 class="award-title" data-en="European International Competition" data-pl="Europejski Konkurs Międzynarodowy">European International Competition</h3>
+                  <p class="award-location" data-en="Geneva, Switzerland • 2024" data-pl="Genewa, Szwajcaria • 2024">Geneva, Switzerland • 2024</p>
+                  <p class="award-description" data-en="Best Olive Oil in the World" data-pl="Najlepsza Oliwa na Świecie">Best Olive Oil in the World</p>
+                </div>
+              </div>
+
+              <!-- Abu Dhabi Gold Award 2024 -->
+              <div class="award-card group">
+                <div class="award-image-container">
+                  <img src="assets/images/award-abu-dhabi-gold-2024.jpg" alt="Afro-Asian International Olive Oil Competition Gold Award 2024" class="award-image">
+                </div>
+                <div class="award-content">
+                  <h3 class="award-title" data-en="Afro-Asian International Competition" data-pl="Afro-Azjatycki Konkurs Międzynarodowy">Afro-Asian International Competition</h3>
+                  <p class="award-location" data-en="Abu Dhabi, UAE • 2024" data-pl="Abu Dhabi, ZEA • 2024">Abu Dhabi, UAE • 2024</p>
+                  <p class="award-description" data-en="Gold Medal - Best Extra Virgin" data-pl="Złoty Medal - Najlepsza Extra Virgin">Gold Medal - Best Extra Virgin</p>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <section class="mb-32">
+            <div class="text-center mb-20">
+              <h2 class="modern-section-title text-4xl md:text-5xl lg:text-6xl font-light text-gray-800 mb-8 tracking-tight leading-tight" data-en="Global ECO-Certifications" data-pl="Globalne Certyfikaty ECO">
+                Global ECO-Certifications
+              </h2>
+              <p class="text-xl md:text-2xl font-light leading-relaxed text-gray-600 max-w-4xl mx-auto" data-en="Our olive oil is certified across continents, meeting the world's highest organic standards. We proudly hold ECO-CERT, Organic Bio, and USDA Organic certifications—your guarantee of pure, authentic quality." data-pl="Nasza oliwa jest certyfikowana na wszystkich kontynentach, spełniając najwyższe światowe standardy organiczne. Z dumą posiadamy certyfikaty ECO-CERT, Organic Bio i USDA Organic—Twoją gwarancję czystej, autentycznej jakości.">
+                Our olive oil is certified across continents, meeting the world's highest organic standards. We proudly hold ECO-CERT, Organic Bio, and USDA Organic certifications—your guarantee of pure, authentic quality.
+              </p>
+            </div>
+            <div class="flex flex-wrap justify-center items-center gap-12">
+              <div class="flex items-center gap-6 modern-cert-badge">
+                <img src="assets/images/ecocert.png" alt="ECO-CERT Organic" class="w-36 h-36 object-contain">
+                <span class="text-lg font-semibold text-gray-800">ECO-CERT</span>
+              </div>
+              <div class="flex items-center gap-6 modern-cert-badge">
+                <img src="assets/images/organic.jpg" alt="Organic Bio" class="w-36 h-36 object-contain">
+                <span class="text-lg font-semibold text-gray-800">ORGANIC BIO</span>
+              </div>
+              <div class="flex items-center gap-6 modern-cert-badge">
+                <img src="assets/images/usda.png" alt="USDA Organic" class="w-36 h-36 object-contain">
+                <span class="text-lg font-semibold text-gray-800">USDA ORGANIC</span>
+              </div>
+            </div>
+          </section>
+
+          <section class="mb-32 bg-gradient-to-br from-emerald-50/50 to-amber-50/50 rounded-3xl p-12 md:p-20 shadow-sm border border-emerald-100/50">
+            <div class="text-center">
+              <h2 class="modern-section-title text-4xl md:text-5xl lg:text-6xl font-light text-gray-800 mb-12 tracking-tight leading-tight" data-en="Ultra Purity" data-pl="Ultra Czystość">
+                Ultra Purity
+              </h2>
+              <div class="text-6xl md:text-7xl font-light text-emerald-700 mb-8 tracking-tight" data-en="< 0.3% ACIDITY" data-pl="< 0,3% KWASOWOŚĆ">< 0.3% ACIDITY</div>
+              <p class="text-xl md:text-2xl font-light leading-relaxed text-gray-600 max-w-4xl mx-auto mb-8" data-en="Acidity below 0.3%—significantly exceeding the 0.8% limit for Extra Virgin. Cold-pressed within 4 hours of harvest. Every drop is liquid medicine, packed with 250-300mg/kg polyphenols that protect your heart and boost immunity." data-pl="Kwasowość poniżej 0,3%—znacznie przekraczając limit 0,8% dla Extra Virgin. Tłoczona na zimno w ciągu 4 godzin od zbioru. Każda kropla to płynne lekarstwo, pełne 250-300mg/kg polifenoli chroniących serce i wzmacniających odporność.">
+                Acidity below 0.3%—significantly exceeding the 0.8% limit for Extra Virgin. Cold-pressed within 4 hours of harvest. Every drop is liquid medicine, packed with 250-300mg/kg polyphenols that protect your heart and boost immunity.
+              </p>
+              <div class="text-center">
+                <p class="text-2xl md:text-3xl font-medium text-emerald-700 italic max-w-3xl mx-auto" data-en="Protect your heart and fight inflammation with natural polyphenols." data-pl="Chroń swoje serce i walcz z zapaleniem dzięki naturalnym polifenolom.">
+                  Protect your heart and fight inflammation with natural polyphenols.
+                </p>
+              </div>
+            </div>
+          </section>
+
+          <section class="mb-32">
+            <div class="text-center mb-20">
+              <h2 class="modern-section-title text-4xl md:text-5xl lg:text-6xl font-light text-gray-800 mb-8 tracking-tight leading-tight" data-en="Exceptional Taste" data-pl="Wyjątkowy Smak">
+                Exceptional Taste
+              </h2>
+              <p class="text-xl md:text-2xl font-light leading-relaxed text-gray-600 max-w-4xl mx-auto mb-8" data-en="Silky smooth olive oil with notes of green apple and sweet almonds. No bitterness from trees that have witnessed empires rise and fall. This isn't just oil—it's tradition, taste, and health in every drop." data-pl="Jedwabiście gładka oliwa o nutach zielonego jabłka i słodkich migdałów. Bez goryczy z drzew, które widziały jak imperia powstają i upadają. To nie tylko oliwa—to tradycja, smak i zdrowie w każdej kropli.">
+                Silky smooth olive oil with notes of green apple and sweet almonds. No bitterness from trees that have witnessed empires rise and fall. This isn't just oil—it's tradition, taste, and health in every drop.
+              </p>
+              <div class="text-center">
+                <p class="text-2xl md:text-3xl font-medium text-amber-700 italic max-w-3xl mx-auto" data-en="Experience the rich, peppery taste of authentic Tunisian heritage." data-pl="Doświadcz bogatego, pieprznego smaku autentycznego tunezyjskiego dziedzictwa.">
+                  Experience the rich, peppery taste of authentic Tunisian heritage.
+                </p>
+              </div>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12">
+              <div class="modern-feature-card text-center">
+                <h3 class="text-gray-800 text-2xl font-light mb-6 tracking-tight" data-en="Global Recognition" data-pl="Globalne Uznanie">Global Recognition</h3>
+                <p class="text-gray-600 text-lg font-light leading-relaxed" data-en="Our numerous gold medals and awards confirm what Carthaginian merchants, Roman nobles, and Arab princes always knew—this oil doesn't just nourish the body, it preserves life itself." data-pl="Nasze liczne złote medale i nagrody potwierdzają to, co kartagińscy kupcy, rzymscy szlachcice i arabscy księcia zawsze wiedzieli—ta oliwa nie tylko odżywia ciało, ale zachowuje samo życie.">
+                  Our numerous gold medals and awards confirm what Carthaginian merchants, Roman nobles, and Arab princes always knew—this oil doesn't just nourish the body, it preserves life itself.
+                </p>
+              </div>
+
+              <div class="modern-feature-card text-center">
+                <h3 class="text-gray-800 text-2xl font-light mb-6 tracking-tight" data-en="500-Year Heritage" data-pl="500-letnie Dziedzictwo">500-Year Heritage</h3>
+                <p class="text-gray-600 text-lg font-light leading-relaxed" data-en="Located in the groves of Sidi Bou Ali, these exceptional trees have survived droughts, wars, and the fall of empires. Today they give us liquid gold—heritage sealed in a bottle." data-pl="Ulokowane w gajach Sidi Bou Ali, te wyjątkowe drzewa przetrwały susze, wojny i upadki imperiów. Dziś dają nam płynne złoto—dziedzictwo zamknięte w butelce.">
+                  Located in the groves of Sidi Bou Ali, these exceptional trees have survived droughts, wars, and the fall of empires. Today they give us liquid gold—heritage sealed in a bottle.
+                </p>
+              </div>
+
+              <div class="modern-feature-card text-center">
+                <h3 class="text-gray-800 text-2xl font-light mb-6 tracking-tight" data-en="Generational Craft" data-pl="Rzemiosło Pokoleń">Generational Craft</h3>
+                <p class="text-gray-600 text-lg font-light leading-relaxed" data-en="Laperla olive oil comes from work and tradition passed down through generations. These ancient beings give us the highest quality achievable from olives—a perfect blend of heritage, craft, and nature's wisdom." data-pl="Oliwa Laperla pochodzi z pracy i tradycji przekazywanych przez pokolenia. Te starożytne istoty dają nam najwyższą jakość, jaką można osiągnąć z oliwek—idealne połączenie dziedzictwa, rzemiosła i mądrości natury.">
+                  Laperla olive oil comes from work and tradition passed down through generations. These ancient beings give us the highest quality achievable from olives—a perfect blend of heritage, craft, and nature's wisdom.
+                </p>
+              </div>
+            </div>
+          </section>
+
+          <section class="mb-32 text-center">
+            <h2 class="modern-section-title text-4xl md:text-5xl lg:text-6xl font-light text-gray-800 mb-8 tracking-tight leading-tight" data-en="Experience Our Heritage" data-pl="Doświadcz Naszego Dziedzictwa">Experience Our Heritage</h2>
+            <p class="text-xl md:text-2xl font-light leading-relaxed text-gray-600 max-w-4xl mx-auto mb-16" data-en="Watch the journey from 500-year-old trees to liquid gold. Discover the craftsmanship and tradition behind every bottle of Laperla." data-pl="Zobacz podróż z 500-letnich drzew do płynnego złota. Odkryj rzemiosło i tradycję kryjącą się za każdą butelką Laperla.">
+              Watch the journey from 500-year-old trees to liquid gold. Discover the craftsmanship and tradition behind every bottle of Laperla.
+            </p>
+            <div class="w-full max-w-5xl mx-auto">
+              <div class="aspect-video rounded-3xl overflow-hidden shadow-2xl border border-gray-200">
+                <video
+                  class="w-full h-full object-cover"
+                  controls
+                  preload="metadata"
+                  poster="assets/images/video-poster.jpg"
+                >
+                  <source src="assets/videos/videoplayback.mp4" type="video/mp4">
+                  Your browser does not support the video tag.
+                </video>
+              </div>
+            </div>
+          </section>
+
+          <section class="text-center bg-gradient-to-br from-emerald-50/70 via-amber-50/50 to-green-50/70 rounded-3xl p-12 md:p-20 border border-emerald-200/50 shadow-sm">
+            <h2 class="text-gray-800 text-4xl md:text-5xl font-light mb-8 tracking-tight leading-tight" data-en="Ready to Experience 500 Years of Liquid Heritage?" data-pl="Gotowy na Doświadczenie 500 Lat Płynnego Dziedzictwa?">
+              Ready to Experience<br>500 Years of Liquid Heritage?
+            </h2>
+            <p class="text-xl md:text-2xl font-light leading-relaxed text-gray-600 max-w-4xl mx-auto mb-8" data-en="Join the legacy of Laperla—where history and health unite in every drop. From 500-year-old trees to your table, taste the liquid gold that empires treasured and modern science validates." data-pl="Dołącz do dziedzictwa Laperla—gdzie historia i zdrowie łączą się w każdej kropli. Z 500-letnich drzew na Twój stół, skosztuj płynnego złota, które ceniły imperia, a współczesna nauka potwierdza.">
+              Join the legacy of Laperla—where history and health unite in every drop. From 500-year-old trees to your table, taste the liquid gold that empires treasured and modern science validates.
+            </p>
+            <div class="text-center mb-12">
+              <p class="text-2xl md:text-3xl font-medium text-emerald-700 italic max-w-3xl mx-auto" data-en="Ideal for drizzling, dipping, or gifting — health never tasted so good." data-pl="Idealna do polewania, maczania lub jako prezent — zdrowie nigdy nie smakowało tak dobrze.">
+                Ideal for drizzling, dipping, or gifting — health never tasted so good.
+              </p>
+            </div>
+            <div class="flex flex-col sm:flex-row gap-6 justify-center items-center">
+              <a href="https://wa.me/48530846928?text=I%20want%20to%20try%20Laperla%20Premium%20Olive%20Oil" target="_blank" class="inline-block bg-gradient-to-r from-emerald-600 to-emerald-700 hover:from-emerald-700 hover:to-emerald-800 text-white px-12 py-4 rounded-full text-lg font-medium transition-all duration-300 hover:scale-105 hover:shadow-lg shadow-emerald-200">
+                <span data-en="Try Laperla Now" data-pl="Spróbuj Laperla Teraz">Try Laperla Now</span>
+              </a>
+              <a href="contact.html" class="inline-block border-2 border-amber-600 text-amber-700 hover:bg-amber-600 hover:text-white px-12 py-4 rounded-full text-lg font-medium transition-all duration-300 hover:scale-105 shadow-sm">
+                <span data-en="Get Custom Quote" data-pl="Otrzymaj Wycenę">Get Custom Quote</span>
+              </a>
+            </div>
+          </section>
+          </div>
+        </main>
+
+        <footer class="bg-white border-t border-gray-200">
+          <div class="max-w-7xl mx-auto px-6 md:px-10 py-12">
+            <div class="flex flex-wrap items-center justify-center gap-8 mb-8">
+              <a class="text-gray-600 hover:text-yellow-600 font-medium transition-colors" href="index.html" data-en="Home" data-pl="Strona Główna">Home</a>
+              <a class="text-gray-600 hover:text-yellow-600 font-medium transition-colors" href="product.html" data-en="Our Products" data-pl="Nasze Produkty">Our Products</a>
+              <a class="text-gray-600 hover:text-yellow-600 font-medium transition-colors" href="heritage.html" data-en="Our Story" data-pl="Nasza Historia">Our Story</a>
+              <a class="text-gray-600 hover:text-yellow-600 font-medium transition-colors" href="blog.html" data-en="Blog" data-pl="Blog">Blog</a>
+              <a class="text-gray-600 hover:text-yellow-600 font-medium transition-colors" href="contact.html" data-en="Contact" data-pl="Kontakt">Contact</a>
+            </div>
+            <div class="flex justify-center gap-6 mb-8">
+              <a href="https://instagram.com/yourprofile" target="_blank" class="text-gray-400 hover:text-yellow-600 transition-colors">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 256 256">
+                  <path d="M128,80a48,48,0,1,0,48,48A48.05,48.05,0,0,0,128,80Zm0,80a32,32,0,1,1,32-32A32,32,0,0,1,128,160ZM176,24H80A56.06,56.06,0,0,0,24,80v96a56.06,56.06,0,0,0,56,56h96a56.06,56.06,0,0,0,56-56V80A56.06,56.06,0,0,0,176,24Zm40,152a40,40,0,0,1-40,40H80a40,40,0,0,1-40-40V80A40,40,0,0,1,80,40h96a40,40,0,0,1,40,40ZM192,76a12,12,0,1,1-12-12A12,12,0,0,1,192,76Z"></path>
+                </svg>
+              </a>
+              <a href="https://facebook.com/yourprofile" target="_blank" class="text-gray-400 hover:text-yellow-600 transition-colors">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 256 256">
+                  <path d="M128,24A104,104,0,1,0,232,128,104.11,104.11,0,0,0,128,24Zm8,191.63V152h24a8,8,0,0,0,0-16H136V112a16,16,0,0,1,16-16h16a8,8,0,0,0,0-16H152a32,32,0,0,0-32,32v24H96a8,8,0,0,0,0-16h24v63.63a88,88,0,1,1,16,0Z"></path>
+                </svg>
+              </a>
+            </div>
+            <p class="text-center text-gray-500 font-medium" data-en="© 2025 Laperla. History and health in every drop. All rights reserved." data-pl="© 2025 Laperla. Historia i zdrowie w każdej kropli. Wszelkie prawa zastrzeżone.">
+              © 2025 Laperla. History and health in every drop. All rights reserved.
+            </p>
+          </div>
+        </footer>
+      </div>
+    </div>
+
+</body>
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Redirecting to Laperla Homepage</title>
+    
+    <script>
+        // BEST PRACTICE NOTE: This file should ideally be removed.
+        // Your web server should be configured to serve `index.html` by default when a user visits your root domain (e.g., laperlaoliveoil.com).
+        // The language detection and parameter logic can then be handled directly within index.html.
+
+        // Get language from URL params, cookie, or browser default
+        const urlParams = new URLSearchParams(window.location.search);
+        const urlLang = urlParams.get('lang');
+        const savedLanguage = Cookies.get('selectedLanguage');
+        const browserLang = navigator.language.startsWith('pl') ? 'pl' : 'en';
+        
+        // Prioritize URL lang > saved lang > browser lang
+        const lang = urlLang || savedLanguage || browserLang;
+        
+        // Construct the redirect URL with the language parameter
+        let redirectUrl = 'index.html?lang=' + lang;
+        
+        // Redirect to index.html
+        window.location.replace(redirectUrl);
+    </script>
+</head>
+<body>
+    <p>If you are not redirected automatically, <a href="index.html">click here</a>.</p>
+</body>
+</html>

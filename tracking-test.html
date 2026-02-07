@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Button Tracking Test - Laperla</title>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-3QNYCWKF1J"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-3QNYCWKF1J');
+    </script>
+    
+    <!-- Enhanced Button Click Tracking -->
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            line-height: 1.6;
+        }
+        
+        .test-section {
+            margin: 30px 0;
+            padding: 20px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            background: #f9f9f9;
+        }
+        
+        .test-button {
+            display: inline-block;
+            margin: 10px;
+            padding: 10px 20px;
+            background: #10b981;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            border: none;
+            cursor: pointer;
+        }
+        
+        .test-button:hover {
+            background: #059669;
+        }
+        
+        .external-link {
+            background: #f59e0b;
+        }
+        
+        .external-link:hover {
+            background: #d97706;
+        }
+        
+        .social-button {
+            background: #3b82f6;
+        }
+        
+        .social-button:hover {
+            background: #2563eb;
+        }
+        
+        #console-log {
+            background: #1f2937;
+            color: #10b981;
+            padding: 15px;
+            border-radius: 5px;
+            font-family: monospace;
+            font-size: 12px;
+            max-height: 200px;
+            overflow-y: auto;
+            margin-top: 20px;
+        }
+        
+        .language-selector {
+            margin: 20px 0;
+        }
+        
+        .modern-language-option {
+            display: inline-block;
+            margin: 5px;
+            padding: 8px 15px;
+            background: #6b7280;
+            color: white;
+            cursor: pointer;
+            border-radius: 4px;
+        }
+        
+        .modern-language-option:hover {
+            background: #4b5563;
+        }
+    </style>
+</head>
+<body>
+    <h1>🔍 Button Click Tracking Test Page</h1>
+    <p>This page is designed to test the Google Analytics button tracking implementation. Open your browser's developer console to see tracking events.</p>
+    
+    <div class="test-section">
+        <h2>Navigation Links</h2>
+        <a href="index.html" class="test-button modern-nav-link">Home</a>
+        <a href="product.html" class="test-button modern-nav-link">Products</a>
+        <a href="heritage.html" class="test-button modern-nav-link">Our Story</a>
+        <a href="contact.html" class="test-button modern-nav-link">Contact</a>
+    </div>
+    
+    <div class="test-section">
+        <h2>CTA Buttons</h2>
+        <a href="https://wa.me/48530846928?text=Test%20message" class="test-button external-link" target="_blank">WhatsApp CTA</a>
+        <a href="product.html" class="test-button">View Products</a>
+        <a href="contact.html" class="test-button">Get Quote</a>
+    </div>
+    
+    <div class="test-section">
+        <h2>Social Media Links</h2>
+        <a href="https://instagram.com/laperlaoliveoil" class="test-button social-button" target="_blank">Instagram</a>
+        <a href="https://facebook.com/laperlaoliveoil" class="test-button social-button" target="_blank">Facebook</a>
+        <a href="https://twitter.com/laperlaoliveoil" class="test-button social-button" target="_blank">Twitter</a>
+    </div>
+    
+    <div class="test-section">
+        <h2>Language Selector</h2>
+        <div class="language-selector">
+            <div class="modern-language-option" data-lang="en">English</div>
+            <div class="modern-language-option" data-lang="pl">Polski</div>
+        </div>
+    </div>
+    
+    <div class="test-section">
+        <h2>Form Elements</h2>
+        <form id="test-form" action="#" method="post">
+            <input type="text" placeholder="Name" style="margin: 5px; padding: 8px;">
+            <input type="email" placeholder="Email" style="margin: 5px; padding: 8px;">
+            <button type="submit" class="test-button">Submit Form</button>
+        </form>
+    </div>
+    
+    <div class="test-section">
+        <h2>External Links</h2>
+        <a href="https://google.com" class="test-button external-link" target="_blank">Google (External)</a>
+        <a href="https://wikipedia.org" class="test-button external-link" target="_blank">Wikipedia (External)</a>
+    </div>
+    
+    <div class="test-section">
+        <h2>Regular Buttons</h2>
+        <button class="test-button" onclick="alert('Regular button clicked!')">Regular Button</button>
+        <button class="test-button" id="modal-close">Modal Close Button</button>
+    </div>
+    
+    <div id="console-log">
+        <div><strong>Console Output:</strong></div>
+    </div>
+    
+    <script>
+        // Override console.log to display in the page
+        const originalLog = console.log;
+        const logDiv = document.getElementById('console-log');
+        
+        console.log = function(...args) {
+            originalLog.apply(console, args);
+            
+            // Display in our custom console
+            const logEntry = document.createElement('div');
+            logEntry.textContent = args.join(' ');
+            logDiv.appendChild(logEntry);
+            logDiv.scrollTop = logDiv.scrollHeight;
+        };
+        
+        // Prevent form submission for testing
+        document.getElementById('test-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert('Form submission prevented for testing. Check console for tracking data.');
+        });
+        
+        console.log('🚀 Tracking test page loaded. Click buttons to see tracking events!');
+    </script>
+</body>
+</html>
