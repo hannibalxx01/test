@@ -433,10 +433,10 @@
                     </svg>
                   </button>
                   <div class="modern-language-menu absolute top-full right-0 mt-2 bg-white rounded-xl shadow-lg border border-gray-200 py-2 min-w-[120px] opacity-0 invisible transition-all duration-200">
-                    <a href="../contact.html" class="modern-language-option flex items-center gap-3 px-4 py-2 text-sm hover:bg-gray-50 cursor-pointer" data-lang="en">
+                    <div class="modern-language-option flex items-center gap-3 px-4 py-2 text-sm hover:bg-gray-50 cursor-pointer" data-lang="en" onclick="switchToEnglish()">
                       <span class="fi fi-us"></span>
                       English
-                    </a>
+                    </div>
                     <div class="modern-language-option flex items-center gap-3 px-4 py-2 text-sm hover:bg-gray-50 cursor-pointer bg-gray-50" data-lang="pl">
                       <span class="fi fi-pl"></span>
                       Polski
@@ -468,10 +468,10 @@
               <div class="border-t border-gray-200 pt-4 mt-4">
                 <p class="text-gray-500 text-sm font-medium mb-3">Język</p>
                 <div class="space-y-2">
-                  <a href="../contact.html" class="mobile-language-option flex items-center gap-3 w-full px-2 py-2 text-gray-700 hover:bg-gray-50 rounded-lg transition-colors" data-lang="en">
+                  <button class="mobile-language-option flex items-center gap-3 w-full px-2 py-2 text-gray-700 hover:bg-gray-50 rounded-lg transition-colors" data-lang="en" onclick="switchToEnglish()">
                     <span class="fi fi-us"></span>
                     <span>English</span>
-                  </a>
+                  </button>
                   <button class="mobile-language-option flex items-center gap-3 w-full px-2 py-2 text-gray-700 hover:bg-gray-50 rounded-lg transition-colors bg-gray-50" data-lang="pl">
                     <span class="fi fi-pl"></span>
                     <span>Polski</span>
@@ -663,6 +663,15 @@
           updateAllLinks('pl');
         }
       })();
+
+      // Language switching function that overrides geo-detection
+      function switchToEnglish() {
+        // Set explicit user choice for English with recent timestamp
+        Cookies.set('selectedLanguage', 'en', { expires: 7 });
+        Cookies.set('selectedLanguage_timestamp', Date.now().toString(), { expires: 7 });
+        // Redirect to English version
+        window.location.href = '../';
+      }
 
       // Modern performance optimizations
       document.addEventListener('DOMContentLoaded', () => {

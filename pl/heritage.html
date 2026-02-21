@@ -265,7 +265,7 @@
                     </svg>
                   </button>
                   <div class="modern-language-menu absolute top-full right-0 mt-2 bg-white rounded-xl shadow-lg border border-gray-200 py-2 min-w-[120px] opacity-0 invisible transition-all duration-200">
-                    <div class="modern-language-option flex items-center gap-3 px-4 py-2 text-sm hover:bg-gray-50 cursor-pointer" data-lang="en">
+                    <div class="modern-language-option flex items-center gap-3 px-4 py-2 text-sm hover:bg-gray-50 cursor-pointer" data-lang="en" onclick="switchToEnglish()">
                       <span class="fi fi-us"></span>
                       English
                     </div>
@@ -300,7 +300,7 @@
               <div class="border-t border-gray-200 pt-4 mt-4">
                 <p class="text-gray-500 text-sm font-medium mb-3">Język</p>
                 <div class="space-y-2">
-                  <button class="mobile-language-option flex items-center gap-3 w-full px-2 py-2 text-gray-700 hover:bg-gray-50 rounded-lg transition-colors" data-lang="en">
+                  <button class="mobile-language-option flex items-center gap-3 w-full px-2 py-2 text-gray-700 hover:bg-gray-50 rounded-lg transition-colors" data-lang="en" onclick="switchToEnglish()">
                     <span class="fi fi-us"></span>
                     <span>English</span>
                   </button>
@@ -530,6 +530,15 @@
         }
       })();
 
+      // Language switching function that overrides geo-detection
+      function switchToEnglish() {
+        // Set explicit user choice for English with recent timestamp
+        Cookies.set('selectedLanguage', 'en', { expires: 7 });
+        Cookies.set('selectedLanguage_timestamp', Date.now().toString(), { expires: 7 });
+        // Redirect to English version
+        window.location.href = '../';
+      }
+
       // Modern performance optimizations
       document.addEventListener('DOMContentLoaded', () => {
         // Initialize Intersection Observer for animations
@@ -574,14 +583,6 @@
         }
         setActiveNav();
 
-        function switchLanguage(lang) {
-          if (lang === 'en') {
-            window.location.href = '../heritage.html';
-          } else {
-            // Already on Polish version
-          }
-        }
-
         // Language dropdown functionality
         if (languageButton && languageMenu) {
           languageButton.addEventListener('click', (e) => {
@@ -597,30 +598,15 @@
           });
         }
 
-        languageOptions.forEach(option => {
-          option.addEventListener('click', () => {
-            const lang = option.getAttribute('data-lang');
-            switchLanguage(lang);
-          });
-        });
-
         // Mobile menu functionality
         const mobileMenuButton = document.getElementById('mobile-menu-button');
         const mobileMenu = document.querySelector('.mobile-menu');
-        const mobileLanguageOptions = document.querySelectorAll('.mobile-language-option');
 
         if (mobileMenuButton && mobileMenu) {
           mobileMenuButton.addEventListener('click', () => {
             mobileMenu.classList.toggle('hidden');
           });
         }
-
-        mobileLanguageOptions.forEach(option => {
-          option.addEventListener('click', () => {
-            const lang = option.getAttribute('data-lang');
-            switchLanguage(lang);
-          });
-        });
       });
     </script>
 </body>

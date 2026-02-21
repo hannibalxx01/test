@@ -294,13 +294,22 @@ function initializeLanguageDropdown() {
       const lang = option.getAttribute('data-lang');
       
       if (LANGUAGE_CONFIG.supported.includes(lang)) {
-        // Update current page
-        updateLanguage(lang);
+        // Set user preference cookie with timestamp
+        Cookies.set(LANGUAGE_CONFIG.cookieName, lang, { expires: LANGUAGE_CONFIG.cookieExpiry });
+        Cookies.set(LANGUAGE_CONFIG.cookieName + '_timestamp', Date.now().toString(), { expires: LANGUAGE_CONFIG.cookieExpiry });
         
-        // Update URL without reload
-        const url = new URL(window.location);
-        url.searchParams.set('lang', lang);
-        window.history.pushState({}, '', url);
+        // Redirect to appropriate language version
+        if (lang === 'pl') {
+          const currentPath = window.location.pathname;
+          const currentPage = currentPath.split('/').pop() || 'index.html';
+          window.location.href = `/pl/${currentPage === 'index.html' ? '' : currentPage}`;
+        } else {
+          // Stay on current English page, just update content
+          updateLanguage(lang);
+          const url = new URL(window.location);
+          url.searchParams.set('lang', lang);
+          window.history.pushState({}, '', url);
+        }
         
         // Close dropdown
         if (languageMenu) {
@@ -318,13 +327,22 @@ function initializeLanguageDropdown() {
       const lang = option.getAttribute('data-lang');
       
       if (LANGUAGE_CONFIG.supported.includes(lang)) {
-        // Update current page
-        updateLanguage(lang);
+        // Set user preference cookie with timestamp
+        Cookies.set(LANGUAGE_CONFIG.cookieName, lang, { expires: LANGUAGE_CONFIG.cookieExpiry });
+        Cookies.set(LANGUAGE_CONFIG.cookieName + '_timestamp', Date.now().toString(), { expires: LANGUAGE_CONFIG.cookieExpiry });
         
-        // Update URL without reload
-        const url = new URL(window.location);
-        url.searchParams.set('lang', lang);
-        window.history.pushState({}, '', url);
+        // Redirect to appropriate language version
+        if (lang === 'pl') {
+          const currentPath = window.location.pathname;
+          const currentPage = currentPath.split('/').pop() || 'index.html';
+          window.location.href = `/pl/${currentPage === 'index.html' ? '' : currentPage}`;
+        } else {
+          // Stay on current English page, just update content
+          updateLanguage(lang);
+          const url = new URL(window.location);
+          url.searchParams.set('lang', lang);
+          window.history.pushState({}, '', url);
+        }
         
         // Close mobile menu
         const mobileMenu = document.querySelector('.mobile-menu');
