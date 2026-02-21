@@ -34,7 +34,7 @@ A premium static website for Laperla Olive Oil, showcasing authentic Tunisian ex
 ### Products
 - **Chemlali Edition Prestige**: Premium extra virgin olive oil from ancient trees
 - **Certifications**: ECO-CERT, USDA Organic, Organic Bio certified
-- **Quality Specs**: <0.3% acidity, 250-300mg/kg polyphenols, cold-pressed within 4 hours
+- **Quality Specs**: <0.3% acidity, >600mg/kg polyphenols, cold-pressed within 4 hours
 
 ### Heritage
 - **500-Year Legacy**: Ancient Chemlali olive trees surviving droughts, wars, and empires
