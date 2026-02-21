@@ -4,6 +4,8 @@ Allow: /
 # Sitemap
 Sitemap: https://www.laperlaoliveoil.com/sitemap.xml
 
-# Language-specific pages
-Allow: /*lang=en
-Allow: /*lang=pl
+# Language-specific directories
+Allow: /pl/
+
+# Allow indexing of all Polish language pages
+Allow: /pl/*.html

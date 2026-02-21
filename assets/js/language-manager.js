@@ -33,8 +33,7 @@ function detectAndRedirect() {
   const isRecentChoice = cookieAge && (Date.now() - parseInt(cookieAge)) < 24 * 60 * 60 * 1000; // 24 hours
 
   if (savedLanguage && LANGUAGE_CONFIG.supported.includes(savedLanguage) && isRecentChoice) {
-    const currentPage = window.location.pathname.split('/').pop() || 'index.html';
-    window.location.href = `${currentPage}?lang=${savedLanguage}`;
+    redirectToLanguageVersion(savedLanguage);
     return;
   }
 
@@ -44,18 +43,33 @@ function detectAndRedirect() {
   
   console.log('🌐 Browser language detected:', browserLang, '→', browserLangCode);
 
-  // Proceed with browser language immediately
-  console.log(`🔄 Using browser language: ${browserLangCode.toUpperCase()}`);
-  
-  // Save choice with timestamp
-  Cookies.set(LANGUAGE_CONFIG.cookieName, browserLangCode, { expires: LANGUAGE_CONFIG.cookieExpiry });
-  Cookies.set(LANGUAGE_CONFIG.cookieName + '_timestamp', Date.now().toString(), { expires: LANGUAGE_CONFIG.cookieExpiry });
-  
-  const currentPage = window.location.pathname.split('/').pop() || 'index.html';
-  window.location.href = `${currentPage}?lang=${browserLangCode}`;
-
-  // Optional: Try geolocation in background for future visits (non-blocking)
-  setTimeout(() => tryGeolocationForFutureVisits(browserLangCode), 1000);
+  // Quick geolocation check for immediate redirect
+  fetch('https://api.ip-api.com/json/?fields=countryCode', {
+    signal: AbortSignal.timeout(3000) // 3 second timeout
+  })
+    .then(response => response.json())
+    .then(data => {
+      const geoLang = data.countryCode === 'PL' ? 'pl' : 'en';
+      console.log('🌍 Geo detected:', data.countryCode, '→', geoLang.toUpperCase());
+      
+      // Use geo if available, otherwise browser language
+      const finalLang = geoLang;
+      
+      // Save choice with timestamp
+      Cookies.set(LANGUAGE_CONFIG.cookieName, finalLang, { expires: LANGUAGE_CONFIG.cookieExpiry });
+      Cookies.set(LANGUAGE_CONFIG.cookieName + '_timestamp', Date.now().toString(), { expires: LANGUAGE_CONFIG.cookieExpiry });
+      
+      redirectToLanguageVersion(finalLang);
+    })
+    .catch(error => {
+      console.log('🔌 Geo check failed, using browser language:', browserLangCode.toUpperCase());
+      
+      // Fallback to browser language
+      Cookies.set(LANGUAGE_CONFIG.cookieName, browserLangCode, { expires: LANGUAGE_CONFIG.cookieExpiry });
+      Cookies.set(LANGUAGE_CONFIG.cookieName + '_timestamp', Date.now().toString(), { expires: LANGUAGE_CONFIG.cookieExpiry });
+      
+      redirectToLanguageVersion(browserLangCode);
+    });
 }
 
 // Background geolocation check (non-blocking)
@@ -106,15 +120,50 @@ function tryGeolocationForFutureVisits(fallbackLang) {
     });
 }
 
+// Redirect to appropriate language version
+function redirectToLanguageVersion(lang) {
+  const currentPath = window.location.pathname;
+  const currentPage = currentPath.split('/').pop() || 'index.html';
+  
+  // If we're already on the correct language path, don't redirect
+  if (lang === 'pl' && currentPath.startsWith('/pl/')) {
+    return;
+  }
+  if (lang === 'en' && !currentPath.startsWith('/pl/')) {
+    return;
+  }
+  
+  // Redirect to appropriate language version
+  if (lang === 'pl') {
+    // Redirect to Polish version
+    window.location.href = `/pl/${currentPage === 'index.html' ? '' : currentPage}`;
+  } else {
+    // Redirect to English version (root)
+    if (currentPath.startsWith('/pl/')) {
+      const page = currentPath.replace('/pl/', '') || '';
+      window.location.href = `/${page}`;
+    } else {
+      // Already on English version, just update with language parameter
+      const url = new URL(window.location);
+      url.searchParams.set('lang', 'en');
+      window.history.replaceState({}, '', url);
+    }
+  }
+}
+
 // Initialize smart language detection
 function initializeGeolocation() {
   const urlParams = new URLSearchParams(window.location.search);
   const hasValidLang = urlParams.get('lang') && LANGUAGE_CONFIG.supported.includes(urlParams.get('lang'));
+  const currentPath = window.location.pathname;
   
-  // Always run detection unless there's a valid language parameter
-  if (!hasValidLang) {
-    detectAndRedirect();
+  // Skip detection if we're already on a language-specific path or have valid lang param
+  if (hasValidLang || currentPath.startsWith('/pl/')) {
+    return;
   }
+  
+  // Run detection for root pages
+  detectAndRedirect();
 }
 
 // Update all internal links with current language

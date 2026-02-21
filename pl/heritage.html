@@ -1,0 +1,627 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Poznaj dziedzictwo oliwy Laperla - 500 lat tradycji ze starożytnych drzew Chemlali w Sidi Bou Ali, Tunezja. Wiele pokoleń rzemiosła." />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preload" as="style" onload="this.onload=null;this.rel='stylesheet'" href="https://fonts.googleapis.com/css2?display=swap&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap" />
+    <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?display=swap&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap" /></noscript>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flag-icons/css/flag-icons.min.css" />
+    <link rel="alternate" hreflang="en" href="https://laperlaoliveoil.com/heritage.html" />
+    <link rel="alternate" hreflang="pl" href="https://laperlaoliveoil.com/pl/heritage.html" />
+    <link rel="alternate" hreflang="x-default" href="https://laperlaoliveoil.com/heritage.html" />
+    <link rel="canonical" href="https://laperlaoliveoil.com/pl/heritage.html" />
+    <title>Nasze Dziedzictwo | 500 Lat Płynnego Złota | Laperla</title>
+    <link rel="icon" type="image/x-icon" href="data:image/x-icon;base64," />
+    <link rel="stylesheet" >
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            fontFamily: {
+              'display': ['Playfair Display', 'serif'],
+              'sans': ['Inter', 'system-ui', 'sans-serif']
+            },
+            animation: {
+              'fade-in': 'fadeIn 0.6s ease-out forwards',
+              'slide-up': 'slideUp 0.8s ease-out forwards',
+              'float': 'float 6s ease-in-out infinite'
+            }
+          }
+        }
+      }
+    </script>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries,typography"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            fontFamily: {
+              'display': ['Playfair Display', 'serif'],
+              'sans': ['Inter', 'system-ui', 'sans-serif']
+            },
+            animation: {
+              'fade-in': 'fadeIn 0.6s ease-out forwards',
+              'slide-up': 'slideUp 0.8s ease-out forwards',
+              'float': 'float 6s ease-in-out infinite'
+            }
+          }
+        }
+      }
+    </script>
+    <link rel="stylesheet" href="../assets/css/styles.css">
+    
+    <script src="https://cdn.jsdelivr.net/npm/js-cookie@3.0.5/dist/js.cookie.min.js"></script>
+    <script src="../assets/js/language-manager.js"></script>
+    <meta name="keywords" content="dziedzictwo Laperla, starożytne drzewa oliwne, Sidi Bou Ali, oliwki Chemlali, tradycja Tunezji, rzemiosło pokoleń">
+
+    <!-- Polish Structured Data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebPage",
+      "name": "Nasze Dziedzictwo - Laperla",
+      "description": "Poznaj dziedzictwo oliwy Laperla - 500 lat tradycji ze starożytnych drzew Chemlali w Sidi Bou Ali, Tunezja. Wiele pokoleń rzemiosła.",
+      "url": "https://laperlaoliveoil.com/pl/heritage.html",
+      "inLanguage": "pl-PL",
+      "isPartOf": {
+        "@type": "WebSite",
+        "name": "Laperla",
+        "url": "https://laperlaoliveoil.com/pl/"
+      },
+      "about": {
+        "@type": "Organization",
+        "name": "Laperla",
+        "description": "Producent premium oliwy extra virgin z 500-letnich drzew Chemlali w Tunezji",
+        "foundingDate": "1523",
+        "location": {
+          "@type": "Place",
+          "name": "Sidi Bou Ali, Tunezja"
+        }
+      }
+    }
+    </script>
+
+    <style>
+      /* Custom animations */
+      @keyframes fadeIn {
+        from { opacity: 0; transform: translateY(30px); }
+        to { opacity: 1; transform: translateY(0); }
+      }
+      
+      @keyframes slideUp {
+        from { opacity: 0; transform: translateY(50px); }
+        to { opacity: 1; transform: translateY(0); }
+      }
+      
+      @keyframes float {
+        0%, 100% { transform: translateY(0px); }
+        50% { transform: translateY(-10px); }
+      }
+      
+      /* Enhanced accessibility */
+      .skip-link {
+        position: absolute;
+        top: -40px;
+        left: 6px;
+        background: var(--gold-600);
+        color: white;
+        padding: 8px;
+        text-decoration: none;
+        border-radius: 4px;
+        z-index: 1000;
+        transition: top 0.3s;
+      }
+      
+      .skip-link:focus {
+        top: 6px;
+      }
+
+      .language-dropdown {
+        position: relative;
+      }
+      
+      .fi {
+        width: 20px;
+        height: 15px;
+        border-radius: 2px;
+      }
+
+      /* Inspired Hero Section Styles */
+      .hero-inspired {
+        border-radius: 0;
+        margin: -2rem -10rem 0 -10rem;
+        padding: 0 10rem;
+      }
+      
+      .hero-title {
+        text-shadow: 0 2px 20px rgba(0, 0, 0, 0.5);
+        letter-spacing: -0.02em;
+      }
+      
+      .hero-subtitle {
+        text-shadow: 0 1px 10px rgba(0, 0, 0, 0.3);
+        font-weight: 300;
+      }
+      
+      .hero-content {
+        animation: fadeInUp 1.2s ease-out;
+      }
+      
+      @keyframes fadeInUp {
+        from {
+          opacity: 0;
+          transform: translateY(30px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+      
+      /* Modern Typography Styles */
+      .modern-section-title {
+        letter-spacing: -0.02em;
+        line-height: 1.1;
+      }
+      
+      /* Navigation styles moved to central CSS */
+      
+      /* Language dropdown styles moved to central CSS */
+
+      /* Story Highlight Styles */
+      .story-highlight {
+        background: linear-gradient(135deg, rgba(16, 185, 129, 0.05) 0%, rgba(245, 158, 11, 0.05) 100%);
+        border: 1px solid rgba(16, 185, 129, 0.1);
+        border-left: 4px solid #10b981;
+        padding: 2.5rem;
+        margin: 3rem 0;
+        border-radius: 1.5rem;
+        font-style: italic;
+        color: #065f46;
+        box-shadow: 0 10px 40px rgba(0, 0, 0, 0.05);
+        position: relative;
+        overflow: hidden;
+        transition: all 0.3s ease;
+      }
+
+      .story-highlight:hover {
+        border-color: rgba(16, 185, 129, 0.2);
+        box-shadow: 0 15px 50px rgba(16, 185, 129, 0.1);
+      }
+
+      @media (max-width: 768px) {
+        .hero-inspired {
+          margin: -2rem -6rem 0 -6rem;
+          padding: 0 6rem;
+          min-height: 70vh;
+        }
+        
+        .hero-title {
+          font-size: 3rem;
+          line-height: 1.1;
+        }
+        
+        .hero-subtitle {
+          font-size: 1.25rem;
+          margin-bottom: 2rem;
+        }
+        
+        .modern-section-title {
+          font-size: 2rem;
+        }
+        
+        .story-highlight {
+          padding: 1.5rem;
+          margin: 2rem 0;
+        }
+      }
+    </style>
+</head>
+<body class="bg-gray-50">
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-3QNYCWKF1J"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-3QNYCWKF1J');
+    </script>
+    
+    <!-- Enhanced Button Click Tracking -->
+
+    <a href="#main-content" class="skip-link">Przejdź do głównej treści</a>
+    <div class="relative flex size-full min-h-screen flex-col bg-gradient-to-br from-gray-50 to-white group/design-root overflow-x-hidden">
+      <div class="layout-container flex h-full grow flex-col">
+        <header class="modern-nav sticky top-0 z-50 bg-white/90 backdrop-blur-lg border-b border-gray-200/60">
+          <div class="max-w-7xl mx-auto px-6 md:px-10">
+            <div class="flex items-center justify-between h-20">
+          <a href="../index.html" class="flex items-center text-gray-900 no-underline group">
+                <div class="flex flex-col">
+                  <h2 class="text-gray-900 text-2xl font-bold tracking-wide font-display">LAPERLA</h2>
+                  <p class="text-gray-500 text-xs font-light tracking-wide">Premium Oliwa z Oliwek</p>
+                </div>
+              </a>
+              
+              <!-- Navigation Links -->
+              <nav class="hidden lg:flex items-center space-x-12">
+                <a class="modern-nav-link text-gray-700 text-base font-light hover:text-emerald-700 transition-colors duration-300" id="nav-home" href="../index.html">Strona Główna</a>
+                <a class="modern-nav-link text-gray-700 text-base font-light hover:text-emerald-700 transition-colors duration-300" id="nav-products" href="product.html">Produkty</a>
+                <a class="modern-nav-link text-gray-700 text-base font-light hover:text-emerald-700 transition-colors duration-300" id="nav-story" href="heritage.html">Nasza Historia</a>
+                <a class="modern-nav-link text-gray-700 text-base font-light hover:text-emerald-700 transition-colors duration-300" id="nav-blog" href="../blog.html">Blog</a>
+                <a class="modern-nav-link text-gray-700 text-base font-light hover:text-emerald-700 transition-colors duration-300" id="nav-contact" href="../contact.html">Kontakt</a>
+              </nav>
+              
+              <!-- Right Side Actions -->
+              <div class="flex items-center gap-6">
+                <!-- Language Selector -->
+                <div class="modern-language-dropdown relative">
+                  <button class="modern-language-button flex items-center gap-2 px-4 py-2 text-gray-600 hover:text-gray-900 transition-colors duration-300">
+                    <span class="fi fi-pl"></span>
+                    <span class="selected-language text-sm font-light">Polski</span>
+                    <svg class="w-4 h-4 transition-transform duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                    </svg>
+                  </button>
+                  <div class="modern-language-menu absolute top-full right-0 mt-2 bg-white rounded-xl shadow-lg border border-gray-200 py-2 min-w-[120px] opacity-0 invisible transition-all duration-200">
+                    <div class="modern-language-option flex items-center gap-3 px-4 py-2 text-sm hover:bg-gray-50 cursor-pointer" data-lang="en">
+                      <span class="fi fi-us"></span>
+                      English
+                    </div>
+                    <div class="modern-language-option flex items-center gap-3 px-4 py-2 text-sm hover:bg-gray-50 cursor-pointer" data-lang="pl">
+                      <span class="fi fi-pl"></span>
+                      Polski
+                    </div>
+                  </div>
+                </div>
+                
+                <!-- Mobile Menu Button -->
+                <button class="lg:hidden p-2 text-gray-600 hover:text-gray-900" id="mobile-menu-button">
+                  <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                  </svg>
+                </button>
+              </div>
+              
+            </div>
+          </div>
+          
+          <!-- Mobile Menu -->
+          <div class="lg:hidden mobile-menu hidden bg-white border-t border-gray-200">
+            <div class="px-6 py-4 space-y-4">
+              <a class="block text-gray-700 text-lg font-light hover:text-emerald-700 transition-colors" href="../index.html">Strona Główna</a>
+              <a class="block text-gray-700 text-lg font-light hover:text-emerald-700 transition-colors" href="product.html">Produkty</a>
+              <a class="block text-gray-700 text-lg font-light hover:text-emerald-700 transition-colors" href="heritage.html">Nasza Historia</a>
+              <a class="block text-gray-700 text-lg font-light hover:text-emerald-700 transition-colors" href="../blog.html">Blog</a>
+              <a class="block text-gray-700 text-lg font-light hover:text-emerald-700 transition-colors" href="../contact.html">Kontakt</a>
+              
+              <!-- Mobile Language Selector -->
+              <div class="border-t border-gray-200 pt-4 mt-4">
+                <p class="text-gray-500 text-sm font-medium mb-3">Język</p>
+                <div class="space-y-2">
+                  <button class="mobile-language-option flex items-center gap-3 w-full px-2 py-2 text-gray-700 hover:bg-gray-50 rounded-lg transition-colors" data-lang="en">
+                    <span class="fi fi-us"></span>
+                    <span>English</span>
+                  </button>
+                  <button class="mobile-language-option flex items-center gap-3 w-full px-2 py-2 text-gray-700 hover:bg-gray-50 rounded-lg transition-colors" data-lang="pl">
+                    <span class="fi fi-pl"></span>
+                    <span>Polski</span>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </header>
+
+        <main id="main-content" class="flex-1">
+          <!-- Page Header -->
+          <section class="bg-gradient-to-br from-emerald-50 to-amber-50 py-16 md:py-20">
+            <div class="max-w-7xl mx-auto px-6 md:px-10 text-center">
+              <h1 class="text-4xl md:text-5xl lg:text-6xl font-light text-gray-800 mb-6 tracking-tight leading-tight font-display">
+                Nasze Dziedzictwo
+              </h1>
+              <p class="text-xl md:text-2xl font-light text-gray-600 max-w-3xl mx-auto leading-relaxed">
+                Od starożytnych gajów oliwnych do Twojego stołu: Naszą misją jest dostarczenie Ci czystej, niemieszanej oliwy extra virgin dokładnie takiej, jaką zamierzyła natura—zachowując każdą korzyść zdrowotną, każdą nutę smakową, każdą kroplę płynnego dziedzictwa.
+              </p>
+            </div>
+          </section>
+
+          <div class="max-w-7xl mx-auto px-6 md:px-10 py-8">
+
+          <!-- Vision Section -->
+          <section class="mb-20">
+            <div class="bg-gradient-to-br from-emerald-50/80 to-amber-50/80 rounded-3xl p-8 md:p-16 border border-emerald-100/50 shadow-sm">
+              <h2 class="text-3xl md:text-4xl lg:text-5xl font-light text-gray-800 mb-8 tracking-tight leading-tight text-center font-display">Nasza Święta Obietnica</h2>
+              <div class="max-w-4xl mx-auto">
+                <p class="text-xl md:text-2xl font-light text-gray-700 mb-8 leading-relaxed text-center">
+                  <strong>Z Krainy Oliwek do Serca Twojego Domu</strong>
+                </p>
+                <p class="text-lg md:text-xl leading-relaxed text-gray-600 mb-8">
+                  Każda butelka Laperla nosi święte przymierze: dostarczyć najczystszy dar natury niezmieniony od momentu, gdy opuszcza nasze starożytne drzewa. <strong>Odmawiamy mieszania, odmawiamy przetwarzania, odmawiamy kompromisów.</strong> To, co płynie z naszych gajów, płynie na Twój stół—nietknięte, niezmienione, żywe z pełnym spektrum korzyści zdrowotnych, które uczyniły oliwę najcenniejszym eliksirem ludzkości przez ponad 4000 lat.
+                </p>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mt-12">
+                  <div class="text-center">
+                    <div class="w-16 h-16 mx-auto mb-4 bg-emerald-100 rounded-full flex items-center justify-center">
+                      <svg class="w-8 h-8 text-emerald-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                      </svg>
+                    </div>
+                    <h3 class="text-lg font-semibold text-gray-800 mb-2">Bez Mieszania</h3>
+                    <p class="text-gray-600 text-sm">Czysta doskonałość single-origin</p>
+                  </div>
+                  <div class="text-center">
+                    <div class="w-16 h-16 mx-auto mb-4 bg-emerald-100 rounded-full flex items-center justify-center">
+                      <svg class="w-8 h-8 text-emerald-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                      </svg>
+                    </div>
+                    <h3 class="text-lg font-semibold text-gray-800 mb-2">Bez Przetwarzania</h3>
+                    <p class="text-gray-600 text-sm">Doskonałość natury zachowana</p>
+                  </div>
+                  <div class="text-center">
+                    <div class="w-16 h-16 mx-auto mb-4 bg-emerald-100 rounded-full flex items-center justify-center">
+                      <svg class="w-8 h-8 text-emerald-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"></path>
+                      </svg>
+                    </div>
+                    <h3 class="text-lg font-semibold text-gray-800 mb-2">Wszystkie Korzyści</h3>
+                    <p class="text-gray-600 text-sm">Maksymalna ochrona zdrowia</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <section class="mb-20">
+            <h2 class="modern-section-title text-4xl md:text-5xl lg:text-6xl font-light text-gray-800 mb-20 tracking-tight leading-tight text-center">Historia Laperla</h2>
+            <div class="story-highlight">
+              <div class="relative z-10">
+                <p class="text-lg md:text-xl leading-relaxed font-display">
+                  W sercu Tunezji, na żyznych ziemiach Sidi Bou Ali, nasza historia rozwija się wśród gajów, które odbijają starożytne pola Zembra z czasów rzymskich. Od pokoleń nasza rodzina dba o te nasłonecznione drzewa, muskane śródziemnomorskimi bryzami, podtrzymując rzemiosło sprzed ponad 500 lat. Z tego bogatego terroir zbieramy oliwki pełne polifenoli—naturalnych antyoksydantów—łącząc tradycję z innowacją, by zamknąć w butelkach dziedzictwo, które karmi ciało i duszę.
+                </p>
+              </div>
+            </div>
+          </section>
+
+          <section class="mb-20">
+            <h2 class="modern-section-title text-4xl md:text-5xl lg:text-6xl font-light text-gray-800 mb-20 tracking-tight leading-tight text-center">Nasze Gaje Oliwne</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+              <div class="bg-white rounded-2xl p-6 shadow-lg">
+                <div class="aspect-video mb-4 rounded-xl overflow-hidden" style='background-image: url("../assets/images/threewomen.jpg"); background-size: cover; background-position: center;'></div>
+                <h3 class="text-gray-900 text-xl font-bold mb-3 font-display">Posiadłość Sidi Bou Ali</h3>
+                <p class="text-gray-600 leading-relaxed">
+                  Położona w sercu Tunezji, ta posiadłość uprawia <a href="../blog.html" class="text-emerald-700 hover:text-emerald-800 underline decoration-emerald-700/30 hover:decoration-emerald-800 transition-colors">oliwki Chemlali</a>, słynące z gładkiego, zrównoważonego smaku.
+                </p>
+              </div>
+
+              <div class="bg-white rounded-2xl p-6 shadow-lg">
+                <div class="aspect-video mb-4 rounded-xl overflow-hidden" style='background-image: url("../assets/images/dougga.jpg"); background-size: cover; background-position: center;'></div>
+                <h3 class="text-gray-900 text-xl font-bold mb-3 font-display">Sad Zembra</h3>
+                <p class="text-gray-600 leading-relaxed">
+                  Odzwierciedlając rzymskie dziedzictwo, ten sad daje oliwki Chetoui o żywych, ostrych nutach.
+                </p>
+              </div>
+
+              <div class="bg-white rounded-2xl p-6 shadow-lg">
+                <div class="aspect-video mb-4 rounded-xl overflow-hidden" style='background-image: url("../assets/images/tunisia.jpg"); background-size: cover; background-position: center;'></div>
+                <h3 class="text-gray-900 text-xl font-bold mb-3 font-display">Gaj Nadmorskiej Bryzy</h3>
+                <p class="text-gray-600 leading-relaxed">
+                  Musnięte morskim powietrzem, te starożytne drzewa dają oliwy bogate w antyoksydanty i subtelne ziołowe aromaty.
+                </p>
+              </div>
+            </div>
+          </section>
+
+          <section class="mb-20">
+            <h2 class="modern-section-title text-4xl md:text-5xl lg:text-6xl font-light text-gray-800 mb-20 tracking-tight leading-tight text-center">Tworzenie Laperla</h2>
+            <div class="story-highlight">
+              <div class="relative z-10">
+                <p class="text-lg md:text-xl leading-relaxed font-display">
+                  Od gaju do butelki, nasz proces jest święty w swojej prostocie: Ręcznie zbieramy oliwki w pełni dojrzałości z nasłonecznionych gajów Sidi Bou Ali, tłocząc je na zimno w ciągu godzin, aby uchwycić ich żywą esencję. <strong>Bez mieszania z gorszymi oliwami. Bez chemicznego przetwarzania. Bez skrótów.</strong> Nasza flagowa Chemlali Edition Prestige—czysta jak za czasów naszych przodków, którzy po raz pierwszy tłoczyli te same drzewa—dostarcza pełną moc odżywczą, która uczyniła oliwę fundamentem śródziemnomorskiej długowieczności. Każda butelka nosi kompletne spektrum polifenoli, antyoksydantów i zdrowych tłuszczów dokładnie tak, jak zaprojektowała je natura. <strong>To nie jest tylko oliwa—to płynne wellness, podróżujące niezmienione z naszej starożytnej gleby na Twój nowoczesny stół.</strong>
+                </p>
+              </div>
+            </div>
+
+            <div class="grid grid-cols-3 gap-4 mt-8">
+              <div class="aspect-video rounded-xl overflow-hidden" style='background-image: url("../assets/images/porte.jpg"); background-size: cover; background-position: center;'></div>
+              <div class="aspect-video rounded-xl overflow-hidden" style='background-image: url("../assets/images/cut.jpg"); background-size: cover; background-position: center;'></div>
+              <div class="aspect-video rounded-xl overflow-hidden" style='background-image: url("../assets/images/collect.jpg"); background-size: cover; background-position: center;'></div>
+            </div>
+          </section>
+
+          <section class="mb-20">
+            <h2 class="modern-section-title text-4xl md:text-5xl lg:text-6xl font-light text-gray-800 mb-20 tracking-tight leading-tight text-center">Nieśmiertelne Drzewa Tunezji</h2>
+            <div class="story-highlight">
+              <div class="relative z-10">
+                <p class="text-lg md:text-xl leading-relaxed font-display">
+                  W naszych gajach stoją strażnicy, którzy byli świadkami powstania i upadku imperiów—500-letnie <a href="../blog.html" class="text-emerald-700 hover:text-emerald-800 underline decoration-emerald-700/30 hover:decoration-emerald-800 transition-colors">drzewa oliwne Chemlali</a>, których sękate pnie opowiadają historie o wytrwałości, których żadna książka nie mogłaby uchwycić. Te starożytne istoty przetrwały susze trwające dziesięciolecia, wojny, które spaliły ziemię, i wiatry, które mogły wyrwać góry. A jednak stoją tutaj, rodząc owoce tak jak dla kartagińskich kupców, rzymskich szlachciców i arabskich uczonych. Każde drzewo to żywa biblioteka, jego korzenie sięgają 20 stóp w głąb gleby wzbogaconej przez tysiąclecia opadłych liści, tworząc terroir tak wyjątkowe, że naukowcy znaleźli w naszej oliwie ponad 200 różnych związków aromatycznych—więcej niż w najlepszych winach.
+                </p>
+              </div>
+            </div>
+          </section>
+
+          <section class="mb-20">
+            <h2 class="modern-section-title text-4xl md:text-5xl lg:text-6xl font-light text-gray-800 mb-20 tracking-tight leading-tight text-center">Święty Rytuał Zbiorów</h2>
+            <div class="story-highlight">
+              <div class="relative z-10">
+                <p class="text-lg md:text-xl leading-relaxed font-display">
+                  Gdy jesień maluje nasze gaje w złoto i purpurę, te same rodziny, które opiekowały się tymi drzewami przez wiele pokoleń, zbierają się na zbiory. Znają każde drzewo po imieniu, po sposobie, w jaki jego gałęzie sięgają ku świcie, po szczególnej słodyczy jego owoców. Najstarsi mogą opowiedzieć, które drzewo pomogło wyleczyć gorączkę sułtana w 1623 roku, które dostarczyło oliwę na ucztę weselną królowej. Żadne maszyny nie dotykają naszych drzew—tylko ręce, które nauczyły się od dziadków, jak delikatnie zdjąć oliwki bez ich uszkodzenia, jak odczytać idealny moment, gdy owoc balansuje między zieloną wigorem a purpurową mądrością. Tej wiedzy nie można nauczyć w szkołach; żyje ona w odciskach na dłoniach, w pieśniach śpiewanych podczas zbiorów, w modlitwach szeptanych do drzew, które stały się rodziną.
+                </p>
+              </div>
+            </div>
+          </section>
+
+          <section class="mb-20">
+            <h2 class="modern-section-title text-4xl md:text-5xl lg:text-6xl font-light text-gray-800 mb-20 tracking-tight leading-tight text-center">Dlaczego Chemlali Przetrwało, Gdy Inne Upadły</h2>
+            <div class="story-highlight">
+              <div class="relative z-10">
+                <p class="text-lg md:text-xl leading-relaxed font-display">
+                  Przez wieki wiele odmian oliwek zniknęło—ofiary chorób, zmian klimatu lub po prostu zapomnienia. Ale Chemlali przetrwało, ponieważ nosi w swoim DNA pamięć o przetrwaniu. Jego korzenie penetrują głębiej niż jakiejkolwiek innej odmiany, znajdując wodę w podziemnych rzekach płynących z Gór Atlas. Jego liście, mniejsze i twardsze niż inne, mogą wytrzymać palące wiatry Sahary, które zwiędłyby słabsze drzewa. Ale co najbardziej niezwykłe, oliwki Chemlali produkują oliwę tak doskonale zrównoważoną, że nie potrzebuje mieszania, żadnego ulepszania—arcydzieło natury, kompletne samo w sobie. Podczas gdy inni producenci mieszają oliwy, aby zamaskować niedoskonałości, my celebrujemy wyjątkową czystość Chemlali. Dlatego starożytni uzdrowiciele nazywali ją 'płynnym złotem', dlatego handlarze przemierzali pustynie, aby ją zdobyć, dlatego współczesna nauka potwierdza to, co nasi przodkowie zawsze wiedzieli: ta oliwa nie tylko odżywia ciało, ona zachowuje samo życie. Kiedy kosztujesz Laperla, kosztujesz 500 lat niekompromisowej doskonałości—z naszej ziemi bezpośrednio na Twój talerz, dokładnie tak, jak zamierzyła natura.
+                </p>
+              </div>
+            </div>
+          </section>
+
+          </div>
+        </main>
+
+        <footer class="bg-white border-t border-gray-200">
+          <div class="max-w-7xl mx-auto px-6 md:px-10 py-12">
+            <div class="flex flex-wrap items-center justify-center gap-8 mb-8">
+              <a class="text-gray-600 hover:text-yellow-600 font-medium transition-colors" href="../index.html">Strona Główna</a>
+              <a class="text-gray-600 hover:text-yellow-600 font-medium transition-colors" href="product.html">Nasze Produkty</a>
+              <a class="text-gray-600 hover:text-yellow-600 font-medium transition-colors" href="heritage.html">Nasza Historia</a>
+              <a class="text-gray-600 hover:text-yellow-600 font-medium transition-colors" href="../blog.html">Blog</a>
+              <a class="text-gray-600 hover:text-yellow-600 font-medium transition-colors" href="../contact.html">Kontakt</a>
+            </div>
+            <div class="flex justify-center gap-6 mb-8">
+              <a href="https://instagram.com/yourprofile" target="_blank" class="text-gray-400 hover:text-yellow-600 transition-colors">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 256 256">
+                  <path d="M128,80a48,48,0,1,0,48,48A48.05,48.05,0,0,0,128,80Zm0,80a32,32,0,1,1,32-32A32,32,0,0,1,128,160ZM176,24H80A56.06,56.06,0,0,0,24,80v96a56.06,56.06,0,0,0,56,56h96a56.06,56.06,0,0,0,56-56V80A56.06,56.06,0,0,0,176,24Zm40,152a40,40,0,0,1-40,40H80a40,40,0,0,1-40-40V80A40,40,0,0,1,80,40h96a40,40,0,0,1,40,40ZM192,76a12,12,0,1,1-12-12A12,12,0,0,1,192,76Z"></path>
+                </svg>
+              </a>
+              <a href="https://facebook.com/yourprofile" target="_blank" class="text-gray-400 hover:text-yellow-600 transition-colors">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 256 256">
+                  <path d="M128,24A104,104,0,1,0,232,128,104.11,104.11,0,0,0,128,24Zm8,191.63V152h24a8,8,0,0,0,0-16H136V112a16,16,0,0,1,16-16h16a8,8,0,0,0,0-16H152a32,32,0,0,0-32,32v24H96a8,8,0,0,0,0,16h24v63.63a88,88,0,1,1,16,0Z"></path>
+                </svg>
+              </a>
+            </div>
+            <p class="text-center text-gray-500 font-medium">
+              © 2025 Laperla. Historia i zdrowie w każdej kropli. Wszelkie prawa zastrzeżone.
+            </p>
+          </div>
+        </footer>
+      </div>
+    </div>
+
+    <script>
+      // Language management
+      (function() {
+        function updateAllLinks(lang) {
+          const links = document.querySelectorAll('a[href^="../home.html"], a[href^="product.html"], a[href^="heritage.html"], a[href^="../contact.html"], a[href^="../index.html"], a[href^="../blog.html"]');
+          links.forEach(link => {
+            const href = link.getAttribute('href');
+            if (lang === 'en') {
+              if (href.startsWith('../')) {
+                // Already points to root, no change needed
+              } else {
+                // Point to root version
+                link.href = '../' + href;
+              }
+            } else {
+              if (href.startsWith('../')) {
+                // Point to Polish version
+                const filename = href.substring(3);
+                if (filename === 'index.html' || filename === 'contact.html' || filename === 'blog.html') {
+                  // Keep these in root
+                } else {
+                  link.href = filename; // Remove ../ prefix
+                }
+              }
+            }
+          });
+        }
+        
+        if (document.readyState === 'loading') {
+          document.addEventListener('DOMContentLoaded', () => updateAllLinks('pl'));
+        } else {
+          updateAllLinks('pl');
+        }
+      })();
+
+      // Modern performance optimizations
+      document.addEventListener('DOMContentLoaded', () => {
+        // Initialize Intersection Observer for animations
+        const observerOptions = {
+          threshold: 0.1,
+          rootMargin: '0px 0px -50px 0px'
+        };
+        
+        const observer = new IntersectionObserver((entries) => {
+          entries.forEach(entry => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add('visible');
+            }
+          });
+        }, observerOptions);
+        
+        // Observe fade-in elements
+        document.querySelectorAll('.fade-in, .slide-in-left, .slide-in-right').forEach(el => {
+          observer.observe(el);
+        });
+      });
+
+      document.addEventListener('DOMContentLoaded', () => {
+        const languageButton = document.querySelector('.modern-language-button');
+        const languageMenu = document.querySelector('.modern-language-menu');
+        const languageOptions = document.querySelectorAll('.modern-language-option');
+        const selectedLanguageSpan = document.querySelector('.selected-language');
+        const flagSpan = languageButton.querySelector('.fi');
+        
+        // --- Active Navigation Link ---
+        function setActiveNav() {
+            const currentPage = window.location.pathname.split('/').pop();
+            // Remove active class from all nav links
+            document.querySelectorAll('.modern-nav-link').forEach(link => {
+                link.classList.remove('nav-link-active');
+            });
+            
+            // Add active class to current page
+            if (currentPage === 'heritage.html') {
+                document.getElementById('nav-story')?.classList.add('nav-link-active');
+            }
+        }
+        setActiveNav();
+
+        function switchLanguage(lang) {
+          if (lang === 'en') {
+            window.location.href = '../heritage.html';
+          } else {
+            // Already on Polish version
+          }
+        }
+
+        // Language dropdown functionality
+        if (languageButton && languageMenu) {
+          languageButton.addEventListener('click', (e) => {
+            e.stopPropagation();
+            languageMenu.style.opacity = languageMenu.style.opacity === '1' ? '0' : '1';
+            languageMenu.style.visibility = languageMenu.style.visibility === 'visible' ? 'hidden' : 'visible';
+          });
+          
+          // Close dropdown when clicking outside
+          document.addEventListener('click', () => {
+            languageMenu.style.opacity = '0';
+            languageMenu.style.visibility = 'hidden';
+          });
+        }
+
+        languageOptions.forEach(option => {
+          option.addEventListener('click', () => {
+            const lang = option.getAttribute('data-lang');
+            switchLanguage(lang);
+          });
+        });
+
+        // Mobile menu functionality
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.querySelector('.mobile-menu');
+        const mobileLanguageOptions = document.querySelectorAll('.mobile-language-option');
+
+        if (mobileMenuButton && mobileMenu) {
+          mobileMenuButton.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+          });
+        }
+
+        mobileLanguageOptions.forEach(option => {
+          option.addEventListener('click', () => {
+            const lang = option.getAttribute('data-lang');
+            switchLanguage(lang);
+          });
+        });
+      });
+    </script>
+</body>
+</html>

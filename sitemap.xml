@@ -4,85 +4,85 @@
    
    <!-- Homepage -->
    <url>
-      <loc>https://www.laperlaoliveoil.com/index.html?lang=en</loc>
-      <xhtml:link rel="alternate" hreflang="en" href="https://www.laperlaoliveoil.com/index.html?lang=en"/>
-      <xhtml:link rel="alternate" hreflang="pl" href="https://www.laperlaoliveoil.com/index.html?lang=pl"/>
+      <loc>https://www.laperlaoliveoil.com/</loc>
+      <xhtml:link rel="alternate" hreflang="en" href="https://www.laperlaoliveoil.com/"/>
+      <xhtml:link rel="alternate" hreflang="pl" href="https://www.laperlaoliveoil.com/pl/"/>
       <changefreq>weekly</changefreq>
       <priority>1.0</priority>
    </url>
    
    <url>
-      <loc>https://www.laperlaoliveoil.com/index.html?lang=pl</loc>
-      <xhtml:link rel="alternate" hreflang="en" href="https://www.laperlaoliveoil.com/index.html?lang=en"/>
-      <xhtml:link rel="alternate" hreflang="pl" href="https://www.laperlaoliveoil.com/index.html?lang=pl"/>
+      <loc>https://www.laperlaoliveoil.com/pl/</loc>
+      <xhtml:link rel="alternate" hreflang="en" href="https://www.laperlaoliveoil.com/"/>
+      <xhtml:link rel="alternate" hreflang="pl" href="https://www.laperlaoliveoil.com/pl/"/>
       <changefreq>weekly</changefreq>
       <priority>1.0</priority>
    </url>
    
    <!-- Products Page -->
    <url>
-      <loc>https://www.laperlaoliveoil.com/product.html?lang=en</loc>
-      <xhtml:link rel="alternate" hreflang="en" href="https://www.laperlaoliveoil.com/product.html?lang=en"/>
-      <xhtml:link rel="alternate" hreflang="pl" href="https://www.laperlaoliveoil.com/product.html?lang=pl"/>
+      <loc>https://www.laperlaoliveoil.com/product.html</loc>
+      <xhtml:link rel="alternate" hreflang="en" href="https://www.laperlaoliveoil.com/product.html"/>
+      <xhtml:link rel="alternate" hreflang="pl" href="https://www.laperlaoliveoil.com/pl/product.html"/>
       <changefreq>monthly</changefreq>
       <priority>0.9</priority>
    </url>
    
    <url>
-      <loc>https://www.laperlaoliveoil.com/product.html?lang=pl</loc>
-      <xhtml:link rel="alternate" hreflang="en" href="https://www.laperlaoliveoil.com/product.html?lang=en"/>
-      <xhtml:link rel="alternate" hreflang="pl" href="https://www.laperlaoliveoil.com/product.html?lang=pl"/>
+      <loc>https://www.laperlaoliveoil.com/pl/product.html</loc>
+      <xhtml:link rel="alternate" hreflang="en" href="https://www.laperlaoliveoil.com/product.html"/>
+      <xhtml:link rel="alternate" hreflang="pl" href="https://www.laperlaoliveoil.com/pl/product.html"/>
       <changefreq>monthly</changefreq>
       <priority>0.9</priority>
    </url>
    
    <!-- Heritage Page -->
    <url>
-      <loc>https://www.laperlaoliveoil.com/heritage.html?lang=en</loc>
-      <xhtml:link rel="alternate" hreflang="en" href="https://www.laperlaoliveoil.com/heritage.html?lang=en"/>
-      <xhtml:link rel="alternate" hreflang="pl" href="https://www.laperlaoliveoil.com/heritage.html?lang=pl"/>
+      <loc>https://www.laperlaoliveoil.com/heritage.html</loc>
+      <xhtml:link rel="alternate" hreflang="en" href="https://www.laperlaoliveoil.com/heritage.html"/>
+      <xhtml:link rel="alternate" hreflang="pl" href="https://www.laperlaoliveoil.com/pl/heritage.html"/>
       <changefreq>monthly</changefreq>
       <priority>0.8</priority>
    </url>
    
    <url>
-      <loc>https://www.laperlaoliveoil.com/heritage.html?lang=pl</loc>
-      <xhtml:link rel="alternate" hreflang="en" href="https://www.laperlaoliveoil.com/heritage.html?lang=en"/>
-      <xhtml:link rel="alternate" hreflang="pl" href="https://www.laperlaoliveoil.com/heritage.html?lang=pl"/>
+      <loc>https://www.laperlaoliveoil.com/pl/heritage.html</loc>
+      <xhtml:link rel="alternate" hreflang="en" href="https://www.laperlaoliveoil.com/heritage.html"/>
+      <xhtml:link rel="alternate" hreflang="pl" href="https://www.laperlaoliveoil.com/pl/heritage.html"/>
       <changefreq>monthly</changefreq>
       <priority>0.8</priority>
    </url>
    
    <!-- Blog Page -->
    <url>
-      <loc>https://www.laperlaoliveoil.com/blog.html?lang=en</loc>
-      <xhtml:link rel="alternate" hreflang="en" href="https://www.laperlaoliveoil.com/blog.html?lang=en"/>
-      <xhtml:link rel="alternate" hreflang="pl" href="https://www.laperlaoliveoil.com/blog.html?lang=pl"/>
+      <loc>https://www.laperlaoliveoil.com/blog.html</loc>
+      <xhtml:link rel="alternate" hreflang="en" href="https://www.laperlaoliveoil.com/blog.html"/>
+      <xhtml:link rel="alternate" hreflang="pl" href="https://www.laperlaoliveoil.com/pl/blog.html"/>
       <changefreq>weekly</changefreq>
       <priority>0.7</priority>
    </url>
    
    <url>
-      <loc>https://www.laperlaoliveoil.com/blog.html?lang=pl</loc>
-      <xhtml:link rel="alternate" hreflang="en" href="https://www.laperlaoliveoil.com/blog.html?lang=en"/>
-      <xhtml:link rel="alternate" hreflang="pl" href="https://www.laperlaoliveoil.com/blog.html?lang=pl"/>
+      <loc>https://www.laperlaoliveoil.com/pl/blog.html</loc>
+      <xhtml:link rel="alternate" hreflang="en" href="https://www.laperlaoliveoil.com/blog.html"/>
+      <xhtml:link rel="alternate" hreflang="pl" href="https://www.laperlaoliveoil.com/pl/blog.html"/>
       <changefreq>weekly</changefreq>
       <priority>0.7</priority>
    </url>
    
    <!-- Contact Page -->
    <url>
-      <loc>https://www.laperlaoliveoil.com/contact.html?lang=en</loc>
-      <xhtml:link rel="alternate" hreflang="en" href="https://www.laperlaoliveoil.com/contact.html?lang=en"/>
-      <xhtml:link rel="alternate" hreflang="pl" href="https://www.laperlaoliveoil.com/contact.html?lang=pl"/>
+      <loc>https://www.laperlaoliveoil.com/contact.html</loc>
+      <xhtml:link rel="alternate" hreflang="en" href="https://www.laperlaoliveoil.com/contact.html"/>
+      <xhtml:link rel="alternate" hreflang="pl" href="https://www.laperlaoliveoil.com/pl/contact.html"/>
       <changefreq>monthly</changefreq>
       <priority>0.6</priority>
    </url>
    
    <url>
-      <loc>https://www.laperlaoliveoil.com/contact.html?lang=pl</loc>
-      <xhtml:link rel="alternate" hreflang="en" href="https://www.laperlaoliveoil.com/contact.html?lang=en"/>
-      <xhtml:link rel="alternate" hreflang="pl" href="https://www.laperlaoliveoil.com/contact.html?lang=pl"/>
+      <loc>https://www.laperlaoliveoil.com/pl/contact.html</loc>
+      <xhtml:link rel="alternate" hreflang="en" href="https://www.laperlaoliveoil.com/contact.html"/>
+      <xhtml:link rel="alternate" hreflang="pl" href="https://www.laperlaoliveoil.com/pl/contact.html"/>
       <changefreq>monthly</changefreq>
       <priority>0.6</priority>
    </url>
