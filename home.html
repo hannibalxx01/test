@@ -3,29 +3,59 @@
 <head>
     <meta charset="UTF-8">
     <title>Redirecting to Laperla Homepage</title>
-    
+    <script src="https://cdn.jsdelivr.net/npm/js-cookie@3.0.5/dist/js.cookie.min.js"></script>
     <script>
-        // BEST PRACTICE NOTE: This file should ideally be removed.
-        // Your web server should be configured to serve `index.html` by default when a user visits your root domain (e.g., laperlaoliveoil.com).
-        // The language detection and parameter logic can then be handled directly within index.html.
-
-        // Get language from URL params, cookie, or browser default
-        const urlParams = new URLSearchParams(window.location.search);
-        const urlLang = urlParams.get('lang');
+        // Updated redirect logic to work with new /pl/ directory structure
+        
+        // Check for explicit user language preference
         const savedLanguage = Cookies.get('selectedLanguage');
-        const browserLang = navigator.language.startsWith('pl') ? 'pl' : 'en';
-        
-        // Prioritize URL lang > saved lang > browser lang
-        const lang = urlLang || savedLanguage || browserLang;
-        
-        // Construct the redirect URL with the language parameter
-        let redirectUrl = 'index.html?lang=' + lang;
-        
-        // Redirect to index.html
-        window.location.replace(redirectUrl);
+        const cookieAge = Cookies.get('selectedLanguage_timestamp');
+        const isRecentChoice = cookieAge && (Date.now() - parseInt(cookieAge)) < 24 * 60 * 60 * 1000; // 24 hours
+
+        if (savedLanguage && isRecentChoice) {
+            // User has recent language preference - redirect accordingly
+            if (savedLanguage === 'pl') {
+                window.location.replace('/pl/');
+            } else {
+                window.location.replace('/');
+            }
+        } else {
+            // No recent preference, do geo-detection
+            fetch('https://api.ip-api.com/json/?fields=countryCode', {
+                signal: AbortSignal.timeout(3000)
+            })
+            .then(response => response.json())
+            .then(data => {
+                const geoLang = data.countryCode === 'PL' ? 'pl' : 'en';
+                
+                // Save geo-detected choice
+                Cookies.set('selectedLanguage', geoLang, { expires: 7 });
+                Cookies.set('selectedLanguage_timestamp', Date.now().toString(), { expires: 7 });
+                
+                // Redirect to appropriate version
+                if (geoLang === 'pl') {
+                    window.location.replace('/pl/');
+                } else {
+                    window.location.replace('/');
+                }
+            })
+            .catch(error => {
+                // Fallback to browser language
+                const browserLang = navigator.language.startsWith('pl') ? 'pl' : 'en';
+                
+                Cookies.set('selectedLanguage', browserLang, { expires: 7 });
+                Cookies.set('selectedLanguage_timestamp', Date.now().toString(), { expires: 7 });
+                
+                if (browserLang === 'pl') {
+                    window.location.replace('/pl/');
+                } else {
+                    window.location.replace('/');
+                }
+            });
+        }
     </script>
 </head>
 <body>
-    <p>If you are not redirected automatically, <a href="index.html">click here</a>.</p>
+    <p>If you are not redirected automatically, <a href="/">click here</a>.</p>
 </body>
 </html>
