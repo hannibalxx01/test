@@ -420,17 +420,22 @@ function initializeLanguageSystem() {
 
 // Main initialization function
 function initializeLanguageManager() {
+  console.log('Language Manager initializing..., DOM state:', document.readyState); // Debug log
+  
   // Initialize geolocation redirect
   initializeGeolocation();
   
   // Wait for DOM to be ready
   if (document.readyState === 'loading') {
+    console.log('DOM still loading, waiting for DOMContentLoaded...'); // Debug log
     document.addEventListener('DOMContentLoaded', () => {
+      console.log('DOMContentLoaded fired, initializing components...'); // Debug log
       initializeLanguageSystem();
       initializeLanguageDropdown();
       initializeMobileMenu();
     });
   } else {
+    console.log('DOM ready, initializing components immediately...'); // Debug log
     initializeLanguageSystem();
     initializeLanguageDropdown();
     initializeMobileMenu();
@@ -530,20 +535,37 @@ function initializeLanguageDropdown() {
 
 // Mobile menu functionality
 function initializeMobileMenu() {
+  console.log('Initializing mobile menu...'); // Debug log
+  
   const mobileMenuButton = document.getElementById('mobile-menu-button');
   const mobileMenu = document.querySelector('.mobile-menu');
   
+  console.log('Mobile menu elements:', { 
+    button: !!mobileMenuButton, 
+    menu: !!mobileMenu,
+    buttonElement: mobileMenuButton,
+    menuElement: mobileMenu 
+  }); // Debug log
+  
   if (mobileMenuButton && mobileMenu) {
+    console.log('Adding mobile menu event listener...'); // Debug log
     mobileMenuButton.addEventListener('click', (e) => {
       e.preventDefault();
       e.stopPropagation();
-      console.log('Mobile menu button clicked'); // Debug log
+      console.log('Mobile menu button clicked! Current menu state:', mobileMenu.classList.contains('hidden')); // Debug log
       mobileMenu.classList.toggle('hidden');
+      console.log('After toggle, menu state:', mobileMenu.classList.contains('hidden')); // Debug log
     });
+    console.log('Mobile menu initialized successfully!'); // Debug log
   } else {
-    console.log('Mobile menu elements not found:', { button: !!mobileMenuButton, menu: !!mobileMenu }); // Debug log
+    console.error('Mobile menu elements not found:', { button: !!mobileMenuButton, menu: !!mobileMenu }); // Debug log
   }
 }
 
-// Auto-initialize when script loads
-initializeLanguageManager();
+// Auto-initialize when script loads - ensure DOM is ready
+if (document.readyState === 'loading') {
+  document.addEventListener('DOMContentLoaded', initializeLanguageManager);
+} else {
+  // DOM is already ready
+  initializeLanguageManager();
+}
