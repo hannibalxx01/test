@@ -318,9 +318,14 @@ function initializeMobileMenu() {
   const mobileMenu = document.querySelector('.mobile-menu');
   
   if (mobileMenuButton && mobileMenu) {
-    mobileMenuButton.addEventListener('click', () => {
+    mobileMenuButton.addEventListener('click', (e) => {
+      e.preventDefault();
+      e.stopPropagation();
+      console.log('Mobile menu button clicked'); // Debug log
       mobileMenu.classList.toggle('hidden');
     });
+  } else {
+    console.log('Mobile menu elements not found:', { button: !!mobileMenuButton, menu: !!mobileMenu }); // Debug log
   }
 }
 

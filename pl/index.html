@@ -592,7 +592,7 @@
                     <span class="fi fi-us"></span>
                     <span>English</span>
                   </button>
-                  <button class="mobile-language-option flex items-center gap-3 w-full px-2 py-2 text-gray-700 bg-gray-50 rounded-lg">
+                  <button class="mobile-language-option flex items-center gap-3 w-full px-2 py-2 text-gray-700 bg-gray-50 rounded-lg disabled cursor-default">
                     <span class="fi fi-pl"></span>
                     <span>Polski</span>
                   </button>
@@ -907,8 +907,13 @@
       const mobileMenuButton = document.getElementById('mobile-menu-button');
       const mobileMenu = document.querySelector('.mobile-menu');
       
+      console.log('Polish page mobile menu initialization:', { button: !!mobileMenuButton, menu: !!mobileMenu }); // Debug log
+      
       if (mobileMenuButton && mobileMenu) {
-        mobileMenuButton.addEventListener('click', () => {
+        mobileMenuButton.addEventListener('click', (e) => {
+          e.preventDefault();
+          e.stopPropagation();
+          console.log('Polish mobile menu button clicked'); // Debug log
           mobileMenu.classList.toggle('hidden');
         });
       }
