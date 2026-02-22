@@ -228,17 +228,36 @@ function initializeLanguageDropdown() {
   const languageOptions = document.querySelectorAll('.modern-language-option');
   const mobileLanguageOptions = document.querySelectorAll('.mobile-language-option');
 
-  // Desktop language dropdown toggle
+  // Desktop language dropdown toggle (desktop only)
   if (languageButton && languageMenu) {
+    // Check if we're on mobile/tablet (screen width < 1024px)
+    const isMobile = () => window.innerWidth < 1024;
+    
     languageButton.addEventListener('click', (e) => {
+      e.preventDefault();
       e.stopPropagation();
+      
+      // On mobile, don't use the dropdown - language switching is in mobile menu
+      if (isMobile()) {
+        return;
+      }
+      
+      // Desktop dropdown functionality
       const isVisible = languageMenu.style.visibility === 'visible';
       languageMenu.style.opacity = isVisible ? '0' : '1';
       languageMenu.style.visibility = isVisible ? 'hidden' : 'visible';
     });
     
-    // Close dropdown when clicking outside
+    // Close dropdown when clicking outside (desktop only)
     document.addEventListener('click', () => {
+      if (!isMobile()) {
+        languageMenu.style.opacity = '0';
+        languageMenu.style.visibility = 'hidden';
+      }
+    });
+    
+    // Close dropdown on window resize
+    window.addEventListener('resize', () => {
       languageMenu.style.opacity = '0';
       languageMenu.style.visibility = 'hidden';
     });

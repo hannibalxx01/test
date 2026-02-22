@@ -543,8 +543,8 @@
               
               <!-- Right Side Actions -->
               <div class="flex items-center gap-6">
-                <!-- Language Selector -->
-                <div class="modern-language-dropdown relative">
+                <!-- Language Selector - Desktop Only -->
+                <div class="modern-language-dropdown relative hidden lg:block">
                   <button class="modern-language-button flex items-center gap-2 px-4 py-2 text-gray-600 hover:text-gray-900 transition-colors duration-300">
                     <span class="fi fi-pl"></span>
                     <span class="selected-language text-sm font-light">Polski</span>
@@ -913,20 +913,39 @@
         });
       }
 
-      // Language dropdown functionality
+      // Language dropdown functionality - Desktop only
       const languageButton = document.querySelector('.modern-language-button');
       const languageMenu = document.querySelector('.modern-language-menu');
 
       if (languageButton && languageMenu) {
+        // Check if we're on mobile/tablet (screen width < 1024px)
+        const isMobile = () => window.innerWidth < 1024;
+        
         languageButton.addEventListener('click', (e) => {
+          e.preventDefault();
           e.stopPropagation();
+          
+          // On mobile, don't use the dropdown - language switching is in mobile menu
+          if (isMobile()) {
+            return;
+          }
+          
+          // Desktop dropdown functionality
           const isVisible = languageMenu.style.opacity === '1' || languageMenu.classList.contains('opacity-100');
           languageMenu.style.opacity = isVisible ? '0' : '1';
           languageMenu.style.visibility = isVisible ? 'hidden' : 'visible';
         });
         
-        // Close dropdown when clicking outside
-        document.addEventListener('click', () => {
+        // Close dropdown when clicking outside (desktop only)
+        document.addEventListener('click', (e) => {
+          if (!isMobile()) {
+            languageMenu.style.opacity = '0';
+            languageMenu.style.visibility = 'hidden';
+          }
+        });
+        
+        // Close dropdown on window resize
+        window.addEventListener('resize', () => {
           languageMenu.style.opacity = '0';
           languageMenu.style.visibility = 'hidden';
         });
