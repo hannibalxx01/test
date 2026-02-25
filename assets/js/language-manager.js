@@ -151,7 +151,7 @@ function redirectToLanguageVersion(lang) {
   }
 }
 
-// Initialize smart language detection
+// Initialize smart language detection - DISABLED for SEO optimization
 function initializeGeolocation() {
   const urlParams = new URLSearchParams(window.location.search);
   const hasValidLang = urlParams.get('lang') && LANGUAGE_CONFIG.supported.includes(urlParams.get('lang'));
@@ -162,8 +162,11 @@ function initializeGeolocation() {
     return;
   }
   
+  // DISABLED automatic redirects to fix Google indexing "Page with redirect" issues
   // Run detection for root pages
-  detectAndRedirect();
+  // detectAndRedirect();
+  
+  console.log('Automatic language detection disabled for better SEO');
 }
 
 // Update all internal links with current language
@@ -406,15 +409,16 @@ function initializeLanguageSystem() {
     setActiveNavigation();
   }
   
-  // Initialize language based on URL or cookie
+  // Initialize language based on URL or cookie - NO AUTOMATIC URL CHANGES
   if (urlLang && LANGUAGE_CONFIG.supported.includes(urlLang)) {
     updateLanguage(urlLang);
   } else if (savedLanguage && LANGUAGE_CONFIG.supported.includes(savedLanguage)) {
     updateLanguage(savedLanguage);
-    // Update URL to include language parameter
-    const url = new URL(window.location);
-    url.searchParams.set('lang', savedLanguage);
-    window.history.replaceState({}, '', url);
+    // DO NOT automatically add ?lang parameter to avoid duplicate content
+    // Let the user manually switch languages if they want
+  } else {
+    // Default to English, no URL changes
+    updateLanguage(LANGUAGE_CONFIG.default);
   }
 }
 

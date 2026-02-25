@@ -1,6 +1,10 @@
 User-agent: *
 Allow: /
 
+# Prevent duplicate content from language parameters
+Disallow: /*?lang=*
+Disallow: /*&lang=*
+
 # Sitemap
 Sitemap: https://www.laperlaoliveoil.com/sitemap.xml
 
@@ -9,3 +13,8 @@ Allow: /pl/
 
 # Allow indexing of all Polish language pages
 Allow: /pl/*.html
+
+# Prevent indexing of temporary or test files
+Disallow: /temp/
+Disallow: /test/
+Disallow: /*.tmp

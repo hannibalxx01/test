@@ -87,4 +87,22 @@
       <priority>0.6</priority>
    </url>
    
+   <!-- Article: Chemlali Olive Tree -->
+   <url>
+      <loc>https://www.laperlaoliveoil.com/articles/chemlali-olive-tree.html</loc>
+      <xhtml:link rel="alternate" hreflang="en" href="https://www.laperlaoliveoil.com/articles/chemlali-olive-tree.html"/>
+      <xhtml:link rel="alternate" hreflang="pl" href="https://www.laperlaoliveoil.com/articles/chemlali-olive-tree.html?lang=pl"/>
+      <changefreq>monthly</changefreq>
+      <priority>0.6</priority>
+   </url>
+   
+   <!-- Article: Olive Oil Health Benefits -->
+   <url>
+      <loc>https://www.laperlaoliveoil.com/articles/olive-oil-health-benefits.html</loc>
+      <xhtml:link rel="alternate" hreflang="en" href="https://www.laperlaoliveoil.com/articles/olive-oil-health-benefits.html"/>
+      <xhtml:link rel="alternate" hreflang="pl" href="https://www.laperlaoliveoil.com/articles/olive-oil-health-benefits.html?lang=pl"/>
+      <changefreq>monthly</changefreq>
+      <priority>0.6</priority>
+   </url>
+   
 </urlset>
