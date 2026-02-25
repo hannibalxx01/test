@@ -141,6 +141,7 @@
         <header class="modern-nav sticky top-0 z-50 bg-white/90 backdrop-blur-lg border-b border-gray-200/60">
           <div class="max-w-7xl mx-auto px-6 md:px-10">
             <div class="flex items-center justify-between h-20">
+              <!-- Logo Section -->
               <a href="index.html" class="flex items-center text-gray-900 no-underline group">
                 <div class="flex flex-col">
                   <h2 class="text-gray-900 text-2xl font-bold tracking-wide font-display">LAPERLA</h2>
@@ -499,20 +500,22 @@
           });
         }
         
-        // Ensure mobile menu functionality works - based on working blog.html and contact.html
-        const mobileMenuButton = document.getElementById('mobile-menu-button');
-        const mobileMenu = document.querySelector('.mobile-menu');
-        
-        if (mobileMenuButton && mobileMenu && !mobileMenuButton.hasAttribute('data-initialized')) {
-          mobileMenuButton.setAttribute('data-initialized', 'true');
-          mobileMenuButton.addEventListener('click', (e) => {
-            e.preventDefault();
-            e.stopPropagation();
-            console.log('Polish blog mobile menu clicked from backup handler');
-            mobileMenu.classList.toggle('hidden');
-          });
-          console.log('Polish blog mobile menu backup handler added');
-        }
+        // Mobile menu backup handler (in case language-manager.js fails)
+        setTimeout(() => {
+          const mobileMenuButton = document.getElementById('mobile-menu-button');
+          const mobileMenu = document.querySelector('.mobile-menu');
+          
+          if (mobileMenuButton && mobileMenu && !mobileMenuButton.hasAttribute('data-initialized')) {
+            console.log('Polish blog: Adding backup mobile menu handler');
+            mobileMenuButton.setAttribute('data-initialized', 'true');
+            mobileMenuButton.addEventListener('click', (e) => {
+              e.preventDefault();
+              e.stopPropagation();
+              console.log('Polish blog mobile menu clicked from backup handler');
+              mobileMenu.classList.toggle('hidden');
+            });
+          }
+        }, 100); // Small delay to let language-manager.js load first
       });
 
     </script>
