@@ -903,19 +903,21 @@
         window.location.href = '../';
       }
 
-      // Mobile menu functionality
+      // Mobile menu functionality with backup handler
       const mobileMenuButton = document.getElementById('mobile-menu-button');
       const mobileMenu = document.querySelector('.mobile-menu');
       
       console.log('Polish page mobile menu initialization:', { button: !!mobileMenuButton, menu: !!mobileMenu }); // Debug log
       
-      if (mobileMenuButton && mobileMenu) {
+      if (mobileMenuButton && mobileMenu && !mobileMenuButton.hasAttribute('data-initialized')) {
+        mobileMenuButton.setAttribute('data-initialized', 'true');
         mobileMenuButton.addEventListener('click', (e) => {
           e.preventDefault();
           e.stopPropagation();
           console.log('Polish mobile menu button clicked'); // Debug log
           mobileMenu.classList.toggle('hidden');
         });
+        console.log('Polish mobile menu backup handler added');
       }
 
       // Language dropdown functionality - Desktop only
