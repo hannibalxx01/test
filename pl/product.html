@@ -708,6 +708,21 @@
             updateLanguage(lang);
           });
         });
+        
+        // Ensure mobile menu functionality works - based on working blog.html and contact.html
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.querySelector('.mobile-menu');
+        
+        if (mobileMenuButton && mobileMenu && !mobileMenuButton.hasAttribute('data-initialized')) {
+          mobileMenuButton.setAttribute('data-initialized', 'true');
+          mobileMenuButton.addEventListener('click', (e) => {
+            e.preventDefault();
+            e.stopPropagation();
+            console.log('Polish product mobile menu clicked from backup handler');
+            mobileMenu.classList.toggle('hidden');
+          });
+          console.log('Polish product mobile menu backup handler added');
+        }
       });
     </script>
 </body>

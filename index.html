@@ -904,5 +904,27 @@
       </div>
     </div>
 
+    <script>
+      // Ensure mobile menu functionality works - based on working blog.html and contact.html
+      document.addEventListener('DOMContentLoaded', () => {
+        console.log('Index.html DOMContentLoaded - ensuring mobile menu works');
+        
+        // Double-check mobile menu initialization (backup)
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.querySelector('.mobile-menu');
+        
+        if (mobileMenuButton && mobileMenu && !mobileMenuButton.hasAttribute('data-initialized')) {
+          mobileMenuButton.setAttribute('data-initialized', 'true');
+          mobileMenuButton.addEventListener('click', (e) => {
+            e.preventDefault();
+            e.stopPropagation();
+            console.log('Mobile menu clicked from DOMContentLoaded backup handler');
+            mobileMenu.classList.toggle('hidden');
+          });
+          console.log('Mobile menu backup handler added');
+        }
+      });
+    </script>
+
 </body>
 </html>
