@@ -55,6 +55,31 @@
     
     <script src="https://cdn.jsdelivr.net/npm/js-cookie@3.0.5/dist/js.cookie.min.js"></script>
     <script src="../assets/js/language-manager.js"></script>
+    
+    <!-- IMMEDIATE MOBILE MENU FIX - Override any conflicts -->
+    <script>
+      document.addEventListener('DOMContentLoaded', function() {
+        console.log('HERITAGE IMMEDIATE FIX: Initializing mobile menu...');
+        const btn = document.getElementById('mobile-menu-button');
+        const menu = document.querySelector('.mobile-menu');
+        console.log('Heritage elements found:', {button: !!btn, menu: !!menu});
+        
+        if (btn && menu) {
+          // Remove any existing listeners
+          btn.removeAttribute('data-initialized');
+          const newBtn = btn.cloneNode(true);
+          btn.parentNode.replaceChild(newBtn, btn);
+          
+          // Add simple click handler
+          newBtn.addEventListener('click', function(e) {
+            e.preventDefault();
+            console.log('HERITAGE IMMEDIATE FIX: Mobile menu clicked!');
+            menu.classList.toggle('hidden');
+          });
+          console.log('HERITAGE IMMEDIATE FIX: Mobile menu ready!');
+        }
+      });
+    </script>
     <meta name="keywords" content="dziedzictwo Laperla, starożytne drzewa oliwne, Sidi Bou Ali, oliwki Chemlali, tradycja Tunezji, rzemiosło pokoleń">
 
     <!-- Polish Structured Data -->

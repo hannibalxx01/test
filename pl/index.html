@@ -38,6 +38,31 @@
     
     <script src="https://cdn.jsdelivr.net/npm/js-cookie@3.0.5/dist/js.cookie.min.js"></script>
     <script src="../assets/js/language-manager.js"></script>
+    
+    <!-- IMMEDIATE MOBILE MENU FIX - Override any conflicts -->
+    <script>
+      document.addEventListener('DOMContentLoaded', function() {
+        console.log('POLISH INDEX IMMEDIATE FIX: Initializing mobile menu...');
+        const btn = document.getElementById('mobile-menu-button');
+        const menu = document.querySelector('.mobile-menu');
+        console.log('Polish index elements found:', {button: !!btn, menu: !!menu});
+        
+        if (btn && menu) {
+          // Remove any existing listeners
+          btn.removeAttribute('data-initialized');
+          const newBtn = btn.cloneNode(true);
+          btn.parentNode.replaceChild(newBtn, btn);
+          
+          // Add simple click handler
+          newBtn.addEventListener('click', function(e) {
+            e.preventDefault();
+            console.log('POLISH INDEX IMMEDIATE FIX: Mobile menu clicked!');
+            menu.classList.toggle('hidden');
+          });
+          console.log('POLISH INDEX IMMEDIATE FIX: Mobile menu ready!');
+        }
+      });
+    </script>
     <meta name="keywords" content="premium oliwa extra virgin, ECO-CERT, oliwki Chemlali, oliwa tunezyjska, 500-letnie drzewa, ultra czysta oliwa, polifenole, oliwa z oliwek, organiczna oliwa, zdrowa oliwa">
 
     <!-- Polish Structured Data -->
