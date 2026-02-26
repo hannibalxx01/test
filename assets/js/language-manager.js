@@ -427,12 +427,33 @@ function initializeLanguageDropdown() {
   });
 }
 
-// Mobile menu functionality
+// Mobile menu - called directly via onclick attribute on the button
+// Defined here so it's available as soon as the script loads (no DOM-ready wait needed)
+window.toggleMobileMenu = function() {
+  const mobileMenu = document.querySelector('.mobile-menu');
+  if (mobileMenu) mobileMenu.classList.toggle('hidden');
+};
+
+// Language switch helpers used by onclick attributes on PL/EN pages
+window.switchToPolish = function() {
+  Cookies.set(LANGUAGE_CONFIG.cookieName, 'pl', { expires: LANGUAGE_CONFIG.cookieExpiry });
+  Cookies.set(LANGUAGE_CONFIG.cookieName + '_timestamp', Date.now().toString(), { expires: LANGUAGE_CONFIG.cookieExpiry });
+  const currentPage = window.location.pathname.split('/').pop() || 'index.html';
+  window.location.href = '/pl/' + (currentPage === 'index.html' ? '' : currentPage);
+};
+
+window.switchToEnglish = function() {
+  Cookies.set(LANGUAGE_CONFIG.cookieName, 'en', { expires: LANGUAGE_CONFIG.cookieExpiry });
+  Cookies.set(LANGUAGE_CONFIG.cookieName + '_timestamp', Date.now().toString(), { expires: LANGUAGE_CONFIG.cookieExpiry });
+  window.location.href = '../';
+};
+
 function initializeMobileMenu() {
   const mobileMenuButton = document.getElementById('mobile-menu-button');
   const mobileMenu = document.querySelector('.mobile-menu');
 
-  if (mobileMenuButton && mobileMenu) {
+  if (mobileMenuButton && mobileMenu && !mobileMenuButton.hasAttribute('data-initialized')) {
+    mobileMenuButton.setAttribute('data-initialized', 'true');
     mobileMenuButton.addEventListener('click', (e) => {
       e.preventDefault();
       e.stopPropagation();
