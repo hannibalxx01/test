@@ -15,24 +15,6 @@
     <link rel="canonical" href="https://www.laperlaoliveoil.com/pl/blog.html" />
     <title>Blog | Wiedza o Oliwie z Oliwek i Historie Dziedzictwa | Laperla</title>
     <link rel="icon" type="image/x-icon" href="data:image/x-icon;base64," />
-    <link rel="stylesheet" >
-    <script>
-      tailwind.config = {
-        theme: {
-          extend: {
-            fontFamily: {
-              'display': ['Playfair Display', 'serif'],
-              'sans': ['Inter', 'system-ui', 'sans-serif']
-            },
-            animation: {
-              'fade-in': 'fadeIn 0.6s ease-out forwards',
-              'slide-up': 'slideUp 0.8s ease-out forwards',
-              'float': 'float 6s ease-in-out infinite'
-            }
-          }
-        }
-      }
-    </script>
     <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries,typography"></script>
     <script>
       tailwind.config = {
@@ -56,30 +38,6 @@
     <script src="https://cdn.jsdelivr.net/npm/js-cookie@3.0.5/dist/js.cookie.min.js"></script>
     <script src="../assets/js/language-manager.js"></script>
     
-    <!-- IMMEDIATE MOBILE MENU FIX - Override any conflicts -->
-    <script>
-      document.addEventListener('DOMContentLoaded', function() {
-        console.log('IMMEDIATE FIX: Initializing mobile menu...');
-        const btn = document.getElementById('mobile-menu-button');
-        const menu = document.querySelector('.mobile-menu');
-        console.log('Elements found:', {button: !!btn, menu: !!menu});
-        
-        if (btn && menu) {
-          // Remove any existing listeners
-          btn.removeAttribute('data-initialized');
-          const newBtn = btn.cloneNode(true);
-          btn.parentNode.replaceChild(newBtn, btn);
-          
-          // Add simple click handler
-          newBtn.addEventListener('click', function(e) {
-            e.preventDefault();
-            console.log('IMMEDIATE FIX: Mobile menu clicked!');
-            menu.classList.toggle('hidden');
-          });
-          console.log('IMMEDIATE FIX: Mobile menu ready!');
-        }
-      });
-    </script>
     <meta name="keywords" content="blog oliwy z oliwek, drzewo oliwne Chemlali, dziedzictwo Tunezji, premium oliwa z oliwek, korzyści zdrowotne, porady kulinarne, oliwa extra virgin">
     
     <!-- Polish Structured Data for Blog -->
@@ -432,30 +390,6 @@
     </div>
 
     <script>
-      // Language management
-      (function() {
-        const urlParams = new URLSearchParams(window.location.search);
-        const urlLang = urlParams.get('lang');
-        const savedLanguage = Cookies.get('selectedLanguage');
-        const currentLang = urlLang || savedLanguage || 'pl';
-        
-        function updateAllLinks(lang) {
-          const links = document.querySelectorAll('a[href^="home.html"], a[href^="product.html"], a[href^="heritage.html"], a[href^="contact.html"], a[href^="index.html"]');
-          links.forEach(link => {
-            const url = new URL(link.href, window.location.origin);
-            // For Polish page, keep relative paths as is since we're already in /pl/ directory
-            // No need to add language parameters
-          });
-        }
-        
-        if (document.readyState === 'loading') {
-          document.addEventListener('DOMContentLoaded', () => updateAllLinks(currentLang));
-        } else {
-          updateAllLinks(currentLang);
-        }
-      })();
-
-      // Language switching function that overrides geo-detection
       function switchToEnglish() {
         // Set explicit user choice for English with recent timestamp
         Cookies.set('selectedLanguage', 'en', { expires: 7 });
@@ -525,22 +459,6 @@
           });
         }
         
-        // Mobile menu backup handler (in case language-manager.js fails)
-        setTimeout(() => {
-          const mobileMenuButton = document.getElementById('mobile-menu-button');
-          const mobileMenu = document.querySelector('.mobile-menu');
-          
-          if (mobileMenuButton && mobileMenu && !mobileMenuButton.hasAttribute('data-initialized')) {
-            console.log('Polish blog: Adding backup mobile menu handler');
-            mobileMenuButton.setAttribute('data-initialized', 'true');
-            mobileMenuButton.addEventListener('click', (e) => {
-              e.preventDefault();
-              e.stopPropagation();
-              console.log('Polish blog mobile menu clicked from backup handler');
-              mobileMenu.classList.toggle('hidden');
-            });
-          }
-        }, 100); // Small delay to let language-manager.js load first
       });
 
     </script>

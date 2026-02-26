@@ -15,7 +15,7 @@
     <link rel="canonical" href="https://www.laperlaoliveoil.com/articles/olive-oil-health-benefits.html" />
     <title>The Science Behind Olive Oil's Health Benefits | Laperla Blog</title>
     <link rel="icon" type="image/x-icon" href="data:image/x-icon;base64," />
-    <link rel="stylesheet" >
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries,typography"></script>
     <script>
       tailwind.config = {
         theme: {
@@ -34,7 +34,10 @@
       }
     </script>
     <link rel="stylesheet" href="../assets/css/styles.css">
-    
+
+    <script src="https://cdn.jsdelivr.net/npm/js-cookie@3.0.5/dist/js.cookie.min.js"></script>
+    <script src="../assets/js/language-manager.js"></script>
+
     <meta name="keywords" content="olive oil health benefits, extra virgin olive oil research, cardiovascular health, cancer prevention, diabetes management, polyphenols, scientific studies">
     
     <style>
@@ -461,66 +464,5 @@
       </div>
     </div>
 
-    <script>
-      // Language management
-      (function() {
-        const urlParams = new URLSearchParams(window.location.search);
-        const urlLang = urlParams.get('lang');
-        const savedLanguage = Cookies.get('selectedLanguage');
-        const currentLang = urlLang || savedLanguage || 'en';
-        
-        function updateAllLinks(lang) {
-          const links = document.querySelectorAll('a[href^="home.html"], a[href^="product.html"], a[href^="heritage.html"], a[href^="contact.html"], a[href^="index.html"]');
-          links.forEach(link => {
-            const url = new URL(link.href, window.location.origin);
-            url.searchParams.set('lang', lang);
-            link.href = url.pathname + url.search;
-          });
-        }
-        
-        if (document.readyState === 'loading') {
-          document.addEventListener('DOMContentLoaded', () => updateAllLinks(currentLang));
-        } else {
-          updateAllLinks(currentLang);
-        }
-      })();
-
-      // Language switching functionality
-      document.addEventListener('DOMContentLoaded', function() {
-        const languageButton = document.querySelector('.modern-language-button');
-        const languageMenu = document.querySelector('.modern-language-menu');
-        const languageOptions = document.querySelectorAll('.modern-language-option');
-        
-        if (languageButton && languageMenu) {
-          languageButton.addEventListener('click', function() {
-            languageMenu.classList.toggle('opacity-0');
-            languageMenu.classList.toggle('invisible');
-          });
-          
-          languageOptions.forEach(option => {
-            option.addEventListener('click', function() {
-              const lang = this.dataset.lang;
-              Cookies.set('selectedLanguage', lang, { expires: 7 });
-              window.location.href = `/articles/olive-oil-health-benefits.html?lang=${lang}`;
-            });
-          });
-        }
-
-        // Ensure mobile menu functionality works - based on working blog.html and contact.html
-        const mobileMenuButton = document.getElementById('mobile-menu-button');
-        const mobileMenu = document.querySelector('.mobile-menu');
-        
-        if (mobileMenuButton && mobileMenu && !mobileMenuButton.hasAttribute('data-initialized')) {
-          mobileMenuButton.setAttribute('data-initialized', 'true');
-          mobileMenuButton.addEventListener('click', (e) => {
-            e.preventDefault();
-            e.stopPropagation();
-            console.log('Health benefits article mobile menu clicked from backup handler');
-            mobileMenu.classList.toggle('hidden');
-          });
-          console.log('Health benefits article mobile menu backup handler added');
-        }
-      });
-    </script>
 </body>
 </html>

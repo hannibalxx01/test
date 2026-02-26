@@ -61,7 +61,7 @@ function detectAndRedirect() {
       
       redirectToLanguageVersion(finalLang);
     })
-    .catch(error => {
+    .catch(() => {
       console.log('🔌 Geo check failed, using browser language:', browserLangCode.toUpperCase());
       
       // Fallback to browser language
@@ -163,10 +163,7 @@ function initializeGeolocation() {
   }
   
   // DISABLED automatic redirects to fix Google indexing "Page with redirect" issues
-  // Run detection for root pages
   // detectAndRedirect();
-  
-  console.log('Automatic language detection disabled for better SEO');
 }
 
 // Update all internal links with current language
@@ -267,108 +264,6 @@ function updateLanguage(lang) {
   });
 }
 
-// Initialize language dropdown functionality
-function initializeLanguageDropdown() {
-  const languageButton = document.querySelector('.modern-language-button');
-  const languageMenu = document.querySelector('.modern-language-menu');
-  const languageOptions = document.querySelectorAll('.modern-language-option');
-  const mobileLanguageOptions = document.querySelectorAll('.mobile-language-option');
-
-  // Desktop language dropdown toggle
-  if (languageButton && languageMenu) {
-    languageButton.addEventListener('click', (e) => {
-      e.stopPropagation();
-      const isVisible = languageMenu.style.visibility === 'visible';
-      languageMenu.style.opacity = isVisible ? '0' : '1';
-      languageMenu.style.visibility = isVisible ? 'hidden' : 'visible';
-    });
-    
-    // Close dropdown when clicking outside
-    document.addEventListener('click', () => {
-      languageMenu.style.opacity = '0';
-      languageMenu.style.visibility = 'hidden';
-    });
-  }
-
-  // Desktop language selection handlers
-  languageOptions.forEach(option => {
-    option.addEventListener('click', (e) => {
-      e.preventDefault();
-      const lang = option.getAttribute('data-lang');
-      
-      if (LANGUAGE_CONFIG.supported.includes(lang)) {
-        // Set user preference cookie with timestamp
-        Cookies.set(LANGUAGE_CONFIG.cookieName, lang, { expires: LANGUAGE_CONFIG.cookieExpiry });
-        Cookies.set(LANGUAGE_CONFIG.cookieName + '_timestamp', Date.now().toString(), { expires: LANGUAGE_CONFIG.cookieExpiry });
-        
-        // Redirect to appropriate language version
-        if (lang === 'pl') {
-          const currentPath = window.location.pathname;
-          const currentPage = currentPath.split('/').pop() || 'index.html';
-          window.location.href = `/pl/${currentPage === 'index.html' ? '' : currentPage}`;
-        } else {
-          // Stay on current English page, just update content
-          updateLanguage(lang);
-          const url = new URL(window.location);
-          url.searchParams.set('lang', lang);
-          window.history.pushState({}, '', url);
-        }
-        
-        // Close dropdown
-        if (languageMenu) {
-          languageMenu.style.opacity = '0';
-          languageMenu.style.visibility = 'hidden';
-        }
-      }
-    });
-  });
-
-  // Mobile language selection handlers
-  mobileLanguageOptions.forEach(option => {
-    option.addEventListener('click', (e) => {
-      e.preventDefault();
-      const lang = option.getAttribute('data-lang');
-      
-      if (LANGUAGE_CONFIG.supported.includes(lang)) {
-        // Set user preference cookie with timestamp
-        Cookies.set(LANGUAGE_CONFIG.cookieName, lang, { expires: LANGUAGE_CONFIG.cookieExpiry });
-        Cookies.set(LANGUAGE_CONFIG.cookieName + '_timestamp', Date.now().toString(), { expires: LANGUAGE_CONFIG.cookieExpiry });
-        
-        // Redirect to appropriate language version
-        if (lang === 'pl') {
-          const currentPath = window.location.pathname;
-          const currentPage = currentPath.split('/').pop() || 'index.html';
-          window.location.href = `/pl/${currentPage === 'index.html' ? '' : currentPage}`;
-        } else {
-          // Stay on current English page, just update content
-          updateLanguage(lang);
-          const url = new URL(window.location);
-          url.searchParams.set('lang', lang);
-          window.history.pushState({}, '', url);
-        }
-        
-        // Close mobile menu
-        const mobileMenu = document.querySelector('.mobile-menu');
-        if (mobileMenu) {
-          mobileMenu.classList.add('hidden');
-        }
-      }
-    });
-  });
-}
-
-// Mobile menu functionality
-function initializeMobileMenu() {
-  const mobileMenuButton = document.getElementById('mobile-menu-button');
-  const mobileMenu = document.querySelector('.mobile-menu');
-  
-  if (mobileMenuButton && mobileMenu) {
-    mobileMenuButton.addEventListener('click', () => {
-      mobileMenu.classList.toggle('hidden');
-    });
-  }
-}
-
 // Set active navigation link
 function setActiveNavigation() {
   const currentPage = window.location.pathname.split('/').pop();
@@ -424,22 +319,17 @@ function initializeLanguageSystem() {
 
 // Main initialization function
 function initializeLanguageManager() {
-  console.log('Language Manager initializing..., DOM state:', document.readyState); // Debug log
-  
   // Initialize geolocation redirect
   initializeGeolocation();
-  
+
   // Wait for DOM to be ready
   if (document.readyState === 'loading') {
-    console.log('DOM still loading, waiting for DOMContentLoaded...'); // Debug log
     document.addEventListener('DOMContentLoaded', () => {
-      console.log('DOMContentLoaded fired, initializing components...'); // Debug log
       initializeLanguageSystem();
       initializeLanguageDropdown();
       initializeMobileMenu();
     });
   } else {
-    console.log('DOM ready, initializing components immediately...'); // Debug log
     initializeLanguageSystem();
     initializeLanguageDropdown();
     initializeMobileMenu();
@@ -539,30 +429,15 @@ function initializeLanguageDropdown() {
 
 // Mobile menu functionality
 function initializeMobileMenu() {
-  console.log('Initializing mobile menu...'); // Debug log
-  
   const mobileMenuButton = document.getElementById('mobile-menu-button');
   const mobileMenu = document.querySelector('.mobile-menu');
-  
-  console.log('Mobile menu elements:', { 
-    button: !!mobileMenuButton, 
-    menu: !!mobileMenu,
-    buttonElement: mobileMenuButton,
-    menuElement: mobileMenu 
-  }); // Debug log
-  
+
   if (mobileMenuButton && mobileMenu) {
-    console.log('Adding mobile menu event listener...'); // Debug log
     mobileMenuButton.addEventListener('click', (e) => {
       e.preventDefault();
       e.stopPropagation();
-      console.log('Mobile menu button clicked! Current menu state:', mobileMenu.classList.contains('hidden')); // Debug log
       mobileMenu.classList.toggle('hidden');
-      console.log('After toggle, menu state:', mobileMenu.classList.contains('hidden')); // Debug log
     });
-    console.log('Mobile menu initialized successfully!'); // Debug log
-  } else {
-    console.error('Mobile menu elements not found:', { button: !!mobileMenuButton, menu: !!mobileMenu }); // Debug log
   }
 }
 

@@ -15,7 +15,7 @@
     <link rel="canonical" href="https://www.laperlaoliveoil.com/articles/chemlali-olive-tree.html" />
     <title>The Chemlali Olive Tree: Tunisia's Ancient Guardian | Laperla Blog</title>
     <link rel="icon" type="image/x-icon" href="data:image/x-icon;base64," />
-    <link rel="stylesheet" >
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries,typography"></script>
     <script>
       tailwind.config = {
         theme: {
@@ -34,7 +34,10 @@
       }
     </script>
     <link rel="stylesheet" href="../assets/css/styles.css">
-    
+
+    <script src="https://cdn.jsdelivr.net/npm/js-cookie@3.0.5/dist/js.cookie.min.js"></script>
+    <script src="../assets/js/language-manager.js"></script>
+
     <meta name="keywords" content="Chemlali olive tree, Tunisia olive varieties, drought resistant olives, ancient olive trees, premium olive oil, resilient agriculture">
 </head>
 <body class="bg-gray-50">
@@ -366,113 +369,5 @@
       </div>
     </div>
 
-    <script>
-      // Language management - same as other pages
-      document.addEventListener('DOMContentLoaded', () => {
-        const translatableElements = document.querySelectorAll('[data-en][data-pl]');
-        const languageButton = document.querySelector('.modern-language-button');
-        const languageMenu = document.querySelector('.modern-language-menu');
-        const languageOptions = document.querySelectorAll('.modern-language-option');
-        const selectedLanguageSpan = document.querySelector('.selected-language');
-        const flagSpan = languageButton.querySelector('.fi');
-        const metaDescription = document.querySelector('meta[name="description"]');
-        
-        // Mobile menu functionality
-        const mobileMenuButton = document.getElementById('mobile-menu-button');
-        const mobileMenu = document.querySelector('.mobile-menu');
-        
-        if (mobileMenuButton && mobileMenu) {
-          mobileMenuButton.addEventListener('click', () => {
-            mobileMenu.classList.toggle('hidden');
-          });
-        }
-
-        function updateLanguage(lang) {
-          translatableElements.forEach(element => {
-            element.textContent = element.getAttribute(`data-${lang}`);
-          });
-
-          if (metaDescription) {
-            metaDescription.setAttribute('content', metaDescription.getAttribute(`data-${lang}`));
-          }
-
-          const selectedOption = document.querySelector(`.modern-language-option[data-lang="${lang}"]`);
-          if (selectedOption) {
-            selectedLanguageSpan.textContent = selectedOption.textContent.trim();
-          }
-          flagSpan.className = `fi fi-${lang === 'pl' ? 'pl' : 'us'}`;
-
-          document.documentElement.setAttribute('lang', lang);
-          Cookies.set('selectedLanguage', lang, { expires: 7 });
-
-          const allLinks = document.querySelectorAll('a[href]');
-          allLinks.forEach(link => {
-            try {
-              const url = new URL(link.href, window.location.origin);
-              if (url.hostname === window.location.hostname && 
-                  (url.pathname.endsWith('.html') || url.pathname === '/')) {
-                url.searchParams.set('lang', lang);
-                link.href = url.pathname + url.search;
-              }
-            } catch (e) {
-              // Skip invalid URLs
-            }
-          });
-        }
-
-        // Language dropdown functionality
-        if (languageButton && languageMenu) {
-          languageButton.addEventListener('click', (e) => {
-            e.stopPropagation();
-            languageMenu.style.opacity = languageMenu.style.opacity === '1' ? '0' : '1';
-            languageMenu.style.visibility = languageMenu.style.visibility === 'visible' ? 'hidden' : 'visible';
-          });
-          
-          document.addEventListener('click', () => {
-            languageMenu.style.opacity = '0';
-            languageMenu.style.visibility = 'hidden';
-          });
-        }
-
-        languageOptions.forEach(option => {
-          option.addEventListener('click', () => {
-            const lang = option.getAttribute('data-lang');
-            updateLanguage(lang);
-            const url = new URL(window.location);
-            url.searchParams.set('lang', lang);
-            window.history.pushState({}, '', url);
-          });
-        });
-
-        // Initialize language
-        const urlParams = new URLSearchParams(window.location.search);
-        const urlLang = urlParams.get('lang');
-        const savedLanguage = Cookies.get('selectedLanguage');
-        
-        if (urlLang && ['en', 'pl'].includes(urlLang)) {
-          updateLanguage(urlLang);
-        } else if (savedLanguage && ['en', 'pl'].includes(savedLanguage)) {
-          updateLanguage(savedLanguage);
-          const url = new URL(window.location);
-          url.searchParams.set('lang', savedLanguage);
-          window.history.replaceState({}, '', url);
-        }
-        
-        // Ensure mobile menu functionality works - based on working blog.html and contact.html
-        const mobileMenuButton = document.getElementById('mobile-menu-button');
-        const mobileMenu = document.querySelector('.mobile-menu');
-        
-        if (mobileMenuButton && mobileMenu && !mobileMenuButton.hasAttribute('data-initialized')) {
-          mobileMenuButton.setAttribute('data-initialized', 'true');
-          mobileMenuButton.addEventListener('click', (e) => {
-            e.preventDefault();
-            e.stopPropagation();
-            console.log('Chemlali article mobile menu clicked from DOMContentLoaded backup handler');
-            mobileMenu.classList.toggle('hidden');
-          });
-          console.log('Chemlali article mobile menu backup handler added');
-        }
-      });
-    </script>
 </body>
 </html>

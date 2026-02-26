@@ -15,24 +15,6 @@
     <link rel="canonical" href="https://laperlaoliveoil.com/pl/heritage.html" />
     <title>Nasze Dziedzictwo | 500 Lat Płynnego Złota | Laperla</title>
     <link rel="icon" type="image/x-icon" href="data:image/x-icon;base64," />
-    <link rel="stylesheet" >
-    <script>
-      tailwind.config = {
-        theme: {
-          extend: {
-            fontFamily: {
-              'display': ['Playfair Display', 'serif'],
-              'sans': ['Inter', 'system-ui', 'sans-serif']
-            },
-            animation: {
-              'fade-in': 'fadeIn 0.6s ease-out forwards',
-              'slide-up': 'slideUp 0.8s ease-out forwards',
-              'float': 'float 6s ease-in-out infinite'
-            }
-          }
-        }
-      }
-    </script>
     <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries,typography"></script>
     <script>
       tailwind.config = {
@@ -56,30 +38,6 @@
     <script src="https://cdn.jsdelivr.net/npm/js-cookie@3.0.5/dist/js.cookie.min.js"></script>
     <script src="../assets/js/language-manager.js"></script>
     
-    <!-- IMMEDIATE MOBILE MENU FIX - Override any conflicts -->
-    <script>
-      document.addEventListener('DOMContentLoaded', function() {
-        console.log('HERITAGE IMMEDIATE FIX: Initializing mobile menu...');
-        const btn = document.getElementById('mobile-menu-button');
-        const menu = document.querySelector('.mobile-menu');
-        console.log('Heritage elements found:', {button: !!btn, menu: !!menu});
-        
-        if (btn && menu) {
-          // Remove any existing listeners
-          btn.removeAttribute('data-initialized');
-          const newBtn = btn.cloneNode(true);
-          btn.parentNode.replaceChild(newBtn, btn);
-          
-          // Add simple click handler
-          newBtn.addEventListener('click', function(e) {
-            e.preventDefault();
-            console.log('HERITAGE IMMEDIATE FIX: Mobile menu clicked!');
-            menu.classList.toggle('hidden');
-          });
-          console.log('HERITAGE IMMEDIATE FIX: Mobile menu ready!');
-        }
-      });
-    </script>
     <meta name="keywords" content="dziedzictwo Laperla, starożytne drzewa oliwne, Sidi Bou Ali, oliwki Chemlali, tradycja Tunezji, rzemiosło pokoleń">
 
     <!-- Polish Structured Data -->
@@ -625,22 +583,6 @@
           });
         }
 
-        // Ensure mobile menu functionality works - based on working blog.html and contact.html
-        const mobileMenuButton = document.getElementById('mobile-menu-button');
-        const mobileMenu = document.querySelector('.mobile-menu');
-        
-        console.log('Polish heritage mobile menu initialization:', { button: !!mobileMenuButton, menu: !!mobileMenu }); // Debug log
-        
-        if (mobileMenuButton && mobileMenu && !mobileMenuButton.hasAttribute('data-initialized')) {
-          mobileMenuButton.setAttribute('data-initialized', 'true');
-          mobileMenuButton.addEventListener('click', (e) => {
-            e.preventDefault();
-            e.stopPropagation();
-            console.log('Polish heritage mobile menu clicked from backup handler');
-            mobileMenu.classList.toggle('hidden');
-          });
-          console.log('Polish heritage mobile menu backup handler added');
-        }
       });
     </script>
 </body>
