@@ -1,0 +1,10 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(ls:*)",
+      "Bash(npm run build-css-prod:*)",
+      "Skill(seo-audit)",
+      "Skill(seo-audit:*)"
+    ]
+  }
+}

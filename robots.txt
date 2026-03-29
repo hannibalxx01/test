@@ -10,9 +10,11 @@ Sitemap: https://www.laperlaoliveoil.com/sitemap.xml
 
 # Language-specific directories
 Allow: /pl/
+Allow: /ru/
 
-# Allow indexing of all Polish language pages
+# Allow indexing of all Polish and Russian language pages
 Allow: /pl/*.html
+Allow: /ru/*.html
 
 # Prevent indexing of temporary or test files
 Disallow: /temp/
