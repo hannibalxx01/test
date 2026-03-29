@@ -1,108 +1,165 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
         xmlns:xhtml="http://www.w3.org/1999/xhtml">
-   
+
    <!-- Homepage -->
    <url>
       <loc>https://www.laperlaoliveoil.com/</loc>
       <xhtml:link rel="alternate" hreflang="en" href="https://www.laperlaoliveoil.com/"/>
       <xhtml:link rel="alternate" hreflang="pl" href="https://www.laperlaoliveoil.com/pl/"/>
+      <xhtml:link rel="alternate" hreflang="ru" href="https://www.laperlaoliveoil.com/ru/"/>
       <changefreq>weekly</changefreq>
       <priority>1.0</priority>
    </url>
-   
+
    <url>
       <loc>https://www.laperlaoliveoil.com/pl/</loc>
       <xhtml:link rel="alternate" hreflang="en" href="https://www.laperlaoliveoil.com/"/>
       <xhtml:link rel="alternate" hreflang="pl" href="https://www.laperlaoliveoil.com/pl/"/>
+      <xhtml:link rel="alternate" hreflang="ru" href="https://www.laperlaoliveoil.com/ru/"/>
       <changefreq>weekly</changefreq>
       <priority>1.0</priority>
    </url>
-   
+
+   <url>
+      <loc>https://www.laperlaoliveoil.com/ru/</loc>
+      <xhtml:link rel="alternate" hreflang="en" href="https://www.laperlaoliveoil.com/"/>
+      <xhtml:link rel="alternate" hreflang="pl" href="https://www.laperlaoliveoil.com/pl/"/>
+      <xhtml:link rel="alternate" hreflang="ru" href="https://www.laperlaoliveoil.com/ru/"/>
+      <changefreq>weekly</changefreq>
+      <priority>1.0</priority>
+   </url>
+
    <!-- Products Page -->
    <url>
       <loc>https://www.laperlaoliveoil.com/product.html</loc>
       <xhtml:link rel="alternate" hreflang="en" href="https://www.laperlaoliveoil.com/product.html"/>
       <xhtml:link rel="alternate" hreflang="pl" href="https://www.laperlaoliveoil.com/pl/product.html"/>
+      <xhtml:link rel="alternate" hreflang="ru" href="https://www.laperlaoliveoil.com/ru/product.html"/>
       <changefreq>monthly</changefreq>
       <priority>0.9</priority>
    </url>
-   
+
    <url>
       <loc>https://www.laperlaoliveoil.com/pl/product.html</loc>
       <xhtml:link rel="alternate" hreflang="en" href="https://www.laperlaoliveoil.com/product.html"/>
       <xhtml:link rel="alternate" hreflang="pl" href="https://www.laperlaoliveoil.com/pl/product.html"/>
+      <xhtml:link rel="alternate" hreflang="ru" href="https://www.laperlaoliveoil.com/ru/product.html"/>
       <changefreq>monthly</changefreq>
       <priority>0.9</priority>
    </url>
-   
+
+   <url>
+      <loc>https://www.laperlaoliveoil.com/ru/product.html</loc>
+      <xhtml:link rel="alternate" hreflang="en" href="https://www.laperlaoliveoil.com/product.html"/>
+      <xhtml:link rel="alternate" hreflang="pl" href="https://www.laperlaoliveoil.com/pl/product.html"/>
+      <xhtml:link rel="alternate" hreflang="ru" href="https://www.laperlaoliveoil.com/ru/product.html"/>
+      <changefreq>monthly</changefreq>
+      <priority>0.9</priority>
+   </url>
+
    <!-- Heritage Page -->
    <url>
       <loc>https://www.laperlaoliveoil.com/heritage.html</loc>
       <xhtml:link rel="alternate" hreflang="en" href="https://www.laperlaoliveoil.com/heritage.html"/>
       <xhtml:link rel="alternate" hreflang="pl" href="https://www.laperlaoliveoil.com/pl/heritage.html"/>
+      <xhtml:link rel="alternate" hreflang="ru" href="https://www.laperlaoliveoil.com/ru/heritage.html"/>
       <changefreq>monthly</changefreq>
       <priority>0.8</priority>
    </url>
-   
+
    <url>
       <loc>https://www.laperlaoliveoil.com/pl/heritage.html</loc>
       <xhtml:link rel="alternate" hreflang="en" href="https://www.laperlaoliveoil.com/heritage.html"/>
       <xhtml:link rel="alternate" hreflang="pl" href="https://www.laperlaoliveoil.com/pl/heritage.html"/>
+      <xhtml:link rel="alternate" hreflang="ru" href="https://www.laperlaoliveoil.com/ru/heritage.html"/>
       <changefreq>monthly</changefreq>
       <priority>0.8</priority>
    </url>
-   
+
+   <url>
+      <loc>https://www.laperlaoliveoil.com/ru/heritage.html</loc>
+      <xhtml:link rel="alternate" hreflang="en" href="https://www.laperlaoliveoil.com/heritage.html"/>
+      <xhtml:link rel="alternate" hreflang="pl" href="https://www.laperlaoliveoil.com/pl/heritage.html"/>
+      <xhtml:link rel="alternate" hreflang="ru" href="https://www.laperlaoliveoil.com/ru/heritage.html"/>
+      <changefreq>monthly</changefreq>
+      <priority>0.8</priority>
+   </url>
+
    <!-- Blog Page -->
    <url>
       <loc>https://www.laperlaoliveoil.com/blog.html</loc>
       <xhtml:link rel="alternate" hreflang="en" href="https://www.laperlaoliveoil.com/blog.html"/>
       <xhtml:link rel="alternate" hreflang="pl" href="https://www.laperlaoliveoil.com/pl/blog.html"/>
+      <xhtml:link rel="alternate" hreflang="ru" href="https://www.laperlaoliveoil.com/ru/blog.html"/>
       <changefreq>weekly</changefreq>
       <priority>0.7</priority>
    </url>
-   
+
    <url>
       <loc>https://www.laperlaoliveoil.com/pl/blog.html</loc>
       <xhtml:link rel="alternate" hreflang="en" href="https://www.laperlaoliveoil.com/blog.html"/>
       <xhtml:link rel="alternate" hreflang="pl" href="https://www.laperlaoliveoil.com/pl/blog.html"/>
+      <xhtml:link rel="alternate" hreflang="ru" href="https://www.laperlaoliveoil.com/ru/blog.html"/>
       <changefreq>weekly</changefreq>
       <priority>0.7</priority>
    </url>
-   
+
+   <url>
+      <loc>https://www.laperlaoliveoil.com/ru/blog.html</loc>
+      <xhtml:link rel="alternate" hreflang="en" href="https://www.laperlaoliveoil.com/blog.html"/>
+      <xhtml:link rel="alternate" hreflang="pl" href="https://www.laperlaoliveoil.com/pl/blog.html"/>
+      <xhtml:link rel="alternate" hreflang="ru" href="https://www.laperlaoliveoil.com/ru/blog.html"/>
+      <changefreq>weekly</changefreq>
+      <priority>0.7</priority>
+   </url>
+
    <!-- Contact Page -->
    <url>
       <loc>https://www.laperlaoliveoil.com/contact.html</loc>
       <xhtml:link rel="alternate" hreflang="en" href="https://www.laperlaoliveoil.com/contact.html"/>
       <xhtml:link rel="alternate" hreflang="pl" href="https://www.laperlaoliveoil.com/pl/contact.html"/>
+      <xhtml:link rel="alternate" hreflang="ru" href="https://www.laperlaoliveoil.com/ru/contact.html"/>
       <changefreq>monthly</changefreq>
       <priority>0.6</priority>
    </url>
-   
+
    <url>
       <loc>https://www.laperlaoliveoil.com/pl/contact.html</loc>
       <xhtml:link rel="alternate" hreflang="en" href="https://www.laperlaoliveoil.com/contact.html"/>
       <xhtml:link rel="alternate" hreflang="pl" href="https://www.laperlaoliveoil.com/pl/contact.html"/>
+      <xhtml:link rel="alternate" hreflang="ru" href="https://www.laperlaoliveoil.com/ru/contact.html"/>
       <changefreq>monthly</changefreq>
       <priority>0.6</priority>
    </url>
-   
+
+   <url>
+      <loc>https://www.laperlaoliveoil.com/ru/contact.html</loc>
+      <xhtml:link rel="alternate" hreflang="en" href="https://www.laperlaoliveoil.com/contact.html"/>
+      <xhtml:link rel="alternate" hreflang="pl" href="https://www.laperlaoliveoil.com/pl/contact.html"/>
+      <xhtml:link rel="alternate" hreflang="ru" href="https://www.laperlaoliveoil.com/ru/contact.html"/>
+      <changefreq>monthly</changefreq>
+      <priority>0.6</priority>
+   </url>
+
    <!-- Article: Chemlali Olive Tree -->
    <url>
       <loc>https://www.laperlaoliveoil.com/articles/chemlali-olive-tree.html</loc>
       <xhtml:link rel="alternate" hreflang="en" href="https://www.laperlaoliveoil.com/articles/chemlali-olive-tree.html"/>
       <xhtml:link rel="alternate" hreflang="pl" href="https://www.laperlaoliveoil.com/articles/chemlali-olive-tree.html?lang=pl"/>
+      <xhtml:link rel="alternate" hreflang="ru" href="https://www.laperlaoliveoil.com/articles/chemlali-olive-tree.html?lang=ru"/>
       <changefreq>monthly</changefreq>
       <priority>0.6</priority>
    </url>
-   
+
    <!-- Article: Olive Oil Health Benefits -->
    <url>
       <loc>https://www.laperlaoliveoil.com/articles/olive-oil-health-benefits.html</loc>
       <xhtml:link rel="alternate" hreflang="en" href="https://www.laperlaoliveoil.com/articles/olive-oil-health-benefits.html"/>
       <xhtml:link rel="alternate" hreflang="pl" href="https://www.laperlaoliveoil.com/articles/olive-oil-health-benefits.html?lang=pl"/>
+      <xhtml:link rel="alternate" hreflang="ru" href="https://www.laperlaoliveoil.com/articles/olive-oil-health-benefits.html?lang=ru"/>
       <changefreq>monthly</changefreq>
       <priority>0.6</priority>
    </url>
-   
+
 </urlset>

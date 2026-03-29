@@ -5,7 +5,7 @@
 
 // Global language configuration
 const LANGUAGE_CONFIG = {
-  supported: ['en', 'pl'],
+  supported: ['en', 'pl', 'ru'],
   default: 'en',
   cookieName: 'selectedLanguage',
   cookieExpiry: 7
@@ -39,7 +39,7 @@ function detectAndRedirect() {
 
   // Primary: Browser language detection
   const browserLang = navigator.language.toLowerCase();
-  const browserLangCode = browserLang.startsWith('pl') ? 'pl' : 'en';
+  const browserLangCode = browserLang.startsWith('pl') ? 'pl' : browserLang.startsWith('ru') ? 'ru' : 'en';
   
   console.log('🌐 Browser language detected:', browserLang, '→', browserLangCode);
 
@@ -49,9 +49,9 @@ function detectAndRedirect() {
   })
     .then(response => response.json())
     .then(data => {
-      const geoLang = data.countryCode === 'PL' ? 'pl' : 'en';
+      const geoLang = data.countryCode === 'PL' ? 'pl' : data.countryCode === 'RU' ? 'ru' : 'en';
       console.log('🌍 Geo detected:', data.countryCode, '→', geoLang.toUpperCase());
-      
+
       // Use geo if available, otherwise browser language
       const finalLang = geoLang;
       
@@ -103,7 +103,7 @@ function tryGeolocationForFutureVisits(fallbackLang) {
       localStorage.setItem('lastGeoCheck', now.toString());
       
       // If geo suggests different language, store as suggestion
-      const geoLang = data.countryCode === 'PL' ? 'pl' : 'en';
+      const geoLang = data.countryCode === 'PL' ? 'pl' : data.countryCode === 'RU' ? 'ru' : 'en';
       if (geoLang !== fallbackLang) {
         localStorage.setItem('geoLanguageSuggestion', geoLang);
         console.log(`💡 Geo suggests ${geoLang.toUpperCase()}, but using browser choice ${fallbackLang.toUpperCase()}`);
@@ -129,21 +129,24 @@ function redirectToLanguageVersion(lang) {
   if (lang === 'pl' && currentPath.startsWith('/pl/')) {
     return;
   }
-  if (lang === 'en' && !currentPath.startsWith('/pl/')) {
+  if (lang === 'ru' && currentPath.startsWith('/ru/')) {
     return;
   }
-  
+  if (lang === 'en' && !currentPath.startsWith('/pl/') && !currentPath.startsWith('/ru/')) {
+    return;
+  }
+
   // Redirect to appropriate language version
   if (lang === 'pl') {
-    // Redirect to Polish version
     window.location.href = `/pl/${currentPage === 'index.html' ? '' : currentPage}`;
+  } else if (lang === 'ru') {
+    window.location.href = `/ru/${currentPage === 'index.html' ? '' : currentPage}`;
   } else {
     // Redirect to English version (root)
-    if (currentPath.startsWith('/pl/')) {
-      const page = currentPath.replace('/pl/', '') || '';
+    if (currentPath.startsWith('/pl/') || currentPath.startsWith('/ru/')) {
+      const page = currentPath.replace('/pl/', '').replace('/ru/', '') || '';
       window.location.href = `/${page}`;
     } else {
-      // Already on English version, just update with language parameter
       const url = new URL(window.location);
       url.searchParams.set('lang', 'en');
       window.history.replaceState({}, '', url);
@@ -158,7 +161,7 @@ function initializeGeolocation() {
   const currentPath = window.location.pathname;
   
   // Skip detection if we're already on a language-specific path or have valid lang param
-  if (hasValidLang || currentPath.startsWith('/pl/')) {
+  if (hasValidLang || currentPath.startsWith('/pl/') || currentPath.startsWith('/ru/')) {
     return;
   }
   
@@ -183,7 +186,7 @@ function updateAllLinks(lang) {
 // Main language update function
 function updateLanguage(lang) {
   // Update all translatable elements
-  const translatableElements = document.querySelectorAll('[data-en][data-pl]');
+  const translatableElements = document.querySelectorAll('[data-en]');
   translatableElements.forEach(element => {
     const translation = element.getAttribute(`data-${lang}`);
     if (translation) {
@@ -234,7 +237,7 @@ function updateLanguage(lang) {
     const selectedOption = document.querySelector(`.modern-language-option[data-lang="${lang}"]`);
     if (selectedOption) {
       selectedLanguageSpan.textContent = selectedOption.textContent.trim();
-      flagSpan.className = `fi fi-${lang === 'pl' ? 'pl' : 'us'}`;
+      flagSpan.className = `fi fi-${lang === 'pl' ? 'pl' : lang === 'ru' ? 'ru' : 'us'}`;
     }
   }
 
@@ -440,6 +443,13 @@ window.switchToPolish = function() {
   Cookies.set(LANGUAGE_CONFIG.cookieName + '_timestamp', Date.now().toString(), { expires: LANGUAGE_CONFIG.cookieExpiry });
   const currentPage = window.location.pathname.split('/').pop() || 'index.html';
   window.location.href = '/pl/' + (currentPage === 'index.html' ? '' : currentPage);
+};
+
+window.switchToRussian = function() {
+  Cookies.set(LANGUAGE_CONFIG.cookieName, 'ru', { expires: LANGUAGE_CONFIG.cookieExpiry });
+  Cookies.set(LANGUAGE_CONFIG.cookieName + '_timestamp', Date.now().toString(), { expires: LANGUAGE_CONFIG.cookieExpiry });
+  const currentPage = window.location.pathname.split('/').pop() || 'index.html';
+  window.location.href = '/ru/' + (currentPage === 'index.html' ? '' : currentPage);
 };
 
 window.switchToEnglish = function() {
