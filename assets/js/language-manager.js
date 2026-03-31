@@ -190,7 +190,11 @@ function updateLanguage(lang) {
   translatableElements.forEach(element => {
     const translation = element.getAttribute(`data-${lang}`);
     if (translation) {
-      element.textContent = translation;
+      if (translation.includes('<')) {
+        element.innerHTML = translation;
+      } else {
+        element.textContent = translation;
+      }
     }
   });
 
