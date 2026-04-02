@@ -390,9 +390,63 @@
             <div class="max-w-6xl mx-auto">
               <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
                 
-                <!-- Product Image -->
+                <!-- Product Image Slider -->
                 <div class="order-2 lg:order-1">
-                  <img src="assets/images/bottle.jpeg" alt="Laperla Premium Chemlali Olive Oil" class="product-image w-full max-w-md mx-auto">
+                  <div class="product-slider relative w-full max-w-md mx-auto" id="productSlider">
+                    <!-- Slides -->
+                    <div class="product-slides overflow-hidden rounded-2xl">
+                      <div class="product-slides-track flex transition-transform duration-500 ease-in-out">
+                        <div class="product-slide flex-shrink-0 w-full">
+                          <img src="assets/images/bottle.jpeg" alt="Laperla Premium Chemlali Olive Oil" class="product-image w-full object-contain">
+                        </div>
+                        <div class="product-slide flex-shrink-0 w-full">
+                          <img src="assets/images/best.jpg" alt="Laperla Best Extra Virgin Olive Oil" class="product-image w-full object-contain">
+                        </div>
+                        <div class="product-slide flex-shrink-0 w-full">
+                          <img src="assets/images/best2.jpg" alt="Laperla Premium Olive Oil Award" class="product-image w-full object-contain">
+                        </div>
+                      </div>
+                    </div>
+
+                    <!-- Prev / Next buttons -->
+                    <button class="product-slider-btn absolute left-0 top-1/2 -translate-y-1/2 -translate-x-4 bg-white shadow-md rounded-full w-10 h-10 flex items-center justify-center text-gray-700 hover:text-emerald-700 transition-colors z-10" id="sliderPrev" aria-label="Previous image">
+                      <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path></svg>
+                    </button>
+                    <button class="product-slider-btn absolute right-0 top-1/2 -translate-y-1/2 translate-x-4 bg-white shadow-md rounded-full w-10 h-10 flex items-center justify-center text-gray-700 hover:text-emerald-700 transition-colors z-10" id="sliderNext" aria-label="Next image">
+                      <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
+                    </button>
+
+                    <!-- Dots -->
+                    <div class="flex justify-center gap-2 mt-4" id="sliderDots">
+                      <button class="slider-dot w-2.5 h-2.5 rounded-full bg-emerald-600 transition-all" data-index="0" aria-label="Image 1"></button>
+                      <button class="slider-dot w-2.5 h-2.5 rounded-full bg-gray-300 transition-all" data-index="1" aria-label="Image 2"></button>
+                      <button class="slider-dot w-2.5 h-2.5 rounded-full bg-gray-300 transition-all" data-index="2" aria-label="Image 3"></button>
+                    </div>
+                  </div>
+
+                  <script>
+                    (function() {
+                      var track = document.querySelector('.product-slides-track');
+                      var dots = document.querySelectorAll('.slider-dot');
+                      var current = 0;
+                      var total = 3;
+
+                      function goTo(index) {
+                        current = (index + total) % total;
+                        track.style.transform = 'translateX(-' + (current * 100) + '%)';
+                        dots.forEach(function(d, i) {
+                          d.classList.toggle('bg-emerald-600', i === current);
+                          d.classList.toggle('bg-gray-300', i !== current);
+                        });
+                      }
+
+                      document.getElementById('sliderPrev').addEventListener('click', function() { goTo(current - 1); });
+                      document.getElementById('sliderNext').addEventListener('click', function() { goTo(current + 1); });
+                      dots.forEach(function(d) {
+                        d.addEventListener('click', function() { goTo(parseInt(d.dataset.index)); });
+                      });
+                    })();
+                  </script>
                 </div>
                 
                 <!-- Product Details -->
