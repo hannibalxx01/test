@@ -400,9 +400,6 @@
                           <img src="assets/images/bottle.jpeg" alt="Laperla Premium Chemlali Olive Oil" class="product-image w-full object-contain">
                         </div>
                         <div class="product-slide flex-shrink-0 w-full">
-                          <img src="assets/images/best.jpg" alt="Laperla Best Extra Virgin Olive Oil" class="product-image w-full object-contain">
-                        </div>
-                        <div class="product-slide flex-shrink-0 w-full">
                           <img src="assets/images/best2.jpg" alt="Laperla Premium Olive Oil Award" class="product-image w-full object-contain">
                         </div>
                       </div>
@@ -420,7 +417,6 @@
                     <div class="flex justify-center gap-2 mt-4" id="sliderDots">
                       <button class="slider-dot w-2.5 h-2.5 rounded-full bg-emerald-600 transition-all" data-index="0" aria-label="Image 1"></button>
                       <button class="slider-dot w-2.5 h-2.5 rounded-full bg-gray-300 transition-all" data-index="1" aria-label="Image 2"></button>
-                      <button class="slider-dot w-2.5 h-2.5 rounded-full bg-gray-300 transition-all" data-index="2" aria-label="Image 3"></button>
                     </div>
                   </div>
 
@@ -429,7 +425,7 @@
                       var track = document.querySelector('.product-slides-track');
                       var dots = document.querySelectorAll('.slider-dot');
                       var current = 0;
-                      var total = 3;
+                      var total = 2;
 
                       function goTo(index) {
                         current = (index + total) % total;
