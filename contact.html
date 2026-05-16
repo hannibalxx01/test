@@ -403,9 +403,10 @@
               </a>
               
               <!-- Navigation Links -->
-              <nav class="hidden lg:flex items-center space-x-12">
+              <nav class="hidden lg:flex items-center" style="gap: 2.5rem;">
                 <a class="modern-nav-link text-gray-700 text-base font-light hover:text-emerald-700 transition-colors duration-300" id="nav-home" href="index.html" data-en="Home" data-pl="Strona Główna" data-ru="Главная">Home</a>
                 <a class="modern-nav-link text-gray-700 text-base font-light hover:text-emerald-700 transition-colors duration-300" id="nav-products" href="product.html" data-en="Products" data-pl="Produkty" data-ru="Продукты">Products</a>
+                <a class="modern-nav-link text-gray-700 text-base font-light hover:text-emerald-700 transition-colors duration-300" id="nav-wholesale" href="wholesale.html" data-en="Wholesale" data-pl="Hurtowo" data-ru="Оптом">Wholesale</a>
                 <a class="modern-nav-link text-gray-700 text-base font-light hover:text-emerald-700 transition-colors duration-300" id="nav-story" href="heritage.html" data-en="Our Story" data-pl="Nasza Historia" data-ru="Наша История">Our Story</a>
                 <a class="modern-nav-link text-gray-700 text-base font-light hover:text-emerald-700 transition-colors duration-300" id="nav-blog" href="blog.html" data-en="Blog" data-pl="Blog" data-ru="Блог">Blog</a>
                 <a class="modern-nav-link text-gray-700 text-base font-light hover:text-emerald-700 transition-colors duration-300 nav-link-active" id="nav-contact" href="contact.html" data-en="Contact" data-pl="Kontakt" data-ru="Контакт">Contact</a>
@@ -454,6 +455,7 @@
             <div class="px-6 py-4 space-y-4">
               <a class="block text-gray-700 text-lg font-light hover:text-emerald-700 transition-colors" href="index.html" data-en="Home" data-pl="Strona Główna" data-ru="Главная">Home</a>
               <a class="block text-gray-700 text-lg font-light hover:text-emerald-700 transition-colors" href="product.html" data-en="Products" data-pl="Produkty" data-ru="Продукты">Products</a>
+              <a class="block text-gray-700 text-lg font-light hover:text-emerald-700 transition-colors" href="wholesale.html" data-en="Wholesale" data-pl="Hurtowo" data-ru="Оптом">Wholesale</a>
               <a class="block text-gray-700 text-lg font-light hover:text-emerald-700 transition-colors" href="heritage.html" data-en="Our Story" data-pl="Nasza Historia" data-ru="Наша История">Our Story</a>
               <a class="block text-gray-700 text-lg font-light hover:text-emerald-700 transition-colors" href="blog.html" data-en="Blog" data-pl="Blog" data-ru="Блог">Blog</a>
               <a class="block text-gray-700 text-lg font-light hover:text-emerald-700 transition-colors" href="contact.html" data-en="Contact" data-pl="Kontakt" data-ru="Контакт">Contact</a>
@@ -523,112 +525,6 @@
             </div>
           </section>
 
-          <section class="mb-20">
-            <h2 class="modern-section-title text-4xl md:text-5xl lg:text-6xl font-light text-gray-800 mb-20 tracking-tight leading-tight text-center" data-en="Tell Us Your Needs" data-pl="Opowiedz Nam o Swoich Potrzebach" data-ru="Расскажите о Своих Потребностях">Tell Us Your Needs</h2>
-            <div class="contact-card max-w-2xl mx-auto">
-              
-              <form
-                id="contact-form"
-                action="https://formsubmit.co/info@laperlaoliveoil.com"
-                method="POST"
-                class="space-y-6"
-              >
-                <input type="hidden" name="_subject" value="New Contact Form Submission - Laperla Olive Oil">
-                <input type="hidden" name="_captcha" value="true">
-                
-                <div>
-                  <label class="form-label" data-en="Name *" data-pl="Imię *" data-ru="Имя *">Name *</label>
-                  <input
-                    type="text"
-                    name="name"
-                    class="form-input"
-                    required
-                    data-placeholder-en="Enter your name"
-                    data-placeholder-pl="Wpisz swoje imię"
-                    placeholder="Enter your name"
-                  />
-                </div>
-                
-                <div>
-                  <label class="form-label" data-en="Email *" data-pl="Email *" data-ru="Email *">Email *</label>
-                  <input
-                    type="email"
-                    name="email"
-                    class="form-input"
-                    required
-                    data-placeholder-en="Enter your email"
-                    data-placeholder-pl="Wpisz swój email"
-                    placeholder="Enter your email"
-                  />
-                </div>
-                
-                <div>
-                  <label class="form-label" data-en="Phone (Optional)" data-pl="Telefon (Opcjonalny)" data-ru="Телефон (Необязательно)">Phone (Optional)</label>
-                  <input
-                    type="tel"
-                    name="phone"
-                    class="form-input"
-                    data-placeholder-en="Enter your phone number"
-                    data-placeholder-pl="Wpisz swój numer telefonu"
-                    placeholder="Enter your phone number"
-                  />
-                </div>
-                
-                <div>
-                  <label class="form-label" data-en="Type of Business *" data-pl="Rodzaj działalności *" data-ru="Тип Бизнеса *">Type of Business *</label>
-                  <select name="business_type" class="form-select form-input" required>
-                    <option value="" disabled selected data-en="Select business type" data-pl="Wybierz rodzaj działalności" data-ru="Выберите тип бизнеса">Select business type</option>
-                    <option value="Retail" data-en="Retail" data-pl="Handel detaliczny" data-ru="Розница">Retail</option>
-                    <option value="Wholesale" data-en="Wholesale" data-pl="Hurt" data-ru="Опт">Wholesale</option>
-                    <option value="Restaurant" data-en="Restaurant" data-pl="Restauracja" data-ru="Ресторан">Restaurant</option>
-                    <option value="Other" data-en="Other" data-pl="Inne" data-ru="Другое">Other</option>
-                  </select>
-                </div>
-                
-                <div id="other-business-type" class="hidden">
-                  <label class="form-label" data-en="Specify Other Business Type *" data-pl="Określ inny rodzaj działalności *" data-ru="Укажите другой тип бизнеса *">Specify Other Business Type *</label>
-                  <input
-                    type="text"
-                    name="other_business_type"
-                    class="form-input"
-                    data-placeholder-en="Describe your business type"
-                    data-placeholder-pl="Opisz swój rodzaj działalności"
-                    placeholder="Describe your business type"
-                  />
-                </div>
-                
-                <div>
-                  <label class="form-label" data-en="Location *" data-pl="Lokalizacja *" data-ru="Местоположение *">Location *</label>
-                  <input
-                    type="text"
-                    name="location"
-                    class="form-input"
-                    required
-                    data-placeholder-en="Enter your city/country"
-                    data-placeholder-pl="Wpisz swoje miasto/kraj"
-                    placeholder="Enter your city/country"
-                  />
-                </div>
-                
-                <div>
-                  <label class="form-label" data-en="Description of Needs *" data-pl="Opis potrzeb *" data-ru="Описание потребностей *">Description of Needs *</label>
-                  <textarea
-                    name="description"
-                    class="form-input"
-                    rows="5"
-                    required
-                    data-placeholder-en="Tell us about your olive oil needs"
-                    data-placeholder-pl="Opowiedz nam o swoich potrzebach dotyczących oliwy"
-                    placeholder="Tell us about your olive oil needs"
-                  ></textarea>
-                </div>
-                
-                <button type="submit" class="inline-block bg-gradient-to-r from-emerald-600 to-emerald-700 hover:from-emerald-700 hover:to-emerald-800 text-white px-12 py-4 rounded-full text-lg font-medium transition-all duration-300 hover:scale-105 hover:shadow-lg shadow-emerald-200 w-full">
-                  <span data-en="Submit Inquiry" data-pl="Wyślij Zapytanie" data-ru="Отправить Запрос">Submit Inquiry</span>
-                </button>
-              </form>
-            </div>
-          </section>
         </div>
         </main>
 
@@ -644,6 +540,7 @@
             <div class="flex flex-wrap items-center justify-center gap-8 mb-8">
               <a class="text-gray-600 hover:text-yellow-600 font-medium transition-colors" href="index.html" data-en="Home" data-pl="Strona Główna" data-ru="Главная">Home</a>
               <a class="text-gray-600 hover:text-yellow-600 font-medium transition-colors" href="product.html" data-en="Our Products" data-pl="Nasze Produkty" data-ru="Наши Продукты">Our Products</a>
+              <a class="text-gray-600 hover:text-yellow-600 font-medium transition-colors" href="wholesale.html" data-en="Wholesale" data-pl="Hurtowo" data-ru="Оптом">Wholesale</a>
               <a class="text-gray-600 hover:text-yellow-600 font-medium transition-colors" href="heritage.html" data-en="Our Story" data-pl="Nasza Historia" data-ru="Наша История">Our Story</a>
               <a class="text-gray-600 hover:text-yellow-600 font-medium transition-colors" href="blog.html" data-en="Blog" data-pl="Blog" data-ru="Блог">Blog</a>
               <a class="text-gray-600 hover:text-yellow-600 font-medium transition-colors" href="contact.html" data-en="Contact" data-pl="Kontakt" data-ru="Контакт">Contact</a>
