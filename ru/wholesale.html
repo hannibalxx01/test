@@ -1,0 +1,684 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Поставляем сертифицированное органическое тунисское оливковое масло extra virgin для ритейлеров, ресторанов, дистрибьюторов и производителей продуктов питания. Свяжитесь с нами для получения оптовой цены." />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preload" as="style" onload="this.onload=null;this.rel='stylesheet'" href="https://fonts.googleapis.com/css2?display=swap&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap" />
+    <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?display=swap&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap" /></noscript>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flag-icons/css/flag-icons.min.css" />
+    <link rel="alternate" hreflang="en" href="https://www.laperlaoliveoil.com/wholesale.html" />
+    <link rel="alternate" hreflang="pl" href="https://www.laperlaoliveoil.com/pl/wholesale.html" />
+    <link rel="alternate" hreflang="ru" href="https://www.laperlaoliveoil.com/ru/wholesale.html" />
+    <link rel="alternate" hreflang="x-default" href="https://www.laperlaoliveoil.com/wholesale.html" />
+    <link rel="canonical" href="https://www.laperlaoliveoil.com/ru/wholesale.html" />
+    <title>Оптовые поставки | Премиальное оливковое масло для бизнеса | Laperla</title>
+    <link rel="icon" type="image/png" href="../assets/images/favicon.png" />
+    <link rel="stylesheet" href="../assets/css/tailwind.css">
+    <link rel="stylesheet" href="../assets/css/styles.css">
+
+    <script src="https://cdn.jsdelivr.net/npm/js-cookie@3.0.5/dist/js.cookie.min.js"></script>
+    <meta name="keywords" content="оптовые поставки оливкового масла, тунисское оливковое масло оптом, частная марка оливковое масло, оливковое масло в жестяных банках, дистрибьютор оливкового масла, органическое оливковое масло оптом">
+
+    <style>
+      .fi { width: 20px; height: 15px; border-radius: 2px; }
+
+      .packaging-card {
+        background: white;
+        border: 1px solid rgba(212, 160, 23, 0.15);
+        border-radius: 24px;
+        padding: 2.5rem;
+        transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+        box-shadow: 0 4px 20px rgba(0,0,0,0.06);
+        display: flex;
+        flex-direction: column;
+      }
+      .packaging-card:hover {
+        transform: translateY(-8px);
+        box-shadow: 0 24px 60px rgba(0,0,0,0.13);
+        border-color: rgba(212,175,55,0.4);
+      }
+      .packaging-icon-wrap {
+        width: 72px;
+        height: 72px;
+        border-radius: 20px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-bottom: 1.75rem;
+        flex-shrink: 0;
+      }
+
+      .client-card {
+        background: white;
+        border: 1px solid rgba(107,124,89,0.12);
+        border-radius: 20px;
+        padding: 2.25rem 1.75rem;
+        text-align: center;
+        transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        box-shadow: 0 2px 12px rgba(0,0,0,0.04);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+      .client-card:hover {
+        box-shadow: 0 16px 40px rgba(0,0,0,0.1);
+        transform: translateY(-4px);
+        border-color: rgba(107,124,89,0.3);
+      }
+      .client-icon-wrap {
+        width: 64px;
+        height: 64px;
+        border-radius: 18px;
+        background: #f0f4ed;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-bottom: 1.25rem;
+      }
+
+      .faq-item {
+        background: white;
+        border: 1px solid rgba(212,175,55,0.12);
+        border-radius: 16px;
+        overflow: hidden;
+        margin-bottom: 0.875rem;
+        box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+        transition: box-shadow 0.2s;
+      }
+      .faq-item:hover { box-shadow: 0 6px 20px rgba(0,0,0,0.07); }
+      .faq-question {
+        padding: 1.375rem 1.75rem;
+        font-weight: 500;
+        color: #1f2937;
+        cursor: pointer;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 1rem;
+        transition: background 0.2s;
+        min-height: 64px;
+      }
+      .faq-question:hover { background: #f8faf5; }
+      .faq-answer {
+        padding: 0 1.75rem 1.375rem;
+        color: #525252;
+        font-weight: 300;
+        line-height: 1.75;
+        display: none;
+        border-top: 1px solid rgba(212,175,55,0.1);
+        padding-top: 1rem;
+      }
+      .faq-answer.open { display: block; }
+      .faq-chevron { transition: transform 0.3s; flex-shrink: 0; }
+      .faq-chevron.rotated { transform: rotate(180deg); }
+
+      .doc-item {
+        display: flex;
+        align-items: flex-start;
+        gap: 1rem;
+        padding: 1.25rem;
+        background: white;
+        border-radius: 16px;
+        box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+      }
+      .doc-icon-wrap {
+        width: 48px;
+        height: 48px;
+        border-radius: 14px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-shrink: 0;
+      }
+
+      @media (max-width: 768px) {
+        .packaging-card { padding: 1.75rem; }
+        .client-card { padding: 1.5rem 1.25rem; }
+      }
+    </style>
+</head>
+<body class="bg-gray-50">
+
+    <div class="relative flex size-full min-h-screen flex-col bg-gradient-to-br from-gray-50 to-white group/design-root overflow-x-hidden">
+      <div class="layout-container flex h-full grow flex-col">
+
+        <!-- Header -->
+        <header class="modern-nav sticky top-0 z-50 bg-white/90 backdrop-blur-lg border-b border-gray-200/60">
+          <div class="max-w-7xl mx-auto px-6 md:px-10">
+            <div class="flex items-center justify-between h-20">
+              <a href="index.html" class="flex items-center text-gray-900 no-underline group">
+                <div class="flex flex-col">
+                  <h2 class="text-gray-900 text-2xl font-bold tracking-wide font-display">LAPERLA</h2>
+                  <p class="text-gray-500 text-xs font-light tracking-wide" data-en="Premium Olive Oil" data-pl="Premium Oliwa z Oliwek" data-ru="Премиальное Оливковое Масло">Премиальное Оливковое Масло</p>
+                </div>
+              </a>
+
+              <!-- Navigation Links -->
+              <nav class="hidden lg:flex items-center" style="gap: 2rem;">
+                <a class="modern-nav-link text-gray-700 text-base font-light hover:text-emerald-700 transition-colors duration-300" id="nav-home" href="index.html" data-en="Home" data-pl="Strona Główna" data-ru="Главная">Главная</a>
+                <a class="modern-nav-link text-gray-700 text-base font-light hover:text-emerald-700 transition-colors duration-300" id="nav-products" href="product.html" data-en="Products" data-pl="Produkty" data-ru="Продукты">Продукты</a>
+                <a class="modern-nav-link text-gray-700 text-base font-light hover:text-emerald-700 transition-colors duration-300 nav-link-active" id="nav-wholesale" href="wholesale.html" data-en="Wholesale" data-pl="Hurtownia" data-ru="Оптовая">Оптовая</a>
+                <a class="modern-nav-link text-gray-700 text-base font-light hover:text-emerald-700 transition-colors duration-300" id="nav-story" href="heritage.html" data-en="Our Story" data-pl="Nasza Historia" data-ru="Наша История">Наша История</a>
+                <a class="modern-nav-link text-gray-700 text-base font-light hover:text-emerald-700 transition-colors duration-300" id="nav-blog" href="blog.html" data-en="Blog" data-pl="Blog" data-ru="Блог">Блог</a>
+                <a class="modern-nav-link text-gray-700 text-base font-light hover:text-emerald-700 transition-colors duration-300" id="nav-contact" href="contact.html" data-en="Contact" data-pl="Kontakt" data-ru="Контакт">Контакт</a>
+              </nav>
+
+              <!-- Right Side Actions -->
+              <div class="flex items-center gap-6">
+                <!-- Language Selector - Desktop Only -->
+                <div class="modern-language-dropdown relative hidden lg:block">
+                  <button class="modern-language-button flex items-center gap-2 px-4 py-2 text-gray-600 hover:text-gray-900 transition-colors duration-300">
+                    <span class="fi fi-ru"></span>
+                    <span class="selected-language text-sm font-light">Русский</span>
+                    <svg class="w-4 h-4 transition-transform duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                    </svg>
+                  </button>
+                  <div class="modern-language-menu absolute top-full right-0 mt-2 bg-white rounded-xl shadow-lg border border-gray-200 py-2 min-w-[120px] opacity-0 invisible transition-all duration-200">
+                    <div class="modern-language-option flex items-center gap-3 px-4 py-2 text-sm hover:bg-gray-50 cursor-pointer" onclick="window.location.href='../wholesale.html'"><span class="fi fi-us"></span>English</div>
+                    <div class="modern-language-option flex items-center gap-3 px-4 py-2 text-sm hover:bg-gray-50 cursor-pointer" onclick="window.location.href='../pl/wholesale.html'"><span class="fi fi-pl"></span>Polski</div>
+                    <div class="modern-language-option flex items-center gap-3 px-4 py-2 text-sm bg-gray-50 cursor-pointer"><span class="fi fi-ru"></span>Русский</div>
+                  </div>
+                </div>
+                <button class="lg:hidden p-2 text-gray-600 hover:text-gray-900" id="mobile-menu-button" aria-label="Open menu">
+                  <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                  </svg>
+                </button>
+              </div>
+            </div>
+          </div>
+          <!-- Mobile Menu -->
+          <div class="lg:hidden mobile-menu hidden bg-white border-t border-gray-200">
+            <div class="px-6 py-4 space-y-4">
+              <a class="block text-gray-700 text-lg font-light hover:text-emerald-700 transition-colors" href="index.html" data-en="Home" data-pl="Strona Główna" data-ru="Главная">Главная</a>
+              <a class="block text-gray-700 text-lg font-light hover:text-emerald-700 transition-colors" href="product.html" data-en="Products" data-pl="Produkty" data-ru="Продукты">Продукты</a>
+              <a class="block text-amber-700 text-lg font-semibold" href="wholesale.html" data-en="Wholesale" data-pl="Hurtownia" data-ru="Оптовая">Оптовая</a>
+              <a class="block text-gray-700 text-lg font-light hover:text-emerald-700 transition-colors" href="heritage.html" data-en="Our Story" data-pl="Nasza Historia" data-ru="Наша История">Наша История</a>
+              <a class="block text-gray-700 text-lg font-light hover:text-emerald-700 transition-colors" href="blog.html" data-en="Blog" data-pl="Blog" data-ru="Блог">Блог</a>
+              <a class="block text-gray-700 text-lg font-light hover:text-emerald-700 transition-colors" href="contact.html" data-en="Contact" data-pl="Kontakt" data-ru="Контакт">Контакт</a>
+              <div class="border-t border-gray-200 pt-4 mt-4">
+                <p class="text-gray-500 text-sm font-medium mb-3" data-en="Language" data-pl="Język" data-ru="Язык">Язык</p>
+                <div class="space-y-2">
+                  <button class="mobile-language-option flex items-center gap-3 w-full px-2 py-2 text-gray-700 hover:bg-gray-50 rounded-lg transition-colors" onclick="window.location.href='../wholesale.html'"><span class="fi fi-us"></span><span>English</span></button>
+                  <button class="mobile-language-option flex items-center gap-3 w-full px-2 py-2 text-gray-700 hover:bg-gray-50 rounded-lg transition-colors" onclick="window.location.href='../pl/wholesale.html'"><span class="fi fi-pl"></span><span>Polski</span></button>
+                  <button class="mobile-language-option flex items-center gap-3 w-full px-2 py-2 text-gray-700 bg-gray-50 rounded-lg transition-colors"><span class="fi fi-ru"></span><span>Русский</span></button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </header>
+
+        <main id="main-content" class="flex-1">
+
+          <!-- Hero -->
+          <section class="bg-gradient-to-br from-emerald-900 via-emerald-800 to-amber-800 py-24 md:py-36 relative overflow-hidden">
+            <div class="absolute inset-0 opacity-10" aria-hidden="true">
+              <div class="absolute top-0 left-0 w-96 h-96 bg-amber-400 rounded-full blur-3xl -translate-x-1/2 -translate-y-1/2"></div>
+              <div class="absolute bottom-0 right-0 w-96 h-96 bg-emerald-400 rounded-full blur-3xl translate-x-1/2 translate-y-1/2"></div>
+            </div>
+            <div class="max-w-7xl mx-auto px-6 md:px-10 text-center relative z-10">
+              <h1 class="text-5xl md:text-6xl lg:text-7xl font-light text-white mb-8 tracking-tight leading-tight">
+                Премиальное Масло<br><span class="font-normal text-amber-300">Для Вашего Бизнеса</span>
+              </h1>
+              <p class="text-sm font-light max-w-2xl mx-auto leading-relaxed" style="color: black; letter-spacing: 0.01em;">
+                Многократно удостоенное наград, сертифицированное ECO-CERT тунисское оливковое масло extra virgin — доступно в стеклянных бутылках, металлических банках, пластиковых ёмкостях и в bulk-формате. Для ритейлеров, дистрибьюторов, ресторанов и производителей продуктов питания по всему миру.
+              </p>
+            </div>
+          </section>
+
+          <div class="max-w-7xl mx-auto px-6 md:px-10 py-20">
+
+            <!-- Who We Supply -->
+            <section class="mb-32">
+              <div class="text-center mb-12">
+                <h2 class="text-4xl md:text-5xl font-light text-gray-800 mb-4 tracking-tight" style="letter-spacing:-0.02em">Кого Мы Снабжаем</h2>
+                <p class="text-xl font-light text-gray-500 max-w-2xl mx-auto">От бутиковых деликатесных магазинов до крупных дистрибьюторов — Laperla адаптируется к потребностям вашего бизнеса.</p>
+              </div>
+              <div class="grid grid-cols-2 lg:grid-cols-4 gap-6">
+
+                <!-- Retailers -->
+                <div style="background: white; border-radius: 22px; padding: 2rem 1.75rem; text-align: center; border: 1px solid rgba(107,124,89,0.13); box-shadow: 0 4px 20px rgba(0,0,0,0.05); transition: all 0.3s cubic-bezier(0.4,0,0.2,1);" onmouseover="this.style.transform='translateY(-5px)';this.style.boxShadow='0 16px 40px rgba(0,0,0,0.1)';" onmouseout="this.style.transform='translateY(0)';this.style.boxShadow='0 4px 20px rgba(0,0,0,0.05)';">
+                  <div style="width: 60px; height: 60px; border-radius: 18px; background: linear-gradient(135deg, #ecfdf5, #d1fae5); display: flex; align-items: center; justify-content: center; margin: 0 auto 1.25rem;">
+                    <svg class="w-7 h-7 text-emerald-700" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z"/>
+                    </svg>
+                  </div>
+                  <h3 style="font-size: 1.0625rem; font-weight: 600; color: #1f2937; margin-bottom: 0.5rem; line-height: 1.3;">Ритейлеры и Супермаркеты</h3>
+                  <p style="font-size: 0.8125rem; color: #9ca3af; line-height: 1.5;">Под собственной маркой или брендом, готовая к полке упаковка</p>
+                </div>
+
+                <!-- Restaurants -->
+                <div style="background: white; border-radius: 22px; padding: 2rem 1.75rem; text-align: center; border: 1px solid rgba(107,124,89,0.13); box-shadow: 0 4px 20px rgba(0,0,0,0.05); transition: all 0.3s cubic-bezier(0.4,0,0.2,1);" onmouseover="this.style.transform='translateY(-5px)';this.style.boxShadow='0 16px 40px rgba(0,0,0,0.1)';" onmouseout="this.style.transform='translateY(0)';this.style.boxShadow='0 4px 20px rgba(0,0,0,0.05)';">
+                  <div style="width: 60px; height: 60px; border-radius: 18px; background: linear-gradient(135deg, #fef3c7, #fde68a); display: flex; align-items: center; justify-content: center; margin: 0 auto 1.25rem;">
+                    <svg class="w-7 h-7 text-amber-700" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3 3h18v4H3zM3 7v12a2 2 0 002 2h14a2 2 0 002-2V7M9 11h6M9 15h4"/>
+                    </svg>
+                  </div>
+                  <h3 style="font-size: 1.0625rem; font-weight: 600; color: #1f2937; margin-bottom: 0.5rem; line-height: 1.3;">Рестораны и Отели</h3>
+                  <p style="font-size: 0.8125rem; color: #9ca3af; line-height: 1.5;">Премиальное масло для изысканной кухни и гостиничного бизнеса</p>
+                </div>
+
+                <!-- Distributors -->
+                <div style="background: white; border-radius: 22px; padding: 2rem 1.75rem; text-align: center; border: 1px solid rgba(107,124,89,0.13); box-shadow: 0 4px 20px rgba(0,0,0,0.05); transition: all 0.3s cubic-bezier(0.4,0,0.2,1);" onmouseover="this.style.transform='translateY(-5px)';this.style.boxShadow='0 16px 40px rgba(0,0,0,0.1)';" onmouseout="this.style.transform='translateY(0)';this.style.boxShadow='0 4px 20px rgba(0,0,0,0.05)';">
+                  <div style="width: 60px; height: 60px; border-radius: 18px; background: linear-gradient(135deg, #ecfdf5, #d1fae5); display: flex; align-items: center; justify-content: center; margin: 0 auto 1.25rem;">
+                    <svg class="w-7 h-7 text-emerald-700" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                    </svg>
+                  </div>
+                  <h3 style="font-size: 1.0625rem; font-weight: 600; color: #1f2937; margin-bottom: 0.5rem; line-height: 1.3;">Дистрибьюторы и Импортёры</h3>
+                  <p style="font-size: 0.8125rem; color: #9ca3af; line-height: 1.5;">Оптовые поставки с полным пакетом экспортной документации</p>
+                </div>
+
+                <!-- Food Manufacturers -->
+                <div style="background: white; border-radius: 22px; padding: 2rem 1.75rem; text-align: center; border: 1px solid rgba(107,124,89,0.13); box-shadow: 0 4px 20px rgba(0,0,0,0.05); transition: all 0.3s cubic-bezier(0.4,0,0.2,1);" onmouseover="this.style.transform='translateY(-5px)';this.style.boxShadow='0 16px 40px rgba(0,0,0,0.1)';" onmouseout="this.style.transform='translateY(0)';this.style.boxShadow='0 4px 20px rgba(0,0,0,0.05)';">
+                  <div style="width: 60px; height: 60px; border-radius: 18px; background: linear-gradient(135deg, #fef3c7, #fde68a); display: flex; align-items: center; justify-content: center; margin: 0 auto 1.25rem;">
+                    <svg class="w-7 h-7 text-amber-700" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z"/>
+                    </svg>
+                  </div>
+                  <h3 style="font-size: 1.0625rem; font-weight: 600; color: #1f2937; margin-bottom: 0.5rem; line-height: 1.3;">Производители Продуктов Питания</h3>
+                  <p style="font-size: 0.8125rem; color: #9ca3af; line-height: 1.5;">Высококачественное масло как ингредиент для производственных линий</p>
+                </div>
+
+              </div>
+            </section>
+
+            <!-- Packaging Options -->
+            <section class="mb-32">
+              <div class="text-center mb-14">
+                <h2 class="text-4xl md:text-5xl font-light text-gray-800 mb-5 tracking-tight" style="letter-spacing:-0.02em">Варианты Упаковки</h2>
+                <p class="text-xl font-light text-gray-500 max-w-2xl mx-auto">Каждый формат обеспечивает одинаково высокое качество. Выберите то, что подходит вашему каналу дистрибуции и рынку.</p>
+              </div>
+
+              <!-- Horizontal strip -->
+              <div style="background: white; border-radius: 28px; border: 1px solid rgba(212,175,55,0.15); box-shadow: 0 8px 40px rgba(0,0,0,0.07); overflow: hidden;">
+                <div style="display: flex; flex-wrap: wrap;">
+
+                  <!-- Glass Bottles -->
+                  <div style="flex: 1; min-width: 220px; padding: 2.5rem 2rem; position: relative; transition: background 0.25s;" onmouseover="this.style.background='#f9fafb';" onmouseout="this.style.background='transparent';">
+                    <div style="position: absolute; top: 0; left: 0; right: 0; height: 3px; background: linear-gradient(90deg, #059669, #34d399);"></div>
+                    <div style="display: flex; align-items: center; gap: 0.875rem; margin-bottom: 1rem;">
+                      <div style="width: 44px; height: 44px; border-radius: 12px; background: linear-gradient(135deg, #ecfdf5, #d1fae5); display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+                        <svg style="width: 22px; height: 22px; color: #059669;" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 3h6l1 4H8L9 3zm-1 4v1a5 5 0 0010 0V7M7 21h10a1 1 0 001-1v-5a7 7 0 00-14 0v5a1 1 0 001 1z"/>
+                        </svg>
+                      </div>
+                      <div>
+                        <div style="font-size: 1.0625rem; font-weight: 700; color: #1f2937; line-height: 1.2;">Стеклянные Бутылки</div>
+                        <div style="font-size: 0.75rem; color: #059669; font-weight: 600; margin-top: 2px;">Доступна частная марка</div>
+                      </div>
+                    </div>
+                    <p style="font-size: 0.8125rem; color: #6b7280; line-height: 1.6; margin-bottom: 1rem;">Премиальный розничный формат. Стекло сохраняет содержание полифенолов и обеспечивает более высокую цену на полке.</p>
+                    <div style="font-size: 0.75rem; color: #374151; font-weight: 600; text-transform: uppercase; letter-spacing: 0.06em; margin-bottom: 0.375rem;">Объёмы</div>
+                    <div style="display: flex; flex-wrap: wrap; gap: 0.375rem;">
+                      <span style="font-size: 0.75rem; background: #f3f4f6; color: #374151; padding: 0.25rem 0.625rem; border-radius: 100px;">250ml</span>
+                      <span style="font-size: 0.75rem; background: #f3f4f6; color: #374151; padding: 0.25rem 0.625rem; border-radius: 100px;">500ml</span>
+                      <span style="font-size: 0.75rem; background: #f3f4f6; color: #374151; padding: 0.25rem 0.625rem; border-radius: 100px;">750ml</span>
+                      <span style="font-size: 0.75rem; background: #f3f4f6; color: #374151; padding: 0.25rem 0.625rem; border-radius: 100px;">1L</span>
+                    </div>
+                  </div>
+
+                  <!-- Divider -->
+                  <div style="width: 1px; background: #f3f4f6; margin: 1.5rem 0; flex-shrink: 0;"></div>
+
+                  <!-- Metallic Tins -->
+                  <div style="flex: 1; min-width: 220px; padding: 2.5rem 2rem; position: relative; transition: background 0.25s;" onmouseover="this.style.background='#f9fafb';" onmouseout="this.style.background='transparent';">
+                    <div style="position: absolute; top: 0; left: 0; right: 0; height: 3px; background: linear-gradient(90deg, #d97706, #fbbf24);"></div>
+                    <div style="display: flex; align-items: center; gap: 0.875rem; margin-bottom: 1rem;">
+                      <div style="width: 44px; height: 44px; border-radius: 12px; background: linear-gradient(135deg, #fef3c7, #fde68a); display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+                        <svg style="width: 22px; height: 22px; color: #d97706;" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M5 8h14M5 8a2 2 0 110-4h14a2 2 0 110 4M5 8v10a2 2 0 002 2h10a2 2 0 002-2V8m-9 4h4"/>
+                        </svg>
+                      </div>
+                      <div>
+                        <div style="font-size: 1.0625rem; font-weight: 700; color: #1f2937; line-height: 1.2;">Металлические Банки</div>
+                        <div style="font-size: 0.75rem; color: #d97706; font-weight: 600; margin-top: 2px;">Наибольший срок хранения</div>
+                      </div>
+                    </div>
+                    <p style="font-size: 0.8125rem; color: #6b7280; line-height: 1.6; margin-bottom: 1rem;">Банки полностью блокируют свет, защищая полифенолы. Предпочтительный формат на европейских и ближневосточных экспортных рынках.</p>
+                    <div style="font-size: 0.75rem; color: #374151; font-weight: 600; text-transform: uppercase; letter-spacing: 0.06em; margin-bottom: 0.375rem;">Объёмы</div>
+                    <div style="display: flex; flex-wrap: wrap; gap: 0.375rem;">
+                      <span style="font-size: 0.75rem; background: #f3f4f6; color: #374151; padding: 0.25rem 0.625rem; border-radius: 100px;">1L</span>
+                      <span style="font-size: 0.75rem; background: #f3f4f6; color: #374151; padding: 0.25rem 0.625rem; border-radius: 100px;">3L</span>
+                      <span style="font-size: 0.75rem; background: #f3f4f6; color: #374151; padding: 0.25rem 0.625rem; border-radius: 100px;">5L</span>
+                    </div>
+                  </div>
+
+                  <!-- Divider -->
+                  <div style="width: 1px; background: #f3f4f6; margin: 1.5rem 0; flex-shrink: 0;"></div>
+
+                  <!-- Plastic PET -->
+                  <div style="flex: 1; min-width: 220px; padding: 2.5rem 2rem; position: relative; transition: background 0.25s;" onmouseover="this.style.background='#f9fafb';" onmouseout="this.style.background='transparent';">
+                    <div style="position: absolute; top: 0; left: 0; right: 0; height: 3px; background: linear-gradient(90deg, #2563eb, #60a5fa);"></div>
+                    <div style="display: flex; align-items: center; gap: 0.875rem; margin-bottom: 1rem;">
+                      <div style="width: 44px; height: 44px; border-radius: 12px; background: linear-gradient(135deg, #eff6ff, #dbeafe); display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+                        <svg style="width: 22px; height: 22px; color: #2563eb;" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M7 4v4a1 1 0 001 1h8a1 1 0 001-1V4M7 4H5a2 2 0 00-2 2v12a2 2 0 002 2h14a2 2 0 002-2V6a2 2 0 00-2-2h-2M7 4h10"/>
+                        </svg>
+                      </div>
+                      <div>
+                        <div style="font-size: 1.0625rem; font-weight: 700; color: #1f2937; line-height: 1.2;">Пластик (PET)</div>
+                        <div style="font-size: 0.75rem; color: #2563eb; font-weight: 600; margin-top: 2px;">Экономично и легко</div>
+                      </div>
+                    </div>
+                    <p style="font-size: 0.8125rem; color: #6b7280; line-height: 1.6; margin-bottom: 1rem;">Практичная и лёгкая упаковка для крупнообъёмного кейтеринга и общественного питания по конкурентным ценам.</p>
+                    <div style="font-size: 0.75rem; color: #374151; font-weight: 600; text-transform: uppercase; letter-spacing: 0.06em; margin-bottom: 0.375rem;">Объёмы</div>
+                    <div style="display: flex; flex-wrap: wrap; gap: 0.375rem;">
+                      <span style="font-size: 0.75rem; background: #f3f4f6; color: #374151; padding: 0.25rem 0.625rem; border-radius: 100px;">1L</span>
+                      <span style="font-size: 0.75rem; background: #f3f4f6; color: #374151; padding: 0.25rem 0.625rem; border-radius: 100px;">5L</span>
+                    </div>
+                  </div>
+
+                  <!-- Divider -->
+                  <div style="width: 1px; background: #f3f4f6; margin: 1.5rem 0; flex-shrink: 0;"></div>
+
+                  <!-- Bulk Supply -->
+                  <div style="flex: 1; min-width: 220px; padding: 2.5rem 2rem; position: relative; transition: background 0.25s;" onmouseover="this.style.background='#f9fafb';" onmouseout="this.style.background='transparent';">
+                    <div style="position: absolute; top: 0; left: 0; right: 0; height: 3px; background: linear-gradient(90deg, #4b5563, #9ca3af);"></div>
+                    <div style="display: flex; align-items: center; gap: 0.875rem; margin-bottom: 1rem;">
+                      <div style="width: 44px; height: 44px; border-radius: 12px; background: linear-gradient(135deg, #f3f4f6, #e5e7eb); display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+                        <svg style="width: 22px; height: 22px; color: #4b5563;" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10"/>
+                        </svg>
+                      </div>
+                      <div>
+                        <div style="font-size: 1.0625rem; font-weight: 700; color: #1f2937; line-height: 1.2;">Оптовые Поставки</div>
+                        <div style="font-size: 0.75rem; color: #4b5563; font-weight: 600; margin-top: 2px;">Полная прослеживаемость и COA</div>
+                      </div>
+                    </div>
+                    <p style="font-size: 0.8125rem; color: #6b7280; line-height: 1.6; margin-bottom: 1rem;">Для дистрибьюторов и производителей, разливающих в собственную упаковку, с фитосанитарными и сертификатами происхождения.</p>
+                    <div style="font-size: 0.75rem; color: #374151; font-weight: 600; text-transform: uppercase; letter-spacing: 0.06em; margin-bottom: 0.375rem;">Форматы</div>
+                    <div style="display: flex; flex-wrap: wrap; gap: 0.375rem;">
+                      <span style="font-size: 0.75rem; background: #f3f4f6; color: #374151; padding: 0.25rem 0.625rem; border-radius: 100px;">20L drums</span>
+                      <span style="font-size: 0.75rem; background: #f3f4f6; color: #374151; padding: 0.25rem 0.625rem; border-radius: 100px;">200L barrels</span>
+                      <span style="font-size: 0.75rem; background: #f3f4f6; color: #374151; padding: 0.25rem 0.625rem; border-radius: 100px;">1000L IBC</span>
+                    </div>
+                  </div>
+
+                </div>
+              </div>
+            </section>
+
+            <!-- Why Laperla for B2B -->
+            <section class="mb-32 bg-gradient-to-br from-emerald-50/70 to-amber-50/70 rounded-3xl p-12 md:p-20 border border-emerald-100/60">
+              <div class="text-center mb-16">
+                <h2 class="text-4xl md:text-5xl font-light text-gray-800 mb-5 tracking-tight" style="letter-spacing:-0.02em">Почему Бизнес Выбирает Laperla</h2>
+                <p class="text-xl font-light text-gray-500 max-w-3xl mx-auto">Качество, которое почувствуют ваши клиенты, сертификаты, необходимые вашему отделу импорта, и надёжность поставок, на которую опирается ваш бизнес.</p>
+              </div>
+              <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10 mb-16">
+                <div class="text-center">
+                  <div class="text-5xl font-light text-emerald-700 mb-3 tracking-tight">8+</div>
+                  <h3 class="text-xl font-medium text-gray-800 mb-3">Международных Наград</h3>
+                  <p class="text-gray-500 font-light leading-relaxed">Золотые медали на трёх континентах — проверенный аргумент в пользу премиального позиционирования на вашей полке.</p>
+                </div>
+                <div class="text-center">
+                  <div class="text-5xl font-light text-amber-600 mb-3 tracking-tight">4</div>
+                  <h3 class="text-xl font-medium text-gray-800 mb-3">Международных Сертификата</h3>
+                  <p class="text-gray-500 font-light leading-relaxed">ECO-CERT, USDA Organic, Organic Bio, FDA — разрешено для импорта в ЕС, США и на международных рынках.</p>
+                </div>
+                <div class="text-center">
+                  <div class="text-5xl font-light text-emerald-700 mb-3 tracking-tight">&lt;0.3%</div>
+                  <h3 class="text-xl font-medium text-gray-800 mb-3">Кислотность — Ультра Премиум</h3>
+                  <p class="text-gray-500 font-light leading-relaxed">Значительно ниже стандарта 0,8% для Extra Virgin — измеримое качественное преимущество, которое вы можете уверенно продвигать.</p>
+                </div>
+                <div class="text-center">
+                  <div class="text-5xl font-light text-emerald-700 mb-3 tracking-tight">&gt;600</div>
+                  <h3 class="text-xl font-medium text-gray-800 mb-3">мг/кг Полифенолов</h3>
+                  <p class="text-gray-500 font-light leading-relaxed">Высокополифенольное оливковое масло extra virgin — одно из богатейших антиоксидантами. Весомый аргумент для премиального позиционирования.</p>
+                </div>
+              </div>
+            </section>
+
+            <!-- Private Label -->
+            <section class="mb-32 grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
+              <div>
+                <span class="inline-block bg-amber-100 text-amber-800 text-sm font-medium px-5 py-1.5 rounded-full mb-7 tracking-widest uppercase">Частная Марка</span>
+                <h2 class="text-4xl md:text-5xl font-light text-gray-800 mb-7 tracking-tight leading-tight" style="letter-spacing:-0.02em">Ваш Бренд,<br>Наше Масло</h2>
+                <p class="text-xl font-light text-gray-500 mb-8 leading-relaxed">
+                  Продавайте тунисское оливковое масло extra virgin мирового класса под собственным брендом. Мы занимаемся производством, сертификацией и упаковкой — вы получаете присутствие на полке и маржу.
+                </p>
+                <ul class="space-y-5 mb-10">
+                  <li class="flex items-start gap-4">
+                    <span class="w-6 h-6 bg-emerald-100 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">
+                      <svg class="w-3.5 h-3.5 text-emerald-700" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"/>
+                      </svg>
+                    </span>
+                    <span class="text-gray-700 font-light">Индивидуальный дизайн этикетки на стекле, банке или пластике</span>
+                  </li>
+                  <li class="flex items-start gap-4">
+                    <span class="w-6 h-6 bg-emerald-100 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">
+                      <svg class="w-3.5 h-3.5 text-emerald-700" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"/>
+                      </svg>
+                    </span>
+                    <span class="text-gray-700 font-light">Все органические сертификаты переносятся на вашу этикетку</span>
+                  </li>
+                  <li class="flex items-start gap-4">
+                    <span class="w-6 h-6 bg-emerald-100 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">
+                      <svg class="w-3.5 h-3.5 text-emerald-700" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"/>
+                      </svg>
+                    </span>
+                    <span class="text-gray-700 font-light">Полная прослеживаемость партии и Сертификат Анализа (COA)</span>
+                  </li>
+                  <li class="flex items-start gap-4">
+                    <span class="w-6 h-6 bg-emerald-100 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">
+                      <svg class="w-3.5 h-3.5 text-emerald-700" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"/>
+                      </svg>
+                    </span>
+                    <span class="text-gray-700 font-light">Готово к экспорту с фитосанитарными и сертификатами происхождения</span>
+                  </li>
+                </ul>
+                <a href="contact.html" class="inline-flex items-center gap-2 bg-gradient-to-r from-emerald-700 to-emerald-800 hover:from-emerald-800 hover:to-emerald-900 text-white px-8 py-3.5 rounded-full text-lg font-medium transition-all duration-300 hover:scale-105 hover:shadow-lg min-h-[52px]">
+                  Обсудить Частную Марку
+                  <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+                  </svg>
+                </a>
+              </div>
+              <div class="bg-gradient-to-br from-emerald-50 to-amber-50/50 rounded-3xl p-8 border border-emerald-100">
+                <h3 class="text-2xl font-medium text-gray-800 mb-7">Что Входит в Каждый Заказ</h3>
+                <div class="space-y-4">
+
+                  <!-- COA -->
+                  <div class="doc-item">
+                    <div class="doc-icon-wrap bg-emerald-100">
+                      <svg class="w-5 h-5 text-emerald-700" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/>
+                      </svg>
+                    </div>
+                    <div>
+                      <p class="font-medium text-gray-800 text-sm">Сертификат Анализа (COA)</p>
+                      <p class="text-gray-500 text-sm font-light mt-0.5">Лабораторно подтверждённые данные о кислотности, полифенолах и чистоте</p>
+                    </div>
+                  </div>
+
+                  <!-- Organic certs -->
+                  <div class="doc-item">
+                    <div class="doc-icon-wrap bg-emerald-100">
+                      <svg class="w-5 h-5 text-emerald-700" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z"/>
+                      </svg>
+                    </div>
+                    <div>
+                      <p class="font-medium text-gray-800 text-sm">Документы Органической Сертификации</p>
+                      <p class="text-gray-500 text-sm font-light mt-0.5">Документы ECO-CERT и USDA для таможенного оформления</p>
+                    </div>
+                  </div>
+
+                  <!-- Export docs -->
+                  <div class="doc-item">
+                    <div class="doc-icon-wrap bg-blue-100">
+                      <svg class="w-5 h-5 text-blue-700" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                      </svg>
+                    </div>
+                    <div>
+                      <p class="font-medium text-gray-800 text-sm">Экспортная Документация</p>
+                      <p class="text-gray-500 text-sm font-light mt-0.5">Фитосанитарный сертификат, сертификат происхождения и другие документы</p>
+                    </div>
+                  </div>
+
+                </div>
+              </div>
+            </section>
+
+            <!-- FAQ -->
+            <section class="mb-32">
+              <div class="text-center mb-16">
+                <h2 class="text-4xl md:text-5xl font-light text-gray-800 mb-5 tracking-tight" style="letter-spacing:-0.02em">Часто Задаваемые Вопросы</h2>
+                <p class="text-xl font-light text-gray-500 max-w-2xl mx-auto">Всё, что ваш отдел закупок должен знать перед оформлением заказа.</p>
+              </div>
+              <div class="max-w-3xl mx-auto">
+
+                <div class="faq-item">
+                  <button class="faq-question w-full text-left" onclick="toggleFaq(this)" aria-expanded="false">
+                    <span>Какой минимальный объём заказа?</span>
+                    <svg class="faq-chevron w-5 h-5 text-gray-400 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                    </svg>
+                  </button>
+                  <div class="faq-answer" role="region">Минимальный объём заказа зависит от формата упаковки. Для стеклянных бутылок и металлических банок обычно начинаем с одного паллета. Для bulk-поставок MOQ выше. Свяжитесь с нами — ответим в течение 24 часов.</div>
+                </div>
+
+                <div class="faq-item">
+                  <button class="faq-question w-full text-left" onclick="toggleFaq(this)" aria-expanded="false">
+                    <span>Осуществляете ли вы поставки в мою страну?</span>
+                    <svg class="faq-chevron w-5 h-5 text-gray-400 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                    </svg>
+                  </button>
+                  <div class="faq-answer" role="region">Да. Мы поставляем в Европу, Северную Америку, Ближний Восток и Азию. У нас полный пакет экспортной документации. Свяжитесь с нами для уточнения деталей по вашему рынку.</div>
+                </div>
+
+                <div class="faq-item">
+                  <button class="faq-question w-full text-left" onclick="toggleFaq(this)" aria-expanded="false">
+                    <span>Можно ли разлить масло под моей торговой маркой?</span>
+                    <svg class="faq-chevron w-5 h-5 text-gray-400 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                    </svg>
+                  </button>
+                  <div class="faq-answer" role="region">Да. Мы предлагаем услуги частной марки для всех форматов упаковки. Вы можете настроить этикетку, объём бутылки и упаковку. Все органические сертификаты сохраняют силу.</div>
+                </div>
+
+                <div class="faq-item">
+                  <button class="faq-question w-full text-left" onclick="toggleFaq(this)" aria-expanded="false">
+                    <span>Каковы сроки выполнения заказа?</span>
+                    <svg class="faq-chevron w-5 h-5 text-gray-400 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                    </svg>
+                  </button>
+                  <div class="faq-answer" role="region">Стандартный срок выполнения составляет 2–4 недели с момента подтверждения заказа и внесения предоплаты. Заказы с частной маркой могут занять больше времени из-за производства этикеток.</div>
+                </div>
+
+                <div class="faq-item">
+                  <button class="faq-question w-full text-left" onclick="toggleFaq(this)" aria-expanded="false">
+                    <span>Какие сертификаты есть у Laperla?</span>
+                    <svg class="faq-chevron w-5 h-5 text-gray-400 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                    </svg>
+                  </button>
+                  <div class="faq-answer" role="region">Laperla имеет сертификаты ECO-CERT, USDA Organic, Organic Bio и FDA. Все документы доступны по запросу.</div>
+                </div>
+
+              </div>
+            </section>
+
+            <!-- Final CTA -->
+            <section class="text-center bg-gradient-to-br from-emerald-900 via-emerald-800 to-amber-800 rounded-3xl p-12 md:p-24 text-white relative overflow-hidden">
+              <div class="absolute inset-0 opacity-10" aria-hidden="true">
+                <div class="absolute top-0 right-0 w-72 h-72 bg-amber-400 rounded-full blur-3xl translate-x-1/3 -translate-y-1/3"></div>
+              </div>
+              <div class="relative z-10">
+                <h2 class="text-4xl md:text-5xl font-light mb-6 tracking-tight leading-tight" style="letter-spacing:-0.02em">Готовы к Сотрудничеству?</h2>
+                <p class="text-xl font-light text-white/80 max-w-2xl mx-auto mb-12 leading-relaxed">
+                  Расскажите нам о ваших потребностях. Независимо от того, интересует ли вас частная марка, bulk-поставки или стандартное предложение — мы готовы к диалогу.
+                </p>
+                <div class="flex flex-col sm:flex-row gap-3 justify-center">
+                  <a href="contact.html" class="inline-flex items-center justify-center text-sm font-semibold px-8 py-3 rounded-full transition-all duration-300 hover:scale-105 shadow-md" style="background: white; color: #064e3b;">
+                    Получить Коммерческое Предложение
+                  </a>
+                  <a href="https://wa.me/48535208822?text=I%20am%20interested%20in%20wholesale%20Laperla%20olive%20oil" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center gap-2 text-sm font-light px-8 py-3 rounded-full transition-all duration-300 hover:scale-105" style="border: 1.5px solid rgba(255,255,255,0.65); color: white;">
+                    <svg class="w-4 h-4 flex-shrink-0" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                      <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+                    </svg>
+                    WhatsApp
+                  </a>
+                </div>
+              </div>
+            </section>
+
+          </div>
+        </main>
+
+        <footer class="bg-white border-t border-gray-200">
+          <div class="max-w-7xl mx-auto px-6 md:px-10 py-12">
+            <div class="flex flex-wrap items-center justify-center gap-8 mb-8">
+              <a class="text-gray-600 hover:text-yellow-600 font-medium transition-colors" href="index.html" data-en="Home" data-pl="Strona Główna" data-ru="Главная">Главная</a>
+              <a class="text-gray-600 hover:text-yellow-600 font-medium transition-colors" href="product.html" data-en="Our Products" data-pl="Nasze Produkty" data-ru="Наши Продукты">Наши Продукты</a>
+              <a class="text-gray-600 hover:text-yellow-600 font-medium transition-colors" href="wholesale.html" data-en="Wholesale" data-pl="Hurtownia" data-ru="Оптовая">Оптовая</a>
+              <a class="text-gray-600 hover:text-yellow-600 font-medium transition-colors" href="heritage.html" data-en="Our Story" data-pl="Nasza Historia" data-ru="Наша История">Наша История</a>
+              <a class="text-gray-600 hover:text-yellow-600 font-medium transition-colors" href="blog.html" data-en="Blog" data-pl="Blog" data-ru="Блог">Блог</a>
+              <a class="text-gray-600 hover:text-yellow-600 font-medium transition-colors" href="contact.html" data-en="Contact" data-pl="Kontakt" data-ru="Контакт">Контакт</a>
+            </div>
+            <div class="flex justify-center gap-6 mb-8">
+              <a href="https://instagram.com/yourprofile" target="_blank" rel="noopener noreferrer" class="text-gray-400 hover:text-yellow-600 transition-colors" aria-label="Instagram">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 256 256" aria-hidden="true"><path d="M128,80a48,48,0,1,0,48,48A48.05,48.05,0,0,0,128,80Zm0,80a32,32,0,1,1,32-32A32,32,0,0,1,128,160ZM176,24H80A56.06,56.06,0,0,0,24,80v96a56.06,56.06,0,0,0,56,56h96a56.06,56.06,0,0,0,56-56V80A56.06,56.06,0,0,0,176,24Zm40,152a40,40,0,0,1-40,40H80a40,40,0,0,1-40-40V80A40,40,0,0,1,80,40h96a40,40,0,0,1,40,40ZM192,76a12,12,0,1,1-12-12A12,12,0,0,1,192,76Z"></path></svg>
+              </a>
+              <a href="https://facebook.com/yourprofile" target="_blank" rel="noopener noreferrer" class="text-gray-400 hover:text-yellow-600 transition-colors" aria-label="Facebook">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 256 256" aria-hidden="true"><path d="M128,24A104,104,0,1,0,232,128,104.11,104.11,0,0,0,128,24Zm8,191.63V152h24a8,8,0,0,0,0-16H136V112a16,16,0,0,1,16-16h16a8,8,0,0,0,0-16H152a32,32,0,0,0-32,32v24H96a8,8,0,0,0,0,16h24v63.63a88,88,0,1,1,16,0Z"></path></svg>
+              </a>
+            </div>
+            <p class="text-center text-gray-500 font-medium">© 2026 Laperla. История и здоровье в каждой капле. Все права защищены.</p>
+          </div>
+        </footer>
+      </div>
+    </div>
+
+    <script>
+      function toggleFaq(el) {
+        const answer = el.nextElementSibling;
+        const icon = el.querySelector('.faq-chevron');
+        const isOpen = answer.classList.contains('open');
+        answer.classList.toggle('open');
+        icon.classList.toggle('rotated');
+        el.setAttribute('aria-expanded', !isOpen);
+      }
+
+      document.addEventListener('DOMContentLoaded', () => {
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.querySelector('.mobile-menu');
+        if (mobileMenuButton && mobileMenu) {
+          mobileMenuButton.addEventListener('click', (e) => {
+            e.preventDefault();
+            e.stopPropagation();
+            mobileMenu.classList.toggle('hidden');
+          });
+        }
+
+        // Language dropdown toggle
+        const langDropdown = document.querySelector('.modern-language-dropdown');
+        if (langDropdown) {
+          const button = langDropdown.querySelector('.modern-language-button');
+          const menu = langDropdown.querySelector('.modern-language-menu');
+          button.addEventListener('click', () => {
+            menu.classList.toggle('opacity-0');
+            menu.classList.toggle('invisible');
+          });
+          document.addEventListener('click', (e) => {
+            if (!langDropdown.contains(e.target)) {
+              menu.classList.add('opacity-0');
+              menu.classList.add('invisible');
+            }
+          });
+        }
+      });
+    </script>
+</body>
+</html>
