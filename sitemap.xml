@@ -194,4 +194,24 @@
       <priority>0.6</priority>
    </url>
 
+   <!-- Article: How to Choose Extra Virgin Olive Oil -->
+   <url>
+      <loc>https://www.laperlaoliveoil.com/articles/how-to-choose-extra-virgin-olive-oil.html</loc>
+      <xhtml:link rel="alternate" hreflang="en" href="https://www.laperlaoliveoil.com/articles/how-to-choose-extra-virgin-olive-oil.html"/>
+      <xhtml:link rel="alternate" hreflang="pl" href="https://www.laperlaoliveoil.com/articles/how-to-choose-extra-virgin-olive-oil.html"/>
+      <xhtml:link rel="alternate" hreflang="ru" href="https://www.laperlaoliveoil.com/articles/how-to-choose-extra-virgin-olive-oil.html"/>
+      <changefreq>monthly</changefreq>
+      <priority>0.6</priority>
+   </url>
+
+   <!-- Article: Why Tunisian Olive Oil Is Exceptional -->
+   <url>
+      <loc>https://www.laperlaoliveoil.com/articles/why-tunisian-olive-oil-is-exceptional.html</loc>
+      <xhtml:link rel="alternate" hreflang="en" href="https://www.laperlaoliveoil.com/articles/why-tunisian-olive-oil-is-exceptional.html"/>
+      <xhtml:link rel="alternate" hreflang="pl" href="https://www.laperlaoliveoil.com/articles/why-tunisian-olive-oil-is-exceptional.html"/>
+      <xhtml:link rel="alternate" hreflang="ru" href="https://www.laperlaoliveoil.com/articles/why-tunisian-olive-oil-is-exceptional.html"/>
+      <changefreq>monthly</changefreq>
+      <priority>0.6</priority>
+   </url>
+
 </urlset>
