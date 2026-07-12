@@ -28,32 +28,58 @@
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
-      "@type": "Product",
-      "name": "Laperla Oliwa z Oliwek Premium Extra Virgin",
-      "alternateName": ["Laperla olive oil", "oliwa z oliwek tunezyjska", "premium oliwa extra virgin"],
-      "description": "Laperla oliwa z oliwek - najlepsza tunezyjska oliwa extra virgin ze starożytnych drzew Chemlali. Certyfikowana ECO-CERT z kwasowością poniżej 0,3%. Premium oliwa z oliwek dla zdrowia.",
-      "brand": {
-        "@type": "Brand",
-        "name": "Laperla",
-        "alternateName": "La Perla Oliwa z Oliwek"
-      },
-      "category": "Oliwa z oliwek",
-      "productID": "laperla-oliwa-z-oliwek-premium",
-      "keywords": "laperla oliwa z oliwek, oliwa z oliwek tunezyjska, premium oliwa extra virgin, najlepsza oliwa z oliwek, zdrowa oliwa",
-      "offers": {
-        "@type": "Offer",
-        "availability": "https://schema.org/InStock",
-        "url": "https://www.laperlaoliveoil.com/pl/contact.html",
-        "description": "Skontaktuj się w sprawie ceny — indywidualne wyceny dla hurtowni, restauracji i sprzedaży detalicznej."
-      },
-      "aggregateRating": {
-        "@type": "AggregateRating",
-        "ratingValue": "5.0",
-        "reviewCount": "3"
-      },
-      "image": "https://www.laperlaoliveoil.com/assets/images/bottle.jpeg",
-      "url": "https://www.laperlaoliveoil.com/pl/index.html",
-      "inLanguage": "pl-PL"
+      "@graph": [
+        {
+          "@type": "Organization",
+          "@id": "https://www.laperlaoliveoil.com/#organization",
+          "name": "Laperla",
+          "url": "https://www.laperlaoliveoil.com/pl/",
+          "description": "Producent premium oliwy z oliwek extra virgin ze starożytnych drzew Chemlali w Sidi Bou Ali, Tunezja. Certyfikowana ECO-CERT.",
+          "foundingDate": "1523",
+          "email": "info@laperlaoliveoil.com",
+          "address": {
+            "@type": "PostalAddress",
+            "addressLocality": "Sidi Bou Ali",
+            "addressCountry": "TN"
+          }
+        },
+        {
+          "@type": "WebSite",
+          "@id": "https://www.laperlaoliveoil.com/#website",
+          "url": "https://www.laperlaoliveoil.com/pl/",
+          "name": "Laperla Premium Oliwa z Oliwek",
+          "inLanguage": "pl",
+          "publisher": {"@id": "https://www.laperlaoliveoil.com/#organization"}
+        },
+        {
+          "@type": "Product",
+          "name": "Laperla Oliwa z Oliwek Premium Extra Virgin",
+          "alternateName": ["Laperla olive oil", "oliwa z oliwek tunezyjska", "premium oliwa extra virgin"],
+          "description": "Laperla oliwa z oliwek - najlepsza tunezyjska oliwa extra virgin ze starożytnych drzew Chemlali. Certyfikowana ECO-CERT z kwasowością poniżej 0,3%. Premium oliwa z oliwek dla zdrowia.",
+          "brand": {
+            "@type": "Brand",
+            "name": "Laperla",
+            "alternateName": "La Perla Oliwa z Oliwek"
+          },
+          "category": "Oliwa z oliwek",
+          "productID": "laperla-oliwa-z-oliwek-premium",
+          "keywords": "laperla oliwa z oliwek, oliwa z oliwek tunezyjska, premium oliwa extra virgin, najlepsza oliwa z oliwek, zdrowa oliwa",
+          "offers": {
+            "@type": "Offer",
+            "availability": "https://schema.org/InStock",
+            "url": "https://www.laperlaoliveoil.com/pl/contact.html",
+            "description": "Skontaktuj się w sprawie ceny — indywidualne wyceny dla hurtowni, restauracji i sprzedaży detalicznej."
+          },
+          "aggregateRating": {
+            "@type": "AggregateRating",
+            "ratingValue": "5.0",
+            "reviewCount": "3"
+          },
+          "image": "https://www.laperlaoliveoil.com/assets/images/bottle.jpeg",
+          "url": "https://www.laperlaoliveoil.com/pl/index.html",
+          "inLanguage": "pl-PL"
+        }
+      ]
     }
     </script>
 
@@ -512,7 +538,7 @@
               <!-- Logo Section -->
               <a href="index.html" class="flex items-center text-gray-900 no-underline group">
                 <div class="flex flex-col">
-                  <h2 class="text-gray-900 text-2xl font-bold tracking-wide font-display">LAPERLA</h2>
+                  <span class="text-gray-900 text-2xl font-bold tracking-wide font-display">LAPERLA</span>
                   <p class="text-gray-500 text-xs font-light tracking-wide">Premium Oliwa z Oliwek</p>
                 </div>
               </a>
@@ -663,7 +689,7 @@
               <!-- Miami Gold Award 2024 -->
               <div class="award-card group">
                 <div class="award-image-container">
-                  <img src="../assets/images/award-miami-gold-2024.jpg" alt="Złoty Medal Międzynarodowego Konkursu Oliwy USA 2024" class="award-image">
+                  <img src="../assets/images/award-miami-gold-2024.jpg" alt="Złoty Medal Międzynarodowego Konkursu Oliwy USA 2024" class="award-image" width="1280" height="918">
                 </div>
                 <div class="award-content">
                   <h3 class="award-title">Międzynarodowy Konkurs USA</h3>
@@ -675,7 +701,7 @@
               <!-- Geneva Best in World 2024 -->
               <div class="award-card group">
                 <div class="award-image-container">
-                  <img src="../assets/images/award-geneva-best-world-2024.jpg" alt="Europejski Międzynarodowy Konkurs Oliwy Najlepsza na Świecie 2024" class="award-image">
+                  <img src="../assets/images/award-geneva-best-world-2024.jpg" alt="Europejski Międzynarodowy Konkurs Oliwy Najlepsza na Świecie 2024" class="award-image" width="1153" height="800">
                 </div>
                 <div class="award-content">
                   <h3 class="award-title">Europejski Konkurs Międzynarodowy</h3>
@@ -687,7 +713,7 @@
               <!-- Abu Dhabi Gold Award 2024 -->
               <div class="award-card group">
                 <div class="award-image-container">
-                  <img src="../assets/images/award-abu-dhabi-gold-2024.jpg" alt="Złoty Medal Afro-Azjatyckiego Międzynarodowego Konkursu Oliwy 2024" class="award-image">
+                  <img src="../assets/images/award-abu-dhabi-gold-2024.jpg" alt="Złoty Medal Afro-Azjatyckiego Międzynarodowego Konkursu Oliwy 2024" class="award-image" width="1280" height="904">
                 </div>
                 <div class="award-content">
                   <h3 class="award-title">Afro-Azjatycki Konkurs Międzynarodowy</h3>
@@ -699,7 +725,7 @@
               <!-- UAE Award 2026 -->
               <div class="award-card group">
                 <div class="award-image-container">
-                  <img src="../assets/images/award 2026 UAE.jpg" alt="Nagroda ZEA 2026" class="award-image">
+                  <img src="../assets/images/award 2026 UAE.jpg" alt="Nagroda ZEA 2026" class="award-image" width="1170" height="833">
                 </div>
                 <div class="award-content">
                   <h3 class="award-title">Konkurs ZEA</h3>
@@ -711,7 +737,7 @@
               <!-- Italy Medal 2024 -->
               <div class="award-card group">
                 <div class="award-image-container">
-                  <img src="../assets/images/medal italy 2024.jpg" alt="Medal Włoski 2024" class="award-image">
+                  <img src="../assets/images/medal italy 2024.jpg" alt="Medal Włoski 2024" class="award-image" width="1170" height="1186">
                 </div>
                 <div class="award-content">
                   <h3 class="award-title">Konkurs Włoski</h3>
@@ -723,7 +749,7 @@
               <!-- Laperla 2023 Award -->
               <div class="award-card group">
                 <div class="award-image-container">
-                  <img src="../assets/images/laperla 2023.jpg" alt="Nagroda Laperla 2023" class="award-image">
+                  <img src="../assets/images/laperla 2023.jpg" alt="Nagroda Laperla 2023" class="award-image" width="1143" height="1627">
                 </div>
                 <div class="award-content">
                   <h3 class="award-title">Międzynarodowy Konkurs</h3>
@@ -735,7 +761,7 @@
               <!-- Biol/Olio 2025 Award -->
               <div class="award-card group">
                 <div class="award-image-container">
-                  <img src="../assets/images/biovolelo2025.jpg" alt="Biol Olio Award 2025" class="award-image">
+                  <img src="../assets/images/biovolelo2025.jpg" alt="Biol Olio Award 2025" class="award-image" width="1134" height="1418">
                 </div>
                 <div class="award-content">
                   <h3 class="award-title">Międzynarodowa Nagroda Biol</h3>
@@ -757,19 +783,19 @@
             </div>
             <div class="flex flex-wrap justify-center items-center gap-12">
               <div class="flex items-center gap-6 modern-cert-badge">
-                <img src="../assets/images/ecocert.png" alt="ECO-CERT Organiczne" class="w-12 h-12 object-contain">
+                <img src="../assets/images/ecocert.png" alt="ECO-CERT Organiczne" class="w-12 h-12 object-contain" width="300" height="210">
                 <span class="text-lg font-semibold text-gray-800">ECO-CERT</span>
               </div>
               <div class="flex items-center gap-6 modern-cert-badge">
-                <img src="../assets/images/organic.jpg" alt="Organic Bio" class="w-12 h-12 object-contain">
+                <img src="../assets/images/organic.jpg" alt="Organic Bio" class="w-12 h-12 object-contain" width="740" height="740">
                 <span class="text-lg font-semibold text-gray-800">ORGANIC BIO</span>
               </div>
               <div class="flex items-center gap-6 modern-cert-badge">
-                <img src="../assets/images/usda.png" alt="USDA Organiczne" class="w-12 h-12 object-contain">
+                <img src="../assets/images/usda.png" alt="USDA Organiczne" class="w-12 h-12 object-contain" width="197" height="255">
                 <span class="text-lg font-semibold text-gray-800">USDA ORGANIC</span>
               </div>
               <div class="flex items-center gap-6 modern-cert-badge">
-                <img src="../assets/images/fda-cert.jpg" alt="FDA Approved" class="w-12 h-12 object-contain">
+                <img src="../assets/images/fda-cert.jpg" alt="FDA Approved" class="w-12 h-12 object-contain" width="859" height="859">
                 <span class="text-lg font-semibold text-gray-800">FDA APPROVED</span>
               </div>
             </div>
